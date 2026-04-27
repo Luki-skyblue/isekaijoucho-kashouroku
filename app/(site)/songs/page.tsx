@@ -1,6 +1,8 @@
 import { supabase } from "@/lib/supabase/client";
 import SongsList from "./SongsList";
 
+export const dynamic = "force-dynamic";
+
 export default async function SongsPage() {
   const { data: songs, error } = await supabase
     .from("songs")
