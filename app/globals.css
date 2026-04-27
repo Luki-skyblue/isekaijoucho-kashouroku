@@ -80,3 +80,31 @@ a {
   border-color: #111111;
   color: #111111;
 }
+
+.section-head {
+  border-left: 2px solid rgba(0, 0, 0, 0.7);
+  padding-left: 0.85rem;
+}
+
+.section-title-ja {
+  margin-top: 0.45rem;
+  font-family: var(--font-noto-serif-jp), "Noto Serif JP", "Yu Mincho",
+    "Hiragino Mincho ProN", serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: #111111;
+}
+
+@media (min-width: 768px) {
+  .section-head {
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  .section-title-ja {
+    font-size: 0.82rem;
+    font-family: var(--font-noto-sans-jp), "Noto Sans JP", sans-serif;
+    color: rgba(0, 0, 0, 0.45);
+  }
+}

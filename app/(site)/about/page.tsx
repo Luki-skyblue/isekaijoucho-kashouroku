@@ -45,14 +45,15 @@ export default function AboutPage() {
 
         <p className="mt-5 text-sm leading-7 text-black/60">
           「ヰ世界情緒 歌唱録」は、ヰ世界情緒さんの歌唱楽曲・関連リンク・ライブセトリなどを整理する、ファンによる非公式データベースです。
+          <br />
           KAMITSUBAKI STUDIO、ヰ世界情緒さん本人、および関係各社とは関係ありません。
         </p>
       </section>
 
       <section className="grid gap-10 border-b border-black/15 py-8 md:grid-cols-[220px_1fr]">
-        <div>
-          <h2 className="section-label text-black">UNOFFICIAL</h2>
-          <p className="mt-2 text-xs text-black/45">非公式サイト</p>
+        <div className="section-head">
+          <p className="section-label text-black/45">UNOFFICIAL</p>
+          <h2 className="section-title-ja">非公式サイト</h2>
         </div>
 
         <div className="space-y-4 text-sm leading-7 text-black/65">
@@ -68,9 +69,9 @@ export default function AboutPage() {
       </section>
 
       <section className="grid gap-10 border-b border-black/15 py-8 md:grid-cols-[220px_1fr]">
-        <div>
-          <h2 className="section-label text-black">SITE</h2>
-          <p className="mt-2 text-xs text-black/45">本サイトの目的</p>
+        <div className="section-head">
+          <p className="section-label text-black/45">SITE</p>
+          <h2 className="section-title-ja">本サイトの目的</h2>
         </div>
 
         <div className="space-y-4 text-sm leading-7 text-black/65">
@@ -85,9 +86,9 @@ export default function AboutPage() {
       </section>
 
       <section className="grid gap-10 border-b border-black/15 py-8 md:grid-cols-[220px_1fr]">
-        <div>
-          <h2 className="section-label text-black">SCOPE</h2>
-          <p className="mt-2 text-xs text-black/45">掲載範囲</p>
+        <div className="section-head">
+          <p className="section-label text-black/45">SCOPE</p>
+          <h2 className="section-title-ja">掲載範囲</h2>
         </div>
 
         <div className="space-y-4 text-sm leading-7 text-black/65">
@@ -102,9 +103,9 @@ export default function AboutPage() {
       </section>
 
       <section className="grid gap-10 border-b border-black/15 py-8 md:grid-cols-[220px_1fr]">
-        <div>
-          <h2 className="section-label text-black">DATA</h2>
-          <p className="mt-2 text-xs text-black/45">掲載情報</p>
+        <div className="section-head">
+          <p className="section-label text-black/45">DATA</p>
+          <h2 className="section-title-ja">掲載情報</h2>
         </div>
 
         <div className="space-y-4 text-sm leading-7 text-black/65">
@@ -123,9 +124,9 @@ export default function AboutPage() {
       </section>
 
       <section className="grid gap-10 border-b border-black/15 py-8 md:grid-cols-[220px_1fr]">
-        <div>
-          <h2 className="section-label text-black">SUBMIT</h2>
-          <p className="mt-2 text-xs text-black/45">情報提供</p>
+        <div className="section-head">
+          <p className="section-label text-black/45">SUBMIT</p>
+          <h2 className="section-title-ja">情報提供</h2>
         </div>
 
         <div className="space-y-4 text-sm leading-7 text-black/65">
@@ -148,9 +149,9 @@ export default function AboutPage() {
       </section>
 
       <section className="grid gap-10 border-b border-black/15 py-8 md:grid-cols-[220px_1fr]">
-        <div>
-          <h2 className="section-label text-black">AI ASSISTANCE</h2>
-          <p className="mt-2 text-xs text-black/45">制作補助</p>
+        <div className="section-head">
+          <p className="section-label text-black/45">AI ASSISTANCE</p>
+          <h2 className="section-title-ja">制作補助</h2>
         </div>
 
         <div className="space-y-4 text-sm leading-7 text-black/65">
@@ -165,9 +166,9 @@ export default function AboutPage() {
       </section>
 
       <section className="grid gap-10 border-b border-black/15 py-8 md:grid-cols-[220px_1fr]">
-        <div>
-          <h2 className="section-label text-black">OFFICIAL LINKS</h2>
-          <p className="mt-2 text-xs text-black/45">公式リンク</p>
+        <div className="section-head">
+          <p className="section-label text-black/45">OFFICIAL LINKS</p>
+          <h2 className="section-title-ja">公式リンク</h2>
         </div>
 
         <div className="divide-y divide-black/10 border-y border-black/15">
@@ -189,9 +190,9 @@ export default function AboutPage() {
       </section>
 
       <section className="grid gap-10 border-b border-black/15 py-8 md:grid-cols-[220px_1fr]">
-        <div>
-          <h2 className="section-label text-black">REFERENCE</h2>
-          <p className="mt-2 text-xs text-black/45">公式プロフィール</p>
+        <div className="section-head">
+          <p className="section-label text-black/45">REFERENCE</p>
+          <h2 className="section-title-ja">公式プロフィール</h2>
         </div>
 
         <div className="space-y-4 text-sm leading-7 text-black/65">
@@ -207,9 +208,9 @@ export default function AboutPage() {
       </section>
 
       <section className="grid gap-10 py-8 md:grid-cols-[220px_1fr]">
-        <div>
-          <h2 className="section-label text-black">LINKS</h2>
-          <p className="mt-2 text-xs text-black/45">関連ページ</p>
+        <div className="section-head">
+          <p className="section-label text-black/45">LINKS</p>
+          <h2 className="section-title-ja">関連ページ</h2>
         </div>
 
         <div className="flex flex-wrap gap-3">

@@ -136,9 +136,9 @@ export default async function SongDetailPage({ params }: PageProps) {
       )}
 
       <section className="mt-10 grid gap-10 md:grid-cols-[220px_1fr]">
-        <div>
-          <h2 className="archive-label text-black">BASIC</h2>
-          <p className="mt-2 text-xs text-black/45">基本情報</p>
+        <div className="section-head">
+          <p className="section-label text-black/45">BASIC</p>
+          <h2 className="section-title-ja">基本情報</h2>
         </div>
 
         <dl>
@@ -150,9 +150,9 @@ export default async function SongDetailPage({ params }: PageProps) {
       </section>
 
       <section className="mt-12 grid gap-10 md:grid-cols-[220px_1fr]">
-        <div>
-          <h2 className="archive-label text-black">ORIGINAL</h2>
-          <p className="mt-2 text-xs text-black/45">原曲情報</p>
+        <div className="section-head">
+          <p className="section-label text-black/45">ORIGINAL</p>
+          <h2 className="section-title-ja">原曲情報</h2>
         </div>
 
         <dl>
@@ -166,9 +166,9 @@ export default async function SongDetailPage({ params }: PageProps) {
 
       {links && links.length > 0 && (
         <section className="mt-12 grid gap-10 md:grid-cols-[220px_1fr]">
-            <div>
-            <h2 className="archive-label text-black">LINKS</h2>
-            <p className="mt-2 text-xs text-black/45">関連リンク</p>
+            <div className="section-head">
+              <p className="section-label text-black/45">LINKS</p>
+              <h2 className="section-title-ja">関連リンク</h2>
             </div>
 
             <div className="border-y border-black/15">
@@ -223,9 +223,9 @@ export default async function SongDetailPage({ params }: PageProps) {
 
       {song.notes && (
         <section className="mt-12 grid gap-10 md:grid-cols-[220px_1fr]">
-          <div>
-            <h2 className="archive-label text-black">NOTES</h2>
-            <p className="mt-2 text-xs text-black/45">備考</p>
+          <div className="section-head">
+            <p className="section-label text-black/45">NOTES</p>
+            <h2 className="section-title-ja">備考</h2>
           </div>
 
           <div className="border-y border-black/15 py-5">

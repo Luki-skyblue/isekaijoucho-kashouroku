@@ -46,9 +46,9 @@ export default async function HomePage() {
       </section>
 
       <section className="grid border-b border-black/15 py-8 md:grid-cols-[220px_1fr]">
-        <div>
-          <h2 className="section-label text-black">TRIAL</h2>
-          <p className="mt-2 text-xs text-black/45">試験公開中</p>
+        <div className="section-head">
+          <p className="section-label text-black/45">TRIAL</p>
+          <h2 className="section-title-ja">試験公開中</h2>
         </div>
 
         <div className="space-y-4 text-sm leading-7 text-black/65">
@@ -64,9 +64,9 @@ export default async function HomePage() {
       </section>
 
       <section className="grid border-b border-black/15 py-8 md:grid-cols-[220px_1fr]">
-        <div>
-          <h2 className="section-label text-black">SONGS</h2>
-          <p className="mt-2 text-xs text-black/45">登録楽曲</p>
+        <div className="section-head">
+          <p className="section-label text-black/45">SONGS</p>
+          <h2 className="section-title-ja">登録楽曲</h2>
         </div>
 
         <div>
@@ -87,9 +87,9 @@ export default async function HomePage() {
       </section>
 
       <section className="grid border-b border-black/15 py-8 md:grid-cols-[220px_1fr]">
-        <div>
-          <h2 className="section-label text-black">RECENT</h2>
-          <p className="mt-2 text-xs text-black/45">最近の初出し日順</p>
+        <div className="section-head">
+          <p className="section-label text-black/45">RECENT</p>
+          <h2 className="section-title-ja">最新の5曲</h2>
         </div>
 
         <div className="divide-y divide-black/10 border-y border-black/15">
@@ -125,9 +125,9 @@ export default async function HomePage() {
       </section>
 
       <section className="grid border-b border-black/15 py-8 md:grid-cols-[220px_1fr]">
-        <div>
-          <h2 className="section-label text-black">STATUS</h2>
-          <p className="mt-2 text-xs text-black/45">整備予定</p>
+        <div className="section-head">
+          <p className="section-label text-black/45">STATUS</p>
+          <h2 className="section-title-ja">整備予定</h2>
         </div>
 
         <div className="border border-black/15 p-5">
@@ -142,9 +142,9 @@ export default async function HomePage() {
       </section>
 
       <section className="grid py-8 md:grid-cols-[220px_1fr]">
-        <div>
-          <h2 className="section-label text-black">NOTICE</h2>
-          <p className="mt-2 text-xs text-black/45">注意事項</p>
+        <div className="section-head">
+          <p className="section-label text-black/45">NOTICE</p>
+          <h2 className="section-title-ja">注意事項</h2>
         </div>
 
         <div className="space-y-4 text-xs leading-6 text-black/55">
@@ -164,7 +164,6 @@ export default async function HomePage() {
           </p>
         </div>
       </section>
-
     </main>
   );
 }
