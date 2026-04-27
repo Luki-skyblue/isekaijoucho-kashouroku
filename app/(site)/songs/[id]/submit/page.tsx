@@ -21,6 +21,9 @@ export default async function SongSubmitPage({ params }: PageProps) {
     notFound();
   }
 
+  const songId = song.id;
+  const songTitle = song.title;
+
   async function submitForm(formData: FormData) {
     "use server";
 
@@ -35,7 +38,7 @@ export default async function SongSubmitPage({ params }: PageProps) {
 
     const { error: insertError } = await supabase.from("submissions").insert({
       target_type: "song",
-      target_id: song.id,
+      target_id: songId,
       submission_type: "correction",
       proposed_value: proposedValue,
       source_url: sourceUrl || null,
@@ -48,34 +51,34 @@ export default async function SongSubmitPage({ params }: PageProps) {
       throw new Error("情報提供の送信に失敗しました。");
     }
 
-    redirect(`/submit/thanks?songId=${song.id}`);
+    redirect(`/submit/thanks?songId=${songId}`);
   }
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
       <Link
-        href={`/songs/${song.id}`}
+        href={`/songs/${songId}`}
         className="text-xs font-medium tracking-[0.12em] text-black/45 transition hover:text-black"
       >
         BACK TO SONG
       </Link>
 
       <section className="mt-8 border-b border-black/15 pb-8">
-        <p className="archive-label text-black/45">SUBMIT INFO</p>
+        <p className="section-label text-black/45">SUBMIT INFO</p>
 
         <h1 className="font-serif-jp mt-4 text-3xl font-medium tracking-[0.02em] text-black md:text-5xl">
           情報提供・修正提案
         </h1>
 
         <p className="mt-5 text-sm leading-7 text-black/60">
-          「{song.title}」について、情報の追加・修正・出典URLなどがあれば送信してください。
+          「{songTitle}」について、情報の追加・修正・出典URLなどがあれば送信してください。
           送信内容は確認後に反映します。
         </p>
       </section>
 
       <form action={submitForm} className="mt-8 space-y-6">
         <label className="block">
-          <span className="archive-label text-black/60">PROPOSAL</span>
+          <span className="section-label text-black/60">PROPOSAL</span>
           <textarea
             name="proposed_value"
             required
@@ -86,7 +89,7 @@ export default async function SongSubmitPage({ params }: PageProps) {
         </label>
 
         <label className="block">
-          <span className="archive-label text-black/60">SOURCE URL</span>
+          <span className="section-label text-black/60">SOURCE URL</span>
           <input
             name="source_url"
             type="url"
@@ -96,7 +99,7 @@ export default async function SongSubmitPage({ params }: PageProps) {
         </label>
 
         <label className="block">
-          <span className="archive-label text-black/60">COMMENT</span>
+          <span className="section-label text-black/60">COMMENT</span>
           <textarea
             name="comment"
             rows={4}
@@ -106,7 +109,7 @@ export default async function SongSubmitPage({ params }: PageProps) {
         </label>
 
         <label className="block">
-          <span className="archive-label text-black/60">CONTACT</span>
+          <span className="section-label text-black/60">CONTACT</span>
           <input
             name="contact"
             placeholder="連絡先 任意"
