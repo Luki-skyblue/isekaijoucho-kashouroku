@@ -446,6 +446,72 @@ export default function SongsList({ songs }: SongsListProps) {
           </div>
         </div>
 
+        <div className="mt-5 border-t border-black/10 pt-5 md:hidden">
+          <p className="section-label text-black/45">SORT</p>
+
+          <div className="mt-3 grid grid-cols-2 gap-2">
+            <button
+              type="button"
+              onClick={() => {
+                setSortKey("date");
+                setSortDirection("desc");
+              }}
+              className={
+                sortKey === "date" && sortDirection === "desc"
+                  ? "border border-black bg-black px-3 py-2 text-left text-xs tracking-[0.08em] text-[#f5f5f2]"
+                  : "border border-black/20 px-3 py-2 text-left text-xs tracking-[0.08em] text-black/45"
+              }
+            >
+              DATE ↓
+            </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                setSortKey("date");
+                setSortDirection("asc");
+              }}
+              className={
+                sortKey === "date" && sortDirection === "asc"
+                  ? "border border-black bg-black px-3 py-2 text-left text-xs tracking-[0.08em] text-[#f5f5f2]"
+                  : "border border-black/20 px-3 py-2 text-left text-xs tracking-[0.08em] text-black/45"
+              }
+            >
+              DATE ↑
+            </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                setSortKey("title");
+                setSortDirection("asc");
+              }}
+              className={
+                sortKey === "title" && sortDirection === "asc"
+                  ? "border border-black bg-black px-3 py-2 text-left text-xs tracking-[0.08em] text-[#f5f5f2]"
+                  : "border border-black/20 px-3 py-2 text-left text-xs tracking-[0.08em] text-black/45"
+              }
+            >
+              TITLE ↑
+            </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                setSortKey("title");
+                setSortDirection("desc");
+              }}
+              className={
+                sortKey === "title" && sortDirection === "desc"
+                  ? "border border-black bg-black px-3 py-2 text-left text-xs tracking-[0.08em] text-[#f5f5f2]"
+                  : "border border-black/20 px-3 py-2 text-left text-xs tracking-[0.08em] text-black/45"
+              }
+            >
+              TITLE ↓
+            </button>
+          </div>
+        </div>
+
         <div className="mt-5 flex justify-end border-t border-black/10 pt-4">
           <button
             type="button"
@@ -528,14 +594,39 @@ export default function SongsList({ songs }: SongsListProps) {
             <Link
               key={song.id}
               href={`/songs/${song.id}`}
-              className="grid gap-1 py-3 transition hover:bg-black/[0.03] md:grid-cols-[110px_1fr_180px_90px] md:items-center md:gap-4"
+              className="grid gap-1.5 py-3 transition hover:bg-black/[0.03] md:grid-cols-[110px_1fr_180px_90px] md:items-center md:gap-4"
             >
-              <time className="text-xs tabular-nums text-black/45">
-                {song.first_date ?? "----.--.--"}
-              </time>
+              <div className="flex items-center justify-between gap-3 md:block">
+                <time className="text-xs tabular-nums text-black/45">
+                  {song.first_date ?? "----.--.--"}
+                </time>
 
-              <div className="min-w-0">
-                <div className="flex min-w-0 flex-wrap items-baseline gap-x-2 gap-y-1">
+                <p className="text-xs uppercase tracking-[0.1em] text-black/45 md:hidden">
+                  {song.song_type ?? "-"}
+                </p>
+              </div>
+
+              <div
+                className="min-w-0 truncate text-sm font-medium tracking-[0.01em] text-black md:hidden"
+                title={`${song.title}${song.artist_credit ? ` / ${song.artist_credit}` : ""}`}
+              >
+                {song.title}
+                {song.artist_credit && (
+                  <span className="text-xs font-normal text-black/45">
+                    {" "}
+                    / {song.artist_credit}
+                  </span>
+                )}
+                {song.verification_status &&
+                  song.verification_status !== "confirmed" && (
+                    <span className="ml-2 text-[10px] font-normal text-black/45">
+                      要確認
+                    </span>
+                  )}
+              </div>
+
+              <div className="hidden min-w-0 md:block">
+                <div className="flex min-w-0 items-baseline gap-2">
                   <p className="truncate text-sm font-medium tracking-[0.01em] text-black">
                     {song.title}
                   </p>
@@ -547,19 +638,13 @@ export default function SongsList({ songs }: SongsListProps) {
                       </span>
                     )}
                 </div>
-
-                {song.title_kana && (
-                  <p className="mt-0.5 truncate text-[11px] text-black/35 md:hidden">
-                    {song.title_kana}
-                  </p>
-                )}
               </div>
 
-              <p className="truncate text-xs text-black/45">
+              <p className="hidden truncate text-xs text-black/45 md:block">
                 {song.artist_credit ?? "-"}
               </p>
 
-              <p className="text-xs uppercase tracking-[0.1em] text-black/45">
+              <p className="hidden text-xs uppercase tracking-[0.1em] text-black/45 md:block">
                 {song.song_type ?? "-"}
               </p>
             </Link>
