@@ -20,9 +20,37 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ヰ世界情緒 歌唱録",
+  metadataBase: new URL("https://isekaijoucho-kashouroku.vercel.app"),
+  title: {
+    default: "ヰ世界情緒 歌唱録",
+    template: "%s | ヰ世界情緒 歌唱録",
+  },
   description:
-    "ヰ世界情緒さんの歌唱楽曲・関連リンク・ライブセトリを整理する非公式ファンデータベースです。",
+    "ヰ世界情緒さんの歌唱楽曲・関連リンク・ライブセトリなどを整理する、ファンによる非公式データベースです。",
+  openGraph: {
+    title: "ヰ世界情緒 歌唱録",
+    description:
+      "ヰ世界情緒さんの歌唱楽曲・関連リンク・ライブセトリなどを整理する、ファンによる非公式データベースです。",
+    url: "https://isekaijoucho-kashouroku.vercel.app",
+    siteName: "ヰ世界情緒 歌唱録",
+    type: "website",
+    locale: "ja_JP",
+    images: [
+      {
+        url: "/ogp.png",
+        width: 1200,
+        height: 630,
+        alt: "ヰ世界情緒 歌唱録",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ヰ世界情緒 歌唱録",
+    description:
+      "ヰ世界情緒さんの歌唱楽曲・関連リンク・ライブセトリなどを整理する、ファンによる非公式データベースです。",
+    images: ["/ogp.png"],
+  },
 };
 
 export default function RootLayout({
