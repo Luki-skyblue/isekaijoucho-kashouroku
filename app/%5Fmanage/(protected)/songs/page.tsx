@@ -94,6 +94,14 @@ export default async function ManageSongsPage() {
                   >
                     EDIT
                   </Link>
+
+                    <Link
+                    href={`/_manage/songs/${song.id}/links`}
+                    className="border border-neutral-300 px-3 py-2 text-xs tracking-[0.18em] hover:border-neutral-900"
+                    >
+                    LINKS
+                    </Link>
+
                 </div>
 
                 {song.title_kana && (

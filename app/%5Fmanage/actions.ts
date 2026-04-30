@@ -4,10 +4,42 @@ import { redirect } from "next/navigation";
 import { clearAdminSession, setAdminSession } from "@/lib/adminAuth";
 import { supabaseAdmin } from "@/lib/supabase/admin";
 
+export async function loginAdmin(formData: FormData) {
+  const password = String(formData.get("password") ?? "");
+
+  if (!process.env.ADMIN_PASSWORD) {
+    throw new Error("ADMIN_PASSWORD is not set.");
+  }
+
+  if (password !== process.env.ADMIN_PASSWORD) {
+    redirect("/_manage/login?error=1");
+  }
+
+  await setAdminSession();
+
+  redirect("/_manage");
+}
+
+export async function logoutAdmin() {
+  await clearAdminSession();
+
+  redirect("/_manage/login");
+}
+
 function getNullableString(formData: FormData, key: string) {
   const value = String(formData.get(key) ?? "").trim();
 
   return value.length > 0 ? value : null;
+}
+
+function getRequiredString(formData: FormData, key: string) {
+  const value = String(formData.get(key) ?? "").trim();
+
+  if (!value) {
+    throw new Error(`${key} is required.`);
+  }
+
+  return value;
 }
 
 export async function updateSong(songId: number, formData: FormData) {
@@ -50,24 +82,70 @@ export async function updateSong(songId: number, formData: FormData) {
   redirect(`/_manage/songs/${songId}/edit?saved=1`);
 }
 
-export async function loginAdmin(formData: FormData) {
-  const password = String(formData.get("password") ?? "");
+export async function createSongLink(songId: number, formData: FormData) {
+  const payload = {
+    target_type: "song",
+    target_id: songId,
+    link_type: getRequiredString(formData, "link_type"),
+    label: getNullableString(formData, "label"),
+    title: getNullableString(formData, "title"),
+    site_name: getNullableString(formData, "site_name"),
+    url: getRequiredString(formData, "url"),
+    published_date: getNullableString(formData, "published_date"),
+    notes: getNullableString(formData, "notes"),
+    thumbnail_url: getNullableString(formData, "thumbnail_url"),
+  };
 
-  if (!process.env.ADMIN_PASSWORD) {
-    throw new Error("ADMIN_PASSWORD is not set.");
+  const { error } = await supabaseAdmin.from("links").insert(payload);
+
+  if (error) {
+    throw new Error("関連リンクの追加に失敗しました。");
   }
 
-  if (password !== process.env.ADMIN_PASSWORD) {
-    redirect("/_manage/login?error=1");
-  }
-
-  await setAdminSession();
-
-  redirect("/_manage");
+  redirect(`/_manage/songs/${songId}/links?saved=1`);
 }
 
-export async function logoutAdmin() {
-  await clearAdminSession();
+export async function updateSongLink(
+  linkId: number,
+  songId: number,
+  formData: FormData
+) {
+  const payload = {
+    link_type: getRequiredString(formData, "link_type"),
+    label: getNullableString(formData, "label"),
+    title: getNullableString(formData, "title"),
+    site_name: getNullableString(formData, "site_name"),
+    url: getRequiredString(formData, "url"),
+    published_date: getNullableString(formData, "published_date"),
+    notes: getNullableString(formData, "notes"),
+    thumbnail_url: getNullableString(formData, "thumbnail_url"),
+  };
 
-  redirect("/_manage/login");
+  const { error } = await supabaseAdmin
+    .from("links")
+    .update(payload)
+    .eq("id", linkId)
+    .eq("target_type", "song")
+    .eq("target_id", songId);
+
+  if (error) {
+    throw new Error("関連リンクの更新に失敗しました。");
+  }
+
+  redirect(`/_manage/songs/${songId}/links?saved=1`);
+}
+
+export async function deleteSongLink(linkId: number, songId: number) {
+  const { error } = await supabaseAdmin
+    .from("links")
+    .delete()
+    .eq("id", linkId)
+    .eq("target_type", "song")
+    .eq("target_id", songId);
+
+  if (error) {
+    throw new Error("関連リンクの削除に失敗しました。");
+  }
+
+  redirect(`/_manage/songs/${songId}/links?saved=1`);
 }

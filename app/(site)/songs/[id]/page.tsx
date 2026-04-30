@@ -8,6 +8,18 @@ type PageProps = {
   }>;
 };
 
+type SongLink = {
+  id: number;
+  link_type: string | null;
+  label: string | null;
+  title: string | null;
+  site_name: string | null;
+  url: string | null;
+  published_date: string | null;
+  notes: string | null;
+  thumbnail_url: string | null;
+};
+
 function hasValue(value: string | null | undefined) {
   return Boolean(value && value.trim() && value.trim() !== "-");
 }
@@ -100,7 +112,7 @@ function EmptyBlock() {
   );
 }
 
-function getLinkTypeLabel(type: string | null) {
+function formatLinkType(type: string | null) {
   switch (type) {
     case "mv":
       return "MV";
@@ -120,30 +132,127 @@ function getLinkTypeLabel(type: string | null) {
       return "X";
     case "announcement":
       return "ANNOUNCEMENT";
-    default:
+    case "album":
+      return "ALBUM";
+    case "other":
       return "OTHER";
+    default:
+      return type?.toUpperCase() ?? "LINK";
   }
+}
+
+function formatDate(date: string | null) {
+  if (!date) {
+    return null;
+  }
+
+  return date.replaceAll("-", ".");
+}
+
+function SongLinksSection({ links }: { links: SongLink[] }) {
+  if (links.length === 0) {
+    return (
+      <p className="text-sm leading-7 text-neutral-500">
+        情報がありません。
+      </p>
+    );
+  }
+
+  return (
+    <div className="grid gap-3">
+      {links.map((link) => {
+        const mainTitle = link.label || link.title || link.url || "LINK";
+        const subTitle =
+          link.title && link.title !== mainTitle ? link.title : null;
+        const dateText = formatDate(link.published_date);
+
+        if (!link.url) {
+          return null;
+        }
+
+        return (
+          <a
+            key={link.id}
+            href={link.url}
+            target="_blank"
+            rel="noreferrer"
+            className="group grid gap-2 border border-neutral-300 px-4 py-3 transition hover:border-neutral-900"
+          >
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="border border-neutral-300 px-2 py-1 font-mono text-[10px] tracking-[0.18em] text-neutral-500">
+                {formatLinkType(link.link_type)}
+              </span>
+
+              {link.site_name ? (
+                <span className="font-mono text-[10px] tracking-[0.18em] text-neutral-500">
+                  {link.site_name}
+                </span>
+              ) : null}
+
+              {dateText ? (
+                <span className="font-mono text-[10px] tracking-[0.18em] text-neutral-400">
+                  {dateText}
+                </span>
+              ) : null}
+            </div>
+
+            <div>
+              <p className="text-sm font-medium leading-6 underline-offset-4 group-hover:underline">
+                {mainTitle}
+              </p>
+
+              {subTitle ? (
+                <p className="mt-1 text-xs leading-6 text-neutral-500">
+                  {subTitle}
+                </p>
+              ) : null}
+
+              {link.notes ? (
+                <p className="mt-1 text-xs leading-6 text-neutral-500">
+                  {link.notes}
+                </p>
+              ) : null}
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  );
 }
 
 export default async function SongDetailPage({ params }: PageProps) {
   const { id } = await params;
 
+  const songId = Number(id);
+
+  if (!Number.isInteger(songId)) {
+    notFound();
+  }
+
   const { data: song, error } = await supabase
     .from("songs")
     .select("*")
-    .eq("id", id)
+    .eq("id", songId)
     .single();
 
   if (error || !song) {
     notFound();
   }
 
-  const { data: links } = await supabase
+  const { data: links, error: linksError } = await supabase
     .from("links")
-    .select("*")
+    .select(
+      "id, link_type, label, title, site_name, url, published_date, notes, thumbnail_url"
+    )
     .eq("target_type", "song")
-    .eq("target_id", song.id)
-    .order("published_date", { ascending: true });
+    .eq("target_id", songId)
+    .order("published_date", { ascending: true, nullsFirst: false })
+    .order("id", { ascending: true })
+    .returns<SongLink[]>();
+
+  if (linksError) {
+    throw new Error("関連リンクの取得に失敗しました。");
+  }
 
   const isOriginal = song.song_type === "original";
   const firstDisplay = formatFirstDisplay(song.first_source, song.first_date);
@@ -306,57 +415,7 @@ export default async function SongDetailPage({ params }: PageProps) {
           <h2 className="section-title-ja">関連リンク</h2>
         </div>
 
-        {links && links.length > 0 ? (
-          <div className="border-y border-black/15">
-            {links.map((link) => {
-              const typeLabel = getLinkTypeLabel(link.link_type);
-              const title = link.title || link.label || typeLabel;
-
-              return (
-                <a
-                  key={link.id}
-                  href={link.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group grid gap-3 border-b border-black/10 py-4 last:border-b-0 transition hover:bg-black/[0.03] md:grid-cols-[110px_1fr_70px]"
-                >
-                  <div>
-                    <p className="section-label text-black/45">{typeLabel}</p>
-                    {link.published_date && (
-                      <p className="mt-2 text-xs text-black/35">
-                        {link.published_date}
-                      </p>
-                    )}
-                  </div>
-
-                  <div>
-                    <p className="text-sm font-medium leading-6 text-black group-hover:underline">
-                      {title}
-                    </p>
-
-                    {link.site_name && (
-                      <p className="mt-1 text-xs leading-6 text-black/45">
-                        {link.site_name}
-                      </p>
-                    )}
-
-                    {link.notes && (
-                      <p className="mt-2 text-xs leading-6 text-black/45">
-                        {link.notes}
-                      </p>
-                    )}
-                  </div>
-
-                  <p className="self-start text-left text-xs font-medium tracking-[0.1em] text-black/35 transition group-hover:text-black md:text-right">
-                    OPEN
-                  </p>
-                </a>
-              );
-            })}
-          </div>
-        ) : (
-          <EmptyBlock />
-        )}
+        <SongLinksSection links={links ?? []} />
       </section>
 
       <section className="mt-12 grid gap-8 md:grid-cols-[180px_1fr]">
