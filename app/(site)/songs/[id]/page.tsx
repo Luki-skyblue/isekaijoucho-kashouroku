@@ -150,66 +150,69 @@ function formatDate(date: string | null) {
 }
 
 function SongLinksSection({ links }: { links: SongLink[] }) {
-  if (links.length === 0) {
-    return (
-      <p className="text-sm leading-7 text-neutral-500">
-        情報がありません。
-      </p>
-    );
+  const visibleLinks = links.filter((link) => link.url);
+
+  if (visibleLinks.length === 0) {
+    return <EmptyBlock />;
   }
 
   return (
     <div className="grid gap-3">
-      {links.map((link) => {
+      {visibleLinks.map((link) => {
         const mainTitle = link.label || link.title || link.url || "LINK";
         const subTitle =
           link.title && link.title !== mainTitle ? link.title : null;
         const dateText = formatDate(link.published_date);
-
-        if (!link.url) {
-          return null;
-        }
+        const hasThumbnail = hasValue(link.thumbnail_url);
 
         return (
           <a
             key={link.id}
-            href={link.url}
+            href={link.url ?? ""}
             target="_blank"
             rel="noreferrer"
-            className="group grid gap-2 border border-neutral-300 px-4 py-3 transition hover:border-neutral-900"
+            className={
+              hasThumbnail
+                ? "group grid grid-cols-[88px_minmax(0,1fr)] gap-4 border-y border-black/10 py-3 transition hover:border-black/40 sm:grid-cols-[120px_minmax(0,1fr)]"
+                : "group grid gap-2 border-y border-black/10 py-3 transition hover:border-black/40"
+            }
           >
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="border border-neutral-300 px-2 py-1 font-mono text-[10px] tracking-[0.18em] text-neutral-500">
-                {formatLinkType(link.link_type)}
-              </span>
+            {hasThumbnail ? (
+              <div className="aspect-video overflow-hidden border border-black/10 bg-black/[0.02]">
+                <img
+                  src={link.thumbnail_url ?? ""}
+                  alt=""
+                  className="h-full w-full object-cover transition group-hover:scale-[1.03]"
+                />
+              </div>
+            ) : null}
 
-              {link.site_name ? (
-                <span className="font-mono text-[10px] tracking-[0.18em] text-neutral-500">
-                  {link.site_name}
+            <div className="min-w-0">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="border border-black/20 px-2 py-1 font-mono text-[10px] tracking-[0.18em] text-black/45">
+                  {formatLinkType(link.link_type)}
                 </span>
-              ) : null}
 
-              {dateText ? (
-                <span className="font-mono text-[10px] tracking-[0.18em] text-neutral-400">
-                  {dateText}
-                </span>
-              ) : null}
-            </div>
+                {link.site_name ? (
+                  <span className="font-mono text-[10px] tracking-[0.18em] text-black/40">
+                    {link.site_name}
+                  </span>
+                ) : null}
 
-            <div>
-              <p className="text-sm font-medium leading-6 underline-offset-4 group-hover:underline">
+                {dateText ? (
+                  <span className="font-mono text-[10px] tracking-[0.18em] text-black/35">
+                    {dateText}
+                  </span>
+                ) : null}
+              </div>
+
+              <p className="mt-2 break-words text-sm font-medium leading-6 text-black/80 underline-offset-4 group-hover:underline">
                 {mainTitle}
               </p>
 
               {subTitle ? (
-                <p className="mt-1 text-xs leading-6 text-neutral-500">
+                <p className="mt-1 line-clamp-2 break-words text-xs leading-5 text-black/45">
                   {subTitle}
-                </p>
-              ) : null}
-
-              {link.notes ? (
-                <p className="mt-1 text-xs leading-6 text-neutral-500">
-                  {link.notes}
                 </p>
               ) : null}
             </div>
