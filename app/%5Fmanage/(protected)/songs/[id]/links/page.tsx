@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import {
   createSongLink,
   deleteSongLink,
+  fetchSongLinkMetadata,
   updateSongLink,
 } from "@/app/%5Fmanage/actions";
 import { supabaseAdmin } from "@/lib/supabase/admin";
@@ -319,6 +320,12 @@ export default async function ManageSongLinksPage({
                 const updateAction = updateSongLink.bind(null, link.id, songId);
                 const deleteAction = deleteSongLink.bind(null, link.id, songId);
 
+                const fetchMetadataAction = fetchSongLinkMetadata.bind(
+                null,
+                link.id,
+                songId
+                );
+
                 return (
                   <article
                     key={link.id}
@@ -344,14 +351,25 @@ export default async function ManageSongLinksPage({
                         ) : null}
                       </div>
 
-                      <form action={deleteAction}>
-                        <button
-                          type="submit"
-                          className="border border-red-300 px-3 py-2 text-xs tracking-[0.18em] text-red-700 hover:border-red-700"
-                        >
-                          DELETE
-                        </button>
-                      </form>
+                        <div className="flex flex-wrap gap-2">
+                        <form action={fetchMetadataAction}>
+                            <button
+                            type="submit"
+                            className="border border-neutral-300 px-3 py-2 text-xs tracking-[0.18em] text-neutral-600 hover:border-neutral-900 hover:text-neutral-900"
+                            >
+                            FETCH METADATA
+                            </button>
+                        </form>
+
+                        <form action={deleteAction}>
+                            <button
+                            type="submit"
+                            className="border border-red-300 px-3 py-2 text-xs tracking-[0.18em] text-red-700 hover:border-red-700"
+                            >
+                            DELETE
+                            </button>
+                        </form>
+                        </div>
                     </div>
 
                     <form action={updateAction} className="grid gap-5">

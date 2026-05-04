@@ -135,6 +135,146 @@ export async function updateSongLink(
   redirect(`/_manage/songs/${songId}/links?saved=1`);
 }
 
+function decodeHtmlEntities(value: string) {
+  return value
+    .replaceAll("&amp;", "&")
+    .replaceAll("&lt;", "<")
+    .replaceAll("&gt;", ">")
+    .replaceAll("&quot;", '"')
+    .replaceAll("&#39;", "'")
+    .replaceAll("&apos;", "'")
+    .trim();
+}
+
+function getAttribute(tag: string, attributeName: string) {
+  const regex = new RegExp(`${attributeName}=["']([^"']*)["']`, "i");
+  const match = tag.match(regex);
+
+  return match ? decodeHtmlEntities(match[1]) : null;
+}
+
+function findMetaContent(html: string, names: string[]) {
+  const metaTags = html.match(/<meta\s+[^>]*>/gi) ?? [];
+
+  for (const tag of metaTags) {
+    const property = getAttribute(tag, "property");
+    const name = getAttribute(tag, "name");
+    const content = getAttribute(tag, "content");
+
+    if (!content) {
+      continue;
+    }
+
+    const key = property || name;
+
+    if (key && names.includes(key.toLowerCase())) {
+      return content;
+    }
+  }
+
+  return null;
+}
+
+function findTitleTag(html: string) {
+  const match = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+
+  return match ? decodeHtmlEntities(match[1].replace(/\s+/g, " ")) : null;
+}
+
+function makeAbsoluteUrl(value: string | null, baseUrl: string) {
+  if (!value) {
+    return null;
+  }
+
+  try {
+    return new URL(value, baseUrl).toString();
+  } catch {
+    return null;
+  }
+}
+
+function getHostname(url: string) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return null;
+  }
+}
+
+async function fetchPageMetadata(url: string) {
+  const parsedUrl = new URL(url);
+
+  if (!["http:", "https:"].includes(parsedUrl.protocol)) {
+    throw new Error("http/https のURLのみ取得できます。");
+  }
+
+  const response = await fetch(url, {
+    headers: {
+      "user-agent":
+        "Mozilla/5.0 (compatible; KashourokuMetadataFetcher/1.0)",
+      accept: "text/html,application/xhtml+xml",
+    },
+    signal: AbortSignal.timeout(10000),
+  });
+
+  if (!response.ok) {
+    throw new Error("リンク先の取得に失敗しました。");
+  }
+
+  const html = await response.text();
+
+  const title =
+    findMetaContent(html, ["og:title", "twitter:title"]) ||
+    findTitleTag(html);
+
+  const siteName =
+    findMetaContent(html, ["og:site_name", "application-name"]) ||
+    getHostname(url);
+
+  const image =
+    findMetaContent(html, ["og:image", "twitter:image", "twitter:image:src"]);
+
+  return {
+    title,
+    site_name: siteName,
+    thumbnail_url: makeAbsoluteUrl(image, url),
+  };
+}
+
+export async function fetchSongLinkMetadata(linkId: number, songId: number) {
+  const { data: link, error: fetchLinkError } = await supabaseAdmin
+    .from("links")
+    .select("id, url")
+    .eq("id", linkId)
+    .eq("target_type", "song")
+    .eq("target_id", songId)
+    .single();
+
+  if (fetchLinkError || !link?.url) {
+    throw new Error("関連リンクのURL取得に失敗しました。");
+  }
+
+  const metadata = await fetchPageMetadata(link.url);
+
+  const { error: updateError } = await supabaseAdmin
+    .from("links")
+    .update({
+      title: metadata.title,
+      site_name: metadata.site_name,
+      thumbnail_url: metadata.thumbnail_url,
+      fetched_at: new Date().toISOString(),
+    })
+    .eq("id", linkId)
+    .eq("target_type", "song")
+    .eq("target_id", songId);
+
+  if (updateError) {
+    throw new Error("メタ情報の保存に失敗しました。");
+  }
+
+  redirect(`/_manage/songs/${songId}/links?saved=1`);
+}
+
 export async function deleteSongLink(linkId: number, songId: number) {
   const { error } = await supabaseAdmin
     .from("links")
