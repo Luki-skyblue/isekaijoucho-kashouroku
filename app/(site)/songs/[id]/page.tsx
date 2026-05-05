@@ -173,6 +173,34 @@ function formatDate(date: string | null) {
   return date.replaceAll("-", ".");
 }
 
+function getLinkTypePriority(type: string | null) {
+  switch (type) {
+    case "mv":
+      return 0;
+    case "lyric_mv":
+      return 1;
+    case "live_mv":
+      return 2;
+    default:
+      return 99;
+  }
+}
+
+function getFallbackHeroImageUrl(links: SongLink[]) {
+  const candidate = links
+    .filter((link) => {
+      return (
+        link.thumbnail_url &&
+        ["mv", "lyric_mv", "live_mv"].includes(link.link_type ?? "")
+      );
+    })
+    .sort((a, b) => {
+      return getLinkTypePriority(a.link_type) - getLinkTypePriority(b.link_type);
+    })[0];
+
+  return candidate?.thumbnail_url ?? null;
+}
+
 function SongLinksSection({ links }: { links: SongLink[] }) {
   const visibleLinks = links.filter((link) => link.url);
 
@@ -287,6 +315,10 @@ export default async function SongDetailPage({ params }: PageProps) {
     song.first_full_source,
     song.first_full_date
   );
+  const fallbackHeroImageUrl = getFallbackHeroImageUrl(links ?? []);
+  const heroImageUrl = hasValue(song.hero_image_url)
+    ? song.hero_image_url
+    : fallbackHeroImageUrl;
 
   return (
     <main className="mx-auto max-w-6xl px-6 py-12">
@@ -310,20 +342,20 @@ export default async function SongDetailPage({ params }: PageProps) {
       
       <section className="grid grid-cols-[6.5rem_minmax(0,1fr)] gap-5 border-b border-black/15 pb-10 sm:grid-cols-[9rem_minmax(0,1fr)] md:grid-cols-[220px_minmax(0,1fr)] md:gap-8">
         <div className="w-full self-start overflow-hidden border border-black/15 bg-black/[0.02]">
-          {hasValue(song.hero_image_url) ? (
-            <img
-              src={song.hero_image_url}
-              alt=""
-              className="aspect-square w-full object-cover"
-            />
-          ) : (
-            <div className="aspect-square w-full p-3 sm:p-5">
-              <p className="section-label text-black/35">IMAGE</p>
-              <p className="mt-2 text-xs leading-5 text-black/35 sm:text-sm">
-                情報がありません。
-              </p>
-            </div>
-          )}
+        {hasValue(heroImageUrl) ? (
+          <img
+            src={heroImageUrl}
+            alt=""
+            className="aspect-square w-full object-cover"
+          />
+        ) : (
+          <div className="aspect-square w-full p-3 sm:p-5">
+            <p className="section-label text-black/35">IMAGE</p>
+            <p className="mt-2 text-xs leading-5 text-black/35 sm:text-sm">
+              情報がありません。
+            </p>
+          </div>
+        )}
         </div>
 
         <div className="min-w-0 self-center md:self-start">

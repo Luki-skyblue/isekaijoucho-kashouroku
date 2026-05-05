@@ -21,6 +21,10 @@ type Song = {
   id: number;
   title: string | null;
   artist_credit: string | null;
+  first_date: string | null;
+  first_source: string | null;
+  first_full_date: string | null;
+  first_full_source: string | null;
 };
 
 type SongLink = {
@@ -187,6 +191,69 @@ function LinkFields({
   );
 }
 
+function formatReferenceDate(date: string | null) {
+  if (!date) {
+    return "----.--.--";
+  }
+
+  return date.replaceAll("-", ".");
+}
+
+function ReleaseReferenceRow({
+  label,
+  date,
+  source,
+}: {
+  label: string;
+  date: string | null;
+  source: string | null;
+}) {
+  const hasDate = Boolean(date);
+  const hasSource = Boolean(source && source.trim() && source.trim() !== "-");
+
+  return (
+    <div className="grid gap-1 border-b border-black/10 py-2 md:grid-cols-[120px_120px_1fr] md:gap-4">
+      <p className="font-mono text-[10px] tracking-[0.2em] text-black/40">
+        {label}
+      </p>
+      <p className="text-xs tabular-nums text-black/55">
+        {hasDate ? formatReferenceDate(date) : "日付なし"}
+      </p>
+      <p className="min-w-0 text-xs leading-5 text-black/55">
+        {hasSource ? source : "初出情報なし"}
+      </p>
+    </div>
+  );
+}
+
+function ReleaseReference({ song }: { song: Song }) {
+  return (
+    <section className="grid gap-3 border border-black/15 p-4">
+      <div>
+        <p className="font-mono text-xs tracking-[0.28em] text-neutral-500">
+          RELEASE REFERENCE
+        </p>
+        <p className="mt-1 text-xs leading-5 text-black/45">
+          関連リンクの投稿日を入力するときの参照用です。
+        </p>
+      </div>
+
+      <div>
+        <ReleaseReferenceRow
+          label="FIRST"
+          date={song.first_date}
+          source={song.first_source}
+        />
+        <ReleaseReferenceRow
+          label="FIRST FULL"
+          date={song.first_full_date}
+          source={song.first_full_source}
+        />
+      </div>
+    </section>
+  );
+}
+
 export default async function ManageSongLinksPage({
   params,
   searchParams,
@@ -201,7 +268,9 @@ export default async function ManageSongLinksPage({
 
   const { data: song, error: songError } = await supabaseAdmin
     .from("songs")
-    .select("id, title, artist_credit")
+    .select(
+    "id, title, artist_credit, first_date, first_source, first_full_date, first_full_source"
+    )
     .eq("id", songId)
     .single<Song>();
 
@@ -277,6 +346,8 @@ export default async function ManageSongLinksPage({
             </p>
           ) : null}
         </header>
+
+        <ReleaseReference song={song} />
 
         <section className="grid gap-4 border border-neutral-300 p-5">
           <div>
