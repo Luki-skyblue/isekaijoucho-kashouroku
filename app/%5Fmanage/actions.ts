@@ -267,6 +267,12 @@ async function fetchPageMetadata(url: string) {
     throw new Error("http/https のURLのみ取得できます。");
   }
 
+  const youtubeMetadata = await fetchYouTubeMetadata(url);
+
+  if (youtubeMetadata) {
+    return youtubeMetadata;
+  }
+
   const response = await fetch(url, {
     headers: {
       "user-agent":
@@ -298,6 +304,99 @@ async function fetchPageMetadata(url: string) {
     site_name: siteName,
     thumbnail_url: makeAbsoluteUrl(image, url),
   };
+}
+
+function getYouTubeVideoId(url: string) {
+  try {
+    const parsedUrl = new URL(url);
+    const hostname = parsedUrl.hostname.replace(/^www\./, "");
+
+    if (
+      hostname === "youtube.com" ||
+      hostname === "m.youtube.com" ||
+      hostname === "music.youtube.com"
+    ) {
+      if (parsedUrl.pathname === "/watch") {
+        return parsedUrl.searchParams.get("v");
+      }
+
+      if (parsedUrl.pathname.startsWith("/shorts/")) {
+        return parsedUrl.pathname.split("/")[2] || null;
+      }
+
+      if (parsedUrl.pathname.startsWith("/embed/")) {
+        return parsedUrl.pathname.split("/")[2] || null;
+      }
+    }
+
+    if (hostname === "youtu.be") {
+      return parsedUrl.pathname.split("/")[1] || null;
+    }
+
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+function getYouTubeWatchUrl(videoId: string) {
+  return `https://www.youtube.com/watch?v=${videoId}`;
+}
+
+function getYouTubeFallbackThumbnailUrl(videoId: string) {
+  return `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+}
+
+async function fetchYouTubeMetadata(url: string) {
+  const videoId = getYouTubeVideoId(url);
+
+  if (!videoId) {
+    return null;
+  }
+
+  const watchUrl = getYouTubeWatchUrl(videoId);
+  const oembedUrl = new URL("https://www.youtube.com/oembed");
+
+  oembedUrl.searchParams.set("url", watchUrl);
+  oembedUrl.searchParams.set("format", "json");
+
+  try {
+    const response = await fetch(oembedUrl.toString(), {
+      headers: {
+        accept: "application/json",
+        "user-agent":
+          "Mozilla/5.0 (compatible; KashourokuMetadataFetcher/1.0)",
+      },
+      signal: AbortSignal.timeout(10000),
+    });
+
+    if (!response.ok) {
+      return {
+        title: null,
+        site_name: "YouTube",
+        thumbnail_url: getYouTubeFallbackThumbnailUrl(videoId),
+      };
+    }
+
+    const data = (await response.json()) as {
+      title?: string;
+      provider_name?: string;
+      thumbnail_url?: string;
+    };
+
+    return {
+      title: data.title?.trim() || null,
+      site_name: data.provider_name?.trim() || "YouTube",
+      thumbnail_url:
+        data.thumbnail_url?.trim() || getYouTubeFallbackThumbnailUrl(videoId),
+    };
+  } catch {
+    return {
+      title: null,
+      site_name: "YouTube",
+      thumbnail_url: getYouTubeFallbackThumbnailUrl(videoId),
+    };
+  }
 }
 
 export async function fetchSongLinkMetadata(linkId: number, songId: number) {
