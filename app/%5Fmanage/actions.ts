@@ -64,6 +64,22 @@ export async function updateSong(songId: number, formData: FormData) {
     notes: getNullableString(formData, "notes"),
     verification_status: getNullableString(formData, "verification_status"),
     verification_note: getNullableString(formData, "verification_note"),
+    first_status: getNullableString(formData, "first_status") ?? "confirmed",
+    first_full_status:
+      getNullableString(formData, "first_full_status") ?? "confirmed",
+    tie_up_status: getNullableString(formData, "tie_up_status") ?? "confirmed",
+    album_text_status:
+      getNullableString(formData, "album_text_status") ?? "confirmed",
+    original_artist_status:
+      getNullableString(formData, "original_artist_status") ?? "confirmed",
+    original_vocal_status:
+      getNullableString(formData, "original_vocal_status") ?? "confirmed",
+    original_lyricist_status:
+      getNullableString(formData, "original_lyricist_status") ?? "confirmed",
+    original_composer_status:
+      getNullableString(formData, "original_composer_status") ?? "confirmed",
+    original_arranger_status:
+      getNullableString(formData, "original_arranger_status") ?? "confirmed",
   };
 
   if (!payload.title) {

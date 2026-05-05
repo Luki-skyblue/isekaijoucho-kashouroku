@@ -50,41 +50,54 @@ function formatFirstDisplay(
   return null;
 }
 
-function StatusLabel({ status }: { status: string | null }) {
+function FieldStatusNote({
+  status,
+}: {
+  status: string | null | undefined;
+}) {
   if (!status || status === "confirmed") {
     return null;
   }
 
-  const label =
-    status === "uncertain"
-      ? "不確定"
-      : status === "unverified"
-        ? "未確認"
-        : status === "wanted"
-          ? "情報募集中"
-          : "要確認";
+  const message =
+    status === "wanted"
+      ? "この項目について、より正確な情報を探しています。"
+      : "この項目は確認中です。";
 
   return (
-    <span className="inline-flex border border-black/25 px-3 py-1 text-xs font-medium tracking-[0.08em] text-black/60">
-      {label}
-    </span>
+    <p className="mt-1 text-xs leading-5 text-black/35">
+      {message}
+    </p>
   );
 }
 
 function DetailRow({
   label,
   value,
+  status,
 }: {
   label: string;
   value: string | null | undefined;
+  status?: string | null | undefined;
 }) {
+  const needsAttention = status && status !== "confirmed";
+
   return (
     <div className="grid border-b border-black/10 py-2.5 md:grid-cols-[150px_1fr] md:gap-4">
       <dt className="text-[11px] font-medium tracking-[0.12em] text-black/40">
         {label}
       </dt>
-      <dd className="mt-1 whitespace-pre-wrap text-sm leading-6 text-black/80 md:mt-0">
-        {hasValue(value) ? value : <EmptyText />}
+      <dd className="mt-1 text-sm leading-6 text-black/80 md:mt-0">
+        <span
+          className={
+            needsAttention
+              ? "whitespace-pre-wrap underline decoration-black/25 decoration-dotted underline-offset-4"
+              : "whitespace-pre-wrap"
+          }
+        >
+          {hasValue(value) ? value : <EmptyText />}
+        </span>
+        <FieldStatusNote status={status} />
       </dd>
     </div>
   );
@@ -92,14 +105,25 @@ function DetailRow({
 
 function CompactTextBlock({
   value,
+  status,
 }: {
   value: string | null | undefined;
+  status?: string | null | undefined;
 }) {
+  const needsAttention = status && status !== "confirmed";
+
   return (
     <div className="border-y border-black/10 py-3">
-      <p className="whitespace-pre-wrap text-sm leading-6 text-black/80">
+      <p
+        className={
+          needsAttention
+            ? "whitespace-pre-wrap text-sm leading-6 text-black/80 underline decoration-black/25 decoration-dotted underline-offset-4"
+            : "whitespace-pre-wrap text-sm leading-6 text-black/80"
+        }
+      >
         {hasValue(value) ? value : <EmptyText />}
       </p>
+      <FieldStatusNote status={status} />
     </div>
   );
 }
@@ -274,23 +298,13 @@ export default async function SongDetailPage({ params }: PageProps) {
           BACK TO SONGS
         </Link>
 
-        <div className="flex flex-col gap-3 md:items-end">
-          <div className="flex flex-wrap items-center gap-2">
-            <StatusLabel status={song.verification_status} />
-
-            <Link
-              href={`/songs/${song.id}/submit`}
-              className="border border-black/25 px-3 py-1.5 text-xs font-medium tracking-[0.12em] text-black/60 transition hover:border-black hover:bg-black hover:text-[#f5f5f2]"
-            >
-              SUBMIT INFO
-            </Link>
-          </div>
-
-          {song.verification_note && (
-            <p className="max-w-xl whitespace-pre-wrap text-xs leading-6 text-black/50 md:text-right">
-              {song.verification_note}
-            </p>
-          )}
+        <div className="flex flex-wrap items-center gap-2">
+          <Link
+            href={`/songs/${song.id}/submit`}
+            className="border border-black/25 px-3 py-1.5 text-xs font-medium tracking-[0.12em] text-black/60 transition hover:border-black hover:bg-black hover:text-[#f5f5f2]"
+          >
+            SUBMIT INFO
+          </Link>
         </div>
       </div>
       
@@ -346,26 +360,53 @@ export default async function SongDetailPage({ params }: PageProps) {
         <dl>
           {isOriginal ? (
             <>
-              <DetailRow label="VOCAL" value={song.original_vocal} />
-              <DetailRow label="LYRICIST" value={song.original_lyricist} />
-              <DetailRow label="COMPOSER" value={song.original_composer} />
-              <DetailRow label="ARRANGER" value={song.original_arranger} />
+              <DetailRow
+                label="VOCAL"
+                value={song.original_vocal}
+                status={song.original_vocal_status}
+              />
+              <DetailRow
+                label="LYRICIST"
+                value={song.original_lyricist}
+                status={song.original_lyricist_status}
+              />
+              <DetailRow
+                label="COMPOSER"
+                value={song.original_composer}
+                status={song.original_composer_status}
+              />
+              <DetailRow
+                label="ARRANGER"
+                value={song.original_arranger}
+                status={song.original_arranger_status}
+              />
             </>
           ) : (
             <>
-              <DetailRow label="ORIGINAL ARTIST" value={song.original_artist} />
-              <DetailRow label="ORIGINAL VOCAL" value={song.original_vocal} />
+              <DetailRow
+                label="ORIGINAL ARTIST"
+                value={song.original_artist}
+                status={song.original_artist_status}
+              />
+              <DetailRow
+                label="ORIGINAL VOCAL"
+                value={song.original_vocal}
+                status={song.original_vocal_status}
+              />
               <DetailRow
                 label="ORIGINAL LYRICIST"
                 value={song.original_lyricist}
+                status={song.original_lyricist_status}
               />
               <DetailRow
                 label="ORIGINAL COMPOSER"
                 value={song.original_composer}
+                status={song.original_composer_status}
               />
               <DetailRow
                 label="ORIGINAL ARRANGER"
                 value={song.original_arranger}
+                status={song.original_arranger_status}
               />
             </>
           )}
@@ -379,9 +420,21 @@ export default async function SongDetailPage({ params }: PageProps) {
         </div>
 
         <dl>
-          <DetailRow label="FIRST" value={firstDisplay} />
-          <DetailRow label="FIRST FULL" value={firstFullDisplay} />
-          <DetailRow label="TIE-UP" value={song.tie_up} />
+          <DetailRow
+            label="FIRST"
+            value={firstDisplay}
+            status={song.first_status}
+          />
+          <DetailRow
+            label="FIRST FULL"
+            value={firstFullDisplay}
+            status={song.first_full_status}
+          />
+          <DetailRow
+            label="TIE-UP"
+            value={song.tie_up}
+            status={song.tie_up_status}
+          />
         </dl>
       </section>
 
@@ -391,7 +444,10 @@ export default async function SongDetailPage({ params }: PageProps) {
           <h2 className="section-title-ja">収録情報</h2>
         </div>
 
-        <CompactTextBlock value={song.album_text} />
+        <CompactTextBlock
+          value={song.album_text}
+          status={song.album_text_status}
+        />
       </section>
 
       <section className="mt-12 grid gap-8 md:grid-cols-[180px_1fr]">

@@ -13,6 +13,15 @@ type Song = {
   artist_credit: string | null;
   song_type: string | null;
   verification_status: string | null;
+  first_status: string | null;
+  first_full_status: string | null;
+  tie_up_status: string | null;
+  album_text_status: string | null;
+  original_artist_status: string | null;
+  original_vocal_status: string | null;
+  original_lyricist_status: string | null;
+  original_composer_status: string | null;
+  original_arranger_status: string | null;
 };
 
 type SongsListProps = {
@@ -136,6 +145,30 @@ function getTitleSortKey(song: Song) {
     group: 2,
     value: raw,
   };
+}
+
+const FIELD_STATUS_KEYS = [
+  "first_status",
+  "first_full_status",
+  "tie_up_status",
+  "album_text_status",
+  "original_artist_status",
+  "original_vocal_status",
+  "original_lyricist_status",
+  "original_composer_status",
+  "original_arranger_status",
+] as const;
+
+function isAttentionStatus(status: string | null | undefined) {
+  return Boolean(status && status !== "confirmed");
+}
+
+function hasAttentionStatus(song: Song) {
+  if (isAttentionStatus(song.verification_status)) {
+    return true;
+  }
+
+  return FIELD_STATUS_KEYS.some((key) => isAttentionStatus(song[key]));
 }
 
 export default function SongsList({ songs }: SongsListProps) {
@@ -608,35 +641,38 @@ export default function SongsList({ songs }: SongsListProps) {
 
               <div
                 className="min-w-0 truncate text-sm font-medium tracking-[0.01em] text-black md:hidden"
-                title={`${song.title}${song.artist_credit ? ` / ${song.artist_credit}` : ""}`}
+                title={`${hasAttentionStatus(song) ? "確認中の項目があります / " : ""}${song.title}${
+                  song.artist_credit ? ` / ${song.artist_credit}` : ""
+                }`}
               >
+                {hasAttentionStatus(song) ? (
+                  <span className="mr-1.5 text-[11px] font-normal text-black/35">
+                    ?
+                  </span>
+                ) : null}
+
                 {song.title}
+
                 {song.artist_credit && (
                   <span className="text-xs font-normal text-black/45">
                     {" "}
                     / {song.artist_credit}
                   </span>
                 )}
-                {song.verification_status &&
-                  song.verification_status !== "confirmed" && (
-                    <span className="ml-2 text-[10px] font-normal text-black/45">
-                      要確認
-                    </span>
-                  )}
               </div>
 
               <div className="hidden min-w-0 md:block">
-                <div className="flex min-w-0 items-baseline gap-2">
+                <div
+                  className="flex min-w-0 items-baseline gap-1.5"
+                  title={hasAttentionStatus(song) ? "確認中の項目があります" : undefined}
+                >
+                  {hasAttentionStatus(song) ? (
+                    <span className="shrink-0 text-[11px] text-black/35">?</span>
+                  ) : null}
+
                   <p className="truncate text-sm font-medium tracking-[0.01em] text-black">
                     {song.title}
                   </p>
-
-                  {song.verification_status &&
-                    song.verification_status !== "confirmed" && (
-                      <span className="shrink-0 border border-black/20 px-1.5 py-0.5 text-[10px] tracking-[0.06em] text-black/50">
-                        要確認
-                      </span>
-                    )}
                 </div>
               </div>
 

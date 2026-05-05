@@ -60,6 +60,32 @@ function TextArea({
   );
 }
 
+function FieldStatusSelect({
+  name,
+  label = "STATUS",
+  defaultValue,
+}: {
+  name: string;
+  label?: string;
+  defaultValue?: string | null;
+}) {
+  return (
+    <label className="grid gap-1 text-xs tracking-[0.18em] text-neutral-500">
+      {label}
+      <select
+        name={name}
+        defaultValue={defaultValue ?? "confirmed"}
+        className="border border-neutral-300 bg-[#f5f5f2] px-3 py-2 text-sm tracking-normal text-neutral-900 outline-none focus:border-neutral-900"
+      >
+        <option value="confirmed">confirmed / 確認済み</option>
+        <option value="uncertain">uncertain / 不確定</option>
+        <option value="unverified">unverified / 未確認</option>
+        <option value="wanted">wanted / 情報募集中</option>
+      </select>
+    </label>
+  );
+}
+
 export default async function ManageSongEditPage({
   params,
   searchParams,
@@ -175,6 +201,10 @@ export default async function ManageSongEditPage({
               label="FIRST SOURCE"
               defaultValue={song.first_source}
             />
+            <FieldStatusSelect
+            name="first_status"
+            defaultValue={song.first_status}
+            />
             <TextInput
               name="first_full_date"
               label="FIRST FULL DATE"
@@ -186,6 +216,10 @@ export default async function ManageSongEditPage({
               label="FIRST FULL SOURCE"
               defaultValue={song.first_full_source}
             />
+            <FieldStatusSelect
+              name="first_full_status"
+              defaultValue={song.first_full_status}
+            />
           </div>
 
           <div className="mt-5">
@@ -196,6 +230,10 @@ export default async function ManageSongEditPage({
               rows={3}
             />
           </div>
+          <FieldStatusSelect
+            name="tie_up_status"
+            defaultValue={song.tie_up_status}
+            />
         </section>
 
         <section>
@@ -227,6 +265,30 @@ export default async function ManageSongEditPage({
               label="ORIGINAL ARRANGER"
               defaultValue={song.original_arranger}
             />
+            <FieldStatusSelect
+            name="original_artist_status"
+            defaultValue={song.original_artist_status}
+            />
+
+            <FieldStatusSelect
+            name="original_vocal_status"
+            defaultValue={song.original_vocal_status}
+            />
+
+            <FieldStatusSelect
+            name="original_lyricist_status"
+            defaultValue={song.original_lyricist_status}
+            />
+
+            <FieldStatusSelect
+            name="original_composer_status"
+            defaultValue={song.original_composer_status}
+            />
+
+            <FieldStatusSelect
+            name="original_arranger_status"
+            defaultValue={song.original_arranger_status}
+            />
           </div>
         </section>
 
@@ -239,6 +301,10 @@ export default async function ManageSongEditPage({
               label="ALBUM TEXT"
               defaultValue={song.album_text}
               rows={4}
+            />
+            <FieldStatusSelect
+                name="album_text_status"
+                defaultValue={song.album_text_status}
             />
             <TextArea
               name="notes"
