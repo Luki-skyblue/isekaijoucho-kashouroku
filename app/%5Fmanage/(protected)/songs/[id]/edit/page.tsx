@@ -86,6 +86,30 @@ function FieldStatusSelect({
   );
 }
 
+function VerificationStatusSelect({
+  defaultValue,
+}: {
+  defaultValue?: string | null;
+}) {
+  return (
+    <label className="block">
+      <span className="section-label text-black/45">
+        VERIFICATION STATUS
+      </span>
+      <select
+        name="verification_status"
+        defaultValue={defaultValue ?? "confirmed"}
+        className="mt-2 w-full border border-black/20 bg-transparent px-3 py-2 text-sm text-black outline-none transition focus:border-black"
+      >
+        <option value="confirmed">confirmed / 確認済み</option>
+        <option value="uncertain">uncertain / 不確定</option>
+        <option value="unverified">unverified / 未確認</option>
+        <option value="wanted">wanted / 情報募集中</option>
+      </select>
+    </label>
+  );
+}
+
 export default async function ManageSongEditPage({
   params,
   searchParams,
@@ -355,11 +379,7 @@ export default async function ManageSongEditPage({
         <p className="section-label text-black/45">VERIFICATION</p>
 
         <div className="mt-4 grid gap-5 md:grid-cols-2">
-            <TextInput
-            name="verification_status"
-            label="VERIFICATION STATUS"
-            defaultValue={song.verification_status}
-            />
+            <VerificationStatusSelect defaultValue={song.verification_status} />
             <TextArea
             name="verification_note"
             label="VERIFICATION NOTE"

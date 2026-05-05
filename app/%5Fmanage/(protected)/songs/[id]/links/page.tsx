@@ -42,6 +42,7 @@ type SongLink = {
 
 const LINK_TYPE_OPTIONS = [
   "mv",
+  "trailer",
   "lyric_mv",
   "live_mv",
   "original",

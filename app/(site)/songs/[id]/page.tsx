@@ -140,6 +140,8 @@ function formatLinkType(type: string | null) {
   switch (type) {
     case "mv":
       return "MV";
+    case "trailer":
+      return "TRAILER";
     case "lyric_mv":
       return "LYRIC MV";
     case "live_mv":
@@ -181,6 +183,8 @@ function getLinkTypePriority(type: string | null) {
       return 1;
     case "live_mv":
       return 2;
+    case "trailer":
+      return 3;
     default:
       return 99;
   }
@@ -191,7 +195,7 @@ function getFallbackHeroImageUrl(links: SongLink[]) {
     .filter((link) => {
       return (
         link.thumbnail_url &&
-        ["mv", "lyric_mv", "live_mv"].includes(link.link_type ?? "")
+        ["mv", "lyric_mv", "live_mv", "trailer"].includes(link.link_type ?? "")
       );
     })
     .sort((a, b) => {
