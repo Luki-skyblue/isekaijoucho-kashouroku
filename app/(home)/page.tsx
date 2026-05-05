@@ -3,6 +3,43 @@ import { supabase } from "@/lib/supabase/client";
 
 export const dynamic = "force-dynamic";
 
+const FIELD_STATUS_KEYS = [
+  "first_status",
+  "first_full_status",
+  "tie_up_status",
+  "album_text_status",
+  "original_artist_status",
+  "original_vocal_status",
+  "original_lyricist_status",
+  "original_composer_status",
+  "original_arranger_status",
+] as const;
+
+type LatestSong = {
+  verification_status: string | null;
+  first_status: string | null;
+  first_full_status: string | null;
+  tie_up_status: string | null;
+  album_text_status: string | null;
+  original_artist_status: string | null;
+  original_vocal_status: string | null;
+  original_lyricist_status: string | null;
+  original_composer_status: string | null;
+  original_arranger_status: string | null;
+};
+
+function isAttentionStatus(status: string | null | undefined) {
+  return Boolean(status && status !== "confirmed");
+}
+
+function hasAttentionStatus(song: LatestSong) {
+  if (isAttentionStatus(song.verification_status)) {
+    return true;
+  }
+
+  return FIELD_STATUS_KEYS.some((key) => isAttentionStatus(song[key]));
+}
+
 export default async function HomePage() {
   const { count } = await supabase
     .from("songs")
@@ -10,7 +47,9 @@ export default async function HomePage() {
 
   const { data: latestSongs } = await supabase
     .from("songs")
-    .select("id,title,first_date,first_source,song_type")
+    .select(
+      "id,title,first_date,first_source,artist_credit,song_type,verification_status,first_status,first_full_status,tie_up_status,album_text_status,original_artist_status,original_vocal_status,original_lyricist_status,original_composer_status,original_arranger_status"
+    )
     .order("first_date", { ascending: false })
     .limit(5);
 
@@ -105,9 +144,28 @@ export default async function HomePage() {
                 {song.first_date ?? "----.--.--"}
               </time>
 
-              <div>
-                <p className="text-sm font-medium text-black">{song.title}</p>
-                <p className="mt-1 text-xs text-black/45">
+              <div className="min-w-0">
+                <p
+                  className="truncate text-sm font-medium text-black"
+                  title={
+                    hasAttentionStatus(song)
+                      ? `確認中の項目があります / ${song.title}`
+                      : song.title
+                  }
+                >
+                  {hasAttentionStatus(song) ? (
+                    <span
+                      className="mr-1.5 font-mono text-[11px] font-normal text-black/40"
+                      aria-label="確認中の項目があります"
+                    >
+                      ?
+                    </span>
+                  ) : null}
+                  {song.title}
+                </p>
+
+                <p className="mt-1 truncate text-xs text-black/45">
+                  {song.artist_credit ? `${song.artist_credit} / ` : ""}
                   {song.first_source ?? "-"}
                 </p>
               </div>
@@ -129,17 +187,27 @@ export default async function HomePage() {
       <section className="grid border-b border-black/15 py-8 md:grid-cols-[220px_1fr]">
         <div className="section-head">
           <p className="section-label text-black/45">STATUS</p>
-          <h2 className="section-title-ja">整備予定</h2>
+          <h2 className="section-title-ja">整備状況</h2>
         </div>
 
-        <div className="border border-black/15 p-5">
-          <p className="link-label text-black">今後追加・調整したい項目</p>
-          <ul className="mt-3 space-y-2 text-sm leading-6 text-black/60">
-            <li>関連リンクの拡充</li>
-            <li>ライブ・セトリ情報</li>
-            <li>原曲情報・名義情報の整理</li>
-            <li>スマートフォン表示の調整</li>
-          </ul>
+        <div className="space-y-5">
+          <div className="border border-black/15 p-5">
+            <p className="link-label text-black">現在整備している項目</p>
+            <ul className="mt-3 space-y-2 text-sm leading-6 text-black/60">
+              <li>関連リンク・サムネイル情報の追加</li>
+              <li>初出・原曲情報・制作クレジットの確認</li>
+              <li>不確定な項目の整理と情報提供の反映</li>
+            </ul>
+          </div>
+
+          <div className="border border-black/15 p-5">
+            <p className="link-label text-black">今後追加・調整したい項目</p>
+            <ul className="mt-3 space-y-2 text-sm leading-6 text-black/60">
+              <li>ライブ・セトリ情報</li>
+              <li>関連バージョン同士の導線</li>
+              <li>スマートフォン表示の微調整</li>
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -157,6 +225,7 @@ export default async function HomePage() {
 
           <p>
             掲載情報には未確認・不完全なものが含まれる場合があります。
+            確認中の項目は、各楽曲ページ上で個別に示されることがあります。
             誤りや追加情報がある場合は、情報提供フォームから送信できます。
           </p>
 
