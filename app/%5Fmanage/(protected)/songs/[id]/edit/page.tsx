@@ -70,17 +70,17 @@ function FieldStatusSelect({
   defaultValue?: string | null;
 }) {
   return (
-    <label className="grid gap-1 text-xs tracking-[0.18em] text-neutral-500">
+    <label className="grid gap-1 text-[10px] tracking-[0.16em] text-neutral-400">
       {label}
       <select
         name={name}
         defaultValue={defaultValue ?? "confirmed"}
-        className="border border-neutral-300 bg-[#f5f5f2] px-3 py-2 text-sm tracking-normal text-neutral-900 outline-none focus:border-neutral-900"
+        className="border border-neutral-200 bg-transparent px-2 py-1.5 text-xs tracking-normal text-neutral-600 outline-none focus:border-neutral-500"
       >
-        <option value="confirmed">confirmed / 確認済み</option>
-        <option value="uncertain">uncertain / 不確定</option>
-        <option value="unverified">unverified / 未確認</option>
-        <option value="wanted">wanted / 情報募集中</option>
+        <option value="confirmed">確認済み</option>
+        <option value="uncertain">不確定</option>
+        <option value="unverified">未確認</option>
+        <option value="wanted">情報募集中</option>
       </select>
     </label>
   );
@@ -117,231 +117,267 @@ export default async function ManageSongEditPage({
 
   return (
     <main className="mx-auto max-w-5xl px-6 py-12">
-      <section className="border-b border-black/15 pb-8">
+    <section className="border-b border-black/15 pb-8">
         <div className="flex flex-wrap items-center gap-4">
-          <Link
+        <Link
             href="/_manage/songs"
             className="text-xs font-medium tracking-[0.12em] text-black/45 transition hover:text-black"
-          >
+        >
             BACK TO SONGS
-          </Link>
+        </Link>
 
-          <Link
+        <Link
             href={`/songs/${song.id}`}
             target="_blank"
             className="text-xs font-medium tracking-[0.12em] text-black/45 transition hover:text-black"
-          >
+        >
             VIEW PUBLIC
-          </Link>
+        </Link>
         </div>
 
         <p className="section-label mt-8 text-black/45">EDIT SONG</p>
 
         <h1 className="font-serif-jp mt-4 text-3xl font-medium tracking-[0.02em] text-black md:text-5xl">
-          {song.title}
+        {song.title}
         </h1>
 
         <p className="mt-4 text-sm leading-7 text-black/55">
-          楽曲データを編集します。空欄で保存した項目は未入力として扱われます。
+        楽曲データを編集します。空欄で保存した項目は未入力として扱われます。
         </p>
 
         {saved && (
-          <p className="mt-5 border border-black/15 p-3 text-sm text-black/60">
+        <p className="mt-5 border border-black/15 p-3 text-sm text-black/60">
             保存しました。
-          </p>
+        </p>
         )}
-      </section>
+    </section>
 
-      <form action={submitForm} className="mt-8 space-y-10">
+    <form action={submitForm} className="mt-8 space-y-10">
         <section>
-          <p className="section-label text-black/45">BASIC</p>
+        <p className="section-label text-black/45">BASIC</p>
 
-          <div className="mt-4 grid gap-5 md:grid-cols-2">
+        <div className="mt-4 grid gap-5 md:grid-cols-2">
             <TextInput name="title" label="TITLE" defaultValue={song.title} />
             <TextInput
-              name="title_kana"
-              label="TITLE KANA"
-              defaultValue={song.title_kana}
+            name="title_kana"
+            label="TITLE KANA"
+            defaultValue={song.title_kana}
             />
             <TextInput
-              name="sort_title"
-              label="SORT TITLE"
-              defaultValue={song.sort_title}
+            name="sort_title"
+            label="SORT TITLE"
+            defaultValue={song.sort_title}
             />
             <TextInput
-              name="song_type"
-              label="SONG TYPE"
-              defaultValue={song.song_type}
+            name="song_type"
+            label="SONG TYPE"
+            defaultValue={song.song_type}
             />
             <TextInput
-              name="artist_credit"
-              label="ARTIST CREDIT"
-              defaultValue={song.artist_credit}
+            name="artist_credit"
+            label="ARTIST CREDIT"
+            defaultValue={song.artist_credit}
             />
             <TextInput
-              name="hero_image_url"
-              label="HERO IMAGE URL"
-              defaultValue={song.hero_image_url}
+            name="hero_image_url"
+            label="HERO IMAGE URL"
+            defaultValue={song.hero_image_url}
             />
-          </div>
+        </div>
         </section>
 
         <section>
-          <p className="section-label text-black/45">RELEASE</p>
+        <p className="section-label text-black/45">RELEASE</p>
 
-          <div className="mt-4 grid gap-5 md:grid-cols-2">
+        <div className="mt-4 space-y-5">
+            <div className="grid gap-4 md:grid-cols-[180px_1fr_140px]">
             <TextInput
-              name="first_date"
-              label="FIRST DATE"
-              defaultValue={song.first_date}
-              type="date"
-            />
-            <TextInput
-              name="first_source"
-              label="FIRST SOURCE"
-              defaultValue={song.first_source}
-            />
-            <FieldStatusSelect
-            name="first_status"
-            defaultValue={song.first_status}
+                name="first_date"
+                label="FIRST DATE"
+                defaultValue={song.first_date}
+                type="date"
             />
             <TextInput
-              name="first_full_date"
-              label="FIRST FULL DATE"
-              defaultValue={song.first_full_date}
-              type="date"
+                name="first_source"
+                label="FIRST SOURCE"
+                defaultValue={song.first_source}
             />
-            <TextInput
-              name="first_full_source"
-              label="FIRST FULL SOURCE"
-              defaultValue={song.first_full_source}
-            />
-            <FieldStatusSelect
-              name="first_full_status"
-              defaultValue={song.first_full_status}
-            />
-          </div>
+            <div className="self-end">
+                <FieldStatusSelect
+                name="first_status"
+                defaultValue={song.first_status}
+                />
+            </div>
+            </div>
 
-          <div className="mt-5">
+            <div className="grid gap-4 md:grid-cols-[180px_1fr_140px]">
+            <TextInput
+                name="first_full_date"
+                label="FIRST FULL DATE"
+                defaultValue={song.first_full_date}
+                type="date"
+            />
+            <TextInput
+                name="first_full_source"
+                label="FIRST FULL SOURCE"
+                defaultValue={song.first_full_source}
+            />
+            <div className="self-end">
+                <FieldStatusSelect
+                name="first_full_status"
+                defaultValue={song.first_full_status}
+                />
+            </div>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-[1fr_140px]">
             <TextArea
-              name="tie_up"
-              label="TIE-UP"
-              defaultValue={song.tie_up}
-              rows={3}
+                name="tie_up"
+                label="TIE-UP"
+                defaultValue={song.tie_up}
+                rows={3}
             />
-          </div>
-          <FieldStatusSelect
-            name="tie_up_status"
-            defaultValue={song.tie_up_status}
-            />
+            <div className="self-end">
+                <FieldStatusSelect
+                name="tie_up_status"
+                defaultValue={song.tie_up_status}
+                />
+            </div>
+            </div>
+        </div>
         </section>
 
         <section>
-          <p className="section-label text-black/45">CREDITS / ORIGINAL</p>
+        <p className="section-label text-black/45">CREDITS / ORIGINAL</p>
 
-          <div className="mt-4 grid gap-5 md:grid-cols-2">
+        <div className="mt-4 space-y-5">
+            <div className="grid gap-4 md:grid-cols-[1fr_140px]">
             <TextInput
-              name="original_artist"
-              label="ORIGINAL ARTIST"
-              defaultValue={song.original_artist}
+                name="original_artist"
+                label="ORIGINAL ARTIST"
+                defaultValue={song.original_artist}
             />
-            <TextInput
-              name="original_vocal"
-              label="ORIGINAL VOCAL"
-              defaultValue={song.original_vocal}
-            />
-            <TextInput
-              name="original_lyricist"
-              label="ORIGINAL LYRICIST"
-              defaultValue={song.original_lyricist}
-            />
-            <TextInput
-              name="original_composer"
-              label="ORIGINAL COMPOSER"
-              defaultValue={song.original_composer}
-            />
-            <TextInput
-              name="original_arranger"
-              label="ORIGINAL ARRANGER"
-              defaultValue={song.original_arranger}
-            />
-            <FieldStatusSelect
-            name="original_artist_status"
-            defaultValue={song.original_artist_status}
-            />
+            <div className="self-end">
+                <FieldStatusSelect
+                name="original_artist_status"
+                defaultValue={song.original_artist_status}
+                />
+            </div>
+            </div>
 
-            <FieldStatusSelect
-            name="original_vocal_status"
-            defaultValue={song.original_vocal_status}
+            <div className="grid gap-4 md:grid-cols-[1fr_140px]">
+            <TextInput
+                name="original_vocal"
+                label="ORIGINAL VOCAL"
+                defaultValue={song.original_vocal}
             />
+            <div className="self-end">
+                <FieldStatusSelect
+                name="original_vocal_status"
+                defaultValue={song.original_vocal_status}
+                />
+            </div>
+            </div>
 
-            <FieldStatusSelect
-            name="original_lyricist_status"
-            defaultValue={song.original_lyricist_status}
+            <div className="grid gap-4 md:grid-cols-[1fr_140px]">
+            <TextInput
+                name="original_lyricist"
+                label="ORIGINAL LYRICIST"
+                defaultValue={song.original_lyricist}
             />
+            <div className="self-end">
+                <FieldStatusSelect
+                name="original_lyricist_status"
+                defaultValue={song.original_lyricist_status}
+                />
+            </div>
+            </div>
 
-            <FieldStatusSelect
-            name="original_composer_status"
-            defaultValue={song.original_composer_status}
+            <div className="grid gap-4 md:grid-cols-[1fr_140px]">
+            <TextInput
+                name="original_composer"
+                label="ORIGINAL COMPOSER"
+                defaultValue={song.original_composer}
             />
+            <div className="self-end">
+                <FieldStatusSelect
+                name="original_composer_status"
+                defaultValue={song.original_composer_status}
+                />
+            </div>
+            </div>
 
-            <FieldStatusSelect
-            name="original_arranger_status"
-            defaultValue={song.original_arranger_status}
+            <div className="grid gap-4 md:grid-cols-[1fr_140px]">
+            <TextInput
+                name="original_arranger"
+                label="ORIGINAL ARRANGER"
+                defaultValue={song.original_arranger}
             />
-          </div>
+            <div className="self-end">
+                <FieldStatusSelect
+                name="original_arranger_status"
+                defaultValue={song.original_arranger_status}
+                />
+            </div>
+            </div>
+        </div>
         </section>
 
         <section>
-          <p className="section-label text-black/45">TEXT</p>
+        <p className="section-label text-black/45">TEXT</p>
 
-          <div className="mt-4 space-y-5">
+        <div className="mt-4 space-y-5">
+            <div className="grid gap-4 md:grid-cols-[1fr_140px]">
             <TextArea
-              name="album_text"
-              label="ALBUM TEXT"
-              defaultValue={song.album_text}
-              rows={4}
+                name="album_text"
+                label="ALBUM TEXT"
+                defaultValue={song.album_text}
+                rows={4}
             />
-            <FieldStatusSelect
+            <div className="self-end">
+                <FieldStatusSelect
                 name="album_text_status"
                 defaultValue={song.album_text_status}
-            />
+                />
+            </div>
+            </div>
+
             <TextArea
-              name="notes"
-              label="NOTES"
-              defaultValue={song.notes}
-              rows={5}
+            name="notes"
+            label="NOTES"
+            defaultValue={song.notes}
+            rows={5}
             />
-          </div>
+        </div>
         </section>
 
         <section>
-          <p className="section-label text-black/45">VERIFICATION</p>
+        <p className="section-label text-black/45">VERIFICATION</p>
 
-          <div className="mt-4 grid gap-5 md:grid-cols-2">
+        <div className="mt-4 grid gap-5 md:grid-cols-2">
             <TextInput
-              name="verification_status"
-              label="VERIFICATION STATUS"
-              defaultValue={song.verification_status}
+            name="verification_status"
+            label="VERIFICATION STATUS"
+            defaultValue={song.verification_status}
             />
             <TextArea
-              name="verification_note"
-              label="VERIFICATION NOTE"
-              defaultValue={song.verification_note}
-              rows={4}
+            name="verification_note"
+            label="VERIFICATION NOTE"
+            defaultValue={song.verification_note}
+            rows={4}
             />
-          </div>
+        </div>
         </section>
 
         <div className="border-t border-black/15 pt-6">
-          <button
+        <button
             type="submit"
             className="border border-black px-5 py-3 text-xs font-medium tracking-[0.12em] text-black transition hover:bg-black hover:text-[#f5f5f2]"
-          >
+        >
             SAVE
-          </button>
+        </button>
         </div>
-      </form>
+    </form>
     </main>
   );
 }
