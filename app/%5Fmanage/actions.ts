@@ -98,6 +98,49 @@ export async function updateSong(songId: number, formData: FormData) {
   redirect(`/_manage/songs/${songId}/edit?saved=1`);
 }
 
+export async function createSong(formData: FormData) {
+  const title = getNullableString(formData, "title");
+
+  if (!title) {
+    throw new Error("title is required.");
+  }
+
+  const payload = {
+    title,
+    title_kana: getNullableString(formData, "title_kana"),
+    sort_title: getNullableString(formData, "sort_title"),
+    song_type: getNullableString(formData, "song_type"),
+    artist_credit: getNullableString(formData, "artist_credit"),
+    first_date: getNullableString(formData, "first_date"),
+    first_source: getNullableString(formData, "first_source"),
+
+    verification_status: "confirmed",
+    verification_note: null,
+
+    first_status: "unverified",
+    first_full_status: "unverified",
+    tie_up_status: "unverified",
+    album_text_status: "unverified",
+    original_artist_status: "unverified",
+    original_vocal_status: "unverified",
+    original_lyricist_status: "unverified",
+    original_composer_status: "unverified",
+    original_arranger_status: "unverified",
+  };
+
+  const { data, error } = await supabaseAdmin
+    .from("songs")
+    .insert(payload)
+    .select("id")
+    .single();
+
+  if (error || !data) {
+    throw new Error("楽曲データの作成に失敗しました。");
+  }
+
+  redirect(`/_manage/songs/${data.id}/edit?saved=1`);
+}
+
 export async function createSongLink(songId: number, formData: FormData) {
   const payload = {
     target_type: "song",

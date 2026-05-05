@@ -151,6 +151,13 @@ export default async function ManageSongEditPage({
         </Link>
 
         <Link
+        href={`/_manage/songs/${song.id}/links`}
+        className="text-xs font-medium tracking-[0.12em] text-black/45 transition hover:text-black"
+        >
+        EDIT LINKS
+        </Link>
+
+        <Link
             href={`/songs/${song.id}`}
             target="_blank"
             className="text-xs font-medium tracking-[0.12em] text-black/45 transition hover:text-black"
