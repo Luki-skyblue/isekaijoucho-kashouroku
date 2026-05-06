@@ -27,6 +27,12 @@ type Song = {
   first_full_source: string | null;
 };
 
+type SongNavItem = {
+  id: number;
+  title: string | null;
+  first_date: string | null;
+};
+
 type SongLink = {
   id: number;
   link_type: string | null;
@@ -279,6 +285,27 @@ export default async function ManageSongLinksPage({
     notFound();
   }
 
+    const { data: navSongs, error: navSongsError } = await supabaseAdmin
+    .from("songs")
+    .select("id, title, first_date")
+    .order("first_date", { ascending: false, nullsFirst: false })
+    .order("id", { ascending: false })
+    .returns<SongNavItem[]>();
+
+    if (navSongsError) {
+    throw new Error("前後の楽曲データの取得に失敗しました。");
+    }
+
+    const currentSongIndex = navSongs.findIndex((item) => item.id === songId);
+
+    const previousSong =
+    currentSongIndex > 0 ? navSongs[currentSongIndex - 1] : null;
+
+    const nextSong =
+    currentSongIndex >= 0 && currentSongIndex < navSongs.length - 1
+        ? navSongs[currentSongIndex + 1]
+        : null;
+
   const { data: links, error: linksError } = await supabaseAdmin
     .from("links")
     .select(
@@ -326,6 +353,50 @@ export default async function ManageSongLinksPage({
               PUBLIC PAGE
             </Link>
           </div>
+
+        <div className="grid gap-3 border-t border-neutral-200 pt-4 md:grid-cols-2">
+        {previousSong ? (
+            <Link
+            href={`/_manage/songs/${previousSong.id}/links`}
+            className="group border border-neutral-300 px-3 py-2 hover:border-neutral-900"
+            >
+            <span className="block font-mono text-[10px] tracking-[0.2em] text-neutral-400">
+                PREV SONG
+            </span>
+            <span className="mt-1 block truncate text-sm tracking-normal text-neutral-700 group-hover:text-neutral-950">
+                {previousSong.title ?? `#${previousSong.id}`}
+            </span>
+            </Link>
+        ) : (
+            <div className="border border-neutral-200 px-3 py-2 text-neutral-300">
+            <span className="block font-mono text-[10px] tracking-[0.2em]">
+                PREV SONG
+            </span>
+            <span className="mt-1 block text-sm tracking-normal">なし</span>
+            </div>
+        )}
+
+        {nextSong ? (
+            <Link
+            href={`/_manage/songs/${nextSong.id}/links`}
+            className="group border border-neutral-300 px-3 py-2 hover:border-neutral-900"
+            >
+            <span className="block font-mono text-[10px] tracking-[0.2em] text-neutral-400">
+                NEXT SONG
+            </span>
+            <span className="mt-1 block truncate text-sm tracking-normal text-neutral-700 group-hover:text-neutral-950">
+                {nextSong.title ?? `#${nextSong.id}`}
+            </span>
+            </Link>
+        ) : (
+            <div className="border border-neutral-200 px-3 py-2 text-neutral-300">
+            <span className="block font-mono text-[10px] tracking-[0.2em]">
+                NEXT SONG
+            </span>
+            <span className="mt-1 block text-sm tracking-normal">なし</span>
+            </div>
+        )}
+        </div>
 
           <div>
             <p className="font-mono text-xs tracking-[0.28em] text-neutral-500">

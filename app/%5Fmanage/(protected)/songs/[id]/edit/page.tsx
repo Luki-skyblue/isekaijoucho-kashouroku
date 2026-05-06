@@ -12,6 +12,12 @@ type PageProps = {
   }>;
 };
 
+type SongNavItem = {
+  id: number;
+  title: string | null;
+  first_date: string | null;
+};
+
 function TextInput({
   name,
   label,
@@ -133,6 +139,27 @@ export default async function ManageSongEditPage({
     notFound();
   }
 
+    const { data: navSongs, error: navSongsError } = await supabaseAdmin
+        .from("songs")
+        .select("id, title, first_date")
+        .order("first_date", { ascending: false, nullsFirst: false })
+        .order("id", { ascending: false })
+        .returns<SongNavItem[]>();
+
+        if (navSongsError) {
+        throw new Error("前後の楽曲データの取得に失敗しました。");
+        }
+
+    const currentSongIndex = navSongs.findIndex((item) => item.id === song.id);
+
+    const previousSong =
+    currentSongIndex > 0 ? navSongs[currentSongIndex - 1] : null;
+
+    const nextSong =
+    currentSongIndex >= 0 && currentSongIndex < navSongs.length - 1
+        ? navSongs[currentSongIndex + 1]
+        : null;
+
   async function submitForm(formData: FormData) {
     "use server";
 
@@ -164,6 +191,46 @@ export default async function ManageSongEditPage({
         >
             VIEW PUBLIC
         </Link>
+        </div>
+
+        <div className="mt-4 grid gap-3 border-t border-black/10 pt-4 md:grid-cols-2">
+        {previousSong ? (
+            <Link
+            href={`/_manage/songs/${previousSong.id}/edit`}
+            className="group border border-black/15 px-3 py-2 transition hover:border-black/40"
+            >
+            <span className="block text-[10px] tracking-[0.18em] text-black/35">
+                PREV SONG
+            </span>
+            <span className="mt-1 block truncate text-sm text-black/70 group-hover:text-black">
+                {previousSong.title ?? `#${previousSong.id}`}
+            </span>
+            </Link>
+        ) : (
+            <div className="border border-black/10 px-3 py-2 text-black/25">
+            <span className="block text-[10px] tracking-[0.18em]">PREV SONG</span>
+            <span className="mt-1 block text-sm">なし</span>
+            </div>
+        )}
+
+        {nextSong ? (
+            <Link
+            href={`/_manage/songs/${nextSong.id}/edit`}
+            className="group border border-black/15 px-3 py-2 transition hover:border-black/40"
+            >
+            <span className="block text-[10px] tracking-[0.18em] text-black/35">
+                NEXT SONG
+            </span>
+            <span className="mt-1 block truncate text-sm text-black/70 group-hover:text-black">
+                {nextSong.title ?? `#${nextSong.id}`}
+            </span>
+            </Link>
+        ) : (
+            <div className="border border-black/10 px-3 py-2 text-black/25">
+            <span className="block text-[10px] tracking-[0.18em]">NEXT SONG</span>
+            <span className="mt-1 block text-sm">なし</span>
+            </div>
+        )}
         </div>
 
         <p className="section-label mt-8 text-black/45">EDIT SONG</p>
