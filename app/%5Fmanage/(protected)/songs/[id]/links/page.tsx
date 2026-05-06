@@ -7,6 +7,7 @@ import {
   updateSongLink,
 } from "@/app/%5Fmanage/actions";
 import { supabaseAdmin } from "@/lib/supabase/admin";
+import CreateSongLinkForm from "./CreateSongLinkForm";
 
 type PageProps = {
   params: Promise<{
@@ -422,25 +423,18 @@ export default async function ManageSongLinksPage({
         <ReleaseReference song={song} />
 
         <section className="grid gap-4 border border-neutral-300 p-5">
-          <div>
+        <div>
             <p className="font-mono text-xs tracking-[0.28em] text-neutral-500">
-              ADD LINK
+            ADD LINK
             </p>
             <h2 className="mt-1 font-serif text-xl">関連リンクを追加</h2>
-          </div>
+        </div>
 
-          <form action={createAction} className="grid gap-5">
-            <LinkFields />
-
-            <div>
-              <button
-                type="submit"
-                className="border border-neutral-900 bg-neutral-950 px-5 py-2 text-sm tracking-[0.18em] text-[#f5f5f2] hover:bg-neutral-800"
-              >
-                ADD LINK
-              </button>
-            </div>
-          </form>
+        <CreateSongLinkForm
+            action={createAction}
+            firstDate={song.first_date}
+            firstFullDate={song.first_full_date}
+        />
         </section>
 
         <section className="grid gap-4">

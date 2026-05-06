@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { supabaseAdmin } from "@/lib/supabase/admin";
 import { updateSong } from "../../../../actions";
+import ReleaseFields from "./ReleaseFields";
 
 type PageProps = {
   params: Promise<{
@@ -284,66 +285,16 @@ export default async function ManageSongEditPage({
         </div>
         </section>
 
-        <section>
-        <p className="section-label text-black/45">RELEASE</p>
-
-        <div className="mt-4 space-y-5">
-            <div className="grid gap-4 md:grid-cols-[180px_1fr_140px]">
-            <TextInput
-                name="first_date"
-                label="FIRST DATE"
-                defaultValue={song.first_date}
-                type="date"
-            />
-            <TextInput
-                name="first_source"
-                label="FIRST SOURCE"
-                defaultValue={song.first_source}
-            />
-            <div className="self-end">
-                <FieldStatusSelect
-                name="first_status"
-                defaultValue={song.first_status}
-                />
-            </div>
-            </div>
-
-            <div className="grid gap-4 md:grid-cols-[180px_1fr_140px]">
-            <TextInput
-                name="first_full_date"
-                label="FIRST FULL DATE"
-                defaultValue={song.first_full_date}
-                type="date"
-            />
-            <TextInput
-                name="first_full_source"
-                label="FIRST FULL SOURCE"
-                defaultValue={song.first_full_source}
-            />
-            <div className="self-end">
-                <FieldStatusSelect
-                name="first_full_status"
-                defaultValue={song.first_full_status}
-                />
-            </div>
-            </div>
-
-            <div className="grid gap-4 md:grid-cols-[1fr_140px]">
-            <TextArea
-                name="tie_up"
-                label="TIE-UP"
-                defaultValue={song.tie_up}
-                rows={3}
-            />
-            <div className="self-end">
-                <FieldStatusSelect
-                name="tie_up_status"
-                defaultValue={song.tie_up_status}
-                />
-            </div>
-            </div>
-        </div>
-        </section>
+        <ReleaseFields
+        firstDate={song.first_date}
+        firstSource={song.first_source}
+        firstStatus={song.first_status}
+        firstFullDate={song.first_full_date}
+        firstFullSource={song.first_full_source}
+        firstFullStatus={song.first_full_status}
+        tieUp={song.tie_up}
+        tieUpStatus={song.tie_up_status}
+        />
 
         <section>
         <p className="section-label text-black/45">CREDITS / ORIGINAL</p>
