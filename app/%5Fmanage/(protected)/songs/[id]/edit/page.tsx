@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { supabaseAdmin } from "@/lib/supabase/admin";
 import { updateSong } from "../../../../actions";
 import ReleaseFields from "./ReleaseFields";
+import { ManagedEditForm, ManagedSaveArea } from "./UnsavedChangesGuard";
 
 type PageProps = {
   params: Promise<{
@@ -251,7 +252,7 @@ export default async function ManageSongEditPage({
         )}
     </section>
 
-    <form action={submitForm} className="mt-8 space-y-10">
+    <ManagedEditForm action={submitForm}>
         <section>
         <p className="section-label text-black/45">BASIC</p>
 
@@ -413,16 +414,10 @@ export default async function ManageSongEditPage({
             />
         </div>
         </section>
-
-        <div className="border-t border-black/15 pt-6">
-        <button
-            type="submit"
-            className="border border-black px-5 py-3 text-xs font-medium tracking-[0.12em] text-black transition hover:bg-black hover:text-[#f5f5f2]"
-        >
-            SAVE
-        </button>
-        </div>
-    </form>
+        
+        <ManagedSaveArea />
+        
+    </ManagedEditForm>
     </main>
   );
 }

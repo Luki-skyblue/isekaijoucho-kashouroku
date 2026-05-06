@@ -494,7 +494,7 @@ export default async function ManageSongLinksPage({
                             type="submit"
                             className="border border-neutral-300 px-3 py-2 text-xs tracking-[0.18em] text-neutral-600 hover:border-neutral-900 hover:text-neutral-900"
                             >
-                            FETCH METADATA
+                            FETCH & SAVE METADATA
                             </button>
                         </form>
 
