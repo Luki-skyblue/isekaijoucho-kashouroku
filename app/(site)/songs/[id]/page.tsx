@@ -305,7 +305,7 @@ function formatVersionLabel(song: RelatedSong) {
   }
 
   if (song.is_primary_version) {
-    return "代表版";
+    return "通常版";
   }
 
   if (song.version_type && song.version_type !== "standard") {
