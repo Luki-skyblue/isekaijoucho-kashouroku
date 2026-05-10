@@ -20,6 +20,18 @@ type SongLink = {
   thumbnail_url: string | null;
 };
 
+type RelatedSong = {
+  id: number;
+  title: string | null;
+  artist_credit: string | null;
+  song_type: string | null;
+  first_date: string | null;
+  first_source: string | null;
+  version_name: string | null;
+  version_type: string | null;
+  is_primary_version: boolean | null;
+};
+
 function hasValue(value: string | null | undefined) {
   return Boolean(value && value.trim() && value.trim() !== "-");
 }
@@ -279,6 +291,82 @@ function SongLinksSection({ links }: { links: SongLink[] }) {
   );
 }
 
+function formatRelatedDate(date: string | null) {
+  if (!date) {
+    return null;
+  }
+
+  return date.replaceAll("-", ".");
+}
+
+function formatVersionLabel(song: RelatedSong) {
+  if (song.version_name) {
+    return song.version_name;
+  }
+
+  if (song.is_primary_version) {
+    return "代表版";
+  }
+
+  if (song.version_type && song.version_type !== "standard") {
+    return song.version_type;
+  }
+
+  return null;
+}
+
+function RelatedSongsSection({ songs }: { songs: RelatedSong[] }) {
+  if (songs.length === 0) {
+    return <EmptyBlock />;
+  }
+
+  return (
+    <div className="divide-y divide-black/10 border-y border-black/10">
+      {songs.map((relatedSong) => {
+        const dateText = formatRelatedDate(relatedSong.first_date);
+        const versionLabel = formatVersionLabel(relatedSong);
+
+        return (
+          <Link
+            key={relatedSong.id}
+            href={`/songs/${relatedSong.id}`}
+            className="block py-3 transition hover:bg-black/[0.03]"
+          >
+            <div className="flex flex-wrap items-center gap-2">
+              {versionLabel ? (
+                <span className="border border-black/15 px-2 py-0.5 text-[10px] tracking-[0.12em] text-black/40">
+                  {versionLabel}
+                </span>
+              ) : null}
+
+              {relatedSong.song_type ? (
+                <span className="text-[10px] uppercase tracking-[0.12em] text-black/35">
+                  {relatedSong.song_type}
+                </span>
+              ) : null}
+
+              {dateText ? (
+                <span className="text-[10px] tracking-[0.08em] text-black/35">
+                  {dateText}
+                </span>
+              ) : null}
+            </div>
+
+            <p className="mt-2 text-sm font-medium leading-6 text-black underline-offset-4 hover:underline">
+              {relatedSong.title ?? `#${relatedSong.id}`}
+            </p>
+
+            <p className="mt-1 text-xs leading-5 text-black/45">
+              {relatedSong.artist_credit ?? "-"}
+              {relatedSong.first_source ? ` / ${relatedSong.first_source}` : ""}
+            </p>
+          </Link>
+        );
+      })}
+    </div>
+  );
+}
+
 export default async function SongDetailPage({ params }: PageProps) {
   const { id } = await params;
 
@@ -311,6 +399,24 @@ export default async function SongDetailPage({ params }: PageProps) {
 
   if (linksError) {
     throw new Error("関連リンクの取得に失敗しました。");
+  }
+
+  const { data: relatedSongs, error: relatedSongsError } = song.song_group_id
+    ? await supabase
+        .from("songs")
+        .select(
+          "id, title, artist_credit, song_type, first_date, first_source, version_name, version_type, is_primary_version"
+        )
+        .eq("song_group_id", song.song_group_id)
+        .neq("id", song.id)
+        .order("is_primary_version", { ascending: false })
+        .order("first_date", { ascending: true, nullsFirst: false })
+        .order("id", { ascending: true })
+        .returns<RelatedSong[]>()
+    : { data: [], error: null };
+
+  if (relatedSongsError) {
+    throw new Error("関連バージョンの取得に失敗しました。");
   }
 
   const isOriginal = song.song_type === "original";
@@ -492,7 +598,7 @@ export default async function SongDetailPage({ params }: PageProps) {
           <h2 className="section-title-ja">関連バージョン</h2>
         </div>
 
-        <EmptyBlock />
+        <RelatedSongsSection songs={relatedSongs ?? []} />
       </section>
 
       <section className="mt-12 grid gap-8 md:grid-cols-[180px_1fr]">
