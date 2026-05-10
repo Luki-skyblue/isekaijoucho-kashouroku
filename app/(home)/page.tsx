@@ -41,9 +41,19 @@ function hasAttentionStatus(song: LatestSong) {
 }
 
 export default async function HomePage() {
-  const { count } = await supabase
+  const { data: songGroupRows } = await supabase
+    .from("songs")
+    .select("song_group_id");
+
+  const { count: songDataCount } = await supabase
     .from("songs")
     .select("*", { count: "exact", head: true });
+
+  const songGroupCount = new Set(
+    (songGroupRows ?? [])
+      .map((song) => song.song_group_id)
+      .filter((id): id is number => id !== null)
+  ).size;
 
   const { data: latestSongs } = await supabase
     .from("songs")
@@ -112,10 +122,23 @@ export default async function HomePage() {
         </div>
 
         <div>
-          <p className="font-serif-jp text-5xl font-medium tracking-tight text-black">
-            {count ?? 0}
-          </p>
-          <p className="mt-2 text-sm text-black/45">登録楽曲数</p>
+          <div className="grid gap-6 sm:grid-cols-2">
+            <div>
+              <p className="font-serif-jp text-5xl font-medium tracking-tight text-black">
+                {songGroupCount}
+              </p>
+              <p className="mt-2 text-sm text-black/45">登録楽曲数</p>
+
+            </div>
+
+            <div>
+              <p className="font-serif-jp text-5xl font-medium tracking-tight text-black">
+                {songDataCount ?? 0}
+              </p>
+              <p className="mt-2 text-sm text-black/45">登録データ数</p>
+              <p className="mt-1 text-xs text-black/35">別バージョンなどを含む</p>
+            </div>
+          </div>
 
           <div className="mt-6">
             <Link
@@ -205,8 +228,7 @@ export default async function HomePage() {
             <p className="link-label text-black">今後追加・調整したい項目</p>
             <ul className="mt-3 space-y-2 text-sm leading-6 text-black/60">
               <li>ライブ・セトリ情報</li>
-              <li>関連バージョン同士の導線</li>
-              <li>スマートフォン表示の微調整</li>
+              <li>配信リリース・アルバム情報</li>
             </ul>
           </div>
         </div>
