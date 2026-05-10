@@ -22,6 +22,9 @@ type Song = {
   original_lyricist_status: string | null;
   original_composer_status: string | null;
   original_arranger_status: string | null;
+  version_name: string | null;
+  version_type: string | null;
+  is_primary_version: boolean | null;
 };
 
 type SongsListProps = {
@@ -169,6 +172,18 @@ function hasAttentionStatus(song: Song) {
   }
 
   return FIELD_STATUS_KEYS.some((key) => isAttentionStatus(song[key]));
+}
+
+function getVersionDisplay(song: Song) {
+  if (song.version_name && song.version_name.trim()) {
+    return song.version_name;
+  }
+
+  if (song.is_primary_version === false) {
+    return "別バージョン";
+  }
+
+  return null;
 }
 
 export default function SongsList({ songs }: SongsListProps) {
@@ -653,6 +668,12 @@ export default function SongsList({ songs }: SongsListProps) {
 
                 {song.title}
 
+                {getVersionDisplay(song) ? (
+                  <span className="ml-1.5 text-[10px] font-normal tracking-[0.08em] text-black/35">
+                    {getVersionDisplay(song)}
+                  </span>
+                ) : null}
+
                 {song.artist_credit && (
                   <span className="text-xs font-normal text-black/45">
                     {" "}
@@ -673,6 +694,12 @@ export default function SongsList({ songs }: SongsListProps) {
                   <p className="truncate text-sm font-medium tracking-[0.01em] text-black">
                     {song.title}
                   </p>
+
+                  {getVersionDisplay(song) ? (
+                    <span className="shrink-0 text-[10px] tracking-[0.08em] text-black/35">
+                      {getVersionDisplay(song)}
+                    </span>
+                  ) : null}
                 </div>
               </div>
 

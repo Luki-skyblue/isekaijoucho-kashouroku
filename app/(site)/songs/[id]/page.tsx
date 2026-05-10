@@ -217,6 +217,21 @@ function getFallbackHeroImageUrl(links: SongLink[]) {
   return candidate?.thumbnail_url ?? null;
 }
 
+function getCurrentVersionDisplay(song: {
+  version_name?: string | null;
+  is_primary_version?: boolean | null;
+}) {
+  if (song.version_name && song.version_name.trim()) {
+    return song.version_name;
+  }
+
+  if (song.is_primary_version === false) {
+    return "別バージョン";
+  }
+
+  return null;
+}
+
 function SongLinksSection({ links }: { links: SongLink[] }) {
   const visibleLinks = links.filter((link) => link.url);
 
@@ -430,6 +445,8 @@ export default async function SongDetailPage({ params }: PageProps) {
     ? song.hero_image_url
     : fallbackHeroImageUrl;
 
+  const currentVersionDisplay = getCurrentVersionDisplay(song);
+
   return (
     <main className="mx-auto max-w-6xl px-6 py-12">
       <div className="mb-8 flex flex-col gap-4 border-b border-black/10 pb-5 md:flex-row md:items-start md:justify-between">
@@ -475,6 +492,11 @@ export default async function SongDetailPage({ params }: PageProps) {
 
           <h1 className="font-serif-jp mt-3 break-words text-2xl font-medium tracking-[0.02em] text-black sm:text-3xl md:text-5xl">
             {song.title}
+            {currentVersionDisplay ? (
+              <p className="mt-3 text-xs tracking-[0.12em] text-black/40">
+                {currentVersionDisplay}
+              </p>
+            ) : null}            
           </h1>
 
           {hasValue(song.title_kana) && (

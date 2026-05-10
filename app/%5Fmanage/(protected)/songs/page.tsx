@@ -42,7 +42,7 @@ export default async function ManageSongsPage() {
   const { data: songs, error } = await supabaseAdmin
     .from("songs")
     .select(
-    "id,title,title_kana,sort_title,song_type,artist_credit,first_date,first_source,verification_status,first_status,first_full_status,tie_up_status,album_text_status,original_artist_status,original_vocal_status,original_lyricist_status,original_composer_status,original_arranger_status"
+    "id,title,title_kana,sort_title,song_type,artist_credit,first_date,first_source,verification_status,first_status,first_full_status,tie_up_status,album_text_status,original_artist_status,original_vocal_status,original_lyricist_status,original_composer_status,original_arranger_status,version_name, version_type, is_primary_version"
     )
     .order("first_date", { ascending: false });
 
@@ -139,6 +139,15 @@ export default async function ManageSongsPage() {
                     className="truncate text-sm font-medium text-black underline-offset-4 transition hover:underline"
                     >
                     {song.title}
+                    {song.version_name ? (
+                    <span className="text-[10px] tracking-[0.08em] text-black/35">
+                        {song.version_name}
+                    </span>
+                    ) : song.is_primary_version === false ? (
+                    <span className="text-[10px] tracking-[0.08em] text-black/35">
+                        別バージョン
+                    </span>
+                    ) : null}                    
                     </Link>
 
                     <Link

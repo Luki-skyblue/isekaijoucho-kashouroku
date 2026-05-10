@@ -19,7 +19,7 @@ export default async function SongsPage() {
   const { data: songs, error } = await supabase
     .from("songs")
     .select(
-      "id,title,title_kana,sort_title,first_date,first_source,artist_credit,song_type,verification_status,first_status,first_full_status,tie_up_status,album_text_status,original_artist_status,original_vocal_status,original_lyricist_status,original_composer_status,original_arranger_status"
+      "id,title,title_kana,sort_title,first_date,first_source,artist_credit,song_type,verification_status,first_status,first_full_status,tie_up_status,album_text_status,original_artist_status,original_vocal_status,original_lyricist_status,original_composer_status,original_arranger_status,version_name,version_type,is_primary_version"
     )
     .order("first_date", { ascending: false });
 
