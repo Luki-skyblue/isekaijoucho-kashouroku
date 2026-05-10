@@ -32,6 +32,22 @@ function getNullableString(formData: FormData, key: string) {
   return value.length > 0 ? value : null;
 }
 
+function getNullableNumber(formData: FormData, key: string) {
+  const value = String(formData.get(key) ?? "").trim();
+
+  if (!value) {
+    return null;
+  }
+
+  const numberValue = Number(value);
+
+  if (!Number.isFinite(numberValue)) {
+    return null;
+  }
+
+  return numberValue;
+}
+
 function getRequiredString(formData: FormData, key: string) {
   const value = String(formData.get(key) ?? "").trim();
 
@@ -80,7 +96,11 @@ export async function updateSong(songId: number, formData: FormData) {
       getNullableString(formData, "original_composer_status") ?? "confirmed",
     original_arranger_status:
       getNullableString(formData, "original_arranger_status") ?? "confirmed",
-  };
+    song_group_id: getNullableNumber(formData, "song_group_id"),
+    version_name: getNullableString(formData, "version_name"),
+    version_type: getNullableString(formData, "version_type") ?? "standard",
+    is_primary_version: formData.get("is_primary_version") === "on",
+    };
 
   if (!payload.title) {
     throw new Error("title is required.");
@@ -126,16 +146,41 @@ export async function createSong(formData: FormData) {
     original_lyricist_status: "unverified",
     original_composer_status: "unverified",
     original_arranger_status: "unverified",
+    version_name: null,
+    version_type: "standard",
+    is_primary_version: true,
   };
 
   const { data, error } = await supabaseAdmin
     .from("songs")
     .insert(payload)
-    .select("id")
+    .select("id, title, title_kana, sort_title")
     .single();
 
   if (error || !data) {
     throw new Error("楽曲データの作成に失敗しました。");
+  }
+
+  const { error: groupError } = await supabaseAdmin.from("song_groups").insert({
+    id: data.id,
+    title: data.title,
+    title_kana: data.title_kana,
+    sort_title: data.sort_title,
+  });
+
+  if (groupError) {
+    throw new Error("楽曲グループの作成に失敗しました。");
+  }
+
+  const { error: updateGroupError } = await supabaseAdmin
+    .from("songs")
+    .update({
+      song_group_id: data.id,
+    })
+    .eq("id", data.id);
+
+  if (updateGroupError) {
+    throw new Error("楽曲グループの紐づけに失敗しました。");
   }
 
   redirect(`/_manage/songs/${data.id}/edit?saved=1`);

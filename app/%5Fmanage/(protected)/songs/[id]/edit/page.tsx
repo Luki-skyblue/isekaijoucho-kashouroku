@@ -286,6 +286,51 @@ export default async function ManageSongEditPage({
         </div>
         </section>
 
+        <section>
+        <p className="section-label text-black/45">VERSION / GROUP</p>
+
+        <div className="mt-4 grid gap-5 md:grid-cols-[160px_1fr_180px_140px]">
+            <TextInput
+            name="song_group_id"
+            label="GROUP ID"
+            defaultValue={
+                song.song_group_id !== null && song.song_group_id !== undefined
+                ? String(song.song_group_id)
+                : ""
+            }
+            />
+
+            <TextInput
+            name="version_name"
+            label="VERSION NAME"
+            defaultValue={song.version_name}
+            />
+
+            <TextInput
+            name="version_type"
+            label="VERSION TYPE"
+            defaultValue={song.version_type ?? "standard"}
+            />
+
+            <label className="self-end border border-black/10 px-3 py-2">
+            <span className="section-label text-black/45">PRIMARY</span>
+            <span className="mt-2 flex items-center gap-2 text-sm text-black/65">
+                <input
+                type="checkbox"
+                name="is_primary_version"
+                defaultChecked={song.is_primary_version ?? true}
+                className="h-4 w-4 accent-black"
+                />
+                代表版
+            </span>
+            </label>
+        </div>
+
+        <p className="mt-3 text-xs leading-6 text-black/45">
+            同じ元曲としてまとめたいバージョンには、同じGROUP IDを設定します。
+        </p>
+        </section>
+
         <ReleaseFields
         firstDate={song.first_date}
         firstSource={song.first_source}
@@ -416,7 +461,7 @@ export default async function ManageSongEditPage({
         </section>
         
         <ManagedSaveArea />
-        
+
     </ManagedEditForm>
     </main>
   );
