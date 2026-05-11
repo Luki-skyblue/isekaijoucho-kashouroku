@@ -32,6 +32,25 @@ type RelatedSong = {
   is_primary_version: boolean | null;
 };
 
+type SongReleaseItem = {
+  id: number;
+  disc_number: number | null;
+  track_number: number | null;
+  title_override: string | null;
+  track_title: string | null;
+  track_artist: string | null;
+  notes: string | null;
+  releases: {
+    id: number;
+    title: string | null;
+    release_type: string | null;
+    artist_credit: string | null;
+    release_date: string | null;
+    jacket_image_url: string | null;
+    official_url: string | null;
+  } | null;
+};
+
 function hasValue(value: string | null | undefined) {
   return Boolean(value && value.trim() && value.trim() !== "-");
 }
@@ -382,6 +401,144 @@ function RelatedSongsSection({ songs }: { songs: RelatedSong[] }) {
   );
 }
 
+function formatReleaseDate(date: string | null) {
+  if (!date) {
+    return null;
+  }
+
+  return date.replaceAll("-", ".");
+}
+
+function formatReleaseType(type: string | null) {
+  switch (type) {
+    case "digital_single":
+      return "DIGITAL SINGLE";
+    case "single":
+      return "SINGLE";
+    case "ep":
+      return "EP";
+    case "album":
+      return "ALBUM";
+    case "cd":
+      return "CD";
+    case "compilation":
+      return "COMPILATION";
+    default:
+      return type?.toUpperCase() ?? "RELEASE";
+  }
+}
+
+function formatTrackPosition(item: SongReleaseItem) {
+  const parts = [];
+
+  if (item.disc_number) {
+    parts.push(`DISC ${item.disc_number}`);
+  }
+
+  if (item.track_number) {
+    parts.push(`TRACK ${item.track_number}`);
+  }
+
+  return parts.join(" / ");
+}
+
+function SongReleasesSection({
+  releaseItems,
+}: {
+  releaseItems: SongReleaseItem[];
+}) {
+  if (releaseItems.length === 0) {
+    return <EmptyBlock />;
+  }
+
+  return (
+    <div className="divide-y divide-black/10 border-y border-black/10">
+      {releaseItems.map((item) => {
+        const release = item.releases;
+        const releaseDate = formatReleaseDate(release?.release_date ?? null);
+        const trackPosition = formatTrackPosition(item);
+        const href = release?.official_url || null;
+        const hasJacket = hasValue(release?.jacket_image_url);
+
+        const inner = (
+          <div
+            className={
+              hasJacket
+                ? "grid grid-cols-[72px_minmax(0,1fr)] gap-4 py-3 sm:grid-cols-[96px_minmax(0,1fr)]"
+                : "py-3"
+            }
+          >
+            {hasJacket ? (
+              <div className="aspect-square overflow-hidden border border-black/10 bg-black/[0.02]">
+                <img
+                  src={release?.jacket_image_url ?? ""}
+                  alt=""
+                  className="h-full w-full object-cover transition group-hover:scale-[1.03]"
+                />
+              </div>
+            ) : null}
+
+            <div className="min-w-0">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-[10px] uppercase tracking-[0.12em] text-black/35">
+                  {formatReleaseType(release?.release_type ?? null)}
+                </span>
+
+                {releaseDate ? (
+                  <span className="text-[10px] tracking-[0.08em] text-black/35">
+                    {releaseDate}
+                  </span>
+                ) : null}
+
+                {trackPosition ? (
+                  <span className="text-[10px] tracking-[0.08em] text-black/35">
+                    {trackPosition}
+                  </span>
+                ) : null}
+              </div>
+
+              <p className="mt-2 break-words text-sm font-medium leading-6 text-black underline-offset-4 group-hover:underline">
+                {release?.title ?? "未設定のリリース"}
+              </p>
+
+              <p className="mt-1 text-xs leading-5 text-black/45">
+                {release?.artist_credit ?? "-"}
+                {item.title_override ? ` / ${item.title_override}` : ""}
+              </p>
+
+              {item.notes ? (
+                <p className="mt-1 text-xs leading-5 text-black/35">
+                  {item.notes}
+                </p>
+              ) : null}
+            </div>
+          </div>
+        );
+
+        if (href) {
+          return (
+            <a
+              key={item.id}
+              href={href}
+              target="_blank"
+              rel="noreferrer"
+              className="group block transition hover:bg-black/[0.03]"
+            >
+              {inner}
+            </a>
+          );
+        }
+
+        return (
+          <div key={item.id} className="group">
+            {inner}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 export default async function SongDetailPage({ params }: PageProps) {
   const { id } = await params;
 
@@ -432,6 +589,37 @@ export default async function SongDetailPage({ params }: PageProps) {
 
   if (relatedSongsError) {
     throw new Error("関連バージョンの取得に失敗しました。");
+  }
+
+  const { data: releaseItems, error: releaseItemsError } = await supabase
+    .from("release_items")
+    .select(
+      `
+      id,
+      disc_number,
+      track_number,
+      title_override,
+      track_title,
+      track_artist,
+      notes,
+      releases (
+        id,
+        title,
+        release_type,
+        artist_credit,
+        release_date,
+        jacket_image_url,
+        official_url
+      )
+    `
+    )
+    .eq("song_id", song.id)
+    .order("disc_number", { ascending: true, nullsFirst: false })
+    .order("track_number", { ascending: true, nullsFirst: false })
+    .returns<SongReleaseItem[]>();
+
+  if (releaseItemsError) {
+    throw new Error("収録リリースの取得に失敗しました。");
   }
 
   const isOriginal = song.song_type === "original";
@@ -492,12 +680,13 @@ export default async function SongDetailPage({ params }: PageProps) {
 
           <h1 className="font-serif-jp mt-3 break-words text-2xl font-medium tracking-[0.02em] text-black sm:text-3xl md:text-5xl">
             {song.title}
-            {currentVersionDisplay ? (
-              <p className="mt-3 text-xs tracking-[0.12em] text-black/40">
-                {currentVersionDisplay}
-              </p>
-            ) : null}            
           </h1>
+
+          {currentVersionDisplay ? (
+            <p className="mt-3 text-xs tracking-[0.12em] text-black/40">
+              {currentVersionDisplay}
+            </p>
+          ) : null}
 
           {hasValue(song.title_kana) && (
             <p className="mt-2 text-xs tracking-[0.04em] text-black/45 sm:text-sm">
@@ -579,8 +768,8 @@ export default async function SongDetailPage({ params }: PageProps) {
 
       <section className="mt-10 grid gap-8 md:grid-cols-[180px_1fr]">
         <div className="section-head">
-          <p className="section-label text-black/45">RELEASE</p>
-          <h2 className="section-title-ja">公開情報</h2>
+          <p className="section-label text-black/45">DEBUT</p>
+          <h2 className="section-title-ja">初出情報</h2>
         </div>
 
         <dl>
@@ -594,6 +783,16 @@ export default async function SongDetailPage({ params }: PageProps) {
             value={firstFullDisplay}
             status={song.first_full_status}
           />
+        </dl>
+      </section>
+
+      <section className="mt-12 grid gap-8 md:grid-cols-[180px_1fr]">
+        <div className="section-head">
+          <p className="section-label text-black/45">TIE-UP</p>
+          <h2 className="section-title-ja">タイアップ</h2>
+        </div>
+
+        <dl>
           <DetailRow
             label="TIE-UP"
             value={song.tie_up}
@@ -604,14 +803,11 @@ export default async function SongDetailPage({ params }: PageProps) {
 
       <section className="mt-12 grid gap-8 md:grid-cols-[180px_1fr]">
         <div className="section-head">
-          <p className="section-label text-black/45">ALBUM</p>
-          <h2 className="section-title-ja">収録情報</h2>
+          <p className="section-label text-black/45">DISCOGRAPHY</p>
+          <h2 className="section-title-ja">収録作品</h2>
         </div>
 
-        <CompactTextBlock
-          value={song.album_text}
-          status={song.album_text_status}
-        />
+        <SongReleasesSection releaseItems={releaseItems ?? []} />
       </section>
 
       <section className="mt-12 grid gap-8 md:grid-cols-[180px_1fr]">
