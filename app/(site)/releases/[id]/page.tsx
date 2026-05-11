@@ -28,6 +28,24 @@ type ReleaseItem = {
   } | null;
 };
 
+type ReleaseGroup = {
+  id: number;
+  title: string | null;
+  title_kana: string | null;
+  sort_title: string | null;
+  release_date: string | null;
+  notes: string | null;
+};
+
+type ReleaseEdition = {
+  id: number;
+  title: string | null;
+  edition_name: string | null;
+  is_primary_edition: boolean | null;
+  jacket_image_url: string | null;
+  release_date: string | null;
+};
+
 function hasValue(value: string | null | undefined) {
   return Boolean(value && value.trim() && value.trim() !== "-");
 }
@@ -103,6 +121,18 @@ function getVersionDisplay(song: ReleaseItem["songs"]) {
   return null;
 }
 
+function getEditionLabel(edition: ReleaseEdition) {
+  if (hasValue(edition.edition_name)) {
+    return edition.edition_name;
+  }
+
+  if (hasValue(edition.title)) {
+    return edition.title;
+  }
+
+  return `#${edition.id}`;
+}
+
 // function formatTrackPosition(item: ReleaseItem) {
 //   const parts = [];
 
@@ -136,7 +166,7 @@ export default async function ReleasePage({ params }: PageProps) {
   const { data: release, error } = await supabase
     .from("releases")
     .select(
-      "id, title, title_kana, sort_title, release_type, artist_credit, release_date, jacket_image_url, official_url, notes"
+      "id, title, title_kana, sort_title, release_type, artist_credit, release_date, jacket_image_url, official_url, notes, release_group_id, edition_name, is_primary_edition"
     )
     .eq("id", releaseId)
     .single();
@@ -145,7 +175,42 @@ export default async function ReleasePage({ params }: PageProps) {
     notFound();
   }
 
-  const { data: items, error: itemsError } = await supabase
+  let releaseGroup: ReleaseGroup | null = null;
+  let editions: ReleaseEdition[] = [];
+
+  if (release.release_group_id) {
+    const { data: groupData, error: groupError } = await supabase
+      .from("release_groups")
+      .select("id, title, title_kana, sort_title, release_date, notes")
+      .eq("id", release.release_group_id)
+      .single()
+      .returns<ReleaseGroup>();
+
+    if (groupError) {
+      throw new Error("作品グループの取得に失敗しました。");
+    }
+
+    releaseGroup = groupData;
+
+    const { data: editionData, error: editionsError } = await supabase
+      .from("releases")
+      .select(
+        "id, title, edition_name, is_primary_edition, jacket_image_url, release_date"
+      )
+      .eq("release_group_id", release.release_group_id)
+      .order("is_primary_edition", { ascending: false })
+      .order("release_date", { ascending: true, nullsFirst: false })
+      .order("id", { ascending: true })
+      .returns<ReleaseEdition[]>();
+
+    if (editionsError) {
+      throw new Error("形態違いの取得に失敗しました。");
+    }
+
+    editions = editionData ?? [];
+  }
+
+  let itemsQuery = supabase
     .from("release_items")
     .select(
       `
@@ -165,8 +230,15 @@ export default async function ReleasePage({ params }: PageProps) {
         is_primary_version
       )
     `
-    )
-    .eq("release_id", release.id)
+    );
+
+  if (release.release_group_id) {
+    itemsQuery = itemsQuery.eq("release_group_id", release.release_group_id);
+  } else {
+    itemsQuery = itemsQuery.eq("release_id", release.id);
+  }
+
+  const { data: items, error: itemsError } = await itemsQuery
     .order("disc_number", { ascending: true, nullsFirst: false })
     .order("track_number", { ascending: true, nullsFirst: false })
     .order("id", { ascending: true })
@@ -178,6 +250,7 @@ export default async function ReleasePage({ params }: PageProps) {
 
   return (
     <main className="mx-auto max-w-6xl px-6 py-12">
+
       <div className="mb-8 flex flex-col gap-4 border-b border-black/10 pb-5 md:flex-row md:items-start md:justify-between">
         <Link
           href="/songs"
@@ -197,6 +270,50 @@ export default async function ReleasePage({ params }: PageProps) {
           </a>
         ) : null}
       </div>
+
+      {releaseGroup ? (
+        <section className="mb-8 border-b border-black/15 pb-8">
+          <p className="section-label text-black/45">RELEASE</p>
+
+          <h1 className="font-serif-jp mt-3 break-words text-4xl font-medium tracking-[0.02em] text-black md:text-6xl">
+            {hasValue(releaseGroup.title) ? releaseGroup.title : release.title}
+          </h1>
+
+          {hasValue(releaseGroup.title_kana) ? (
+            <p className="mt-2 text-sm tracking-[0.04em] text-black/45">
+              {releaseGroup.title_kana}
+            </p>
+          ) : null}
+
+          {editions.length > 1 ? (
+            <div className="mt-6 flex flex-wrap gap-2">
+              {editions.map((edition) => {
+                const isCurrent = edition.id === release.id;
+
+                return (
+                  <Link
+                    key={edition.id}
+                    href={`/releases/${edition.id}`}
+                    className={
+                      isCurrent
+                        ? "border border-black bg-black px-4 py-2 text-xs font-medium tracking-[0.12em] text-[#f5f5f2]"
+                        : "border border-black/25 px-4 py-2 text-xs font-medium tracking-[0.12em] text-black/55 transition hover:border-black hover:text-black"
+                    }
+                  >
+                    {getEditionLabel(edition)}
+                  </Link>
+                );
+              })}
+            </div>
+          ) : null}
+
+          {hasValue(releaseGroup.notes) ? (
+            <p className="mt-5 max-w-3xl whitespace-pre-wrap text-sm leading-7 text-black/55">
+              {releaseGroup.notes}
+            </p>
+          ) : null}
+        </section>
+      ) : null}
 
       <section className="grid grid-cols-[6.5rem_minmax(0,1fr)] gap-5 border-b border-black/15 pb-10 sm:grid-cols-[9rem_minmax(0,1fr)] md:grid-cols-[220px_minmax(0,1fr)] md:gap-8">
         <div className="w-full self-start overflow-hidden border border-black/15 bg-black/[0.02]">
@@ -218,12 +335,20 @@ export default async function ReleasePage({ params }: PageProps) {
 
         <div className="min-w-0 self-center md:self-start">
           <p className="section-label text-black/45">
-            {formatReleaseType(release.release_type)}
+            {releaseGroup
+              ? `EDITION / ${formatReleaseType(release.release_type)}`
+              : formatReleaseType(release.release_type)}
           </p>
 
           <h1 className="font-serif-jp mt-3 break-words text-2xl font-medium tracking-[0.02em] text-black sm:text-3xl md:text-5xl">
             {release.title}
           </h1>
+
+          {hasValue(release.edition_name) ? (
+            <p className="mt-2 text-xs tracking-[0.12em] text-black/40">
+              EDITION: {release.edition_name}
+            </p>
+          ) : null}          
 
           {hasValue(release.title_kana) ? (
             <p className="mt-2 text-xs tracking-[0.04em] text-black/45 sm:text-sm">

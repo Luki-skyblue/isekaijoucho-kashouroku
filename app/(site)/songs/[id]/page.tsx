@@ -40,6 +40,7 @@ type SongReleaseItem = {
   track_title: string | null;
   track_artist: string | null;
   notes: string | null;
+  release_group_id: number | null;
   releases: {
     id: number;
     title: string | null;
@@ -48,8 +49,27 @@ type SongReleaseItem = {
     release_date: string | null;
     jacket_image_url: string | null;
     official_url: string | null;
+    release_group_id: number | null;
+  } | null;
+  release_groups: {
+    id: number;
+    title: string | null;
+    release_date: string | null;
+    notes: string | null;
   } | null;
 };
+
+type PrimaryReleaseByGroupId = Record<
+  number,
+  {
+    id: number;
+    title: string | null;
+    release_type: string | null;
+    artist_credit: string | null;
+    release_date: string | null;
+    jacket_image_url: string | null;
+  }
+>;
 
 function hasValue(value: string | null | undefined) {
   return Boolean(value && value.trim() && value.trim() !== "-");
@@ -444,8 +464,10 @@ function formatTrackPosition(item: SongReleaseItem) {
 
 function SongReleasesSection({
   releaseItems,
+  primaryReleasesByGroupId,
 }: {
   releaseItems: SongReleaseItem[];
+  primaryReleasesByGroupId: PrimaryReleaseByGroupId;
 }) {
   if (releaseItems.length === 0) {
     return <EmptyBlock />;
@@ -454,11 +476,21 @@ function SongReleasesSection({
   return (
     <div className="divide-y divide-black/10 border-y border-black/10">
       {releaseItems.map((item) => {
-        const release = item.releases;
-        const releaseDate = formatReleaseDate(release?.release_date ?? null);
+        const group = item.release_groups;
+        const currentRelease = item.releases;
+        const groupId = group?.id ?? item.release_group_id ?? currentRelease?.release_group_id ?? null;
+        const primaryRelease = groupId ? primaryReleasesByGroupId[groupId] : null;
+
+        const displayRelease = primaryRelease ?? currentRelease;
+        const displayTitle = group?.title ?? currentRelease?.title ?? "未設定のリリース";
+        const releaseDate = formatReleaseDate(
+          group?.release_date ?? displayRelease?.release_date ?? null
+        );
         const trackPosition = formatTrackPosition(item);
-        const href = release?.id ? `/releases/${release.id}` : null;
-        const hasJacket = hasValue(release?.jacket_image_url);
+        const href = displayRelease?.id ? `/releases/${displayRelease.id}` : null;
+        const jacketImageUrl =
+          displayRelease?.jacket_image_url ?? currentRelease?.jacket_image_url ?? null;
+        const hasJacket = hasValue(jacketImageUrl);
 
         const inner = (
           <div
@@ -471,7 +503,7 @@ function SongReleasesSection({
             {hasJacket ? (
               <div className="aspect-square overflow-hidden border border-black/10 bg-black/[0.02]">
                 <img
-                  src={release?.jacket_image_url ?? ""}
+                  src={jacketImageUrl ?? ""}
                   alt=""
                   className="h-full w-full object-cover transition group-hover:scale-[1.03]"
                 />
@@ -481,7 +513,7 @@ function SongReleasesSection({
             <div className="min-w-0">
               <div className="flex flex-wrap items-center gap-2">
                 <span className="text-[10px] uppercase tracking-[0.12em] text-black/35">
-                  {formatReleaseType(release?.release_type ?? null)}
+                  {formatReleaseType(displayRelease?.release_type ?? null)}
                 </span>
 
                 {releaseDate ? (
@@ -498,11 +530,11 @@ function SongReleasesSection({
               </div>
 
               <p className="mt-2 break-words text-sm font-medium leading-6 text-black underline-offset-4 group-hover:underline">
-                {release?.title ?? "未設定のリリース"}
+                {displayTitle}
               </p>
 
               <p className="mt-1 text-xs leading-5 text-black/45">
-                {release?.artist_credit ?? "-"}
+                {displayRelease?.artist_credit ?? "-"}
                 {item.title_override ? ` / ${item.title_override}` : ""}
               </p>
 
@@ -600,6 +632,7 @@ export default async function SongDetailPage({ params }: PageProps) {
       track_title,
       track_artist,
       notes,
+      release_group_id,
       releases (
         id,
         title,
@@ -607,7 +640,14 @@ export default async function SongDetailPage({ params }: PageProps) {
         artist_credit,
         release_date,
         jacket_image_url,
-        official_url
+        official_url,
+        release_group_id
+      ),
+      release_groups (
+        id,
+        title,
+        release_date,
+        notes
       )
     `
     )
@@ -618,6 +658,59 @@ export default async function SongDetailPage({ params }: PageProps) {
 
   if (releaseItemsError) {
     throw new Error("収録リリースの取得に失敗しました。");
+  }
+
+  const releaseGroupIds = Array.from(
+    new Set(
+      (releaseItems ?? [])
+        .map(
+          (item) =>
+            item.release_groups?.id ??
+            item.release_group_id ??
+            item.releases?.release_group_id ??
+            null
+        )
+        .filter((id): id is number => typeof id === "number")
+    )
+  );
+
+  let primaryReleasesByGroupId: PrimaryReleaseByGroupId = {};
+
+  if (releaseGroupIds.length > 0) {
+    const { data: primaryReleases, error: primaryReleasesError } = await supabase
+      .from("releases")
+      .select(
+        "id,title,release_type,artist_credit,release_date,jacket_image_url,release_group_id,is_primary_edition"
+      )
+      .in("release_group_id", releaseGroupIds)
+      .order("is_primary_edition", { ascending: false })
+      .order("release_date", { ascending: true, nullsFirst: false })
+      .order("id", { ascending: true });
+
+    if (primaryReleasesError) {
+      throw new Error("代表リリースの取得に失敗しました。");
+    }
+
+    primaryReleasesByGroupId = (primaryReleases ?? []).reduce<PrimaryReleaseByGroupId>(
+      (acc, release) => {
+        if (
+          typeof release.release_group_id === "number" &&
+          !acc[release.release_group_id]
+        ) {
+          acc[release.release_group_id] = {
+            id: release.id,
+            title: release.title,
+            release_type: release.release_type,
+            artist_credit: release.artist_credit,
+            release_date: release.release_date,
+            jacket_image_url: release.jacket_image_url,
+          };
+        }
+
+        return acc;
+      },
+      {}
+    );
   }
 
   const isOriginal = song.song_type === "original";
@@ -805,7 +898,10 @@ export default async function SongDetailPage({ params }: PageProps) {
           <h2 className="section-title-ja">収録作品</h2>
         </div>
 
-        <SongReleasesSection releaseItems={releaseItems ?? []} />
+        <SongReleasesSection
+          releaseItems={releaseItems ?? []}
+          primaryReleasesByGroupId={primaryReleasesByGroupId}
+        />
       </section>
 
       <section className="mt-12 grid gap-8 md:grid-cols-[180px_1fr]">

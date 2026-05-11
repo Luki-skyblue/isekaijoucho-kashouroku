@@ -223,7 +223,9 @@ export default async function ManageReleaseItemsPage({
 
   const { data: release, error } = await supabaseAdmin
     .from("releases")
-    .select("id,title,release_type,artist_credit,release_date")
+    .select(
+    "id,title,release_type,artist_credit,release_date,release_group_id,release_groups(id,title)"
+    )
     .eq("id", releaseId)
     .single();
 
@@ -231,28 +233,35 @@ export default async function ManageReleaseItemsPage({
     notFound();
   }
 
-  const { data: items, error: itemsError } = await supabaseAdmin
+    let itemsQuery = supabaseAdmin
     .from("release_items")
     .select(
-      `
-      id,
-      disc_number,
-      track_number,
-      song_id,
-      track_title,
-      track_artist,
-      title_override,
-      notes,
-      songs (
+        `
+        id,
+        disc_number,
+        track_number,
+        song_id,
+        track_title,
+        track_artist,
+        title_override,
+        notes,
+        songs (
         id,
         title,
         artist_credit,
         version_name,
         is_primary_version
-      )
+        )
     `
-    )
-    .eq("release_id", release.id)
+    );
+
+    if (release.release_group_id) {
+    itemsQuery = itemsQuery.eq("release_group_id", release.release_group_id);
+    } else {
+    itemsQuery = itemsQuery.eq("release_id", release.id);
+    }
+
+    const { data: items, error: itemsError } = await itemsQuery
     .order("disc_number", { ascending: true, nullsFirst: false })
     .order("track_number", { ascending: true, nullsFirst: false })
     .order("id", { ascending: true })
@@ -315,6 +324,13 @@ export default async function ManageReleaseItemsPage({
         <p className="mt-4 text-sm leading-7 text-black/55">
           {release.artist_credit ?? "-"} / {formatDate(release.release_date)}
         </p>
+
+        {release.release_group_id ? (
+        <p className="mt-4 border border-black/15 bg-black/[0.03] p-3 text-sm leading-6 text-black/60">
+            このリリースは release_group_id: {release.release_group_id} に属しています。
+            収録曲は同じグループの形態違いと共通で管理されます。
+        </p>
+        ) : null}
 
         {saved ? (
           <p className="mt-5 border border-black/25 bg-black/[0.03] p-3 text-sm text-black/70">

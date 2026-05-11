@@ -493,9 +493,29 @@ export async function deleteSongLink(linkId: number, songId: number) {
   redirect(`/_manage/songs/${songId}/links?saved=1`);
 }
 
+async function getReleaseItemScope(releaseId: number) {
+  const { data: release, error } = await supabaseAdmin
+    .from("releases")
+    .select("id, release_group_id")
+    .eq("id", releaseId)
+    .single();
+
+  if (error || !release) {
+    throw new Error("リリース情報の取得に失敗しました。");
+  }
+
+  return {
+    releaseId: release.id,
+    releaseGroupId: release.release_group_id as number | null,
+  };
+}
+
 export async function createReleaseItem(releaseId: number, formData: FormData) {
+  const scope = await getReleaseItemScope(releaseId);
+
   const payload = {
-    release_id: releaseId,
+    release_id: scope.releaseId,
+    release_group_id: scope.releaseGroupId,
     disc_number: getNullableNumber(formData, "disc_number"),
     track_number: getNullableNumber(formData, "track_number"),
     song_id: getNullableNumber(formData, "song_id"),
@@ -519,6 +539,8 @@ export async function updateReleaseItem(
   itemId: number,
   formData: FormData
 ) {
+  const scope = await getReleaseItemScope(releaseId);
+
   const payload = {
     disc_number: getNullableNumber(formData, "disc_number"),
     track_number: getNullableNumber(formData, "track_number"),
@@ -529,11 +551,18 @@ export async function updateReleaseItem(
     notes: getNullableString(formData, "notes"),
   };
 
-  const { error } = await supabaseAdmin
+  let query = supabaseAdmin
     .from("release_items")
     .update(payload)
-    .eq("id", itemId)
-    .eq("release_id", releaseId);
+    .eq("id", itemId);
+
+  if (scope.releaseGroupId) {
+    query = query.eq("release_group_id", scope.releaseGroupId);
+  } else {
+    query = query.eq("release_id", scope.releaseId);
+  }
+
+  const { error } = await query;
 
   if (error) {
     throw new Error("収録曲の更新に失敗しました。");
@@ -543,11 +572,20 @@ export async function updateReleaseItem(
 }
 
 export async function deleteReleaseItem(releaseId: number, itemId: number) {
-  const { error } = await supabaseAdmin
+  const scope = await getReleaseItemScope(releaseId);
+
+  let query = supabaseAdmin
     .from("release_items")
     .delete()
-    .eq("id", itemId)
-    .eq("release_id", releaseId);
+    .eq("id", itemId);
+
+  if (scope.releaseGroupId) {
+    query = query.eq("release_group_id", scope.releaseGroupId);
+  } else {
+    query = query.eq("release_id", scope.releaseId);
+  }
+
+  const { error } = await query;
 
   if (error) {
     throw new Error("収録曲の削除に失敗しました。");
@@ -567,6 +605,10 @@ export async function updateRelease(releaseId: number, formData: FormData) {
     jacket_image_url: getNullableString(formData, "jacket_image_url"),
     official_url: getNullableString(formData, "official_url"),
     notes: getNullableString(formData, "notes"),
+
+    release_group_id: getNullableNumber(formData, "release_group_id"),
+    edition_name: getNullableString(formData, "edition_name"),
+    is_primary_edition: formData.get("is_primary_edition") === "on",
   };
 
   if (!payload.title) {
@@ -580,6 +622,37 @@ export async function updateRelease(releaseId: number, formData: FormData) {
 
   if (error) {
     throw new Error("リリース情報の更新に失敗しました。");
+  }
+
+  redirect(`/_manage/releases/${releaseId}/edit?saved=1`);
+}
+
+export async function updateReleaseGroup(releaseId: number, formData: FormData) {
+  const releaseGroupId = getNullableNumber(formData, "release_group_id");
+
+  if (!releaseGroupId) {
+    throw new Error("release_group_id is required.");
+  }
+
+  const payload = {
+    title: getNullableString(formData, "group_title"),
+    title_kana: getNullableString(formData, "group_title_kana"),
+    sort_title: getNullableString(formData, "group_sort_title"),
+    release_date: getNullableString(formData, "group_release_date"),
+    notes: getNullableString(formData, "group_notes"),
+  };
+
+  if (!payload.title) {
+    throw new Error("group title is required.");
+  }
+
+  const { error } = await supabaseAdmin
+    .from("release_groups")
+    .update(payload)
+    .eq("id", releaseGroupId);
+
+  if (error) {
+    throw new Error("作品グループ情報の更新に失敗しました。");
   }
 
   redirect(`/_manage/releases/${releaseId}/edit?saved=1`);
@@ -602,6 +675,10 @@ export async function createRelease(formData: FormData) {
     jacket_image_url: getNullableString(formData, "jacket_image_url"),
     official_url: getNullableString(formData, "official_url"),
     notes: getNullableString(formData, "notes"),
+
+    release_group_id: getNullableNumber(formData, "release_group_id"),
+    edition_name: getNullableString(formData, "edition_name"),
+    is_primary_edition: formData.get("is_primary_edition") === "on",
   };
 
   const { data, error } = await supabaseAdmin
@@ -621,7 +698,7 @@ export async function duplicateRelease(releaseId: number) {
   const { data: release, error: releaseError } = await supabaseAdmin
     .from("releases")
     .select(
-      "title,title_kana,sort_title,release_type,artist_credit,release_date,jacket_image_url,official_url,notes"
+      "title,title_kana,sort_title,release_type,artist_credit,release_date,jacket_image_url,official_url,notes,release_group_id,edition_name,is_primary_edition"
     )
     .eq("id", releaseId)
     .single();
@@ -642,6 +719,10 @@ export async function duplicateRelease(releaseId: number) {
       jacket_image_url: release.jacket_image_url,
       official_url: release.official_url,
       notes: release.notes,
+
+      release_group_id: release.release_group_id,
+      edition_name: release.edition_name,
+      is_primary_edition: false,
     })
     .select("id")
     .single();
@@ -650,40 +731,40 @@ export async function duplicateRelease(releaseId: number) {
     throw new Error("リリース情報の複製に失敗しました。");
   }
 
-  const { data: items, error: itemsError } = await supabaseAdmin
-    .from("release_items")
-    .select(
-      "disc_number,track_number,song_id,track_title,track_artist,title_override,notes"
-    )
-    .eq("release_id", releaseId)
-    .order("disc_number", { ascending: true, nullsFirst: false })
-    .order("track_number", { ascending: true, nullsFirst: false })
-    .order("id", { ascending: true });
+  // const { data: items, error: itemsError } = await supabaseAdmin
+  //   .from("release_items")
+  //   .select(
+  //     "disc_number,track_number,song_id,track_title,track_artist,title_override,notes"
+  //   )
+  //   .eq("release_id", releaseId)
+  //   .order("disc_number", { ascending: true, nullsFirst: false })
+  //   .order("track_number", { ascending: true, nullsFirst: false })
+  //   .order("id", { ascending: true });
 
-  if (itemsError) {
-    throw new Error("収録曲情報の取得に失敗しました。");
-  }
+  // if (itemsError) {
+  //   throw new Error("収録曲情報の取得に失敗しました。");
+  // }
 
-  if (items && items.length > 0) {
-    const copiedItems = items.map((item) => ({
-      release_id: newRelease.id,
-      disc_number: item.disc_number,
-      track_number: item.track_number,
-      song_id: item.song_id,
-      track_title: item.track_title,
-      track_artist: item.track_artist,
-      title_override: item.title_override,
-      notes: item.notes,
-    }));
+  // if (items && items.length > 0) {
+  //   const copiedItems = items.map((item) => ({
+  //     release_id: newRelease.id,
+  //     disc_number: item.disc_number,
+  //     track_number: item.track_number,
+  //     song_id: item.song_id,
+  //     track_title: item.track_title,
+  //     track_artist: item.track_artist,
+  //     title_override: item.title_override,
+  //     notes: item.notes,
+  //   }));
 
-    const { error: insertItemsError } = await supabaseAdmin
-      .from("release_items")
-      .insert(copiedItems);
+  //   const { error: insertItemsError } = await supabaseAdmin
+  //     .from("release_items")
+  //     .insert(copiedItems);
 
-    if (insertItemsError) {
-      throw new Error("収録曲情報の複製に失敗しました。");
-    }
-  }
+  //   if (insertItemsError) {
+  //     throw new Error("収録曲情報の複製に失敗しました。");
+  //   }
+  // }
 
   redirect(`/_manage/releases/${newRelease.id}/edit?saved=1`);
 }

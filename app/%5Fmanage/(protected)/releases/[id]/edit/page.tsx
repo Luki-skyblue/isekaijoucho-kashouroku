@@ -5,6 +5,7 @@ import {
   deleteRelease,
   duplicateRelease,
   updateRelease,
+  updateReleaseGroup,
 } from "../../../../actions";
 
 type PageProps = {
@@ -25,7 +26,7 @@ function TextInput({
 }: {
   name: string;
   label: string;
-  defaultValue: string | null;
+  defaultValue: string | number | null;
   type?: string;
   required?: boolean;
 }) {
@@ -108,7 +109,7 @@ export default async function ManageReleaseEditPage({
   const { data: release, error } = await supabaseAdmin
     .from("releases")
     .select(
-      "id,title,title_kana,sort_title,release_type,artist_credit,release_date,jacket_image_url,official_url,notes"
+    "id,title,title_kana,sort_title,release_type,artist_credit,release_date,jacket_image_url,official_url,notes,release_group_id,edition_name,is_primary_edition"
     )
     .eq("id", releaseId)
     .single();
@@ -117,10 +118,29 @@ export default async function ManageReleaseEditPage({
     notFound();
   }
 
+    const { data: releaseGroup, error: releaseGroupError } =
+    release.release_group_id
+        ? await supabaseAdmin
+            .from("release_groups")
+            .select("id,title,title_kana,sort_title,release_date,notes")
+            .eq("id", release.release_group_id)
+            .single()
+        : { data: null, error: null };
+
+    if (releaseGroupError) {
+    throw new Error("作品グループ情報の取得に失敗しました。");
+    }  
+
   async function submitForm(formData: FormData) {
     "use server";
 
     await updateRelease(releaseId, formData);
+  }
+
+  async function submitGroupForm(formData: FormData) {
+    "use server";
+
+    await updateReleaseGroup(releaseId, formData);
   }
 
     async function duplicateAction() {
@@ -189,6 +209,72 @@ export default async function ManageReleaseEditPage({
         ) : null}
       </section>
 
+        {releaseGroup ? (
+        <form action={submitGroupForm} className="mt-8 border border-black/15 p-5">
+            <input
+            type="hidden"
+            name="release_group_id"
+            value={releaseGroup.id}
+            />
+
+            <p className="section-label text-black/45">RELEASE GROUP</p>
+
+            <h2 className="font-serif-jp mt-3 text-2xl font-medium tracking-[0.02em] text-black">
+            {releaseGroup.title}
+            </h2>
+
+            <p className="mt-3 text-xs leading-6 text-black/40">
+            作品単位の情報です。形態違いがある場合、公開ページ上部にこのタイトルが表示されます。
+            </p>
+
+            <div className="mt-5 grid gap-5 md:grid-cols-2">
+            <TextInput
+                name="group_title"
+                label="GROUP TITLE"
+                defaultValue={releaseGroup.title}
+                required
+            />
+
+            <TextInput
+                name="group_title_kana"
+                label="GROUP TITLE KANA"
+                defaultValue={releaseGroup.title_kana}
+            />
+
+            <TextInput
+                name="group_sort_title"
+                label="GROUP SORT TITLE"
+                defaultValue={releaseGroup.sort_title}
+            />
+
+            <TextInput
+                name="group_release_date"
+                label="GROUP RELEASE DATE"
+                type="date"
+                defaultValue={releaseGroup.release_date}
+            />
+            </div>
+
+            <div className="mt-5">
+            <TextArea
+                name="group_notes"
+                label="GROUP NOTES"
+                defaultValue={releaseGroup.notes}
+                rows={4}
+            />
+            </div>
+
+            <div className="mt-5">
+            <button
+                type="submit"
+                className="border border-black px-5 py-3 text-xs font-medium tracking-[0.12em] text-black transition hover:bg-black hover:text-[#f5f5f2]"
+            >
+                SAVE GROUP
+            </button>
+            </div>
+        </form>
+        ) : null}
+
       <form action={submitForm} className="mt-8 space-y-10">
         <section>
           <p className="section-label text-black/45">BASIC</p>
@@ -223,6 +309,42 @@ export default async function ManageReleaseEditPage({
               defaultValue={release.release_date}
             />
           </div>
+        </section>
+
+        <section>
+        <p className="section-label text-black/45">GROUP / EDITION</p>
+
+        <div className="mt-4 grid gap-5 md:grid-cols-2">
+            <TextInput
+            name="release_group_id"
+            label="RELEASE GROUP ID"
+            type="number"
+            defaultValue={release.release_group_id}
+            />
+
+            <TextInput
+            name="edition_name"
+            label="EDITION NAME"
+            defaultValue={release.edition_name}
+            />
+
+            <label className="block">
+            <span className="section-label text-black/45">PRIMARY EDITION</span>
+
+            <span className="mt-2 flex items-center gap-3 border border-black/20 px-3 py-2 text-sm text-black/70">
+                <input
+                type="checkbox"
+                name="is_primary_edition"
+                defaultChecked={release.is_primary_edition === true}
+                />
+                代表形態にする
+            </span>
+            </label>
+        </div>
+
+        <p className="mt-3 text-xs leading-6 text-black/40">
+            同じ作品の形態違いは同じ RELEASE GROUP ID を指定します。代表形態は、曲ページの収録情報などから飛ぶデフォルト先として使う予定です。
+        </p>
         </section>
 
         <section>
