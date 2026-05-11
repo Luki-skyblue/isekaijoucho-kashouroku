@@ -492,3 +492,211 @@ export async function deleteSongLink(linkId: number, songId: number) {
 
   redirect(`/_manage/songs/${songId}/links?saved=1`);
 }
+
+export async function createReleaseItem(releaseId: number, formData: FormData) {
+  const payload = {
+    release_id: releaseId,
+    disc_number: getNullableNumber(formData, "disc_number"),
+    track_number: getNullableNumber(formData, "track_number"),
+    song_id: getNullableNumber(formData, "song_id"),
+    track_title: getNullableString(formData, "track_title"),
+    track_artist: getNullableString(formData, "track_artist"),
+    title_override: getNullableString(formData, "title_override"),
+    notes: getNullableString(formData, "notes"),
+  };
+
+  const { error } = await supabaseAdmin.from("release_items").insert(payload);
+
+  if (error) {
+    throw new Error("収録曲の追加に失敗しました。");
+  }
+
+  redirect(`/_manage/releases/${releaseId}/items?saved=1`);
+}
+
+export async function updateReleaseItem(
+  releaseId: number,
+  itemId: number,
+  formData: FormData
+) {
+  const payload = {
+    disc_number: getNullableNumber(formData, "disc_number"),
+    track_number: getNullableNumber(formData, "track_number"),
+    song_id: getNullableNumber(formData, "song_id"),
+    track_title: getNullableString(formData, "track_title"),
+    track_artist: getNullableString(formData, "track_artist"),
+    title_override: getNullableString(formData, "title_override"),
+    notes: getNullableString(formData, "notes"),
+  };
+
+  const { error } = await supabaseAdmin
+    .from("release_items")
+    .update(payload)
+    .eq("id", itemId)
+    .eq("release_id", releaseId);
+
+  if (error) {
+    throw new Error("収録曲の更新に失敗しました。");
+  }
+
+  redirect(`/_manage/releases/${releaseId}/items?saved=1`);
+}
+
+export async function deleteReleaseItem(releaseId: number, itemId: number) {
+  const { error } = await supabaseAdmin
+    .from("release_items")
+    .delete()
+    .eq("id", itemId)
+    .eq("release_id", releaseId);
+
+  if (error) {
+    throw new Error("収録曲の削除に失敗しました。");
+  }
+
+  redirect(`/_manage/releases/${releaseId}/items?saved=1`);
+}
+
+export async function updateRelease(releaseId: number, formData: FormData) {
+  const payload = {
+    title: getNullableString(formData, "title"),
+    title_kana: getNullableString(formData, "title_kana"),
+    sort_title: getNullableString(formData, "sort_title"),
+    release_type: getNullableString(formData, "release_type") ?? "other",
+    artist_credit: getNullableString(formData, "artist_credit"),
+    release_date: getNullableString(formData, "release_date"),
+    jacket_image_url: getNullableString(formData, "jacket_image_url"),
+    official_url: getNullableString(formData, "official_url"),
+    notes: getNullableString(formData, "notes"),
+  };
+
+  if (!payload.title) {
+    throw new Error("title is required.");
+  }
+
+  const { error } = await supabaseAdmin
+    .from("releases")
+    .update(payload)
+    .eq("id", releaseId);
+
+  if (error) {
+    throw new Error("リリース情報の更新に失敗しました。");
+  }
+
+  redirect(`/_manage/releases/${releaseId}/edit?saved=1`);
+}
+
+export async function createRelease(formData: FormData) {
+  const title = getNullableString(formData, "title");
+
+  if (!title) {
+    throw new Error("title is required.");
+  }
+
+  const payload = {
+    title,
+    title_kana: getNullableString(formData, "title_kana"),
+    sort_title: getNullableString(formData, "sort_title"),
+    release_type: getNullableString(formData, "release_type") ?? "other",
+    artist_credit: getNullableString(formData, "artist_credit"),
+    release_date: getNullableString(formData, "release_date"),
+    jacket_image_url: getNullableString(formData, "jacket_image_url"),
+    official_url: getNullableString(formData, "official_url"),
+    notes: getNullableString(formData, "notes"),
+  };
+
+  const { data, error } = await supabaseAdmin
+    .from("releases")
+    .insert(payload)
+    .select("id")
+    .single();
+
+  if (error || !data) {
+    throw new Error("リリース情報の作成に失敗しました。");
+  }
+
+  redirect(`/_manage/releases/${data.id}/edit?saved=1`);
+}
+
+export async function duplicateRelease(releaseId: number) {
+  const { data: release, error: releaseError } = await supabaseAdmin
+    .from("releases")
+    .select(
+      "title,title_kana,sort_title,release_type,artist_credit,release_date,jacket_image_url,official_url,notes"
+    )
+    .eq("id", releaseId)
+    .single();
+
+  if (releaseError || !release) {
+    throw new Error("複製元のリリース情報の取得に失敗しました。");
+  }
+
+  const { data: newRelease, error: insertReleaseError } = await supabaseAdmin
+    .from("releases")
+    .insert({
+      title: `${release.title} copy`,
+      title_kana: release.title_kana,
+      sort_title: release.sort_title,
+      release_type: release.release_type,
+      artist_credit: release.artist_credit,
+      release_date: release.release_date,
+      jacket_image_url: release.jacket_image_url,
+      official_url: release.official_url,
+      notes: release.notes,
+    })
+    .select("id")
+    .single();
+
+  if (insertReleaseError || !newRelease) {
+    throw new Error("リリース情報の複製に失敗しました。");
+  }
+
+  const { data: items, error: itemsError } = await supabaseAdmin
+    .from("release_items")
+    .select(
+      "disc_number,track_number,song_id,track_title,track_artist,title_override,notes"
+    )
+    .eq("release_id", releaseId)
+    .order("disc_number", { ascending: true, nullsFirst: false })
+    .order("track_number", { ascending: true, nullsFirst: false })
+    .order("id", { ascending: true });
+
+  if (itemsError) {
+    throw new Error("収録曲情報の取得に失敗しました。");
+  }
+
+  if (items && items.length > 0) {
+    const copiedItems = items.map((item) => ({
+      release_id: newRelease.id,
+      disc_number: item.disc_number,
+      track_number: item.track_number,
+      song_id: item.song_id,
+      track_title: item.track_title,
+      track_artist: item.track_artist,
+      title_override: item.title_override,
+      notes: item.notes,
+    }));
+
+    const { error: insertItemsError } = await supabaseAdmin
+      .from("release_items")
+      .insert(copiedItems);
+
+    if (insertItemsError) {
+      throw new Error("収録曲情報の複製に失敗しました。");
+    }
+  }
+
+  redirect(`/_manage/releases/${newRelease.id}/edit?saved=1`);
+}
+
+export async function deleteRelease(releaseId: number) {
+  const { error } = await supabaseAdmin
+    .from("releases")
+    .delete()
+    .eq("id", releaseId);
+
+  if (error) {
+    throw new Error("リリース情報の削除に失敗しました。");
+  }
+
+  redirect("/_manage/releases?deleted=1");
+}

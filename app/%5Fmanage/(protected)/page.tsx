@@ -14,7 +14,7 @@ export default function ManageTopPage() {
             </h1>
 
             <p className="mt-4 text-sm leading-7 text-black/55">
-              投稿内容の確認、楽曲データの確認・編集を行うための管理ページです。
+              投稿内容、楽曲データ、リリース情報を確認・編集するための管理ページです。
             </p>
           </div>
 
@@ -52,9 +52,23 @@ export default function ManageTopPage() {
             楽曲データ
           </h2>
           <p className="mt-3 text-sm leading-7 text-black/55">
-            楽曲データの確認・編集を行います。編集機能は次の段階で追加します。
+            楽曲データの確認・編集、関連リンクやバージョン情報の管理を行います。
           </p>
         </Link>
+
+        <Link
+          href="/_manage/releases"
+          className="border border-black/15 p-5 transition hover:bg-black/[0.03]"
+        >
+          <p className="section-label text-black/45">RELEASES</p>
+          <h2 className="font-serif-jp mt-3 text-2xl font-medium text-black">
+            リリース情報
+          </h2>
+          <p className="mt-3 text-sm leading-7 text-black/55">
+            アルバム、EP、CD、配信シングルなどの情報と収録曲を管理します。
+          </p>
+        </Link>
+
       </section>
     </main>
   );
