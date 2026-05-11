@@ -457,7 +457,7 @@ function SongReleasesSection({
         const release = item.releases;
         const releaseDate = formatReleaseDate(release?.release_date ?? null);
         const trackPosition = formatTrackPosition(item);
-        const href = release?.official_url || null;
+        const href = release?.id ? `/releases/${release.id}` : null;
         const hasJacket = hasValue(release?.jacket_image_url);
 
         const inner = (
@@ -517,15 +517,13 @@ function SongReleasesSection({
 
         if (href) {
           return (
-            <a
+            <Link
               key={item.id}
               href={href}
-              target="_blank"
-              rel="noreferrer"
               className="group block transition hover:bg-black/[0.03]"
             >
               {inner}
-            </a>
+            </Link>
           );
         }
 
