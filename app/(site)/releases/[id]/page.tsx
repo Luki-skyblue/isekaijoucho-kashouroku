@@ -432,13 +432,10 @@ export default async function ReleasePage({ params }: PageProps) {
                 {discGroup.items.map((item) => {
                   const title = getTrackTitle(item);
                   const artist = getTrackArtist(item);
-                  const versionDisplay = getVersionDisplay(item.songs);
                   const trackNumber = formatTrackNumber(item);
                   const isLinkedSong = Boolean(item.songs?.id);
 
-                  const titleText = versionDisplay
-                    ? `${title} (${versionDisplay})`
-                    : title;
+                  const titleText = title;
 
                   const rowContent = (
                     <div className="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-3 py-3">
