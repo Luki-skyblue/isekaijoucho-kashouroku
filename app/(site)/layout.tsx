@@ -41,7 +41,13 @@ export default function SiteLayout({
             <p>非公式ファンデータベース / 制作補助：ChatGPT</p>
             <p>
               本サイトはKAMITSUBAKI STUDIOおよび関係各社とは関係ありません。
+              掲載している情報・画像等の権利は各権利者に帰属します。
               掲載情報には未確認・不確定なものが含まれる場合があります。
+              詳細は{" "}
+              <Link href="/about" className="underline underline-offset-4 hover:text-black">
+                ABOUT
+              </Link>
+              をご確認ください。
             </p>
           </div>
         </div>

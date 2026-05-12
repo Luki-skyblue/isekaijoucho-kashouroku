@@ -296,17 +296,6 @@ export default async function ReleasePage({ params }: PageProps) {
         >
           BACK TO SONGS
         </Link>
-
-        {hasValue(release.official_url) ? (
-          <a
-            href={release.official_url ?? ""}
-            target="_blank"
-            rel="noreferrer"
-            className="border border-black/25 px-3 py-1.5 text-xs font-medium tracking-[0.12em] text-black/60 transition hover:border-black hover:bg-black hover:text-[#f5f5f2]"
-          >
-            OFFICIAL
-          </a>
-        ) : null}
       </div>
 
       {releaseGroup ? (
@@ -409,6 +398,19 @@ export default async function ReleasePage({ params }: PageProps) {
           </p>
         </div>
       </section>
+
+      {hasValue(release.official_url) ? (
+        <div className="mt-8 border-b border-black/15 pb-8">
+          <a
+            href={release.official_url ?? ""}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex border border-black/25 px-4 py-2 text-xs font-medium tracking-[0.12em] text-black/60 transition hover:border-black hover:bg-black hover:text-[#f5f5f2]"
+          >
+            OFFICIAL PAGE
+          </a>
+        </div>
+      ) : null}
 
       <section className="mt-12 grid gap-8 md:grid-cols-[180px_1fr]">
         <div className="section-head">

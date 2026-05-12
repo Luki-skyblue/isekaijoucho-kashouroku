@@ -63,7 +63,30 @@ export default function AboutPage() {
           </p>
 
           <p>
-            掲載している名称・楽曲名・アーティスト名・各種リンク等の権利は、それぞれの権利者に帰属します。
+            掲載している名称・楽曲名・アーティスト名・画像・各種リンク等の権利は、それぞれの権利者に帰属します。
+          </p>
+        </div>
+      </section>
+
+      <section className="grid gap-10 border-b border-black/15 py-8 md:grid-cols-[220px_1fr]">
+        <div className="section-head">
+          <p className="section-label text-black/45">IMAGES / LINKS</p>
+          <h2 className="section-title-ja">画像・外部リンク</h2>
+        </div>
+
+        <div className="space-y-4 text-sm leading-7 text-black/65">
+          <p>
+            本サイトでは、作品情報の確認および参照のため、公式サイト・公式配信ページ・公式動画などへの外部リンクを掲載しています。
+          </p>
+
+          <p>
+            ジャケット画像・サムネイル画像等を表示する場合は、原則として公式ページ等で公開されている画像URLを参照し、画像そのものを本サイトに保存・再配布しない運用としています。
+            各画像・作品名・商品名等の権利は、それぞれの権利者に帰属します。
+          </p>
+
+          <p>
+            掲載内容に問題がある場合は、情報提供フォームよりご連絡ください。
+            確認のうえ、必要に応じて修正・削除等の対応を行います。
           </p>
         </div>
       </section>
@@ -118,7 +141,7 @@ export default function AboutPage() {
           </p>
 
           <p>
-            情報の誤りや追加情報を見つけた場合は、各楽曲ページの情報提供フォーム、または共通の情報提供ページから送信できます。
+            情報の誤りや追加情報を見つけた場合は、各楽曲ページまたは共通の情報提供フォームからお知らせいただけると助かります。
           </p>
         </div>
       </section>
