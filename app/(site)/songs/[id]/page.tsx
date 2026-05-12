@@ -746,13 +746,13 @@ export default async function SongDetailPage({ params }: PageProps) {
         </div>
       </div>
       
-      <section className="grid grid-cols-[6.5rem_minmax(0,1fr)] gap-5 border-b border-black/15 pb-10 sm:grid-cols-[9rem_minmax(0,1fr)] md:grid-cols-[220px_minmax(0,1fr)] md:gap-8">
+      <section className="grid grid-cols-[6.5rem_minmax(0,1fr)] gap-5 border-b border-black/15 pb-10 sm:grid-cols-[9rem_minmax(0,1fr)] md:grid-cols-[200px_minmax(0,1fr)] md:gap-8">
         <div className="w-full self-start overflow-hidden border border-black/15 bg-black/[0.02]">
         {hasValue(heroImageUrl) ? (
           <img
             src={heroImageUrl}
             alt=""
-            className="aspect-square w-full object-cover"
+            className="w-full"
           />
         ) : (
           <div className="aspect-square w-full p-3 sm:p-5">
@@ -769,23 +769,23 @@ export default async function SongDetailPage({ params }: PageProps) {
             {song.song_type ?? "UNKNOWN"}
           </p>
 
-          <h1 className="font-serif-jp mt-3 break-words text-2xl font-medium tracking-[0.02em] text-black sm:text-3xl md:text-5xl">
+          <h1 className="font-serif-jp mt-1 break-words text-2xl font-medium tracking-[0.02em] text-black sm:text-3xl md:text-5xl">
             {song.title}
           </h1>
 
           {currentVersionDisplay ? (
-            <p className="mt-3 text-xs tracking-[0.12em] text-black/40">
+            <p className="mt-1 text-xs tracking-[0.12em] text-black/40">
               {currentVersionDisplay}
             </p>
           ) : null}
 
           {hasValue(song.title_kana) && (
-            <p className="mt-2 text-xs tracking-[0.04em] text-black/45 sm:text-sm">
+            <p className="mt-1 text-xs tracking-[0.04em] text-black/40 sm:text-sm">
               {song.title_kana}
             </p>
           )}
 
-          <p className="mt-4 text-sm text-black/70 sm:text-base md:text-lg">
+          <p className="mt-2 text-sm leading-5 text-black/55 sm:text-base">
             {hasValue(song.artist_credit) ? song.artist_credit : <EmptyText />}
           </p>
         </div>

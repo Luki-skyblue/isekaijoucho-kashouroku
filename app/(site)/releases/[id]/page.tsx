@@ -106,22 +106,6 @@ function getTrackArtist(item: ReleaseItem) {
   return "-";
 }
 
-function getVersionDisplay(song: ReleaseItem["songs"]) {
-  if (!song) {
-    return null;
-  }
-
-  if (hasValue(song.version_name)) {
-    return song.version_name;
-  }
-
-  if (song.is_primary_version === false) {
-    return "別バージョン";
-  }
-
-  return null;
-}
-
 function getEditionLabel(edition: ReleaseEdition) {
   if (hasValue(edition.edition_name)) {
     return edition.edition_name;
@@ -306,37 +290,41 @@ export default async function ReleasePage({ params }: PageProps) {
             {hasValue(releaseGroup.title) ? releaseGroup.title : release.title}
           </h1>
 
-          {hasValue(releaseGroup.tagline) ? (
-            <p className="mt-3 text-sm font-medium tracking-[0.08em] text-black/55 md:text-base">
-              {releaseGroup.tagline}
-            </p>
-          ) : null}
-
           {hasValue(releaseGroup.title_kana) ? (
             <p className="mt-2 text-sm tracking-[0.04em] text-black/45">
               {releaseGroup.title_kana}
             </p>
           ) : null}
 
-          {editions.length > 1 ? (
-            <div className="mt-6 flex flex-wrap gap-2">
-              {editions.map((edition) => {
-                const isCurrent = edition.id === release.id;
+          {hasValue(releaseGroup.tagline) ? (
+            <p className="mt-3 text-sm font-medium tracking-[0.08em] text-black/55 md:text-base">
+              {releaseGroup.tagline}
+            </p>
+          ) : null}
 
-                return (
-                  <Link
-                    key={edition.id}
-                    href={`/releases/${edition.id}`}
-                    className={
-                      isCurrent
-                        ? "border border-black bg-black px-4 py-2 text-xs font-medium tracking-[0.12em] text-[#f5f5f2]"
-                        : "border border-black/25 px-4 py-2 text-xs font-medium tracking-[0.12em] text-black/55 transition hover:border-black hover:text-black"
-                    }
-                  >
-                    {getEditionLabel(edition)}
-                  </Link>
-                );
-              })}
+          {editions.length > 1 ? (
+            <div className="mt-6">
+              <p className="section-label text-black/45">EDITION</p>
+
+              <div className="mt-3 flex flex-wrap gap-2">
+                {editions.map((edition) => {
+                  const isCurrent = edition.id === release.id;
+
+                  return (
+                    <Link
+                      key={edition.id}
+                      href={`/releases/${edition.id}`}
+                      className={
+                        isCurrent
+                          ? "border border-black bg-black px-4 py-2 text-xs font-medium tracking-[0.12em] text-[#f5f5f2]"
+                          : "border border-black/25 px-4 py-2 text-xs font-medium tracking-[0.12em] text-black/55 transition hover:border-black hover:text-black"
+                      }
+                    >
+                      {getEditionLabel(edition)}
+                    </Link>
+                  );
+                })}
+              </div>
             </div>
           ) : null}
 
@@ -348,13 +336,13 @@ export default async function ReleasePage({ params }: PageProps) {
         </section>
       ) : null}
 
-      <section className="grid grid-cols-[6.5rem_minmax(0,1fr)] gap-5 border-b border-black/15 pb-10 sm:grid-cols-[9rem_minmax(0,1fr)] md:grid-cols-[220px_minmax(0,1fr)] md:gap-8">
+      <section className="grid grid-cols-[6.5rem_minmax(0,1fr)] gap-5 border-b border-black/15 pb-10 sm:grid-cols-[9rem_minmax(0,1fr)] md:grid-cols-[200px_minmax(0,1fr)] md:gap-8">
         <div className="w-full self-start overflow-hidden border border-black/15 bg-black/[0.02]">
           {hasValue(release.jacket_image_url) ? (
             <img
               src={release.jacket_image_url ?? ""}
               alt=""
-              className="aspect-square w-full object-cover"
+              className="w-full"
             />
           ) : (
             <div className="aspect-square w-full p-3 sm:p-5">
@@ -368,34 +356,30 @@ export default async function ReleasePage({ params }: PageProps) {
 
         <div className="min-w-0 self-center md:self-start">
           <p className="section-label text-black/45">
-            {releaseGroup
-              ? `EDITION / ${formatReleaseType(release.release_type)}`
-              : formatReleaseType(release.release_type)}
+            {formatReleaseType(release.release_type)}
           </p>
 
-          <h1 className="font-serif-jp mt-3 break-words text-2xl font-medium tracking-[0.02em] text-black sm:text-3xl md:text-5xl">
+          <h1 className="font-serif-jp mt-1 break-words text-2xl font-medium tracking-[0.02em] text-black sm:text-3xl md:text-5xl">
             {release.title}
           </h1>
 
-          {hasValue(release.edition_name) ? (
-            <p className="mt-2 text-xs tracking-[0.12em] text-black/40">
-              EDITION: {release.edition_name}
-            </p>
-          ) : null}          
-
           {hasValue(release.title_kana) ? (
-            <p className="mt-2 text-xs tracking-[0.04em] text-black/45 sm:text-sm">
+            <p className="mt-0 text-xs tracking-[0.04em] text-black/40 sm:text-sm">
               {release.title_kana}
             </p>
           ) : null}
 
-          <p className="mt-4 text-sm text-black/70 sm:text-base md:text-lg">
-            {hasValue(release.artist_credit) ? release.artist_credit : "-"}
-          </p>
-
-          <p className="mt-3 text-xs tracking-[0.12em] text-black/40">
-            {formatDate(release.release_date)}
-          </p>
+          {(hasValue(release.artist_credit) || hasValue(release.release_date)) ? (
+            <p className="mt-1 text-sm leading-5 text-black/55 sm:text-base">
+              {hasValue(release.artist_credit) ? release.artist_credit : "-"}
+              {hasValue(release.release_date) ? (
+                <>
+                  <span className="mx-2 text-black/25">/</span>
+                  <span>{formatDate(release.release_date)}</span>
+                </>
+              ) : null}
+            </p>
+          ) : null}
         </div>
       </section>
 
