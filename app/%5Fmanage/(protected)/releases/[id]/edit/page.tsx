@@ -122,7 +122,7 @@ export default async function ManageReleaseEditPage({
     release.release_group_id
         ? await supabaseAdmin
             .from("release_groups")
-            .select("id,title,title_kana,sort_title,release_date,notes")
+            .select("id,title,title_kana,sort_title,release_date,tagline,notes")
             .eq("id", release.release_group_id)
             .single()
         : { data: null, error: null };
@@ -233,6 +233,12 @@ export default async function ManageReleaseEditPage({
                 label="GROUP TITLE"
                 defaultValue={releaseGroup.title}
                 required
+            />
+
+            <TextInput
+            name="group_tagline"
+            label="GROUP TAGLINE"
+            defaultValue={releaseGroup.tagline}
             />
 
             <TextInput

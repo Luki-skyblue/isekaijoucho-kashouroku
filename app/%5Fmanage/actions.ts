@@ -639,6 +639,7 @@ export async function updateReleaseGroup(releaseId: number, formData: FormData) 
     title_kana: getNullableString(formData, "group_title_kana"),
     sort_title: getNullableString(formData, "group_sort_title"),
     release_date: getNullableString(formData, "group_release_date"),
+    tagline: getNullableString(formData, "group_tagline"),
     notes: getNullableString(formData, "group_notes"),
   };
 
@@ -681,6 +682,7 @@ export async function createRelease(formData: FormData) {
         getNullableString(formData, "group_sort_title") ??
         getNullableString(formData, "sort_title"),
       release_date: getNullableString(formData, "release_date"),
+      tagline: getNullableString(formData, "group_tagline"),
       notes: null,
     };
 

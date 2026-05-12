@@ -34,6 +34,7 @@ type ReleaseGroup = {
   title_kana: string | null;
   sort_title: string | null;
   release_date: string | null;
+  tagline: string | null;
   notes: string | null;
 };
 
@@ -181,7 +182,7 @@ export default async function ReleasePage({ params }: PageProps) {
   if (release.release_group_id) {
     const { data: groupData, error: groupError } = await supabase
       .from("release_groups")
-      .select("id, title, title_kana, sort_title, release_date, notes")
+      .select("id, title, title_kana, sort_title, release_date, tagline, notes")
       .eq("id", release.release_group_id)
       .single()
       .returns<ReleaseGroup>();
@@ -278,6 +279,12 @@ export default async function ReleasePage({ params }: PageProps) {
           <h1 className="font-serif-jp mt-3 break-words text-4xl font-medium tracking-[0.02em] text-black md:text-6xl">
             {hasValue(releaseGroup.title) ? releaseGroup.title : release.title}
           </h1>
+
+          {hasValue(releaseGroup.tagline) ? (
+            <p className="mt-3 text-sm font-medium tracking-[0.08em] text-black/55 md:text-base">
+              {releaseGroup.tagline}
+            </p>
+          ) : null}
 
           {hasValue(releaseGroup.title_kana) ? (
             <p className="mt-2 text-sm tracking-[0.04em] text-black/45">

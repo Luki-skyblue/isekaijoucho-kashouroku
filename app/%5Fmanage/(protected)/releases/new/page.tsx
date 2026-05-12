@@ -122,6 +122,11 @@ export default function ManageReleaseNewPage() {
             />
 
             <TextInput
+            name="group_tagline"
+            label="GROUP TAGLINE"
+            />
+
+            <TextInput
             name="group_title_kana"
             label="GROUP TITLE KANA"
             />
