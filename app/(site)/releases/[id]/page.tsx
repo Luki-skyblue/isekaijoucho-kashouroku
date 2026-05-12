@@ -156,6 +156,41 @@ function formatTrackNumber(item: ReleaseItem) {
   return String(item.track_number).padStart(2, "0");
 }
 
+function groupItemsByDisc(items: ReleaseItem[]) {
+  const hasDisc = items.some((item) => item.disc_number !== null);
+
+  if (!hasDisc) {
+    return [
+      {
+        discNumber: null,
+        label: null,
+        items,
+      },
+    ];
+  }
+
+  const grouped = new Map<number | null, ReleaseItem[]>();
+
+  for (const item of items) {
+    const key = item.disc_number ?? null;
+    const current = grouped.get(key) ?? [];
+    current.push(item);
+    grouped.set(key, current);
+  }
+
+  return Array.from(grouped.entries())
+    .sort(([a], [b]) => {
+      if (a === null) return 1;
+      if (b === null) return -1;
+      return a - b;
+    })
+    .map(([discNumber, discItems]) => ({
+      discNumber,
+      label: discNumber === null ? "DISC 未設定" : `DISC ${discNumber}`,
+      items: discItems,
+    }));
+}
+
 export default async function ReleasePage({ params }: PageProps) {
   const { id } = await params;
   const releaseId = Number(id);
@@ -248,6 +283,8 @@ export default async function ReleasePage({ params }: PageProps) {
   if (itemsError) {
     throw new Error("収録曲の取得に失敗しました。");
   }
+
+  const groupedItems = groupItemsByDisc(items ?? []);
 
   return (
     <main className="mx-auto max-w-6xl px-6 py-12">
@@ -379,70 +416,87 @@ export default async function ReleasePage({ params }: PageProps) {
           <h2 className="section-title-ja">収録曲</h2>
         </div>
 
-        <div className="divide-y divide-black/10 border-y border-black/10">
-        {(items ?? []).map((item) => {
-            const title = getTrackTitle(item);
-            const artist = getTrackArtist(item);
-            const versionDisplay = getVersionDisplay(item.songs);
-            const trackNumber = formatTrackNumber(item);
-            const isLinkedSong = Boolean(item.songs?.id);
-
-            const titleText = versionDisplay
-            ? `${title} (${versionDisplay})`
-            : title;
-
-            const rowContent = (
-            <div className="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-3 py-3">
-                <p className="text-xs tabular-nums text-black/35">
-                {trackNumber}.
-                </p>
-
-                <div className="min-w-0">
-                <p
-                    className={
-                    isLinkedSong
-                        ? "text-sm leading-6 text-black underline-offset-4 group-hover:underline"
-                        : "text-sm leading-6 text-black/55"
-                    }
-                >
-                    <span className="font-medium">{titleText}</span>
-                    <span className="text-black/35"> / </span>
-                    <span className="text-black/55">{artist}</span>
-                </p>
-
-                {item.notes ? (
-                    <p className="mt-1 text-xs leading-5 text-black/35">
-                    {item.notes}
-                    </p>
-                ) : null}
+        <div className="grid gap-8">
+          {groupedItems.map((discGroup) => (
+            <div key={discGroup.discNumber ?? "no-disc"}>
+              {discGroup.label ? (
+                <div className="mb-3 flex items-center gap-3">
+                  <p className="font-mono text-xs font-medium tracking-[0.18em] text-black/45">
+                    {discGroup.label}
+                  </p>
+                  <div className="h-px flex-1 bg-black/10" />
                 </div>
+              ) : null}
+
+              <div className="divide-y divide-black/10 border-y border-black/10">
+                {discGroup.items.map((item) => {
+                  const title = getTrackTitle(item);
+                  const artist = getTrackArtist(item);
+                  const versionDisplay = getVersionDisplay(item.songs);
+                  const trackNumber = formatTrackNumber(item);
+                  const isLinkedSong = Boolean(item.songs?.id);
+
+                  const titleText = versionDisplay
+                    ? `${title} (${versionDisplay})`
+                    : title;
+
+                  const rowContent = (
+                    <div className="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-3 py-3">
+                      <p className="text-xs tabular-nums text-black/35">
+                        {trackNumber}.
+                      </p>
+
+                      <div className="min-w-0">
+                        <p
+                          className={
+                            isLinkedSong
+                              ? "text-sm leading-6 text-black underline-offset-4 group-hover:underline"
+                              : "text-sm leading-6 text-black/40"
+                          }
+                        >
+                          <span className="font-medium">{titleText}</span>
+                          <span className="text-black/35"> / </span>
+                          <span className={isLinkedSong ? "text-black/55" : "text-black/35"}>
+                            {artist}
+                          </span>
+                        </p>
+
+                        {item.notes ? (
+                          <p className="mt-1 text-xs leading-5 text-black/35">
+                            {item.notes}
+                          </p>
+                        ) : null}
+                      </div>
+                    </div>
+                  );
+
+                  if (isLinkedSong) {
+                    return (
+                      <Link
+                        key={item.id}
+                        href={`/songs/${item.songs?.id}`}
+                        className="group block transition hover:bg-black/[0.03]"
+                      >
+                        {rowContent}
+                      </Link>
+                    );
+                  }
+
+                  return (
+                    <div key={item.id} className="block">
+                      {rowContent}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
-            );
+          ))}
 
-            if (isLinkedSong) {
-            return (
-                <Link
-                key={item.id}
-                href={`/songs/${item.songs?.id}`}
-                className="group block transition hover:bg-black/[0.03]"
-                >
-                {rowContent}
-                </Link>
-            );
-            }
-
-            return (
-            <div key={item.id} className="block">
-                {rowContent}
-            </div>
-            );
-        })}
-
-        {(!items || items.length === 0) && (
-            <p className="py-4 text-sm text-black/35">
-            収録曲情報がありません。
+          {(!items || items.length === 0) && (
+            <p className="border-y border-black/10 py-4 text-sm text-black/35">
+              収録曲情報がありません。
             </p>
-        )}
+          )}
         </div>
       </section>
 
