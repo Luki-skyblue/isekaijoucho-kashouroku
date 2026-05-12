@@ -113,6 +113,50 @@ export default function ManageReleaseNewPage() {
         </section>
 
         <section>
+        <p className="section-label text-black/45">GROUP / EDITION</p>
+
+        <div className="mt-4 grid gap-5 md:grid-cols-2">
+            <TextInput
+            name="group_title"
+            label="GROUP TITLE"
+            />
+
+            <TextInput
+            name="group_title_kana"
+            label="GROUP TITLE KANA"
+            />
+
+            <TextInput
+            name="group_sort_title"
+            label="GROUP SORT TITLE"
+            />
+
+            <TextInput
+            name="edition_name"
+            label="EDITION NAME"
+            />
+
+            <label className="block">
+            <span className="section-label text-black/45">PRIMARY EDITION</span>
+
+            <span className="mt-2 flex items-center gap-3 border border-black/20 px-3 py-2 text-sm text-black/70">
+                <input
+                type="checkbox"
+                name="is_primary_edition"
+                defaultChecked
+                />
+                代表形態にする
+            </span>
+            </label>
+        </div>
+
+        <p className="mt-3 text-xs leading-6 text-black/40">
+            GROUP TITLE は作品単位の名前です。空欄の場合は TITLE と同じ名前で作品グループを作成します。
+            形態違いは、作成後に DUPLICATE で増やすと同じグループに属します。
+        </p>
+        </section>
+
+        <section>
           <p className="section-label text-black/45">IMAGES / LINKS</p>
 
           <div className="mt-4 grid gap-5">

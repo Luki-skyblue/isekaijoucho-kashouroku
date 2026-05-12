@@ -665,6 +665,38 @@ export async function createRelease(formData: FormData) {
     throw new Error("title is required.");
   }
 
+  const releaseGroupIdFromForm = getNullableNumber(formData, "release_group_id");
+
+  let releaseGroupId = releaseGroupIdFromForm;
+
+  if (!releaseGroupId) {
+    const groupTitle = getNullableString(formData, "group_title") ?? title;
+
+    const groupPayload = {
+      title: groupTitle,
+      title_kana:
+        getNullableString(formData, "group_title_kana") ??
+        getNullableString(formData, "title_kana"),
+      sort_title:
+        getNullableString(formData, "group_sort_title") ??
+        getNullableString(formData, "sort_title"),
+      release_date: getNullableString(formData, "release_date"),
+      notes: null,
+    };
+
+    const { data: groupData, error: groupError } = await supabaseAdmin
+      .from("release_groups")
+      .insert(groupPayload)
+      .select("id")
+      .single();
+
+    if (groupError || !groupData) {
+      throw new Error("作品グループの作成に失敗しました。");
+    }
+
+    releaseGroupId = groupData.id;
+  }
+
   const payload = {
     title,
     title_kana: getNullableString(formData, "title_kana"),
@@ -676,7 +708,7 @@ export async function createRelease(formData: FormData) {
     official_url: getNullableString(formData, "official_url"),
     notes: getNullableString(formData, "notes"),
 
-    release_group_id: getNullableNumber(formData, "release_group_id"),
+    release_group_id: releaseGroupId,
     edition_name: getNullableString(formData, "edition_name"),
     is_primary_edition: formData.get("is_primary_edition") === "on",
   };
