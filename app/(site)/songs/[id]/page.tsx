@@ -241,13 +241,10 @@ function getLinkTypePriority(type: string | null) {
   }
 }
 
-function getFallbackHeroImageUrl(links: SongLink[]) {
+function getFallbackLinkImageUrl(links: SongLink[], types: string[]) {
   const candidate = links
     .filter((link) => {
-      return (
-        link.thumbnail_url &&
-        ["mv", "lyric_mv", "live_mv", "trailer"].includes(link.link_type ?? "")
-      );
+      return link.thumbnail_url && types.includes(link.link_type ?? "");
     })
     .sort((a, b) => {
       return getLinkTypePriority(a.link_type) - getLinkTypePriority(b.link_type);
@@ -478,7 +475,11 @@ function SongReleasesSection({
       {releaseItems.map((item) => {
         const group = item.release_groups;
         const currentRelease = item.releases;
-        const groupId = group?.id ?? item.release_group_id ?? currentRelease?.release_group_id ?? null;
+        const groupId =
+          group?.id ??
+          item.release_group_id ??
+          currentRelease?.release_group_id ??
+          null;
         const primaryRelease = groupId ? primaryReleasesByGroupId[groupId] : null;
 
         const displayRelease = primaryRelease ?? currentRelease;
@@ -567,6 +568,33 @@ function SongReleasesSection({
       })}
     </div>
   );
+}
+
+function getFallbackReleaseImageUrl(
+  releaseItems: SongReleaseItem[],
+  primaryReleasesByGroupId: PrimaryReleaseByGroupId
+) {
+  for (const item of releaseItems) {
+    const groupId =
+      item.release_groups?.id ??
+      item.release_group_id ??
+      item.releases?.release_group_id ??
+      null;
+
+    if (groupId) {
+      const primaryRelease = primaryReleasesByGroupId[groupId];
+
+      if (hasValue(primaryRelease?.jacket_image_url)) {
+        return primaryRelease.jacket_image_url;
+      }
+    }
+
+    if (hasValue(item.releases?.jacket_image_url)) {
+      return item.releases?.jacket_image_url;
+    }
+  }
+
+  return null;
 }
 
 export default async function SongDetailPage({ params }: PageProps) {
@@ -719,10 +747,24 @@ export default async function SongDetailPage({ params }: PageProps) {
     song.first_full_source,
     song.first_full_date
   );
-  const fallbackHeroImageUrl = getFallbackHeroImageUrl(links ?? []);
+  const fallbackSongImageUrl = getFallbackLinkImageUrl(links ?? [], [
+    "mv",
+    "lyric_mv",
+  ]);
+
+  const fallbackReleaseImageUrl = getFallbackReleaseImageUrl(
+    releaseItems ?? [],
+    primaryReleasesByGroupId
+  );
+
+  const fallbackSecondaryLinkImageUrl = getFallbackLinkImageUrl(links ?? [], [
+    "live_mv",
+    "trailer",
+  ]);
+
   const heroImageUrl = hasValue(song.hero_image_url)
     ? song.hero_image_url
-    : fallbackHeroImageUrl;
+    : fallbackSongImageUrl ?? fallbackReleaseImageUrl ?? fallbackSecondaryLinkImageUrl;
 
   const currentVersionDisplay = getCurrentVersionDisplay(song);
 
