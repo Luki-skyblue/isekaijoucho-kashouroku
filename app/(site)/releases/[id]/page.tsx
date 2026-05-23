@@ -275,10 +275,10 @@ export default async function ReleasePage({ params }: PageProps) {
 
       <div className="mb-8 flex flex-col gap-4 border-b border-black/10 pb-5 md:flex-row md:items-start md:justify-between">
         <Link
-          href="/songs"
+          href="/releases"
           className="text-xs font-medium tracking-[0.12em] text-black/45 transition hover:text-black"
         >
-          BACK TO SONGS
+          BACK TO RELEASES
         </Link>
       </div>
 

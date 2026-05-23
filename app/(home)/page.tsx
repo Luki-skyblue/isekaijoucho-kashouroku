@@ -86,6 +86,13 @@ export default async function HomePage() {
             VIEW SONGS
           </Link>
 
+          <Link
+            href="/releases"
+            className="inline-flex border border-black/40 px-5 py-3 text-xs font-medium tracking-[0.12em] text-black/70 transition hover:border-black hover:bg-black hover:text-[#f5f5f2]"
+          >
+            VIEW RELEASES
+          </Link>
+
           <Link href="/submit" className="action-button">
             SUBMIT INFO
           </Link>
