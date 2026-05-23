@@ -59,6 +59,16 @@ type SongReleaseItem = {
   } | null;
 };
 
+type SongDigitalRelease = {
+  id: number;
+  song_id: number;
+  title: string | null;
+  release_date: string | null;
+  jacket_image_url: string | null;
+  official_url: string | null;
+  notes: string | null;
+};
+
 type PrimaryReleaseByGroupId = Record<
   number,
   {
@@ -597,6 +607,16 @@ function getFallbackReleaseImageUrl(
   return null;
 }
 
+function getFallbackDigitalReleaseImageUrl(
+  digitalReleases: SongDigitalRelease[]
+) {
+  const candidate = digitalReleases.find((release) =>
+    hasValue(release.jacket_image_url)
+  );
+
+  return candidate?.jacket_image_url ?? null;
+}
+
 export default async function SongDetailPage({ params }: PageProps) {
   const { id } = await params;
 
@@ -688,6 +708,18 @@ export default async function SongDetailPage({ params }: PageProps) {
     throw new Error("収録リリースの取得に失敗しました。");
   }
 
+  const { data: digitalReleases, error: digitalReleasesError } = await supabase
+    .from("song_digital_releases")
+    .select("id,song_id,title,release_date,jacket_image_url,official_url,notes")
+    .eq("song_id", song.id)
+    .order("release_date", { ascending: true, nullsFirst: false })
+    .order("id", { ascending: true })
+    .returns<SongDigitalRelease[]>();
+
+  if (digitalReleasesError) {
+    throw new Error("配信リリース情報の取得に失敗しました。");
+  }
+
   const releaseGroupIds = Array.from(
     new Set(
       (releaseItems ?? [])
@@ -747,10 +779,15 @@ export default async function SongDetailPage({ params }: PageProps) {
     song.first_full_source,
     song.first_full_date
   );
+
   const fallbackSongImageUrl = getFallbackLinkImageUrl(links ?? [], [
     "mv",
     "lyric_mv",
   ]);
+
+  const fallbackDigitalReleaseImageUrl = getFallbackDigitalReleaseImageUrl(
+    digitalReleases ?? []
+  );
 
   const fallbackReleaseImageUrl = getFallbackReleaseImageUrl(
     releaseItems ?? [],
@@ -764,7 +801,10 @@ export default async function SongDetailPage({ params }: PageProps) {
 
   const heroImageUrl = hasValue(song.hero_image_url)
     ? song.hero_image_url
-    : fallbackSongImageUrl ?? fallbackReleaseImageUrl ?? fallbackSecondaryLinkImageUrl;
+    : fallbackDigitalReleaseImageUrl ??    
+      fallbackSongImageUrl ??
+      fallbackReleaseImageUrl ??
+      fallbackSecondaryLinkImageUrl;
 
   const currentVersionDisplay = getCurrentVersionDisplay(song);
 

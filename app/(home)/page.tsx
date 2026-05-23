@@ -235,7 +235,9 @@ export default async function HomePage() {
             <p className="link-label text-black">今後追加・調整したい項目</p>
             <ul className="mt-3 space-y-2 text-sm leading-6 text-black/60">
               <li>ライブ・セトリ情報</li>
-              <li>配信リリース・アルバム情報</li>
+              <li>配信リリース情報</li>
+              <li>作曲者ごとなどの検索機能</li>
+              <li>年表検索機能</li>
             </ul>
           </div>
         </div>
