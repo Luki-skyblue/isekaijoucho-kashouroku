@@ -154,27 +154,27 @@ export default async function ReleasesPage() {
     releasesByGroupId.set(release.release_group_id, current);
   }
 
-  const releaseCards: ReleaseCard[] = (groups ?? [])
-    .map((group) => {
-      const groupReleases = releasesByGroupId.get(group.id) ?? [];
-      const primaryRelease = pickPrimaryRelease(groupReleases);
+    const releaseCards = (groups ?? [])
+    .map((group): ReleaseCard | null => {
+        const groupReleases = releasesByGroupId.get(group.id) ?? [];
+        const primaryRelease = pickPrimaryRelease(groupReleases);
 
-      if (!primaryRelease) {
+        if (!primaryRelease) {
         return null;
-      }
+        }
 
-      const editions = [...groupReleases]
+        const editions = [...groupReleases]
         .sort((a, b) => {
-          if (a.is_primary_edition !== b.is_primary_edition) {
+            if (a.is_primary_edition !== b.is_primary_edition) {
             return a.is_primary_edition ? -1 : 1;
-          }
+            }
 
-          return a.id - b.id;
+            return a.id - b.id;
         })
         .map(getEditionLabel)
         .filter((label, index, array) => array.indexOf(label) === index);
 
-      return {
+        return {
         sourceType: "release" as const,
         groupId: group.id,
         title: group.title ?? primaryRelease.title ?? `#${group.id}`,
@@ -187,19 +187,19 @@ export default async function ReleasesPage() {
         releaseType: primaryRelease.release_type,
         artistCredit: primaryRelease.artist_credit,
         editions,
-      };
+        };
     })
     .filter((card): card is ReleaseCard => card !== null);
 
-  const digitalReleaseCards: ReleaseCard[] = (digitalReleases ?? [])
-    .map((digitalRelease) => {
-      const song = digitalRelease.songs;
+    const digitalReleaseCards = (digitalReleases ?? [])
+    .map((digitalRelease): ReleaseCard | null => {
+        const song = digitalRelease.songs;
 
-      if (!song) {
+        if (!song) {
         return null;
-      }
+        }
 
-      return {
+        return {
         sourceType: "digital_single" as const,
         groupId: -digitalRelease.id,
         title: digitalRelease.title ?? song.title ?? `#${digitalRelease.id}`,
@@ -212,7 +212,7 @@ export default async function ReleasesPage() {
         releaseType: "digital_single",
         artistCredit: song.artist_credit,
         editions: [],
-      };
+        };
     })
     .filter((card): card is ReleaseCard => card !== null);
 
