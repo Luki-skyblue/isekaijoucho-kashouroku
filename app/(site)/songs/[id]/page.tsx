@@ -376,6 +376,96 @@ function formatVersionLabel(song: RelatedSong) {
   return null;
 }
 
+function DigitalReleasesSection({
+  digitalReleases,
+  songTitle,
+}: {
+  digitalReleases: SongDigitalRelease[];
+  songTitle: string | null;
+}) {
+  if (digitalReleases.length === 0) {
+    return <EmptyBlock />;
+  }
+
+  return (
+    <div className="divide-y divide-black/10 border-y border-black/10">
+      {digitalReleases.map((release) => {
+        const title = hasValue(release.title)
+          ? release.title
+          : songTitle ?? "配信リリース";
+        const releaseDate = formatDate(release.release_date);
+        const hasJacket = hasValue(release.jacket_image_url);
+
+        const inner = (
+          <div
+            className={
+              hasJacket
+                ? "grid grid-cols-[72px_minmax(0,1fr)] gap-4 py-3 sm:grid-cols-[96px_minmax(0,1fr)]"
+                : "py-3"
+            }
+          >
+            {hasJacket ? (
+              <div className="flex aspect-square items-center justify-center overflow-hidden border border-black/10 bg-black/[0.02]">
+                <img
+                  src={release.jacket_image_url ?? ""}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                  className="max-h-full max-w-full transition group-hover:scale-[1.02]"
+                />
+              </div>
+            ) : null}
+
+            <div className="min-w-0">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-[10px] uppercase tracking-[0.12em] text-black/35">
+                  DIGITAL RELEASE
+                </span>
+
+                {releaseDate ? (
+                  <span className="text-[10px] tracking-[0.08em] text-black/35">
+                    {releaseDate}
+                  </span>
+                ) : null}
+              </div>
+
+              <p className="mt-2 break-words text-sm font-medium leading-6 text-black underline-offset-4 group-hover:underline">
+                {title}
+              </p>
+
+              {release.notes ? (
+                <p className="mt-1 text-xs leading-5 text-black/35">
+                  {release.notes}
+                </p>
+              ) : null}
+            </div>
+          </div>
+        );
+
+        if (hasValue(release.official_url)) {
+          return (
+            <a
+              key={release.id}
+              href={release.official_url ?? ""}
+              target="_blank"
+              rel="noreferrer"
+              className="group block transition hover:bg-black/[0.03]"
+            >
+              {inner}
+            </a>
+          );
+        }
+
+        return (
+          <div key={release.id} className="group">
+            {inner}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 function RelatedSongsSection({ songs }: { songs: RelatedSong[] }) {
   if (songs.length === 0) {
     return <EmptyBlock />;
@@ -958,6 +1048,20 @@ export default async function SongDetailPage({ params }: PageProps) {
           />
         </dl>
       </section>
+
+      {(digitalReleases ?? []).length > 0 ? (
+        <section className="mt-12 grid gap-8 md:grid-cols-[180px_1fr]">
+          <div className="section-head">
+            <p className="section-label text-black/45">DIGITAL RELEASE</p>
+            <h2 className="section-title-ja">配信リリース</h2>
+          </div>
+
+          <DigitalReleasesSection
+            digitalReleases={digitalReleases ?? []}
+            songTitle={song.title}
+          />
+        </section>
+      ) : null}
 
       <section className="mt-12 grid gap-8 md:grid-cols-[180px_1fr]">
         <div className="section-head">
