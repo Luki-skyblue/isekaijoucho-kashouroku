@@ -1,10 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { ReleaseCard } from "./page";
-
-type ReleaseTypeFilter = string;
 
 const preferredReleaseTypeOrder = [
   "album",
@@ -88,15 +86,41 @@ export default function ReleasesList({
   releases: ReleaseCard[];
 }) {
   const releaseTypes = useMemo(() => uniqueReleaseTypes(releases), [releases]);
-  const [activeType, setActiveType] = useState<ReleaseTypeFilter>("all");
+  const [enabledTypes, setEnabledTypes] = useState<string[]>([]);
 
-  const filteredReleases = useMemo(() => {
-    if (activeType === "all") {
-      return releases;
+  useEffect(() => {
+    setEnabledTypes(releaseTypes);
+  }, [releaseTypes]);
+
+  const allTypesEnabled = enabledTypes.length === releaseTypes.length;
+
+  function toggleType(type: string) {
+    setEnabledTypes((current) => {
+      if (current.includes(type)) {
+        return current.filter((item) => item !== type);
+      }
+
+      return [...current, type];
+    });
+  }
+
+  function toggleAllTypes() {
+    if (allTypesEnabled) {
+      setEnabledTypes([]);
+      return;
     }
 
-    return releases.filter((release) => release.releaseType === activeType);
-  }, [releases, activeType]);
+    setEnabledTypes(releaseTypes);
+  }
+
+  const filteredReleases = useMemo(() => {
+    return releases.filter((release) => {
+      return (
+        release.releaseType !== null &&
+        enabledTypes.includes(release.releaseType)
+      );
+    });
+  }, [releases, enabledTypes]);
 
   return (
     <>
@@ -106,30 +130,30 @@ export default function ReleasesList({
 
           <button
             type="button"
-            onClick={() => setActiveType("all")}
-            className={
-              activeType === "all"
-                ? "border border-black bg-black px-3 py-1.5 text-xs tracking-[0.08em] text-[#f5f5f2]"
-                : "border border-black/20 px-3 py-1.5 text-xs tracking-[0.08em] text-black/45 transition hover:border-black hover:text-black"
-            }
+            onClick={toggleAllTypes}
+            className="border border-black/25 px-2.5 py-1 text-[11px] text-black/60 transition hover:border-black hover:text-black"
           >
-            ALL
+            {allTypesEnabled ? "ALL OFF" : "ALL ON"}
           </button>
 
-          {releaseTypes.map((type) => (
-            <button
-              key={type}
-              type="button"
-              onClick={() => setActiveType(type)}
-              className={
-                activeType === type
-                  ? "border border-black bg-black px-3 py-1.5 text-xs tracking-[0.08em] text-[#f5f5f2]"
-                  : "border border-black/20 px-3 py-1.5 text-xs tracking-[0.08em] text-black/45 transition hover:border-black hover:text-black"
-              }
-            >
-              {getReleaseTypeLabel(type)}
-            </button>
-          ))}
+          {releaseTypes.map((type) => {
+            const enabled = enabledTypes.includes(type);
+
+            return (
+              <button
+                key={type}
+                type="button"
+                onClick={() => toggleType(type)}
+                className={
+                  enabled
+                    ? "border border-black bg-black px-3 py-1.5 text-xs tracking-[0.08em] text-[#f5f5f2]"
+                    : "border border-black/20 px-3 py-1.5 text-xs tracking-[0.08em] text-black/40 transition hover:border-black hover:text-black"
+                }
+              >
+                {getReleaseTypeLabel(type)}
+              </button>
+            );
+          })}
         </div>
 
         <p className="mt-5 text-xs text-black/45">
@@ -146,7 +170,7 @@ export default function ReleasesList({
 
             return (
               <Link
-                key={release.groupId}
+                key={`${release.sourceType}-${release.groupId}`}
                 href={release.href}
                 className="group block"
               >
