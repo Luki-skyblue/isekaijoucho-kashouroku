@@ -118,12 +118,10 @@ export async function updateSong(songId: number, formData: FormData) {
   redirect(`/_manage/songs/${songId}/edit?saved=1`);
 }
 
-export async function upsertSongDigitalRelease(
+export async function createSongDigitalRelease(
   songId: number,
   formData: FormData
 ) {
-  const digitalReleaseId = getNullableNumber(formData, "digital_release_id");
-
   const payload = {
     song_id: songId,
     title: getNullableString(formData, "digital_release_title"),
@@ -143,36 +141,8 @@ export async function upsertSongDigitalRelease(
     payload.official_url ||
     payload.notes;
 
-  if (!hasAnyValue && !digitalReleaseId) {
-    redirect(`/_manage/songs/${songId}/edit?saved=1`);
-  }
-
-  if (!hasAnyValue && digitalReleaseId) {
-    const { error } = await supabaseAdmin
-      .from("song_digital_releases")
-      .delete()
-      .eq("id", digitalReleaseId)
-      .eq("song_id", songId);
-
-    if (error) {
-      throw new Error("配信リリース情報の削除に失敗しました。");
-    }
-
-    redirect(`/_manage/songs/${songId}/edit?saved=1`);
-  }
-
-  if (digitalReleaseId) {
-    const { error } = await supabaseAdmin
-      .from("song_digital_releases")
-      .update(payload)
-      .eq("id", digitalReleaseId)
-      .eq("song_id", songId);
-
-    if (error) {
-      throw new Error("配信リリース情報の更新に失敗しました。");
-    }
-
-    redirect(`/_manage/songs/${songId}/edit?saved=1`);
+  if (!hasAnyValue) {
+    throw new Error("配信リリース情報を1項目以上入力してください。");
   }
 
   const { error } = await supabaseAdmin
@@ -183,7 +153,66 @@ export async function upsertSongDigitalRelease(
     throw new Error("配信リリース情報の作成に失敗しました。");
   }
 
-  redirect(`/_manage/songs/${songId}/edit?saved=1`);
+  redirect(`/_manage/songs/${songId}/digital-releases?saved=1`);
+}
+
+export async function updateSongDigitalRelease(
+  songId: number,
+  digitalReleaseId: number,
+  formData: FormData
+) {
+  const payload = {
+    title: getNullableString(formData, "digital_release_title"),
+    release_date: getNullableString(formData, "digital_release_date"),
+    jacket_image_url: getNullableString(
+      formData,
+      "digital_release_jacket_image_url"
+    ),
+    official_url: getNullableString(formData, "digital_release_official_url"),
+    notes: getNullableString(formData, "digital_release_notes"),
+  };
+
+  const hasAnyValue =
+    payload.title ||
+    payload.release_date ||
+    payload.jacket_image_url ||
+    payload.official_url ||
+    payload.notes;
+
+  if (!hasAnyValue) {
+    throw new Error(
+      "全項目を空にする場合は、更新ではなく削除を使用してください。"
+    );
+  }
+
+  const { error } = await supabaseAdmin
+    .from("song_digital_releases")
+    .update(payload)
+    .eq("id", digitalReleaseId)
+    .eq("song_id", songId);
+
+  if (error) {
+    throw new Error("配信リリース情報の更新に失敗しました。");
+  }
+
+  redirect(`/_manage/songs/${songId}/digital-releases?saved=1`);
+}
+
+export async function deleteSongDigitalRelease(
+  songId: number,
+  digitalReleaseId: number
+) {
+  const { error } = await supabaseAdmin
+    .from("song_digital_releases")
+    .delete()
+    .eq("id", digitalReleaseId)
+    .eq("song_id", songId);
+
+  if (error) {
+    throw new Error("配信リリース情報の削除に失敗しました。");
+  }
+
+  redirect(`/_manage/songs/${songId}/digital-releases?deleted=1`);
 }
 
 export async function createSong(formData: FormData) {

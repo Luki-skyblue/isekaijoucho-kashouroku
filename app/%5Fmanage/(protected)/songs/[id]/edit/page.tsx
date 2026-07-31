@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { supabaseAdmin } from "@/lib/supabase/admin";
-import { updateSong, upsertSongDigitalRelease, } from "../../../../actions";
+import { updateSong } from "../../../../actions";
 import ReleaseFields from "./ReleaseFields";
 import { ManagedEditForm, ManagedSaveArea } from "./UnsavedChangesGuard";
 
@@ -18,16 +18,6 @@ type SongNavItem = {
   id: number;
   title: string | null;
   first_date: string | null;
-};
-
-type SongDigitalRelease = {
-  id: number;
-  song_id: number;
-  title: string | null;
-  release_date: string | null;
-  jacket_image_url: string | null;
-  official_url: string | null;
-  notes: string | null;
 };
 
 function TextInput({
@@ -151,21 +141,6 @@ export default async function ManageSongEditPage({
     notFound();
   }
 
-  const { data: digitalReleases, error: digitalReleasesError } =
-    await supabaseAdmin
-      .from("song_digital_releases")
-      .select("id,song_id,title,release_date,jacket_image_url,official_url,notes")
-      .eq("song_id", songId)
-      .order("release_date", { ascending: true, nullsFirst: false })
-      .order("id", { ascending: true })
-      .returns<SongDigitalRelease[]>();
-
-  if (digitalReleasesError) {
-    throw new Error("配信リリース情報の取得に失敗しました。");
-  }
-
-  const digitalRelease = digitalReleases?.[0] ?? null;
-
     const { data: navSongs, error: navSongsError } = await supabaseAdmin
         .from("songs")
         .select("id, title, first_date")
@@ -193,12 +168,6 @@ export default async function ManageSongEditPage({
     await updateSong(songId, formData);
   }
 
-  async function submitDigitalReleaseForm(formData: FormData) {
-    "use server";
-
-    await upsertSongDigitalRelease(songId, formData);
-  }
-
   return (
     <main className="mx-auto max-w-5xl px-6 py-12">
     <section className="border-b border-black/15 pb-8">
@@ -215,6 +184,13 @@ export default async function ManageSongEditPage({
         className="text-xs font-medium tracking-[0.12em] text-black/45 transition hover:text-black"
         >
         EDIT LINKS
+        </Link>
+
+        <Link
+          href={`/_manage/songs/${song.id}/digital-releases`}
+          className="text-xs font-medium tracking-[0.12em] text-black/45 transition hover:text-black"
+        >
+          EDIT DIGITAL RELEASES
         </Link>
 
         <Link
@@ -494,71 +470,6 @@ export default async function ManageSongEditPage({
         <ManagedSaveArea />
 
     </ManagedEditForm>
-
-    <form
-      action={submitDigitalReleaseForm}
-      className="mt-10 border-t border-black/15 pt-8"
-    >
-      <input
-        type="hidden"
-        name="digital_release_id"
-        value={digitalRelease?.id ?? ""}
-      />
-
-      <section>
-        <p className="section-label text-black/45">DIGITAL RELEASE</p>
-
-        <p className="mt-3 text-sm leading-7 text-black/55">
-          単曲配信シングルの情報を管理します。ジャケット画像は、公開曲ページのhero画像候補として使用されます。
-          全項目を空にして保存すると、既存の配信リリース情報を削除します。
-        </p>
-
-        <div className="mt-4 grid gap-5 md:grid-cols-2">
-          <TextInput
-            name="digital_release_title"
-            label="TITLE"
-            defaultValue={digitalRelease?.title ?? null}
-          />
-
-          <TextInput
-            name="digital_release_date"
-            label="RELEASE DATE"
-            type="date"
-            defaultValue={digitalRelease?.release_date ?? null}
-          />
-
-          <TextInput
-            name="digital_release_jacket_image_url"
-            label="JACKET IMAGE URL"
-            defaultValue={digitalRelease?.jacket_image_url ?? null}
-          />
-
-          <TextInput
-            name="digital_release_official_url"
-            label="OFFICIAL URL"
-            defaultValue={digitalRelease?.official_url ?? null}
-          />
-        </div>
-
-        <div className="mt-5">
-          <TextArea
-            name="digital_release_notes"
-            label="NOTES"
-            defaultValue={digitalRelease?.notes ?? null}
-            rows={4}
-          />
-        </div>
-
-        <div className="mt-6">
-          <button
-            type="submit"
-            className="border border-black px-5 py-3 text-xs font-medium tracking-[0.12em] text-black transition hover:bg-black hover:text-[#f5f5f2]"
-          >
-            SAVE DIGITAL RELEASE
-          </button>
-        </div>
-      </section>
-    </form>
 
     </main>
   );
