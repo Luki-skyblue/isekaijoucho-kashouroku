@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { supabase } from "@/lib/supabase/client";
+import HomeThemeMotif from "./HomeThemeMotif";
 
 export const dynamic = "force-dynamic";
 
@@ -19,6 +20,7 @@ const HOME_THEME = {
   accent: "#b99a52",
   accentDeep: "#665638",
   accentSoft: "#efe5cb",
+  motif: "triangle",
 } as const;
 
 type LatestSong = {
@@ -214,14 +216,35 @@ export default async function HomePage() {
     .slice(0, 3);
 
   return (
-    <>
-      <section className="relative overflow-hidden border-b border-black/15">
-        <div
-          className="pointer-events-none absolute inset-0 bg-cover bg-[70%_center]"
-          style={{
-            backgroundImage: "url('/home-themes/sunflower/hero.webp')",
-          }}
-        />
+    <div className="overflow-x-clip">
+
+    {/* ページ全体に固定されるサンフラワー背景 */}
+    <div
+      className="pointer-events-none fixed inset-0 z-0"
+      style={{
+        background: `
+          linear-gradient(
+            180deg,
+            rgba(252,249,239,1) 0%,
+            rgba(249,244,226,0.82) 48%,
+            rgba(252,250,243,1) 100%
+          )
+        `,
+      }}
+    >
+      <HomeThemeMotif
+        shape={HOME_THEME.motif}
+        className="h-full w-full text-[#b99a52] opacity-[0.8]"
+      />
+    </div>
+
+      <section className="relative z-10 overflow-hidden border-b border-black/15">
+      <div
+        className="pointer-events-none absolute inset-0 bg-cover bg-[70%_center]"
+        style={{
+          backgroundImage: "url('/home-themes/sunflower/hero.webp')",
+        }}
+      />
 
         {/*
           文字保護用の「白い霧」。
@@ -315,33 +338,25 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <main className="mx-auto max-w-6xl px-6">
+    <div className="relative z-10">
+
+      <main className="relative z-10 mx-auto max-w-6xl px-6">
         <section className="border-b border-black/15 py-14 md:py-16">
           <div className="grid gap-14 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
+
             {/* 最近の歌唱記録 */}
             <div
               className="relative overflow-hidden border border-black/10 px-6 py-6 sm:px-7 sm:py-7"
               style={{
-                background: `
-                  linear-gradient(
-                    180deg,
-                    rgba(252,250,242,0.96) 0%,
-                    rgba(247,245,238,0.98) 100%
-                  )
-                `,
+                background: "rgba(255, 253, 247, 0.88)",
               }}
             >
+              
               <div
                 className="absolute inset-x-0 top-0 h-[2px]"
                 style={{
                   background: `linear-gradient(90deg, ${HOME_THEME.accentDeep} 0%, ${HOME_THEME.accent} 45%, transparent 100%)`,
                 }}
-              />
-
-              <div
-                className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full blur-2xl"
-                style={{ backgroundColor: `${HOME_THEME.accent}20` }}
-                aria-hidden="true"
               />
 
               <div className="relative">
@@ -425,33 +440,15 @@ export default async function HomePage() {
             <div
               className="relative overflow-hidden border border-black/10 px-6 py-6 sm:px-7 sm:py-7"
               style={{
-                background: `
-                  radial-gradient(circle at 88% 14%, rgba(232,196,82,0.14) 0%, rgba(232,196,82,0) 30%),
-                  linear-gradient(
-                    180deg,
-                    rgba(255,251,240,0.98) 0%,
-                    rgba(248,245,236,0.98) 100%
-                  )
-                `,
+                background: "rgba(255, 253, 247, 0.88)",
               }}
             >
+
               <div
                 className="absolute inset-x-0 top-0 h-[2px]"
                 style={{
                   background: `linear-gradient(90deg, ${HOME_THEME.accentDeep} 0%, ${HOME_THEME.accent} 52%, transparent 100%)`,
                 }}
-              />
-
-              <div
-                className="pointer-events-none absolute -right-12 -bottom-12 h-40 w-40 rounded-full border"
-                style={{ borderColor: `${HOME_THEME.accent}22` }}
-                aria-hidden="true"
-              />
-
-              <div
-                className="pointer-events-none absolute right-8 top-8 h-16 w-16 rounded-full blur-2xl"
-                style={{ backgroundColor: `${HOME_THEME.accent}18` }}
-                aria-hidden="true"
               />
 
               <div className="relative">
@@ -560,21 +557,9 @@ export default async function HomePage() {
             className="relative overflow-hidden border px-6 py-9 sm:px-10 sm:py-10"
             style={{
               borderColor: `${HOME_THEME.accent}55`,
-              background: `
-                linear-gradient(
-                  120deg,
-                  rgba(239,229,203,0.55) 0%,
-                  rgba(245,245,242,0.75) 52%,
-                  rgba(245,245,242,0.96) 100%
-                )
-              `,
+              background: "rgba(255, 253, 247, 0.82)",
             }}
           >
-            <div
-              className="absolute -right-14 -top-16 h-48 w-48 rounded-full border"
-              style={{ borderColor: `${HOME_THEME.accent}20` }}
-              aria-hidden="true"
-            />
 
             <div className="relative max-w-2xl">
               <p
@@ -637,6 +622,8 @@ export default async function HomePage() {
           </div>
         </section>
       </main>
-    </>
+    </div>
+    {/* /sunflower background */}
+  </div>
   );
 }
