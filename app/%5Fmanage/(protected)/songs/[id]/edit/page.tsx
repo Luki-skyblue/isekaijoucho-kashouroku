@@ -20,6 +20,13 @@ type SongNavItem = {
   first_date: string | null;
 };
 
+type RelatedVersion = {
+  id: number;
+  title: string | null;
+  version_name: string | null;
+  is_primary_version: boolean | null;
+};
+
 function TextInput({
   name,
   label,
@@ -32,7 +39,7 @@ function TextInput({
   type?: string;
 }) {
   return (
-    <label className="block">
+    <label data-managed-field className="block rounded-sm p-1 transition-colors">
       <span className="section-label text-black/45">{label}</span>
       <input
         name={name}
@@ -56,7 +63,7 @@ function TextArea({
   rows?: number;
 }) {
   return (
-    <label className="block">
+    <label data-managed-field className="block rounded-sm p-1 transition-colors">
       <span className="section-label text-black/45">{label}</span>
       <textarea
         name={name}
@@ -78,15 +85,16 @@ function FieldStatusSelect({
   defaultValue?: string | null;
 }) {
   return (
-    <label className="grid gap-1 text-[10px] tracking-[0.16em] text-neutral-400">
+    <label data-managed-field className="grid gap-1 rounded-sm p-1 text-[10px] tracking-[0.16em] text-neutral-400 transition-colors">
       {label}
       <select
         name={name}
-        defaultValue={defaultValue ?? "confirmed"}
+        defaultValue={defaultValue ?? ""}
         className="border border-neutral-200 bg-transparent px-2 py-1.5 text-xs tracking-normal text-neutral-600 outline-none focus:border-neutral-500"
       >
+        <option value="">未設定</option>
         <option value="confirmed">確認済み</option>
-        <option value="uncertain">不確定</option>
+        <option value="uncertain">要確認</option>
         <option value="unverified">未確認</option>
         <option value="wanted">情報募集中</option>
       </select>
@@ -100,21 +108,39 @@ function VerificationStatusSelect({
   defaultValue?: string | null;
 }) {
   return (
-    <label className="block">
+    <label data-managed-field className="block rounded-sm p-1 transition-colors">
       <span className="section-label text-black/45">
         VERIFICATION STATUS
       </span>
       <select
         name="verification_status"
-        defaultValue={defaultValue ?? "confirmed"}
+        defaultValue={defaultValue ?? ""}
         className="mt-2 w-full border border-black/20 bg-transparent px-3 py-2 text-sm text-black outline-none transition focus:border-black"
       >
+        <option value="">未設定</option>
         <option value="confirmed">confirmed / 確認済み</option>
-        <option value="uncertain">uncertain / 不確定</option>
+        <option value="uncertain">uncertain / 要確認</option>
         <option value="unverified">unverified / 未確認</option>
         <option value="wanted">wanted / 情報募集中</option>
       </select>
     </label>
+  );
+}
+
+function SectionSaveButton({ section }: { section: string }) {
+  return (
+    <div className="mt-6 border-t border-black/10 pt-4">
+      <button
+        type="submit"
+        name="save_section"
+        value={section}
+        data-section-save
+        hidden
+        className="border border-black/60 px-4 py-2 text-xs font-medium tracking-[0.12em] text-black/70 transition hover:border-black hover:bg-black hover:text-[#f5f5f2]"
+      >
+        この項目を保存
+      </button>
+    </div>
   );
 }
 
@@ -139,6 +165,21 @@ export default async function ManageSongEditPage({
 
   if (error || !song) {
     notFound();
+  }
+
+  const { data: relatedVersions, error: relatedVersionsError } = song.song_group_id
+    ? await supabaseAdmin
+        .from("songs")
+        .select("id,title,version_name,is_primary_version")
+        .eq("song_group_id", song.song_group_id)
+        .neq("id", song.id)
+        .order("is_primary_version", { ascending: false })
+        .order("id", { ascending: true })
+        .returns<RelatedVersion[]>()
+    : { data: [], error: null };
+
+  if (relatedVersionsError) {
+    throw new Error("関連バージョン情報の取得に失敗しました。");
   }
 
     const { data: navSongs, error: navSongsError } = await supabaseAdmin
@@ -180,21 +221,7 @@ export default async function ManageSongEditPage({
         </Link>
 
         <Link
-        href={`/_manage/songs/${song.id}/links`}
-        className="text-xs font-medium tracking-[0.12em] text-black/45 transition hover:text-black"
-        >
-        EDIT LINKS
-        </Link>
-
-        <Link
-          href={`/_manage/songs/${song.id}/digital-releases`}
-          className="text-xs font-medium tracking-[0.12em] text-black/45 transition hover:text-black"
-        >
-          EDIT DIGITAL RELEASES
-        </Link>
-
-        <Link
-            href={`/songs/${song.id}`}
+            href={`/songs/${song.id}?from=manage`}
             target="_blank"
             className="text-xs font-medium tracking-[0.12em] text-black/45 transition hover:text-black"
         >
@@ -252,6 +279,27 @@ export default async function ManageSongEditPage({
         楽曲データを編集します。空欄で保存した項目は未入力として扱われます。
         </p>
 
+        <div className="mt-6 grid gap-px border border-black/15 bg-black/15 sm:grid-cols-3">
+          <div className="bg-[#eeeee9] p-4">
+            <p className="section-label text-black/40">現在編集中</p>
+            <p className="mt-2 text-sm text-black/75">楽曲本体</p>
+          </div>
+          <Link
+            href={`/_manage/songs/${song.id}/links`}
+            className="bg-[#f5f5f2] p-4 transition hover:bg-white"
+          >
+            <p className="section-label text-black/40">関連情報</p>
+            <p className="mt-2 text-sm text-black/65">関連リンクを編集 →</p>
+          </Link>
+          <Link
+            href={`/_manage/songs/${song.id}/digital-releases`}
+            className="bg-[#f5f5f2] p-4 transition hover:bg-white"
+          >
+            <p className="section-label text-black/40">関連情報</p>
+            <p className="mt-2 text-sm text-black/65">配信リリースを編集 →</p>
+          </Link>
+        </div>
+
         {saved && (
         <p className="mt-5 border border-black/15 p-3 text-sm text-black/60">
             保存しました。
@@ -260,10 +308,12 @@ export default async function ManageSongEditPage({
     </section>
 
     <ManagedEditForm action={submitForm}>
-        <section>
-        <p className="section-label text-black/45">BASIC</p>
+        <details open data-edit-section className="group border-y border-black/10">
+        <summary className="cursor-pointer list-none py-4 text-sm font-medium text-black/65 marker:hidden">
+          BASIC / 基本情報
+        </summary>
 
-        <div className="mt-4 grid gap-5 md:grid-cols-2">
+        <div className="grid gap-5 pb-6 md:grid-cols-2">
             <TextInput name="title" label="TITLE" defaultValue={song.title} />
             <TextInput
             name="title_kana"
@@ -291,12 +341,15 @@ export default async function ManageSongEditPage({
             defaultValue={song.hero_image_url}
             />
         </div>
-        </section>
+          <SectionSaveButton section="basic" />
+        </details>
 
-        <section>
-        <p className="section-label text-black/45">VERSION / GROUP</p>
+        <details data-edit-section className="group border-b border-black/10">
+        <summary className="cursor-pointer list-none py-4 text-sm font-medium text-black/65 marker:hidden">
+          VERSION / GROUP / バージョン・グループ
+        </summary>
 
-        <div className="mt-4 grid gap-5 md:grid-cols-[160px_1fr_180px_140px]">
+        <div className="grid gap-5 pb-6 md:grid-cols-[160px_1fr_180px_140px]">
             <TextInput
             name="song_group_id"
             label="GROUP ID"
@@ -336,7 +389,32 @@ export default async function ManageSongEditPage({
         <p className="mt-3 text-xs leading-6 text-black/45">
             同じ元曲としてまとめたいバージョンには、同じGROUP IDを設定します。
         </p>
-        </section>
+        {song.song_group_id ? (
+          <div className="mt-5 border border-black/15 bg-black/[0.02] p-4">
+            <p className="text-sm font-medium text-black/70">
+              このグループに属する別バージョン: {relatedVersions.length}件
+            </p>
+            <p className="mt-2 text-xs leading-6 text-black/50">
+              GROUP ID を変更すると、同じ元曲としてまとめる対象が変わります。
+            </p>
+            {relatedVersions.length > 0 ? (
+              <ul className="mt-3 space-y-1 text-xs text-black/55">
+                {relatedVersions.map((version) => (
+                  <li key={version.id}>
+                    #{version.id} {version.title ?? "無題"}
+                    {version.version_name ? ` / ${version.version_name}` : ""}
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+          </div>
+        ) : (
+          <p className="mt-5 border border-black/15 bg-black/[0.02] p-4 text-xs leading-6 text-black/50">
+            現在、別バージョンのグループには所属していません。
+          </p>
+        )}
+        <SectionSaveButton section="version" />
+        </details>
 
         <ReleaseFields
         firstDate={song.first_date}
@@ -349,10 +427,12 @@ export default async function ManageSongEditPage({
         tieUpStatus={song.tie_up_status}
         />
 
-        <section>
-        <p className="section-label text-black/45">CREDITS / ORIGINAL</p>
+        <details data-edit-section className="group border-b border-black/10">
+        <summary className="cursor-pointer list-none py-4 text-sm font-medium text-black/65 marker:hidden">
+          CREDITS / ORIGINAL / 原曲・制作者
+        </summary>
 
-        <div className="mt-4 space-y-5">
+        <div className="space-y-5 pb-6">
             <div className="grid gap-4 md:grid-cols-[1fr_140px]">
             <TextInput
                 name="original_artist"
@@ -423,12 +503,15 @@ export default async function ManageSongEditPage({
             </div>
             </div>
         </div>
-        </section>
+        <SectionSaveButton section="credits" />
+        </details>
 
-        <section>
-        <p className="section-label text-black/45">TEXT</p>
+        <details data-edit-section className="group border-b border-black/10">
+        <summary className="cursor-pointer list-none py-4 text-sm font-medium text-black/65 marker:hidden">
+          TEXT / 文章・メモ
+        </summary>
 
-        <div className="mt-4 space-y-5">
+        <div className="space-y-5 pb-6">
             <div className="grid gap-4 md:grid-cols-[1fr_140px]">
             <TextArea
                 name="album_text"
@@ -451,12 +534,15 @@ export default async function ManageSongEditPage({
             rows={5}
             />
         </div>
-        </section>
+        <SectionSaveButton section="text" />
+        </details>
 
-        <section>
-        <p className="section-label text-black/45">VERIFICATION</p>
+        <details data-edit-section className="group border-b border-black/10">
+        <summary className="cursor-pointer list-none py-4 text-sm font-medium text-black/65 marker:hidden">
+          VERIFICATION / 確認状態
+        </summary>
 
-        <div className="mt-4 grid gap-5 md:grid-cols-2">
+        <div className="grid gap-5 pb-6 md:grid-cols-2">
             <VerificationStatusSelect defaultValue={song.verification_status} />
             <TextArea
             name="verification_note"
@@ -465,7 +551,8 @@ export default async function ManageSongEditPage({
             rows={4}
             />
         </div>
-        </section>
+        <SectionSaveButton section="verification" />
+        </details>
         
         <ManagedSaveArea />
 

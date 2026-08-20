@@ -8,6 +8,7 @@ import {
 } from "@/app/%5Fmanage/actions";
 import { supabaseAdmin } from "@/lib/supabase/admin";
 import CreateSongLinkForm from "./CreateSongLinkForm";
+import ManageFormGuard from "../../../ManageFormGuard";
 
 type PageProps = {
   params: Promise<{
@@ -413,6 +414,33 @@ export default async function ManageSongLinksPage({
             ) : null}
           </div>
 
+          <div className="grid gap-px border border-neutral-300 bg-neutral-300 sm:grid-cols-3">
+            <Link
+              href={`/_manage/songs/${song.id}/edit`}
+              className="bg-[#f5f5f2] p-4 hover:bg-white"
+            >
+              <p className="font-mono text-[10px] tracking-[0.2em] text-neutral-400">
+                楽曲本体
+              </p>
+              <p className="mt-2 text-sm text-neutral-700">基本情報を編集 →</p>
+            </Link>
+            <div className="bg-[#eeeee9] p-4">
+              <p className="font-mono text-[10px] tracking-[0.2em] text-neutral-400">
+                現在編集中
+              </p>
+              <p className="mt-2 text-sm text-neutral-800">関連リンク</p>
+            </div>
+            <Link
+              href={`/_manage/songs/${song.id}/digital-releases`}
+              className="bg-[#f5f5f2] p-4 hover:bg-white"
+            >
+              <p className="font-mono text-[10px] tracking-[0.2em] text-neutral-400">
+                関連情報
+              </p>
+              <p className="mt-2 text-sm text-neutral-700">配信リリース →</p>
+            </Link>
+          </div>
+
           {resolvedSearchParams.saved ? (
             <p className="border border-neutral-300 px-3 py-2 text-sm">
               保存しました。
@@ -464,52 +492,44 @@ export default async function ManageSongLinksPage({
                 );
 
                 return (
-                  <article
+                  <details
                     key={link.id}
-                    className="grid gap-5 border border-neutral-300 p-5"
+                    className="group border border-neutral-300"
                   >
-                    <div className="flex flex-wrap items-start justify-between gap-3 border-b border-neutral-200 pb-4">
-                      <div>
+                    <summary className="flex cursor-pointer list-none flex-wrap items-start justify-between gap-3 p-5 marker:hidden">
+                      <div className="min-w-0">
                         <p className="font-mono text-xs tracking-[0.24em] text-neutral-500">
                           {link.link_type ?? "other"}
                         </p>
-                        <h3 className="mt-1 font-serif text-lg">
+                        <p className="mt-1 font-serif text-lg">
                           {link.title || link.label || link.url || "Untitled"}
-                        </h3>
+                        </p>
                         {link.url ? (
-                          <a
-                            href={link.url}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="mt-1 block break-all text-xs text-neutral-500 underline underline-offset-4"
-                          >
+                          <p className="mt-1 truncate text-xs text-neutral-500">
                             {link.url}
-                          </a>
+                          </p>
                         ) : null}
                       </div>
 
-                        <div className="flex flex-wrap gap-2">
+                      <span className="shrink-0 border border-neutral-300 px-3 py-2 text-xs text-neutral-500 group-open:bg-neutral-900 group-open:text-[#f5f5f2]">
+                        編集を開く
+                      </span>
+                    </summary>
+
+                    <div className="grid gap-5 border-t border-neutral-200 p-5">
+                      <div className="flex flex-wrap gap-2">
                         <form action={fetchMetadataAction}>
-                            <button
-                            type="submit"
-                            className="border border-neutral-300 px-3 py-2 text-xs tracking-[0.18em] text-neutral-600 hover:border-neutral-900 hover:text-neutral-900"
-                            >
-                            FETCH & SAVE METADATA
-                            </button>
+                          <button type="submit" className="border border-neutral-300 px-3 py-2 text-xs tracking-[0.18em] text-neutral-600 hover:border-neutral-900 hover:text-neutral-900">
+                            メタデータ取得
+                          </button>
                         </form>
-
                         <form action={deleteAction}>
-                            <button
-                            type="submit"
-                            className="border border-red-300 px-3 py-2 text-xs tracking-[0.18em] text-red-700 hover:border-red-700"
-                            >
-                            DELETE
-                            </button>
+                          <button type="submit" className="border border-red-300 px-3 py-2 text-xs tracking-[0.18em] text-red-700 hover:border-red-700">
+                            削除
+                          </button>
                         </form>
-                        </div>
-                    </div>
-
-                    <form action={updateAction} className="grid gap-5">
+                      </div>
+                      <ManageFormGuard action={updateAction} className="grid gap-5">
                       <LinkFields link={link} />
 
                       <div>
@@ -520,8 +540,9 @@ export default async function ManageSongLinksPage({
                           UPDATE
                         </button>
                       </div>
-                    </form>
-                  </article>
+                      </ManageFormGuard>
+                    </div>
+                  </details>
                 );
               })}
             </div>

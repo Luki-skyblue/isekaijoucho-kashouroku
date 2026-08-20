@@ -192,7 +192,9 @@ function getRequiredString(formData: FormData, key: string) {
 export async function updateSong(songId: number, formData: FormData) {
   await requireAdmin();
 
-  const payload = {
+  const section = getNullableString(formData, "save_section");
+
+  const fullPayload = {
     title: getNullableString(formData, "title"),
     title_kana: getNullableString(formData, "title_kana"),
     sort_title: getNullableString(formData, "sort_title"),
@@ -213,29 +215,69 @@ export async function updateSong(songId: number, formData: FormData) {
     notes: getNullableString(formData, "notes"),
     verification_status: getNullableString(formData, "verification_status"),
     verification_note: getNullableString(formData, "verification_note"),
-    first_status: getNullableString(formData, "first_status") ?? "confirmed",
-    first_full_status:
-      getNullableString(formData, "first_full_status") ?? "confirmed",
-    tie_up_status: getNullableString(formData, "tie_up_status") ?? "confirmed",
-    album_text_status:
-      getNullableString(formData, "album_text_status") ?? "confirmed",
-    original_artist_status:
-      getNullableString(formData, "original_artist_status") ?? "confirmed",
-    original_vocal_status:
-      getNullableString(formData, "original_vocal_status") ?? "confirmed",
-    original_lyricist_status:
-      getNullableString(formData, "original_lyricist_status") ?? "confirmed",
-    original_composer_status:
-      getNullableString(formData, "original_composer_status") ?? "confirmed",
-    original_arranger_status:
-      getNullableString(formData, "original_arranger_status") ?? "confirmed",
+    first_status: getNullableString(formData, "first_status"),
+    first_full_status: getNullableString(formData, "first_full_status"),
+    tie_up_status: getNullableString(formData, "tie_up_status"),
+    album_text_status: getNullableString(formData, "album_text_status"),
+    original_artist_status: getNullableString(formData, "original_artist_status"),
+    original_vocal_status: getNullableString(formData, "original_vocal_status"),
+    original_lyricist_status: getNullableString(formData, "original_lyricist_status"),
+    original_composer_status: getNullableString(formData, "original_composer_status"),
+    original_arranger_status: getNullableString(formData, "original_arranger_status"),
     song_group_id: getNullableNumber(formData, "song_group_id"),
     version_name: getNullableString(formData, "version_name"),
     version_type: getNullableString(formData, "version_type") ?? "standard",
     is_primary_version: formData.get("is_primary_version") === "on",
-    };
+  };
 
-  if (!payload.title) {
+  const sectionFields: Record<string, (keyof typeof fullPayload)[]> = {
+    basic: [
+      "title",
+      "title_kana",
+      "sort_title",
+      "song_type",
+      "artist_credit",
+      "hero_image_url",
+    ],
+    version: [
+      "song_group_id",
+      "version_name",
+      "version_type",
+      "is_primary_version",
+    ],
+    release: [
+      "first_date",
+      "first_source",
+      "first_full_date",
+      "first_full_source",
+      "tie_up",
+      "first_status",
+      "first_full_status",
+      "tie_up_status",
+    ],
+    credits: [
+      "original_artist",
+      "original_vocal",
+      "original_lyricist",
+      "original_composer",
+      "original_arranger",
+      "original_artist_status",
+      "original_vocal_status",
+      "original_lyricist_status",
+      "original_composer_status",
+      "original_arranger_status",
+    ],
+    text: ["album_text", "album_text_status", "notes"],
+    verification: ["verification_status", "verification_note"],
+  };
+
+  const payload = section && sectionFields[section]
+    ? Object.fromEntries(
+        sectionFields[section].map((field) => [field, fullPayload[field]])
+      )
+    : fullPayload;
+
+  if ((!section || section === "basic") && !fullPayload.title) {
     throw new Error("title is required.");
   }
 

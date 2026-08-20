@@ -7,6 +7,7 @@ import {
   updateRelease,
   updateReleaseGroup,
 } from "../../../../actions";
+import ManageFormGuard from "../../../ManageFormGuard";
 
 type PageProps = {
   params: Promise<{
@@ -15,6 +16,13 @@ type PageProps = {
   searchParams: Promise<{
     saved?: string;
   }>;
+};
+
+type GroupRelease = {
+  id: number;
+  title: string | null;
+  edition_name: string | null;
+  is_primary_edition: boolean | null;
 };
 
 function TextInput({
@@ -31,7 +39,7 @@ function TextInput({
   required?: boolean;
 }) {
   return (
-    <label className="block">
+    <label data-managed-field className="block rounded-sm p-1 transition-colors">
       <span className="section-label text-black/45">{label}</span>
       <input
         name={name}
@@ -56,7 +64,7 @@ function TextArea({
   rows?: number;
 }) {
   return (
-    <label className="block">
+    <label data-managed-field className="block rounded-sm p-1 transition-colors">
       <span className="section-label text-black/45">{label}</span>
       <textarea
         name={name}
@@ -131,6 +139,20 @@ export default async function ManageReleaseEditPage({
     throw new Error("作品グループ情報の取得に失敗しました。");
     }  
 
+  const { data: groupReleases, error: groupReleasesError } = release.release_group_id
+    ? await supabaseAdmin
+        .from("releases")
+        .select("id,title,edition_name,is_primary_edition")
+        .eq("release_group_id", release.release_group_id)
+        .order("is_primary_edition", { ascending: false })
+        .order("id", { ascending: true })
+        .returns<GroupRelease[]>()
+    : { data: [], error: null };
+
+  if (groupReleasesError) {
+    throw new Error("同一作品の形態情報の取得に失敗しました。");
+  }
+
   async function submitForm(formData: FormData) {
     "use server";
 
@@ -167,13 +189,6 @@ export default async function ManageReleaseEditPage({
             BACK TO RELEASES
           </Link>
 
-          <Link
-            href={`/_manage/releases/${release.id}/items`}
-            className="text-xs font-medium tracking-[0.12em] text-black/45 transition hover:text-black"
-          >
-            EDIT ITEMS
-          </Link>
-
             <form action={duplicateAction}>
             <button
                 type="submit"
@@ -199,8 +214,50 @@ export default async function ManageReleaseEditPage({
         </h1>
 
         <p className="mt-4 text-sm leading-7 text-black/55">
-          リリース情報を編集します。収録曲は EDIT ITEMS から管理します。
+          この形態のリリース情報を編集します。作品単位の情報と収録曲は別に管理します。
         </p>
+
+        <div className="mt-6 grid gap-px border border-black/15 bg-black/15 sm:grid-cols-3">
+          <div className="bg-[#eeeee9] p-4">
+            <p className="section-label text-black/40">現在編集中</p>
+            <p className="mt-2 text-sm text-black/75">個別リリース</p>
+            <p className="mt-1 text-xs text-black/45">{release.title}</p>
+          </div>
+          <div className="bg-[#f5f5f2] p-4">
+            <p className="section-label text-black/40">所属する作品</p>
+            <p className="mt-2 text-sm text-black/65">
+              {releaseGroup?.title ?? "作品グループなし"}
+            </p>
+          </div>
+          <Link
+            href={`/_manage/releases/${release.id}/items`}
+            className="bg-[#f5f5f2] p-4 transition hover:bg-white"
+          >
+            <p className="section-label text-black/40">関連情報</p>
+            <p className="mt-2 text-sm text-black/65">収録曲を編集 →</p>
+          </Link>
+        </div>
+
+        {release.release_group_id ? (
+          <div className="mt-5 border border-black/15 bg-black/[0.02] p-4">
+            <p className="text-sm font-medium text-black/70">
+              同じ作品に属する形態: {groupReleases.length}件
+            </p>
+            <p className="mt-2 text-xs leading-6 text-black/50">
+              作品グループの情報を変更すると、同じ作品に属する全形態に影響します。
+              収録曲も作品単位で共有される場合があります。
+            </p>
+            <ul className="mt-3 space-y-1 text-xs text-black/55">
+              {groupReleases.map((groupRelease) => (
+                <li key={groupRelease.id}>
+                  #{groupRelease.id} {groupRelease.title ?? "無題"}
+                  {groupRelease.edition_name ? ` / ${groupRelease.edition_name}` : ""}
+                  {groupRelease.id === release.id ? "（現在）" : ""}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
 
         {saved ? (
           <p className="mt-5 border border-black/25 bg-black/[0.03] p-3 text-sm text-black/70">
@@ -210,7 +267,7 @@ export default async function ManageReleaseEditPage({
       </section>
 
         {releaseGroup ? (
-        <form action={submitGroupForm} className="mt-8 border border-black/15 p-5">
+        <ManageFormGuard action={submitGroupForm} className="mt-8 border border-black/15 p-5">
             <input
             type="hidden"
             name="release_group_id"
@@ -278,10 +335,10 @@ export default async function ManageReleaseEditPage({
                 SAVE GROUP
             </button>
             </div>
-        </form>
+        </ManageFormGuard>
         ) : null}
 
-      <form action={submitForm} className="mt-8 space-y-10">
+      <ManageFormGuard action={submitForm} className="mt-8 space-y-10">
         <section>
           <p className="section-label text-black/45">BASIC</p>
 
@@ -391,7 +448,7 @@ export default async function ManageReleaseEditPage({
             SAVE
           </button>
         </div>
-      </form>
+      </ManageFormGuard>
 
         <section className="border-t border-red-900/20 pt-6">
             <p className="section-label text-red-900/50">DANGER</p>

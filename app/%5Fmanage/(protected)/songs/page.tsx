@@ -26,6 +26,12 @@ type ManageSong = {
   original_arranger_status: string | null;
 };
 
+type PageProps = {
+  searchParams: Promise<{
+    q?: string;
+  }>;
+};
+
 function isAttentionStatus(status: string | null | undefined) {
   return Boolean(status && status !== "confirmed");
 }
@@ -38,13 +44,29 @@ function hasAttentionStatus(song: ManageSong) {
   return FIELD_STATUS_KEYS.some((key) => isAttentionStatus(song[key]));
 }
 
-export default async function ManageSongsPage() {
+export default async function ManageSongsPage({ searchParams }: PageProps) {
+  const { q = "" } = await searchParams;
+  const searchQuery = q.trim();
+
   const { data: songs, error } = await supabaseAdmin
     .from("songs")
     .select(
     "id,title,title_kana,sort_title,song_type,artist_credit,first_date,first_source,verification_status,first_status,first_full_status,tie_up_status,album_text_status,original_artist_status,original_vocal_status,original_lyricist_status,original_composer_status,original_arranger_status,version_name, version_type, is_primary_version"
     )
-    .order("first_date", { ascending: false });
+    .order("first_date", { ascending: false })
+    .order("id", { ascending: false });
+
+  const filteredSongs = (songs ?? []).filter((song) => {
+    if (!searchQuery) {
+      return true;
+    }
+
+    const normalizedQuery = searchQuery.toLocaleLowerCase("ja-JP");
+
+    return [song.title, song.title_kana, song.artist_credit]
+      .filter((value): value is string => Boolean(value))
+      .some((value) => value.toLocaleLowerCase("ja-JP").includes(normalizedQuery));
+  });
 
   if (error) {
     return (
@@ -88,7 +110,10 @@ export default async function ManageSongsPage() {
           </div>
 
             <div className="flex flex-wrap items-center gap-3 md:justify-end">
-            <p className="text-sm text-black/45">{songs?.length ?? 0} SONGS</p>
+            <p className="text-sm text-black/45">
+              {searchQuery ? `${filteredSongs.length} / ` : ""}
+              {songs?.length ?? 0} SONGS
+            </p>
 
             <Link
                 href="/_manage/songs/new"
@@ -101,6 +126,34 @@ export default async function ManageSongsPage() {
       </section>
 
       <section className="mt-8">
+        <form className="border-y border-black/15 py-5" method="get">
+          <label className="block">
+            <span className="section-label text-black/45">楽曲を探す</span>
+            <div className="mt-2 flex flex-col gap-2 sm:flex-row">
+              <input
+                name="q"
+                defaultValue={searchQuery}
+                placeholder="曲名・読み仮名・名義で検索"
+                className="min-w-0 flex-1 border border-black/20 bg-transparent px-3 py-2 text-sm text-black outline-none transition placeholder:text-black/35 focus:border-black"
+              />
+              <button
+                type="submit"
+                className="border border-black px-4 py-2 text-xs font-medium tracking-[0.12em] text-black transition hover:bg-black hover:text-[#f5f5f2]"
+              >
+                検索
+              </button>
+              {searchQuery ? (
+                <Link
+                  href="/_manage/songs"
+                  className="border border-black/20 px-4 py-2 text-center text-xs text-black/55 transition hover:border-black hover:text-black"
+                >
+                  クリア
+                </Link>
+              ) : null}
+            </div>
+          </label>
+        </form>
+
         <div className="hidden border-y border-black/15 py-3 text-xs font-medium tracking-[0.12em] text-black/45 md:grid md:grid-cols-[70px_110px_1fr_170px_100px]">
           <p>ID</p>
           <p>DATE</p>
@@ -110,7 +163,7 @@ export default async function ManageSongsPage() {
         </div>
 
         <div className="divide-y divide-black/10 border-b border-black/15">
-          {songs?.map((song) => (
+          {filteredSongs.map((song) => (
             <div
               key={song.id}
                 className="grid gap-2 py-4 md:grid-cols-[70px_110px_1fr_170px_100px] md:items-center md:gap-4"
@@ -189,9 +242,9 @@ export default async function ManageSongsPage() {
             </div>
           ))}
 
-          {(!songs || songs.length === 0) && (
+          {filteredSongs.length === 0 && (
             <p className="py-10 text-sm text-black/45">
-              楽曲データがありません。
+              {searchQuery ? "検索条件に一致する楽曲がありません。" : "楽曲データがありません。"}
             </p>
           )}
         </div>

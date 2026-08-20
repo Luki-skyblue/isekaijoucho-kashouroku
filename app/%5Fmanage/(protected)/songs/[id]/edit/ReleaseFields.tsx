@@ -16,7 +16,7 @@ function TextInput({
   type?: string;
 }) {
   return (
-    <label className="block">
+    <label data-managed-field className="block rounded-sm p-1 transition-colors">
       <span className="section-label text-black/45">{label}</span>
       <input
         name={name}
@@ -41,7 +41,7 @@ function TextArea({
   rows?: number;
 }) {
   return (
-    <label className="block">
+    <label data-managed-field className="block rounded-sm p-1 transition-colors">
       <span className="section-label text-black/45">{label}</span>
       <textarea
         name={name}
@@ -63,15 +63,16 @@ function FieldStatusSelect({
   defaultValue?: string | null;
 }) {
   return (
-    <label className="grid gap-1 text-[10px] tracking-[0.16em] text-neutral-400">
+    <label data-managed-field className="grid gap-1 rounded-sm p-1 text-[10px] tracking-[0.16em] text-neutral-400 transition-colors">
       {label}
       <select
         name={name}
-        defaultValue={defaultValue ?? "confirmed"}
+        defaultValue={defaultValue ?? ""}
         className="border border-neutral-200 bg-transparent px-2 py-1.5 text-xs tracking-normal text-neutral-600 outline-none focus:border-neutral-500"
       >
+        <option value="">未設定</option>
         <option value="confirmed">確認済み</option>
-        <option value="uncertain">不確定</option>
+        <option value="uncertain">要確認</option>
         <option value="unverified">未確認</option>
         <option value="wanted">情報募集中</option>
       </select>
@@ -135,10 +136,12 @@ export default function ReleaseFields({
   );
 
   return (
-    <section>
-      <p className="section-label text-black/45">RELEASE</p>
+    <details open data-edit-section className="group border-y border-black/10">
+      <summary className="cursor-pointer list-none py-4 text-sm font-medium text-black/65 marker:hidden">
+        RELEASE / 初出・歌唱情報
+      </summary>
 
-      <div className="mt-4 space-y-5">
+      <div className="space-y-5 pb-6">
         <div className="grid gap-4 md:grid-cols-[180px_1fr_140px]">
           <TextInput
             name="first_date"
@@ -228,6 +231,18 @@ export default function ReleaseFields({
           </div>
         </div>
       </div>
-    </section>
+      <div className="mt-6 border-t border-black/10 pt-4">
+        <button
+          type="submit"
+          name="save_section"
+          value="release"
+          data-section-save
+          hidden
+          className="border border-black/60 px-4 py-2 text-xs font-medium tracking-[0.12em] text-black/70 transition hover:border-black hover:bg-black hover:text-[#f5f5f2]"
+        >
+          この項目を保存
+        </button>
+      </div>
+    </details>
   );
 }

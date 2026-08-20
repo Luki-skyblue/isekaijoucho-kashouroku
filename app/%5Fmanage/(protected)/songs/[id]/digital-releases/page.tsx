@@ -6,6 +6,7 @@ import {
   deleteSongDigitalRelease,
   updateSongDigitalRelease,
 } from "../../../../actions";
+import ManageFormGuard from "../../../ManageFormGuard";
 
 type PageProps = {
   params: Promise<{
@@ -129,13 +130,6 @@ export default async function ManageSongDigitalReleasesPage({
           </Link>
 
           <Link
-            href={`/_manage/songs/${song.id}/links`}
-            className="text-xs font-medium tracking-[0.12em] text-black/45 transition hover:text-black"
-          >
-            EDIT LINKS
-          </Link>
-
-          <Link
             href={`/songs/${song.id}`}
             target="_blank"
             className="text-xs font-medium tracking-[0.12em] text-black/45 transition hover:text-black"
@@ -156,6 +150,27 @@ export default async function ManageSongDigitalReleasesPage({
           この楽曲に紐づく単曲配信リリースを追加・編集します。
           同じ楽曲に複数の配信リリースを登録できます。
         </p>
+
+        <div className="mt-6 grid gap-px border border-black/15 bg-black/15 sm:grid-cols-3">
+          <Link
+            href={`/_manage/songs/${song.id}/edit`}
+            className="bg-[#f5f5f2] p-4 transition hover:bg-white"
+          >
+            <p className="section-label text-black/40">楽曲本体</p>
+            <p className="mt-2 text-sm text-black/65">基本情報を編集 →</p>
+          </Link>
+          <Link
+            href={`/_manage/songs/${song.id}/links`}
+            className="bg-[#f5f5f2] p-4 transition hover:bg-white"
+          >
+            <p className="section-label text-black/40">関連情報</p>
+            <p className="mt-2 text-sm text-black/65">関連リンク →</p>
+          </Link>
+          <div className="bg-[#eeeee9] p-4">
+            <p className="section-label text-black/40">現在編集中</p>
+            <p className="mt-2 text-sm text-black/75">配信リリース</p>
+          </div>
+        </div>
 
         <p className="mt-3 text-sm text-black/45">
           {digitalReleases?.length ?? 0} DIGITAL RELEASES
@@ -179,7 +194,7 @@ export default async function ManageSongDigitalReleasesPage({
           ADD DIGITAL RELEASE
         </p>
 
-        <form action={createAction} className="mt-5">
+          <ManageFormGuard action={createAction} className="mt-5">
           <div className="grid gap-5 md:grid-cols-2">
             <TextInput
               name="digital_release_title"
@@ -219,7 +234,7 @@ export default async function ManageSongDigitalReleasesPage({
               ADD DIGITAL RELEASE
             </button>
           </div>
-        </form>
+          </ManageFormGuard>
       </section>
 
       <section className="mt-10">
@@ -242,11 +257,11 @@ export default async function ManageSongDigitalReleasesPage({
             );
 
             return (
-              <article
+              <details
                 key={digitalRelease.id}
-                className="border border-black/15"
+                className="group border border-black/15"
               >
-                <div className="flex flex-col gap-3 border-b border-black/10 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+                <summary className="flex cursor-pointer list-none flex-col gap-3 px-5 py-4 marker:hidden sm:flex-row sm:items-center sm:justify-between">
                   <div>
                     <p className="section-label text-black/35">
                       DIGITAL RELEASE {index + 1}
@@ -263,9 +278,12 @@ export default async function ManageSongDigitalReleasesPage({
                       ? ` / ${digitalRelease.release_date}`
                       : ""}
                   </p>
-                </div>
+                  <span className="border border-black/20 px-3 py-1 text-xs text-black/45 group-open:bg-black group-open:text-[#f5f5f2]">
+                    編集を開く
+                  </span>
+                </summary>
 
-                <div className="grid gap-6 p-5 md:grid-cols-[160px_minmax(0,1fr)]">
+                <div className="grid gap-6 border-t border-black/10 p-5 md:grid-cols-[160px_minmax(0,1fr)]">
                   <div>
                     {digitalRelease.jacket_image_url ? (
                       <div className="flex aspect-square items-center justify-center overflow-hidden border border-black/10 bg-black/[0.02]">
@@ -289,7 +307,7 @@ export default async function ManageSongDigitalReleasesPage({
                     )}
                   </div>
 
-                  <form action={updateAction}>
+                  <ManageFormGuard action={updateAction}>
                     <div className="grid gap-5 md:grid-cols-2">
                       <TextInput
                         name="digital_release_title"
@@ -334,7 +352,7 @@ export default async function ManageSongDigitalReleasesPage({
                         UPDATE DIGITAL RELEASE
                       </button>
                     </div>
-                  </form>
+                  </ManageFormGuard>
                 </div>
 
                 <div className="border-t border-black/10 px-5 py-4">
@@ -357,7 +375,7 @@ export default async function ManageSongDigitalReleasesPage({
                     </form>
                   </details>
                 </div>
-              </article>
+              </details>
             );
           })}
 

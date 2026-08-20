@@ -16,7 +16,7 @@ function SaveButton() {
           : "border border-black px-5 py-3 text-xs font-medium tracking-[0.12em] text-black transition hover:bg-black hover:text-[#f5f5f2]"
       }
     >
-      {pending ? "SAVING..." : "SAVE"}
+      {pending ? "保存中..." : "すべて保存"}
     </button>
   );
 }
@@ -29,6 +29,31 @@ export function ManagedEditForm({
   children: React.ReactNode;
 }) {
   const [dirty, setDirty] = useState(false);
+
+  function handleChange(event: React.FormEvent<HTMLFormElement>) {
+    setDirty(true);
+
+    const target = event.target;
+
+    if (!(target instanceof HTMLElement)) {
+      return;
+    }
+
+    const field = target.closest<HTMLElement>("[data-managed-field]");
+    const section = target.closest<HTMLElement>("[data-edit-section]");
+
+    field?.classList.add("bg-[#efe5cb]/45");
+
+    if (section) {
+      const saveButton = section.querySelector<HTMLElement>(
+        "[data-section-save]"
+      );
+
+      if (saveButton) {
+        saveButton.hidden = false;
+      }
+    }
+  }
 
   useEffect(() => {
     function handleBeforeUnload(event: BeforeUnloadEvent) {
@@ -51,7 +76,7 @@ export function ManagedEditForm({
     <form
       action={action}
       className="mt-8 space-y-10"
-      onChange={() => setDirty(true)}
+      onChange={handleChange}
       onSubmit={() => setDirty(false)}
     >
       {dirty ? (

@@ -6,6 +6,9 @@ type PageProps = {
   params: Promise<{
     id: string;
   }>;
+  searchParams: Promise<{
+    from?: string;
+  }>;
 };
 
 type SongLink = {
@@ -707,8 +710,9 @@ function getFallbackDigitalReleaseImageUrl(
   return candidate?.jacket_image_url ?? null;
 }
 
-export default async function SongDetailPage({ params }: PageProps) {
+export default async function SongDetailPage({ params, searchParams }: PageProps) {
   const { id } = await params;
+  const { from } = await searchParams;
 
   const songId = Number(id);
 
@@ -909,6 +913,14 @@ export default async function SongDetailPage({ params }: PageProps) {
         </Link>
 
         <div className="flex flex-wrap items-center gap-2">
+          {from === "manage" ? (
+            <Link
+              href={`/_manage/songs/${song.id}/edit`}
+              className="border border-black/25 px-3 py-1.5 text-xs font-medium tracking-[0.12em] text-black/60 transition hover:border-black hover:bg-black hover:text-[#f5f5f2]"
+            >
+              管理画面へ戻る
+            </Link>
+          ) : null}
           <Link
             href={`/songs/${song.id}/submit`}
             className="border border-black/25 px-3 py-1.5 text-xs font-medium tracking-[0.12em] text-black/60 transition hover:border-black hover:bg-black hover:text-[#f5f5f2]"
