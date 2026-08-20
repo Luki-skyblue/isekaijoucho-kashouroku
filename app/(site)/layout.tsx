@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SiteHeader from "./SiteHeader";
 
 export default function SiteLayout({
   children,
@@ -7,30 +8,7 @@ export default function SiteLayout({
 }>) {
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="border-b border-black/15">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-          <Link href="/" className="group">
-            <p className="section-label text-black/45">
-              UNOFFICIAL DATABASE
-            </p>
-            <p className="font-serif-jp mt-1 text-lg font-medium tracking-[0.02em] text-black">
-              ヰ世界情緒 歌唱録
-            </p>
-          </Link>
-
-          <nav className="flex items-center gap-6 text-xs font-medium tracking-[0.12em] text-black/60">
-            <Link href="/songs" className="transition hover:text-black">
-              SONGS
-            </Link>
-            <Link href="/submit" className="transition hover:text-black">
-              SUBMIT
-            </Link>
-            <Link href="/about" className="transition hover:text-black">
-              ABOUT
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader />
 
       <div className="flex-1">{children}</div>
 

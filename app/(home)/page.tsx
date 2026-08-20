@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { supabase } from "@/lib/supabase/client";
+import SiteHeader from "../(site)/SiteHeader";
 import HomeThemeMotif from "./HomeThemeMotif";
 
 export const dynamic = "force-dynamic";
@@ -217,6 +218,7 @@ export default async function HomePage() {
 
   return (
     <div className="overflow-x-clip">
+      <SiteHeader />
 
     {/* ページ全体に固定されるサンフラワー背景 */}
     <div
