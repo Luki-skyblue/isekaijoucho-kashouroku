@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { startTransition, useEffect, useMemo, useState } from "react";
 import type { ReleaseCard } from "./page";
 
 const preferredReleaseTypeOrder = [
@@ -89,7 +89,9 @@ export default function ReleasesList({
   const [enabledTypes, setEnabledTypes] = useState<string[]>([]);
 
   useEffect(() => {
-    setEnabledTypes(releaseTypes);
+    startTransition(() => {
+      setEnabledTypes(releaseTypes);
+    });
   }, [releaseTypes]);
 
   const allTypesEnabled = enabledTypes.length === releaseTypes.length;

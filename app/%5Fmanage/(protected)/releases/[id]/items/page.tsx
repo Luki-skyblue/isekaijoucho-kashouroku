@@ -51,16 +51,6 @@ function formatDate(date: string | null) {
   return date.replaceAll("-", ".");
 }
 
-function getSongOptionLabel(song: SongOption) {
-  const version =
-    song.version_name ||
-    (song.is_primary_version === false ? "別バージョン" : null);
-
-  return `#${song.id} ${song.title ?? "無題"}${
-    version ? ` (${version})` : ""
-  } / ${song.artist_credit ?? "-"}`;
-}
-
 function getItemTitle(item: ReleaseItem) {
   if (item.title_override) {
     return item.title_override;

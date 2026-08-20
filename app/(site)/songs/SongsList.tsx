@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { startTransition, useEffect, useMemo, useState } from "react";
 
 type Song = {
   id: number;
@@ -224,13 +224,13 @@ export default function SongsList({ songs }: SongsListProps) {
   }, [songs]);
 
   useEffect(() => {
-    setEnabledTypes(songTypes);
+    startTransition(() => {
+      setEnabledTypes(songTypes);
+    });
   }, [songTypes]);
 
   const allCreditsEnabled = enabledCreditBases.length === allCreditBases.length;
-  const noCreditsEnabled = enabledCreditBases.length === 0;
   const allTypesEnabled = enabledTypes.length === songTypes.length;
-  const noTypesEnabled = enabledTypes.length === 0;
 
   function toggleCreditBase(base: CreditBase) {
     setEnabledCreditBases((current) => {
@@ -576,6 +576,29 @@ export default function SongsList({ songs }: SongsListProps) {
       </section>
 
       <section className="mt-8">
+        <div className="border-y border-black/15 py-5">
+          <p className="section-label text-black/45">RELATED INDEX</p>
+          <h2 className="font-serif-jp mt-3 text-xl font-medium tracking-[0.03em] text-black/75">
+            関連する探し方
+          </h2>
+          <p className="mt-3 text-sm leading-7 text-black/50">
+            楽曲に関わる人や名義から、歌唱録を横断して辿れるようにする予定です。
+          </p>
+
+          <div className="mt-5 grid gap-px border border-black/10 bg-black/10 sm:grid-cols-3">
+            {["作曲者から探す", "作詞者から探す", "原曲アーティストから探す"].map(
+              (label) => (
+                <div key={label} className="bg-[#f5f5f2] px-4 py-4">
+                  <p className="text-sm text-black/65">{label}</p>
+                  <p className="mt-2 text-xs tracking-[0.08em] text-black/35">
+                    （準備中）
+                  </p>
+                </div>
+              )
+            )}
+          </div>
+        </div>
+
         <div className="hidden border-y border-black/15 py-3 text-xs font-medium tracking-[0.12em] text-black/45 md:grid md:grid-cols-[110px_1fr_180px_90px]">
           <div className="flex items-center gap-2">
             <span>DATE</span>

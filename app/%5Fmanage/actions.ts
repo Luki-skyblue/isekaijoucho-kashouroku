@@ -1,8 +1,139 @@
 "use server";
 
+import { lookup } from "node:dns/promises";
+import { isIP } from "node:net";
 import { redirect } from "next/navigation";
-import { clearAdminSession, setAdminSession } from "@/lib/adminAuth";
+import {
+  clearAdminSession,
+  isAdminLoggedIn,
+  setAdminSession,
+} from "@/lib/adminAuth";
 import { supabaseAdmin } from "@/lib/supabase/admin";
+
+async function requireAdmin() {
+  if (!(await isAdminLoggedIn())) {
+    redirect("/_manage/login");
+  }
+}
+
+function isPrivateIpAddress(address: string) {
+  const version = isIP(address);
+
+  if (version === 4) {
+    const octets = address.split(".").map(Number);
+    const [first, second] = octets;
+
+    return (
+      first === 0 ||
+      first === 10 ||
+      first === 127 ||
+      (first === 100 && second >= 64 && second <= 127) ||
+      (first === 169 && second === 254) ||
+      (first === 172 && second >= 16 && second <= 31) ||
+      (first === 192 && second === 168) ||
+      (first === 198 && (second === 18 || second === 19)) ||
+      first >= 224
+    );
+  }
+
+  const normalized = address.toLowerCase();
+
+  if (normalized.startsWith("::ffff:")) {
+    return isPrivateIpAddress(normalized.slice(7));
+  }
+
+  return (
+    normalized === "::" ||
+    normalized === "::1" ||
+    normalized.startsWith("fc") ||
+    normalized.startsWith("fd") ||
+    normalized.startsWith("fe8") ||
+    normalized.startsWith("fe9") ||
+    normalized.startsWith("fea") ||
+    normalized.startsWith("feb") ||
+    normalized.startsWith("ff")
+  );
+}
+
+async function assertPublicHttpUrl(value: string) {
+  const parsedUrl = new URL(value);
+
+  if (![
+    "http:",
+    "https:",
+  ].includes(parsedUrl.protocol)) {
+    throw new Error("http/https のURLのみ取得できます。");
+  }
+
+  if (
+    parsedUrl.username ||
+    parsedUrl.password ||
+    (parsedUrl.port && !["80", "443"].includes(parsedUrl.port))
+  ) {
+    throw new Error("安全に取得できないURLです。");
+  }
+
+  const hostname = parsedUrl.hostname.toLowerCase().replace(/\.$/, "");
+
+  if (
+    hostname === "localhost" ||
+    hostname.endsWith(".localhost") ||
+    hostname.endsWith(".local") ||
+    hostname.endsWith(".internal")
+  ) {
+    throw new Error("内部ネットワークのURLは取得できません。");
+  }
+
+  if (isPrivateIpAddress(hostname)) {
+    throw new Error("内部ネットワークのURLは取得できません。");
+  }
+
+  try {
+    const addresses = await lookup(hostname, { all: true, verbatim: true });
+
+    if (!addresses.length || addresses.some(({ address }) => isPrivateIpAddress(address))) {
+      throw new Error("内部ネットワークのURLは取得できません。");
+    }
+  } catch {
+    throw new Error("URLの安全性を確認できませんでした。");
+  }
+}
+
+function getNullableHttpUrl(formData: FormData, key: string) {
+  const value = getNullableString(formData, key);
+
+  if (!value) {
+    return null;
+  }
+
+  try {
+    const parsedUrl = new URL(value);
+
+    if (!["http:", "https:"].includes(parsedUrl.protocol)) {
+      throw new Error();
+    }
+
+    return parsedUrl.toString();
+  } catch {
+    throw new Error(`${key} must be an http/https URL.`);
+  }
+}
+
+function getRequiredHttpUrl(formData: FormData, key: string) {
+  const value = getRequiredString(formData, key);
+
+  try {
+    const parsedUrl = new URL(value);
+
+    if (!["http:", "https:"].includes(parsedUrl.protocol)) {
+      throw new Error();
+    }
+
+    return parsedUrl.toString();
+  } catch {
+    throw new Error(`${key} must be an http/https URL.`);
+  }
+}
 
 export async function loginAdmin(formData: FormData) {
   const password = String(formData.get("password") ?? "");
@@ -59,6 +190,8 @@ function getRequiredString(formData: FormData, key: string) {
 }
 
 export async function updateSong(songId: number, formData: FormData) {
+  await requireAdmin();
+
   const payload = {
     title: getNullableString(formData, "title"),
     title_kana: getNullableString(formData, "title_kana"),
@@ -71,7 +204,7 @@ export async function updateSong(songId: number, formData: FormData) {
     first_full_source: getNullableString(formData, "first_full_source"),
     tie_up: getNullableString(formData, "tie_up"),
     album_text: getNullableString(formData, "album_text"),
-    hero_image_url: getNullableString(formData, "hero_image_url"),
+    hero_image_url: getNullableHttpUrl(formData, "hero_image_url"),
     original_artist: getNullableString(formData, "original_artist"),
     original_vocal: getNullableString(formData, "original_vocal"),
     original_lyricist: getNullableString(formData, "original_lyricist"),
@@ -122,6 +255,8 @@ export async function createSongDigitalRelease(
   songId: number,
   formData: FormData
 ) {
+  await requireAdmin();
+
   const payload = {
     song_id: songId,
     title: getNullableString(formData, "digital_release_title"),
@@ -130,7 +265,7 @@ export async function createSongDigitalRelease(
       formData,
       "digital_release_jacket_image_url"
     ),
-    official_url: getNullableString(formData, "digital_release_official_url"),
+    official_url: getNullableHttpUrl(formData, "digital_release_official_url"),
     notes: getNullableString(formData, "digital_release_notes"),
   };
 
@@ -161,6 +296,8 @@ export async function updateSongDigitalRelease(
   digitalReleaseId: number,
   formData: FormData
 ) {
+  await requireAdmin();
+
   const payload = {
     title: getNullableString(formData, "digital_release_title"),
     release_date: getNullableString(formData, "digital_release_date"),
@@ -168,7 +305,7 @@ export async function updateSongDigitalRelease(
       formData,
       "digital_release_jacket_image_url"
     ),
-    official_url: getNullableString(formData, "digital_release_official_url"),
+    official_url: getNullableHttpUrl(formData, "digital_release_official_url"),
     notes: getNullableString(formData, "digital_release_notes"),
   };
 
@@ -202,6 +339,8 @@ export async function deleteSongDigitalRelease(
   songId: number,
   digitalReleaseId: number
 ) {
+  await requireAdmin();
+
   const { error } = await supabaseAdmin
     .from("song_digital_releases")
     .delete()
@@ -216,6 +355,8 @@ export async function deleteSongDigitalRelease(
 }
 
 export async function createSong(formData: FormData) {
+  await requireAdmin();
+
   const title = getNullableString(formData, "title");
 
   if (!title) {
@@ -284,6 +425,8 @@ export async function createSong(formData: FormData) {
 }
 
 export async function createSongLink(songId: number, formData: FormData) {
+  await requireAdmin();
+
   const payload = {
     target_type: "song",
     target_id: songId,
@@ -291,10 +434,10 @@ export async function createSongLink(songId: number, formData: FormData) {
     label: getNullableString(formData, "label"),
     title: getNullableString(formData, "title"),
     site_name: getNullableString(formData, "site_name"),
-    url: getRequiredString(formData, "url"),
+    url: getRequiredHttpUrl(formData, "url"),
     published_date: getNullableString(formData, "published_date"),
     notes: getNullableString(formData, "notes"),
-    thumbnail_url: getNullableString(formData, "thumbnail_url"),
+    thumbnail_url: getNullableHttpUrl(formData, "thumbnail_url"),
   };
 
   const { error } = await supabaseAdmin.from("links").insert(payload);
@@ -311,15 +454,17 @@ export async function updateSongLink(
   songId: number,
   formData: FormData
 ) {
+  await requireAdmin();
+
   const payload = {
     link_type: getRequiredString(formData, "link_type"),
     label: getNullableString(formData, "label"),
     title: getNullableString(formData, "title"),
     site_name: getNullableString(formData, "site_name"),
-    url: getRequiredString(formData, "url"),
+    url: getRequiredHttpUrl(formData, "url"),
     published_date: getNullableString(formData, "published_date"),
     notes: getNullableString(formData, "notes"),
-    thumbnail_url: getNullableString(formData, "thumbnail_url"),
+    thumbnail_url: getNullableHttpUrl(formData, "thumbnail_url"),
   };
 
   const { error } = await supabaseAdmin
@@ -403,11 +548,7 @@ function getHostname(url: string) {
 }
 
 async function fetchPageMetadata(url: string) {
-  const parsedUrl = new URL(url);
-
-  if (!["http:", "https:"].includes(parsedUrl.protocol)) {
-    throw new Error("http/https のURLのみ取得できます。");
-  }
+  await assertPublicHttpUrl(url);
 
   const youtubeMetadata = await fetchYouTubeMetadata(url);
 
@@ -421,6 +562,7 @@ async function fetchPageMetadata(url: string) {
         "Mozilla/5.0 (compatible; KashourokuMetadataFetcher/1.0)",
       accept: "text/html,application/xhtml+xml",
     },
+    redirect: "error",
     signal: AbortSignal.timeout(10000),
   });
 
@@ -428,7 +570,25 @@ async function fetchPageMetadata(url: string) {
     throw new Error("リンク先の取得に失敗しました。");
   }
 
+  const contentType = response.headers.get("content-type") ?? "";
+  const contentLength = Number(response.headers.get("content-length") ?? 0);
+
+  if (
+    !contentType.includes("text/html") &&
+    !contentType.includes("application/xhtml+xml")
+  ) {
+    throw new Error("HTMLページ以外のURLは取得できません。");
+  }
+
+  if (contentLength > 1024 * 1024) {
+    throw new Error("リンク先のページサイズが大きすぎます。");
+  }
+
   const html = await response.text();
+
+  if (html.length > 1024 * 1024) {
+    throw new Error("リンク先のページサイズが大きすぎます。");
+  }
 
   const title =
     findMetaContent(html, ["og:title", "twitter:title"]) ||
@@ -542,6 +702,8 @@ async function fetchYouTubeMetadata(url: string) {
 }
 
 export async function fetchSongLinkMetadata(linkId: number, songId: number) {
+  await requireAdmin();
+
   const { data: link, error: fetchLinkError } = await supabaseAdmin
     .from("links")
     .select("id, url")
@@ -576,6 +738,8 @@ export async function fetchSongLinkMetadata(linkId: number, songId: number) {
 }
 
 export async function deleteSongLink(linkId: number, songId: number) {
+  await requireAdmin();
+
   const { error } = await supabaseAdmin
     .from("links")
     .delete()
@@ -608,6 +772,8 @@ async function getReleaseItemScope(releaseId: number) {
 }
 
 export async function createReleaseItem(releaseId: number, formData: FormData) {
+  await requireAdmin();
+
   const scope = await getReleaseItemScope(releaseId);
 
   const payload = {
@@ -636,6 +802,8 @@ export async function updateReleaseItem(
   itemId: number,
   formData: FormData
 ) {
+  await requireAdmin();
+
   const scope = await getReleaseItemScope(releaseId);
 
   const payload = {
@@ -669,6 +837,8 @@ export async function updateReleaseItem(
 }
 
 export async function deleteReleaseItem(releaseId: number, itemId: number) {
+  await requireAdmin();
+
   const scope = await getReleaseItemScope(releaseId);
 
   let query = supabaseAdmin
@@ -692,6 +862,8 @@ export async function deleteReleaseItem(releaseId: number, itemId: number) {
 }
 
 export async function updateRelease(releaseId: number, formData: FormData) {
+  await requireAdmin();
+
   const payload = {
     title: getNullableString(formData, "title"),
     title_kana: getNullableString(formData, "title_kana"),
@@ -699,8 +871,8 @@ export async function updateRelease(releaseId: number, formData: FormData) {
     release_type: getNullableString(formData, "release_type") ?? "other",
     artist_credit: getNullableString(formData, "artist_credit"),
     release_date: getNullableString(formData, "release_date"),
-    jacket_image_url: getNullableString(formData, "jacket_image_url"),
-    official_url: getNullableString(formData, "official_url"),
+    jacket_image_url: getNullableHttpUrl(formData, "jacket_image_url"),
+    official_url: getNullableHttpUrl(formData, "official_url"),
     notes: getNullableString(formData, "notes"),
 
     release_group_id: getNullableNumber(formData, "release_group_id"),
@@ -725,6 +897,8 @@ export async function updateRelease(releaseId: number, formData: FormData) {
 }
 
 export async function updateReleaseGroup(releaseId: number, formData: FormData) {
+  await requireAdmin();
+
   const releaseGroupId = getNullableNumber(formData, "release_group_id");
 
   if (!releaseGroupId) {
@@ -757,6 +931,8 @@ export async function updateReleaseGroup(releaseId: number, formData: FormData) 
 }
 
 export async function createRelease(formData: FormData) {
+  await requireAdmin();
+
   const title = getNullableString(formData, "title");
 
   if (!title) {
@@ -803,8 +979,8 @@ export async function createRelease(formData: FormData) {
     release_type: getNullableString(formData, "release_type") ?? "other",
     artist_credit: getNullableString(formData, "artist_credit"),
     release_date: getNullableString(formData, "release_date"),
-    jacket_image_url: getNullableString(formData, "jacket_image_url"),
-    official_url: getNullableString(formData, "official_url"),
+    jacket_image_url: getNullableHttpUrl(formData, "jacket_image_url"),
+    official_url: getNullableHttpUrl(formData, "official_url"),
     notes: getNullableString(formData, "notes"),
 
     release_group_id: releaseGroupId,
@@ -826,6 +1002,8 @@ export async function createRelease(formData: FormData) {
 }
 
 export async function duplicateRelease(releaseId: number) {
+  await requireAdmin();
+
   const { data: release, error: releaseError } = await supabaseAdmin
     .from("releases")
     .select(
@@ -901,6 +1079,8 @@ export async function duplicateRelease(releaseId: number) {
 }
 
 export async function deleteRelease(releaseId: number) {
+  await requireAdmin();
+
   const { error } = await supabaseAdmin
     .from("releases")
     .delete()

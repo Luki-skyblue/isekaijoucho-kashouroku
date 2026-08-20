@@ -6,6 +6,8 @@ import { useState } from "react";
 const navigation = [
   { href: "/songs", label: "楽曲" },
   { href: "/releases", label: "リリース" },
+  { href: "/creators", label: "制作者", status: "（準備中）" },
+  { href: "/sources", label: "出典", status: "（準備中）" },
   { href: "/timeline", label: "年表", status: "（準備中）" },
   { href: "/discover", label: "探す", status: "（準備中）" },
   { href: "/live", label: "ライブ", status: "（準備中）" },
@@ -29,6 +31,9 @@ export default function SiteHeader() {
           {navigation.map((item) => (
             <Link key={item.href} href={item.href} className="transition hover:text-black">
               {item.label}
+              {item.status ? (
+                <span className="ml-1 text-[10px] text-black/30">{item.status}</span>
+              ) : null}
             </Link>
           ))}
           <Link href="/submit" className="ml-1 border-l border-black/15 pl-5 text-black/45 transition hover:text-black">
