@@ -1139,7 +1139,7 @@ export async function deleteRelease(releaseId: number) {
 const inlineSongFields = new Set([
   "title", "title_kana", "artist_credit", "song_type", "first_date", "first_source",
   "first_full_date", "first_full_source", "original_artist", "original_vocal", "original_composer", "original_lyricist",
-  "original_arranger", "tie_up", "album_text", "notes", "version_name",
+  "original_arranger", "tie_up", "album_text", "notes", "version_name", "version_type", "song_group_id",
 ]);
 
 const inlineSongStatusFields = new Set([
@@ -1154,7 +1154,10 @@ export async function updateSongInlineField(
 ) {
   await requireAdmin();
   if (!inlineSongFields.has(field) || !Number.isInteger(songId)) throw new Error("編集項目が不正です。");
-  const { error } = await supabaseAdmin.from("songs").update({ [field]: value.trim() || null }).eq("id", songId);
+  const payload = field === "song_group_id"
+    ? { song_group_id: value.trim() ? Number(value.trim()) : null }
+    : { [field]: value.trim() || null };
+  const { error } = await supabaseAdmin.from("songs").update(payload).eq("id", songId);
   if (error) throw new Error("楽曲データの更新に失敗しました。");
   revalidatePath(`/_manage/songs/${songId}`);
   return { ok: true };
@@ -1172,5 +1175,24 @@ export async function updateSongInlineStatus(
   const { error } = await supabaseAdmin.from("songs").update({ [field]: value }).eq("id", songId);
   if (error) throw new Error("確認状態の更新に失敗しました。");
   revalidatePath(`/_manage/songs/${songId}`);
+  return { ok: true };
+}
+
+export async function updateSongInlinePrimary(songId: number, value: boolean) {
+  await requireAdmin();
+  const { error } = await supabaseAdmin.from("songs").update({ is_primary_version: value }).eq("id", songId);
+  if (error) throw new Error("代表版の更新に失敗しました。");
+  revalidatePath(`/_manage/songs/${songId}`);
+  revalidatePath(`/_manage/song-groups/${songId}`);
+  return { ok: true };
+}
+
+export async function updateSongGroupInlineField(groupId: number, field: string, value: string) {
+  await requireAdmin();
+  if (field !== "title" && field !== "title_kana" && field !== "sort_title") throw new Error("編集項目が不正です。");
+  const { error } = await supabaseAdmin.from("song_groups").update({ [field]: value.trim() || null }).eq("id", groupId);
+  if (error) throw new Error("楽曲グループの更新に失敗しました。");
+  revalidatePath(`/_manage/song-groups/${groupId}`);
+  revalidatePath("/_manage/song-groups");
   return { ok: true };
 }

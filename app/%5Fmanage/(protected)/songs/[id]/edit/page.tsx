@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { supabaseAdmin } from "@/lib/supabase/admin";
 import { updateSong } from "../../../../actions";
 import ReleaseFields from "./ReleaseFields";
@@ -149,6 +149,7 @@ export default async function ManageSongEditPage({
   searchParams,
 }: PageProps) {
   const { id } = await params;
+  redirect(`/_manage/songs/${id}`);
   const { saved } = await searchParams;
 
   const songId = Number(id);

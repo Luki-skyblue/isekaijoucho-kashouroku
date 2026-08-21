@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { supabaseAdmin } from "@/lib/supabase/admin";
-import { InlineFieldEditor, InlineStatusEditor } from "../../InlineFieldEditor";
+import { InlineFieldEditor, InlineGroupSelectEditor, InlineStatusEditor } from "../../InlineFieldEditor";
 
 type PageProps = {
   params: Promise<{
@@ -39,6 +39,7 @@ type SongOverview = {
   verification_status: string | null;
   song_group_id: number | null;
   version_name: string | null;
+  version_type: string | null;
   is_primary_version: boolean | null;
 };
 
@@ -113,7 +114,7 @@ export default async function ManageSongOverviewPage({ params }: PageProps) {
     notFound();
   }
 
-  const [{ count: linkCount }, { count: digitalReleaseCount }, { count: groupSongCount }] = await Promise.all([
+  const [{ count: linkCount }, { count: digitalReleaseCount }, { count: groupSongCount }, { data: songGroups }] = await Promise.all([
     supabaseAdmin
       .from("links")
       .select("id", { count: "exact", head: true })
@@ -126,6 +127,7 @@ export default async function ManageSongOverviewPage({ params }: PageProps) {
     song.song_group_id
       ? supabaseAdmin.from("songs").select("id", { count: "exact", head: true }).eq("song_group_id", song.song_group_id)
       : Promise.resolve({ count: 0 }),
+    supabaseAdmin.from("song_groups").select("id,title").order("title"),
   ]);
 
   return (
@@ -150,20 +152,10 @@ export default async function ManageSongOverviewPage({ params }: PageProps) {
         </div>
       </header>
 
-      <section className="mt-8 grid gap-4 sm:grid-cols-3">
-        <div className="border border-black/20 bg-black/[0.02] p-5">
-          <p className="section-label text-black/40">登録内容</p>
-          <p className="mt-3 text-sm text-black/70">各項目の鉛筆アイコンから編集できます</p>
-        </div>
-        <Link href={`/_manage/songs/${song.id}/links`} className="border border-black/20 p-5 transition hover:border-black/50 hover:bg-black/[0.02]">
-          <p className="section-label text-black/40">関連リンク</p>
-          <p className="mt-3 text-sm text-black/70">{linkCount ?? 0}件を確認・編集 →</p>
-        </Link>
-        <Link href={`/_manage/songs/${song.id}/digital-releases`} className="border border-black/20 p-5 transition hover:border-black/50 hover:bg-black/[0.02]">
-          <p className="section-label text-black/40">配信リリース</p>
-          <p className="mt-3 text-sm text-black/70">{digitalReleaseCount ?? 0}件を確認・編集 →</p>
-        </Link>
-      </section>
+      <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 border-b border-black/10 pb-5 text-xs text-black/45">
+        <Link href={`/_manage/songs/${song.id}/links`} className="transition hover:text-black">関連リンク {linkCount ?? 0}件 →</Link>
+        <Link href={`/_manage/songs/${song.id}/digital-releases`} className="transition hover:text-black">配信リリース {digitalReleaseCount ?? 0}件 →</Link>
+      </div>
 
       <section className="mt-10">
         <div className="flex items-baseline justify-between border-b border-black/15 pb-4">
@@ -202,10 +194,11 @@ export default async function ManageSongOverviewPage({ params }: PageProps) {
             {song.version_name ? ` / ${song.version_name}` : ""}
             {song.is_primary_version === false ? " / 別バージョン" : ""}
           </p>
+          <div className="mt-3"><InlineGroupSelectEditor songId={song.id} currentGroupId={song.song_group_id} groups={songGroups ?? []} /></div>
           <p className="mt-2 text-xs leading-6 text-black/50">
             バージョンやグループの所属を変更すると、関連表示にも影響します。
           </p>
-          {song.song_group_id && (groupSongCount ?? 0) > 1 ? <Link href={`/_manage/song-groups/${song.song_group_id}`} className="mt-4 inline-block text-xs text-black/55 underline underline-offset-4 hover:text-black">複数バージョンのグループを確認する →</Link> : <p className="mt-4 text-xs text-black/45">この楽曲だけのグループです。バージョン情報は項目の詳細編集から変更できます。</p>}
+          {song.song_group_id && (groupSongCount ?? 0) > 1 ? <Link href={`/_manage/song-groups/${song.song_group_id}`} className="mt-4 inline-block text-xs text-black/55 underline underline-offset-4 hover:text-black">複数バージョンのグループを確認する →</Link> : <p className="mt-4 text-xs text-black/45">この楽曲だけのグループです。</p>}
         </div>
       </section>
     </main>
