@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   createSongLink,
@@ -7,8 +6,6 @@ import {
 } from "@/app/%5Fmanage/actions";
 import { supabaseAdmin } from "@/lib/supabase/admin";
 import CreateSongLinkForm from "./CreateSongLinkForm";
-import { ManageSongHeader } from "../../../ManageSongTabs";
-import { getManageSongNavigation } from "../../../songNavigation";
 import InlineLinkFieldEditor from "./InlineLinkFieldEditor";
 import { LINK_TYPE_OPTIONS } from "@/app/%5Fmanage/options";
 
@@ -131,8 +128,6 @@ export default async function ManageSongLinksPage({
     notFound();
   }
 
-  const { previousSong, nextSong } = await getManageSongNavigation(songId);
-
   const { data: links, error: linksError } = await supabaseAdmin
     .from("links")
     .select(
@@ -151,102 +146,7 @@ export default async function ManageSongLinksPage({
   const createAction = createSongLink.bind(null, songId);
 
   return (
-    <main className="mx-auto max-w-5xl px-6 py-12">
-      <div>
-        <header className="hidden">
-          <div className="flex flex-wrap gap-4 text-xs text-black/45">
-            <Link
-              href="/_manage"
-              className="transition hover:text-black"
-            >
-              管理ホームへ戻る
-            </Link>
-            <Link
-              href="/_manage/songs"
-              className="transition hover:text-black"
-            >
-              楽曲一覧へ戻る
-            </Link>
-            <Link
-              href={`/songs/${song.id}`}
-              className="transition hover:text-black"
-            >
-              公開ページを見る ↗
-            </Link>
-          </div>
-
-        <div className="grid gap-3 border-t border-neutral-200 pt-4 md:grid-cols-2">
-        {previousSong ? (
-            <Link
-            href={`/_manage/songs/${previousSong.id}/links`}
-            className="group text-black/45 hover:text-black"
-            >
-            <span className="block font-mono text-[10px] tracking-[0.2em] text-neutral-400">
-                ← 前の曲
-            </span>
-            <span className="mt-1 block truncate text-sm tracking-normal text-neutral-700 group-hover:text-neutral-950">
-                {previousSong.title ?? `#${previousSong.id}`}
-            </span>
-            </Link>
-        ) : (
-            <div className="text-black/25">
-            <span className="block font-mono text-[10px] tracking-[0.2em]">
-                ← 前の曲
-            </span>
-            <span className="mt-1 block text-sm tracking-normal">なし</span>
-            </div>
-        )}
-
-        {nextSong ? (
-            <Link
-            href={`/_manage/songs/${nextSong.id}/links`}
-            className="group text-right text-black/45 hover:text-black"
-            >
-            <span className="block font-mono text-[10px] tracking-[0.2em] text-neutral-400">
-                次の曲 →
-            </span>
-            <span className="mt-1 block truncate text-sm tracking-normal text-neutral-700 group-hover:text-neutral-950">
-                {nextSong.title ?? `#${nextSong.id}`}
-            </span>
-            </Link>
-        ) : (
-            <div className="text-right text-black/25">
-            <span className="block font-mono text-[10px] tracking-[0.2em]">
-                次の曲 →
-            </span>
-            <span className="mt-1 block text-sm tracking-normal">なし</span>
-            </div>
-        )}
-        </div>
-
-          <div>
-            <p className="font-mono text-xs tracking-[0.28em] text-neutral-500">
-              関連リンク
-            </p>
-            <h1 className="font-serif-jp mt-3 text-3xl font-medium tracking-[0.02em] text-black md:text-5xl">
-              {song.title ?? "Untitled"}
-            </h1>
-            {song.artist_credit ? (
-              <p className="mt-3 text-sm text-black/50">
-                {song.artist_credit}
-              </p>
-            ) : null}
-          </div>
-
-          <div className="flex flex-wrap gap-x-5 gap-y-2 border-t border-neutral-200 pt-4 text-xs text-neutral-500">
-            <span className="text-neutral-800">関連リンク {links.length}件</span>
-            <Link href={`/_manage/songs/${song.id}/digital-releases`} className="hover:text-neutral-950">配信リリースへ →</Link>
-          </div>
-
-          {resolvedSearchParams.saved ? (
-            <p className="border border-neutral-300 px-3 py-2 text-sm">
-              保存しました。
-            </p>
-          ) : null}
-        </header>
-
-        <ManageSongHeader songId={song.id} title={song.title} previousSong={previousSong} nextSong={nextSong} active="links" />
-
+    <>
         {resolvedSearchParams.saved ? <p className="border border-black/15 p-3 text-sm text-black/60">保存しました。</p> : null}
 
         <details className="group mt-8">
@@ -366,7 +266,6 @@ export default async function ManageSongLinksPage({
             </div>
           )}
         </section>
-      </div>
-    </main>
+    </>
   );
 }

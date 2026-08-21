@@ -2,8 +2,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { supabaseAdmin } from "@/lib/supabase/admin";
 import { InlineFieldEditor, InlineGroupSelectEditor, InlineStatusEditor } from "../../InlineFieldEditor";
-import { ManageSongHeader } from "../../ManageSongTabs";
-import { getManageSongNavigation } from "../../songNavigation";
 import { SONG_TYPE_OPTIONS } from "../../../options";
 
 type PageProps = {
@@ -119,37 +117,15 @@ export default async function ManageSongOverviewPage({ params }: PageProps) {
     notFound();
   }
 
-  const [{ count: groupSongCount }, { data: songGroups }, navigation] = await Promise.all([
+  const [{ count: groupSongCount }, { data: songGroups }] = await Promise.all([
     song.song_group_id
       ? supabaseAdmin.from("songs").select("id", { count: "exact", head: true }).eq("song_group_id", song.song_group_id)
       : Promise.resolve({ count: 0 }),
     supabaseAdmin.from("song_groups").select("id,title").order("title"),
-    getManageSongNavigation(songId),
   ]);
-  const { previousSong, nextSong } = navigation;
 
   return (
-    <main className="mx-auto max-w-5xl px-6 py-12">
-      <header className="hidden">
-        <div className="flex flex-wrap items-center gap-4">
-          <Link href="/_manage/songs" className="text-xs text-black/45 transition hover:text-black">
-            楽曲一覧へ戻る
-          </Link>
-          <Link href={`/songs/${song.id}?from=manage`} target="_blank" className="text-xs text-black/45 transition hover:text-black">
-            公開ページを見る ↗
-          </Link>
-        </div>
-        <div className="mt-6 flex items-center justify-between gap-3 border-t border-black/10 pt-4 text-xs text-black/45">
-          {previousSong ? <Link href={`/_manage/songs/${previousSong.id}`} className="max-w-[35%] truncate hover:text-black">← 前の曲　{previousSong.title}</Link> : <span>← 前の曲</span>}
-          {nextSong ? <Link href={`/_manage/songs/${nextSong.id}`} className="max-w-[35%] truncate text-right hover:text-black">{nextSong.title}　次の曲 →</Link> : <span>次の曲 →</span>}
-        </div>
-        <h1 className="font-serif-jp mt-8 text-center text-3xl font-medium tracking-[0.02em] text-black md:text-5xl">
-          {song.title ?? `#${song.id}`}
-        </h1>
-      </header>
-
-      <ManageSongHeader songId={song.id} title={song.title} previousSong={previousSong} nextSong={nextSong} active="overview" />
-
+    <>
       <section className="mt-10">
         <div className="flex items-baseline justify-between border-b border-black/15 pb-4">
           <div>
@@ -195,6 +171,6 @@ export default async function ManageSongOverviewPage({ params }: PageProps) {
           {song.song_group_id && (groupSongCount ?? 0) > 1 ? <Link href={`/_manage/song-groups/${song.song_group_id}`} className="mt-4 inline-block text-xs text-black/55 underline underline-offset-4 hover:text-black">複数バージョンのグループを確認する →</Link> : <p className="mt-4 text-xs text-black/45">この楽曲だけのグループです。</p>}
         </div>
       </section>
-    </main>
+    </>
   );
 }

@@ -1,14 +1,11 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { supabaseAdmin } from "@/lib/supabase/admin";
 import {
   createSongDigitalRelease,
   deleteSongDigitalRelease,
-  updateSongDigitalRelease,
 } from "../../../../actions";
 import ManageFormGuard from "../../../ManageFormGuard";
-import { ManageSongHeader } from "../../../ManageSongTabs";
-import { getManageSongNavigation } from "../../../songNavigation";
+import InlineDigitalReleaseFieldEditor from "./InlineDigitalReleaseFieldEditor";
 
 type PageProps = {
   params: Promise<{
@@ -93,18 +90,6 @@ export default async function ManageSongDigitalReleasesPage({
     notFound();
   }
 
-  const { data: song, error: songError } = await supabaseAdmin
-    .from("songs")
-    .select("id,title")
-    .eq("id", songId)
-    .single();
-
-  if (songError || !song) {
-    notFound();
-  }
-
-  const { previousSong, nextSong } = await getManageSongNavigation(songId);
-
   const { data: digitalReleases, error: digitalReleasesError } =
     await supabaseAdmin
       .from("song_digital_releases")
@@ -123,103 +108,45 @@ export default async function ManageSongDigitalReleasesPage({
   const createAction = createSongDigitalRelease.bind(null, songId);
 
   return (
-    <main className="mx-auto max-w-5xl px-6 py-12">
-      <section className="hidden">
-        <div className="flex flex-wrap items-center gap-4">
-          <Link
-            href={`/_manage/songs/${song.id}`}
-            className="text-xs font-medium tracking-[0.12em] text-black/45 transition hover:text-black"
-          >
-            楽曲概要へ戻る
-          </Link>
-
-          <Link
-            href={`/songs/${song.id}`}
-            target="_blank"
-            className="text-xs font-medium tracking-[0.12em] text-black/45 transition hover:text-black"
-          >
-            公開ページを見る ↗
-          </Link>
-        </div>
-
-        <h1 className="font-serif-jp mt-8 text-center text-3xl font-medium tracking-[0.02em] text-black md:text-5xl">
-          {song.title}
-        </h1>
-
-        <p className="mt-4 text-sm leading-7 text-black/55">
-          この楽曲に紐づく単曲配信リリースを追加・編集します。
-          同じ楽曲に複数の配信リリースを登録できます。
-        </p>
-
-        <p className="mt-3 text-sm text-black/45">
-          {digitalReleases?.length ?? 0} DIGITAL RELEASES
-        </p>
-
-        {saved ? (
-          <p className="mt-5 border border-black/15 p-3 text-sm text-black/60">
-            保存しました。
-          </p>
-        ) : null}
-
-        {deleted ? (
-          <p className="mt-5 border border-black/15 p-3 text-sm text-black/60">
-            削除しました。
-          </p>
-        ) : null}
-      </section>
-
-      <ManageSongHeader songId={song.id} title={song.title} previousSong={previousSong} nextSong={nextSong} active="digital" />
-
+    <>
       {saved ? <p className="mt-5 border border-black/15 p-3 text-sm text-black/60">保存しました。</p> : null}
       {deleted ? <p className="mt-5 border border-black/15 p-3 text-sm text-black/60">削除しました。</p> : null}
 
-      <section className="mt-10 border-b border-black/15 pb-10">
-        <p className="section-label text-black/45">
-          ADD DIGITAL RELEASE
-        </p>
+      <details className="group mt-8">
+        <summary className="inline-flex cursor-pointer list-none items-center gap-2 border border-black px-4 py-2 text-sm text-black transition marker:hidden hover:bg-black hover:text-white">
+          <span className="group-open:hidden">配信リリースを追加 ＋</span>
+          <span className="hidden group-open:inline">追加フォームを閉じる −</span>
+        </summary>
+
+        <section className="mt-5 border border-black/15 p-5">
+          <div>
+            <p className="section-label text-black/45">ADD DIGITAL RELEASE</p>
+            <h2 className="font-serif-jp mt-2 text-xl text-black/80">配信リリースを追加</h2>
+          </div>
 
           <ManageFormGuard action={createAction} className="mt-5">
-          <div className="grid gap-5 md:grid-cols-2">
-            <TextInput
-              name="digital_release_title"
-              label="TITLE"
-            />
+            <div className="grid gap-5 md:grid-cols-2">
+              <TextInput name="digital_release_title" label="TITLE" />
+              <TextInput name="digital_release_date" label="RELEASE DATE" type="date" />
+              <TextInput name="digital_release_jacket_image_url" label="JACKET IMAGE URL" />
+              <TextInput name="digital_release_official_url" label="OFFICIAL URL" />
+            </div>
 
-            <TextInput
-              name="digital_release_date"
-              label="RELEASE DATE"
-              type="date"
-            />
+            <div className="mt-5">
+              <TextArea name="digital_release_notes" label="NOTES" rows={4} />
+            </div>
 
-            <TextInput
-              name="digital_release_jacket_image_url"
-              label="JACKET IMAGE URL"
-            />
-
-            <TextInput
-              name="digital_release_official_url"
-              label="OFFICIAL URL"
-            />
-          </div>
-
-          <div className="mt-5">
-            <TextArea
-              name="digital_release_notes"
-              label="NOTES"
-              rows={4}
-            />
-          </div>
-
-          <div className="mt-6">
-            <button
-              type="submit"
-              className="border border-black px-5 py-3 text-xs font-medium tracking-[0.12em] text-black transition hover:bg-black hover:text-[#f5f5f2]"
-            >
-              ADD DIGITAL RELEASE
-            </button>
-          </div>
+            <div className="mt-6">
+              <button
+                type="submit"
+                className="border border-black bg-black px-5 py-3 text-xs font-medium tracking-[0.12em] text-white transition hover:bg-black/80"
+              >
+                追加する
+              </button>
+            </div>
           </ManageFormGuard>
-      </section>
+        </section>
+      </details>
 
       <section className="mt-10">
         <p className="section-label text-black/45">
@@ -228,12 +155,6 @@ export default async function ManageSongDigitalReleasesPage({
 
         <div className="mt-5 space-y-8">
           {(digitalReleases ?? []).map((digitalRelease, index) => {
-            const updateAction = updateSongDigitalRelease.bind(
-              null,
-              songId,
-              digitalRelease.id
-            );
-
             const deleteAction = deleteSongDigitalRelease.bind(
               null,
               songId,
@@ -252,7 +173,7 @@ export default async function ManageSongDigitalReleasesPage({
                     </p>
 
                     <p className="mt-2 text-sm font-medium text-black/75">
-                      {digitalRelease.title ?? song.title}
+                      {digitalRelease.title ?? "タイトル未設定"}
                     </p>
                   </div>
 
@@ -263,7 +184,7 @@ export default async function ManageSongDigitalReleasesPage({
                       : ""}
                   </p>
                   <span className="border border-black/20 px-3 py-1 text-xs text-black/45 group-open:bg-black group-open:text-[#f5f5f2]">
-                    編集を開く
+                    鉛筆で編集
                   </span>
                 </summary>
 
@@ -291,52 +212,28 @@ export default async function ManageSongDigitalReleasesPage({
                     )}
                   </div>
 
-                  <ManageFormGuard action={updateAction}>
-                    <div className="grid gap-5 md:grid-cols-2">
-                      <TextInput
-                        name="digital_release_title"
-                        label="TITLE"
-                        defaultValue={digitalRelease.title}
-                      />
-
-                      <TextInput
-                        name="digital_release_date"
-                        label="RELEASE DATE"
-                        type="date"
-                        defaultValue={digitalRelease.release_date}
-                      />
-
-                      <TextInput
-                        name="digital_release_jacket_image_url"
-                        label="JACKET IMAGE URL"
-                        defaultValue={digitalRelease.jacket_image_url}
-                      />
-
-                      <TextInput
-                        name="digital_release_official_url"
-                        label="OFFICIAL URL"
-                        defaultValue={digitalRelease.official_url}
-                      />
+                  <dl className="grid gap-0 border-t border-black/10">
+                    <div className="grid gap-2 border-b border-black/10 py-3 sm:grid-cols-[140px_1fr]">
+                      <dt className="text-xs text-black/45">タイトル</dt>
+                      <dd><InlineDigitalReleaseFieldEditor songId={songId} digitalReleaseId={digitalRelease.id} field="title" value={digitalRelease.title} /></dd>
                     </div>
-
-                    <div className="mt-5">
-                      <TextArea
-                        name="digital_release_notes"
-                        label="NOTES"
-                        defaultValue={digitalRelease.notes}
-                        rows={4}
-                      />
+                    <div className="grid gap-2 border-b border-black/10 py-3 sm:grid-cols-[140px_1fr]">
+                      <dt className="text-xs text-black/45">配信日</dt>
+                      <dd><InlineDigitalReleaseFieldEditor songId={songId} digitalReleaseId={digitalRelease.id} field="release_date" value={digitalRelease.release_date} inputType="date" /></dd>
                     </div>
-
-                    <div className="mt-6">
-                      <button
-                        type="submit"
-                        className="border border-black px-5 py-3 text-xs font-medium tracking-[0.12em] text-black transition hover:bg-black hover:text-[#f5f5f2]"
-                      >
-                        UPDATE DIGITAL RELEASE
-                      </button>
+                    <div className="grid gap-2 border-b border-black/10 py-3 sm:grid-cols-[140px_1fr]">
+                      <dt className="text-xs text-black/45">ジャケット画像URL</dt>
+                      <dd><InlineDigitalReleaseFieldEditor songId={songId} digitalReleaseId={digitalRelease.id} field="jacket_image_url" value={digitalRelease.jacket_image_url} inputType="url" /></dd>
                     </div>
-                  </ManageFormGuard>
+                    <div className="grid gap-2 border-b border-black/10 py-3 sm:grid-cols-[140px_1fr]">
+                      <dt className="text-xs text-black/45">公式URL</dt>
+                      <dd><InlineDigitalReleaseFieldEditor songId={songId} digitalReleaseId={digitalRelease.id} field="official_url" value={digitalRelease.official_url} inputType="url" /></dd>
+                    </div>
+                    <div className="grid gap-2 border-b border-black/10 py-3 sm:grid-cols-[140px_1fr]">
+                      <dt className="text-xs text-black/45">メモ</dt>
+                      <dd><InlineDigitalReleaseFieldEditor songId={songId} digitalReleaseId={digitalRelease.id} field="notes" value={digitalRelease.notes} multiline /></dd>
+                    </div>
+                  </dl>
                 </div>
 
                 <div className="border-t border-black/10 px-5 py-4">
@@ -372,6 +269,6 @@ export default async function ManageSongDigitalReleasesPage({
           ) : null}
         </div>
       </section>
-    </main>
+    </>
   );
 }

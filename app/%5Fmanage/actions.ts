@@ -383,6 +383,61 @@ export async function updateSongDigitalRelease(
   redirect(`/_manage/songs/${songId}/digital-releases?saved=1`);
 }
 
+export async function updateSongDigitalReleaseInlineField(
+  songId: number,
+  digitalReleaseId: number,
+  field: string,
+  value: string,
+) {
+  await requireAdmin();
+
+  const allowedFields = new Set([
+    "title",
+    "release_date",
+    "jacket_image_url",
+    "official_url",
+    "notes",
+  ]);
+
+  if (!Number.isInteger(songId) || !Number.isInteger(digitalReleaseId) || !allowedFields.has(field)) {
+    throw new Error("編集項目が不正です。");
+  }
+
+  const normalized = value.trim();
+  if ((field === "jacket_image_url" || field === "official_url") && normalized) {
+    await assertPublicHttpUrl(normalized);
+  }
+
+  const { data: current, error: currentError } = await supabaseAdmin
+    .from("song_digital_releases")
+    .select("title,release_date,jacket_image_url,official_url,notes")
+    .eq("id", digitalReleaseId)
+    .eq("song_id", songId)
+    .single();
+
+  if (currentError || !current) {
+    throw new Error("配信リリース情報が見つかりません。");
+  }
+
+  const nextValues = { ...current, [field]: normalized || null };
+  if (!Object.values(nextValues).some(Boolean)) {
+    throw new Error("全項目を空にする場合は削除を使用してください。");
+  }
+
+  const { error } = await supabaseAdmin
+    .from("song_digital_releases")
+    .update({ [field]: normalized || null })
+    .eq("id", digitalReleaseId)
+    .eq("song_id", songId);
+
+  if (error) {
+    throw new Error("配信リリース情報の更新に失敗しました。");
+  }
+
+  revalidatePath(`/_manage/songs/${songId}/digital-releases`);
+  return { ok: true };
+}
+
 export async function deleteSongDigitalRelease(
   songId: number,
   digitalReleaseId: number
