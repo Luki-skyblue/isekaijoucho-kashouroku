@@ -187,8 +187,7 @@ export default async function ManageSongsPage({ searchParams }: PageProps) {
                     ) : null}
 
                     <Link
-                    href={`/songs/${song.id}`}
-                    target="_blank"
+                    href={`/_manage/songs/${song.id}`}
                     className="truncate text-sm font-medium text-black underline-offset-4 transition hover:underline"
                     >
                     {song.title}
@@ -203,19 +202,6 @@ export default async function ManageSongsPage({ searchParams }: PageProps) {
                     ) : null}                    
                     </Link>
 
-                    <Link
-                    href={`/_manage/songs/${song.id}`}
-                    className="border border-black/20 px-2 py-0.5 text-[11px] tracking-[0.08em] text-black/50 transition hover:border-black hover:text-black"
-                    >
-                    管理
-                    </Link>
-
-                    <Link
-                    href={`/_manage/songs/${song.id}/links`}
-                    className="border border-black/20 px-2 py-0.5 text-[11px] tracking-[0.08em] text-black/50 transition hover:border-black hover:text-black"
-                    >
-                    LINKS
-                    </Link>
                 </div>
 
                 {song.title_kana && (

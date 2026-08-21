@@ -25,6 +25,11 @@ const navigation = [
     label: "リリース",
     description: "作品と収録情報",
   },
+  {
+    href: "/_manage/song-groups",
+    label: "楽曲グループ",
+    description: "複数バージョンを管理",
+  },
 ];
 
 export default function ManageNavigation() {

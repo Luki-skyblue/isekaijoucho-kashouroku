@@ -113,7 +113,7 @@ export default async function ManageSongOverviewPage({ params }: PageProps) {
     notFound();
   }
 
-  const [{ count: linkCount }, { count: digitalReleaseCount }] = await Promise.all([
+  const [{ count: linkCount }, { count: digitalReleaseCount }, { count: groupSongCount }] = await Promise.all([
     supabaseAdmin
       .from("links")
       .select("id", { count: "exact", head: true })
@@ -123,6 +123,9 @@ export default async function ManageSongOverviewPage({ params }: PageProps) {
       .from("song_digital_releases")
       .select("id", { count: "exact", head: true })
       .eq("song_id", songId),
+    song.song_group_id
+      ? supabaseAdmin.from("songs").select("id", { count: "exact", head: true }).eq("song_group_id", song.song_group_id)
+      : Promise.resolve({ count: 0 }),
   ]);
 
   return (
@@ -202,9 +205,7 @@ export default async function ManageSongOverviewPage({ params }: PageProps) {
           <p className="mt-2 text-xs leading-6 text-black/50">
             バージョンやグループの所属を変更すると、関連表示にも影響します。
           </p>
-          <Link href={`/_manage/songs/${song.id}/edit`} className="mt-4 inline-block text-xs text-black/55 underline underline-offset-4 hover:text-black">
-            グループ情報を編集する
-          </Link>
+          {song.song_group_id && (groupSongCount ?? 0) > 1 ? <Link href={`/_manage/song-groups/${song.song_group_id}`} className="mt-4 inline-block text-xs text-black/55 underline underline-offset-4 hover:text-black">複数バージョンのグループを確認する →</Link> : <p className="mt-4 text-xs text-black/45">この楽曲だけのグループです。バージョン情報は項目の詳細編集から変更できます。</p>}
         </div>
       </section>
     </main>
