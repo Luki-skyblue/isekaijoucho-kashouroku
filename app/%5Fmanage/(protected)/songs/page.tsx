@@ -204,10 +204,10 @@ export default async function ManageSongsPage({ searchParams }: PageProps) {
                     </Link>
 
                     <Link
-                    href={`/_manage/songs/${song.id}/edit`}
+                    href={`/_manage/songs/${song.id}`}
                     className="border border-black/20 px-2 py-0.5 text-[11px] tracking-[0.08em] text-black/50 transition hover:border-black hover:text-black"
                     >
-                    EDIT
+                    管理
                     </Link>
 
                     <Link

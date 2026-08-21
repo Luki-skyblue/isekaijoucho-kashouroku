@@ -104,10 +104,10 @@ function ReleaseRow({ release }: { release: ManageRelease }) {
 
       <div className="flex flex-wrap items-center gap-2">
         <Link
-          href={`/_manage/releases/${release.id}/edit`}
+          href={`/_manage/releases/${release.id}`}
           className="border border-black/20 px-2 py-0.5 text-[11px] tracking-[0.08em] text-black/50 transition hover:border-black hover:text-black"
         >
-          EDIT
+          管理
         </Link>
 
         <Link
