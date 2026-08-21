@@ -8,14 +8,29 @@ const statuses = [
   ["confirmed", "確認済み"], ["uncertain", "要確認"], ["unverified", "未確認"], ["wanted", "情報募集中"],
 ] as const;
 
-export function InlineFieldEditor({ songId, field, value, options }: { songId: number; field: string; value: string | null; options?: readonly ManageSelectOption[] }) {
+export function InlineFieldEditor({ songId, field, value, options, inputType = "text" }: { songId: number; field: string; value: string | null; options?: readonly ManageSelectOption[]; inputType?: "text" | "date" }) {
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(value ?? "");
   const [pending, startTransition] = useTransition();
   const save = () => startTransition(async () => { await updateSongInlineField(songId, field, draft); setEditing(false); });
   if (!editing) return <button type="button" aria-label={`${field}を編集`} onClick={() => setEditing(true)} className="ml-2 text-black/35 transition hover:text-black">✎</button>;
   const hasLegacyValue = Boolean(draft && options && !options.some((option) => option.value === draft));
-  return <span className="flex flex-wrap items-center gap-2 sm:justify-end">{options ? <select autoFocus value={draft} onChange={(event) => setDraft(event.target.value)} onKeyDown={(event) => { if (event.key === "Escape") setEditing(false); }} className="min-w-0 flex-1 border border-black/30 bg-white px-2 py-1 text-sm sm:max-w-xs"><option value="">未設定</option>{hasLegacyValue ? <option value={draft}>{draft}（現在値）</option> : null}{options.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}</select> : <input autoFocus value={draft} onChange={(event) => setDraft(event.target.value)} onKeyDown={(event) => { if (event.key === "Enter") save(); if (event.key === "Escape") setEditing(false); }} className="min-w-0 flex-1 border border-black/30 bg-white px-2 py-1 text-sm sm:max-w-xs" />}<button type="button" disabled={pending} onClick={save} className="border border-black bg-black px-2 py-1 text-xs text-white">保存</button><button type="button" onClick={() => setEditing(false)} className="text-xs text-black/50">取消</button></span>;
+  return <span className="flex flex-wrap items-center gap-2 sm:justify-end">{options ? <select autoFocus value={draft} onChange={(event) => setDraft(event.target.value)} onKeyDown={(event) => { if (event.key === "Escape") setEditing(false); }} className="min-w-0 flex-1 border border-black/30 bg-white px-2 py-1 text-sm sm:max-w-xs"><option value="">未設定</option>{hasLegacyValue ? <option value={draft}>{draft}（現在値）</option> : null}{options.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}</select> : <input autoFocus type={inputType} value={draft} onChange={(event) => setDraft(event.target.value)} onKeyDown={(event) => { if (event.key === "Enter") save(); if (event.key === "Escape") setEditing(false); }} className="min-w-0 flex-1 border border-black/30 bg-white px-2 py-1 text-sm sm:max-w-xs" />}<button type="button" disabled={pending} onClick={save} className="border border-black bg-black px-2 py-1 text-xs text-white">保存</button><button type="button" onClick={() => setEditing(false)} className="text-xs text-black/50">取消</button></span>;
+}
+
+export function InlineFieldCopyButton({ songId, field, value, label }: { songId: number; field: string; value: string | null; label: string }) {
+  const [pending, startTransition] = useTransition();
+
+  return (
+    <button
+      type="button"
+      disabled={pending || !value}
+      onClick={() => startTransition(async () => { await updateSongInlineField(songId, field, value ?? ""); })}
+      className="ml-3 text-[11px] text-black/40 underline decoration-black/20 underline-offset-4 transition hover:text-black disabled:cursor-not-allowed disabled:opacity-35"
+    >
+      {pending ? "コピー中…" : label}
+    </button>
+  );
 }
 
 export function InlineStatusEditor({ songId, field, value }: { songId: number; field: string; value: string | null }) {

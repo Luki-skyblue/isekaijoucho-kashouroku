@@ -1,37 +1,31 @@
-import PreparationPage from "../PreparationPage";
+import Link from "next/link";
+import { supabase } from "@/lib/supabase/client";
+import DiscoverCatalog from "./DiscoverCatalog";
 
-const discoverySources = ["他チャンネル", "YouTube外", "ライブ・イベント", "現在視聴困難"];
+export const dynamic = "force-dynamic";
 
-export default function DiscoverPage() {
+export default async function DiscoverPage() {
+  const { data: songs, error } = await supabase
+    .from("songs")
+    .select("id,title,artist_credit,first_date,first_source,song_type,version_name,is_primary_version,discovery_category")
+    .not("discovery_category", "is", null)
+    .order("first_date", { ascending: false, nullsFirst: false })
+    .order("id", { ascending: false });
+
   return (
-    <PreparationPage
-      eyebrow="DISCOVER"
-      title="まだ知らない歌を探す"
-      description="メインチャンネルを中心に見ている人が、普段なら見落とす歌唱と出会える場所です。単なる検索ではなく、知らない楽曲へ自然に辿り着ける導線を目指します。"
-    >
-      <div className="flex flex-wrap gap-2 border-b border-black/15 pb-8">
-        {discoverySources.map((source, index) => (
-          <span
-            key={source}
-            className={`border px-4 py-2 text-xs ${index === 0 ? "border-black/45 text-black/75" : "border-black/15 text-black/45"}`}
-          >
-            {source}
-          </span>
-        ))}
-      </div>
-      <div className="grid gap-8 py-10 md:grid-cols-[1fr_280px]">
-        <div>
-          <p className="section-label text-black/35">COMING ARCHIVE</p>
-          <p className="font-serif-jp mt-4 text-2xl leading-relaxed text-black/70">
-            まだ知らない歌に、<br />
-            ここで出会う。
-          </p>
+    <main className="mx-auto max-w-6xl px-6 py-12 sm:py-16">
+      <header className="border-b border-black/15 pb-10">
+        <p className="section-label text-black/45">DISCOVER</p>
+        <div className="mt-4 grid gap-6 md:grid-cols-[1fr_300px] md:items-end">
+          <div>
+            <h1 className="font-serif-jp text-3xl font-medium tracking-[0.03em] text-black sm:text-5xl">まだ知らない歌に出会う</h1>
+            <p className="mt-5 max-w-2xl text-sm leading-8 text-black/60">YouTube公式チャンネルから、コラボ先、CD・アルバム、ライブまで。普段の視聴だけでは辿り着きにくい歌唱を、発表された場所から紹介します。</p>
+          </div>
+          <p className="text-sm leading-7 text-black/45">曲名や条件から探したい場合は、<Link href="/songs" className="text-black/70 underline underline-offset-4 hover:text-black">楽曲目録の検索</Link>をご利用ください。</p>
         </div>
-        <p className="text-sm leading-8 text-black/50">
-          出典や歌唱の背景を添えながら、普段の検索では見つけにくい記録を紹介します。
-        </p>
-      </div>
-      <p className="text-xs tracking-[0.08em] text-black/40">このページは準備中です。</p>
-    </PreparationPage>
+      </header>
+
+      {error ? <p className="mt-8 border border-black/15 p-5 text-sm text-black/60">Discover情報の取得に失敗しました。</p> : <DiscoverCatalog songs={songs ?? []} />}
+    </main>
   );
 }

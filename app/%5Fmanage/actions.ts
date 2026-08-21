@@ -11,6 +11,7 @@ import {
 } from "@/lib/adminAuth";
 import { supabaseAdmin } from "@/lib/supabase/admin";
 import {
+  DISCOVERY_CATEGORY_OPTIONS,
   isManageOptionValue,
   LINK_TYPE_OPTIONS,
   RELEASE_TYPE_OPTIONS,
@@ -1402,7 +1403,7 @@ export async function deleteRelease(releaseId: number) {
 const inlineSongFields = new Set([
   "title", "title_kana", "artist_credit", "song_type", "first_date", "first_source",
   "first_full_date", "first_full_source", "original_artist", "original_vocal", "original_composer", "original_lyricist",
-  "original_arranger", "tie_up", "album_text", "notes", "version_name", "version_type", "song_group_id",
+  "original_arranger", "tie_up", "album_text", "notes", "version_name", "version_type", "song_group_id", "discovery_category",
 ]);
 
 const inlineSongStatusFields = new Set([
@@ -1421,12 +1422,18 @@ export async function updateSongInlineField(
   if (field === "song_type" && normalized && !isManageOptionValue(SONG_TYPE_OPTIONS, normalized)) {
     throw new Error("楽曲種別が不正です。");
   }
+  if (field === "discovery_category" && normalized && !isManageOptionValue(DISCOVERY_CATEGORY_OPTIONS, normalized)) {
+    throw new Error("Discover分類が不正です。");
+  }
   const payload = field === "song_group_id"
     ? { song_group_id: normalized ? Number(normalized) : null }
     : { [field]: normalized || null };
   const { error } = await supabaseAdmin.from("songs").update(payload).eq("id", songId);
   if (error) throw new Error("楽曲データの更新に失敗しました。");
   revalidatePath(`/_manage/songs/${songId}`);
+  if (field === "discovery_category") {
+    revalidatePath("/discover");
+  }
   return { ok: true };
 }
 

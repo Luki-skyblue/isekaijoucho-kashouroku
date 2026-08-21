@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { supabaseAdmin } from "@/lib/supabase/admin";
-import { InlineFieldEditor, InlineGroupSelectEditor, InlineStatusEditor } from "../../InlineFieldEditor";
-import { SONG_TYPE_OPTIONS } from "../../../options";
+import { InlineFieldCopyButton, InlineFieldEditor, InlineGroupSelectEditor, InlineStatusEditor } from "../../InlineFieldEditor";
+import { DISCOVERY_CATEGORY_OPTIONS, SONG_TYPE_OPTIONS } from "../../../options";
 
 type PageProps = {
   params: Promise<{
@@ -42,6 +42,7 @@ type SongOverview = {
   version_name: string | null;
   version_type: string | null;
   is_primary_version: boolean | null;
+  discovery_category: string | null;
 };
 
 const statusLabels: Record<string, string> = {
@@ -78,6 +79,10 @@ function InfoRow({
   songId,
   field,
   options,
+  displayValue,
+  inputType,
+  copyFrom,
+  statusField,
 }: {
   label: string;
   value: string | null;
@@ -85,14 +90,19 @@ function InfoRow({
   songId?: number;
   field?: string;
   options?: typeof SONG_TYPE_OPTIONS;
+  displayValue?: string | null;
+  inputType?: "text" | "date";
+  copyFrom?: { value: string | null; label: string };
+  statusField?: string;
 }) {
   return (
     <div className="grid gap-2 border-b border-black/10 py-4 sm:grid-cols-[150px_1fr_auto] sm:items-center sm:gap-5">
       <dt className="text-xs text-black/45">{label}</dt>
       <dd className={value ? "text-sm text-black/75" : "text-sm text-black/35"}>
-        {formatValue(value)} {songId && field ? <InlineFieldEditor songId={songId} field={field} value={value} options={options} /> : null}
+        {formatValue(displayValue === undefined ? value : displayValue)} {songId && field ? <InlineFieldEditor songId={songId} field={field} value={value} options={options} inputType={inputType} /> : null}
+        {songId && field && copyFrom ? <InlineFieldCopyButton songId={songId} field={field} value={copyFrom.value} label={copyFrom.label} /> : null}
       </dd>
-      {status !== undefined ? songId && field ? <InlineStatusEditor songId={songId} field={`${field}_status`} value={status} /> : <StatusMark status={status} /> : null}
+      {status !== undefined ? songId && field ? <InlineStatusEditor songId={songId} field={statusField ?? `${field}_status`} value={status} /> : <StatusMark status={status} /> : null}
     </div>
   );
 }
@@ -108,7 +118,7 @@ export default async function ManageSongOverviewPage({ params }: PageProps) {
   const { data: song, error } = await supabaseAdmin
     .from("songs")
     .select(
-      "id,title,title_kana,artist_credit,song_type,first_date,first_source,first_full_date,first_full_source,tie_up,album_text,notes,original_artist,original_vocal,original_composer,original_lyricist,original_arranger,verification_status,first_status,first_full_status,tie_up_status,album_text_status,original_artist_status,original_vocal_status,original_lyricist_status,original_composer_status,original_arranger_status,song_group_id,version_name,is_primary_version"
+      "id,title,title_kana,artist_credit,song_type,first_date,first_source,first_full_date,first_full_source,tie_up,album_text,notes,original_artist,original_vocal,original_composer,original_lyricist,original_arranger,verification_status,first_status,first_full_status,tie_up_status,album_text_status,original_artist_status,original_vocal_status,original_lyricist_status,original_composer_status,original_arranger_status,song_group_id,version_name,is_primary_version,discovery_category"
     )
     .eq("id", songId)
     .single<SongOverview>();
@@ -138,13 +148,14 @@ export default async function ManageSongOverviewPage({ params }: PageProps) {
         <dl className="mt-2">
           <InfoRow label="アーティスト表記" value={song.artist_credit} songId={song.id} field="artist_credit" />
           <InfoRow label="楽曲種別" value={song.song_type} songId={song.id} field="song_type" options={SONG_TYPE_OPTIONS} />
+          <InfoRow label="Discover分類" value={song.discovery_category} displayValue={DISCOVERY_CATEGORY_OPTIONS.find((option) => option.value === song.discovery_category)?.label ?? song.discovery_category} songId={song.id} field="discovery_category" options={DISCOVERY_CATEGORY_OPTIONS} />
           <div className="grid gap-2 border-b border-black/10 py-4 sm:grid-cols-[150px_1fr_auto] sm:items-center sm:gap-5"><dt className="text-xs text-black/45">楽曲全体の確認状態</dt><dd></dd><InlineStatusEditor songId={song.id} field="verification_status" value={song.verification_status} /></div>
           <InfoRow label="タイトル" value={song.title} songId={song.id} field="title" />
           <InfoRow label="タイトル（読み）" value={song.title_kana} songId={song.id} field="title_kana" />
-          <InfoRow label="初歌唱日" value={song.first_date} songId={song.id} field="first_date" status={song.first_status} />
-          <InfoRow label="フル初歌唱日" value={song.first_full_date} songId={song.id} field="first_full_date" status={song.first_full_status} />
+          <InfoRow label="初歌唱日" value={song.first_date} songId={song.id} field="first_date" inputType="date" status={song.first_status} statusField="first_status" />
+          <InfoRow label="フル初歌唱日" value={song.first_full_date} songId={song.id} field="first_full_date" inputType="date" status={song.first_full_status} statusField="first_full_status" copyFrom={{ value: song.first_date, label: "初歌唱日をコピー" }} />
           <InfoRow label="初出情報" value={song.first_source} songId={song.id} field="first_source" />
-          <InfoRow label="フル初出情報" value={song.first_full_source} songId={song.id} field="first_full_source" />
+          <InfoRow label="フル初出情報" value={song.first_full_source} songId={song.id} field="first_full_source" copyFrom={{ value: song.first_source, label: "初出情報をコピー" }} />
           <InfoRow label="タイアップ" value={song.tie_up} songId={song.id} field="tie_up" status={song.tie_up_status} />
           <InfoRow label="アルバム記載" value={song.album_text} songId={song.id} field="album_text" status={song.album_text_status} />
           <InfoRow label="原曲アーティスト" value={song.original_artist} songId={song.id} field="original_artist" status={song.original_artist_status} />

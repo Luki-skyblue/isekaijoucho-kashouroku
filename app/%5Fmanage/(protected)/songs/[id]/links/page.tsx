@@ -253,6 +253,7 @@ export default async function ManageSongLinksPage({
                                 field={field}
                                 value={value}
                                 options={field === "link_type" ? LINK_TYPE_OPTIONS : undefined}
+                                inputType={field === "published_date" ? "date" : field === "url" || field === "thumbnail_url" ? "url" : "text"}
                               />
                             </dd>
                           </div>

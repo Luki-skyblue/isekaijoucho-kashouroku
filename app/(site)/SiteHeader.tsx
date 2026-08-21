@@ -9,7 +9,7 @@ const navigation = [
   { href: "/creators", label: "制作者", status: "（準備中）" },
   { href: "/sources", label: "出典", status: "（準備中）" },
   { href: "/timeline", label: "年表", status: "（準備中）" },
-  { href: "/discover", label: "探す", status: "（準備中）" },
+  { href: "/discover", label: "発見" },
   { href: "/live", label: "ライブ", status: "（準備中）" },
   { href: "/about", label: "About" },
 ];

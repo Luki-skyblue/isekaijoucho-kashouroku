@@ -35,6 +35,15 @@ export const RELEASE_TYPE_OPTIONS = [
   { value: "other", label: "other / その他" },
 ] satisfies readonly ManageSelectOption[];
 
+export const DISCOVERY_CATEGORY_OPTIONS = [
+  { value: "isekai_official", label: "ヰ世界情緒公式チャンネル" },
+  { value: "vwp_official", label: "V.W.P公式チャンネル" },
+  { value: "other_channel", label: "その他のYouTubeチャンネル" },
+  { value: "cd_album", label: "CD・アルバム" },
+  { value: "live_event", label: "ライブ・イベント" },
+  { value: "other", label: "その他" },
+] satisfies readonly ManageSelectOption[];
+
 export function isManageOptionValue(
   options: readonly ManageSelectOption[],
   value: string,
