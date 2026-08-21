@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { createSong } from "../../../actions";
+import { SONG_TYPE_OPTIONS } from "../../../options";
 
 function TextInput({
   name,
@@ -37,10 +38,9 @@ function SongTypeSelect() {
         defaultValue="cover"
         className="mt-2 w-full border border-black/20 bg-transparent px-3 py-2 text-sm text-black outline-none transition focus:border-black"
       >
-        <option value="original">original</option>
-        <option value="cover">cover</option>
-        <option value="collaboration">collaboration</option>
-        <option value="other">other</option>
+        {SONG_TYPE_OPTIONS.map((option) => (
+          <option key={option.value} value={option.value}>{option.label}</option>
+        ))}
       </select>
     </label>
   );

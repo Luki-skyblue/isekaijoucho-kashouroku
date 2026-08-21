@@ -2,6 +2,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { supabaseAdmin } from "@/lib/supabase/admin";
 import { InlineFieldEditor, InlineGroupSelectEditor, InlineStatusEditor } from "../../InlineFieldEditor";
+import { ManageSongHeader } from "../../ManageSongTabs";
+import { getManageSongNavigation } from "../../songNavigation";
+import { SONG_TYPE_OPTIONS } from "../../../options";
 
 type PageProps = {
   params: Promise<{
@@ -76,18 +79,20 @@ function InfoRow({
   status,
   songId,
   field,
+  options,
 }: {
   label: string;
   value: string | null;
   status?: string | null;
   songId?: number;
   field?: string;
+  options?: typeof SONG_TYPE_OPTIONS;
 }) {
   return (
     <div className="grid gap-2 border-b border-black/10 py-4 sm:grid-cols-[150px_1fr_auto] sm:items-center sm:gap-5">
       <dt className="text-xs text-black/45">{label}</dt>
       <dd className={value ? "text-sm text-black/75" : "text-sm text-black/35"}>
-        {formatValue(value)} {songId && field ? <InlineFieldEditor songId={songId} field={field} value={value} /> : null}
+        {formatValue(value)} {songId && field ? <InlineFieldEditor songId={songId} field={field} value={value} options={options} /> : null}
       </dd>
       {status !== undefined ? songId && field ? <InlineStatusEditor songId={songId} field={`${field}_status`} value={status} /> : <StatusMark status={status} /> : null}
     </div>
@@ -114,25 +119,18 @@ export default async function ManageSongOverviewPage({ params }: PageProps) {
     notFound();
   }
 
-  const [{ count: linkCount }, { count: digitalReleaseCount }, { count: groupSongCount }, { data: songGroups }] = await Promise.all([
-    supabaseAdmin
-      .from("links")
-      .select("id", { count: "exact", head: true })
-      .eq("target_type", "song")
-      .eq("target_id", songId),
-    supabaseAdmin
-      .from("song_digital_releases")
-      .select("id", { count: "exact", head: true })
-      .eq("song_id", songId),
+  const [{ count: groupSongCount }, { data: songGroups }, navigation] = await Promise.all([
     song.song_group_id
       ? supabaseAdmin.from("songs").select("id", { count: "exact", head: true }).eq("song_group_id", song.song_group_id)
       : Promise.resolve({ count: 0 }),
     supabaseAdmin.from("song_groups").select("id,title").order("title"),
+    getManageSongNavigation(songId),
   ]);
+  const { previousSong, nextSong } = navigation;
 
   return (
     <main className="mx-auto max-w-5xl px-6 py-12">
-      <header className="border-b border-black/15 pb-8">
+      <header className="hidden">
         <div className="flex flex-wrap items-center gap-4">
           <Link href="/_manage/songs" className="text-xs text-black/45 transition hover:text-black">
             楽曲一覧へ戻る
@@ -141,21 +139,16 @@ export default async function ManageSongOverviewPage({ params }: PageProps) {
             公開ページを見る ↗
           </Link>
         </div>
-        <p className="section-label mt-8 text-black/45">楽曲概要</p>
-        <h1 className="font-serif-jp mt-4 text-3xl font-medium tracking-[0.02em] text-black md:text-5xl">
+        <div className="mt-6 flex items-center justify-between gap-3 border-t border-black/10 pt-4 text-xs text-black/45">
+          {previousSong ? <Link href={`/_manage/songs/${previousSong.id}`} className="max-w-[35%] truncate hover:text-black">← 前の曲　{previousSong.title}</Link> : <span>← 前の曲</span>}
+          {nextSong ? <Link href={`/_manage/songs/${nextSong.id}`} className="max-w-[35%] truncate text-right hover:text-black">{nextSong.title}　次の曲 →</Link> : <span>次の曲 →</span>}
+        </div>
+        <h1 className="font-serif-jp mt-8 text-center text-3xl font-medium tracking-[0.02em] text-black md:text-5xl">
           {song.title ?? `#${song.id}`}
         </h1>
-        <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-black/50">
-          <span>{formatValue(song.artist_credit)}</span>
-          <span>{formatValue(song.song_type)}</span>
-          <InlineStatusEditor songId={song.id} field="verification_status" value={song.verification_status} />
-        </div>
       </header>
 
-      <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 border-b border-black/10 pb-5 text-xs text-black/45">
-        <Link href={`/_manage/songs/${song.id}/links`} className="transition hover:text-black">関連リンク {linkCount ?? 0}件 →</Link>
-        <Link href={`/_manage/songs/${song.id}/digital-releases`} className="transition hover:text-black">配信リリース {digitalReleaseCount ?? 0}件 →</Link>
-      </div>
+      <ManageSongHeader songId={song.id} title={song.title} previousSong={previousSong} nextSong={nextSong} active="overview" />
 
       <section className="mt-10">
         <div className="flex items-baseline justify-between border-b border-black/15 pb-4">
@@ -167,10 +160,11 @@ export default async function ManageSongOverviewPage({ params }: PageProps) {
         </div>
 
         <dl className="mt-2">
+          <InfoRow label="アーティスト表記" value={song.artist_credit} songId={song.id} field="artist_credit" />
+          <InfoRow label="楽曲種別" value={song.song_type} songId={song.id} field="song_type" options={SONG_TYPE_OPTIONS} />
+          <div className="grid gap-2 border-b border-black/10 py-4 sm:grid-cols-[150px_1fr_auto] sm:items-center sm:gap-5"><dt className="text-xs text-black/45">楽曲全体の確認状態</dt><dd></dd><InlineStatusEditor songId={song.id} field="verification_status" value={song.verification_status} /></div>
           <InfoRow label="タイトル" value={song.title} songId={song.id} field="title" />
           <InfoRow label="タイトル（読み）" value={song.title_kana} songId={song.id} field="title_kana" />
-          <InfoRow label="歌唱者表記" value={song.artist_credit} songId={song.id} field="artist_credit" />
-          <InfoRow label="楽曲種別" value={song.song_type} songId={song.id} field="song_type" />
           <InfoRow label="初歌唱日" value={song.first_date} songId={song.id} field="first_date" status={song.first_status} />
           <InfoRow label="フル初歌唱日" value={song.first_full_date} songId={song.id} field="first_full_date" status={song.first_full_status} />
           <InfoRow label="初出情報" value={song.first_source} songId={song.id} field="first_source" />

@@ -4,11 +4,13 @@ import {
   createSongLink,
   deleteSongLink,
   fetchSongLinkMetadata,
-  updateSongLink,
 } from "@/app/%5Fmanage/actions";
 import { supabaseAdmin } from "@/lib/supabase/admin";
 import CreateSongLinkForm from "./CreateSongLinkForm";
-import ManageFormGuard from "../../../ManageFormGuard";
+import { ManageSongHeader } from "../../../ManageSongTabs";
+import { getManageSongNavigation } from "../../../songNavigation";
+import InlineLinkFieldEditor from "./InlineLinkFieldEditor";
+import { LINK_TYPE_OPTIONS } from "@/app/%5Fmanage/options";
 
 type PageProps = {
   params: Promise<{
@@ -29,12 +31,6 @@ type Song = {
   first_full_source: string | null;
 };
 
-type SongNavItem = {
-  id: number;
-  title: string | null;
-  first_date: string | null;
-};
-
 type SongLink = {
   id: number;
   link_type: string | null;
@@ -47,158 +43,6 @@ type SongLink = {
   thumbnail_url: string | null;
   created_at: string | null;
 };
-
-const LINK_TYPE_OPTIONS = [
-  "mv",
-  "trailer",
-  "lyric_mv",
-  "live_mv",
-  "original",
-  "streaming",
-  "lyrics",
-  "piapro",
-  "x",
-  "announcement",
-  "album",
-  "other",
-];
-
-function TextInput({
-  name,
-  label,
-  defaultValue,
-  required = false,
-  type = "text",
-  placeholder,
-}: {
-  name: string;
-  label: string;
-  defaultValue?: string | null;
-  required?: boolean;
-  type?: string;
-  placeholder?: string;
-}) {
-  return (
-    <label className="grid gap-1 text-xs tracking-[0.18em] text-neutral-500">
-      {label}
-      <input
-        name={name}
-        type={type}
-        defaultValue={defaultValue ?? ""}
-        required={required}
-        placeholder={placeholder}
-        className="border border-neutral-300 bg-[#f5f5f2] px-3 py-2 text-sm tracking-normal text-neutral-900 outline-none focus:border-neutral-900"
-      />
-    </label>
-  );
-}
-
-function TextArea({
-  name,
-  label,
-  defaultValue,
-  placeholder,
-}: {
-  name: string;
-  label: string;
-  defaultValue?: string | null;
-  placeholder?: string;
-}) {
-  return (
-    <label className="grid gap-1 text-xs tracking-[0.18em] text-neutral-500">
-      {label}
-      <textarea
-        name={name}
-        defaultValue={defaultValue ?? ""}
-        placeholder={placeholder}
-        rows={3}
-        className="border border-neutral-300 bg-[#f5f5f2] px-3 py-2 text-sm tracking-normal text-neutral-900 outline-none focus:border-neutral-900"
-      />
-    </label>
-  );
-}
-
-function LinkTypeSelect({
-  defaultValue,
-}: {
-  defaultValue?: string | null;
-}) {
-  return (
-    <label className="grid gap-1 text-xs tracking-[0.18em] text-neutral-500">
-      LINK TYPE
-      <select
-        name="link_type"
-        defaultValue={defaultValue ?? "other"}
-        required
-        className="border border-neutral-300 bg-[#f5f5f2] px-3 py-2 text-sm tracking-normal text-neutral-900 outline-none focus:border-neutral-900"
-      >
-        {LINK_TYPE_OPTIONS.map((type) => (
-          <option key={type} value={type}>
-            {type}
-          </option>
-        ))}
-      </select>
-    </label>
-  );
-}
-
-function LinkFields({
-  link,
-}: {
-  link?: SongLink;
-}) {
-  return (
-    <div className="grid gap-4">
-      <div className="grid gap-4 md:grid-cols-3">
-        <LinkTypeSelect defaultValue={link?.link_type} />
-        <TextInput name="label" label="LABEL" defaultValue={link?.label} />
-        <TextInput
-          name="published_date"
-          label="PUBLISHED DATE"
-          type="date"
-          defaultValue={link?.published_date}
-        />
-      </div>
-
-      <TextInput
-        name="url"
-        label="URL"
-        defaultValue={link?.url}
-        required
-        placeholder="https://..."
-      />
-
-      <div className="grid gap-4 md:grid-cols-2">
-        <TextInput
-          name="title"
-          label="TITLE"
-          defaultValue={link?.title}
-          placeholder="表示用タイトル"
-        />
-        <TextInput
-          name="site_name"
-          label="SITE NAME"
-          defaultValue={link?.site_name}
-          placeholder="YouTube / X / piapro など"
-        />
-      </div>
-
-      <TextInput
-        name="thumbnail_url"
-        label="THUMBNAIL URL"
-        defaultValue={link?.thumbnail_url}
-        placeholder="https://..."
-      />
-
-      <TextArea
-        name="notes"
-        label="NOTES"
-        defaultValue={link?.notes}
-        placeholder="補足メモ"
-      />
-    </div>
-  );
-}
 
 function formatReferenceDate(date: string | null) {
   if (!date) {
@@ -287,26 +131,7 @@ export default async function ManageSongLinksPage({
     notFound();
   }
 
-    const { data: navSongs, error: navSongsError } = await supabaseAdmin
-    .from("songs")
-    .select("id, title, first_date")
-    .order("first_date", { ascending: false, nullsFirst: false })
-    .order("id", { ascending: false })
-    .returns<SongNavItem[]>();
-
-    if (navSongsError) {
-    throw new Error("前後の楽曲データの取得に失敗しました。");
-    }
-
-    const currentSongIndex = navSongs.findIndex((item) => item.id === songId);
-
-    const previousSong =
-    currentSongIndex > 0 ? navSongs[currentSongIndex - 1] : null;
-
-    const nextSong =
-    currentSongIndex >= 0 && currentSongIndex < navSongs.length - 1
-        ? navSongs[currentSongIndex + 1]
-        : null;
+  const { previousSong, nextSong } = await getManageSongNavigation(songId);
 
   const { data: links, error: linksError } = await supabaseAdmin
     .from("links")
@@ -326,31 +151,25 @@ export default async function ManageSongLinksPage({
   const createAction = createSongLink.bind(null, songId);
 
   return (
-    <main className="min-h-screen bg-[#f5f5f2] px-5 py-8 text-neutral-950">
-      <div className="mx-auto grid max-w-5xl gap-8">
-        <header className="grid gap-4 border-b border-neutral-300 pb-6">
-          <div className="flex flex-wrap gap-3 text-xs tracking-[0.18em]">
+    <main className="mx-auto max-w-5xl px-6 py-12">
+      <div>
+        <header className="hidden">
+          <div className="flex flex-wrap gap-4 text-xs text-black/45">
             <Link
               href="/_manage"
-              className="border border-neutral-300 px-3 py-2 hover:border-neutral-900"
+              className="transition hover:text-black"
             >
-              管理ホーム
+              管理ホームへ戻る
             </Link>
             <Link
               href="/_manage/songs"
-              className="border border-neutral-300 px-3 py-2 hover:border-neutral-900"
+              className="transition hover:text-black"
             >
-              楽曲一覧
-            </Link>
-            <Link
-              href={`/_manage/songs/${song.id}/edit`}
-              className="border border-neutral-300 px-3 py-2 hover:border-neutral-900"
-            >
-              楽曲本体を編集
+              楽曲一覧へ戻る
             </Link>
             <Link
               href={`/songs/${song.id}`}
-              className="border border-neutral-300 px-3 py-2 hover:border-neutral-900"
+              className="transition hover:text-black"
             >
               公開ページを見る ↗
             </Link>
@@ -360,19 +179,19 @@ export default async function ManageSongLinksPage({
         {previousSong ? (
             <Link
             href={`/_manage/songs/${previousSong.id}/links`}
-            className="group border border-neutral-300 px-3 py-2 hover:border-neutral-900"
+            className="group text-black/45 hover:text-black"
             >
             <span className="block font-mono text-[10px] tracking-[0.2em] text-neutral-400">
-                PREV SONG
+                ← 前の曲
             </span>
             <span className="mt-1 block truncate text-sm tracking-normal text-neutral-700 group-hover:text-neutral-950">
                 {previousSong.title ?? `#${previousSong.id}`}
             </span>
             </Link>
         ) : (
-            <div className="border border-neutral-200 px-3 py-2 text-neutral-300">
+            <div className="text-black/25">
             <span className="block font-mono text-[10px] tracking-[0.2em]">
-                PREV SONG
+                ← 前の曲
             </span>
             <span className="mt-1 block text-sm tracking-normal">なし</span>
             </div>
@@ -381,19 +200,19 @@ export default async function ManageSongLinksPage({
         {nextSong ? (
             <Link
             href={`/_manage/songs/${nextSong.id}/links`}
-            className="group border border-neutral-300 px-3 py-2 hover:border-neutral-900"
+            className="group text-right text-black/45 hover:text-black"
             >
             <span className="block font-mono text-[10px] tracking-[0.2em] text-neutral-400">
-                NEXT SONG
+                次の曲 →
             </span>
             <span className="mt-1 block truncate text-sm tracking-normal text-neutral-700 group-hover:text-neutral-950">
                 {nextSong.title ?? `#${nextSong.id}`}
             </span>
             </Link>
         ) : (
-            <div className="border border-neutral-200 px-3 py-2 text-neutral-300">
+            <div className="text-right text-black/25">
             <span className="block font-mono text-[10px] tracking-[0.2em]">
-                NEXT SONG
+                次の曲 →
             </span>
             <span className="mt-1 block text-sm tracking-normal">なし</span>
             </div>
@@ -402,43 +221,21 @@ export default async function ManageSongLinksPage({
 
           <div>
             <p className="font-mono text-xs tracking-[0.28em] text-neutral-500">
-              MANAGE SONG LINKS
+              関連リンク
             </p>
-            <h1 className="mt-2 font-serif text-3xl">
+            <h1 className="font-serif-jp mt-3 text-3xl font-medium tracking-[0.02em] text-black md:text-5xl">
               {song.title ?? "Untitled"}
             </h1>
             {song.artist_credit ? (
-              <p className="mt-2 text-sm text-neutral-600">
+              <p className="mt-3 text-sm text-black/50">
                 {song.artist_credit}
               </p>
             ) : null}
           </div>
 
-          <div className="grid gap-px border border-neutral-300 bg-neutral-300 sm:grid-cols-3">
-            <Link
-              href={`/_manage/songs/${song.id}/edit`}
-              className="bg-[#f5f5f2] p-4 hover:bg-white"
-            >
-              <p className="font-mono text-[10px] tracking-[0.2em] text-neutral-400">
-                楽曲本体
-              </p>
-              <p className="mt-2 text-sm text-neutral-700">基本情報を編集 →</p>
-            </Link>
-            <div className="bg-[#eeeee9] p-4">
-              <p className="font-mono text-[10px] tracking-[0.2em] text-neutral-400">
-                現在編集中
-              </p>
-              <p className="mt-2 text-sm text-neutral-800">関連リンク</p>
-            </div>
-            <Link
-              href={`/_manage/songs/${song.id}/digital-releases`}
-              className="bg-[#f5f5f2] p-4 hover:bg-white"
-            >
-              <p className="font-mono text-[10px] tracking-[0.2em] text-neutral-400">
-                関連情報
-              </p>
-              <p className="mt-2 text-sm text-neutral-700">配信リリース →</p>
-            </Link>
+          <div className="flex flex-wrap gap-x-5 gap-y-2 border-t border-neutral-200 pt-4 text-xs text-neutral-500">
+            <span className="text-neutral-800">関連リンク {links.length}件</span>
+            <Link href={`/_manage/songs/${song.id}/digital-releases`} className="hover:text-neutral-950">配信リリースへ →</Link>
           </div>
 
           {resolvedSearchParams.saved ? (
@@ -448,9 +245,16 @@ export default async function ManageSongLinksPage({
           ) : null}
         </header>
 
-        <ReleaseReference song={song} />
+        <ManageSongHeader songId={song.id} title={song.title} previousSong={previousSong} nextSong={nextSong} active="links" />
 
-        <section className="grid gap-4 border border-neutral-300 p-5">
+        {resolvedSearchParams.saved ? <p className="border border-black/15 p-3 text-sm text-black/60">保存しました。</p> : null}
+
+        <details className="group mt-8">
+          <summary className="inline-flex cursor-pointer list-none items-center gap-2 border border-black px-4 py-2 text-sm text-black transition marker:hidden hover:bg-black hover:text-white">
+            <span className="group-open:hidden">リンクを追加 ＋</span><span className="hidden group-open:inline">追加フォームを閉じる −</span>
+          </summary>
+          <section className="mt-5 grid gap-4 border border-black/15 p-5">
+        <ReleaseReference song={song} />
         <div>
             <p className="font-mono text-xs tracking-[0.28em] text-neutral-500">
             ADD LINK
@@ -463,9 +267,10 @@ export default async function ManageSongLinksPage({
             firstDate={song.first_date}
             firstFullDate={song.first_full_date}
         />
-        </section>
+          </section>
+        </details>
 
-        <section className="grid gap-4">
+        <section className="mt-8 grid gap-4">
           <div>
             <p className="font-mono text-xs tracking-[0.28em] text-neutral-500">
               CURRENT LINKS
@@ -482,7 +287,6 @@ export default async function ManageSongLinksPage({
           ) : (
             <div className="grid gap-5">
               {links.map((link) => {
-                const updateAction = updateSongLink.bind(null, link.id, songId);
                 const deleteAction = deleteSongLink.bind(null, link.id, songId);
 
                 const fetchMetadataAction = fetchSongLinkMetadata.bind(
@@ -498,12 +302,13 @@ export default async function ManageSongLinksPage({
                   >
                     <summary className="flex cursor-pointer list-none flex-wrap items-start justify-between gap-3 p-5 marker:hidden">
                       <div className="min-w-0">
-                        <p className="font-mono text-xs tracking-[0.24em] text-neutral-500">
-                          {link.link_type ?? "other"}
+                        <p className="text-xs text-neutral-500">
+                          {link.link_type ?? "その他"}{link.site_name ? ` · ${link.site_name}` : ""}
                         </p>
                         <p className="mt-1 font-serif text-lg">
                           {link.title || link.label || link.url || "Untitled"}
                         </p>
+                        {link.published_date ? <p className="mt-1 text-xs text-neutral-500">掲載日: {link.published_date}</p> : null}
                         {link.url ? (
                           <p className="mt-1 truncate text-xs text-neutral-500">
                             {link.url}
@@ -512,7 +317,7 @@ export default async function ManageSongLinksPage({
                       </div>
 
                       <span className="shrink-0 border border-neutral-300 px-3 py-2 text-xs text-neutral-500 group-open:bg-neutral-900 group-open:text-[#f5f5f2]">
-                        編集を開く
+                        鉛筆で編集
                       </span>
                     </summary>
 
@@ -529,18 +334,31 @@ export default async function ManageSongLinksPage({
                           </button>
                         </form>
                       </div>
-                      <ManageFormGuard action={updateAction} className="grid gap-5">
-                      <LinkFields link={link} />
-
-                      <div>
-                        <button
-                          type="submit"
-                          className="border border-neutral-900 px-5 py-2 text-sm tracking-[0.18em] hover:bg-neutral-950 hover:text-[#f5f5f2]"
-                        >
-                          UPDATE
-                        </button>
-                      </div>
-                      </ManageFormGuard>
+                      <dl className="grid gap-0 border-t border-black/10">
+                        {([
+                          ["種別", "link_type", link.link_type],
+                          ["表示ラベル", "label", link.label],
+                          ["タイトル", "title", link.title],
+                          ["サイト名", "site_name", link.site_name],
+                          ["URL", "url", link.url],
+                          ["掲載日", "published_date", link.published_date],
+                          ["サムネイルURL", "thumbnail_url", link.thumbnail_url],
+                        ] satisfies Array<[string, string, string | null]>).map(([label, field, value]) => (
+                          <div key={field} className="grid gap-2 border-b border-black/10 py-3 sm:grid-cols-[130px_1fr]">
+                            <dt className="text-xs text-black/45">{label}</dt>
+                            <dd>
+                              <InlineLinkFieldEditor
+                                linkId={link.id}
+                                songId={songId}
+                                field={field}
+                                value={value}
+                                options={field === "link_type" ? LINK_TYPE_OPTIONS : undefined}
+                              />
+                            </dd>
+                          </div>
+                        ))}
+                        <div className="grid gap-2 border-b border-black/10 py-3 sm:grid-cols-[130px_1fr]"><dt className="text-xs text-black/45">メモ</dt><dd><InlineLinkFieldEditor linkId={link.id} songId={songId} field="notes" value={link.notes} multiline /></dd></div>
+                      </dl>
                     </div>
                   </details>
                 );

@@ -1,21 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
-const LINK_TYPE_OPTIONS = [
-  "mv",
-  "trailer",
-  "lyric_mv",
-  "live_mv",
-  "original",
-  "streaming",
-  "lyrics",
-  "piapro",
-  "x",
-  "announcement",
-  "album",
-  "other",
-];
+import { LINK_TYPE_OPTIONS } from "@/app/%5Fmanage/options";
 
 function TextInput({
   name,
@@ -82,9 +68,9 @@ function LinkTypeSelect() {
         required
         className="border border-neutral-300 bg-[#f5f5f2] px-3 py-2 text-sm tracking-normal text-neutral-900 outline-none focus:border-neutral-900"
       >
-        {LINK_TYPE_OPTIONS.map((type) => (
-          <option key={type} value={type}>
-            {type}
+        {LINK_TYPE_OPTIONS.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
           </option>
         ))}
       </select>

@@ -7,6 +7,8 @@ import {
   updateSongDigitalRelease,
 } from "../../../../actions";
 import ManageFormGuard from "../../../ManageFormGuard";
+import { ManageSongHeader } from "../../../ManageSongTabs";
+import { getManageSongNavigation } from "../../../songNavigation";
 
 type PageProps = {
   params: Promise<{
@@ -101,6 +103,8 @@ export default async function ManageSongDigitalReleasesPage({
     notFound();
   }
 
+  const { previousSong, nextSong } = await getManageSongNavigation(songId);
+
   const { data: digitalReleases, error: digitalReleasesError } =
     await supabaseAdmin
       .from("song_digital_releases")
@@ -120,10 +124,10 @@ export default async function ManageSongDigitalReleasesPage({
 
   return (
     <main className="mx-auto max-w-5xl px-6 py-12">
-      <section className="border-b border-black/15 pb-8">
+      <section className="hidden">
         <div className="flex flex-wrap items-center gap-4">
           <Link
-            href={`/_manage/songs/${song.id}/edit`}
+            href={`/_manage/songs/${song.id}`}
             className="text-xs font-medium tracking-[0.12em] text-black/45 transition hover:text-black"
           >
             楽曲概要へ戻る
@@ -138,9 +142,7 @@ export default async function ManageSongDigitalReleasesPage({
           </Link>
         </div>
 
-        <p className="section-label mt-8 text-black/45">配信リリース</p>
-
-        <h1 className="font-serif-jp mt-4 text-3xl font-medium tracking-[0.02em] text-black md:text-5xl">
+        <h1 className="font-serif-jp mt-8 text-center text-3xl font-medium tracking-[0.02em] text-black md:text-5xl">
           {song.title}
         </h1>
 
@@ -148,27 +150,6 @@ export default async function ManageSongDigitalReleasesPage({
           この楽曲に紐づく単曲配信リリースを追加・編集します。
           同じ楽曲に複数の配信リリースを登録できます。
         </p>
-
-        <div className="mt-6 grid gap-px border border-black/15 bg-black/15 sm:grid-cols-3">
-          <Link
-            href={`/_manage/songs/${song.id}/edit`}
-            className="bg-[#f5f5f2] p-4 transition hover:bg-white"
-          >
-            <p className="section-label text-black/40">楽曲本体</p>
-            <p className="mt-2 text-sm text-black/65">基本情報を編集 →</p>
-          </Link>
-          <Link
-            href={`/_manage/songs/${song.id}/links`}
-            className="bg-[#f5f5f2] p-4 transition hover:bg-white"
-          >
-            <p className="section-label text-black/40">関連情報</p>
-            <p className="mt-2 text-sm text-black/65">関連リンク →</p>
-          </Link>
-          <div className="bg-[#eeeee9] p-4">
-            <p className="section-label text-black/40">現在編集中</p>
-            <p className="mt-2 text-sm text-black/75">配信リリース</p>
-          </div>
-        </div>
 
         <p className="mt-3 text-sm text-black/45">
           {digitalReleases?.length ?? 0} DIGITAL RELEASES
@@ -186,6 +167,11 @@ export default async function ManageSongDigitalReleasesPage({
           </p>
         ) : null}
       </section>
+
+      <ManageSongHeader songId={song.id} title={song.title} previousSong={previousSong} nextSong={nextSong} active="digital" />
+
+      {saved ? <p className="mt-5 border border-black/15 p-3 text-sm text-black/60">保存しました。</p> : null}
+      {deleted ? <p className="mt-5 border border-black/15 p-3 text-sm text-black/60">削除しました。</p> : null}
 
       <section className="mt-10 border-b border-black/15 pb-10">
         <p className="section-label text-black/45">

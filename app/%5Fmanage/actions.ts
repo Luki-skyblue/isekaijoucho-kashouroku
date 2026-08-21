@@ -10,6 +10,11 @@ import {
   setAdminSession,
 } from "@/lib/adminAuth";
 import { supabaseAdmin } from "@/lib/supabase/admin";
+import {
+  isManageOptionValue,
+  LINK_TYPE_OPTIONS,
+  SONG_TYPE_OPTIONS,
+} from "./options";
 
 async function requireAdmin() {
   if (!(await isAdminLoggedIn())) {
@@ -401,16 +406,20 @@ export async function createSong(formData: FormData) {
   await requireAdmin();
 
   const title = getNullableString(formData, "title");
+  const songType = getNullableString(formData, "song_type");
 
   if (!title) {
     throw new Error("title is required.");
+  }
+  if (songType && !isManageOptionValue(SONG_TYPE_OPTIONS, songType)) {
+    throw new Error("楽曲種別が不正です。");
   }
 
   const payload = {
     title,
     title_kana: getNullableString(formData, "title_kana"),
     sort_title: getNullableString(formData, "sort_title"),
-    song_type: getNullableString(formData, "song_type"),
+    song_type: songType,
     artist_credit: getNullableString(formData, "artist_credit"),
     first_date: getNullableString(formData, "first_date"),
     first_source: getNullableString(formData, "first_source"),
@@ -469,11 +478,15 @@ export async function createSong(formData: FormData) {
 
 export async function createSongLink(songId: number, formData: FormData) {
   await requireAdmin();
+  const linkType = getRequiredString(formData, "link_type");
+  if (!isManageOptionValue(LINK_TYPE_OPTIONS, linkType)) {
+    throw new Error("関連リンク種別が不正です。");
+  }
 
   const payload = {
     target_type: "song",
     target_id: songId,
-    link_type: getRequiredString(formData, "link_type"),
+    link_type: linkType,
     label: getNullableString(formData, "label"),
     title: getNullableString(formData, "title"),
     site_name: getNullableString(formData, "site_name"),
@@ -498,9 +511,13 @@ export async function updateSongLink(
   formData: FormData
 ) {
   await requireAdmin();
+  const linkType = getRequiredString(formData, "link_type");
+  if (!isManageOptionValue(LINK_TYPE_OPTIONS, linkType)) {
+    throw new Error("関連リンク種別が不正です。");
+  }
 
   const payload = {
-    link_type: getRequiredString(formData, "link_type"),
+    link_type: linkType,
     label: getNullableString(formData, "label"),
     title: getNullableString(formData, "title"),
     site_name: getNullableString(formData, "site_name"),
@@ -1154,9 +1171,13 @@ export async function updateSongInlineField(
 ) {
   await requireAdmin();
   if (!inlineSongFields.has(field) || !Number.isInteger(songId)) throw new Error("編集項目が不正です。");
+  const normalized = value.trim();
+  if (field === "song_type" && normalized && !isManageOptionValue(SONG_TYPE_OPTIONS, normalized)) {
+    throw new Error("楽曲種別が不正です。");
+  }
   const payload = field === "song_group_id"
-    ? { song_group_id: value.trim() ? Number(value.trim()) : null }
-    : { [field]: value.trim() || null };
+    ? { song_group_id: normalized ? Number(normalized) : null }
+    : { [field]: normalized || null };
   const { error } = await supabaseAdmin.from("songs").update(payload).eq("id", songId);
   if (error) throw new Error("楽曲データの更新に失敗しました。");
   revalidatePath(`/_manage/songs/${songId}`);
@@ -1194,5 +1215,23 @@ export async function updateSongGroupInlineField(groupId: number, field: string,
   if (error) throw new Error("楽曲グループの更新に失敗しました。");
   revalidatePath(`/_manage/song-groups/${groupId}`);
   revalidatePath("/_manage/song-groups");
+  return { ok: true };
+}
+
+export async function updateSongLinkInlineField(linkId: number, songId: number, field: string, value: string) {
+  await requireAdmin();
+  const allowed = new Set(["link_type", "label", "title", "site_name", "url", "published_date", "notes", "thumbnail_url"]);
+  if (!allowed.has(field)) throw new Error("編集項目が不正です。");
+  const normalized = value.trim();
+  if (field === "link_type" && !isManageOptionValue(LINK_TYPE_OPTIONS, normalized)) {
+    throw new Error("関連リンク種別が不正です。");
+  }
+  if (field === "url") {
+    if (!normalized) throw new Error("URLは必須です。");
+    await assertPublicHttpUrl(normalized);
+  }
+  const { error } = await supabaseAdmin.from("links").update({ [field]: normalized || null }).eq("id", linkId).eq("target_type", "song").eq("target_id", songId);
+  if (error) throw new Error("関連リンクの更新に失敗しました。");
+  revalidatePath(`/_manage/songs/${songId}/links`);
   return { ok: true };
 }

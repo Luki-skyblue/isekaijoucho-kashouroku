@@ -2,18 +2,20 @@
 
 import { useState, useTransition } from "react";
 import { updateSongGroupInlineField, updateSongInlineField, updateSongInlinePrimary, updateSongInlineStatus } from "../actions";
+import type { ManageSelectOption } from "../options";
 
 const statuses = [
   ["confirmed", "確認済み"], ["uncertain", "要確認"], ["unverified", "未確認"], ["wanted", "情報募集中"],
 ] as const;
 
-export function InlineFieldEditor({ songId, field, value }: { songId: number; field: string; value: string | null }) {
+export function InlineFieldEditor({ songId, field, value, options }: { songId: number; field: string; value: string | null; options?: readonly ManageSelectOption[] }) {
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(value ?? "");
   const [pending, startTransition] = useTransition();
   const save = () => startTransition(async () => { await updateSongInlineField(songId, field, draft); setEditing(false); });
   if (!editing) return <button type="button" aria-label={`${field}を編集`} onClick={() => setEditing(true)} className="ml-2 text-black/35 transition hover:text-black">✎</button>;
-  return <span className="flex flex-wrap items-center gap-2 sm:justify-end"><input autoFocus value={draft} onChange={(event) => setDraft(event.target.value)} onKeyDown={(event) => { if (event.key === "Enter") save(); if (event.key === "Escape") setEditing(false); }} className="min-w-0 flex-1 border border-black/30 bg-white px-2 py-1 text-sm sm:max-w-xs" /><button type="button" disabled={pending} onClick={save} className="border border-black bg-black px-2 py-1 text-xs text-white">保存</button><button type="button" onClick={() => setEditing(false)} className="text-xs text-black/50">取消</button></span>;
+  const hasLegacyValue = Boolean(draft && options && !options.some((option) => option.value === draft));
+  return <span className="flex flex-wrap items-center gap-2 sm:justify-end">{options ? <select autoFocus value={draft} onChange={(event) => setDraft(event.target.value)} onKeyDown={(event) => { if (event.key === "Escape") setEditing(false); }} className="min-w-0 flex-1 border border-black/30 bg-white px-2 py-1 text-sm sm:max-w-xs"><option value="">未設定</option>{hasLegacyValue ? <option value={draft}>{draft}（現在値）</option> : null}{options.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}</select> : <input autoFocus value={draft} onChange={(event) => setDraft(event.target.value)} onKeyDown={(event) => { if (event.key === "Enter") save(); if (event.key === "Escape") setEditing(false); }} className="min-w-0 flex-1 border border-black/30 bg-white px-2 py-1 text-sm sm:max-w-xs" />}<button type="button" disabled={pending} onClick={save} className="border border-black bg-black px-2 py-1 text-xs text-white">保存</button><button type="button" onClick={() => setEditing(false)} className="text-xs text-black/50">取消</button></span>;
 }
 
 export function InlineStatusEditor({ songId, field, value }: { songId: number; field: string; value: string | null }) {
@@ -25,7 +27,7 @@ export function InlineStatusEditor({ songId, field, value }: { songId: number; f
 
 export function InlinePrimaryEditor({ songId, value }: { songId: number; value: boolean | null }) {
   const [pending, startTransition] = useTransition();
-  return <button type="button" disabled={pending} onClick={() => startTransition(() => updateSongInlinePrimary(songId, !value))} className="text-xs text-black/55 underline underline-offset-4 hover:text-black">{value ? "代表版" : "代表版にする"}</button>;
+  return <button type="button" disabled={pending} onClick={() => startTransition(async () => { await updateSongInlinePrimary(songId, !value); })} className="text-xs text-black/55 underline underline-offset-4 hover:text-black">{value ? "代表版" : "代表版にする"}</button>;
 }
 
 export function InlineGroupSelectEditor({ songId, currentGroupId, groups }: { songId: number; currentGroupId: number | null; groups: { id: number; title: string | null }[] }) {
