@@ -126,7 +126,7 @@ export default async function ManageSongDigitalReleasesPage({
             href={`/_manage/songs/${song.id}/edit`}
             className="text-xs font-medium tracking-[0.12em] text-black/45 transition hover:text-black"
           >
-            BACK TO EDIT
+            楽曲概要へ戻る
           </Link>
 
           <Link
@@ -134,13 +134,11 @@ export default async function ManageSongDigitalReleasesPage({
             target="_blank"
             className="text-xs font-medium tracking-[0.12em] text-black/45 transition hover:text-black"
           >
-            VIEW PUBLIC
+            公開ページを見る ↗
           </Link>
         </div>
 
-        <p className="section-label mt-8 text-black/45">
-          DIGITAL RELEASES
-        </p>
+        <p className="section-label mt-8 text-black/45">配信リリース</p>
 
         <h1 className="font-serif-jp mt-4 text-3xl font-medium tracking-[0.02em] text-black md:text-5xl">
           {song.title}

@@ -3,6 +3,7 @@
 import { lookup } from "node:dns/promises";
 import { isIP } from "node:net";
 import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 import {
   clearAdminSession,
   isAdminLoggedIn,
@@ -1133,4 +1134,43 @@ export async function deleteRelease(releaseId: number) {
   }
 
   redirect("/_manage/releases?deleted=1");
+}
+
+const inlineSongFields = new Set([
+  "title", "title_kana", "artist_credit", "song_type", "first_date", "first_source",
+  "first_full_date", "first_full_source", "original_artist", "original_vocal", "original_composer", "original_lyricist",
+  "original_arranger", "tie_up", "album_text", "notes", "version_name",
+]);
+
+const inlineSongStatusFields = new Set([
+  "verification_status", "first_status", "first_full_status", "tie_up_status", "album_text_status", "original_artist_status", "original_vocal_status",
+  "original_lyricist_status", "original_composer_status", "original_arranger_status",
+]);
+
+export async function updateSongInlineField(
+  songId: number,
+  field: string,
+  value: string,
+) {
+  await requireAdmin();
+  if (!inlineSongFields.has(field) || !Number.isInteger(songId)) throw new Error("編集項目が不正です。");
+  const { error } = await supabaseAdmin.from("songs").update({ [field]: value.trim() || null }).eq("id", songId);
+  if (error) throw new Error("楽曲データの更新に失敗しました。");
+  revalidatePath(`/_manage/songs/${songId}`);
+  return { ok: true };
+}
+
+export async function updateSongInlineStatus(
+  songId: number,
+  field: string,
+  value: string,
+) {
+  await requireAdmin();
+  if (!inlineSongStatusFields.has(field) || !["confirmed", "uncertain", "unverified", "wanted"].includes(value)) {
+    throw new Error("確認状態が不正です。");
+  }
+  const { error } = await supabaseAdmin.from("songs").update({ [field]: value }).eq("id", songId);
+  if (error) throw new Error("確認状態の更新に失敗しました。");
+  revalidatePath(`/_manage/songs/${songId}`);
+  return { ok: true };
 }

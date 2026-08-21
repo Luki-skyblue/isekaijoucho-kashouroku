@@ -286,14 +286,14 @@ export default async function ManageReleaseItemsPage({
             href="/_manage/releases"
             className="text-xs font-medium tracking-[0.12em] text-black/45 transition hover:text-black"
           >
-            BACK TO RELEASES
+            リリース一覧へ戻る
           </Link>
 
           <Link
             href={`/_manage/releases/${release.id}/edit`}
             className="text-xs font-medium tracking-[0.12em] text-black/45 transition hover:text-black"
           >
-            EDIT RELEASE
+            リリース概要を編集
           </Link>
 
           <Link
@@ -301,7 +301,7 @@ export default async function ManageReleaseItemsPage({
             target="_blank"
             className="text-xs font-medium tracking-[0.12em] text-black/45 transition hover:text-black"
           >
-            VIEW PUBLIC
+            公開ページを見る ↗
           </Link>
         </div>
 

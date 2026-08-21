@@ -107,10 +107,10 @@ export default async function ManageReleaseOverviewPage({ params }: PageProps) {
       </header>
 
       <section className="mt-8 grid gap-4 sm:grid-cols-3">
-        <Link href={`/_manage/releases/${release.id}/edit`} className="border border-black/20 p-5 transition hover:border-black/50 hover:bg-black/[0.02]">
-          <p className="section-label text-black/40">個別リリース</p>
-          <p className="mt-3 text-sm text-black/70">リリース情報を編集 →</p>
-        </Link>
+        <div className="border border-black/20 bg-black/[0.02] p-5">
+          <p className="section-label text-black/40">登録内容</p>
+          <p className="mt-3 text-sm text-black/70">各項目の鉛筆アイコンから編集できます</p>
+        </div>
         <Link href={`/_manage/releases/${release.id}/items`} className="border border-black/20 p-5 transition hover:border-black/50 hover:bg-black/[0.02]">
           <p className="section-label text-black/40">収録曲</p>
           <p className="mt-3 text-sm text-black/70">{itemCount ?? 0}曲を確認・編集 →</p>

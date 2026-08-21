@@ -207,7 +207,7 @@ export default async function ManageReleaseEditPage({
           </Link>
         </div>
 
-        <p className="section-label mt-8 text-black/45">EDIT RELEASE</p>
+        <p className="section-label mt-8 text-black/45">リリース情報を編集</p>
 
         <h1 className="font-serif-jp mt-4 text-3xl font-medium tracking-[0.02em] text-black md:text-5xl">
           {release.title}

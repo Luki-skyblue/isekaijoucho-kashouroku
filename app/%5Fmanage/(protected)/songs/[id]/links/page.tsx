@@ -334,25 +334,25 @@ export default async function ManageSongLinksPage({
               href="/_manage"
               className="border border-neutral-300 px-3 py-2 hover:border-neutral-900"
             >
-              MANAGE TOP
+              管理ホーム
             </Link>
             <Link
               href="/_manage/songs"
               className="border border-neutral-300 px-3 py-2 hover:border-neutral-900"
             >
-              SONGS
+              楽曲一覧
             </Link>
             <Link
               href={`/_manage/songs/${song.id}/edit`}
               className="border border-neutral-300 px-3 py-2 hover:border-neutral-900"
             >
-              EDIT SONG
+              楽曲本体を編集
             </Link>
             <Link
               href={`/songs/${song.id}`}
               className="border border-neutral-300 px-3 py-2 hover:border-neutral-900"
             >
-              PUBLIC PAGE
+              公開ページを見る ↗
             </Link>
           </div>
 

@@ -269,7 +269,7 @@ export default async function ManageSongEditPage({
         )}
         </div>
 
-        <p className="section-label mt-8 text-black/45">EDIT SONG</p>
+        <p className="section-label mt-8 text-black/45">楽曲本体を編集</p>
 
         <h1 className="font-serif-jp mt-4 text-3xl font-medium tracking-[0.02em] text-black md:text-5xl">
         {song.title}
