@@ -25,6 +25,16 @@ export const LINK_TYPE_OPTIONS = [
   { value: "other", label: "other / その他" },
 ] satisfies readonly ManageSelectOption[];
 
+export const RELEASE_TYPE_OPTIONS = [
+  { value: "digital_single", label: "digital_single / 配信シングル" },
+  { value: "single", label: "single / シングル" },
+  { value: "ep", label: "ep / EP" },
+  { value: "album", label: "album / アルバム" },
+  { value: "cd", label: "cd / CD" },
+  { value: "compilation", label: "compilation / コンピレーション" },
+  { value: "other", label: "other / その他" },
+] satisfies readonly ManageSelectOption[];
+
 export function isManageOptionValue(
   options: readonly ManageSelectOption[],
   value: string,

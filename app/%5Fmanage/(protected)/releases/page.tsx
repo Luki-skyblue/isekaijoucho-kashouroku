@@ -59,7 +59,7 @@ type ReleaseGroup = {
 
 function ReleaseRow({ release }: { release: ManageRelease }) {
   return (
-    <div className="grid gap-2 border-t border-black/10 py-4 md:grid-cols-[70px_110px_1fr_140px_170px_160px] md:items-center md:gap-4">
+    <div className="grid gap-2 border-t border-black/10 py-4 md:grid-cols-[70px_110px_1fr_140px_170px] md:items-center md:gap-4">
       <p className="section-label text-black/45">#{release.id}</p>
 
       <p className="text-xs tabular-nums text-black/45">
@@ -68,8 +68,7 @@ function ReleaseRow({ release }: { release: ManageRelease }) {
 
       <div className="min-w-0">
         <Link
-          href={`/releases/${release.id}`}
-          target="_blank"
+          href={`/_manage/releases/${release.id}`}
           className="truncate text-sm font-medium text-black underline-offset-4 transition hover:underline"
         >
           {release.title}
@@ -102,29 +101,6 @@ function ReleaseRow({ release }: { release: ManageRelease }) {
         {release.artist_credit ?? "-"}
       </p>
 
-      <div className="flex flex-wrap items-center gap-2">
-        <Link
-          href={`/_manage/releases/${release.id}`}
-          className="border border-black/20 px-2 py-0.5 text-[11px] tracking-[0.08em] text-black/50 transition hover:border-black hover:text-black"
-        >
-          管理
-        </Link>
-
-        <Link
-          href={`/_manage/releases/${release.id}/items`}
-          className="border border-black/20 px-2 py-0.5 text-[11px] tracking-[0.08em] text-black/50 transition hover:border-black hover:text-black"
-        >
-          ITEMS
-        </Link>
-
-        <Link
-          href={`/releases/${release.id}`}
-          target="_blank"
-          className="border border-black/20 px-2 py-0.5 text-[11px] tracking-[0.08em] text-black/50 transition hover:border-black hover:text-black"
-        >
-          VIEW
-        </Link>
-      </div>
     </div>
   );
 }
@@ -286,13 +262,12 @@ export default async function ManageReleasesPage({ searchParams }: PageProps) {
               </summary>
 
               <div className="pb-4 md:pl-5">
-                <div className="hidden border-t border-black/15 py-3 text-xs font-medium tracking-[0.12em] text-black/45 md:grid md:grid-cols-[70px_110px_1fr_140px_170px_160px] md:gap-4">
+                <div className="hidden border-t border-black/15 py-3 text-xs font-medium tracking-[0.12em] text-black/45 md:grid md:grid-cols-[70px_110px_1fr_140px_170px] md:gap-4">
                   <p>ID</p>
                   <p>DATE</p>
                   <p>EDITION</p>
                   <p>TYPE</p>
                   <p>ARTIST</p>
-                  <p>ACTIONS</p>
                 </div>
                 {group.releases.map((release) => (
                   <ReleaseRow key={release.id} release={release} />

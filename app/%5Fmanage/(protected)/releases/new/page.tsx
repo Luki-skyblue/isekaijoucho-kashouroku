@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { createRelease } from "../../../actions";
+import { RELEASE_TYPE_OPTIONS } from "../../../options";
 
 function TextInput({
   name,
@@ -61,13 +62,9 @@ function ReleaseTypeSelect() {
         defaultValue="album"
         className="mt-2 w-full border border-black/20 bg-transparent px-3 py-2 text-sm text-black outline-none transition focus:border-black"
       >
-        <option value="digital_single">digital_single / 配信シングル</option>
-        <option value="single">single / シングル</option>
-        <option value="ep">ep / EP</option>
-        <option value="album">album / アルバム</option>
-        <option value="cd">cd / CD</option>
-        <option value="compilation">compilation / コンピレーション</option>
-        <option value="other">other / その他</option>
+        {RELEASE_TYPE_OPTIONS.map((option) => (
+          <option key={option.value} value={option.value}>{option.label}</option>
+        ))}
       </select>
     </label>
   );

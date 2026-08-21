@@ -13,6 +13,7 @@ import { supabaseAdmin } from "@/lib/supabase/admin";
 import {
   isManageOptionValue,
   LINK_TYPE_OPTIONS,
+  RELEASE_TYPE_OPTIONS,
   SONG_TYPE_OPTIONS,
 } from "./options";
 
@@ -978,12 +979,16 @@ export async function deleteReleaseItem(releaseId: number, itemId: number) {
 
 export async function updateRelease(releaseId: number, formData: FormData) {
   await requireAdmin();
+  const releaseType = getNullableString(formData, "release_type") ?? "other";
+  if (!isManageOptionValue(RELEASE_TYPE_OPTIONS, releaseType)) {
+    throw new Error("リリース種別が不正です。");
+  }
 
   const payload = {
     title: getNullableString(formData, "title"),
     title_kana: getNullableString(formData, "title_kana"),
     sort_title: getNullableString(formData, "sort_title"),
-    release_type: getNullableString(formData, "release_type") ?? "other",
+    release_type: releaseType,
     artist_credit: getNullableString(formData, "artist_credit"),
     release_date: getNullableString(formData, "release_date"),
     jacket_image_url: getNullableHttpUrl(formData, "jacket_image_url"),
@@ -1009,6 +1014,188 @@ export async function updateRelease(releaseId: number, formData: FormData) {
   }
 
   redirect(`/_manage/releases/${releaseId}/edit?saved=1`);
+}
+
+const inlineReleaseFields = new Set([
+  "title",
+  "title_kana",
+  "sort_title",
+  "release_type",
+  "artist_credit",
+  "release_date",
+  "jacket_image_url",
+  "official_url",
+  "notes",
+  "release_group_id",
+  "edition_name",
+]);
+
+export async function updateReleaseInlineField(
+  releaseId: number,
+  field: string,
+  value: string,
+) {
+  await requireAdmin();
+
+  if (!Number.isInteger(releaseId) || !inlineReleaseFields.has(field)) {
+    throw new Error("編集項目が不正です。");
+  }
+
+  const normalized = value.trim();
+  if (field === "title" && !normalized) {
+    throw new Error("タイトルは必須です。");
+  }
+  if (field === "release_type" && !isManageOptionValue(RELEASE_TYPE_OPTIONS, normalized)) {
+    throw new Error("リリース種別が不正です。");
+  }
+  if ((field === "jacket_image_url" || field === "official_url") && normalized) {
+    await assertPublicHttpUrl(normalized);
+  }
+
+  const payload = field === "release_group_id"
+    ? { release_group_id: normalized ? Number(normalized) : null }
+    : { [field]: normalized || null };
+
+  if (field === "release_group_id" && normalized && !Number.isInteger(Number(normalized))) {
+    throw new Error("作品グループが不正です。");
+  }
+
+  const { error } = await supabaseAdmin
+    .from("releases")
+    .update(payload)
+    .eq("id", releaseId);
+
+  if (error) {
+    throw new Error("リリース情報の更新に失敗しました。");
+  }
+
+  revalidatePath(`/_manage/releases/${releaseId}`);
+  revalidatePath(`/_manage/releases/${releaseId}/items`);
+  revalidatePath("/_manage/releases");
+  revalidatePath(`/releases/${releaseId}`);
+  return { ok: true };
+}
+
+export async function updateReleaseInlinePrimary(releaseId: number, value: boolean) {
+  await requireAdmin();
+
+  if (!Number.isInteger(releaseId)) {
+    throw new Error("リリースIDが不正です。");
+  }
+
+  const { error } = await supabaseAdmin
+    .from("releases")
+    .update({ is_primary_edition: value })
+    .eq("id", releaseId);
+
+  if (error) {
+    throw new Error("代表形態の更新に失敗しました。");
+  }
+
+  revalidatePath(`/_manage/releases/${releaseId}`);
+  revalidatePath("/_manage/releases");
+  return { ok: true };
+}
+
+const inlineReleaseGroupFields = new Set([
+  "title",
+  "title_kana",
+  "sort_title",
+  "release_date",
+  "tagline",
+  "notes",
+]);
+
+export async function updateReleaseGroupInlineField(
+  releaseId: number,
+  releaseGroupId: number,
+  field: string,
+  value: string,
+) {
+  await requireAdmin();
+
+  if (!Number.isInteger(releaseId) || !Number.isInteger(releaseGroupId) || !inlineReleaseGroupFields.has(field)) {
+    throw new Error("編集項目が不正です。");
+  }
+
+  const normalized = value.trim();
+  if (field === "title" && !normalized) {
+    throw new Error("作品名は必須です。");
+  }
+
+  const { data: release, error: releaseError } = await supabaseAdmin
+    .from("releases")
+    .select("id")
+    .eq("id", releaseId)
+    .eq("release_group_id", releaseGroupId)
+    .single();
+
+  if (releaseError || !release) {
+    throw new Error("このリリースの作品グループではありません。");
+  }
+
+  const { error } = await supabaseAdmin
+    .from("release_groups")
+    .update({ [field]: normalized || null })
+    .eq("id", releaseGroupId);
+
+  if (error) {
+    throw new Error("作品情報の更新に失敗しました。");
+  }
+
+  revalidatePath(`/_manage/releases/${releaseId}`);
+  revalidatePath("/_manage/releases");
+  revalidatePath(`/releases/${releaseId}`);
+  return { ok: true };
+}
+
+export async function updateReleaseItemInlineField(
+  releaseId: number,
+  itemId: number,
+  field: string,
+  value: string,
+) {
+  await requireAdmin();
+
+  const allowedFields = new Set([
+    "disc_number",
+    "track_number",
+    "song_id",
+    "track_title",
+    "track_artist",
+    "title_override",
+    "notes",
+  ]);
+
+  if (!Number.isInteger(releaseId) || !Number.isInteger(itemId) || !allowedFields.has(field)) {
+    throw new Error("編集項目が不正です。");
+  }
+
+  const normalized = value.trim();
+  const numericField = field === "disc_number" || field === "track_number" || field === "song_id";
+  const numericValue = normalized ? Number(normalized) : null;
+  if (numericField && numericValue !== null && !Number.isInteger(numericValue)) {
+    throw new Error("数値が不正です。");
+  }
+
+  const scope = await getReleaseItemScope(releaseId);
+  let query = supabaseAdmin
+    .from("release_items")
+    .update({ [field]: numericField ? numericValue : normalized || null })
+    .eq("id", itemId);
+
+  query = scope.releaseGroupId
+    ? query.eq("release_group_id", scope.releaseGroupId)
+    : query.eq("release_id", scope.releaseId);
+
+  const { error } = await query;
+  if (error) {
+    throw new Error("収録曲情報の更新に失敗しました。");
+  }
+
+  revalidatePath(`/_manage/releases/${releaseId}/items`);
+  revalidatePath(`/_manage/releases/${releaseId}`);
+  return { ok: true };
 }
 
 export async function updateReleaseGroup(releaseId: number, formData: FormData) {
@@ -1049,9 +1236,13 @@ export async function createRelease(formData: FormData) {
   await requireAdmin();
 
   const title = getNullableString(formData, "title");
+  const releaseType = getNullableString(formData, "release_type") ?? "other";
 
   if (!title) {
     throw new Error("title is required.");
+  }
+  if (!isManageOptionValue(RELEASE_TYPE_OPTIONS, releaseType)) {
+    throw new Error("リリース種別が不正です。");
   }
 
   const releaseGroupIdFromForm = getNullableNumber(formData, "release_group_id");
@@ -1091,7 +1282,7 @@ export async function createRelease(formData: FormData) {
     title,
     title_kana: getNullableString(formData, "title_kana"),
     sort_title: getNullableString(formData, "sort_title"),
-    release_type: getNullableString(formData, "release_type") ?? "other",
+    release_type: releaseType,
     artist_credit: getNullableString(formData, "artist_credit"),
     release_date: getNullableString(formData, "release_date"),
     jacket_image_url: getNullableHttpUrl(formData, "jacket_image_url"),
@@ -1113,7 +1304,7 @@ export async function createRelease(formData: FormData) {
     throw new Error("リリース情報の作成に失敗しました。");
   }
 
-  redirect(`/_manage/releases/${data.id}/edit?saved=1`);
+  redirect(`/_manage/releases/${data.id}?saved=1`);
 }
 
 export async function duplicateRelease(releaseId: number) {
@@ -1190,7 +1381,7 @@ export async function duplicateRelease(releaseId: number) {
   //   }
   // }
 
-  redirect(`/_manage/releases/${newRelease.id}/edit?saved=1`);
+  redirect(`/_manage/releases/${newRelease.id}?saved=1`);
 }
 
 export async function deleteRelease(releaseId: number) {
