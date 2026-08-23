@@ -20,6 +20,13 @@
 # production
 /build
 
+# local import source data
+/private-data/
+
+# python cache
+__pycache__/
+*.py[cod]
+
 # misc
 .DS_Store
 *.pem
