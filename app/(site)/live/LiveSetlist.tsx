@@ -99,8 +99,7 @@ export default function LiveSetlist({ tables }: LiveSetlistProps) {
                         {entry.songTitleRaw}
                       </Link>
                     ) : (
-                      // 照合開始後に差を再調整できるよう、未リンク時の濃度はここだけで管理する。
-                      <p className="text-sm font-medium leading-6 text-black/85 sm:text-[15px]">
+                      <p className="text-sm font-medium leading-6 text-black/40 sm:text-[15px]">
                         {entry.songTitleRaw}
                       </p>
                     )}
