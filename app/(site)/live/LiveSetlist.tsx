@@ -1,4 +1,7 @@
 import Link from "next/link";
+import { Fragment } from "react";
+
+const ARCHIVE_ONLY_SUFFIX = "(アーカイブ限定)";
 
 export type LiveSetlistSongEntry = {
   id: string;
@@ -31,6 +34,34 @@ type LiveSetlistProps = {
   tables: LiveSetlistTable[];
 };
 
+function isArchiveOnlySong(entry: LiveSetlistEntry | undefined) {
+  return (
+    entry?.kind === "song" && entry.songTitleRaw.endsWith(ARCHIVE_ONLY_SUFFIX)
+  );
+}
+
+function getSongDisplayTitle(entry: LiveSetlistSongEntry) {
+  return isArchiveOnlySong(entry)
+    ? entry.songTitleRaw.slice(0, -ARCHIVE_ONLY_SUFFIX.length).trimEnd()
+    : entry.songTitleRaw;
+}
+
+function SetlistMarker({ label }: { label: string }) {
+  return (
+    <div
+      role="separator"
+      aria-label={label}
+      className="flex items-center gap-3 py-4"
+    >
+      <div className="h-px flex-1 bg-black/15" />
+      <p className="shrink-0 font-mono text-[10px] tracking-[0.14em] text-black/40">
+        {label}
+      </p>
+      <div className="h-px flex-1 bg-black/15" />
+    </div>
+  );
+}
+
 export default function LiveSetlist({ tables }: LiveSetlistProps) {
   if (tables.length === 0) {
     return (
@@ -61,60 +92,55 @@ export default function LiveSetlist({ tables }: LiveSetlistProps) {
           ) : null}
 
           <div className="divide-y divide-black/10 border-y border-black/10">
-            {table.entries.map((entry) => {
+            {table.entries.map((entry, entryIndex) => {
               if (entry.kind === "marker") {
-                return (
-                  <div
-                    key={entry.id}
-                    role="separator"
-                    aria-label={entry.label}
-                    className="flex items-center gap-3 py-4"
-                  >
-                    <div className="h-px flex-1 bg-black/15" />
-                    <p className="shrink-0 font-mono text-[10px] tracking-[0.14em] text-black/40">
-                      {entry.label}
-                    </p>
-                    <div className="h-px flex-1 bg-black/15" />
-                  </div>
-                );
+                return <SetlistMarker key={entry.id} label={entry.label} />;
               }
 
               const isLinkedSong = entry.songId !== undefined;
+              const isArchiveOnly = isArchiveOnlySong(entry);
+              const startsArchiveOnlyBlock =
+                isArchiveOnly &&
+                !isArchiveOnlySong(table.entries[entryIndex - 1]);
+              const displayTitle = getSongDisplayTitle(entry);
 
               return (
-                <div
-                  key={entry.id}
-                  className="grid grid-cols-[2.75rem_minmax(0,1fr)] gap-3 py-3.5 sm:grid-cols-[3.25rem_minmax(0,1fr)]"
-                >
-                  <p className="font-mono text-xs tabular-nums tracking-[0.08em] text-black/35">
-                    {entry.setlistNoRaw || "--"}
-                  </p>
+                <Fragment key={entry.id}>
+                  {startsArchiveOnlyBlock ? (
+                    <SetlistMarker label="アーカイブ限定" />
+                  ) : null}
 
-                  <div className="min-w-0">
-                    {isLinkedSong ? (
-                      <Link
-                        href={`/songs/${entry.songId}`}
-                        className="text-sm font-medium leading-6 text-black underline-offset-4 hover:underline sm:text-[15px]"
-                      >
-                        {entry.songTitleRaw}
-                      </Link>
-                    ) : (
-                      <p className="text-sm font-medium leading-6 text-black/40 sm:text-[15px]">
-                        {entry.songTitleRaw}
-                      </p>
-                    )}
-
-                    <p className="mt-0.5 break-words text-xs leading-5 text-black/45">
-                      {entry.artistCreditRaw || "-"}
+                  <div className="grid grid-cols-[2.75rem_minmax(0,1fr)] gap-3 py-3.5 sm:grid-cols-[3.25rem_minmax(0,1fr)]">
+                    <p className="font-mono text-xs tabular-nums tracking-[0.08em] text-black/35">
+                      {entry.setlistNoRaw || "--"}
                     </p>
 
-                    {entry.noteRaw ? (
-                      <p className="mt-1 text-xs leading-5 text-black/35">
-                        {entry.noteRaw}
+                    <div className="min-w-0">
+                      {isLinkedSong ? (
+                        <Link
+                          href={`/songs/${entry.songId}`}
+                          className="text-sm font-medium leading-6 text-black underline-offset-4 hover:underline sm:text-[15px]"
+                        >
+                          {displayTitle}
+                        </Link>
+                      ) : (
+                        <p className="text-sm font-medium leading-6 text-black/40 sm:text-[15px]">
+                          {displayTitle}
+                        </p>
+                      )}
+
+                      <p className="mt-0.5 break-words text-xs leading-5 text-black/45">
+                        {entry.artistCreditRaw || "-"}
                       </p>
-                    ) : null}
+
+                      {entry.noteRaw ? (
+                        <p className="mt-1 text-xs leading-5 text-black/35">
+                          {entry.noteRaw}
+                        </p>
+                      ) : null}
+                    </div>
                   </div>
-                </div>
+                </Fragment>
               );
             })}
           </div>
