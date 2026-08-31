@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { supabaseAdmin } from "@/lib/supabase/admin";
 import { InlineFieldCopyButton, InlineFieldEditor, InlineGroupSelectEditor, InlineStatusEditor } from "../../InlineFieldEditor";
 import { DISCOVERY_CATEGORY_OPTIONS, SONG_TYPE_OPTIONS } from "../../../options";
+import { confirmSongFieldHuman } from "../../../actions";
 
 type PageProps = {
   params: Promise<{
@@ -45,6 +46,16 @@ type SongOverview = {
   discovery_category: string | null;
 };
 
+type SongFieldCheck = {
+  id: number;
+  field_name: string;
+  checked_value: unknown;
+  checker_type: string;
+  evidence: unknown;
+  note: string | null;
+  checked_at: string;
+};
+
 const statusLabels: Record<string, string> = {
   confirmed: "確認済み",
   uncertain: "要確認",
@@ -83,6 +94,7 @@ function InfoRow({
   inputType,
   copyFrom,
   statusField,
+  checks,
 }: {
   label: string;
   value: string | null;
@@ -94,6 +106,7 @@ function InfoRow({
   inputType?: "text" | "date";
   copyFrom?: { value: string | null; label: string };
   statusField?: string;
+  checks?: SongFieldCheck[];
 }) {
   return (
     <div className="grid gap-2 border-b border-black/10 py-4 sm:grid-cols-[150px_1fr_auto] sm:items-center sm:gap-5">
@@ -102,7 +115,10 @@ function InfoRow({
         {formatValue(displayValue === undefined ? value : displayValue)} {songId && field ? <InlineFieldEditor songId={songId} field={field} value={value} options={options} inputType={inputType} /> : null}
         {songId && field && copyFrom ? <InlineFieldCopyButton songId={songId} field={field} value={copyFrom.value} label={copyFrom.label} /> : null}
       </dd>
-      {status !== undefined ? songId && field ? <InlineStatusEditor songId={songId} field={statusField ?? `${field}_status`} value={status} /> : <StatusMark status={status} /> : null}
+      <div className="space-y-2 sm:text-right">
+        {status !== undefined ? songId && field ? <InlineStatusEditor songId={songId} field={statusField ?? `${field}_status`} value={status} /> : <StatusMark status={status} /> : null}
+        {songId && field && checks ? <FieldVerification songId={songId} field={field} value={value} checks={checks} /> : null}
+      </div>
     </div>
   );
 }
@@ -127,12 +143,25 @@ export default async function ManageSongOverviewPage({ params }: PageProps) {
     notFound();
   }
 
-  const [{ count: groupSongCount }, { data: songGroups }] = await Promise.all([
+  const [{ count: groupSongCount }, { data: songGroups }, { data: fieldChecks, error: fieldChecksError }] = await Promise.all([
     song.song_group_id
       ? supabaseAdmin.from("songs").select("id", { count: "exact", head: true }).eq("song_group_id", song.song_group_id)
       : Promise.resolve({ count: 0 }),
     supabaseAdmin.from("song_groups").select("id,title").order("title"),
+    supabaseAdmin
+      .from("song_field_checks")
+      .select("id,field_name,checked_value,checker_type,evidence,note,checked_at")
+      .eq("song_id", songId)
+      .order("checked_at", { ascending: false })
+      .order("id", { ascending: false }),
   ]);
+
+  if (fieldChecksError) {
+    throw new Error("確認履歴の取得に失敗しました。");
+  }
+
+  const checksFor = (field: string) =>
+    ((fieldChecks ?? []) as SongFieldCheck[]).filter((check) => check.field_name === field);
 
   return (
     <>
@@ -146,23 +175,23 @@ export default async function ManageSongOverviewPage({ params }: PageProps) {
         </div>
 
         <dl className="mt-2">
-          <InfoRow label="アーティスト表記" value={song.artist_credit} songId={song.id} field="artist_credit" />
+          <InfoRow label="アーティスト表記" value={song.artist_credit} songId={song.id} field="artist_credit" checks={checksFor("artist_credit")} />
           <InfoRow label="楽曲種別" value={song.song_type} songId={song.id} field="song_type" options={SONG_TYPE_OPTIONS} />
-          <InfoRow label="Discover分類" value={song.discovery_category} displayValue={DISCOVERY_CATEGORY_OPTIONS.find((option) => option.value === song.discovery_category)?.label ?? song.discovery_category} songId={song.id} field="discovery_category" options={DISCOVERY_CATEGORY_OPTIONS} />
+          <InfoRow label="Discover分類" value={song.discovery_category} displayValue={DISCOVERY_CATEGORY_OPTIONS.find((option) => option.value === song.discovery_category)?.label ?? song.discovery_category} songId={song.id} field="discovery_category" options={DISCOVERY_CATEGORY_OPTIONS} checks={checksFor("discovery_category")} />
           <div className="grid gap-2 border-b border-black/10 py-4 sm:grid-cols-[150px_1fr_auto] sm:items-center sm:gap-5"><dt className="text-xs text-black/45">楽曲全体の確認状態</dt><dd></dd><InlineStatusEditor songId={song.id} field="verification_status" value={song.verification_status} /></div>
           <InfoRow label="タイトル" value={song.title} songId={song.id} field="title" />
           <InfoRow label="タイトル（読み）" value={song.title_kana} songId={song.id} field="title_kana" />
-          <InfoRow label="初歌唱日" value={song.first_date} songId={song.id} field="first_date" inputType="date" status={song.first_status} statusField="first_status" />
-          <InfoRow label="フル初歌唱日" value={song.first_full_date} songId={song.id} field="first_full_date" inputType="date" status={song.first_full_status} statusField="first_full_status" copyFrom={{ value: song.first_date, label: "初歌唱日をコピー" }} />
-          <InfoRow label="初出情報" value={song.first_source} songId={song.id} field="first_source" />
-          <InfoRow label="フル初出情報" value={song.first_full_source} songId={song.id} field="first_full_source" copyFrom={{ value: song.first_source, label: "初出情報をコピー" }} />
-          <InfoRow label="タイアップ" value={song.tie_up} songId={song.id} field="tie_up" status={song.tie_up_status} />
-          <InfoRow label="アルバム記載" value={song.album_text} songId={song.id} field="album_text" status={song.album_text_status} />
-          <InfoRow label="原曲アーティスト" value={song.original_artist} songId={song.id} field="original_artist" status={song.original_artist_status} />
-          <InfoRow label="原曲ボーカル" value={song.original_vocal} songId={song.id} field="original_vocal" status={song.original_vocal_status} />
-          <InfoRow label="作曲者" value={song.original_composer} songId={song.id} field="original_composer" status={song.original_composer_status} />
-          <InfoRow label="作詞者" value={song.original_lyricist} songId={song.id} field="original_lyricist" status={song.original_lyricist_status} />
-          <InfoRow label="編曲者" value={song.original_arranger} songId={song.id} field="original_arranger" status={song.original_arranger_status} />
+          <InfoRow label="初歌唱日" value={song.first_date} songId={song.id} field="first_date" inputType="date" status={song.first_status} statusField="first_status" checks={checksFor("first_date")} />
+          <InfoRow label="フル初歌唱日" value={song.first_full_date} songId={song.id} field="first_full_date" inputType="date" status={song.first_full_status} statusField="first_full_status" copyFrom={{ value: song.first_date, label: "初歌唱日をコピー" }} checks={checksFor("first_full_date")} />
+          <InfoRow label="初出情報" value={song.first_source} songId={song.id} field="first_source" status={song.first_status} statusField="first_status" checks={checksFor("first_source")} />
+          <InfoRow label="フル初出情報" value={song.first_full_source} songId={song.id} field="first_full_source" status={song.first_full_status} statusField="first_full_status" copyFrom={{ value: song.first_source, label: "初出情報をコピー" }} checks={checksFor("first_full_source")} />
+          <InfoRow label="タイアップ" value={song.tie_up} songId={song.id} field="tie_up" status={song.tie_up_status} checks={checksFor("tie_up")} />
+          <InfoRow label="アルバム記載" value={song.album_text} songId={song.id} field="album_text" status={song.album_text_status} checks={checksFor("album_text")} />
+          <InfoRow label="原曲アーティスト" value={song.original_artist} songId={song.id} field="original_artist" status={song.original_artist_status} checks={checksFor("original_artist")} />
+          <InfoRow label="原曲ボーカル" value={song.original_vocal} songId={song.id} field="original_vocal" status={song.original_vocal_status} checks={checksFor("original_vocal")} />
+          <InfoRow label="作曲者" value={song.original_composer} songId={song.id} field="original_composer" status={song.original_composer_status} checks={checksFor("original_composer")} />
+          <InfoRow label="作詞者" value={song.original_lyricist} songId={song.id} field="original_lyricist" status={song.original_lyricist_status} checks={checksFor("original_lyricist")} />
+          <InfoRow label="編曲者" value={song.original_arranger} songId={song.id} field="original_arranger" status={song.original_arranger_status} checks={checksFor("original_arranger")} />
           <InfoRow label="管理メモ" value={song.notes} songId={song.id} field="notes" />
         </dl>
       </section>
@@ -183,5 +212,62 @@ export default async function ManageSongOverviewPage({ params }: PageProps) {
         </div>
       </section>
     </>
+  );
+}
+
+function snapshotsEqual(left: unknown, right: unknown) {
+  return JSON.stringify(left) === JSON.stringify(right);
+}
+
+function formatSnapshot(value: unknown) {
+  if (value === null) return "NULL";
+  if (typeof value === "string") return value;
+  return JSON.stringify(value, null, 2);
+}
+
+function FieldVerification({ songId, field, value, checks }: {
+  songId: number;
+  field: string;
+  value: string | null;
+  checks: SongFieldCheck[];
+}) {
+  const currentChecks = checks.filter((check) => snapshotsEqual(check.checked_value, value));
+  const aiChecked = currentChecks.some((check) => check.checker_type === "ai");
+  const humanChecked = currentChecks.some((check) => check.checker_type === "human");
+  const confirmCurrentValue = confirmSongFieldHuman.bind(null, songId, field);
+
+  return (
+    <div className="mt-2 space-y-2 sm:mt-0 sm:min-w-52">
+      <div className="flex flex-wrap justify-end gap-1.5 text-[11px]">
+        <span className={`border px-2 py-1 ${aiChecked ? "border-black/25 bg-black/[0.04] text-black/70" : "border-black/10 text-black/35"}`}>
+          {aiChecked ? "AI確認済" : "AI未確認"}
+        </span>
+        <span className={`border px-2 py-1 ${humanChecked ? "border-black/25 bg-black/[0.04] text-black/70" : "border-black/10 text-black/35"}`}>
+          {humanChecked ? "人間確認済" : "人間未確認"}
+        </span>
+      </div>
+      {!humanChecked ? (
+        <form action={confirmCurrentValue} className="text-right">
+          <button type="submit" className="text-[11px] text-black/55 underline underline-offset-4 hover:text-black">
+            現在値を人間確認済みにする
+          </button>
+        </form>
+      ) : null}
+      {checks.length ? (
+        <details className="text-left text-xs text-black/55">
+          <summary className="cursor-pointer text-right hover:text-black">履歴 {checks.length}件</summary>
+          <div className="mt-2 max-h-80 space-y-3 overflow-auto border border-black/10 bg-white p-3">
+            {checks.map((check) => (
+              <article key={check.id} className="border-b border-black/10 pb-3 last:border-0 last:pb-0">
+                <p className="font-medium text-black/70">{check.checker_type} / {new Date(check.checked_at).toLocaleString("ja-JP")}</p>
+                <p className="mt-1 break-words">値: {formatSnapshot(check.checked_value)}</p>
+                <pre className="mt-1 whitespace-pre-wrap break-all font-sans text-[11px] leading-5 text-black/45">evidence: {JSON.stringify(check.evidence, null, 2)}</pre>
+                {check.note ? <p className="mt-1 break-words">note: {check.note}</p> : null}
+              </article>
+            ))}
+          </div>
+        </details>
+      ) : null}
+    </div>
   );
 }

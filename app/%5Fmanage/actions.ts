@@ -1452,6 +1452,75 @@ export async function updateSongInlineStatus(
   return { ok: true };
 }
 
+const humanCheckableSongFields = new Set([
+  "artist_credit",
+  "discovery_category",
+  "first_date",
+  "first_source",
+  "first_full_date",
+  "first_full_source",
+  "tie_up",
+  "album_text",
+  "original_artist",
+  "original_vocal",
+  "original_lyricist",
+  "original_composer",
+  "original_arranger",
+]);
+
+function jsonSnapshotsEqual(left: unknown, right: unknown) {
+  return JSON.stringify(left) === JSON.stringify(right);
+}
+
+export async function confirmSongFieldHuman(
+  songId: number,
+  field: string,
+  _formData: FormData,
+) {
+  await requireAdmin();
+
+  if (!Number.isInteger(songId) || !humanCheckableSongFields.has(field)) {
+    throw new Error("確認対象が不正です。");
+  }
+
+  const [{ data: song, error: songError }, { data: checks, error: checksError }] =
+    await Promise.all([
+      supabaseAdmin.from("songs").select(field).eq("id", songId).single(),
+      supabaseAdmin
+        .from("song_field_checks")
+        .select("id,checked_value")
+        .eq("song_id", songId)
+        .eq("field_name", field)
+        .eq("checker_type", "human"),
+    ]);
+
+  if (songError || !song || checksError) {
+    throw new Error("現在値の確認に失敗しました。");
+  }
+
+  const currentValue = (song as unknown as Record<string, unknown>)[field] ?? null;
+  const alreadyChecked = (checks ?? []).some((check) =>
+    jsonSnapshotsEqual(check.checked_value, currentValue)
+  );
+
+  if (!alreadyChecked) {
+    const { error } = await supabaseAdmin.from("song_field_checks").insert({
+      song_id: songId,
+      field_name: field,
+      checked_value: currentValue,
+      checker_type: "human",
+      evidence: [],
+      note: "管理画面で現在値を人間確認",
+    });
+
+    if (error) {
+      throw new Error("人間確認履歴の追加に失敗しました。");
+    }
+  }
+
+  revalidatePath(`/_manage/songs/${songId}`);
+}
+
 export async function updateSongInlinePrimary(songId: number, value: boolean) {
   await requireAdmin();
   const { error } = await supabaseAdmin.from("songs").update({ is_primary_version: value }).eq("id", songId);
