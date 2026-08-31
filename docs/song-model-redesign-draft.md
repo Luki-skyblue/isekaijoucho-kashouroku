@@ -1,5 +1,11 @@
 # Song / work / version model redesign draft
 
+> Status update (2026-08-31): migrations 001–003 and the reviewed safe
+> backfill have been applied to production. The next entity/relationship/
+> participation design is documented in
+> [`song-entity-participation-model.md`](song-entity-participation-model.md).
+> Its migrations 004–006 remain unapplied drafts.
+
 > Reviewed implementation draft. The human decisions in this document's
 > approved target sections are reflected in the accompanying additive SQL,
 > but none of the SQL has been applied to Supabase. This document does not
