@@ -82,6 +82,30 @@
 - 現在アクセス可能なLIVE動画、LIVE音源、LIVE CD、LIVE Blu-ray等がある場合だけ、`content_type = live`のavailabilityを記録する。
 - provider tableは当面作らず、availabilityの`provider`と`provider_scope`で記録する。`provider_scope`の意味ある初期値は`isekai_official`、`vwp_official`、`other`である。
 
+## Release / edition / component
+
+- `release_groups`はrelease work / familyを表す。例：創生、色彩。
+- `releases`はedition / packageを表す。例：創生α、創生β。tracklistのauthoritative scopeは必ずこのedition単位とする。
+- `release_components`は一つのedition/packageを構成する媒体・discを表す。例：CD Disc 1、CD Disc 2、Blu-ray、DVD、digital。媒体は`medium`へ記録する。
+- `release_items`はcomponent内のtrack/itemを表し、exact `songs.id`を`song_id`へ紐付ける。収録曲がcatalog外、instrumental、未照合等の場合は`song_id = NULL`を許容し、release上の`track_title` / `track_artist`をraw値として保持する。
+- 同一trackが複数editionに収録される場合も、edition/componentごとに別の`release_items`を持つ。edition間で一つのitemを共有しない。
+- legacyの`release_items.release_group_id`は互換用に保持できるが、edition tracklistを取得・編集・表示する基準には使わない。`release_id`と、backfill後は`release_component_id`をauthoritativeとする。
+- `release_kind`は作品・packageの種別（例：`single`、`ep`、`album`、`compilation`、`live_album`、`video_release`、`other`）であり、媒体とは分ける。`release_type`は既存互換の混在fieldとして当面維持する。
+- releaseは、いつ何の商品・作品として出たかという永続的なhistorical factである。販売終了していても削除しない。availabilityは、そのexact versionを現在新規に取得・アクセスできるかという別の事実として管理する。
+- LIVE CD、LIVE Blu-ray / DVD、LIVE album、デジタルLIVE音源もhistorical releaseとして登録できる。ただしavailabilityと`discovery_category`のLIVE由来ルールは引き続き別に適用する。
+- ユーザー向けnavigationの`links`、事実の根拠である`reference_sources`、releaseのofficial/product pageは責務が異なる。同じURLが複数に存在してよく、無理にURL tableを統合しない。
+- edition/packageに複数のofficial/product/evidence URLが必要になった場合は、`release_sources`で`reference_sources`を再利用する。navigation linkを必要に応じて後から別途追加できる。
+
+## Full-song verification: release information collection
+
+今後、exact song/versionをAIまたは人間が調査する際は、field verificationとavailabilityに加え、判明した範囲で次を同時に回収する。後から全曲を再調査しないため、確認できない値を推測で補完しない。
+
+- release group / work title、edition/package、release kind、component / medium
+- release date、catalog / product number、disc / track number、raw track title / artist credit
+- exact song/versionとのrelation、artwork、official product / release page
+- digital release、LIVE CD / Blu-ray / DVD / LIVE album、current availability、historical availability
+- その事実を裏付けるreference source
+
 ## Verification queue
 
 - 初期queueは、current valueがNULLではなく、そのcurrent valueに一致するAI / Human checkが存在しないfieldを対象とする。

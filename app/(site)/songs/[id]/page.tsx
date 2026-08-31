@@ -43,7 +43,6 @@ type SongReleaseItem = {
   track_title: string | null;
   track_artist: string | null;
   notes: string | null;
-  release_group_id: number | null;
   releases: {
     id: number;
     title: string | null;
@@ -52,13 +51,6 @@ type SongReleaseItem = {
     release_date: string | null;
     jacket_image_url: string | null;
     official_url: string | null;
-    release_group_id: number | null;
-  } | null;
-  release_groups: {
-    id: number;
-    title: string | null;
-    release_date: string | null;
-    notes: string | null;
   } | null;
 };
 
@@ -71,18 +63,6 @@ type SongDigitalRelease = {
   official_url: string | null;
   notes: string | null;
 };
-
-type PrimaryReleaseByGroupId = Record<
-  number,
-  {
-    id: number;
-    title: string | null;
-    release_type: string | null;
-    artist_credit: string | null;
-    release_date: string | null;
-    jacket_image_url: string | null;
-  }
->;
 
 function hasValue(value: string | null | undefined) {
   return Boolean(value && value.trim() && value.trim() !== "-");
@@ -564,10 +544,8 @@ function formatTrackPosition(item: SongReleaseItem) {
 
 function SongReleasesSection({
   releaseItems,
-  primaryReleasesByGroupId,
 }: {
   releaseItems: SongReleaseItem[];
-  primaryReleasesByGroupId: PrimaryReleaseByGroupId;
 }) {
   if (releaseItems.length === 0) {
     return <EmptyBlock />;
@@ -576,20 +554,10 @@ function SongReleasesSection({
   return (
     <div className="divide-y divide-black/10 border-y border-black/10">
       {releaseItems.map((item) => {
-        const group = item.release_groups;
         const currentRelease = item.releases;
-        const groupId =
-          group?.id ??
-          item.release_group_id ??
-          currentRelease?.release_group_id ??
-          null;
-        const primaryRelease = groupId ? primaryReleasesByGroupId[groupId] : null;
-
-        const displayRelease = primaryRelease ?? currentRelease;
-        const displayTitle = group?.title ?? currentRelease?.title ?? "未設定のリリース";
-        const releaseDate = formatReleaseDate(
-          group?.release_date ?? displayRelease?.release_date ?? null
-        );
+        const displayRelease = currentRelease;
+        const displayTitle = currentRelease?.title ?? "未設定のリリース";
+        const releaseDate = formatReleaseDate(currentRelease?.release_date ?? null);
         const trackPosition = formatTrackPosition(item);
         const href = displayRelease?.id ? `/releases/${displayRelease.id}` : null;
         const jacketImageUrl =
@@ -674,24 +642,9 @@ function SongReleasesSection({
 }
 
 function getFallbackReleaseImageUrl(
-  releaseItems: SongReleaseItem[],
-  primaryReleasesByGroupId: PrimaryReleaseByGroupId
+  releaseItems: SongReleaseItem[]
 ) {
   for (const item of releaseItems) {
-    const groupId =
-      item.release_groups?.id ??
-      item.release_group_id ??
-      item.releases?.release_group_id ??
-      null;
-
-    if (groupId) {
-      const primaryRelease = primaryReleasesByGroupId[groupId];
-
-      if (hasValue(primaryRelease?.jacket_image_url)) {
-        return primaryRelease.jacket_image_url;
-      }
-    }
-
     if (hasValue(item.releases?.jacket_image_url)) {
       return item.releases?.jacket_image_url;
     }
@@ -774,7 +727,6 @@ export default async function SongDetailPage({ params, searchParams }: PageProps
       track_title,
       track_artist,
       notes,
-      release_group_id,
       releases (
         id,
         title,
@@ -782,14 +734,7 @@ export default async function SongDetailPage({ params, searchParams }: PageProps
         artist_credit,
         release_date,
         jacket_image_url,
-        official_url,
-        release_group_id
-      ),
-      release_groups (
-        id,
-        title,
-        release_date,
-        notes
+        official_url
       )
     `
     )
@@ -814,59 +759,6 @@ export default async function SongDetailPage({ params, searchParams }: PageProps
     throw new Error("配信リリース情報の取得に失敗しました。");
   }
 
-  const releaseGroupIds = Array.from(
-    new Set(
-      (releaseItems ?? [])
-        .map(
-          (item) =>
-            item.release_groups?.id ??
-            item.release_group_id ??
-            item.releases?.release_group_id ??
-            null
-        )
-        .filter((id): id is number => typeof id === "number")
-    )
-  );
-
-  let primaryReleasesByGroupId: PrimaryReleaseByGroupId = {};
-
-  if (releaseGroupIds.length > 0) {
-    const { data: primaryReleases, error: primaryReleasesError } = await supabase
-      .from("releases")
-      .select(
-        "id,title,release_type,artist_credit,release_date,jacket_image_url,release_group_id,is_primary_edition"
-      )
-      .in("release_group_id", releaseGroupIds)
-      .order("is_primary_edition", { ascending: false })
-      .order("release_date", { ascending: true, nullsFirst: false })
-      .order("id", { ascending: true });
-
-    if (primaryReleasesError) {
-      throw new Error("代表リリースの取得に失敗しました。");
-    }
-
-    primaryReleasesByGroupId = (primaryReleases ?? []).reduce<PrimaryReleaseByGroupId>(
-      (acc, release) => {
-        if (
-          typeof release.release_group_id === "number" &&
-          !acc[release.release_group_id]
-        ) {
-          acc[release.release_group_id] = {
-            id: release.id,
-            title: release.title,
-            release_type: release.release_type,
-            artist_credit: release.artist_credit,
-            release_date: release.release_date,
-            jacket_image_url: release.jacket_image_url,
-          };
-        }
-
-        return acc;
-      },
-      {}
-    );
-  }
-
   const isOriginal = song.song_type === "original";
   const firstDisplay = formatFirstDisplay(song.first_source, song.first_date);
   const firstFullDisplay = formatFirstDisplay(
@@ -883,10 +775,7 @@ export default async function SongDetailPage({ params, searchParams }: PageProps
     digitalReleases ?? []
   );
 
-  const fallbackReleaseImageUrl = getFallbackReleaseImageUrl(
-    releaseItems ?? [],
-    primaryReleasesByGroupId
-  );
+  const fallbackReleaseImageUrl = getFallbackReleaseImageUrl(releaseItems ?? []);
 
   const fallbackSecondaryLinkImageUrl = getFallbackLinkImageUrl(links ?? [], [
     "live_mv",
@@ -1098,7 +987,6 @@ export default async function SongDetailPage({ params, searchParams }: PageProps
 
         <SongReleasesSection
           releaseItems={releaseItems ?? []}
-          primaryReleasesByGroupId={primaryReleasesByGroupId}
         />
       </section>
 

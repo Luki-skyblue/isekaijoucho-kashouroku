@@ -12,6 +12,8 @@ type PageProps = {
 
 type ReleaseItem = {
   id: number;
+  release_component_id?: number | null;
+  sort_order?: number | null;
   disc_number: number | null;
   track_number: number | null;
   title_override: string | null;
@@ -25,6 +27,13 @@ type ReleaseItem = {
     song_type: string | null;
     version_name: string | null;
     is_primary_version: boolean | null;
+  } | null;
+  release_components?: {
+    id: number;
+    medium: string;
+    component_name: string | null;
+    component_number: number | null;
+    sort_order: number;
   } | null;
 };
 
@@ -230,11 +239,16 @@ export default async function ReleasePage({ params }: PageProps) {
     editions = editionData ?? [];
   }
 
-  let itemsQuery = supabase
+  // The relation is present after the additive component migration. Retry the
+  // legacy query when the migration is not yet applied so public release
+  // pages keep working during the staged rollout.
+  const componentItemsResult = await supabase
     .from("release_items")
     .select(
       `
       id,
+      release_component_id,
+      sort_order,
       disc_number,
       track_number,
       title_override,
@@ -248,27 +262,64 @@ export default async function ReleasePage({ params }: PageProps) {
         song_type,
         version_name,
         is_primary_version
+      ),
+      release_components (
+        id,
+        medium,
+        component_name,
+        component_number,
+        sort_order
       )
     `
-    );
-
-  if (release.release_group_id) {
-    itemsQuery = itemsQuery.eq("release_group_id", release.release_group_id);
-  } else {
-    itemsQuery = itemsQuery.eq("release_id", release.id);
-  }
-
-  const { data: items, error: itemsError } = await itemsQuery
+    )
+    .eq("release_id", release.id)
+    .order("sort_order", { ascending: true, nullsFirst: false })
     .order("disc_number", { ascending: true, nullsFirst: false })
     .order("track_number", { ascending: true, nullsFirst: false })
     .order("id", { ascending: true })
     .returns<ReleaseItem[]>();
 
+  const legacyItemsResult = componentItemsResult.error
+    ? await supabase
+        .from("release_items")
+        .select(
+          `
+          id,
+          disc_number,
+          track_number,
+          title_override,
+          track_title,
+          track_artist,
+          notes,
+          songs (
+            id,
+            title,
+            artist_credit,
+            song_type,
+            version_name,
+            is_primary_version
+          )
+        `
+        )
+        .eq("release_id", release.id)
+        .order("disc_number", { ascending: true, nullsFirst: false })
+        .order("track_number", { ascending: true, nullsFirst: false })
+        .order("id", { ascending: true })
+        .returns<ReleaseItem[]>()
+    : null;
+
+  const items = componentItemsResult.error
+    ? legacyItemsResult?.data
+    : componentItemsResult.data;
+  const itemsError = componentItemsResult.error
+    ? legacyItemsResult?.error
+    : null;
+
   if (itemsError) {
     throw new Error("収録曲の取得に失敗しました。");
   }
 
-  const groupedItems = groupItemsByDisc(items ?? []);
+  const groupedItems = groupItemsForDisplay(items ?? []);
 
   return (
     <main className="mx-auto max-w-6xl px-6 py-12">
@@ -404,7 +455,7 @@ export default async function ReleasePage({ params }: PageProps) {
 
         <div className="grid gap-8">
           {groupedItems.map((discGroup) => (
-            <div key={discGroup.discNumber ?? "no-disc"}>
+            <div key={discGroup.key}>
               {discGroup.label ? (
                 <div className="mb-3 flex items-center gap-3">
                   <p className="font-mono text-xs font-medium tracking-[0.18em] text-black/45">
@@ -503,4 +554,66 @@ export default async function ReleasePage({ params }: PageProps) {
       </section>
     </main>
   );
+}
+
+function getComponentLabel(component: NonNullable<ReleaseItem["release_components"]>) {
+  if (hasValue(component.component_name)) {
+    return component.component_name;
+  }
+
+  const medium = component.medium.toUpperCase();
+  return component.component_number ? `${medium} ${component.component_number}` : medium;
+}
+
+function groupItemsForDisplay(items: ReleaseItem[]) {
+  const componentMap = new Map<number, {
+    component: NonNullable<ReleaseItem["release_components"]>;
+    items: ReleaseItem[];
+  }>();
+  const legacyItems: ReleaseItem[] = [];
+
+  for (const item of items) {
+    const component = item.release_components;
+    if (!component) {
+      legacyItems.push(item);
+      continue;
+    }
+
+    const current = componentMap.get(component.id) ?? { component, items: [] };
+    current.items.push(item);
+    componentMap.set(component.id, current);
+  }
+
+  if (componentMap.size === 0) {
+    return groupItemsByDisc(items).map((group) => ({
+      key: group.discNumber ?? "no-disc",
+      label: group.label,
+      items: group.items,
+    }));
+  }
+
+  const componentGroups = Array.from(componentMap.values())
+    .sort((left, right) => left.component.sort_order - right.component.sort_order)
+    .map(({ component, items: componentItems }) => ({
+      key: `component-${component.id}`,
+      label: getComponentLabel(component),
+      items: componentItems.sort(
+        (left, right) =>
+          (left.sort_order ?? left.track_number ?? left.id) -
+          (right.sort_order ?? right.track_number ?? right.id)
+      ),
+    }));
+
+  if (legacyItems.length === 0) {
+    return componentGroups;
+  }
+
+  return [
+    ...componentGroups,
+    ...groupItemsByDisc(legacyItems).map((group) => ({
+      key: `legacy-${group.discNumber ?? "no-disc"}`,
+      label: group.label ?? "COMPONENT 未設定",
+      items: group.items,
+    })),
+  ];
 }

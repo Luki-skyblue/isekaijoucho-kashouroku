@@ -99,14 +99,11 @@ export default async function ManageReleaseItemsPage({ params, searchParams }: P
     notFound();
   }
 
-  let itemsQuery = supabaseAdmin.from("release_items").select(`
+  const itemsQuery = supabaseAdmin.from("release_items").select(`
     id, disc_number, track_number, song_id, track_title, track_artist,
     title_override, notes,
     songs (id, title, artist_credit, version_name, is_primary_version)
-  `);
-  itemsQuery = release.release_group_id
-    ? itemsQuery.eq("release_group_id", release.release_group_id)
-    : itemsQuery.eq("release_id", release.id);
+  `).eq("release_id", release.id);
 
   const [{ data: items, error: itemsError }, { data: songs, error: songsError }] = await Promise.all([
     itemsQuery.order("disc_number", { ascending: true, nullsFirst: false }).order("track_number", { ascending: true, nullsFirst: false }).order("id").returns<ReleaseItem[]>(),
@@ -126,11 +123,9 @@ export default async function ManageReleaseItemsPage({ params, searchParams }: P
     <>
       {saved ? <p className="mt-5 border border-black/15 p-3 text-sm text-black/60">保存しました。</p> : null}
 
-      {release.release_group_id ? (
-        <p className="mt-8 border border-black/15 bg-black/[0.02] p-4 text-xs leading-6 text-black/55">
-          収録曲は作品グループ #{release.release_group_id} の全形態で共有されます。
-        </p>
-      ) : null}
+      <p className="mt-8 border border-black/15 bg-black/[0.02] p-4 text-xs leading-6 text-black/55">
+        収録曲はこの形態（edition/package）ごとに管理します。作品グループが同じでも、他形態の収録曲は共有しません。
+      </p>
 
       <details className="group mt-8">
         <summary className="inline-flex cursor-pointer list-none items-center gap-2 border border-black px-4 py-2 text-sm text-black transition marker:hidden hover:bg-black hover:text-white"><span className="group-open:hidden">収録曲を追加 ＋</span><span className="hidden group-open:inline">追加フォームを閉じる −</span></summary>

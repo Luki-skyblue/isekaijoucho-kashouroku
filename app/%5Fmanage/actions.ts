@@ -933,18 +933,11 @@ export async function updateReleaseItem(
     notes: getNullableString(formData, "notes"),
   };
 
-  let query = supabaseAdmin
+  const { error } = await supabaseAdmin
     .from("release_items")
     .update(payload)
-    .eq("id", itemId);
-
-  if (scope.releaseGroupId) {
-    query = query.eq("release_group_id", scope.releaseGroupId);
-  } else {
-    query = query.eq("release_id", scope.releaseId);
-  }
-
-  const { error } = await query;
+    .eq("id", itemId)
+    .eq("release_id", scope.releaseId);
 
   if (error) {
     throw new Error("収録曲の更新に失敗しました。");
@@ -958,18 +951,11 @@ export async function deleteReleaseItem(releaseId: number, itemId: number) {
 
   const scope = await getReleaseItemScope(releaseId);
 
-  let query = supabaseAdmin
+  const { error } = await supabaseAdmin
     .from("release_items")
     .delete()
-    .eq("id", itemId);
-
-  if (scope.releaseGroupId) {
-    query = query.eq("release_group_id", scope.releaseGroupId);
-  } else {
-    query = query.eq("release_id", scope.releaseId);
-  }
-
-  const { error } = await query;
+    .eq("id", itemId)
+    .eq("release_id", scope.releaseId);
 
   if (error) {
     throw new Error("収録曲の削除に失敗しました。");
@@ -1180,16 +1166,11 @@ export async function updateReleaseItemInlineField(
   }
 
   const scope = await getReleaseItemScope(releaseId);
-  let query = supabaseAdmin
+  const { error } = await supabaseAdmin
     .from("release_items")
     .update({ [field]: numericField ? numericValue : normalized || null })
-    .eq("id", itemId);
-
-  query = scope.releaseGroupId
-    ? query.eq("release_group_id", scope.releaseGroupId)
-    : query.eq("release_id", scope.releaseId);
-
-  const { error } = await query;
+    .eq("id", itemId)
+    .eq("release_id", scope.releaseId);
   if (error) {
     throw new Error("収録曲情報の更新に失敗しました。");
   }

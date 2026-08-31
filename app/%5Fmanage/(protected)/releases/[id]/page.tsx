@@ -86,9 +86,7 @@ export default async function ManageReleaseOverviewPage({ params, searchParams }
     release.release_group_id
       ? supabaseAdmin.from("releases").select("id,title,edition_name,release_type,is_primary_edition").eq("release_group_id", release.release_group_id).order("is_primary_edition", { ascending: false }).order("id").returns<GroupEdition[]>()
       : Promise.resolve({ data: [] as GroupEdition[] }),
-    release.release_group_id
-      ? supabaseAdmin.from("release_items").select("id", { count: "exact", head: true }).eq("release_group_id", release.release_group_id)
-      : supabaseAdmin.from("release_items").select("id", { count: "exact", head: true }).eq("release_id", release.id),
+    supabaseAdmin.from("release_items").select("id", { count: "exact", head: true }).eq("release_id", release.id),
     supabaseAdmin.from("release_groups").select("id,title").order("title"),
   ]);
 
@@ -129,13 +127,13 @@ export default async function ManageReleaseOverviewPage({ params, searchParams }
             <p className="section-label text-black/45">WORK / RELEASE GROUP</p>
             <h2 className="font-serif-jp mt-2 text-2xl text-black/80">作品共通情報</h2>
           </div>
-          <p className="text-xs text-black/40">{groupEditions?.length ?? 0}形態 · 収録曲{itemCount ?? 0}曲</p>
+          <p className="text-xs text-black/40">同一作品 {groupEditions?.length ?? 0}形態 · この形態の収録曲 {itemCount ?? 0}曲</p>
         </div>
 
         <div className="mt-4 border border-black/15 bg-black/[0.02] p-5">
           <p className="text-sm text-black/65">{release.release_group_id ? `作品グループ #${release.release_group_id}` : "作品グループ未設定"}</p>
           <div className="mt-3"><InlineReleaseGroupSelectEditor releaseId={release.id} currentGroupId={release.release_group_id} groups={releaseGroups ?? []} /></div>
-          <p className="mt-3 text-xs leading-6 text-black/45">作品グループを変更すると、表示される収録曲と同じ作品として扱う形態が変わります。</p>
+          <p className="mt-3 text-xs leading-6 text-black/45">作品グループは同じ作品として扱う形態をまとめるための情報です。収録曲はこの形態単位で管理します。</p>
         </div>
 
         {release.release_groups ? (
