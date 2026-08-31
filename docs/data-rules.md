@@ -31,8 +31,9 @@
 3. `other_channel`
    - 上記2つではないが、その他のYouTubeチャンネルで無料フル視聴可能。
 4. `cd_album`
-   - YouTubeでは無料フル視聴できず、CD・アルバムの購入によって視聴可能。
-   - LIVE円盤化はこのカテゴリに含めない。
+   - 上記の無料フルYouTubeがなく、exact song/versionの非LIVE公式フル音源が商用リリースとして利用可能。
+   - CD、album、digital single / album、有料ダウンロード、subscription streamingを含む。
+   - LIVE CD、LIVE album、LIVE Blu-ray / DVD、デジタル配信されたLIVE音源は含めない。
 5. `live_event`
    - 上記に該当せず、LIVE・イベントでのみ披露されたもの。
 6. `other`
@@ -40,10 +41,37 @@
 
 補足：
 
-- Trailer、digest、一部分のみ視聴可能な動画はYouTubeカテゴリに含めない。
-- メンバー限定・有料YouTubeも、基本的にはYouTubeカテゴリに含めない。
+- Trailer、digest、Shorts、一部分のみ視聴可能な動画はYouTubeカテゴリに含めない。
+- メンバー限定・有料YouTubeも、YouTubeカテゴリに含めない。
+- ライブで披露された歌唱versionが、後からLIVE CD、LIVE Blu-ray / DVD、デジタル配信されたLIVE音源、LIVEアルバムで視聴可能になっても、`discovery_category = live_event`を維持する。
+- LIVE由来の音源は`cd_album`へ分類しない。
 - 後から上位媒体で無料フル公開された場合、categoryは変わり得る。
 - 特殊事例は自動決定せず、人間判断へ回す。
+
+## Reference source
+
+- reference sourceは、AI / Human verificationやavailability確認に利用した外部根拠のmetadataである。
+- ページ全文、HTML全文、動画そのもの、画像等は保存しない。
+- URL、title、publisher / channel、source type、分かる場合のpublished date、checked date、short noteを保存する。
+- source typeの代表例は`official_site`、`official_youtube`、`official_store`、`label`、`media`、`wiki`、`community`、`social`、`music_credit_db`、`other`とするが、DB vocabularyは固定しない。
+- 同一sourceは複数のfield checkやavailability根拠から共有してよい。
+- URLは可能な範囲で正規化する。YouTubeの短縮URLと`watch?v=`は統一し、`utm_*`等の明らかなtracking parameterは除外する。YouTube timestampはrelation側のlocatorへ保存する。
+- 一般サイトの意味を持つquery parameterは、根拠なく削除しない。
+
+## Availability
+
+- availabilityは必ずexact `songs.id` / versionに紐づける。原曲側の公開状況をcover versionへ流用しない。
+- availabilityは「現在そのexact versionをどう視聴できるか」を表す。過去に公開されていたが現在アクセス不能なものをcurrent availabilityとして扱わない。
+- ライブで披露された事実だけではavailabilityを作らない。過去の披露歴は`live_setlist_entries`をsource of truthとする。
+- 現在アクセス可能なLIVE動画、LIVE音源、LIVE CD、LIVE Blu-ray等がある場合だけ、`content_type = live`のavailabilityを記録する。
+- provider tableは当面作らず、availabilityの`provider`と`provider_scope`で記録する。`provider_scope`の意味ある初期値は`isekai_official`、`vwp_official`、`other`である。
+
+## Verification queue
+
+- 初期queueは、current valueがNULLではなく、そのcurrent valueに一致するAI / Human checkが存在しないfieldを対象とする。
+- 対象は`title`、`song_type`、`artist_credit`、`discovery_category`、`first_*`、`first_full_*`、`original_*`、`tie_up`とする。
+- status field単独はqueue対象にせず、本体fieldを確認する際に合わせて扱う。
+- NULL値の検証queueは第二段階とする。
 
 ## AI / Human verification
 
@@ -63,6 +91,18 @@
 - ライブ固有の公式creditが明確なら、その表記を尊重する。
 - ダンサー等の非歌唱参加者は`artist_credit`に含めない。
 - 表記差だけで歌唱者構成を変えない。
+
+## original_artist / original_vocal
+
+- `original_artist`には、原曲側のアーティスト／クレジット名義を記録する。
+- 原曲の実際のメイン歌唱者が明確な場合、`original_vocal`にはその人物名を記録してよい。
+- グループ／ユニットでの歌唱、または個人まで分解する必要が薄い場合、`original_vocal`には原曲の歌唱名義を記録してよい。
+- 判断に意味のある曖昧さがある場合は、自動決定せず`NEEDS_HUMAN`とする。
+
+## original_lyricist / original_composer
+
+- 原典のクレジットが`Writer` / `Songwriter` / `Composition & Lyrics`等として作詞・作曲を分離せず共同表記され、信頼できる公開情報を調査しても分離できない場合、同じクレジット一覧を`original_lyricist`と`original_composer`の両方へ記録してよい。
+- この記録は、クレジットされた全員が作詞・作曲の両方を担当したと断定するものではない。原典のsongwriterクレジットを、DB上の分離されたfieldへ保持するための運用である。
 
 ## first / first_full
 
