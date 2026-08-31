@@ -12,6 +12,15 @@
 - キャラクター名義と本人名義など、実質的歌唱者が同一の場合も原則として分けない。
 - 判断不能な場合は自動決定せず、人間確認へ回す。
 
+## Historical origin / metadata reference
+
+- `song_group_origins`のhistorical originは、最初に披露・公開された日時や媒体ではなく、そのwork / version系統の歴史的な起点となるworkまたはversionを表す。
+- 初披露・初公開・初フル公開は、引き続き`songs.first_*` / `songs.first_full_*`で管理する。historical originへ日時上の初出という意味を混ぜない。
+- DB内に起点となるexact versionが存在する場合は`origin_kind = internal_song`とし、同じsong groupの`songs.id`を`origin_song_id`へ記録する。
+- 起点となるworkがDB外にある場合は、DB内versionをoriginに見立てず、`origin_kind = external_preexisting`として外部workを記録する。
+- `metadata_reference_song_id`はmetadataの比較・継承に使う同一group内の基準versionであり、historical originとは別概念である。外部originを持つgroupでもDB内versionをmetadata referenceにできる。
+- legacyの`base_song_id`は破壊的に削除しないが、historical originまたはmetadata referenceのsource of truthとして新たに利用しない。
+
 ## LIVE setlist canonicalization / raw provenance
 
 - WIKIWIKIはLIVE情報の有力なingestion / fact extraction sourceとして利用するが、canonicalな事実そのものとはみなさない。
