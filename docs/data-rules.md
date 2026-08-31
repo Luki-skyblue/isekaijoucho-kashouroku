@@ -26,7 +26,7 @@
 
 ## discovery_category
 
-`discovery_category`は「現在、そのsongs行が表す歌唱/versionをどの媒体からフルで聴けるか」を表す。
+`discovery_category`は「現在、新規ユーザーがそのsongs行が表す歌唱/versionをどの媒体からフルで取得または視聴できるか」を表す。
 
 複数条件に該当する場合は、原則として以下の上位カテゴリを優先する。
 
@@ -67,7 +67,8 @@
 ## Availability
 
 - availabilityは必ずexact `songs.id` / versionに紐づける。原曲側の公開状況をcover versionへ流用しない。
-- availabilityは「現在そのexact versionをどう視聴できるか」を表す。過去に公開されていたが現在アクセス不能なものをcurrent availabilityとして扱わない。
+- availabilityは「現在、新規ユーザーがそのexact versionをどう取得または視聴できるか」を表す。`is_current = true`は、記録した経路を通じて現在新規に取得またはアクセスできることを意味する。過去に公開・販売されていたが現在アクセスまたは購入できないものは、historical availabilityとして`is_current = false`にする。
+- `is_current = false`は、既に所有する物理媒体を再生できないという意味ではない。過去の物理releaseの存在はrelease情報およびhistorical availabilityとして保持する。
 - ライブで披露された事実だけではavailabilityを作らない。過去の披露歴は`live_setlist_entries`をsource of truthとする。
 - 現在アクセス可能なLIVE動画、LIVE音源、LIVE CD、LIVE Blu-ray等がある場合だけ、`content_type = live`のavailabilityを記録する。
 - provider tableは当面作らず、availabilityの`provider`と`provider_scope`で記録する。`provider_scope`の意味ある初期値は`isekai_official`、`vwp_official`、`other`である。
@@ -97,6 +98,7 @@
 - ライブ固有の公式creditが明確なら、その表記を尊重する。
 - ダンサー等の非歌唱参加者は`artist_credit`に含めない。
 - 表記差だけで歌唱者構成を変えない。
+- `×` / `・` / `with` / `&`等のdelimiter差だけでは、AI / Human verification conflictとして扱わない。
 
 ## original_artist / original_vocal
 
@@ -115,5 +117,6 @@
 - `first_date` / `first_source`は、そのsongs行が表す歌唱/versionの初出を記録する。
 - 原曲発売日はcover版の`first_date`には入れない。
 - `first_full_date` / `first_full_source`は、そのversionをフル尺で公開・披露したことを十分確認できる最初の日と媒体を記録する。
+- 24時を超える深夜放送は、番組上の前日表記ではなく実際の翌暦日を`first_date`等に採用する。例：10月6日 24:55は10月7日。
 - 単なるsetlist記載だけでは`first_full`を`confirmed`にしない。
 - 公式フル動画、ライブ全編配信、全編映像商品、LIVE音源等で十分確認できる場合は使用できる。
