@@ -38,6 +38,17 @@ type LiveSetlistEntryRow = {
   marker_label: string | null;
 };
 
+type LiveSetlistEntrySongRow = {
+  live_setlist_entry_id: number;
+  song_id: number;
+  sort_order: number;
+};
+
+type SongTitleRow = {
+  id: number;
+  title: string;
+};
+
 type LivePerformanceLink = {
   id: number;
   link_type: string;
@@ -238,7 +249,11 @@ async function getSeriesRelations(performanceId: number): Promise<Relation[]> {
   }));
 }
 
-function mapSetlist(rows: LiveSetlistEntryRow[], performanceId: number) {
+function mapSetlist(
+  rows: LiveSetlistEntryRow[],
+  performanceId: number,
+  componentSongsByEntryId: Map<number, Array<{ songId: number; title: string }>>,
+) {
   if (rows.length === 0) {
     return [];
   }
@@ -260,6 +275,8 @@ function mapSetlist(rows: LiveSetlistEntryRow[], performanceId: number) {
       throw new Error("セットリストの曲名が設定されていません。");
     }
 
+    const componentSongs = componentSongsByEntryId.get(row.id);
+
     return {
       id: `song-${row.id}`,
       kind: "song",
@@ -268,6 +285,7 @@ function mapSetlist(rows: LiveSetlistEntryRow[], performanceId: number) {
       artistCreditRaw: row.artist_credit_raw ?? "",
       noteRaw: row.note_raw,
       ...(row.song_id === null ? {} : { songId: row.song_id }),
+      ...(componentSongs?.length ? { componentSongs } : {}),
     };
   });
 
@@ -431,8 +449,59 @@ export default async function LiveDetailPage({ params }: LiveDetailPageProps) {
     throw new Error("公式リンクの取得に失敗しました。");
   }
 
-  const setlistTables = mapSetlist(setlistResult.data ?? [], live.id);
-  const songCount = (setlistResult.data ?? []).filter(
+  const setlistRows = setlistResult.data ?? [];
+  const setlistEntryIds = setlistRows.map((entry) => entry.id);
+  const componentResult = setlistEntryIds.length
+    ? await supabase
+        .from("live_setlist_entry_songs")
+        .select("live_setlist_entry_id,song_id,sort_order")
+        .in("live_setlist_entry_id", setlistEntryIds)
+        .order("sort_order", { ascending: true })
+        .returns<LiveSetlistEntrySongRow[]>()
+    : { data: [], error: null };
+
+  if (componentResult.error) {
+    throw new Error("複合セットリストの構成曲取得に失敗しました。");
+  }
+
+  const componentRows = componentResult.data ?? [];
+  const componentSongIds = [...new Set(componentRows.map((row) => row.song_id))];
+  const componentSongResult = componentSongIds.length
+    ? await supabase
+        .from("songs")
+        .select("id,title")
+        .in("id", componentSongIds)
+        .returns<SongTitleRow[]>()
+    : { data: [], error: null };
+
+  if (componentSongResult.error) {
+    throw new Error("複合セットリストの曲情報取得に失敗しました。");
+  }
+
+  const titleBySongId = new Map(
+    (componentSongResult.data ?? []).map((song) => [song.id, song.title]),
+  );
+  const componentSongsByEntryId = new Map<
+    number,
+    Array<{ songId: number; title: string }>
+  >();
+  for (const component of componentRows) {
+    const title = titleBySongId.get(component.song_id);
+    if (!title) {
+      continue;
+    }
+
+    const songs = componentSongsByEntryId.get(component.live_setlist_entry_id) ?? [];
+    songs.push({ songId: component.song_id, title });
+    componentSongsByEntryId.set(component.live_setlist_entry_id, songs);
+  }
+
+  const setlistTables = mapSetlist(
+    setlistRows,
+    live.id,
+    componentSongsByEntryId,
+  );
+  const songCount = setlistRows.filter(
     (entry) => entry.entry_type === "song",
   ).length;
   const officialLinks = linksResult.data ?? [];

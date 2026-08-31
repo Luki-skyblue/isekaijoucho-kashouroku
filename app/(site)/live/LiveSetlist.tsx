@@ -11,6 +11,10 @@ export type LiveSetlistSongEntry = {
   artistCreditRaw: string;
   noteRaw: string | null;
   songId?: number;
+  componentSongs?: Array<{
+    songId: number;
+    title: string;
+  }>;
 };
 
 export type LiveSetlistMarkerEntry = {
@@ -132,6 +136,23 @@ export default function LiveSetlist({ tables }: LiveSetlistProps) {
                       <p className="mt-0.5 break-words text-xs leading-5 text-black/45">
                         {entry.artistCreditRaw || "-"}
                       </p>
+
+                      {entry.componentSongs?.length ? (
+                        <p className="mt-1 break-words text-xs leading-5 text-black/55">
+                          <span className="text-black/35">構成曲: </span>
+                          {entry.componentSongs.map((song, songIndex) => (
+                            <Fragment key={song.songId}>
+                              {songIndex > 0 ? " / " : null}
+                              <Link
+                                href={`/songs/${song.songId}`}
+                                className="underline-offset-4 hover:underline"
+                              >
+                                {song.title}
+                              </Link>
+                            </Fragment>
+                          ))}
+                        </p>
+                      ) : null}
 
                       {entry.noteRaw ? (
                         <p className="mt-1 text-xs leading-5 text-black/35">

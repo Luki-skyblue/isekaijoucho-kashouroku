@@ -12,6 +12,12 @@
 - キャラクター名義と本人名義など、実質的歌唱者が同一の場合も原則として分けない。
 - 判断不能な場合は自動決定せず、人間確認へ回す。
 
+## LIVE setlist canonicalization / raw provenance
+
+- WIKIWIKIはLIVE情報の有力なingestion / fact extraction sourceとして利用するが、canonicalな事実そのものとはみなさない。
+- 正式曲名、exact song/versionの同一性、メドレー・mashup等の演目構造、実際の披露単位は、公式情報・公式商品・出演者本人の発言・信頼できるライブレポート等のより強い根拠がある場合、それらを総合してcanonical dataとして決定する。
+- WIKIWIKI由来のraw title、credit、行粒度およびsource provenanceは、canonical dataを整理・統合する場合も可能な限り保持し、後から追跡できるようにする。
+
 ## tie_up
 
 - `tie_up`には、そのsongs行が表す歌唱/version自体のタイアップだけを記録する。
