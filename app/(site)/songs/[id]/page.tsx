@@ -43,6 +43,9 @@ type SongReleaseItem = {
   track_title: string | null;
   track_artist: string | null;
   notes: string | null;
+  release_components: {
+    medium: string | null;
+  } | null;
   releases: {
     id: number;
     title: string | null;
@@ -53,6 +56,45 @@ type SongReleaseItem = {
     official_url: string | null;
   } | null;
 };
+
+function normalizeReleaseUrl(url: string | null | undefined) {
+  return url?.trim().replace(/\/+$/, "") ?? null;
+}
+
+function normalizeReleaseTitle(title: string | null | undefined) {
+  return title?.trim().toLocaleLowerCase() ?? null;
+}
+
+function isLegacyDigitalReleaseBackfilled(
+  legacyRelease: SongDigitalRelease,
+  releaseItems: SongReleaseItem[],
+  songTitle: string | null
+) {
+  const legacyUrl = normalizeReleaseUrl(legacyRelease.official_url);
+  const legacyTitle = normalizeReleaseTitle(legacyRelease.title ?? songTitle);
+
+  return releaseItems.some((item) => {
+    const release = item.releases;
+    const isUnifiedDigital =
+      item.release_components?.medium === "digital" ||
+      release?.release_type === "digital_single";
+
+    if (!isUnifiedDigital || !release) {
+      return false;
+    }
+
+    const unifiedUrl = normalizeReleaseUrl(release.official_url);
+    if (legacyUrl && unifiedUrl && legacyUrl === unifiedUrl) {
+      return true;
+    }
+
+    return (
+      legacyTitle !== null &&
+      legacyTitle === normalizeReleaseTitle(release.title) &&
+      legacyRelease.release_date === release.release_date
+    );
+  });
+}
 
 type SongDigitalRelease = {
   id: number;
@@ -727,6 +769,9 @@ export default async function SongDetailPage({ params, searchParams }: PageProps
       track_title,
       track_artist,
       notes,
+      release_components (
+        medium
+      ),
       releases (
         id,
         title,
@@ -759,6 +804,15 @@ export default async function SongDetailPage({ params, searchParams }: PageProps
     throw new Error("配信リリース情報の取得に失敗しました。");
   }
 
+  const fallbackDigitalReleases = (digitalReleases ?? []).filter(
+    (legacyRelease) =>
+      !isLegacyDigitalReleaseBackfilled(
+        legacyRelease,
+        releaseItems ?? [],
+        song.title
+      )
+  );
+
   const isOriginal = song.song_type === "original";
   const firstDisplay = formatFirstDisplay(song.first_source, song.first_date);
   const firstFullDisplay = formatFirstDisplay(
@@ -772,7 +826,7 @@ export default async function SongDetailPage({ params, searchParams }: PageProps
   ]);
 
   const fallbackDigitalReleaseImageUrl = getFallbackDigitalReleaseImageUrl(
-    digitalReleases ?? []
+    fallbackDigitalReleases
   );
 
   const fallbackReleaseImageUrl = getFallbackReleaseImageUrl(releaseItems ?? []);
@@ -950,7 +1004,7 @@ export default async function SongDetailPage({ params, searchParams }: PageProps
         </dl>
       </section>
 
-      {(digitalReleases ?? []).length > 0 ? (
+      {fallbackDigitalReleases.length > 0 ? (
         <section className="mt-12 grid gap-8 md:grid-cols-[180px_1fr]">
           <div className="section-head">
             <p className="section-label text-black/45">DIGITAL RELEASE</p>
@@ -958,7 +1012,7 @@ export default async function SongDetailPage({ params, searchParams }: PageProps
           </div>
 
           <DigitalReleasesSection
-            digitalReleases={digitalReleases ?? []}
+            digitalReleases={fallbackDigitalReleases}
             songTitle={song.title}
           />
         </section>
