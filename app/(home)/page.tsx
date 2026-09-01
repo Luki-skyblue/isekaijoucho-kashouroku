@@ -1,4 +1,8 @@
 import Link from "next/link";
+import {
+  getPublicReleaseData,
+  type PublicRelease,
+} from "@/lib/releases/public-release-data";
 import { supabase } from "@/lib/supabase/client";
 import SiteHeader from "../(site)/SiteHeader";
 import HomeThemeMotif from "./HomeThemeMotif";
@@ -37,35 +41,7 @@ type LatestSong = {
   original_arranger_status: string | null;
 };
 
-type HomeReleaseGroup = {
-  id: number;
-  title: string | null;
-  release_date: string | null;
-};
-
-type HomeRelease = {
-  id: number;
-  title: string | null;
-  release_group_id: number | null;
-  release_type: string | null;
-  artist_credit: string | null;
-  release_date: string | null;
-  jacket_image_url: string | null;
-  is_primary_edition: boolean | null;
-};
-
-type HomeDigitalRelease = {
-  id: number;
-  song_id: number;
-  title: string | null;
-  release_date: string | null;
-  jacket_image_url: string | null;
-  songs: {
-    id: number;
-    title: string | null;
-    artist_credit: string | null;
-  } | null;
-};
+type HomeRelease = PublicRelease;
 
 type HomeReleaseCard = {
   key: string;
@@ -117,35 +93,11 @@ export default async function HomePage() {
     .order("first_date", { ascending: false })
     .limit(5);
 
-  const { data: releaseGroups } = await supabase
-    .from("release_groups")
-    .select("id,title,release_date")
-    .returns<HomeReleaseGroup[]>();
-
-  const { data: releases } = await supabase
-    .from("releases")
-    .select(
-      "id,title,release_group_id,release_type,artist_credit,release_date,jacket_image_url,is_primary_edition"
-    )
-    .returns<HomeRelease[]>();
-
-  const { data: digitalReleases } = await supabase
-    .from("song_digital_releases")
-    .select(
-      `
-        id,
-        song_id,
-        title,
-        release_date,
-        jacket_image_url,
-        songs (
-          id,
-          title,
-          artist_credit
-        )
-      `
-    )
-    .returns<HomeDigitalRelease[]>();
+  const {
+    releaseGroups,
+    releases,
+    legacyDigitalReleases: digitalReleases,
+  } = await getPublicReleaseData();
 
   const releasesByGroupId = new Map<number, HomeRelease[]>();
 

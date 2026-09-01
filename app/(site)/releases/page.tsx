@@ -1,46 +1,12 @@
-import { supabase } from "@/lib/supabase/client";
+import {
+  getPublicReleaseData,
+  type PublicRelease,
+} from "@/lib/releases/public-release-data";
 import ReleasesList from "./ReleasesList";
 
 export const dynamic = "force-dynamic";
 
-type ReleaseGroup = {
-  id: number;
-  title: string | null;
-  title_kana: string | null;
-  sort_title: string | null;
-  release_date: string | null;
-  tagline: string | null;
-  notes: string | null;
-};
-
-type Release = {
-  id: number;
-  title: string | null;
-  release_group_id: number | null;
-  release_type: string | null;
-  artist_credit: string | null;
-  release_date: string | null;
-  jacket_image_url: string | null;
-  edition_name: string | null;
-  is_primary_edition: boolean | null;
-};
-
-type SongDigitalRelease = {
-  id: number;
-  song_id: number;
-  title: string | null;
-  release_date: string | null;
-  jacket_image_url: string | null;
-  official_url: string | null;
-  notes: string | null;
-  songs: {
-    id: number;
-    title: string | null;
-    title_kana: string | null;
-    sort_title: string | null;
-    artist_credit: string | null;
-  } | null;
-};
+type Release = PublicRelease;
 
 export type ReleaseCard = {
   sourceType: "release" | "digital_single";
@@ -88,47 +54,14 @@ function getEditionLabel(release: Release) {
 }
 
 export default async function ReleasesPage() {
-  const { data: groups, error: groupsError } = await supabase
-    .from("release_groups")
-    .select("id,title,title_kana,sort_title,release_date,tagline,notes")
-    .order("release_date", { ascending: false, nullsFirst: false })
-    .order("id", { ascending: false })
-    .returns<ReleaseGroup[]>();
+  const {
+    releaseGroups: groups,
+    releases,
+    legacyDigitalReleases: digitalReleases,
+    hasError,
+  } = await getPublicReleaseData();
 
-  const { data: releases, error: releasesError } = await supabase
-    .from("releases")
-    .select(
-      "id,title,release_group_id,release_type,artist_credit,release_date,jacket_image_url,edition_name,is_primary_edition"
-    )
-    .order("release_date", { ascending: false, nullsFirst: false })
-    .order("id", { ascending: false })
-    .returns<Release[]>();
-
-  const { data: digitalReleases, error: digitalReleasesError } = await supabase
-    .from("song_digital_releases")
-    .select(
-      `
-      id,
-      song_id,
-      title,
-      release_date,
-      jacket_image_url,
-      official_url,
-      notes,
-      songs (
-        id,
-        title,
-        title_kana,
-        sort_title,
-        artist_credit
-      )
-    `
-    )
-    .order("release_date", { ascending: false, nullsFirst: false })
-    .order("id", { ascending: false })
-    .returns<SongDigitalRelease[]>();
-
-  if (groupsError || releasesError || digitalReleasesError) {
+  if (hasError) {
     return (
       <main className="mx-auto max-w-6xl px-6 py-12">
         <p className="archive-label text-black/45">RELEASES</p>
