@@ -95,6 +95,9 @@
 - LIVE CD、LIVE Blu-ray / DVD、LIVE album、デジタルLIVE音源もhistorical releaseとして登録できる。ただしavailabilityと`discovery_category`のLIVE由来ルールは引き続き別に適用する。
 - ユーザー向けnavigationの`links`、事実の根拠である`reference_sources`、releaseのofficial/product pageは責務が異なる。同じURLが複数に存在してよく、無理にURL tableを統合しない。
 - edition/packageに複数のofficial/product/evidence URLが必要になった場合は、`release_sources`で`reference_sources`を再利用する。navigation linkを必要に応じて後から別途追加できる。
+- `release_items`は、release component内に存在するtrack/itemの一出現を表す。`songs.id`はそのitemのnullable relationであり、item identityそのものではない。
+- 同じexact `songs.id`は、同一release/packageの別component、CDとBlu-ray、Disc 1とDisc 2、または実商品上必要な複数trackへ複数回出現できる。song identityをrelease itemの一意性制約に使わない。
+- release/component/track positionとsong relationは別概念である。positionが十分確定しているcomponent itemだけは、component内で同じpositionを重複登録しない。componentまたはpositionが未確定のlegacy itemは、推測で一意制約の対象にしない。
 
 ## Full-song verification: release information collection
 
