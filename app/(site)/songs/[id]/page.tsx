@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { DISCOVERY_CATEGORY_OPTIONS } from "@/app/%5Fmanage/options";
+import { supabaseAdmin } from "@/lib/supabase/admin";
 import { supabase } from "@/lib/supabase/client";
 
 type PageProps = {
@@ -104,6 +106,21 @@ type SongDigitalRelease = {
   jacket_image_url: string | null;
   official_url: string | null;
   notes: string | null;
+};
+
+type SongAvailability = {
+  id: number;
+  song_id: number;
+  platform: string | null;
+  provider: string | null;
+  provider_scope: string | null;
+  access_type: string | null;
+  completeness: string | null;
+  content_type: string | null;
+  media_type: string | null;
+  access_url: string | null;
+  is_current: boolean;
+  note: string | null;
 };
 
 function hasValue(value: string | null | undefined) {
@@ -740,6 +757,20 @@ export default async function SongDetailPage({ params, searchParams }: PageProps
     throw new Error("関連リンクの取得に失敗しました。");
   }
 
+  const { data: availabilities, error: availabilitiesError } = await supabaseAdmin
+    .from("song_availabilities")
+    .select(
+      "id,song_id,platform,provider,provider_scope,access_type,completeness,content_type,media_type,access_url,is_current,note"
+    )
+    .eq("song_id", songId)
+    .order("is_current", { ascending: false })
+    .order("id", { ascending: true })
+    .returns<SongAvailability[]>();
+
+  if (availabilitiesError) {
+    throw new Error("視聴・入手先情報の取得に失敗しました。");
+  }
+
   const { data: relatedSongs, error: relatedSongsError } = song.song_group_id
     ? await supabase
         .from("songs")
@@ -844,6 +875,15 @@ export default async function SongDetailPage({ params, searchParams }: PageProps
       fallbackSecondaryLinkImageUrl;
 
   const currentVersionDisplay = getCurrentVersionDisplay(song);
+  const currentAvailabilities = (availabilities ?? []).filter(
+    (availability) => availability.is_current
+  );
+  const historicalAvailabilities = (availabilities ?? []).filter(
+    (availability) => !availability.is_current
+  );
+  const discoveryCategoryLabel = DISCOVERY_CATEGORY_OPTIONS.find(
+    (option) => option.value === song.discovery_category
+  )?.label;
 
   return (
     <main className="mx-auto max-w-6xl px-6 py-12">
@@ -1004,6 +1044,50 @@ export default async function SongDetailPage({ params, searchParams }: PageProps
         </dl>
       </section>
 
+      <section className="mt-10 grid gap-8 md:grid-cols-[180px_1fr]">
+        <div className="section-head">
+          <p className="section-label text-black/45">DISCOVERY</p>
+          <h2 className="section-title-ja">発見</h2>
+        </div>
+
+        <div>
+          {currentAvailabilities.length > 0 ? (
+            <div>
+              <h3 className="text-xs font-medium tracking-[0.08em] text-black/55">
+                現在聴ける場所
+              </h3>
+              <div className="mt-2">
+                <AvailabilityList availabilities={currentAvailabilities} />
+              </div>
+            </div>
+          ) : historicalAvailabilities.length === 0 ? (
+            <p className="border-y border-black/10 py-3 text-sm leading-6 text-black/40">
+              視聴・入手先はまだ整理されていません。
+            </p>
+          ) : null}
+
+          {historicalAvailabilities.length > 0 ? (
+            <div className="mt-6">
+              <h3 className="text-xs font-medium tracking-[0.08em] text-black/35">
+                過去の視聴・入手
+              </h3>
+              <div className="mt-2 opacity-75">
+                <AvailabilityList
+                  availabilities={historicalAvailabilities}
+                  historical
+                />
+              </div>
+            </div>
+          ) : null}
+
+          {discoveryCategoryLabel ? (
+            <p className="mt-5 text-xs leading-5 text-black/35">
+              代表的な発見経路：{discoveryCategoryLabel}
+            </p>
+          ) : null}
+        </div>
+      </section>
+
       {fallbackDigitalReleases.length > 0 ? (
         <section className="mt-12 grid gap-8 md:grid-cols-[180px_1fr]">
           <div className="section-head">
@@ -1080,5 +1164,122 @@ export default async function SongDetailPage({ params, searchParams }: PageProps
         <CompactTextBlock value={song.notes} />
       </section>
     </main>
+  );
+}
+
+const availabilityLabels: Record<string, string> = {
+  youtube: "YouTube",
+  digital_streaming: "ストリーミング",
+  digital_download: "ダウンロード",
+  livestream_archive: "配信アーカイブ",
+  physical_product: "商品",
+  free: "無料",
+  paid: "有料",
+  members: "メンバー限定",
+  full: "フル",
+  partial: "一部",
+  video: "動画",
+  audio: "音源",
+  physical: "パッケージ",
+  studio: "スタジオ音源",
+  live: "ライブ",
+  other: "その他",
+};
+
+function getAvailabilityService(availability: SongAvailability) {
+  if (availability.provider_scope === "isekai_official") {
+    return "ヰ世界情緒公式YouTube";
+  }
+
+  if (availability.provider_scope === "vwp_official") {
+    return "V.W.P公式YouTube";
+  }
+
+  return (
+    availability.provider ||
+    (availability.platform
+      ? availabilityLabels[availability.platform] ?? null
+      : null)
+  );
+}
+
+function getAvailabilityTags(availability: SongAvailability) {
+  const values = [
+    availability.access_type,
+    availability.completeness,
+    availability.content_type,
+    availability.media_type,
+  ];
+
+  return [...new Set(values.filter((value): value is string => Boolean(value)))]
+    .map((value) => availabilityLabels[value])
+    .filter((value): value is string => Boolean(value))
+    .filter((value, index, labels) => labels.indexOf(value) === index);
+}
+
+function AvailabilityList({
+  availabilities,
+  historical = false,
+}: {
+  availabilities: SongAvailability[];
+  historical?: boolean;
+}) {
+  return (
+    <div
+      className={`divide-y border-y ${
+        historical
+          ? "divide-black/[0.06] border-black/[0.08] text-black/50"
+          : "divide-black/10 border-black/10"
+      }`}
+    >
+      {availabilities.map((availability) => {
+        const service = getAvailabilityService(availability);
+        const tags = getAvailabilityTags(availability);
+        const content = (
+          <div className="flex items-start justify-between gap-4 py-3">
+            <div className="min-w-0">
+              {service ? (
+                <p className="text-sm font-medium leading-6 text-black/80">
+                  {service}
+                </p>
+              ) : null}
+              {tags.length > 0 ? (
+                <div className="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-[10px] tracking-[0.08em] text-black/40">
+                  {tags.map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
+              ) : null}
+              {availability.note ? (
+                <p className="mt-2 text-xs leading-5 text-black/40">
+                  {availability.note}
+                </p>
+              ) : null}
+            </div>
+            {availability.access_url ? (
+              <span className="shrink-0 pt-1 text-xs text-black/35 transition group-hover:translate-x-0.5 group-hover:text-black">
+                ↗
+              </span>
+            ) : null}
+          </div>
+        );
+
+        return availability.access_url ? (
+          <a
+            key={availability.id}
+            href={availability.access_url}
+            target="_blank"
+            rel="noreferrer"
+            className={`group block transition ${
+              historical ? "hover:bg-black/[0.02]" : "hover:bg-white"
+            }`}
+          >
+            {content}
+          </a>
+        ) : (
+          <div key={availability.id}>{content}</div>
+        );
+      })}
+    </div>
   );
 }
