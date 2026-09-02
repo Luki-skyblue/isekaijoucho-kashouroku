@@ -13,8 +13,37 @@ type LiveArchivePerformance = {
 };
 
 type SetlistPerformanceReference = {
+  id: number;
   live_performance_id: number;
 };
+
+const SETLIST_QUERY_PAGE_SIZE = 1000;
+
+async function getSongSetlistPerformanceReferences(liveIds: number[]) {
+  const entries: SetlistPerformanceReference[] = [];
+
+  for (let from = 0; ; from += SETLIST_QUERY_PAGE_SIZE) {
+    const result = await supabase
+      .from("live_setlist_entries")
+      .select("id,live_performance_id")
+      .in("live_performance_id", liveIds)
+      .eq("entry_type", "song")
+      .order("id", { ascending: true })
+      .range(from, from + SETLIST_QUERY_PAGE_SIZE - 1)
+      .returns<SetlistPerformanceReference[]>();
+
+    if (result.error) {
+      return { data: entries, error: result.error };
+    }
+
+    const page = result.data ?? [];
+    entries.push(...page);
+
+    if (page.length < SETLIST_QUERY_PAGE_SIZE) {
+      return { data: entries, error: null };
+    }
+  }
+}
 
 function groupLivesByYear(lives: LiveArchivePerformance[]) {
   const groups = new Map<string, LiveArchivePerformance[]>();
@@ -52,15 +81,7 @@ export default async function LivePage() {
   let setlistError = null;
 
   if (!error && lives.length > 0) {
-    const result = await supabase
-      .from("live_setlist_entries")
-      .select("live_performance_id")
-      .in(
-        "live_performance_id",
-        lives.map((live) => live.id),
-      )
-      .eq("entry_type", "song")
-      .returns<SetlistPerformanceReference[]>();
+    const result = await getSongSetlistPerformanceReferences(lives.map((live) => live.id));
 
     setlistError = result.error;
     setlistCounts = (result.data ?? []).reduce((counts, entry) => {
