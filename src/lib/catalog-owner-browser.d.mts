@@ -1,0 +1,13 @@
+export type ChoiceKind='work'|'version'|'singer'|'entry';
+export type Choice={id:string;revision?:number;title?:string;sortTitle?:string|null;name?:string;entityType?:'artist'|'voicebank';label?:string;labelBasis?:string;workId?:string;workTitle?:string|null;entryKind?:string;vocalHints?:string[]};
+export type ChoiceRequest={schemaVersion:1;kind:ChoiceKind;query:string;workId:string|null;workRevision:number|null;cursor:string|null};
+export type Snapshot={schemaVersion:1;id:string;revision:string;displayTitle:string;sortTitle:string|null;titleBasis:string;visibility:'draft'};
+export type OwnerRequest=Record<string,unknown>;
+export type Receipt={entryId:string;operationId:string;replayed:boolean;after:{displayTitle:string;sortTitle:string|null};savedAt:string};
+export type Journal={schemaVersion:1;project:string;phase:'prepared'|'uncertain'|'failed'|'saved';action:'save'|'create';request:OwnerRequest;receipt:Receipt|null;before:Snapshot|null;summary:{work:string;version:string;singers:string[]}};
+export type OwnerClient={get(id:string):Promise<Snapshot>;choices(request:ChoiceRequest):Promise<ChoiceRequest&{items:Choice[];nextCursor:string|null}>;save(request:OwnerRequest):Promise<Receipt>;create(request:OwnerRequest):Promise<Receipt>};
+export function createOwnerBrowserClient(options:{token:string;fetchImpl?:typeof fetch}):OwnerClient;
+export function ownerJournalKey(project:string):string;
+export function readOwnerJournal(raw:string|null,project:string):Journal|null;
+export function prepareOwnerJournal(project:string,action:'save'|'create',request:OwnerRequest,options?:{before?:Snapshot|null;summary?:{work:string;version:string;singers:string[]}}):Journal;
+export function submitOwnerJournal(client:OwnerClient,journal:Journal,persist:(value:Journal)=>void):Promise<{journal:Journal;error:Error|null}>;
