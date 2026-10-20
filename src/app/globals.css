@@ -94,14 +94,13 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(-
 .setlist{margin-top:17px;border-top:1px solid var(--hair)}
 .setlist-row{display:grid;grid-template-columns:36px 1fr;gap:14px;padding:11px 0;border-bottom:1px solid var(--hair)}
 .setlist-index{font-family:var(--mono);font-size:12px;color:var(--quiet);padding-top:3px}
-/* Home cover uses the SAME sunflower source image as the original public repo.
- * The local asset takes precedence; remote raw GitHub is a preview-only fallback.
- * Copy old repo public/home-themes/sunflower/hero.webp here before production. */
+/* Same sunflower background as the original site, now included in public/.
+ * Serve one local image instead of loading a second remote background layer. */
 body:has(.home-page) .main{width:100%;max-width:none;padding:0;min-height:0}
 body:has(.home-page) .site-footer{display:none}
 .home-page{width:100%;position:relative}
 .home-cover{position:relative;isolation:isolate;overflow:hidden;border-bottom:1px solid var(--hair);background:linear-gradient(120deg,#fdfaf0,#f4edd2 70%,#eee2b9);min-height:590px}
-.home-cover-art{position:absolute;inset:0;z-index:-2;background-image:url('/home-themes/sunflower/hero.webp'),url('https://raw.githubusercontent.com/Luki-skyblue/isekaijoucho-kashouroku/main/public/home-themes/sunflower/hero.webp');background-size:cover;background-position:70% center}
+.home-cover-art{position:absolute;inset:0;z-index:-2;background-image:url('/home-themes/sunflower/hero.webp');background-size:cover;background-position:70% center}
 .home-cover-haze{position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 18% 38%,rgba(245,245,242,1) 0%,rgba(245,245,242,.98) 24%,rgba(245,245,242,.88) 42%,rgba(245,245,242,.42) 60%,transparent 78%)}
 .home-cover-inner{padding-block:77px 86px;min-height:590px}
 .home-kicker{font-size:11px;color:rgba(0,0,0,.45);letter-spacing:.14em;margin:0}

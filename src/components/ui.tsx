@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import {RecordArtwork} from './record-artwork';
 import {JsonObject,displayDate,num,str,textOr,numberOfPages,explicitThumbnail,ViewMode} from '@/lib/core';
 import {liveCardLabel} from '@/lib/live-list-params';
 
@@ -35,9 +36,7 @@ export function PageLinks({path,term='',page,total,limit=24,view='list'}:{path:s
  </nav>;
 }
 function RecordThumbnail({x}:{x:JsonObject}){
- const url=explicitThumbnail(x);
- // The CSS visual is explicitly a placeholder, never invented cover art.
- return <span className="record-cover" aria-hidden="true"><span className="record-cover-glyph">♪</span>{url && <img src={url} alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer" />}</span>;
+ return <RecordArtwork url={explicitThumbnail(x)}/>;
 }
 export function SimpleList({items,kind,view='list'}:{items:JsonObject[];kind:'work'|'release'|'event';view?:ViewMode}){
  const id=(x:JsonObject)=>str(kind==='work'?x.id:kind==='event'?x.eventId:x.familyId);

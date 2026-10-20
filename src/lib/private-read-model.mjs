@@ -3,6 +3,7 @@ import {readFileSync, statSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {gzipSync} from 'node:zlib';
 import {performance} from 'node:perf_hooks';
+import {catalogArtworkForEntry} from './catalog-artwork.mjs';
 import {isAbsolute} from 'node:path';
 
 export const PURPOSE = 'PRIVATE_G0_READ_MODEL_EXPERIMENT_NOT_FOR_PUBLICATION';
@@ -222,7 +223,7 @@ export function queryEntries(model, filters = {}) {
       rank = 1;
     }
     rows.push({entryId,title:d.title,kind:d.kind,displayCredit:d.displayCredit,legacySongType:d.legacySongType,
-      thumbnailUrl:null,matchKind:rank ? 'component' : 'title',rank,sortTitle:e.sortTitle ?? d.title});
+      thumbnailUrl:catalogArtworkForEntry(e)?.imageUrl??null,matchKind:rank ? 'component' : 'title',rank,sortTitle:e.sortTitle ?? d.title});
   }
   rows.sort((a,b) => a.rank-b.rank || (sort === 'title_desc' ? -1 : 1)*cmp(a.sortTitle,b.sortTitle) || cmp(a.entryId,b.entryId));
   return {items:rows.slice(offset,offset+limit).map(({rank,sortTitle,...x}) => x),total:rows.length,limit,offset};
