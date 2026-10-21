@@ -1,0 +1,22 @@
+.info-page{max-width:880px;margin-inline:auto}
+.info-page .page-heading{margin-bottom:26px;padding:0}
+.info-page .page-heading h1{font-family:SongMincho,var(--serif);font-size:34px;font-weight:500;letter-spacing:.035em;line-height:1.5;margin:0}
+.info-page p{font-size:13px;line-height:2;margin:0 0 13px;overflow-wrap:anywhere}
+.info-page a{text-underline-offset:3px}
+.info-intro{margin-bottom:24px}.info-intro p{margin-bottom:10px}
+.info-section{margin-top:28px;padding-top:25px;border-top:1px solid var(--hair);scroll-margin-top:100px}
+.info-section:first-of-type{border-top:0;margin-top:0;padding-top:0}
+.info-section h2{font-family:SongMincho,var(--serif);font-size:21px;line-height:1.6;font-weight:500;margin:0 0 15px}
+.info-section h3{font-family:var(--sans);font-size:13px;font-weight:500;margin:22px 0 10px}
+.info-section [id]{scroll-margin-top:100px}
+.info-page .info-small,.info-page .info-state{color:var(--quiet);font-size:12px}
+.info-details{margin:14px 0 18px;font-size:12px;color:var(--quiet)}.info-details summary{cursor:pointer;list-style-position:inside}.info-details p{font-size:12px;margin-top:12px}
+.info-table-wrap{max-width:100%;overflow-x:auto;margin:16px 0}.info-table{width:100%;border-collapse:collapse;font-size:12px;line-height:1.9;text-align:left}
+.info-table th,.info-table td{padding:12px 14px;border-bottom:1px solid var(--hair);vertical-align:top}.info-table thead{color:var(--quiet)}.info-table th{font-weight:500}.info-table th:first-child{width:150px}
+.info-states{margin:0 0 22px;font-size:12px;line-height:1.9}.info-states>div{display:grid;grid-template-columns:150px minmax(0,1fr);gap:18px;margin-bottom:12px}.info-states dt{color:var(--quiet)}.info-states dd{margin:0}
+.info-contact{padding:0 0 22px;border-bottom:1px solid var(--hair)}.info-contact>a{font-size:12px}.info-page .contribution-panel{padding-top:24px}
+.info-page .contribution-panel h2{font-family:var(--sans);font-size:13px;font-weight:500;margin-bottom:18px}
+@media(max-width:650px){
+ .info-page .page-heading h1{font-size:26px}.info-page .page-heading{margin-bottom:22px}.info-section{margin-top:24px;padding-top:22px}.info-section h2{font-size:20px}
+ .info-table th,.info-table td{padding:11px 8px}.info-table th:first-child{width:112px}.info-states>div{grid-template-columns:minmax(0,1fr);gap:3px}
+}

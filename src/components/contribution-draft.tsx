@@ -32,8 +32,8 @@ export function ContributionDraft({recipient}:{recipient:string|null}) {
   catch{setCopyMessage('コピーできませんでした。下の確認欄から文章を選択してコピーしてください。');}
  }
  function clearDraft(){setDraft(EMPTY);setCopyMessage('入力内容をクリアしました。');try{window.localStorage.removeItem(KEY);}catch{/* Optional */}}
- return <section className="panel contribution-panel" aria-label="情報提供の原稿を作成">
-  <h2>情報提供の原稿を作る</h2>
+ return <section className="panel contribution-panel" aria-label="情報提供の入力">
+  <h2>内容を入力</h2>
   <div className="contribution-fields">
    <label htmlFor="contribution-type">種類</label>
    <select id="contribution-type" value={draft.category} onChange={e=>patch('category',e.target.value)}>{CATEGORIES.map(v=><option key={v} value={v}>{v}</option>)}</select>
@@ -44,10 +44,10 @@ export function ContributionDraft({recipient}:{recipient:string|null}) {
    <label htmlFor="contribution-reference">出典・参考URL（任意）</label>
    <textarea id="contribution-reference" maxLength={1500} rows={3} value={draft.references} onChange={e=>patch('references',e.target.value)} placeholder="公式サイト、動画、商品情報などのURLと該当箇所" />
   </div>
-  <p className="muted tiny">入力内容はこのブラウザのローカルストレージに下書き保存されます。サーバーには送信されません。共有端末では利用後に「下書きを削除」してください。</p>
+  <p className="muted tiny">入力内容はこのブラウザに下書き保存されます。共有端末では利用後に「下書きを削除」してください。</p>
   <div className="contribution-actions">
-   <button type="button" className="contribution-primary" onClick={copyDraft} disabled={!valid}>原稿をコピー</button>
-   {mailtoAvailable && <a className="contribution-action" href={emailHref!}>メールアプリで作成 ↗</a>}
+   {mailtoAvailable && <a className="contribution-primary" href={emailHref!}>メールアプリで作成 ↗</a>}
+   <button type="button" className={mailtoAvailable?'contribution-secondary':'contribution-primary'} onClick={copyDraft} disabled={!valid}>原稿をコピー</button>
    <button type="button" className="contribution-secondary" onClick={clearDraft}>下書きを削除</button>
   </div>
   {recipient && valid && !mailtoAvailable && <p className="muted tiny">本文が長いためメールアプリへの一括入力は無効です。「原稿をコピー」で内容を保存し、メールへ貼り付けてください。</p>}

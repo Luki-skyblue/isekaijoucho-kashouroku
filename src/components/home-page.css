@@ -1,0 +1,22 @@
+body:has(.home-page) .main{width:100%;max-width:none;padding:0;min-height:0}
+.home-page{width:100%;position:relative}
+.home-cover{position:relative;isolation:isolate;overflow:hidden;min-height:480px;background:linear-gradient(115deg,var(--paper),var(--theme-art-glow))}
+.home-cover-art{position:absolute;inset:0;z-index:-2;background-image:url('/home-themes/sunflower/hero.webp');background-size:cover;background-position:70% center}
+.home-cover-haze{position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 18% 38%,var(--paper) 0%,color-mix(in srgb,var(--paper) 94%,transparent) 25%,color-mix(in srgb,var(--paper) 72%,transparent) 51%,transparent 80%)}
+.home-cover-inner{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-height:480px;padding-block:48px}
+.home-kicker{font-size:11px;line-height:1.8;color:var(--quiet);letter-spacing:.06em;margin:0}
+.home-page .home-cover h1{font-family:SongMincho,var(--serif);font-size:58px;font-weight:500;line-height:1.35;letter-spacing:.04em;margin:16px 0 32px}
+.home-nav{display:flex;flex-wrap:wrap;gap:12px}
+.home-nav a{display:flex;align-items:center;justify-content:space-between;gap:28px;min-width:145px;min-height:48px;padding:12px 18px;border:1px solid var(--hair-strong);background:color-mix(in srgb,var(--paper) 90%,transparent);font-size:13px;text-decoration:none}
+.home-nav a:first-child{background:var(--accent-deep);border-color:var(--accent-deep);color:#fff}
+.home-nav a:hover{border-color:var(--accent-deep)}.home-nav a:first-child:hover{opacity:.9}
+.home-nav a:focus-visible{outline:2px solid var(--accent-deep);outline-offset:4px}
+html[data-theme="nemophila"] .home-cover-art,html[data-theme="anemone"] .home-cover-art{background-image:none}
+html[data-theme="nemophila"] .home-cover,html[data-theme="anemone"] .home-cover{background-image:radial-gradient(ellipse at 82% 30%,var(--theme-art-glow),transparent 60%),linear-gradient(120deg,var(--paper),var(--theme-tint))}
+@media(max-width:700px){
+ .home-cover,.home-cover-inner{min-height:490px}.home-cover-inner{padding-block:32px}
+ .home-cover-art{background-position:63% center}
+ .home-cover-haze{background:linear-gradient(90deg,color-mix(in srgb,var(--paper) 96%,transparent),color-mix(in srgb,var(--paper) 83%,transparent) 52%,color-mix(in srgb,var(--paper) 40%,transparent))}
+ .home-page .home-cover h1{font-size:43px;margin:12px 0 25px}
+ .home-nav{display:grid;grid-template-columns:minmax(0,1fr);width:220px;max-width:100%;gap:10px}.home-nav a{min-width:0;min-height:46px;font-size:12px;padding:11px 16px}
+}

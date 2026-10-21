@@ -27,8 +27,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     </header>
     <main className="shell main">{review&&<p className="catalog-review-warning" data-export-id={review.exportId}>開発用・実DBスナップショット：未公開候補を含む私有レビューです。一般公開していません。</p>}{children}</main>
     <footer className="site-footer"><div className="shell footer-grid">
-      <p>NOTICE</p>
-      <div><p>非公式ファンデータベース。KAMITSUBAKI STUDIO、ヰ世界情緒さん本人および関係各社とは関係ありません。</p><p>掲載情報には未確認・調査中のものが含まれます。使い方は <Link href="/guide">Guide</Link>、掲載方針は <Link href="/about">About</Link> をご覧ください。</p></div>
+      <p>非公式ファンサイト</p>
+      <nav className="footer-links" aria-label="サイトの案内"><Link href="/about">このサイトについて</Link><Link href="/guide">使い方</Link><Link href="/contribute">情報提供・訂正</Link></nav>
     </div></footer>
   </body></html>;
 }

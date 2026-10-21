@@ -14,10 +14,10 @@ type ThemeId = (typeof THEMES)[number]['id'];
 const THEME_STORAGE_KEY = 'kashouroku-design-theme-v1';
 
 const LINKS = [
-  { href: '/songs', label: '楽曲目録', en: 'SONGS' },
-  { href: '/lives', label: 'LIVE・セットリスト', en: 'LIVE' },
-  { href: '/releases', label: 'リリース', en: 'RELEASES' },
-  { href: '/guide', label: '使い方・ガイド', en: 'GUIDE' },
+  { href: '/songs', label: '楽曲一覧', en: 'SONGS' },
+  { href: '/lives', label: 'LIVE一覧', en: 'LIVE' },
+  { href: '/releases', label: '収録作品', en: 'RELEASES' },
+  { href: '/guide', label: '使い方', en: 'GUIDE' },
   { href: '/about', label: 'このサイトについて', en: 'ABOUT' },
   { href: '/contribute', label: '情報提供・訂正', en: 'SUBMIT INFO' },
 ] as const;
@@ -77,21 +77,21 @@ export default function SiteControls() {
       <span className="menu-word">MENU</span>
     </button>
     {open && <div className="menu-panel" id={panelId}>
-      <p className="menu-section-caption">EXPLORE</p>
+      <p className="menu-section-caption">ページ</p>
       <nav aria-label="サイト内メニュー" className="drawer-links">
         {LINKS.map(({ href, label, en }) => <Link key={href} href={href} aria-current={path === href ? 'page' : undefined} onClick={() => setOpen(false)}>
           <span>{label}</span><small>{en}</small>
         </Link>)}
       </nav>
       <div className="drawer-theme">
-        <p className="menu-section-caption">COSTUME THEME <span className="theme-beta">試作</span></p>
+        <p className="menu-section-caption">衣装テーマ</p>
         <div className="theme-options" role="group" aria-label="衣装テーマを選ぶ">
           {THEMES.map(({ id, label, japanese }) => <button key={id} type="button" className="theme-option" aria-pressed={theme === id} onClick={() => selectTheme(id)}>
             <span className={`theme-dot theme-dot-${id}`} aria-hidden="true" />
             <span><strong>{label}</strong><small>{japanese}</small></span>
           </button>)}
         </div>
-        <p className="theme-help">色のみの試作です。衣装画像・正式な配色は後で確認します。</p>
+        <p className="theme-help">配色を切り替えます。</p>
       </div>
     </div>}
   </div>;

@@ -47,7 +47,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(-
 .site-header nav .nav-about{padding-left:24px;border-left:1px solid var(--hair)}
 .mobile-menu{display:none}
 .site-footer{border-top:1px solid var(--hair);padding-block:28px 42px;color:var(--muted);font-size:12px}
-.site-footer .footer-grid{display:grid;grid-template-columns:220px 1fr;gap:20px}
+.site-footer .footer-grid{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
 .site-footer p{margin:0 0 7px}
 /* Headings, labels, index layouts */
 .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.13em;font-weight:500;color:var(--quiet);margin:0 0 17px}
@@ -96,39 +96,11 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(-
 .setlist-index{font-family:var(--mono);font-size:12px;color:var(--quiet);padding-top:3px}
 /* Same sunflower background as the original site, now included in public/.
  * Serve one local image instead of loading a second remote background layer. */
-body:has(.home-page) .main{width:100%;max-width:none;padding:0;min-height:0}
-body:has(.home-page) .site-footer{display:none}
-.home-page{width:100%;position:relative}
-.home-cover{position:relative;isolation:isolate;overflow:hidden;border-bottom:1px solid var(--hair);background:linear-gradient(120deg,#fdfaf0,#f4edd2 70%,#eee2b9);min-height:590px}
-.home-cover-art{position:absolute;inset:0;z-index:-2;background-image:url('/home-themes/sunflower/hero.webp');background-size:cover;background-position:70% center}
-.home-cover-haze{position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 18% 38%,rgba(245,245,242,1) 0%,rgba(245,245,242,.98) 24%,rgba(245,245,242,.88) 42%,rgba(245,245,242,.42) 60%,transparent 78%)}
-.home-cover-inner{padding-block:77px 86px;min-height:590px}
-.home-kicker{font-size:11px;color:rgba(0,0,0,.45);letter-spacing:.14em;margin:0}
-.home-cover h1{font-family:var(--serif);font-size:clamp(42px,6vw,66px);line-height:1.27;font-weight:500;letter-spacing:.02em;margin:21px 0 25px}
-.home-gold-line{height:1px;width:96px;background:var(--accent);margin:0 0 27px}
-.home-intro{max-width:525px;font-size:14px;line-height:2.25;color:rgba(0,0,0,.58);margin:0}
-.home-disclaimer{max-width:540px;font-size:11px;line-height:1.9;color:rgba(0,0,0,.43);margin-top:11px}
-.home-buttons{display:flex;gap:13px;flex-wrap:wrap;margin-top:35px}
 .primary-link,.secondary-link{display:inline-flex;align-items:center;gap:18px;text-decoration:none;font-size:13px;line-height:1.4;padding:13px 22px;transition:opacity .16s,background .16s}
 .primary-link{background:var(--accent-deep);color:white}
 .primary-link:hover{color:white;opacity:.86}
 .secondary-link{border:1px solid rgba(185,154,82,.65);color:var(--accent-deep)}
 .secondary-link:hover{background:rgba(255,255,255,.65)}
-.home-small-links{display:flex;gap:26px;margin-top:21px;flex-wrap:wrap}
-.home-small-links a{font-size:12px;color:rgba(0,0,0,.48);text-decoration:none}
-.home-small-links a:hover{color:var(--ink)}
-.home-content{padding-bottom:50px;background:linear-gradient(180deg,#fcf9ef 0%,#f5f5f2 95%)}
-.home-content .shell{padding-block:54px}
-.home-section-title{font-family:var(--serif);font-size:26px;font-weight:500;letter-spacing:.03em;margin:6px 0 18px}
-.home-section-label{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--accent-deep);margin:0}
-.home-entries{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:23px;margin-top:32px}
-.home-entry{display:block;text-decoration:none;border-top:2px solid var(--accent);border-bottom:1px solid var(--hair);padding:22px 4px 24px;min-width:0;background:rgba(255,253,247,.4)}
-.home-entry span{font-family:var(--mono);font-size:11px;color:var(--accent-deep);letter-spacing:.1em}
-.home-entry h2{font-family:var(--serif);font-size:21px;font-weight:500;margin:14px 0 10px}
-.home-entry p{font-size:12px;color:var(--muted);margin:0}
-.home-note{border-top:1px solid var(--hair);padding-top:28px;margin-top:60px;max-width:850px;display:grid;grid-template-columns:190px 1fr;gap:28px}
-.home-note h2{font-family:var(--mono);font-size:11px;color:var(--quiet);letter-spacing:.12em;font-weight:500;margin:0}
-.home-note p{font-size:12px;color:var(--muted);margin:0 0 9px}
 @media(min-width:768px){.section-head{padding-left:0;border-left:0}.section-title-ja{font-family:var(--sans);font-size:12px;color:var(--quiet)}}
 @media(max-width:900px){.site-header nav.desktop-nav{gap:14px}.site-header nav a{font-size:12px}.brand-name{font-size:16px}}
 @media(max-width:700px){
@@ -147,13 +119,7 @@ body:has(.home-page) .site-footer{display:none}
   .row-top{align-items:flex-start;flex-direction:column}
   .metadata-line{grid-template-columns:100px 1fr;gap:10px}
   .search-line{flex-wrap:wrap}.search input{flex-basis:100%}
-  .home-cover,.home-cover-inner{min-height:550px}
-  .home-cover-inner{padding-block:56px 64px}
-  .home-cover-art{background-position:63% center}
-  .home-cover-haze{background:linear-gradient(90deg,rgba(245,245,242,.96) 0%,rgba(245,245,242,.83) 52%,rgba(245,245,242,.40) 100%)}
-  .home-entries{grid-template-columns:1fr;gap:14px}
-  .home-note{grid-template-columns:1fr;gap:10px}
-  .site-footer .footer-grid{grid-template-columns:1fr;gap:12px}
+  .site-footer .footer-grid{align-items:flex-start;flex-direction:column;gap:8px}
 }
 
 /* S8-A / common design system (review candidate 1)
@@ -199,7 +165,7 @@ html, body {background:var(--paper);color:var(--ink)}
 .brand-name {font-family:var(--serif);font-weight:400;letter-spacing:.085em}
 .page-heading {border-bottom:0;margin-bottom:20px;padding-bottom:12px}
 .page-heading h1 {font-family:var(--serif);font-weight:400;letter-spacing:.065em;font-size:clamp(32px,4.5vw,54px)}
-.panel h2,.home-section-title,.home-cover h1 {font-family:var(--serif);font-weight:400;letter-spacing:.055em}
+.panel h2 {font-family:var(--serif);font-weight:400;letter-spacing:.055em}
 .section-title-ja {font-family:var(--serif);font-size:17px;color:var(--ink);font-weight:400}
 @media(min-width:768px){.section-title-ja{font-family:var(--serif);font-size:17px;color:var(--ink);font-weight:400}}
 /* A single deliberate separator per conceptual unit, never stacked lines. */
@@ -218,10 +184,6 @@ html, body {background:var(--paper);color:var(--ink)}
 .association {border-left:0;padding-left:0}
 .occurrence {border-bottom:0}
 .occurrence + .occurrence {border-top:1px solid var(--hair);padding-top:23px}
-.home-cover {border-bottom:0}
-.home-entry {border-top:0;border-bottom:0;padding:22px 10px 24px;background:transparent}
-.home-entry + .home-entry {border-left:1px solid var(--hair);padding-left:24px}
-.home-note {border-top:0}
 /* Always-visible menu button, not four expanding desktop links. */
 .site-header {background:var(--paper);border-bottom:1px solid var(--hair)}
 .site-header nav.desktop-nav,.site-header .mobile-menu {display:none!important}
@@ -275,12 +237,6 @@ html, body {background:var(--paper);color:var(--ink)}
 .records-grid .record-meta {display:block;line-height:1.6}
 .records-grid .record-arrow {display:none}
 /* Theme changes colors, not the canonical contents; only Sunflower has reviewed artwork. */
-.home-cover {background:linear-gradient(115deg,var(--paper),var(--theme-art-glow))}
-.home-content {background:linear-gradient(180deg,var(--theme-tint),var(--paper) 98%)}
-.home-section-label,.home-entry span {color:var(--accent-deep)}
-.home-cover-haze {background:radial-gradient(ellipse at 18% 38%,var(--paper) 0%,color-mix(in srgb,var(--paper) 94%,transparent) 25%,color-mix(in srgb,var(--paper) 72%,transparent) 51%,transparent 80%)}
-html[data-theme="nemophila"] .home-cover-art,html[data-theme="anemone"] .home-cover-art {background-image:none}
-html[data-theme="nemophila"] .home-cover,html[data-theme="anemone"] .home-cover {background-image:radial-gradient(ellipse at 82% 30%,var(--theme-art-glow),transparent 60%),linear-gradient(120deg,var(--paper),var(--theme-tint))}
 @media (max-width:900px){.records-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:700px){
  .shell{padding-inline:18px}
@@ -296,7 +252,6 @@ html[data-theme="nemophila"] .home-cover,html[data-theme="anemone"] .home-cover 
  .record-title{font-size:15px}
  .records-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 12px}
  .records-grid .record-title{font-size:15px}
- .home-entry+.home-entry{border-left:0;padding-left:10px}
  .list-toolbar{gap:5px}
 }
 @media (prefers-reduced-motion:reduce) {*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
@@ -374,7 +329,6 @@ html[data-theme="nemophila"] .home-cover,html[data-theme="anemone"] .home-cover 
 .contribution-preview summary {cursor:pointer;}
 .contribution-preview textarea {margin-top:12px;}
 
-@media (min-width:701px){.home-entries{grid-template-columns:repeat(2,minmax(0,1fr));}}
 
 .catalog-review-warning{margin:1rem auto;padding:.65rem .9rem;max-width:1120px;border:1px solid currentColor;font-size:.82rem;line-height:1.65}
 
@@ -477,3 +431,9 @@ html[data-theme="nemophila"] .home-cover,html[data-theme="anemone"] .home-cover 
 .live-detail-art img{object-fit:contain}.live-detail-copy{min-width:0}.live-detail-copy .eyebrow{margin-bottom:8px}
 .live-detail-heading h1{font-family:SongMincho,var(--serif);font-size:34px;font-weight:500;line-height:1.6;letter-spacing:.035em;overflow-wrap:anywhere;margin:0}
 @media(max-width:650px){.live-detail-heading{align-items:flex-start;gap:18px;margin:24px 0 28px}.live-detail-art .record-cover{width:108px;height:108px}.live-detail-copy .eyebrow{font-size:9px;margin-bottom:5px}.live-detail-heading h1{font-size:25px;line-height:1.5}}
+
+/* Shared, compact site information links. */
+.site-footer .footer-grid>p{margin:0;color:var(--quiet)}
+.footer-links{display:flex;flex-wrap:wrap;gap:6px 22px}
+.footer-links a{font-size:11px;text-decoration:none;line-height:2.5}
+.footer-links a:hover{text-decoration:underline}
