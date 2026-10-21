@@ -466,3 +466,7 @@ html[data-theme="nemophila"] .home-cover,html[data-theme="anemone"] .home-cover 
 .catalog-filter-pending{font-size:11px;color:var(--accent-deep);line-height:1.6;white-space:normal}
 .catalog-filter-pending small{display:block;font-size:inherit;color:var(--muted)}
 @media(max-width:700px){.catalog-more-popover{width:min(330px,calc(100vw - 42px))}}
+
+/* Adopted song-detail title and site-name face; local OFL font. */
+@font-face{font-family:SongMincho;src:url('/fonts/shippori-mincho-medium.woff2') format('woff2');font-style:normal;font-weight:500;font-display:swap}
+.brand-name{font-family:SongMincho,var(--serif);font-weight:500}

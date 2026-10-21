@@ -5,6 +5,7 @@ import liveCandidates from './live-filter-candidates.json';
 import type {PrivateModel,LiveListFilters} from './private-read-model.mjs';
 import type {CatalogListFilters} from './catalog-entry-api';
 import type {JsonObject} from './core';
+import {songDetailFromModel} from './song-detail-data.mjs';
 
 let cached:{file:string;sha256:string;model:PrivateModel}|null=null;
 export function privateSnapshotEnabled():boolean {return process.env.CATALOG_DATA_MODE!=='public_release'&&privateSnapshotConfig() !== null;}
@@ -24,6 +25,7 @@ async function load():Promise<PrivateModel> {
 export async function privateSnapshotInfo():Promise<{exportId:string}> {
  const model=await load();return {exportId:String(model.manifest.exportId)};
 }
+export async function privateSongDetail(entryId:string){return songDetailFromModel(await load(),entryId);}
 export async function privateCatalogList(filters:CatalogListFilters) {return queryEntries(await load(),filters);}
 async function liveContext() {
  const base=await load(),config=privateSnapshotConfig();

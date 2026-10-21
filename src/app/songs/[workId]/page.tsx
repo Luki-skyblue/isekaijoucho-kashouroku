@@ -1,9 +1,8 @@
 import Link from 'next/link';
 import {useCatalogEntryIndex} from '@/lib/catalog-mode';
 import {localCatalogReviewEnabled} from '@/lib/catalog-local-review';
-import {getCatalogEntry,compareCatalogEntries,getCatalogEntryHistory,getCatalogEntryCredits} from '@/lib/catalog-entry-api';
-import {CatalogEntryDetail} from '@/components/catalog-entry-ui';
-import {CatalogWorkContext} from '@/components/catalog-work-context';
+import {getCatalogSongDetail} from '@/lib/catalog-song-api';
+import {CatalogSongDetail} from '@/components/song-detail';
 import {notFound,permanentRedirect} from 'next/navigation';
 import {publicCatalogEnabled,publicLegacySongTarget} from '@/lib/public-catalog';
 import {rpc} from '@/lib/api';
@@ -18,18 +17,8 @@ export default async function SongDetail({params,searchParams}:{params:Promise<{
  }
  if(!validId(workId))notFound();
  if(useCatalogEntryIndex()) {
-  const entry=await getCatalogEntry(workId);
-  if(entry){
-   const primaryWorkId=str(entry.primaryWorkId);
-   const [comparison,history,credits,workMedia,workReleases]=await Promise.all([
-    compareCatalogEntries(workId),
-    getCatalogEntryHistory(workId,50,(historyPage-1)*50),
-    validId(primaryWorkId)?getCatalogEntryCredits(workId):Promise.resolve(null),
-    validId(primaryWorkId)?rpc('kashouroku_v3_work_media',{p_work_id:primaryWorkId,p_limit:50,p_offset:0}):Promise.resolve(null),
-    validId(primaryWorkId)?rpc('kashouroku_v3_work_releases',{p_work_id:primaryWorkId,p_limit:50,p_offset:0}):Promise.resolve(null)
-   ]);
-   return <>{localCatalogReviewEnabled()&&<p className="catalog-review-warning">開発用・ローカル候補レビュー：未公開の候補を表示しています。歌唱履歴・クレジットの個別確認は実DB公開後に行います。</p>}<CatalogEntryDetail detail={entry} comparison={comparison} history={history} historyPage={historyPage}/>{validId(primaryWorkId)&&<CatalogWorkContext credits={credits} media={workMedia} releases={workReleases} primaryWorkId={primaryWorkId}/>}</>;
-  }
+  const song=await getCatalogSongDetail(workId);
+  if(song)return <>{localCatalogReviewEnabled()&&<p className="catalog-review-warning">開発用・ローカル候補レビュー</p>}<CatalogSongDetail song={song} initialTab={historyPage>1?'history':'info'}/></>;
  }
  const [work,renditions,media,releases,sources]=await Promise.all([
   rpc('kashouroku_v3_work',{p_work_id:workId}),

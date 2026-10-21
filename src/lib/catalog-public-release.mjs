@@ -2,6 +2,7 @@
 import {randomUUID,createHash} from 'node:crypto';
 import {readFileSync,statSync} from 'node:fs';
 import {validateExport,PURPOSE,PUBLIC_PURPOSE,liveCandidatesApplicable,applyLiveFilterCandidates} from './private-read-model.mjs';
+import {songMetadataForEntry} from './song-detail-data.mjs';
 
 const scalar=Symbol('scalar'),url=Symbol('url'),absentUrl=Symbol('absent-url');
 const obj=(names='',children={})=>({...Object.fromEntries(names.split(' ').filter(Boolean).map(k=>[k,scalar])),...children});
@@ -26,7 +27,14 @@ const workRelease=obj('durationMs itemKind rawTrackPosition rawTrackTitle releas
 const source=obj('confirmsSpecificFact provesFullPerformance publisher relationLevel relationScope sourceId sourceKind title urlStatus',{url:absentUrl});
 const page=(item,names='')=>obj('workId entryId limit offset total '+names,{items:list(item)});
 const historyItem=obj('completeness matchBasis multiWork occurredOn partLabel partVocalRows renditionId renditionKind renditionLabel renditionPartId sequenceNo singerSetConfirmedForEntry versionId workId',{relatedEvents:list(obj('eventId title'))});
+const factReview=obj('outcome');
+const songMetadata=obj('titleKana tieUp originalArtist originalVocal',{
+ firstAppearance:obj('date label'),firstFull:obj('date label'),originalCredits:list(obj('role name')),
+ lyricsUrl:url,firstAppearanceReview:obj('coverage partialConfirmed'),
+ fieldReview:obj('',{firstAppearance:factReview,firstFull:factReview,tieUp:factReview,media:factReview,releases:factReview,history:factReview,versions:factReview,
+  credits:obj('',{lyricist:factReview,composer:factReview,arranger:factReview})})});
 const entryDetail=obj('displayCredit entryId kind legacySongType primaryWorkId title editorialOriginLabel editorialOriginStatus',{
+ songMetadata,
  singers:list(singer),variations:list(variation),relatedVariants:list(obj('displayCredit entryId title')),linkedRenditions:list(obj('renditionId')),
  medleySegments:list(obj('rawLabel sequence workId workTitle')),containingMedleys:list(obj('entryId title'))});
 const entry=obj('_exportId visibility candidateSetExhaustive sortTitle verificationStatus',{
@@ -102,6 +110,7 @@ export function createPublicRelease(input,{releaseId=randomUUID(),createdAt=new 
   const p=project(spec,payload(r));p._exportId=releaseId;
   if(r.record_type==='entry'){
    const e=base.entries.get(r.record_id);p.visibility='listed';
+   p.detail.songMetadata=project(songMetadata,songMetadataForEntry(e));
    p.candidateSetExhaustive=e.candidateSetExhaustive===true&&(e.unresolvedTokens??[]).length===0&&e.singerIds.length>0&&
     !(e.flags??[]).some(x=>['group_without_membership','role_or_identity_review_voicebank'].includes(x));
    p.detail.relatedVariants=p.detail.relatedVariants.filter(x=>ids.has(x.entryId));
