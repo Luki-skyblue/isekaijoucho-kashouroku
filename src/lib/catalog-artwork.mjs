@@ -20,14 +20,18 @@ export function rankArtworkCandidates(candidates){
  sorted.sort((a,b)=>PRIORITY[a.kind]-PRIORITY[b.kind]||dateKey(a.date).localeCompare(dateKey(b.date))||a.imageUrl.localeCompare(b.imageUrl));
  const seen=new Set();return sorted.filter(x=>{if(seen.has(x.imageUrl))return false;seen.add(x.imageUrl);return true;});
 }
+/** A recording association belongs to this exact catalogue vocal form. */
+export function artworkEntryMatches(entry,r){
+ const d=entry?.detail;if(!d||!r)return false;
+ return r.entryId===d.entryId&&(r.kind??'song_variant')===d.kind&&r.primaryWorkId===d.primaryWorkId&&r.title===d.title&&
+  JSON.stringify(r.variations??[])===JSON.stringify(d.variations??[])&&
+  Array.isArray(entry.singerIds)&&Array.isArray(r.singerIds)&&r.singerIds.length===entry.singerIds.length&&
+  r.singerIds.every(id=>entry.singerIds.includes(id));
+}
 /** Exact curated entry, work, singer set and variations. Never inherit by title. */
 export function catalogArtworkCandidatesForEntry(entry,records=ARTWORK_RECORDS){
- const d=entry?.detail;if(!d)return [];
- const r=records.find(x=>x.entryId===d.entryId);
- if(!r||(r.kind??'song_variant')!==d.kind||r.primaryWorkId!==d.primaryWorkId||r.title!==d.title||
-  JSON.stringify(r.variations??[])!==JSON.stringify(d.variations??[])||
-  !Array.isArray(entry.singerIds)||r.singerIds.length!==entry.singerIds.length||
-  !r.singerIds.every(id=>entry.singerIds.includes(id)))return [];
+ const r=records.find(x=>artworkEntryMatches(entry,x));
+ if(!r)return [];
  return rankArtworkCandidates(r.candidates);
 }
 export function catalogArtworkForEntry(entry,records=ARTWORK_RECORDS){

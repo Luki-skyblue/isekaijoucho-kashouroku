@@ -2,7 +2,7 @@
 // Empty reads are not negative findings. Work-scoped links never establish a
 // particular vocal configuration, and a work arranger is not a version arranger.
 import legacy from './song-legacy-data.json' with {type:'json'};
-import {catalogArtworkCandidatesForEntry,eventArtworkForEvent,rankArtworkCandidates} from './catalog-artwork.mjs';
+import {artworkEntryMatches,catalogArtworkCandidatesForEntry,eventArtworkForEvent,rankArtworkCandidates} from './catalog-artwork.mjs';
 import {ARTWORK_RECORDS,RELEASE_ARTWORK_RECORDS,EVENT_ARTWORK_RECORDS} from './catalog-artwork-data.mjs';
 
 const arr=x=>Array.isArray(x)?x:[],str=x=>typeof x==='string'?x:'',object=x=>x!==null&&typeof x==='object'&&!Array.isArray(x);
@@ -88,25 +88,28 @@ function songVideosForEntry(entry,work){
  videos.sort((a,b)=>(a.kind==='music_video'?0:1)-(b.kind==='music_video'?0:1)||str(a.publishedOn).localeCompare(str(b.publishedOn)));
  return videos;
 }
-function songReleasesForEntry(entry,work){
+function songReleasesForEntry(entry,work,releaseRecords=RELEASE_ARTWORK_RECORDS){
  const records=legacyRecords(entry),solo=exactSiriusSolo(entry);
  const rawReleases=arr(work.releases),releases=[];
  for(const r of rawReleases){
   const candidates=releaseCandidates(r,records);
   const unambiguous=candidates.some(old=>rawReleases.filter(other=>releaseCandidates(other,[{releases:[old]}]).length).length===1);
-  if(!unambiguous&&!(solo&&SIRIUS_SOLO_RELEASES.includes(r.releaseItemId)))continue;
+  const registered=releaseRecords.filter(x=>x.familyId===r.family?.familyId&&x.editionId===r.edition?.editionId);
+  const explicit=registered.some(x=>arr(x.entries).some(target=>artworkEntryMatches(entry,target)));
+  if(!unambiguous&&!explicit&&!(solo&&SIRIUS_SOLO_RELEASES.includes(r.releaseItemId)))continue;
   const cover=known(candidates.map(x=>safeSongUrl(x.imageUrl))),shared=r.family?.familyId==='de19530d-b318-5828-b6c8-b381e2a98a30';
-  releases.push({...r,imageUrl:cover?.startsWith('https:')?cover:null,imageSourceUrl:records.find(x=>x.releases.some(y=>candidates.includes(y)))?.sourceUrl??null,editionLabel:shared?null:r.edition?.editionKind==='digital'?'配信':r.edition?.editionName??null});
+  const image=rankArtworkCandidates(registered.map(x=>({kind:'release',imageUrl:x.imageUrl,sourceUrl:x.sourceUrl})))[0];
+  releases.push({...r,imageUrl:image?.imageUrl??(cover?.startsWith('https:')?cover:null),imageSourceUrl:image?.sourceUrl??records.find(x=>x.releases.some(y=>candidates.includes(y)))?.sourceUrl??null,editionLabel:shared?null:r.edition?.editionKind==='digital'?'配信':r.edition?.editionName??null});
  }
  return releases;
 }
-function songLivesForEntry(entry){
+function songLivesForEntry(entry,eventRecords=EVENT_ARTWORK_RECORDS){
  const lives=new Map();
  for(const h of arr(entry.history))for(const ev of arr(h.relatedEvents)){
   const key=ev.eventId+'|'+str(h.occurredOn),previous=lives.get(key),uncertain=h.matchBasis==='same_version_only'&&h.singerSetConfirmedForEntry!==true;
   lives.set(key,{eventId:ev.eventId,title:ev.title,date:h.occurredOn??null,uncertain:previous?previous.uncertain&&uncertain:uncertain});
  }
- return [...lives.values()].map(live=>({...live,imageUrl:eventArtworkForEvent(live)?.imageUrl??null})).sort((a,b)=>str(b.date).localeCompare(str(a.date)));
+ return [...lives.values()].map(live=>({...live,imageUrl:eventArtworkForEvent(live,eventRecords)?.imageUrl??null})).sort((a,b)=>str(b.date).localeCompare(str(a.date)));
 }
 function artworkCandidates(entry,videos,releases,lives,{entryRecords=ARTWORK_RECORDS,releaseRecords=RELEASE_ARTWORK_RECORDS,eventRecords=EVENT_ARTWORK_RECORDS}={}){
  const candidates=catalogArtworkCandidatesForEntry(entry,entryRecords).map(c=>({...c,date:c.date??videos.find(v=>youtubeId(v.url)&&youtubeId(v.url)===youtubeId(c.sourceUrl))?.publishedOn??null}));
@@ -118,19 +121,21 @@ function artworkCandidates(entry,videos,releases,lives,{entryRecords=ARTWORK_REC
   for(const image of [...registered,...(release.imageUrl?[{imageUrl:release.imageUrl,sourceUrl:release.imageSourceUrl}]:[])])
    candidates.push({kind,imageUrl:image.imageUrl,sourceUrl:image.sourceUrl,date:release.edition?.releaseDate??null});
  }
- for(const live of lives)if(!live.uncertain){const image=eventArtworkForEvent(live,eventRecords);if(image)candidates.push({...image,date:live.date});}
+ // A poster illustrates a displayed event; using it must not require or mutate
+ // the independent singer verification state of that history row.
+ for(const live of lives){const image=eventArtworkForEvent(live,eventRecords);if(image)candidates.push({...image,date:live.date});}
  return rankArtworkCandidates(candidates);
 }
 /** All display surfaces and failure fallbacks share the same ordered candidates. */
 export function songArtworkCandidatesForEntry(entry,work={},options={}){
  if(!entry?.detail)return [];
- return artworkCandidates(entry,songVideosForEntry(entry,work),songReleasesForEntry(entry,work),songLivesForEntry(entry),options);
+ return artworkCandidates(entry,songVideosForEntry(entry,work),songReleasesForEntry(entry,work,options.releaseRecords),songLivesForEntry(entry,options.eventRecords),options);
 }
 export function songArtworkForEntry(entry,work={}){return songArtworkCandidatesForEntry(entry,work)[0]??null;}
-export function buildSongDetail(entry,work={}){
+export function buildSongDetail(entry,work={},options={}){
  if(!entry?.detail)return null;
- const d=entry.detail,metadata=songMetadataForEntry(entry),creditData=versionCredits(entry,metadata),videos=songVideosForEntry(entry,work),releases=songReleasesForEntry(entry,work),allLives=songLivesForEntry(entry);
- const images=artworkCandidates(entry,videos,releases,allLives);
+ const d=entry.detail,metadata=songMetadataForEntry(entry),creditData=versionCredits(entry,metadata),videos=songVideosForEntry(entry,work),releases=songReleasesForEntry(entry,work,options.releaseRecords),allLives=songLivesForEntry(entry,options.eventRecords);
+ const images=artworkCandidates(entry,videos,releases,allLives,options);
  return {detail:d,metadata,credits:creditData.rows,originalArranger:creditData.originalArranger,
   artwork:images[0]??null,artworkCandidates:images,listenUrl:videos[0]?.url??null,videos,releases,lives:allLives,
   hasUncertainLives:allLives.some(x=>x.uncertain),comparison:entry.compare??null,

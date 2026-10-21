@@ -17,5 +17,5 @@ export function missingSongText(review:unknown):string;
 export function songMetadataForEntry(entry:JsonObject):JsonObject;
 export function songArtworkForEntry(entry:JsonObject,work?:Partial<PrivateWork>):SongDetailData['artwork'];
 export function songArtworkCandidatesForEntry(entry:JsonObject,work?:Partial<PrivateWork>,options?:{entryRecords?:JsonObject[];releaseRecords?:JsonObject[];eventRecords?:JsonObject[]}):SongArtwork[];
-export function buildSongDetail(entry:JsonObject,work?:Partial<PrivateWork>):SongDetailData|null;
+export function buildSongDetail(entry:JsonObject,work?:Partial<PrivateWork>,options?:{entryRecords?:JsonObject[];releaseRecords?:JsonObject[];eventRecords?:JsonObject[]}):SongDetailData|null;
 export function songDetailFromModel(model:PrivateModel,entryId:string):SongDetailData|null;
