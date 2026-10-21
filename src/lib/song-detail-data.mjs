@@ -66,7 +66,7 @@ export function songCreditsForEntry(entry,metadata=songMetadataForEntry(entry)){
 }
 function releaseCandidates(r,records){
  const f=r.family??{},e=r.edition??{},c=r.component??{};
- const titles=[norm(f.title),norm(str(f.title)+str(e.editionName))];
+ const titles=[norm(f.title),norm(str(f.title)+str(e.editionName)),norm(str(f.title)+'(type:'+str(e.editionName)+')')];
  return records.flatMap(x=>x.releases).filter(x=>titles.includes(norm(x.title))&&x.trackNumber===r.trackNumber&&(x.discNumber===null||x.discNumber===c.componentNo));
 }
 function songVideosForEntry(entry,work){
