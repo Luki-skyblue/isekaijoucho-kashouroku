@@ -15,6 +15,8 @@ export function youtubeId(value:unknown):string|null;
 export function safeSongUrl(value:unknown):string|null;
 export function missingSongText(review:unknown):string;
 export function songMetadataForEntry(entry:JsonObject):JsonObject;
+export const SHARED_RELEASE_TRACKLISTS:Array<{familyId:string;title:string;editionIds:string[];label:string;sourceUrl:string}>;
+export function songReleasesForEntry(entry:JsonObject,work?:Partial<PrivateWork>,releaseRecords?:JsonObject[]):JsonObject[];
 export function songArtworkForEntry(entry:JsonObject,work?:Partial<PrivateWork>):SongDetailData['artwork'];
 export function songArtworkCandidatesForEntry(entry:JsonObject,work?:Partial<PrivateWork>,options?:{entryRecords?:JsonObject[];releaseRecords?:JsonObject[];eventRecords?:JsonObject[]}):SongArtwork[];
 export function buildSongDetail(entry:JsonObject,work?:Partial<PrivateWork>,options?:{entryRecords?:JsonObject[];releaseRecords?:JsonObject[];eventRecords?:JsonObject[]}):SongDetailData|null;

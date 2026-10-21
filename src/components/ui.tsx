@@ -37,7 +37,7 @@ export function PageLinks({path,term='',page,total,limit=24,view='list'}:{path:s
  </nav>;
 }
 function RecordThumbnail({x,kind}:{x:JsonObject;kind:'work'|'release'|'event'}){
- return <RecordArtwork url={kind==='event'?eventArtworkForEvent(x)?.imageUrl??explicitThumbnail(x):explicitThumbnail(x)}/>;
+ return <RecordArtwork url={kind==='event'?eventArtworkForEvent(x)?.imageUrl??explicitThumbnail(x):explicitThumbnail(x)} urls={Array.isArray(x.thumbnailUrls)?x.thumbnailUrls.filter((u):u is string=>typeof u==='string'&&(u.startsWith('https://')||u.startsWith('/artwork/')&&!u.includes('..'))):[]}/>;
 }
 export function SimpleList({items,kind,view='list'}:{items:JsonObject[];kind:'work'|'release'|'event';view?:ViewMode}){
  const id=(x:JsonObject)=>str(kind==='work'?x.id:kind==='event'?x.eventId:x.familyId);

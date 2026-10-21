@@ -1,0 +1,13 @@
+import type {JsonObject} from './core';
+import type {PrivateModel} from './private-read-model.mjs';
+import type {SongArtwork} from './song-detail-data.mjs';
+export type ReleaseDisplayContext={artwork:SongArtwork[];itemLinks:Record<string,{entryId:string}>;sharedTracklistLabel:string|null};
+export type ReleaseItemGroup={key:string;editionId:string|null;editionName:string|null;label:string|null;componentKind:string|null;items:JsonObject[]};
+export function releaseKindLabel(kind:unknown):string|null;
+export function releaseMediaLabel(kind:unknown):string|null;
+export function releaseTrackPosition(item:JsonObject):string;
+export function releaseDuration(value:unknown):string|null;
+export function releaseLinks(release:JsonObject):Array<{url:string;label:string}>;
+export function groupReleaseItems(release:JsonObject,items:JsonObject[]):ReleaseItemGroup[];
+export function releaseDisplayContextFromModel(model:PrivateModel,familyId:string,options?:{releaseRecords?:JsonObject[]}):ReleaseDisplayContext|null;
+export function releaseListArtworkFromModel(model:PrivateModel,result:JsonObject|null):JsonObject|null;

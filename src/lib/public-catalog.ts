@@ -7,6 +7,7 @@ import type {CatalogListFilters} from './catalog-entry-api';
 import type {JsonObject} from './core';
 import {songDetailFromModel} from './song-detail-data.mjs';
 import {liveDisplayContextFromModel} from './live-detail-data.mjs';
+import {releaseDisplayContextFromModel,releaseListArtworkFromModel} from './release-detail-data.mjs';
 
 let cache:{file:string;model:PrivateModel}|null=null;
 export function publicCatalogEnabled(){return process.env.CATALOG_DATA_MODE==='public_release';}
@@ -21,10 +22,11 @@ function load():PrivateModel{
 export function publicCatalogList(filters:CatalogListFilters){return queryEntries(load(),filters);}
 export function publicLiveList(filters:LiveListFilters){return queryEvents(load(),filters);}
 export function publicLiveFilterOptions(){return {...eventFilterOptions(load()),review:{id:null,applied:false,publicRelease:true}};}
-export function publicCatalogRpc(name:string,params:JsonObject){return snapshotRpc(load(),name,params);}
+export function publicCatalogRpc(name:string,params:JsonObject){const model=load(),result=snapshotRpc(model,name,params);return name==='kashouroku_v3_release_families'?releaseListArtworkFromModel(model,result):result;}
 export function publicCatalogInfo(){return {releaseId:String(load().manifest.exportId)};}
 export function publicSongDetail(entryId:string){return songDetailFromModel(load(),entryId);}
 export function publicLiveDisplayContext(eventId:string){return liveDisplayContextFromModel(load(),eventId);}
+export function publicReleaseDisplayContext(familyId:string){return releaseDisplayContextFromModel(load(),familyId);}
 export function publicLegacySongTarget(id:number):string|null{
  const matches=[...load().entries.values()].filter(e=>e.legacyIds.includes(id));
  if(matches.length===1)return String(matches[0].detail.entryId);

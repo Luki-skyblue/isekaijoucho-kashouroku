@@ -7,6 +7,7 @@ import type {CatalogListFilters} from './catalog-entry-api';
 import type {JsonObject} from './core';
 import {songDetailFromModel} from './song-detail-data.mjs';
 import {liveDisplayContextFromModel} from './live-detail-data.mjs';
+import {releaseDisplayContextFromModel,releaseListArtworkFromModel} from './release-detail-data.mjs';
 
 let cached:{file:string;sha256:string;model:PrivateModel}|null=null;
 export function privateSnapshotEnabled():boolean {return process.env.CATALOG_DATA_MODE!=='public_release'&&privateSnapshotConfig() !== null;}
@@ -27,6 +28,7 @@ export async function privateSnapshotInfo():Promise<{exportId:string}> {
  const model=await load();return {exportId:String(model.manifest.exportId)};
 }
 export async function privateSongDetail(entryId:string){return songDetailFromModel(await load(),entryId);}
+export async function privateReleaseDisplayContext(familyId:string){return releaseDisplayContextFromModel(await load(),familyId);}
 export async function privateCatalogList(filters:CatalogListFilters) {return queryEntries(await load(),filters);}
 async function liveContext() {
  const base=await load(),config=privateSnapshotConfig();
@@ -38,5 +40,6 @@ export async function privateLiveList(filters:LiveListFilters) {return queryEven
 export async function privateLiveDisplayContext(eventId:string){return liveDisplayContextFromModel((await liveContext()).model,eventId);}
 export async function privateLiveFilterOptions() {const {model,review}=await liveContext();return {...eventFilterOptions(model),review};}
 export async function privateSnapshotRpc(name:string,params:JsonObject):Promise<JsonObject|null> {
- return snapshotRpc(await load(),name,params);
+ const model=await load(),result=snapshotRpc(model,name,params);
+ return name==='kashouroku_v3_release_families'?releaseListArtworkFromModel(model,result):result;
 }

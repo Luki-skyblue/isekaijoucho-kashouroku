@@ -13,6 +13,9 @@ const known=xs=>{const values=unique(xs.filter(x=>x!==null&&x!==undefined&&x!=='
 const SIRIUS_WORK='5dd5d31d-4b77-5259-b5b9-d4828d4c1098',SIRIUS_SOLO='912cf6d0-0f06-4112-9bba-0b1333895122',SIRIUS_DUET='adcac7ec-b932-4a89-a0ac-dd5d3e5445aa';
 const SIRIUS_SOLO_MEDIA=['64c5a08c-b2b6-5738-b5ce-bd418445525a','75be6381-71ba-5c2f-981c-58f1d91debb2'];
 const SIRIUS_SOLO_RELEASES=['ff946479-c1ef-5b05-8d43-93c3163779f3','a5253209-7c10-5945-aedc-dabc8779e75e'];
+// Official alpha/beta pages explicitly state that the fifteen tracks are shared.
+// This is a presentation hint, not a copy of beta tracks or an edition merge.
+export const SHARED_RELEASE_TRACKLISTS=[{familyId:'de19530d-b318-5828-b6c8-b381e2a98a30',title:'創生',editionIds:['43236903-58cb-52cb-b3c6-65f2ba4371fb','ecdc3b97-33b2-5a66-a13c-3ca302f3358f'],label:'α・β共通',sourceUrl:'https://kamitsubaki.jp/discography/isekaijoucho/1036/'}];
 export function youtubeId(value){
  try{const u=new URL(value);const id=u.hostname==='youtu.be'?u.pathname.slice(1):['www.youtube.com','youtube.com','m.youtube.com'].includes(u.hostname)?u.searchParams.get('v'):null;return /^[\w-]{11}$/.test(id??'')?id:null;}catch{return null;}
 }
@@ -88,7 +91,7 @@ function songVideosForEntry(entry,work){
  videos.sort((a,b)=>(a.kind==='music_video'?0:1)-(b.kind==='music_video'?0:1)||str(a.publishedOn).localeCompare(str(b.publishedOn)));
  return videos;
 }
-function songReleasesForEntry(entry,work,releaseRecords=RELEASE_ARTWORK_RECORDS){
+export function songReleasesForEntry(entry,work={},releaseRecords=RELEASE_ARTWORK_RECORDS){
  const records=legacyRecords(entry),solo=exactSiriusSolo(entry);
  const rawReleases=arr(work.releases),releases=[];
  for(const r of rawReleases){
@@ -97,7 +100,7 @@ function songReleasesForEntry(entry,work,releaseRecords=RELEASE_ARTWORK_RECORDS)
   const registered=releaseRecords.filter(x=>x.familyId===r.family?.familyId&&x.editionId===r.edition?.editionId);
   const explicit=registered.some(x=>arr(x.entries).some(target=>artworkEntryMatches(entry,target)));
   if(!unambiguous&&!explicit&&!(solo&&SIRIUS_SOLO_RELEASES.includes(r.releaseItemId)))continue;
-  const cover=known(candidates.map(x=>safeSongUrl(x.imageUrl))),shared=r.family?.familyId==='de19530d-b318-5828-b6c8-b381e2a98a30';
+  const cover=known(candidates.map(x=>safeSongUrl(x.imageUrl))),shared=SHARED_RELEASE_TRACKLISTS.some(x=>x.familyId===r.family?.familyId&&x.title===r.family?.title);
   const image=rankArtworkCandidates(registered.map(x=>({kind:'release',imageUrl:x.imageUrl,sourceUrl:x.sourceUrl})))[0];
   releases.push({...r,imageUrl:image?.imageUrl??(cover?.startsWith('https:')?cover:null),imageSourceUrl:image?.sourceUrl??records.find(x=>x.releases.some(y=>candidates.includes(y)))?.sourceUrl??null,editionLabel:shared?null:r.edition?.editionKind==='digital'?'配信':r.edition?.editionName??null});
  }

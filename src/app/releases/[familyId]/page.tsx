@@ -1,19 +1,60 @@
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
 import {rpc} from '@/lib/api';
-import {asArray,asObject,displayDate,num,safeExternalUrl,str,textOr,validId,JsonObject,rpcDetailPage,numberOfPages} from '@/lib/core';
-import {Breadcrumb,Chip,Empty,Heading,Panel} from '@/components/ui';
+import {asArray,displayDate,num,str,validId,JsonObject,rpcDetailPage,numberOfPages} from '@/lib/core';
+import {Breadcrumb} from '@/components/ui';
+import {RecordArtwork} from '@/components/record-artwork';
+import {groupReleaseItems,releaseKindLabel,releaseMediaLabel,releaseLinks,releaseTrackPosition,releaseDuration,type ReleaseDisplayContext} from '@/lib/release-detail-data.mjs';
+import {publicCatalogEnabled,publicReleaseDisplayContext} from '@/lib/public-catalog';
+import {privateSnapshotEnabled,privateReleaseDisplayContext} from '@/lib/private-snapshot';
+import '@/components/release-detail.css';
+
 const ITEMS_PER_PAGE=100;
 export default async function ReleaseDetail({params,searchParams}:{params:Promise<{familyId:string}>;searchParams:Promise<{itemsPage?:string}>}){
  const {familyId}=await params;if(!validId(familyId))notFound();
  const itemsPage=rpcDetailPage((await searchParams).itemsPage,ITEMS_PER_PAGE);
  const release=await rpc('kashouroku_v3_release_family',{p_family_id:familyId,p_limit:ITEMS_PER_PAGE,p_offset:(itemsPage-1)*ITEMS_PER_PAGE});if(!release)notFound();
- const editions=asArray(release.editions),components=asArray(release.components),items=asArray(release.items),resources=asArray(release.resources);
- return <><Breadcrumb parts={[{label:"リリース一覧",href:"/releases"},{label:textOr(release.title)}]}/><Heading eyebrow="RELEASE / FAMILY" title={textOr(release.title)} description={`種別: ${textOr(release.releaseKind)} ・ edition ${num(release.totalEditions)}件`}/>
- <div className="data-note">印字タイトルと正規化された楽曲IDは別に保持しています。LIVE収録のリンクはそれだけでフル歌唱の証明にはなりません。</div>
- <Panel title="商品エディション">{editions.length?<div className="stack">{editions.map((ed,i)=><article key={str(ed.editionId)||i} className="subrecord"><strong>{textOr(ed.name,'edition名称未登録')}</strong><p className="muted tiny">形態: {textOr(ed.kind)} / 発売: {displayDate(ed.releaseDate)} / 状態: {textOr(ed.status)}</p></article>)}</div>:<Empty>エディションは未登録です。</Empty>}</Panel>
- <Panel id="release-tracks" title={`収録トラック（${num(release.totalItems)}件）`}>{items.length?<div className="stack">{items.map((item,i)=>{const component=components.find(c=>str(c.componentId)===str(item.componentId));const links=asArray(item.associations),subparts=asArray(item.subparts);return <article className="subrecord" key={str(item.itemId)||i}><div className="row-top"><strong>{textOr(item.rawTitle,'印字タイトル未登録')}</strong><Chip>Track {textOr(item.rawPosition,String(num(item.sequenceNo)||'?'))}</Chip></div><p className="muted tiny">{textOr(component?.rawLabel,textOr(component?.componentKind,'収録媒体未登録'))} / 種別: {textOr(item.itemKind)}</p>{subparts.length>0&&<p className="tiny">トラック内の区間: {subparts.map(p=>textOr(p.rawLabel)).join(' / ')}</p>}{links.length>0?<div className="tiny muted">{links.map((a,j)=><p key={str(a.linkId)||j}>{textOr(a.targetKind)}との関係: {textOr(a.relationType)} / 完全性: {textOr(a.completeness,'未確認')}{str(a.targetKind)==='work'&&validId(str(a.workId))?<>{' '}<Link href={`/songs/${encodeURIComponent(str(a.workId))}`}>登録作品を見る ↗</Link></>:null}{str(a.targetKind)==='program_item'?'（曲単位のfullは未確認）':''}</p>)}</div>:<p className="tiny muted">曲との明示的な同定リンクは未登録</p>}</article>})}</div>:<Empty>収録トラックは未登録です。</Empty>}<DetailPager href={`/releases/${encodeURIComponent(familyId)}`} param="itemsPage" page={itemsPage} pages={numberOfPages(num(release.totalItems),ITEMS_PER_PAGE)} anchor="release-tracks" /></Panel>
- <Panel title="関連ページ・販売情報">{resources.length?<div className="stack">{resources.map((r,i)=>{const url=safeExternalUrl(r.url);return <p key={str(r.resourceId)||i}>{url?<a href={url} target="_blank" rel="noopener noreferrer nofollow">{textOr(r.resourceKind,'商品ページ')} ↗</a>:textOr(r.resourceKind,'URL未登録')} <span className="muted tiny">{textOr(r.officiality,'公式性未確認')}・現在の入手可否: {textOr(r.availability,'未確認')}</span></p>})}</div>:<Empty>関連ページは未登録です。</Empty>}</Panel></>;
+ const context=publicCatalogEnabled()?publicReleaseDisplayContext(familyId):privateSnapshotEnabled()?await privateReleaseDisplayContext(familyId):null;
+ const editions=asArray(release.editions),components=asArray(release.components),items=asArray(release.items),groups=groupReleaseItems(release,items),links=releaseLinks(release);
+ const title=str(release.title)||'作品名未登録',total=num(release.totalItems),images=context?.artwork.map(x=>x.imageUrl)??[];
+ const dates=[...new Set(editions.map(e=>str(e.releaseDate)).filter(Boolean))];
+ const formats=[...new Set(components.map(c=>releaseMediaLabel(c.componentKind)).filter((x):x is string=>!!x))];
+ if(!formats.length&&editions.some(e=>e.kind==='digital'))formats.push('配信');
+ const names=editions.map(e=>str(e.name)).filter(n=>n&&n!=='digital'),catalog=editions.filter(e=>str(e.catalogNumber));
+ return <article className="release-detail-page">
+  <Breadcrumb parts={[{label:'収録作品',href:'/releases'},{label:title}]}/>
+  <header className="release-detail-heading">
+   <div className="release-detail-art"><RecordArtwork url={images[0]??null} urls={images}/></div>
+   <div className="release-detail-copy">{releaseKindLabel(release.releaseKind)&&<p className="release-detail-kind">{releaseKindLabel(release.releaseKind)}</p>}<h1>{title}</h1></div>
+  </header>
+  <dl className="release-detail-facts">
+   <div><dt>発売日</dt><dd>{dates.length===1&&editions.every(e=>str(e.releaseDate))?displayDate(dates[0]):dates.length?editions.map((e,i)=><span className="release-detail-fact-value" key={str(e.editionId)||i}>{editions.length>1&&str(e.name)&&<span>{str(e.name)} · </span>}{str(e.releaseDate)?displayDate(e.releaseDate):<Missing/>}</span>):<Missing/>}</dd></div>
+   <div><dt>形態</dt><dd>{formats.length?formats.join('・'):<Missing/>}</dd></div>
+   {editions.length>1&&names.length>0&&<div><dt>バリエーション</dt><dd>{names.join('・')}</dd></div>}
+   {catalog.length>0&&<div><dt>品番</dt><dd>{catalog.map((e,i)=><span className="release-detail-fact-value" key={str(e.editionId)||i}>{editions.length>1&&str(e.name)&&str(e.name)+' · '}{str(e.catalogNumber)}</span>)}</dd></div>}
+  </dl>
+  {links.length>0&&<nav className="release-detail-links" aria-label="関連ページ">{links.map(link=><a key={link.url+link.label} href={link.url} target="_blank" rel="noopener noreferrer nofollow">{link.label} ↗</a>)}</nav>}
+  <section className="release-detail-section" id="release-tracks" aria-labelledby="release-content-heading">
+   <div className="release-detail-section-title"><h2 id="release-content-heading">収録内容</h2>{total>0&&<span className="release-detail-count" aria-label={total+'件'}>{total}</span>}</div>
+   {items.length===0&&total>0?<p className="release-detail-missing">このページに項目がありません。</p>:groups.length?groups.map(group=>{
+    const shared=groups.length===1&&group.items.length===total&&['cd','audio_disc','audio_program'].includes(group.componentKind??'')?context?.sharedTracklistLabel:null;
+    const label=[shared||group.editionName,groups.length>1?group.label:null].filter(Boolean).join(' · ');
+    return <section className="release-detail-disc" key={group.key}>{label&&<h3>{label}</h3>}{group.items.length?<ol className="release-detail-tracks">{group.items.map((item,i)=><Track key={str(item.itemId)||i} item={item} context={context}/>)}</ol>:<Missing/>}</section>;
+   }):<Missing/>}
+   <DetailPager href={'/releases/'+encodeURIComponent(familyId)} param="itemsPage" page={itemsPage} pages={numberOfPages(num(release.totalItems),ITEMS_PER_PAGE)} anchor="release-tracks"/>
+  </section>
+ </article>;
+}
+function Missing(){return <span className="release-detail-missing">準備中</span>;}
+function Track({item,context}:{item:JsonObject;context:ReleaseDisplayContext|null}){
+ const target=context?.itemLinks[str(item.itemId)],title=str(item.rawTitle),duration=releaseDuration(item.durationMs),parts=asArray(item.subparts);
+ return <li className="release-detail-track">
+  <span className="release-detail-position">{releaseTrackPosition(item)}</span>
+  <div className="release-detail-track-copy"><span className="release-detail-track-title">{title?target?<Link href={'/songs/'+target.entryId}>{title}</Link>:title:<Missing/>}</span>
+   {parts.length>0&&<details className="release-detail-parts"><summary>内訳</summary><ol>{parts.map((p,i)=><li key={str(p.partId)||i}>{str(p.rawLabel)||<Missing/>}</li>)}</ol></details>}
+  </div>
+  {duration&&<span className="release-detail-duration">{duration}</span>}
+ </li>;
 }
 
 /** A small server-only pager keeps release item order defined by the RPC. */
