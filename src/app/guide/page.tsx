@@ -14,6 +14,7 @@ export default function Guide(){
   <section id="search" className="info-section">
    <h2>楽曲を探す</h2>
    <p><Link href="/songs">楽曲一覧</Link>で曲名を入力し、「検索」を押します。メドレーは、構成曲の名前でも探せます。</p>
+   <p><Link href="/discover">公開・収録先から探す</Link>では、YouTubeチャンネル・CDや配信・LIVEから楽曲を辿れます。</p>
    {newCatalog?<div id="singer-filters"><h3>歌唱者・楽曲区分</h3>
     <p>条件を選び、「適用」を押すと結果が変わります。</p>
     <div className="info-table-wrap"><table className="info-table"><thead><tr><th scope="col">歌唱者の条件</th><th scope="col">対象</th></tr></thead><tbody>

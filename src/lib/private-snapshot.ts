@@ -10,6 +10,8 @@ import {liveDisplayContextFromModel} from './live-detail-data.mjs';
 import {releaseDisplayContextFromModel,releaseListArtworkFromModel} from './release-detail-data.mjs';
 import {homeRecentFromModel} from './home-recent-data.mjs';
 import {personDetailFromModel} from './person-detail-data.mjs';
+import {discoveryFromModel} from './discovery-data.mjs';
+import discoveryChannels from './discovery-channel-data.json';
 
 let cached:{file:string;sha256:string;model:PrivateModel}|null=null;
 export function privateSnapshotEnabled():boolean {return process.env.CATALOG_DATA_MODE!=='public_release'&&privateSnapshotConfig() !== null;}
@@ -32,6 +34,7 @@ export async function privateSnapshotInfo():Promise<{exportId:string}> {
 export async function privateSongDetail(entryId:string){return songDetailFromModel(await load(),entryId);}
 export async function privateHomeRecent(){return homeRecentFromModel(await load());}
 export async function privatePersonDetail(key:string,page=1){return personDetailFromModel(await load(),key,{page});}
+export async function privateDiscovery(query:{category?:string;page?:number}){return discoveryFromModel(await load(),query,discoveryChannels);}
 export async function privateReleaseDisplayContext(familyId:string){return releaseDisplayContextFromModel(await load(),familyId);}
 export async function privateCatalogList(filters:CatalogListFilters) {return queryEntries(await load(),filters);}
 async function liveContext() {
