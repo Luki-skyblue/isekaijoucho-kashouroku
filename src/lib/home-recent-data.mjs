@@ -24,8 +24,9 @@ export function homeRecentFromModel(model,{today=homeToday()}={}){
   const entry=model.entries.get(song.entryId),images=songArtworkCandidatesForEntry(entry,model.works.get(entry.detail.primaryWorkId));
   return {...song,thumbnailUrl:images[0]?.imageUrl??null,thumbnailUrls:images.map(x=>x.imageUrl)};
  });
- const releases=[],liveReleases=[];
+ const releases=[];
  for(const {detail}of model.releases.values()){
+  if(isLiveRelease(detail))continue;
   const editions=arr(detail.editions),dates=editions.map(e=>day(e.releaseDate,e.datePrecision)).filter(Boolean).sort();
   // A later pressing does not make the same release family a new release.
   const date=dates[0];if(!date)continue;
@@ -33,10 +34,8 @@ export function homeRecentFromModel(model,{today=homeToday()}={}){
   const digital=firstEditions.every(e=>e.kind==='digital');
   const media=[...new Set(arr(detail.components).filter(c=>firstEditions.some(e=>e.editionId===c.editionId)).map(c=>releaseMediaLabel(c.componentKind)).filter(Boolean))];
   const kindLabel=digital&&detail.releaseKind==='single'?'配信シングル':releaseKindLabel(detail.releaseKind)||media.join('・');
-  (isLiveRelease(detail)?liveReleases:releases).push({familyId:detail.familyId,title:detail.title,date,upcoming:date>today,kindLabel});
+  releases.push({familyId:detail.familyId,title:detail.title,date,upcoming:date>today,kindLabel});
  }
  releases.sort((a,b)=>compare(b.date,a.date)||compare(a.familyId,b.familyId));
- liveReleases.sort((a,b)=>compare(b.date,a.date)||compare(a.familyId,b.familyId));
- const images=items=>releaseListArtworkFromModel(model,{items:items.slice(0,3)}).items;
- return {songs:recentSongs,releases:images(releases),liveReleases:images(liveReleases)};
+ return {songs:recentSongs,releases:releaseListArtworkFromModel(model,{items:releases.slice(0,5)}).items};
 }
