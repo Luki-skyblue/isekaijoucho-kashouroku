@@ -51,7 +51,7 @@ export function songMetadataForEntry(entry){
 function exactSiriusSolo(entry){
  return entry?.detail?.entryId===SIRIUS_SOLO&&entry.detail.primaryWorkId===SIRIUS_WORK&&entry.detail.title==='シリウスの心臓'&&arr(entry.detail.variations).length===0&&arr(entry.legacyIds).includes(41)&&entry.singerIds?.length===1&&entry.singerIds[0]==='81a01233-230e-50a8-a309-11275c794cd0';
 }
-function versionCredits(entry,metadata){
+export function songCreditsForEntry(entry,metadata=songMetadataForEntry(entry)){
  const credits=arr(entry?.credits?.credits),names=(scope,role)=>unique(credits.filter(c=>c.scope===scope&&c.role===role).map(c=>str(c.name||c.rawName)).filter(Boolean));
  const rows=['lyricist','composer','arranger'].map(role=>{
   let values=names('version',role);
@@ -59,7 +59,7 @@ function versionCredits(entry,metadata){
   if(!values.length&&role!=='arranger')values=names('original',role);
   // Explicit original solo MV credit, retained from the user-supplied description.
   if(!values.length&&role==='arranger'&&exactSiriusSolo(entry))values=['傘村トータ'];
-  return {role,value:values.join('・')||null,review:metadata.fieldReview?.credits?.[role]??null};
+  return {role,names:values,value:values.join('・')||null,review:metadata.fieldReview?.credits?.[role]??null};
  });
  const original=arr(metadata.originalCredits).length?metadata.originalCredits:credits.filter(c=>c.scope==='original');
  return {rows,originalArranger:known(original.filter(c=>c.role==='arranger').map(c=>c.name))};
@@ -137,7 +137,7 @@ export function songArtworkCandidatesForEntry(entry,work={},options={}){
 export function songArtworkForEntry(entry,work={}){return songArtworkCandidatesForEntry(entry,work)[0]??null;}
 export function buildSongDetail(entry,work={},options={}){
  if(!entry?.detail)return null;
- const d=entry.detail,metadata=songMetadataForEntry(entry),creditData=versionCredits(entry,metadata),videos=songVideosForEntry(entry,work),releases=songReleasesForEntry(entry,work,options.releaseRecords),allLives=songLivesForEntry(entry,options.eventRecords);
+ const d=entry.detail,metadata=songMetadataForEntry(entry),creditData=songCreditsForEntry(entry,metadata),videos=songVideosForEntry(entry,work),releases=songReleasesForEntry(entry,work,options.releaseRecords),allLives=songLivesForEntry(entry,options.eventRecords);
  const images=artworkCandidates(entry,videos,releases,allLives,options);
  return {detail:d,metadata,credits:creditData.rows,originalArranger:creditData.originalArranger,
   artwork:images[0]??null,artworkCandidates:images,listenUrl:videos[0]?.url??null,videos,releases,lives:allLives,

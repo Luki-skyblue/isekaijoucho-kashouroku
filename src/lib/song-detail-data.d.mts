@@ -2,7 +2,7 @@ import type {JsonObject} from './core';
 import type {PrivateModel,PrivateWork} from './private-read-model.mjs';
 export type SongDetailData={
  detail:JsonObject;metadata:JsonObject;
- credits:Array<{role:string;value:string|null;review:JsonObject|null}>;
+ credits:Array<{role:string;names:string[];value:string|null;review:JsonObject|null}>;
  originalArranger:string|null;
  artwork:SongArtwork|null;artworkCandidates:SongArtwork[];listenUrl:string|null;
  videos:Array<{mediaId:string;url:string;title:string|null;kind:string|null;publishedOn:string|null;imageUrl:string|null;credits:Array<{role:string;name:string}>}>;
@@ -15,6 +15,7 @@ export function youtubeId(value:unknown):string|null;
 export function safeSongUrl(value:unknown):string|null;
 export function missingSongText(review:unknown):string;
 export function songMetadataForEntry(entry:JsonObject):JsonObject;
+export function songCreditsForEntry(entry:JsonObject,metadata?:JsonObject):{rows:SongDetailData['credits'];originalArranger:string|null};
 export const SHARED_RELEASE_TRACKLISTS:Array<{familyId:string;title:string;editionIds:string[];label:string;sourceUrl:string}>;
 export function songReleasesForEntry(entry:JsonObject,work?:Partial<PrivateWork>,releaseRecords?:JsonObject[]):JsonObject[];
 export function songArtworkForEntry(entry:JsonObject,work?:Partial<PrivateWork>):SongDetailData['artwork'];

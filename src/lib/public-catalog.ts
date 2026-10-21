@@ -9,6 +9,7 @@ import {songDetailFromModel} from './song-detail-data.mjs';
 import {liveDisplayContextFromModel} from './live-detail-data.mjs';
 import {releaseDisplayContextFromModel,releaseListArtworkFromModel} from './release-detail-data.mjs';
 import {homeRecentFromModel} from './home-recent-data.mjs';
+import {personDetailFromModel} from './person-detail-data.mjs';
 
 let cache:{file:string;model:PrivateModel}|null=null;
 export function publicCatalogEnabled(){return process.env.CATALOG_DATA_MODE==='public_release';}
@@ -29,6 +30,7 @@ export function publicSongDetail(entryId:string){return songDetailFromModel(load
 export function publicLiveDisplayContext(eventId:string){return liveDisplayContextFromModel(load(),eventId);}
 export function publicReleaseDisplayContext(familyId:string){return releaseDisplayContextFromModel(load(),familyId);}
 export function publicHomeRecent(){return homeRecentFromModel(load());}
+export function publicPersonDetail(key:string,page=1){return personDetailFromModel(load(),key,{page});}
 export function publicLegacySongTarget(id:number):string|null{
  const matches=[...load().entries.values()].filter(e=>e.legacyIds.includes(id));
  if(matches.length===1)return String(matches[0].detail.entryId);
