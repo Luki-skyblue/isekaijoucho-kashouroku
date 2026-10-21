@@ -1,4 +1,4 @@
-import {ARTWORK_RECORDS} from './catalog-artwork-data.mjs';
+import {ARTWORK_RECORDS,EVENT_ARTWORK_RECORDS} from './catalog-artwork-data.mjs';
 
 const PRIORITY={manual:0,digital_single:1,mv:2,cover:3,live_mv:4,release:5,live:6};
 // Extend this list when adopting an image from another confirmed public source.
@@ -32,4 +32,10 @@ export function catalogArtworkCandidatesForEntry(entry,records=ARTWORK_RECORDS){
 }
 export function catalogArtworkForEntry(entry,records=ARTWORK_RECORDS){
  return catalogArtworkCandidatesForEntry(entry,records)[0]??null;
+}
+/** A poster belongs to the exact event, independently of song-vocal matching. */
+export function eventArtworkForEvent(event,records=EVENT_ARTWORK_RECORDS){
+ const detail=event?.detail??event;if(!detail)return null;
+ const record=records.find(x=>x.eventId===detail.eventId&&x.title===detail.title);
+ return record?rankArtworkCandidates([{kind:'live',imageUrl:record.imageUrl,sourceUrl:record.sourceUrl,date:record.officialDate??null}])[0]??null:null;
 }

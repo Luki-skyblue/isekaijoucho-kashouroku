@@ -7,7 +7,7 @@ export type SongDetailData={
  artwork:SongArtwork|null;artworkCandidates:SongArtwork[];listenUrl:string|null;
  videos:Array<{mediaId:string;url:string;title:string|null;kind:string|null;publishedOn:string|null;imageUrl:string|null;credits:Array<{role:string;name:string}>}>;
  releases:JsonObject[];
- lives:Array<{eventId:string;title:string;date:string|null;uncertain:boolean}>;
+ lives:Array<{eventId:string;title:string;date:string|null;uncertain:boolean;imageUrl:string|null}>;
  hasUncertainLives:boolean;comparison:JsonObject|null;versionLabel:string|null;
 };
 export type SongArtwork={kind:string;imageUrl:string;sourceUrl:string;date?:string|null};

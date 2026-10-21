@@ -2,7 +2,9 @@ import Link from 'next/link';
 import {notFound} from 'next/navigation';
 import {rpc} from '@/lib/api';
 import {asArray,asObject,displayDate,num,str,textOr,validId,JsonObject,rpcDetailPage,numberOfPages} from '@/lib/core';
-import {Breadcrumb,Empty,Heading,Panel,Chip} from '@/components/ui';
+import {Breadcrumb,Empty,Panel,Chip} from '@/components/ui';
+import {RecordArtwork} from '@/components/record-artwork';
+import {eventArtworkForEvent} from '@/lib/catalog-artwork.mjs';
 const OCCURRENCES_PER_PAGE=50;
 const PROGRAM_ITEMS_PER_PAGE=100;
 export default async function EventDetail({params,searchParams}:{params:Promise<{eventId:string}>;searchParams:Promise<{occurrencePage?:string;programPage?:string;programOccurrence?:string}>}){
@@ -18,7 +20,7 @@ export default async function EventDetail({params,searchParams}:{params:Promise<
   const page=activeOccurrence===occurrenceId?requestedProgramPage:1;
   return rpc('kashouroku_v3_event_program',{p_occurrence_id:occurrenceId,p_limit:PROGRAM_ITEMS_PER_PAGE,p_offset:(page-1)*PROGRAM_ITEMS_PER_PAGE});
  }));
- return <><Breadcrumb parts={[{label:"LIVE一覧",href:"/lives"},{label:textOr(event.title)}]}/><Heading eyebrow="LIVE / EVENT" title={textOr(event.title)} description={`種別: ${textOr(event.eventKind)} ／ 状態: ${textOr(event.status)}`}/>
+ return <><Breadcrumb parts={[{label:"LIVE一覧",href:"/lives"},{label:textOr(event.title)}]}/><header className="live-detail-heading"><div className="live-detail-art"><RecordArtwork url={eventArtworkForEvent(event)?.imageUrl??null}/></div><div className="live-detail-copy"><p className="eyebrow">LIVE / EVENT</p><h1>{textOr(event.title)}</h1></div></header>
  <div className="data-note">出演者名簿はその公演への出演情報です。各演目の実歌唱者・フル歌唱を意味しません。</div>
  <Panel title={`公演出演者（${cast.length}）`}>{cast.length?<p>{cast.map(c=>textOr(c.name)).join('、')}</p>:<Empty>公演出演者は未登録です。</Empty>}</Panel>
  <Panel id="event-occurrences" title={`開催回とプログラム（${num(event.totalOccurrences)}回）`}>{occurrences.length?occurrences.map((o,i)=><div key={str(o.occurrenceId)||i} id={`occ-${str(o.occurrenceId)}`} className="occurrence"><h3>{textOr(o.sessionLabel,`開催回 ${i+1}`)} <Chip>{textOr(o.status)}</Chip></h3><p className="muted tiny">開催日: {displayDate(o.officialDate)} / 会場: {textOr(o.venueName)} / {num(o.programItemCount)}演目</p><ProgramView result={programs[i]} eventId={eventId} occurrencePage={occurrencePage} programPage={activeOccurrence===str(o.occurrenceId)?requestedProgramPage:1} /></div>):<Empty>開催回は未登録です。</Empty>}<EventOccurrencePager eventId={eventId} page={occurrencePage} pages={numberOfPages(num(event.totalOccurrences),OCCURRENCES_PER_PAGE)}/></Panel></>;

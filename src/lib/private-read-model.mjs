@@ -4,6 +4,7 @@ import {createHash} from 'node:crypto';
 import {gzipSync} from 'node:zlib';
 import {performance} from 'node:perf_hooks';
 import {songArtworkCandidatesForEntry} from './song-detail-data.mjs';
+import {eventArtworkForEvent} from './catalog-artwork.mjs';
 import {isAbsolute} from 'node:path';
 
 export const PURPOSE = 'PRIVATE_G0_READ_MODEL_EXPERIMENT_NOT_FOR_PUBLICATION';
@@ -372,7 +373,7 @@ export function queryEvents(model, filters = {}) {
   });
   return {items:rows.slice(offset,offset+limit).map(x => {
     const event=model.events.get(x.eventId);
-    return {...x,liveFormat:eventFormat(x,event),billingArtists:billingArtists(event).map(({entityId,name})=>({entityId,name}))};
+    return {...x,thumbnailUrl:eventArtworkForEvent(x)?.imageUrl??null,liveFormat:eventFormat(x,event),billingArtists:billingArtists(event).map(({entityId,name})=>({entityId,name}))};
   }),total:rows.length,limit,offset};
 }
 

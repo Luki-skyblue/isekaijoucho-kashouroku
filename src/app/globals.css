@@ -470,3 +470,10 @@ html[data-theme="nemophila"] .home-cover,html[data-theme="anemone"] .home-cover 
 /* Adopted song-detail title and site-name face; local OFL font. */
 @font-face{font-family:SongMincho;src:url('/fonts/shippori-mincho-medium.woff2') format('woff2');font-style:normal;font-weight:500;font-display:swap}
 .brand-name{font-family:SongMincho,var(--serif);font-weight:500}
+
+/* Registered LIVE key visuals; retain the complete poster in the detail. */
+.live-detail-heading{display:flex;align-items:center;gap:30px;margin:28px 0 38px}
+.live-detail-art{flex-shrink:0}.live-detail-art .record-cover{width:168px;height:168px;background:var(--panel)}
+.live-detail-art img{object-fit:contain}.live-detail-copy{min-width:0}.live-detail-copy .eyebrow{margin-bottom:8px}
+.live-detail-heading h1{font-family:SongMincho,var(--serif);font-size:34px;font-weight:500;line-height:1.6;letter-spacing:.035em;overflow-wrap:anywhere;margin:0}
+@media(max-width:650px){.live-detail-heading{align-items:flex-start;gap:18px;margin:24px 0 28px}.live-detail-art .record-cover{width:108px;height:108px}.live-detail-copy .eyebrow{font-size:9px;margin-bottom:5px}.live-detail-heading h1{font-size:25px;line-height:1.5}}

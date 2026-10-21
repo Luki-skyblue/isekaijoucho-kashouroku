@@ -2,7 +2,7 @@
 // Empty reads are not negative findings. Work-scoped links never establish a
 // particular vocal configuration, and a work arranger is not a version arranger.
 import legacy from './song-legacy-data.json' with {type:'json'};
-import {catalogArtworkCandidatesForEntry,rankArtworkCandidates} from './catalog-artwork.mjs';
+import {catalogArtworkCandidatesForEntry,eventArtworkForEvent,rankArtworkCandidates} from './catalog-artwork.mjs';
 import {ARTWORK_RECORDS,RELEASE_ARTWORK_RECORDS,EVENT_ARTWORK_RECORDS} from './catalog-artwork-data.mjs';
 
 const arr=x=>Array.isArray(x)?x:[],str=x=>typeof x==='string'?x:'',object=x=>x!==null&&typeof x==='object'&&!Array.isArray(x);
@@ -106,7 +106,7 @@ function songLivesForEntry(entry){
   const key=ev.eventId+'|'+str(h.occurredOn),previous=lives.get(key),uncertain=h.matchBasis==='same_version_only'&&h.singerSetConfirmedForEntry!==true;
   lives.set(key,{eventId:ev.eventId,title:ev.title,date:h.occurredOn??null,uncertain:previous?previous.uncertain&&uncertain:uncertain});
  }
- return [...lives.values()].sort((a,b)=>str(b.date).localeCompare(str(a.date)));
+ return [...lives.values()].map(live=>({...live,imageUrl:eventArtworkForEvent(live)?.imageUrl??null})).sort((a,b)=>str(b.date).localeCompare(str(a.date)));
 }
 function artworkCandidates(entry,videos,releases,lives,{entryRecords=ARTWORK_RECORDS,releaseRecords=RELEASE_ARTWORK_RECORDS,eventRecords=EVENT_ARTWORK_RECORDS}={}){
  const candidates=catalogArtworkCandidatesForEntry(entry,entryRecords).map(c=>({...c,date:c.date??videos.find(v=>youtubeId(v.url)&&youtubeId(v.url)===youtubeId(c.sourceUrl))?.publishedOn??null}));
@@ -118,8 +118,7 @@ function artworkCandidates(entry,videos,releases,lives,{entryRecords=ARTWORK_REC
   for(const image of [...registered,...(release.imageUrl?[{imageUrl:release.imageUrl,sourceUrl:release.imageSourceUrl}]:[])])
    candidates.push({kind,imageUrl:image.imageUrl,sourceUrl:image.sourceUrl,date:release.edition?.releaseDate??null});
  }
- for(const live of lives)if(!live.uncertain)for(const image of eventRecords.filter(x=>x.eventId===live.eventId&&x.title===live.title))
-  candidates.push({kind:'live',imageUrl:image.imageUrl,sourceUrl:image.sourceUrl,date:live.date});
+ for(const live of lives)if(!live.uncertain){const image=eventArtworkForEvent(live,eventRecords);if(image)candidates.push({...image,date:live.date});}
  return rankArtworkCandidates(candidates);
 }
 /** All display surfaces and failure fallbacks share the same ordered candidates. */

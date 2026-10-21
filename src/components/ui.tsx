@@ -2,6 +2,7 @@ import Link from 'next/link';
 import {RecordArtwork} from './record-artwork';
 import {JsonObject,displayDate,num,str,textOr,numberOfPages,explicitThumbnail,ViewMode} from '@/lib/core';
 import {liveCardLabel} from '@/lib/live-list-params';
+import {eventArtworkForEvent} from '@/lib/catalog-artwork.mjs';
 
 export function Heading({eyebrow,title,description}:{eyebrow?:string;title:string;description?:string}){
  return <header className="page-heading">{eyebrow&&<p className="eyebrow">{eyebrow}</p>}<h1>{title}</h1>{description&&<p className="muted">{description}</p>}</header>;
@@ -35,15 +36,15 @@ export function PageLinks({path,term='',page,total,limit=24,view='list'}:{path:s
  {page<pages&&<Link href={listHref(path,term,page+1,view)}>次のページ →</Link>}
  </nav>;
 }
-function RecordThumbnail({x}:{x:JsonObject}){
- return <RecordArtwork url={explicitThumbnail(x)}/>;
+function RecordThumbnail({x,kind}:{x:JsonObject;kind:'work'|'release'|'event'}){
+ return <RecordArtwork url={kind==='event'?eventArtworkForEvent(x)?.imageUrl??explicitThumbnail(x):explicitThumbnail(x)}/>;
 }
 export function SimpleList({items,kind,view='list'}:{items:JsonObject[];kind:'work'|'release'|'event';view?:ViewMode}){
  const id=(x:JsonObject)=>str(kind==='work'?x.id:kind==='event'?x.eventId:x.familyId);
  const href=(x:JsonObject)=>`${kind==='work'?'/songs':kind==='event'?'/lives':'/releases'}/${encodeURIComponent(id(x))}`;
  return <div className={`records records-${view}`}>
  {items.map(x=><Link className="record" key={id(x)} href={href(x)}>
-   <RecordThumbnail x={x}/>
+   <RecordThumbnail x={x} kind={kind}/>
    <span className="record-copy"><span className="record-title">{textOr(x.title)}</span>{kind!=='work'&&<span className="record-meta">{kind==='event'?[liveCardLabel(x),displayDate(x.firstOfficialDate)].filter(Boolean).join(' · '):`edition ${num(x.editionCount)}件`}</span>}</span>
    <span className="record-arrow" aria-hidden="true">↗</span>
  </Link>)}
