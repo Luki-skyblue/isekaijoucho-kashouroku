@@ -6,6 +6,7 @@ import type {PrivateModel,LiveListFilters} from './private-read-model.mjs';
 import type {CatalogListFilters} from './catalog-entry-api';
 import type {JsonObject} from './core';
 import {songDetailFromModel} from './song-detail-data.mjs';
+import {liveDisplayContextFromModel} from './live-detail-data.mjs';
 
 let cache:{file:string;model:PrivateModel}|null=null;
 export function publicCatalogEnabled(){return process.env.CATALOG_DATA_MODE==='public_release';}
@@ -23,6 +24,7 @@ export function publicLiveFilterOptions(){return {...eventFilterOptions(load()),
 export function publicCatalogRpc(name:string,params:JsonObject){return snapshotRpc(load(),name,params);}
 export function publicCatalogInfo(){return {releaseId:String(load().manifest.exportId)};}
 export function publicSongDetail(entryId:string){return songDetailFromModel(load(),entryId);}
+export function publicLiveDisplayContext(eventId:string){return liveDisplayContextFromModel(load(),eventId);}
 export function publicLegacySongTarget(id:number):string|null{
  const matches=[...load().entries.values()].filter(e=>e.legacyIds.includes(id));
  if(matches.length===1)return String(matches[0].detail.entryId);
