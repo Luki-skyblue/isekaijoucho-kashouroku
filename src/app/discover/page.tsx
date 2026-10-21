@@ -4,6 +4,7 @@ import {getDiscovery} from '@/lib/discovery-api';
 import {pageNumber} from '@/lib/core';
 import {Breadcrumb,Heading} from '@/components/ui';
 import {RecordArtwork} from '@/components/record-artwork';
+import {DiscoveryTabs} from '@/components/discovery-tabs';
 import './discovery.css';
 
 export const metadata:Metadata={title:'公開・収録先から探す'};
@@ -14,7 +15,7 @@ export default async function Discover({searchParams}:{searchParams:Promise<{cat
   <Breadcrumb parts={[{label:'公開・収録先'}]}/><Heading title="公開・収録先から探す"/>
   <p className="discovery-note">登録された公開・収録先で分類しています。現在の視聴可否は未確認の情報を含みます。</p>
   {data?<>
-   <nav className="discovery-categories" aria-label="公開・収録先">{data.categories.filter(c=>c.id!=='unclassified'||c.count>0).map(c=><Link key={c.id} className={c.id==='unclassified'?'discovery-unclassified':undefined} href={href(c.id)} aria-current={c.id===data.category?'page':undefined}><span>{c.label}</span><small>{c.count}</small></Link>)}</nav>
+   <DiscoveryTabs categories={data.categories} selected={data.category}/>
    <div className="list-toolbar"><p className="toolbar-hint">{data.total}件</p></div>
    {data.items.length?<div className="records records-list">{data.items.map(song=><Link className="record" key={song.entryId} href={'/songs/'+song.entryId}>
     <RecordArtwork url={song.thumbnailUrl} urls={song.thumbnailUrls}/><span className="record-copy"><span className="record-title">{song.title}</span><span className="record-meta">{song.displayCredit}</span></span><span className="record-arrow" aria-hidden="true">↗</span>

@@ -1,0 +1,14 @@
+{
+ "format":1,
+ "purpose":"DISCOVERY_EVENT_SOURCE_CONTEXT_NOT_SINGER_OR_AVAILABILITY_VERIFICATION",
+ "checkedOn":"2026-10-22",
+ "events":[
+  {"eventId":"cde9f94f-d62a-5298-9484-64d1f3544d68","title":"ARIA-ISEKAIJOUCHO","date":"2025-07-17","kind":"stream","channelUrl":"https://www.youtube.com/@isekaijoucho","sourceUrl":"https://kamitsubaki.jp/news/2025/07/03/7775/"},
+  {"eventId":"aa3f4c9e-abb4-5701-bf36-8dfed0596efb","title":"ARIA-ISEKAIJOUCHO 2","date":"2025-08-14","kind":"stream","channelUrl":"https://www.youtube.com/@isekaijoucho","sourceUrl":"https://kamitsubaki.jp/news/2025/07/03/7775/"},
+  {"eventId":"db850add-3287-5663-bccc-a62392de7d64","title":"魔女達の夜会～歌と重大発表と笑い話と～","aliases":["魔女達の夜会"],"date":"2025-09-27","kind":"stream","channelUrl":"https://www.youtube.com/@VWPVirtualWitchPhenomenon","sourceUrl":"https://www.youtube.com/watch?v=wH2NMAwuyqI"},
+  {"eventId":"82d4949a-ecfe-57d4-9af9-2590777f2ea8","title":"デビュー6周年記念生配信","date":"2025-12-09","kind":"stream","channelUrl":"https://www.youtube.com/@isekaijoucho","sourceUrl":"https://x.com/isekaijoucho/status/1998283258199736802"},
+  {"eventId":"2de42803-09ca-55dd-b4f1-2428765960f0","title":"YouTubeチャンネル登録50万人記念配信","date":"2026-03-25","kind":"stream","channelUrl":"https://www.youtube.com/@isekaijoucho","sourceUrl":"https://x.com/isekaijoucho/status/2036739891749675103"},
+  {"eventId":"718716b6-2d61-55f1-8fe9-ba50d58b8622","title":"魔女集会","date":"2022-04-15","kind":"live","sourceUrl":"https://kaf.kamitsubaki.jp/words/"},
+  {"eventId":"a31dca80-0a94-5354-9935-bb9ca64a7b1e","title":"不可解弐Q1","date":"2020-10-10","kind":"live","sourceUrl":"https://kaf.kamitsubaki.jp/words/"}
+ ]
+}

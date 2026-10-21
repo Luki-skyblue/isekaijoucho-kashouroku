@@ -2,6 +2,8 @@
 // or singer count. Registered destinations and current full listening differ.
 import {songDetailFromModel,youtubeId,safeSongUrl} from './song-detail-data.mjs';
 import {isLiveRelease} from './release-detail-data.mjs';
+import {EVENT_ARTWORK_RECORDS} from './catalog-artwork-data.mjs';
+import eventSources from './discovery-event-data.json' with {type:'json'};
 
 export const DISCOVERY_CATEGORIES=[
  {id:'isekai_official',label:'ヰ世界情緒公式'},
@@ -14,6 +16,7 @@ export const DISCOVERY_CATEGORIES=[
 ];
 const arr=x=>Array.isArray(x)?x:[],str=x=>typeof x==='string'?x:'';
 const categoryIds=new Set(DISCOVERY_CATEGORIES.map(c=>c.id)),compare=(a,b)=>a<b?-1:a>b?1:0;
+const sourceLabel=x=>str(x).normalize('NFKC').toLowerCase().replace(/[\s「」『』“”"'・:：~〜～－—–-]/g,'');
 export function youtubeChannelKey(value){
  try{
   const u=new URL(value);if(u.protocol!=='https:'||!['youtube.com','www.youtube.com'].includes(u.hostname)||u.port||u.username||u.password||u.search||u.hash)return null;
@@ -29,6 +32,34 @@ function channelCategory(record,metadata){
  return roles.length===1&&['isekai_official','vwp_official'].includes(roles[0])?roles[0]:'other_channel';
 }
 
+function eventSource(event,metadata){
+ const d=event?.detail;if(!d)return null;
+ const saved=arr(metadata.events??eventSources.events).filter(e=>e.eventId===d.eventId&&e.title===d.title&&
+  arr(event.occurrences).some(o=>o.officialDate===e.date));
+ const record=saved.length===1?saved[0]:null;
+ const format=event.filterMetadata?.format??d.eventKind;
+ if(['one_man','concert','festival','joint_live','mini_live','cover_live'].includes(format))return {category:'live_event',record};
+ if(record?.kind==='stream')return {category:channelCategory({authorUrl:record.channelUrl},metadata),record};
+ if(['stream','livestream','broadcast','talk_event'].includes(format))return null;
+ if(record?.kind==='live')return {category:'live_event',record};
+ // A poster's official source identifies a known concert, not its singers.
+ if(EVENT_ARTWORK_RECORDS.some(e=>e.eventId===d.eventId&&e.title===d.title&&arr(event.occurrences).some(o=>o.officialDate===e.officialDate)))return {category:'live_event',record};
+ const labels=[d.title,...arr(d.eventSeries).map(s=>s.title)].join(' ');
+ // Do not use Live2D, renditionKind, or membership in the event directory as
+ // evidence of a concert. Unknown streams remain unclassified without a channel.
+ if(/生配信|記念配信|歌枠|拡声の会|ARIA[- –]ISEKAIJOUCHO|夜会/i.test(labels))return null;
+ return /\blive\b|ライブ|\bfes\b|festival|音楽祭|ANISAMA|XPERIENCE|Music Award/i.test(labels)?{category:'live_event',record}:null;
+}
+function originEvent(model,first,metadata){
+ if(!first?.date||!sourceLabel(first.label))return null;
+ const matches=[...model.events?.values()??[]].filter(event=>{
+  const d=event.detail,record=eventSource(event,metadata)?.record;
+  const labels=[d.title,...arr(d.eventSeries).map(s=>s.title),...arr(record?.aliases)];
+  return arr(event.occurrences).some(o=>o.officialDate===first.date)&&labels.some(label=>sourceLabel(label)===sourceLabel(first.label));
+ });
+ return matches.length===1?matches[0]:null;
+}
+
 /** Pure ranker. All facts are inputs. oEmbed success is NOT free/full/current.
  * Unknown channels/categories remain unknown, not negative findings or other.
  * Performance history is not a currently playable source. */
@@ -42,8 +73,8 @@ export function classifyDiscoveryRoutes(routes){
  return {category:primary?.category??'unclassified',primary,currentFullCategory:currentFull?.category??null,currentFullSource:currentFull,candidates:ordered};
 }
 
-/** Reuse song detail's version-scoped eligibility for media/products. A shared
- * work or same-version LIVE candidate alone does not classify this vocal form. */
+/** Reuse song detail's version-scoped media/products and its identity-checked
+ * first appearance. A same-version candidate alone still supplies no route. */
 export function discoveryRoutesForEntry(model,entryId,metadata={}){
  const entry=model.entries.get(entryId);if(!entry)return [];
  const song=songDetailFromModel(model,entryId),work=model.works.get(entry.detail.primaryWorkId),routes=[];
@@ -61,11 +92,18 @@ export function discoveryRoutesForEntry(model,entryId,metadata={}){
   routes.push({key:'release:'+release.releaseItemId,kind:'release',category:isLiveRelease(detail)?'live_event':'cd_album',exactEntry:true,
    label:family.title||'収録作品',sourceUrl:'/releases/'+family.familyId,date:release.edition?.releaseDate??null,current:null,coverage:'unknown',access:'unknown'});
  }
- const seen=new Set();
- for(const h of arr(entry.history))if(['explicit_part','legacy_rendition'].includes(h.matchBasis)&&h.multiWork!==true)for(const event of arr(h.relatedEvents)){
-  const key=event.eventId+'|'+str(h.occurredOn);if(seen.has(key))continue;seen.add(key);
-  routes.push({key:'event:'+key,kind:'performance',category:'live_event',exactEntry:true,label:event.title||'LIVE',sourceUrl:'/lives/'+event.eventId,date:h.occurredOn??null,current:false,coverage:'unknown',access:'unknown'});
- }
+ const seen=new Set(),addEvent=(event,date,basis)=>{
+  const source=eventSource(event,metadata),d=event?.detail;if(!source||source.category==='unclassified')return;
+  const key=d.eventId+'|'+str(date);if(seen.has(key))return;seen.add(key);
+  routes.push({key:'event:'+key,kind:'performance',category:source.category,exactEntry:true,label:d.title,sourceUrl:'/lives/'+d.eventId,
+   date:date??null,evidenceBasis:basis,current:false,coverage:'unknown',access:'unknown'});
+ };
+ for(const h of arr(entry.history))if(['explicit_part','legacy_rendition'].includes(h.matchBasis)&&h.multiWork!==true)for(const event of arr(h.relatedEvents))
+  addEvent(model.events?.get(event.eventId),h.occurredOn,'direct_history');
+ // Own origin metadata is separate evidence; this does not confirm any
+ // same_version_only history, cast, whole-song coverage, or playable archive.
+ const first=song.metadata.firstAppearance,origin=originEvent(model,first,metadata);
+ if(origin)addEvent(origin,first.date,'entry_first_appearance');
  return routes;
 }
 const cache=new WeakMap();

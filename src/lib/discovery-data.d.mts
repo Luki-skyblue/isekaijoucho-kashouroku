@@ -1,8 +1,9 @@
 import type {PrivateModel} from './private-read-model.mjs';
 import type {CatalogEntryCard} from './catalog-entry-api';
 export type DiscoveryCategory='isekai_official'|'vwp_official'|'other_channel'|'cd_album'|'live_event'|'other'|'unclassified';
-export type DiscoveryRoute={key:string;kind:string;category:DiscoveryCategory;exactEntry:boolean;label?:string;sourceUrl?:string;date?:string|null;current?:boolean|null;coverage?:string;access?:string;checkedOn?:string|null};
-export type DiscoveryMetadata={officialChannels?:Array<{category:string;urls:string[]}>;videos?:Array<{videoId:string;authorName?:string;authorUrl?:string}>};
+export type DiscoveryRoute={key:string;kind:string;category:DiscoveryCategory;exactEntry:boolean;label?:string;sourceUrl?:string;date?:string|null;evidenceBasis?:string;current?:boolean|null;coverage?:string;access?:string;checkedOn?:string|null};
+export type DiscoveryEventSource={eventId:string;title:string;date:string;kind:'live'|'stream';channelUrl?:string;aliases?:string[];sourceUrl?:string};
+export type DiscoveryMetadata={officialChannels?:Array<{category:string;urls:string[]}>;videos?:Array<{videoId:string;authorName?:string;authorUrl?:string}>;events?:DiscoveryEventSource[]};
 export type DiscoveryData={category:DiscoveryCategory;page:number;pages:number;total:number;allEntries:number;categories:Array<{id:string;label:string;count:number}>;items:Array<Pick<CatalogEntryCard,'entryId'|'title'|'displayCredit'|'thumbnailUrl'|'thumbnailUrls'>>};
 export const DISCOVERY_CATEGORIES:Array<{id:string;label:string}>;
 export function youtubeChannelKey(value:unknown):string|null;
