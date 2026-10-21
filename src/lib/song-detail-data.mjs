@@ -65,9 +65,8 @@ function releaseCandidates(r,records){
  const titles=[norm(f.title),norm(str(f.title)+str(e.editionName))];
  return records.flatMap(x=>x.releases).filter(x=>titles.includes(norm(x.title))&&x.trackNumber===r.trackNumber&&(x.discNumber===null||x.discNumber===c.componentNo));
 }
-export function buildSongDetail(entry,work={}){
- if(!entry?.detail)return null;
- const d=entry.detail,metadata=songMetadataForEntry(entry),records=legacyRecords(entry),creditData=versionCredits(entry,metadata),solo=exactSiriusSolo(entry);
+function songVideosForEntry(entry,work){
+ const d=entry.detail,records=legacyRecords(entry),solo=exactSiriusSolo(entry);
  const directRenditions=new Set(arr(d.linkedRenditions).map(x=>x.renditionId));
  for(const h of arr(entry.history))if(['explicit_part','legacy_rendition'].includes(h.matchBasis)&&h.multiWork!==true)directRenditions.add(h.renditionId);
  const oldVideos=new Map(records.flatMap(x=>x.videos).map(x=>[x.videoId,x]));
@@ -86,6 +85,21 @@ export function buildSongDetail(entry,work={}){
   }
  }
  videos.sort((a,b)=>(a.kind==='music_video'?0:1)-(b.kind==='music_video'?0:1)||str(a.publishedOn).localeCompare(str(b.publishedOn)));
+ return videos;
+}
+function artworkFromVideos(entry,videos){
+ const curated=catalogArtworkForEntry(entry);if(curated)return curated;
+ const video=videos.find(v=>v.kind==='music_video'&&v.imageUrl);
+ return video?{kind:'mv',imageUrl:video.imageUrl,sourceUrl:video.url}:null;
+}
+/** The list and detail use the same entry-scoped artwork selection. */
+export function songArtworkForEntry(entry,work={}){
+ if(!entry?.detail)return null;
+ return catalogArtworkForEntry(entry)??artworkFromVideos(entry,songVideosForEntry(entry,work));
+}
+export function buildSongDetail(entry,work={}){
+ if(!entry?.detail)return null;
+ const d=entry.detail,metadata=songMetadataForEntry(entry),records=legacyRecords(entry),creditData=versionCredits(entry,metadata),solo=exactSiriusSolo(entry),videos=songVideosForEntry(entry,work);
  const rawReleases=arr(work.releases),releases=[];
  for(const r of rawReleases){
   const candidates=releaseCandidates(r,records);
@@ -101,7 +115,7 @@ export function buildSongDetail(entry,work={}){
  }
  const allLives=[...lives.values()].sort((a,b)=>str(b.date).localeCompare(str(a.date)));
  return {detail:d,metadata,credits:creditData.rows,originalArranger:creditData.originalArranger,
-  artwork:catalogArtworkForEntry(entry),listenUrl:videos[0]?.url??null,videos,releases,lives:allLives,
+  artwork:artworkFromVideos(entry,videos),listenUrl:videos[0]?.url??null,videos,releases,lives:allLives,
   hasUncertainLives:allLives.some(x=>x.uncertain),comparison:entry.compare??null,
   versionLabel:d.entryId===SIRIUS_DUET&&d.primaryWorkId===SIRIUS_WORK?'デュエット':null};
 }

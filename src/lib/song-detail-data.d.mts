@@ -14,5 +14,6 @@ export function youtubeId(value:unknown):string|null;
 export function safeSongUrl(value:unknown):string|null;
 export function missingSongText(review:unknown):string;
 export function songMetadataForEntry(entry:JsonObject):JsonObject;
+export function songArtworkForEntry(entry:JsonObject,work?:Partial<PrivateWork>):SongDetailData['artwork'];
 export function buildSongDetail(entry:JsonObject,work?:Partial<PrivateWork>):SongDetailData|null;
 export function songDetailFromModel(model:PrivateModel,entryId:string):SongDetailData|null;

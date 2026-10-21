@@ -18,7 +18,7 @@ export function CatalogSongDetail({song,initialTab='info'}:{song:SongDetailData;
  const singers=str(d.displayCredit)||singerNames(d.singers),segments=asArray(d.medleySegments),medleys=asArray(d.containingMedleys),variations=asArray(d.variations).map(variation).filter(Boolean);
  const firstReview=asObject(m.firstAppearanceReview),fullVisible=firstReview.coverage==='partial'&&firstReview.partialConfirmed===true;
  const originalInfo=d.legacySongType==='cover'&&(str(m.originalArtist)||str(m.originalVocal)||song.originalArranger);
- const hero=song.artwork??song.videos.find(v=>v.kind==='music_video'&&v.imageUrl);
+ const hero=song.artwork;
  const imageUrl=hero&&'imageUrl' in hero?hero.imageUrl:null,heroShape=song.artwork?.kind==='digital_single'?'jacket':imageUrl?'video':'jacket';
  const info=<>
   <dl className="song-detail-facts"><dt>歌唱</dt><dd><Value value={singers}/></dd><dt>楽曲区分</dt><dd><Value value={d.kind==='medley'?'メドレー':CATEGORIES[str(d.legacySongType)]}/></dd>
