@@ -15,12 +15,13 @@ html[data-theme="nemophila"] .home-cover-art,html[data-theme="anemone"] .home-co
 html[data-theme="nemophila"] .home-cover,html[data-theme="anemone"] .home-cover{background-image:radial-gradient(ellipse at 82% 30%,var(--theme-art-glow),transparent 60%),linear-gradient(120deg,var(--paper),var(--theme-tint))}
 .home-recent{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:48px;padding-block:38px 52px}
 .home-recent-section{min-width:0}.home-recent-heading{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:18px}
+.home-recent-releases{display:flex;flex-direction:column;gap:32px;min-width:0;align-self:start}
 .home-recent-heading h2{font-family:SongMincho,var(--serif);font-size:21px;font-weight:500;margin:0;letter-spacing:.025em}
 .home-recent-heading>a{font-size:11px;color:var(--muted);white-space:nowrap;text-decoration:none}.home-recent-heading>a:hover{text-decoration:underline}
 .home-recent-list{border-top:1px solid var(--hair)}
 .home-recent-item{display:flex;align-items:center;gap:16px;padding:15px 0;border-bottom:1px solid var(--hair);text-decoration:none;min-width:0}
 .home-recent-item:hover .home-recent-title{text-decoration:underline;text-underline-offset:4px}.home-recent-item:focus-visible{outline:2px solid var(--accent-deep);outline-offset:4px}
-.home-recent-item .record-cover{width:64px;height:64px}.home-recent-release .record-cover{width:76px;height:76px}.home-recent-release .record-cover img{object-fit:contain}
+.home-recent-item .record-cover{width:64px;height:64px}.home-recent-release .record-cover,.home-recent-live-release .record-cover{width:76px;height:76px}.home-recent-release .record-cover img,.home-recent-live-release .record-cover img{object-fit:contain}
 .home-recent-copy{display:flex;flex-direction:column;gap:4px;min-width:0}.home-recent-title{font-family:SongMincho,var(--serif);font-size:16px;font-weight:500;line-height:1.5;overflow-wrap:anywhere}
 .home-recent-credit{font-size:11px;line-height:1.6;color:var(--muted);overflow-wrap:anywhere}
 .home-recent-meta{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:10px;line-height:1.6;color:var(--quiet)}.home-recent-meta time{font-variant-numeric:tabular-nums}
@@ -32,5 +33,5 @@ html[data-theme="nemophila"] .home-cover,html[data-theme="anemone"] .home-cover{
  .home-page .home-cover h1{font-size:43px;margin:12px 0 25px}
  .home-nav{display:grid;grid-template-columns:minmax(0,1fr);width:220px;max-width:100%;gap:10px}.home-nav a{min-width:0;min-height:46px;font-size:12px;padding:11px 16px}
  .home-recent{grid-template-columns:minmax(0,1fr);gap:32px;padding-block:28px 38px}.home-recent-heading{gap:10px;margin-bottom:14px}.home-recent-heading h2{font-size:20px}
- .home-recent-item{gap:13px;padding-block:13px}.home-recent-item .record-cover{width:58px;height:58px}.home-recent-release .record-cover{width:68px;height:68px}
+ .home-recent-item{gap:13px;padding-block:13px}.home-recent-item .record-cover{width:58px;height:58px}.home-recent-release .record-cover,.home-recent-live-release .record-cover{width:68px;height:68px}
 }

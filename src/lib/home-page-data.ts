@@ -6,5 +6,5 @@ import type {HomeRecent} from './home-recent-data.mjs';
 export async function homePageData():Promise<HomeRecent>{
  if(privateSnapshotEnabled())return privateHomeRecent();
  if(publicCatalogEnabled())return publicHomeRecent();
- return {songs:[],releases:[]};
+ return {songs:[],releases:[],liveReleases:[]};
 }

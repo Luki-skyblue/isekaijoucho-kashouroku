@@ -10,6 +10,13 @@ const media={cd:'CD',audio_disc:'音源',audio_program:'音源',digital:'配信'
 const playable=new Set(['cd','audio_disc','audio_program','digital','blu_ray','download_card']);
 export const releaseKindLabel=kind=>Object.hasOwn(kinds,kind??'')?kinds[kind]:null;
 export const releaseMediaLabel=kind=>Object.hasOwn(media,kind??'')?media[kind]:null;
+// Separate concert recordings from music, without classifying an album
+// from its title (e.g. LoveLive!) or from a bonus concert disc alone.
+export function isLiveRelease(release){
+ if(['live_package','cover_live_album'].includes(release?.releaseKind))return true;
+ const video=arr(release?.components).some(c=>['blu_ray','dvd'].includes(c.componentKind));
+ return video&&release?.releaseKind==='video_release'&&arr(release.eventRelations).some(r=>r.relationType==='documents_event');
+}
 export function releaseTrackPosition(item){return text(item?.rawPosition)||(Number.isSafeInteger(item?.sequenceNo)?String(item.sequenceNo):'—');}
 export function releaseDuration(value){
  if(!Number.isSafeInteger(value)||value<0)return null;

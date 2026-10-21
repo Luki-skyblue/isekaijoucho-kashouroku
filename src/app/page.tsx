@@ -30,13 +30,20 @@ export default async function Home() {
      <span className="home-recent-copy"><strong className="home-recent-title">{song.title}</strong><span className="home-recent-credit">{song.displayCredit||'歌唱者未確認'}</span><span className="home-recent-meta"><time dateTime={song.date}>初出 {displayDate(song.date)}</time>{song.sourceLabel&&<span>{song.sourceLabel}</span>}</span></span>
     </Link>)}</div>:<p className="home-recent-empty">準備中</p>}
    </section>
-   <section className="home-recent-section" aria-labelledby="home-releases-title">
+   <div className="home-recent-releases"><section className="home-recent-section" aria-labelledby="home-releases-title">
     <div className="home-recent-heading"><h2 id="home-releases-title">最近のリリース</h2><Link href="/releases">収録作品 <span aria-hidden="true">→</span></Link></div>
     {recent.releases.length?<div className="home-recent-list">{recent.releases.map(release=><Link className="home-recent-item home-recent-release" href={'/releases/'+release.familyId} key={release.familyId}>
      <RecordArtwork url={release.thumbnailUrl} urls={release.thumbnailUrls}/>
      <span className="home-recent-copy"><strong className="home-recent-title">{release.title}</strong>{release.kindLabel&&<span className="home-recent-credit">{release.kindLabel}</span>}<span className="home-recent-meta"><time dateTime={release.date}>{displayDate(release.date)}</time>{release.upcoming&&<span>発売予定</span>}</span></span>
     </Link>)}</div>:<p className="home-recent-empty">準備中</p>}
    </section>
+   {recent.liveReleases.length>0&&<section className="home-recent-section" aria-labelledby="home-live-releases-title">
+    <div className="home-recent-heading"><h2 id="home-live-releases-title">LIVE作品</h2></div>
+    <div className="home-recent-list">{recent.liveReleases.map(release=><Link className="home-recent-item home-recent-live-release" href={'/releases/'+release.familyId} key={release.familyId}>
+     <RecordArtwork url={release.thumbnailUrl} urls={release.thumbnailUrls}/>
+     <span className="home-recent-copy"><strong className="home-recent-title">{release.title}</strong><span className="home-recent-meta"><time dateTime={release.date}>{displayDate(release.date)}</time>{release.upcoming&&<span>発売予定</span>}</span></span>
+    </Link>)}</div>
+   </section>}</div>
   </div>
  </div>;
 }

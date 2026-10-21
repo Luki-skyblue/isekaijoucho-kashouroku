@@ -5,6 +5,7 @@ export type ReleaseDisplayContext={artwork:SongArtwork[];itemLinks:Record<string
 export type ReleaseItemGroup={key:string;editionId:string|null;editionName:string|null;label:string|null;componentKind:string|null;items:JsonObject[]};
 export function releaseKindLabel(kind:unknown):string|null;
 export function releaseMediaLabel(kind:unknown):string|null;
+export function isLiveRelease(release:JsonObject):boolean;
 export function releaseTrackPosition(item:JsonObject):string;
 export function releaseDuration(value:unknown):string|null;
 export function releaseLinks(release:JsonObject):Array<{url:string;label:string}>;

@@ -1,7 +1,7 @@
 // Home uses registered first-appearance/release dates, never insertion order
 // or a work's shared performance history. This does not verify those dates.
 import {songMetadataForEntry,songArtworkCandidatesForEntry} from './song-detail-data.mjs';
-import {releaseListArtworkFromModel,releaseKindLabel,releaseMediaLabel} from './release-detail-data.mjs';
+import {releaseListArtworkFromModel,releaseKindLabel,releaseMediaLabel,isLiveRelease} from './release-detail-data.mjs';
 
 const arr=x=>Array.isArray(x)?x:[],text=x=>typeof x==='string'?x.trim():'';
 const compare=(a,b)=>a<b?-1:a>b?1:0;
@@ -17,14 +17,14 @@ export function homeRecentFromModel(model,{today=homeToday()}={}){
   const d=entry.detail,first=songMetadataForEntry(entry).firstAppearance,date=day(first?.date);
   if(!date||date>today)continue;
   songs.push({entryId:d.entryId,title:d.title,date,sourceLabel:text(first?.label),
-   displayCredit:arr(d.singers).map(s=>text(s.name)).filter(Boolean).join('・')||text(d.displayCredit)});
+   displayCredit:text(d.displayCredit)||arr(d.singers).map(s=>text(s.name)).filter(Boolean).join('・')});
  }
  songs.sort((a,b)=>compare(b.date,a.date)||compare(a.entryId,b.entryId));
  const recentSongs=songs.slice(0,5).map(song=>{
   const entry=model.entries.get(song.entryId),images=songArtworkCandidatesForEntry(entry,model.works.get(entry.detail.primaryWorkId));
   return {...song,thumbnailUrl:images[0]?.imageUrl??null,thumbnailUrls:images.map(x=>x.imageUrl)};
  });
- const releases=[];
+ const releases=[],liveReleases=[];
  for(const {detail}of model.releases.values()){
   const editions=arr(detail.editions),dates=editions.map(e=>day(e.releaseDate,e.datePrecision)).filter(Boolean).sort();
   // A later pressing does not make the same release family a new release.
@@ -33,8 +33,10 @@ export function homeRecentFromModel(model,{today=homeToday()}={}){
   const digital=firstEditions.every(e=>e.kind==='digital');
   const media=[...new Set(arr(detail.components).filter(c=>firstEditions.some(e=>e.editionId===c.editionId)).map(c=>releaseMediaLabel(c.componentKind)).filter(Boolean))];
   const kindLabel=digital&&detail.releaseKind==='single'?'配信シングル':releaseKindLabel(detail.releaseKind)||media.join('・');
-  releases.push({familyId:detail.familyId,title:detail.title,date,upcoming:date>today,kindLabel});
+  (isLiveRelease(detail)?liveReleases:releases).push({familyId:detail.familyId,title:detail.title,date,upcoming:date>today,kindLabel});
  }
  releases.sort((a,b)=>compare(b.date,a.date)||compare(a.familyId,b.familyId));
- return {songs:recentSongs,releases:releaseListArtworkFromModel(model,{items:releases.slice(0,3)}).items};
+ liveReleases.sort((a,b)=>compare(b.date,a.date)||compare(a.familyId,b.familyId));
+ const images=items=>releaseListArtworkFromModel(model,{items:items.slice(0,3)}).items;
+ return {songs:recentSongs,releases:images(releases),liveReleases:images(liveReleases)};
 }
