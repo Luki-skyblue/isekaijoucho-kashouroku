@@ -33,7 +33,7 @@ export function CatalogIndex({items,total,query,limit}: {items:CatalogEntryCard[
   <input type="hidden" name="view" value={query.view}/>
  </ListSort><nav className="view-switch" aria-label="一覧の表示形式"><span>VIEW</span><Link href={catalogHref(query,{view:'list'})} aria-current={query.view==='list'?'page':undefined}>リスト</Link><Link href={catalogHref(query,{view:'grid'})} aria-current={query.view==='grid'?'page':undefined}>グリッド</Link></nav></div></div>
  {items.length?<div className={`records records-${query.view}`}>{items.map(x=><Link className="record" href={`/songs/${encodeURIComponent(x.entryId)}`} key={x.entryId}>
- <RecordArtwork url={explicitThumbnail({...x})}/>
+ <RecordArtwork url={explicitThumbnail({...x})} urls={x.thumbnailUrls}/>
  <span className="record-copy"><span className="record-title">{x.title}</span>{x.displayCredit&&<span className="record-meta">{x.displayCredit}</span>}{x.kind==='medley'&&<span className="catalog-meta-kind">メドレー</span>}</span>
  <span className="record-arrow" aria-hidden="true">↗</span></Link>)}</div>:<Empty>条件に該当する楽曲はありません。</Empty>}
  {pages>1&&<nav className="pages" aria-label="ページ送り">{query.page>1&&<Link href={catalogHref(query,{page:query.page-1})}>← 前のページ</Link>}<span>{query.page} / {pages} ページ</span>{query.page<pages&&<Link href={catalogHref(query,{page:query.page+1})}>次のページ →</Link>}</nav>}

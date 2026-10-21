@@ -1,25 +1,35 @@
 import {ARTWORK_RECORDS} from './catalog-artwork-data.mjs';
 
+const PRIORITY={manual:0,digital_single:1,mv:2,cover:3,live_mv:4,release:5,live:6};
+// Extend this list when adopting an image from another confirmed public source.
+const IMAGE_HOSTS=new Set(['i.ytimg.com','img.youtube.com','is1-ssl.mzstatic.com','kamitsubaki.jp','findmestore.thinkr.jp','pbs.twimg.com','linkstorage.linkfire.com','static.wixstatic.com','lantis.jp']);
+
 function usableImage(value){
  if(typeof value!=='string')return false;
+ if(value.startsWith('/artwork/')&&!value.includes('..')&&!/[?#\\\s]/.test(value))return true;
  try{const u=new URL(value);
-  return u.protocol==='https:'&&!u.username&&!u.password&&!u.port&&!u.search&&!u.hash&&
-   ((['i.ytimg.com','img.youtube.com'].includes(u.hostname)&&u.pathname.startsWith('/vi/'))||
-    (u.hostname==='is1-ssl.mzstatic.com'&&u.pathname.startsWith('/image/')));
+  return u.protocol==='https:'&&!u.username&&!u.password&&!u.port&&!u.hash&&IMAGE_HOSTS.has(u.hostname)&&
+   ![...u.searchParams.keys()].some(k=>/token|secret|password|credential|auth|session|api.?key|signature/i.test(k));
  }catch{return false;}
 }
-/** Exact curated entry, work and singer set; no title-based or work-wide fallback.
- * Only the tiers needed now are implemented. Album/LIVE tier details remain
- * outside this first batch. Resolving an image does not verify any music fact. */
-export function catalogArtworkForEntry(entry,records=ARTWORK_RECORDS){
- const d=entry?.detail;if(!d||d.kind!=='song_variant'||d.variations?.length)return null;
+const dateKey=x=>typeof x==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(x)?x:'9999-99-99';
+/** Within a tier, oldest known date first. Unknown dates follow known ones.
+ * Equal/unknown dates use a stable URL order, without assigning a new priority. */
+export function rankArtworkCandidates(candidates){
+ const sorted=candidates.filter(x=>x&&Object.hasOwn(PRIORITY,x.kind)&&usableImage(x.imageUrl)).map(x=>({...x,sourceUrl:typeof x.sourceUrl==='string'?x.sourceUrl:x.imageUrl,date:dateKey(x.date)==='9999-99-99'?null:x.date}));
+ sorted.sort((a,b)=>PRIORITY[a.kind]-PRIORITY[b.kind]||dateKey(a.date).localeCompare(dateKey(b.date))||a.imageUrl.localeCompare(b.imageUrl));
+ const seen=new Set();return sorted.filter(x=>{if(seen.has(x.imageUrl))return false;seen.add(x.imageUrl);return true;});
+}
+/** Exact curated entry, work, singer set and variations. Never inherit by title. */
+export function catalogArtworkCandidatesForEntry(entry,records=ARTWORK_RECORDS){
+ const d=entry?.detail;if(!d)return [];
  const r=records.find(x=>x.entryId===d.entryId);
- if(!r||r.primaryWorkId!==d.primaryWorkId||r.title!==d.title||
+ if(!r||(r.kind??'song_variant')!==d.kind||r.primaryWorkId!==d.primaryWorkId||r.title!==d.title||
+  JSON.stringify(r.variations??[])!==JSON.stringify(d.variations??[])||
   !Array.isArray(entry.singerIds)||r.singerIds.length!==entry.singerIds.length||
-  !r.singerIds.every(id=>entry.singerIds.includes(id)))return null;
- for(const kind of ['manual','digital_single','mv']){
-  const image=r.candidates.find(x=>x.kind===kind&&usableImage(x.imageUrl));
-  if(image)return {...image};
- }
- return null;
+  !r.singerIds.every(id=>entry.singerIds.includes(id)))return [];
+ return rankArtworkCandidates(r.candidates);
+}
+export function catalogArtworkForEntry(entry,records=ARTWORK_RECORDS){
+ return catalogArtworkCandidatesForEntry(entry,records)[0]??null;
 }

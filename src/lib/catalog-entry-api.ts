@@ -27,6 +27,7 @@ export type CatalogEntryCard = {
   displayCredit: string;
   legacySongType: string|null;
   thumbnailUrl: string|null;
+  thumbnailUrls?: string[];
   matchKind: 'title'|'component';
 };
 export async function listCatalogEntries(filters: CatalogListFilters = {}): Promise<{items:CatalogEntryCard[];total:number;limit:number;offset:number}> {
@@ -68,6 +69,7 @@ const data=useV2
     displayCredit:str(item.displayCredit),
     legacySongType:typeof item.legacySongType==='string'?item.legacySongType:null,
     thumbnailUrl:typeof item.thumbnailUrl==='string'?item.thumbnailUrl:null,
+    thumbnailUrls:Array.isArray(item.thumbnailUrls)?item.thumbnailUrls.filter((url):url is string=>typeof url==='string'):[],
     matchKind:item.matchKind==='component'?'component' as const:'title' as const,
   }));
   return {items,total:num(data?.total),limit:num(data?.limit),offset:num(data?.offset)};

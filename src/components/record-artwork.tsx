@@ -1,10 +1,10 @@
 'use client';
 import {useState} from 'react';
 
-/** Retain the existing placeholder if an external image becomes unavailable. */
-export function RecordArtwork({url}:{url:string|null}){
- const [failedUrl,setFailedUrl]=useState<string|null>(null);
+/** Try the same ranked candidates as the detail, then retain the placeholder. */
+export function RecordArtwork({url,urls=[]}:{url:string|null;urls?:string[]}){
+ const [failed,setFailed]=useState<string[]>([]),current=[...new Set([url,...urls])].find((candidate):candidate is string=>!!candidate&&!failed.includes(candidate));
  return <span className="record-cover" aria-hidden="true"><span className="record-cover-glyph">♪</span>
-  {url&&failedUrl!==url&&<img src={url} alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer" onError={()=>setFailedUrl(url)}/>}
+  {current&&<img src={current} alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer" onError={()=>setFailed(previous=>[...previous,current])}/>}
  </span>;
 }

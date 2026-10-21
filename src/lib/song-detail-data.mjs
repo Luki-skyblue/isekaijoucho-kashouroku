@@ -2,7 +2,8 @@
 // Empty reads are not negative findings. Work-scoped links never establish a
 // particular vocal configuration, and a work arranger is not a version arranger.
 import legacy from './song-legacy-data.json' with {type:'json'};
-import {catalogArtworkForEntry} from './catalog-artwork.mjs';
+import {catalogArtworkCandidatesForEntry,rankArtworkCandidates} from './catalog-artwork.mjs';
+import {ARTWORK_RECORDS,RELEASE_ARTWORK_RECORDS,EVENT_ARTWORK_RECORDS} from './catalog-artwork-data.mjs';
 
 const arr=x=>Array.isArray(x)?x:[],str=x=>typeof x==='string'?x:'',object=x=>x!==null&&typeof x==='object'&&!Array.isArray(x);
 const byLegacyId=new Map(legacy.records.map(x=>[x.legacyId,x]));
@@ -77,7 +78,7 @@ function songVideosForEntry(entry,work){
    const url=safeSongUrl(publication.url);if(!url)continue;
    const id=youtubeId(url),old=id?oldVideos.get(id):null;
    if(!old&&!direct&&!(solo&&SIRIUS_SOLO_MEDIA.includes(m.mediaId)))continue;
-   const kind=m.mediaKind==='unknown'?({'MV':'music_video','LYRIC MV':'music_video','LIVE MV':'live_video'})[old?.kind]||null:m.mediaKind;
+   const kind=m.mediaKind==='unknown'?({'MV':'music_video','LYRIC MV':'lyric_video','LIVE MV':'live_video'})[old?.kind]||null:m.mediaKind;
    const video={mediaId:m.mediaId,url,title:str(m.canonicalTitle||publication.rawTitle||old?.title)||null,kind,publishedOn:publication.publishedOn||old?.publishedOn||null,
     imageUrl:id?`https://i.ytimg.com/vi/${id}/hqdefault.jpg`:null,credits:[]};
    if(id==='UKZt1vq8bKI'&&solo)video.credits=[{role:'映像',name:'UDON (VIXI)'},{role:'Mix',name:'＄ＫＩＹＡＫＩ＄ＫＩ'}];
@@ -87,35 +88,52 @@ function songVideosForEntry(entry,work){
  videos.sort((a,b)=>(a.kind==='music_video'?0:1)-(b.kind==='music_video'?0:1)||str(a.publishedOn).localeCompare(str(b.publishedOn)));
  return videos;
 }
-function artworkFromVideos(entry,videos){
- const curated=catalogArtworkForEntry(entry);if(curated)return curated;
- const video=videos.find(v=>v.kind==='music_video'&&v.imageUrl);
- return video?{kind:'mv',imageUrl:video.imageUrl,sourceUrl:video.url}:null;
-}
-/** The list and detail use the same entry-scoped artwork selection. */
-export function songArtworkForEntry(entry,work={}){
- if(!entry?.detail)return null;
- return catalogArtworkForEntry(entry)??artworkFromVideos(entry,songVideosForEntry(entry,work));
-}
-export function buildSongDetail(entry,work={}){
- if(!entry?.detail)return null;
- const d=entry.detail,metadata=songMetadataForEntry(entry),records=legacyRecords(entry),creditData=versionCredits(entry,metadata),solo=exactSiriusSolo(entry),videos=songVideosForEntry(entry,work);
+function songReleasesForEntry(entry,work){
+ const records=legacyRecords(entry),solo=exactSiriusSolo(entry);
  const rawReleases=arr(work.releases),releases=[];
  for(const r of rawReleases){
   const candidates=releaseCandidates(r,records);
   const unambiguous=candidates.some(old=>rawReleases.filter(other=>releaseCandidates(other,[{releases:[old]}]).length).length===1);
   if(!unambiguous&&!(solo&&SIRIUS_SOLO_RELEASES.includes(r.releaseItemId)))continue;
   const cover=known(candidates.map(x=>safeSongUrl(x.imageUrl))),shared=r.family?.familyId==='de19530d-b318-5828-b6c8-b381e2a98a30';
-  releases.push({...r,imageUrl:cover?.startsWith('https:')?cover:null,editionLabel:shared?null:r.edition?.editionKind==='digital'?'配信':r.edition?.editionName??null});
+  releases.push({...r,imageUrl:cover?.startsWith('https:')?cover:null,imageSourceUrl:records.find(x=>x.releases.some(y=>candidates.includes(y)))?.sourceUrl??null,editionLabel:shared?null:r.edition?.editionKind==='digital'?'配信':r.edition?.editionName??null});
  }
+ return releases;
+}
+function songLivesForEntry(entry){
  const lives=new Map();
  for(const h of arr(entry.history))for(const ev of arr(h.relatedEvents)){
   const key=ev.eventId+'|'+str(h.occurredOn),previous=lives.get(key),uncertain=h.matchBasis==='same_version_only'&&h.singerSetConfirmedForEntry!==true;
   lives.set(key,{eventId:ev.eventId,title:ev.title,date:h.occurredOn??null,uncertain:previous?previous.uncertain&&uncertain:uncertain});
  }
- const allLives=[...lives.values()].sort((a,b)=>str(b.date).localeCompare(str(a.date)));
+ return [...lives.values()].sort((a,b)=>str(b.date).localeCompare(str(a.date)));
+}
+function artworkCandidates(entry,videos,releases,lives,{entryRecords=ARTWORK_RECORDS,releaseRecords=RELEASE_ARTWORK_RECORDS,eventRecords=EVENT_ARTWORK_RECORDS}={}){
+ const candidates=catalogArtworkCandidatesForEntry(entry,entryRecords).map(c=>({...c,date:c.date??videos.find(v=>youtubeId(v.url)&&youtubeId(v.url)===youtubeId(c.sourceUrl))?.publishedOn??null}));
+ const kinds={music_video:'mv',cover_video:'cover',cover_duet_video:'cover',live_video:'live_mv'};
+ for(const video of videos)if(kinds[video.kind]&&video.imageUrl)candidates.push({kind:kinds[video.kind],imageUrl:video.imageUrl,sourceUrl:video.url,date:video.publishedOn});
+ for(const release of releases){
+  const registered=releaseRecords.filter(x=>x.familyId===release.family?.familyId&&x.editionId===release.edition?.editionId);
+  const kind=release.family?.releaseKind==='single'&&release.edition?.editionKind==='digital'?'digital_single':'release';
+  for(const image of [...registered,...(release.imageUrl?[{imageUrl:release.imageUrl,sourceUrl:release.imageSourceUrl}]:[])])
+   candidates.push({kind,imageUrl:image.imageUrl,sourceUrl:image.sourceUrl,date:release.edition?.releaseDate??null});
+ }
+ for(const live of lives)if(!live.uncertain)for(const image of eventRecords.filter(x=>x.eventId===live.eventId&&x.title===live.title))
+  candidates.push({kind:'live',imageUrl:image.imageUrl,sourceUrl:image.sourceUrl,date:live.date});
+ return rankArtworkCandidates(candidates);
+}
+/** All display surfaces and failure fallbacks share the same ordered candidates. */
+export function songArtworkCandidatesForEntry(entry,work={},options={}){
+ if(!entry?.detail)return [];
+ return artworkCandidates(entry,songVideosForEntry(entry,work),songReleasesForEntry(entry,work),songLivesForEntry(entry),options);
+}
+export function songArtworkForEntry(entry,work={}){return songArtworkCandidatesForEntry(entry,work)[0]??null;}
+export function buildSongDetail(entry,work={}){
+ if(!entry?.detail)return null;
+ const d=entry.detail,metadata=songMetadataForEntry(entry),creditData=versionCredits(entry,metadata),videos=songVideosForEntry(entry,work),releases=songReleasesForEntry(entry,work),allLives=songLivesForEntry(entry);
+ const images=artworkCandidates(entry,videos,releases,allLives);
  return {detail:d,metadata,credits:creditData.rows,originalArranger:creditData.originalArranger,
-  artwork:artworkFromVideos(entry,videos),listenUrl:videos[0]?.url??null,videos,releases,lives:allLives,
+  artwork:images[0]??null,artworkCandidates:images,listenUrl:videos[0]?.url??null,videos,releases,lives:allLives,
   hasUncertainLives:allLives.some(x=>x.uncertain),comparison:entry.compare??null,
   versionLabel:d.entryId===SIRIUS_DUET&&d.primaryWorkId===SIRIUS_WORK?'デュエット':null};
 }
