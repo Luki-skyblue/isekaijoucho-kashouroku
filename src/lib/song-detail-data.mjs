@@ -29,6 +29,7 @@ export const missingSongText=review=>review?.outcome==='not_found'?'見つかっ
 // Public, entry-scoped source additions. They supply destinations, never a
 // stored Discover category or positive full/free/current listening facts.
 export const SONG_SOURCE_RECORDS=sourceRegistry.records;
+export const SONG_SOURCE_EXCLUSIONS=sourceRegistry.exclusions??[];
 export function registeredSongSourcesForEntry(entry,records=SONG_SOURCE_RECORDS){
  return arr(records).filter(r=>r.status==='active'&&artworkEntryMatches(entry,r.entry)&&
   str(r.entry.displayCredit)===str(entry.detail.displayCredit)&&safeSongUrl(r.url)&&
@@ -39,6 +40,7 @@ function sourceReleaseMatches(source,release){
   source.trackNumber===release.trackNumber;
 }
 const sourceKey=url=>youtubeId(url)?'youtube:'+youtubeId(url):safeSongUrl(url)?.replace(/^https:\/\/twitter\.com\//,'https://x.com/');
+const excludedSourceKeys=(entry,records=SONG_SOURCE_EXCLUSIONS)=>new Set(registeredSongSourcesForEntry(entry,records).map(r=>sourceKey(r.url)));
 export function songListenLabel(url){
  if(youtubeId(url))return 'YouTubeで聴く';
  try{return ['x.com','twitter.com'].includes(new URL(url).hostname)?'Xで見る':'動画を見る';}catch{return '動画を見る';}
@@ -88,7 +90,7 @@ function releaseCandidates(r,records){
  const titles=[norm(f.title),norm(str(f.title)+str(e.editionName)),norm(str(f.title)+'(type:'+str(e.editionName)+')')];
  return records.flatMap(x=>x.releases).filter(x=>titles.includes(norm(x.title))&&x.trackNumber===r.trackNumber&&(x.discNumber===null||x.discNumber===c.componentNo));
 }
-function songVideosForEntry(entry,work,sourceRecords){
+function songVideosForEntry(entry,work,sourceRecords,sourceExclusions){
  const d=entry.detail,records=legacyRecords(entry),solo=exactSiriusSolo(entry);
  const directRenditions=new Set(arr(d.linkedRenditions).map(x=>x.renditionId));
  for(const h of arr(entry.history))if(['explicit_part','legacy_rendition'].includes(h.matchBasis)&&h.multiWork!==true)directRenditions.add(h.renditionId);
@@ -118,7 +120,8 @@ function songVideosForEntry(entry,work,sourceRecords){
    imageUrl:id?`https://i.ytimg.com/vi/${id}/hqdefault.jpg`:null,credits:[],authorName:source.authorName??null,authorUrl:source.authorUrl??null});
  }
  videos.sort((a,b)=>(a.kind==='music_video'?0:1)-(b.kind==='music_video'?0:1)||str(a.publishedOn).localeCompare(str(b.publishedOn)));
- return videos;
+ const excluded=excludedSourceKeys(entry,sourceExclusions);
+ return videos.filter(v=>!excluded.has(sourceKey(v.url)));
 }
 export function songReleasesForEntry(entry,work={},releaseRecords=RELEASE_ARTWORK_RECORDS,sourceRecords){
  const records=legacyRecords(entry),solo=exactSiriusSolo(entry);
@@ -151,7 +154,7 @@ function songLivesForEntry(entry,eventRecords=EVENT_ARTWORK_RECORDS){
  }
  return [...lives.values()].map(live=>({...live,imageUrl:eventArtworkForEvent(live,eventRecords)?.imageUrl??null})).sort((a,b)=>str(b.date).localeCompare(str(a.date)));
 }
-function artworkCandidates(entry,videos,releases,lives,{entryRecords=ARTWORK_RECORDS,releaseRecords=RELEASE_ARTWORK_RECORDS,eventRecords=EVENT_ARTWORK_RECORDS}={}){
+function artworkCandidates(entry,videos,releases,lives,{entryRecords=ARTWORK_RECORDS,releaseRecords=RELEASE_ARTWORK_RECORDS,eventRecords=EVENT_ARTWORK_RECORDS,sourceExclusions}={}){
  const candidates=catalogArtworkCandidatesForEntry(entry,entryRecords).map(c=>({...c,date:c.date??videos.find(v=>youtubeId(v.url)&&youtubeId(v.url)===youtubeId(c.sourceUrl))?.publishedOn??null}));
  const kinds={music_video:'mv',cover_video:'cover',cover_duet_video:'cover',live_video:'live_mv'};
  for(const video of videos)if(kinds[video.kind]&&video.imageUrl)candidates.push({kind:kinds[video.kind],imageUrl:video.imageUrl,sourceUrl:video.url,date:video.publishedOn});
@@ -164,17 +167,18 @@ function artworkCandidates(entry,videos,releases,lives,{entryRecords=ARTWORK_REC
  // A poster illustrates a displayed event; using it must not require or mutate
  // the independent singer verification state of that history row.
  for(const live of lives){const image=eventArtworkForEvent(live,eventRecords);if(image)candidates.push({...image,date:live.date});}
- return rankArtworkCandidates(candidates);
+ const excluded=excludedSourceKeys(entry,sourceExclusions);
+ return rankArtworkCandidates(candidates.filter(c=>!excluded.has(sourceKey(c.sourceUrl))));
 }
 /** All display surfaces and failure fallbacks share the same ordered candidates. */
 export function songArtworkCandidatesForEntry(entry,work={},options={}){
  if(!entry?.detail)return [];
- return artworkCandidates(entry,songVideosForEntry(entry,work,options.sourceRecords),songReleasesForEntry(entry,work,options.releaseRecords,options.sourceRecords),songLivesForEntry(entry,options.eventRecords),options);
+ return artworkCandidates(entry,songVideosForEntry(entry,work,options.sourceRecords,options.sourceExclusions),songReleasesForEntry(entry,work,options.releaseRecords,options.sourceRecords),songLivesForEntry(entry,options.eventRecords),options);
 }
 export function songArtworkForEntry(entry,work={}){return songArtworkCandidatesForEntry(entry,work)[0]??null;}
 export function buildSongDetail(entry,work={},options={}){
  if(!entry?.detail)return null;
- const d=entry.detail,metadata=songMetadataForEntry(entry),creditData=songCreditsForEntry(entry,metadata),videos=songVideosForEntry(entry,work,options.sourceRecords),releases=songReleasesForEntry(entry,work,options.releaseRecords,options.sourceRecords),allLives=songLivesForEntry(entry,options.eventRecords);
+ const d=entry.detail,metadata=songMetadataForEntry(entry),creditData=songCreditsForEntry(entry,metadata),videos=songVideosForEntry(entry,work,options.sourceRecords,options.sourceExclusions),releases=songReleasesForEntry(entry,work,options.releaseRecords,options.sourceRecords),allLives=songLivesForEntry(entry,options.eventRecords);
  const images=artworkCandidates(entry,videos,releases,allLives,options);
  return {detail:d,metadata,credits:creditData.rows,originalArranger:creditData.originalArranger,
   artwork:images[0]??null,artworkCandidates:images,listenUrl:videos[0]?.url??releases.find(r=>r.externalUrl)?.externalUrl??null,videos,releases,lives:allLives,

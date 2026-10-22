@@ -1,4 +1,5 @@
-body:has(.song-detail-page) .site-header{position:static}
+/* Scroll with the page while keeping the menu above the sticky song tabs. */
+body:has(.song-detail-page) .site-header{position:relative}
 body:has(.song-detail-page) .header-inner{max-width:1100px}
 .main:has(.song-detail-page){max-width:1100px;padding-top:34px;padding-bottom:70px;min-height:0}
 .song-detail-back{display:inline-block;margin-bottom:30px;color:#7b8574;font-size:11px;text-decoration:none}

@@ -110,5 +110,30 @@
         "https://x.com/isekaijoucho/status/1384085061297840137"
       ]
     }
+  ],
+  "exclusions": [
+    {
+      "key": "yugi-original-exclude-gen2-live-mv",
+      "status": "active",
+      "checkedOn": "2026-10-22",
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=LAE8V9dEacQ",
+      "entry": {
+        "entryId": "59bccf1a-c9d6-4b48-ab0d-2dcfc0e2b47c",
+        "kind": "song_variant",
+        "primaryWorkId": "917bf995-b8a3-54d9-9466-048d0628de78",
+        "title": "遊戯",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "basis": "owner_correction_different_vocal_configuration"
+    }
   ]
 }

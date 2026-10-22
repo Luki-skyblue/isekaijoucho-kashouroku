@@ -15,6 +15,7 @@ export function youtubeId(value:unknown):string|null;
 export function safeSongUrl(value:unknown):string|null;
 export function songListenLabel(url:unknown):string;
 export const SONG_SOURCE_RECORDS:JsonObject[];
+export const SONG_SOURCE_EXCLUSIONS:JsonObject[];
 export function registeredSongSourcesForEntry(entry:JsonObject,records?:JsonObject[]):JsonObject[];
 export function missingSongText(review:unknown):string;
 export function songMetadataForEntry(entry:JsonObject):JsonObject;
@@ -22,6 +23,6 @@ export function songCreditsForEntry(entry:JsonObject,metadata?:JsonObject):{rows
 export const SHARED_RELEASE_TRACKLISTS:Array<{familyId:string;title:string;editionIds:string[];label:string;sourceUrl:string}>;
 export function songReleasesForEntry(entry:JsonObject,work?:Partial<PrivateWork>,releaseRecords?:JsonObject[],sourceRecords?:JsonObject[]):JsonObject[];
 export function songArtworkForEntry(entry:JsonObject,work?:Partial<PrivateWork>):SongDetailData['artwork'];
-export function songArtworkCandidatesForEntry(entry:JsonObject,work?:Partial<PrivateWork>,options?:{entryRecords?:JsonObject[];releaseRecords?:JsonObject[];eventRecords?:JsonObject[];sourceRecords?:JsonObject[]}):SongArtwork[];
-export function buildSongDetail(entry:JsonObject,work?:Partial<PrivateWork>,options?:{entryRecords?:JsonObject[];releaseRecords?:JsonObject[];eventRecords?:JsonObject[];sourceRecords?:JsonObject[]}):SongDetailData|null;
+export function songArtworkCandidatesForEntry(entry:JsonObject,work?:Partial<PrivateWork>,options?:{entryRecords?:JsonObject[];releaseRecords?:JsonObject[];eventRecords?:JsonObject[];sourceRecords?:JsonObject[];sourceExclusions?:JsonObject[]}):SongArtwork[];
+export function buildSongDetail(entry:JsonObject,work?:Partial<PrivateWork>,options?:{entryRecords?:JsonObject[];releaseRecords?:JsonObject[];eventRecords?:JsonObject[];sourceRecords?:JsonObject[];sourceExclusions?:JsonObject[]}):SongDetailData|null;
 export function songDetailFromModel(model:PrivateModel,entryId:string):SongDetailData|null;
