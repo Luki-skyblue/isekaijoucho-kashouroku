@@ -1,10 +1,11 @@
 import type {JsonObject} from './core';
 import type {PrivateModel} from './private-read-model.mjs';
-export type PersonDetailData={key:string;name:string;roles:string[];total:number;page:number;pages:number;items:Array<{entryId:string;title:string;displayCredit:string;roles:string[];thumbnailUrl:string|null;thumbnailUrls:string[]}>};
+export type PersonDetailData={key:string;name:string;kindLabel:string;roles:string[];role:string;roleTabs:Array<{id:string;label:string;count:number}>;total:number;page:number;pages:number;items:Array<{entryId:string;href:string;title:string;displayCredit:string;roles:string[];thumbnailUrl:string|null;thumbnailUrls:string[]}>};
 export function creditNameKey(name:unknown):string|null;
 export function validPersonKey(key:unknown):boolean;
 export function singerCreditParts(detail:JsonObject):Array<{text:string;personKey:string|null}>;
-export function personDetailFromModel(model:PrivateModel,key:string,options?:{page?:number;limit?:number}):PersonDetailData|null;
-export type PeopleListQuery={category?:string;term?:string;page?:number;limit?:number};
-export function peopleListFromModel(model:PrivateModel,query?:PeopleListQuery):{category:string;term:string;page:number;pages:number;total:number;categories:Array<{id:string;label:string;count:number}>;items:Array<{key:string;name:string;type:string;roles:string[];songCount:number}>};
+export function personDetailFromModel(model:PrivateModel,key:string,options?:{page?:number;limit?:number;role?:string}):PersonDetailData|null;
+export function personDetailHref(key:string,options?:{page?:number;role?:string}):string;
+export type PeopleListQuery={category?:string;term?:string;role?:string;page?:number;limit?:number};
+export function peopleListFromModel(model:PrivateModel,query?:PeopleListQuery):{category:string;term:string;role:string;roleOptions:Array<{id:string;label:string}>;page:number;pages:number;total:number;categories:Array<{id:string;label:string;count:number}>;items:Array<{key:string;name:string;type:string;kindLabel:string;roles:string[];songCount:number}>};
 export function peopleListHref(query?:PeopleListQuery):string;

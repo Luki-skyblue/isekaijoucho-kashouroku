@@ -5,7 +5,7 @@ export type SongDetailData={
  credits:Array<{role:string;names:string[];people:Array<{name:string;personKey:string|null}>;value:string|null;review:JsonObject|null}>;
  originalArranger:string|null;
  artwork:SongArtwork|null;artworkCandidates:SongArtwork[];listenUrl:string|null;
- videos:Array<{mediaId:string;url:string;title:string|null;kind:string|null;publishedOn:string|null;imageUrl:string|null;authorName?:string|null;authorUrl?:string|null;credits:Array<{role:string;name:string}>}>;
+ videos:Array<{mediaId:string;url:string;title:string|null;kind:string|null;publishedOn:string|null;imageUrl:string|null;authorName?:string|null;authorUrl?:string|null;credits:Array<{role:string;name:string;entityId?:string}>}>;
  releases:JsonObject[];
  lives:Array<{eventId:string;title:string;date:string|null;uncertain:boolean;imageUrl:string|null}>;
  hasUncertainLives:boolean;comparison:JsonObject|null;versionLabel:string|null;
@@ -17,6 +17,8 @@ export function songListenLabel(url:unknown):string;
 export const SONG_SOURCE_RECORDS:JsonObject[];
 export const SONG_SOURCE_EXCLUSIONS:JsonObject[];
 export const SONG_FACT_RECORDS:JsonObject[];
+export const SONG_MEDIA_CREDIT_RECORDS:JsonObject[];
+export function registeredMediaCreditsForVideo(entry:JsonObject,video:{mediaId:string;url:string},records?:JsonObject[]):JsonObject[];
 export function registeredSongFactsForEntry(entry:JsonObject,records?:JsonObject[]):JsonObject[];
 export function registeredSongSourcesForEntry(entry:JsonObject,records?:JsonObject[]):JsonObject[];
 export function missingSongText(review:unknown):string;
@@ -25,6 +27,6 @@ export function songCreditsForEntry(entry:JsonObject,metadata?:JsonObject,factRe
 export const SHARED_RELEASE_TRACKLISTS:Array<{familyId:string;title:string;editionIds:string[];label:string;sourceUrl:string}>;
 export function songReleasesForEntry(entry:JsonObject,work?:Partial<PrivateWork>,releaseRecords?:JsonObject[],sourceRecords?:JsonObject[]):JsonObject[];
 export function songArtworkForEntry(entry:JsonObject,work?:Partial<PrivateWork>):SongDetailData['artwork'];
-export function songArtworkCandidatesForEntry(entry:JsonObject,work?:Partial<PrivateWork>,options?:{entryRecords?:JsonObject[];releaseRecords?:JsonObject[];eventRecords?:JsonObject[];sourceRecords?:JsonObject[];sourceExclusions?:JsonObject[]}):SongArtwork[];
-export function buildSongDetail(entry:JsonObject,work?:Partial<PrivateWork>,options?:{entryRecords?:JsonObject[];releaseRecords?:JsonObject[];eventRecords?:JsonObject[];sourceRecords?:JsonObject[];sourceExclusions?:JsonObject[];factRecords?:JsonObject[]}):SongDetailData|null;
+export function songArtworkCandidatesForEntry(entry:JsonObject,work?:Partial<PrivateWork>,options?:{entryRecords?:JsonObject[];releaseRecords?:JsonObject[];eventRecords?:JsonObject[];sourceRecords?:JsonObject[];sourceExclusions?:JsonObject[];mediaCreditRecords?:JsonObject[]}):SongArtwork[];
+export function buildSongDetail(entry:JsonObject,work?:Partial<PrivateWork>,options?:{entryRecords?:JsonObject[];releaseRecords?:JsonObject[];eventRecords?:JsonObject[];sourceRecords?:JsonObject[];sourceExclusions?:JsonObject[];factRecords?:JsonObject[];mediaCreditRecords?:JsonObject[]}):SongDetailData|null;
 export function songDetailFromModel(model:PrivateModel,entryId:string):SongDetailData|null;

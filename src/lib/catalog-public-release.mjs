@@ -19,7 +19,7 @@ const programAssociation=obj('associationScope confirmsPartSpecificPerformance e
 const rendition=obj('completeness dateBasis isReference occurredAt occurredOn partRawLabel partSequenceNo realizationKind renditionContainsMultipleWorks renditionId renditionKind renditionPartId renditionRawLabel versionId workId',{
  version,exactPartParticipants:list(part),renditionWideParticipants:list(part),programAssociations:list(programAssociation)});
 const mediaAssociation=obj('identityScope linkCompleteness linkId partSpecificContentConfirmed relationType renditionContainsAnotherWork sequenceNo targetRenditionId targetVersionId targetWorkId');
-const media=obj('canonicalTitle durationMs mediaId mediaKind presentationKind',{associations:list(mediaAssociation),publications:list(resource)});
+const media=obj('canonicalTitle durationMs mediaId mediaKind presentationKind',{associations:list(mediaAssociation),publications:list(resource),credits:list(credit)});
 const releaseAssociation=obj('identityScope linkCompleteness linkId positionScope provesWholeWorkFullPerformance relationType releaseItemPartId subpartKind subpartRawLabel subpartSequenceNo targetVersionId targetWorkId');
 const workRelease=obj('durationMs itemKind rawTrackPosition rawTrackTitle releaseItemId trackNumber',{
  family:obj('catalogScope familyId releaseKind title'),edition:obj('catalogNumber datePrecision editionId editionKind editionName releaseDate status'),

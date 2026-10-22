@@ -9,8 +9,8 @@ import {rpc} from '@/lib/api';
 import {asArray,asObject,confirmedSongFullFromProgram,displayDate,evidenceLabel,exactSingers,mediaGroups,num,pageNumber,safeExternalUrl,recordingDate,relatedRenditionParticipants,str,textOr,validId,JsonObject} from '@/lib/core';
 import {Breadcrumb,Chip,Empty,Heading,Panel} from '@/components/ui';
 
-export default async function SongDetail({params,searchParams}:{params:Promise<{workId:string}>;searchParams:Promise<{historyPage?:string}>}){
- const historyPage=pageNumber((await searchParams).historyPage);
+export default async function SongDetail({params,searchParams}:{params:Promise<{workId:string}>;searchParams:Promise<{historyPage?:string;tab?:string}>}){
+ const query=await searchParams,historyPage=pageNumber(query.historyPage),initialTab=['info','videos','history','releases','versions'].includes(query.tab??'')?query.tab:historyPage>1?'history':'info';
  const {workId}=await params;
  if(publicCatalogEnabled()&&/^[1-9]\d{0,8}$/.test(workId)){
   const target=publicLegacySongTarget(Number(workId));if(target)permanentRedirect(`/songs/${target}`);
@@ -18,7 +18,7 @@ export default async function SongDetail({params,searchParams}:{params:Promise<{
  if(!validId(workId))notFound();
  if(useCatalogEntryIndex()) {
   const song=await getCatalogSongDetail(workId);
-  if(song)return <>{localCatalogReviewEnabled()&&<p className="catalog-review-warning">開発用・ローカル候補レビュー</p>}<CatalogSongDetail song={song} initialTab={historyPage>1?'history':'info'}/></>;
+  if(song)return <>{localCatalogReviewEnabled()&&<p className="catalog-review-warning">開発用・ローカル候補レビュー</p>}<CatalogSongDetail song={song} initialTab={initialTab}/></>;
  }
  const [work,renditions,media,releases,sources]=await Promise.all([
   rpc('kashouroku_v3_work',{p_work_id:workId}),

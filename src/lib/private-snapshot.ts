@@ -35,7 +35,7 @@ export async function privateSnapshotInfo():Promise<{exportId:string}> {
 }
 export async function privateSongDetail(entryId:string){return songDetailFromModel(await load(),entryId);}
 export async function privateHomeRecent(){return homeRecentFromModel(await load());}
-export async function privatePersonDetail(key:string,page=1){return personDetailFromModel(await load(),key,{page});}
+export async function privatePersonDetail(key:string,page=1,role='all'){return personDetailFromModel(await load(),key,{page,role});}
 export async function privateSingerChoices(){return catalogSingerChoices(await load());}
 export async function privatePeopleList(query:PeopleListQuery){return peopleListFromModel(await load(),query);}
 export async function privateDiscovery(query:{category?:string;page?:number}){return discoveryFromModel(await load(),query,discoveryChannels);}

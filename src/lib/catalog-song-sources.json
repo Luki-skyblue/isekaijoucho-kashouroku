@@ -1394,5 +1394,36 @@
       },
       "scopeNote": "Artist-distributed release credits; arranger unspecified. Release mixing/mastering is not assigned to the MV."
     }
+  ],
+  "mediaCredits": [
+    {
+      "key": "soshite-shiro-ni-kaeru-mv-concept",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "entry": {
+        "entryId": "0c4b689c-3fc3-4d82-8d3d-1af7490887a0",
+        "kind": "song_variant",
+        "primaryWorkId": "a355c405-a4ac-58b6-9a6a-32c46c129acd",
+        "title": "そして白に還る",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "mediaId": "edde7066-4d35-52ee-b4f4-2f27561f6635",
+      "mediaUrl": "https://www.youtube.com/watch?v=lhd67CnArlI",
+      "url": "https://kamitsubaki.jp/news/2023/12/09/2877/",
+      "sourceId": "S-111",
+      "credits": [
+        {
+          "role": "原案",
+          "name": "香椎モイミ",
+          "entityId": "cdd1834b-78ff-57c9-8103-e09a048d6503"
+        }
+      ],
+      "sourceWording": "作詞・作曲・編曲・原案：香椎モイミ",
+      "scopeNote": "Official news MV-information section. Concept is attached to this exact MV, not inherited by other media or vocal versions."
+    }
   ]
 }

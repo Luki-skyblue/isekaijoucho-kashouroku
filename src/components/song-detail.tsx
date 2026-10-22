@@ -4,9 +4,9 @@ import {missingSongText,safeSongUrl,songListenLabel,youtubeId,type SongDetailDat
 import {SongDetailTabs} from './song-detail-tabs';
 import {SongDetailArtwork} from './song-detail-artwork';
 import {CreditName,SingerNames} from './person-name';
+import {creditRoleLabel} from '@/lib/catalog-credit-labels.mjs';
 import './song-detail.css';
 
-const ROLES:Record<string,string>={lyricist:'作詞',composer:'作曲',arranger:'編曲'};
 const CATEGORIES:Record<string,string>={original:'オリジナル',cover:'カバー',collaboration:'コラボ',variant:'その他'};
 function Value({value,review}:{value:unknown;review?:unknown}){return typeof value==='string'&&value.trim()?<>{value}</>:<span className="song-detail-state">{missingSongText(review)}</span>;}
 function Empty({review}:{review?:unknown}){return <p className="song-detail-empty song-detail-state">{missingSongText(review)}</p>;}
@@ -29,7 +29,7 @@ export function CatalogSongDetail({song,initialTab='info'}:{song:SongDetailData;
    {str(d.editorialOriginLabel)&&<><dt>バージョン名</dt><dd>{str(d.editorialOriginLabel)}</dd></>}
    {variations.length>0&&<><dt>バリエーション</dt><dd>{variations.join(' / ')}</dd></>}
   </dl>
-  <div className="song-detail-credits"><dl className="song-detail-facts">{song.credits.map(c=><div className="song-detail-fact-pair" key={c.role}><dt>{ROLES[c.role]||c.role}</dt><dd>{c.people.length?c.people.map((person,i)=><span key={person.name}>{i>0?'・':''}<CreditName name={person.name} personKey={person.personKey}/></span>):<Value value={c.value} review={c.review}/>}</dd></div>)}</dl></div>
+  <div className="song-detail-credits"><dl className="song-detail-facts">{song.credits.map(c=><div className="song-detail-fact-pair" key={c.role}><dt>{creditRoleLabel(c.role)}</dt><dd>{c.people.length?c.people.map((person,i)=><span key={person.name}>{i>0?'・':''}<CreditName name={person.name} personKey={person.personKey}/></span>):<Value value={c.value} review={c.review}/>}</dd></div>)}</dl></div>
   {originalInfo&&<div className="song-detail-original"><h2>原曲</h2><dl className="song-detail-facts">
    {str(m.originalArtist)&&<><dt>アーティスト</dt><dd>{str(m.originalArtist)}</dd></>}{str(m.originalVocal)&&<><dt>歌唱</dt><dd>{str(m.originalVocal)}</dd></>}{song.originalArranger&&<><dt>編曲</dt><dd><CreditName name={song.originalArranger}/></dd></>}
   </dl></div>}
@@ -41,7 +41,7 @@ export function CatalogSongDetail({song,initialTab='info'}:{song:SongDetailData;
   <a className="song-detail-video-thumbnail" href={video.url} target="_blank" rel="noopener noreferrer" aria-label={(video.title||'動画')+'を開く'}><SongDetailArtwork url={video.imageUrl} className="song-detail-video-image"/><span className="song-detail-play" aria-hidden="true">▶</span></a>
   <div className="song-detail-video-copy"><a href={video.url} className="song-detail-video-title" target="_blank" rel="noopener noreferrer"><strong className={video.title?undefined:'song-detail-state'}>{video.title||'タイトル未取得'}</strong></a>
    <div className="song-detail-video-meta">{songListenLabel(video.url)==='Xで見る'&&<span>X</span>}<span className={video.kind&&video.kind!=='unknown'?undefined:'song-detail-state'}>{({music_video:'MV',cover_video:'歌ってみた',cover_duet_video:'歌ってみた',live_video:'LIVE映像'} as Record<string,string>)[video.kind??'']||'種別未取得'}</span>{video.publishedOn?<time dateTime={video.publishedOn}>投稿日 {displayDate(video.publishedOn,video.publishedOn)}</time>:<span className="song-detail-state">投稿日未取得</span>}</div>
-   {video.credits.length>0&&<details className="song-detail-video-credits"><summary>クレジット</summary><dl className="song-detail-facts">{video.credits.map(c=><div className="song-detail-fact-pair" key={c.role}><dt>{c.role}</dt><dd><CreditName name={c.name}/></dd></div>)}</dl></details>}
+   {video.credits.length>0&&<details className="song-detail-video-credits"><summary>クレジット</summary><dl className="song-detail-facts">{video.credits.map((c,i)=><div className="song-detail-fact-pair" key={c.role+'|'+c.name+'|'+i}><dt>{creditRoleLabel(c.role)}</dt><dd><CreditName name={c.name} personKey={c.entityId}/></dd></div>)}</dl></details>}
   </div>
  </article>)}</div>:<Empty review={review.media}/>;
  const history=<>{song.hasUncertainLives&&<p className="song-detail-note">歌唱者の組合せが未確認の公演を含みます。</p>}{song.lives.length?<div>{song.lives.map(live=><Link className="song-detail-live" key={live.eventId+'|'+live.date} href={'/lives/'+live.eventId}><SongDetailArtwork url={live.imageUrl} className="song-detail-live-art"/><span className="song-detail-live-copy">{live.date&&<time dateTime={live.date}>{displayDate(live.date,live.date)}</time>}<strong>{live.title}</strong></span><span className="song-detail-arrow" aria-hidden="true">↗</span></Link>)}</div>:<Empty review={review.history}/>}</>;
@@ -53,6 +53,6 @@ export function CatalogSongDetail({song,initialTab='info'}:{song:SongDetailData;
  return <article className="song-detail-page" data-song-entry={entryId}>
   <Link className="song-detail-back" href="/songs">← 楽曲一覧</Link>
   <header className="song-detail-hero"><SongDetailArtwork url={imageUrl} urls={song.artworkCandidates.map(image=>image.imageUrl)} eager className={'song-detail-art song-detail-art-'+heroShape}/><div className="song-detail-heading">{str(m.titleKana)&&<p className="song-detail-kana">{str(m.titleKana)}</p>}<div className="song-detail-title-line"><h1>{title}</h1>{song.versionLabel&&<span className="song-detail-version-tag">{song.versionLabel}</span>}</div><p className="song-detail-singer">{singers?<SingerNames detail={d}/>:<Value value={singers}/>}</p>{song.listenUrl&&<a className="song-detail-primary" href={song.listenUrl} target="_blank" rel="noopener noreferrer">{song.videos.some(v=>v.url===song.listenUrl)?songListenLabel(song.listenUrl):'配信で聴く'} ↗</a>}</div></header>
-  <SongDetailTabs key={entryId} initialTab={initialTab} tabs={[{id:'info',label:'楽曲情報',count:null,content:info},{id:'videos',label:'関連動画',count:song.videos.length,content:videos},{id:'history',label:'披露歴',count:song.lives.length,content:history},{id:'releases',label:'収録作品',count:song.releases.length,content:releases},{id:'versions',label:'別バージョン',count:siblings.length,content:versions}]}/>
+  <SongDetailTabs key={entryId+'|'+initialTab} initialTab={initialTab} tabs={[{id:'info',label:'楽曲情報',count:null,content:info},{id:'videos',label:'関連動画',count:song.videos.length,content:videos},{id:'history',label:'披露歴',count:song.lives.length,content:history},{id:'releases',label:'収録作品',count:song.releases.length,content:releases},{id:'versions',label:'別バージョン',count:siblings.length,content:versions}]}/>
  </article>;
 }
