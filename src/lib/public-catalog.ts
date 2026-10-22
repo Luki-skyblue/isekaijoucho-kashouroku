@@ -8,6 +8,7 @@ import type {JsonObject} from './core';
 import {songDetailFromModel} from './song-detail-data.mjs';
 import {liveDisplayContextFromModel} from './live-detail-data.mjs';
 import {releaseDisplayContextFromModel,releaseListArtworkFromModel} from './release-detail-data.mjs';
+import {releaseListFromModel,type ReleaseListQuery} from './release-list-data.mjs';
 import {homeRecentFromModel} from './home-recent-data.mjs';
 import {personDetailFromModel} from './person-detail-data.mjs';
 import {discoveryFromModel} from './discovery-data.mjs';
@@ -31,6 +32,7 @@ export function publicCatalogInfo(){return {releaseId:String(load().manifest.exp
 export function publicSongDetail(entryId:string){return songDetailFromModel(load(),entryId);}
 export function publicLiveDisplayContext(eventId:string){return liveDisplayContextFromModel(load(),eventId);}
 export function publicReleaseDisplayContext(familyId:string){return releaseDisplayContextFromModel(load(),familyId);}
+export function publicReleaseList(query:ReleaseListQuery){return releaseListFromModel(load(),query);}
 export function publicHomeRecent(){return homeRecentFromModel(load());}
 export function publicPersonDetail(key:string,page=1){return personDetailFromModel(load(),key,{page});}
 export function publicDiscovery(query:{category?:string;page?:number}){return discoveryFromModel(load(),query,discoveryChannels);}
