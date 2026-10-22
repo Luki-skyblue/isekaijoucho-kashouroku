@@ -135,5 +135,1264 @@
       },
       "basis": "owner_correction_different_vocal_configuration"
     }
+  ],
+  "facts": [
+    {
+      "key": "album-arranger-e7a10406-c578-5869-9b6b-4b8c509bd20f",
+      "status": "active",
+      "checkedOn": "2026-10-22",
+      "entry": {
+        "entryId": "a4ca0573-48d6-49d0-a3d2-d8b4d4352227",
+        "kind": "song_variant",
+        "primaryWorkId": "f6d7d3c1-33e9-5649-be74-f4f18f3244e0",
+        "title": "物語りのワルツ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "samayuzame"
+        ],
+        [
+          "work",
+          "composer",
+          "samayuzame"
+        ],
+        [
+          "work",
+          "lyricist",
+          "samayuzame"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/1036/",
+      "sourceId": "S-106",
+      "credits": {
+        "arranger": [
+          "samayuzame"
+        ]
+      },
+      "sourceTrack": {
+        "familyId": "de19530d-b318-5828-b6c8-b381e2a98a30",
+        "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+        "componentId": "4c40e91e-84c9-5bf0-9b50-b03869c978d4",
+        "itemId": "e7a10406-c578-5869-9b6b-4b8c509bd20f",
+        "rawPosition": "2",
+        "rawTitle": "物語りのワルツ"
+      },
+      "scopeNote": "Official album credit; exact existing album item-to-vocal-entry correspondence. No sibling or rendition-wide inheritance."
+    },
+    {
+      "key": "album-arranger-0ef94aab-407d-57a7-a29e-8ae715203edd",
+      "status": "active",
+      "checkedOn": "2026-10-22",
+      "entry": {
+        "entryId": "ec467200-b1d9-4a89-9612-6ebe94228004",
+        "kind": "song_variant",
+        "primaryWorkId": "90eb3cce-a1d4-505d-9d37-586577ec1d74",
+        "title": "いろはに咲きて",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "samayuzame"
+        ],
+        [
+          "work",
+          "composer",
+          "samayuzame"
+        ],
+        [
+          "work",
+          "lyricist",
+          "samayuzame"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/1036/",
+      "sourceId": "S-106",
+      "credits": {
+        "arranger": [
+          "samayuzame"
+        ]
+      },
+      "sourceTrack": {
+        "familyId": "de19530d-b318-5828-b6c8-b381e2a98a30",
+        "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+        "componentId": "4c40e91e-84c9-5bf0-9b50-b03869c978d4",
+        "itemId": "0ef94aab-407d-57a7-a29e-8ae715203edd",
+        "rawPosition": "3",
+        "rawTitle": "いろはに咲きて"
+      },
+      "scopeNote": "Official album credit; exact existing album item-to-vocal-entry correspondence. No sibling or rendition-wide inheritance."
+    },
+    {
+      "key": "album-arranger-a0f9ab99-e3ca-574d-a33e-ea4d9b1f0ae2",
+      "status": "active",
+      "checkedOn": "2026-10-22",
+      "entry": {
+        "entryId": "ffe9cbc0-27b8-48c2-8631-7ad4562f9a47",
+        "kind": "song_variant",
+        "primaryWorkId": "078d4b75-9ac7-5f5a-8701-a50ef78a70d0",
+        "title": "ハイドレンジア",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "とうかさ"
+        ],
+        [
+          "work",
+          "composer",
+          "とうかさ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "とうかさ"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/1036/",
+      "sourceId": "S-106",
+      "credits": {
+        "arranger": [
+          "とうかさ"
+        ]
+      },
+      "sourceTrack": {
+        "familyId": "de19530d-b318-5828-b6c8-b381e2a98a30",
+        "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+        "componentId": "4c40e91e-84c9-5bf0-9b50-b03869c978d4",
+        "itemId": "a0f9ab99-e3ca-574d-a33e-ea4d9b1f0ae2",
+        "rawPosition": "4",
+        "rawTitle": "ハイドレンジア"
+      },
+      "scopeNote": "Official album credit; exact existing album item-to-vocal-entry correspondence. No sibling or rendition-wide inheritance."
+    },
+    {
+      "key": "album-arranger-c481e653-5a46-5a13-bc54-08026c87cee2",
+      "status": "active",
+      "checkedOn": "2026-10-22",
+      "entry": {
+        "entryId": "9ad985af-702d-4a46-b4d5-d00e3e28f2df",
+        "kind": "song_variant",
+        "primaryWorkId": "193ca6a9-3327-5482-875d-746a70365c79",
+        "title": "ジオラマドラマ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "samayuzame"
+        ],
+        [
+          "work",
+          "composer",
+          "samayuzame"
+        ],
+        [
+          "work",
+          "lyricist",
+          "samayuzame"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/1036/",
+      "sourceId": "S-106",
+      "credits": {
+        "arranger": [
+          "samayuzame"
+        ]
+      },
+      "sourceTrack": {
+        "familyId": "de19530d-b318-5828-b6c8-b381e2a98a30",
+        "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+        "componentId": "4c40e91e-84c9-5bf0-9b50-b03869c978d4",
+        "itemId": "c481e653-5a46-5a13-bc54-08026c87cee2",
+        "rawPosition": "5",
+        "rawTitle": "ジオラマドラマ"
+      },
+      "scopeNote": "Official album credit; exact existing album item-to-vocal-entry correspondence. No sibling or rendition-wide inheritance."
+    },
+    {
+      "key": "album-arranger-cac6041f-8074-5bdc-b9a1-91346ed3dda5",
+      "status": "active",
+      "checkedOn": "2026-10-22",
+      "entry": {
+        "entryId": "df11fb8c-32af-4caa-879d-736c6331f8d4",
+        "kind": "song_variant",
+        "primaryWorkId": "64cf8656-1302-527e-94e1-0b31d0595354",
+        "title": "斯く美しき造花",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "とうかさ"
+        ],
+        [
+          "work",
+          "composer",
+          "とうかさ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "とうかさ"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/1036/",
+      "sourceId": "S-106",
+      "credits": {
+        "arranger": [
+          "とうかさ"
+        ]
+      },
+      "sourceTrack": {
+        "familyId": "de19530d-b318-5828-b6c8-b381e2a98a30",
+        "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+        "componentId": "4c40e91e-84c9-5bf0-9b50-b03869c978d4",
+        "itemId": "cac6041f-8074-5bdc-b9a1-91346ed3dda5",
+        "rawPosition": "6",
+        "rawTitle": "斯く美しき造花"
+      },
+      "scopeNote": "Official album credit; exact existing album item-to-vocal-entry correspondence. No sibling or rendition-wide inheritance."
+    },
+    {
+      "key": "album-arranger-05876b66-7264-5705-8102-a0be86d2001e",
+      "status": "active",
+      "checkedOn": "2026-10-22",
+      "entry": {
+        "entryId": "acfcbd0b-e7b2-4878-aa12-c1d5fef9d2e4",
+        "kind": "song_variant",
+        "primaryWorkId": "058b33ac-517a-5e13-8f26-6c727ac3325e",
+        "title": "マボロシのまち",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "samayuzame"
+        ],
+        [
+          "work",
+          "composer",
+          "samayuzame"
+        ],
+        [
+          "work",
+          "lyricist",
+          "samayuzame"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/1036/",
+      "sourceId": "S-106",
+      "credits": {
+        "arranger": [
+          "samayuzame"
+        ]
+      },
+      "sourceTrack": {
+        "familyId": "de19530d-b318-5828-b6c8-b381e2a98a30",
+        "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+        "componentId": "4c40e91e-84c9-5bf0-9b50-b03869c978d4",
+        "itemId": "05876b66-7264-5705-8102-a0be86d2001e",
+        "rawPosition": "7",
+        "rawTitle": "マボロシのまち"
+      },
+      "scopeNote": "Official album credit; exact existing album item-to-vocal-entry correspondence. No sibling or rendition-wide inheritance."
+    },
+    {
+      "key": "album-arranger-88897dd2-341b-563e-adc3-9fccffd2440c",
+      "status": "active",
+      "checkedOn": "2026-10-22",
+      "entry": {
+        "entryId": "6fe2a3e0-77c9-4ab3-b009-106476646947",
+        "kind": "song_variant",
+        "primaryWorkId": "61cf5088-af8f-58cb-8bba-9e20c56565b0",
+        "title": "やさしいせかい",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "samayuzame"
+        ],
+        [
+          "work",
+          "composer",
+          "samayuzame"
+        ],
+        [
+          "work",
+          "lyricist",
+          "samayuzame"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/1036/",
+      "sourceId": "S-106",
+      "credits": {
+        "arranger": [
+          "samayuzame"
+        ]
+      },
+      "sourceTrack": {
+        "familyId": "de19530d-b318-5828-b6c8-b381e2a98a30",
+        "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+        "componentId": "4c40e91e-84c9-5bf0-9b50-b03869c978d4",
+        "itemId": "88897dd2-341b-563e-adc3-9fccffd2440c",
+        "rawPosition": "8",
+        "rawTitle": "やさしいせかい"
+      },
+      "scopeNote": "Official album credit; exact existing album item-to-vocal-entry correspondence. No sibling or rendition-wide inheritance."
+    },
+    {
+      "key": "album-arranger-4c0bec7c-c0f7-502e-9c5b-de02aaa784c3",
+      "status": "active",
+      "checkedOn": "2026-10-22",
+      "entry": {
+        "entryId": "fa71fcf1-553d-4622-b304-8f8e95662b08",
+        "kind": "song_variant",
+        "primaryWorkId": "b1243ee9-1cb2-5f8c-80d3-8db588896dde",
+        "title": "ANEMONE",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "samayuzame"
+        ],
+        [
+          "work",
+          "composer",
+          "samayuzame"
+        ],
+        [
+          "work",
+          "lyricist",
+          "samayuzame"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/1036/",
+      "sourceId": "S-106",
+      "credits": {
+        "arranger": [
+          "samayuzame"
+        ]
+      },
+      "sourceTrack": {
+        "familyId": "de19530d-b318-5828-b6c8-b381e2a98a30",
+        "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+        "componentId": "4c40e91e-84c9-5bf0-9b50-b03869c978d4",
+        "itemId": "4c0bec7c-c0f7-502e-9c5b-de02aaa784c3",
+        "rawPosition": "9",
+        "rawTitle": "ANEMONE"
+      },
+      "scopeNote": "Official album credit; exact existing album item-to-vocal-entry correspondence. No sibling or rendition-wide inheritance."
+    },
+    {
+      "key": "album-arranger-366fb648-c9ca-5b45-9db5-a2bb7c901b14",
+      "status": "active",
+      "checkedOn": "2026-10-22",
+      "entry": {
+        "entryId": "cb31bd97-6d1f-4afc-893c-982b9161b17e",
+        "kind": "song_variant",
+        "primaryWorkId": "cb07bc61-fb0d-577f-9174-94c486d35e00",
+        "title": "ヰ世界の宝石譚",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "sasakure.UK"
+        ],
+        [
+          "work",
+          "composer",
+          "sasakure.UK"
+        ],
+        [
+          "work",
+          "lyricist",
+          "sasakure.UK"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/1036/",
+      "sourceId": "S-106",
+      "credits": {
+        "arranger": [
+          "sasakure.UK"
+        ]
+      },
+      "sourceTrack": {
+        "familyId": "de19530d-b318-5828-b6c8-b381e2a98a30",
+        "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+        "componentId": "4c40e91e-84c9-5bf0-9b50-b03869c978d4",
+        "itemId": "366fb648-c9ca-5b45-9db5-a2bb7c901b14",
+        "rawPosition": "10",
+        "rawTitle": "ヰ世界の宝石譚"
+      },
+      "scopeNote": "Official album credit; exact existing album item-to-vocal-entry correspondence. No sibling or rendition-wide inheritance."
+    },
+    {
+      "key": "album-arranger-1a79acd5-6afd-5701-b9d9-dd69a935c3f9",
+      "status": "active",
+      "checkedOn": "2026-10-22",
+      "entry": {
+        "entryId": "28e3b945-e49b-4e12-94ca-12f0a8718021",
+        "kind": "song_variant",
+        "primaryWorkId": "9101f61f-ceff-5335-a1ed-1f7d4de78d98",
+        "title": "とめどなき白情",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "はるまきごはん"
+        ],
+        [
+          "work",
+          "composer",
+          "はるまきごはん"
+        ],
+        [
+          "work",
+          "lyricist",
+          "はるまきごはん"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/1036/",
+      "sourceId": "S-106",
+      "credits": {
+        "arranger": [
+          "はるまきごはん"
+        ]
+      },
+      "sourceTrack": {
+        "familyId": "de19530d-b318-5828-b6c8-b381e2a98a30",
+        "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+        "componentId": "4c40e91e-84c9-5bf0-9b50-b03869c978d4",
+        "itemId": "1a79acd5-6afd-5701-b9d9-dd69a935c3f9",
+        "rawPosition": "12",
+        "rawTitle": "とめどなき白情"
+      },
+      "scopeNote": "Official album credit; exact existing album item-to-vocal-entry correspondence. No sibling or rendition-wide inheritance."
+    },
+    {
+      "key": "album-arranger-64c52ce0-e960-5691-b0a3-96f1845284e1",
+      "status": "active",
+      "checkedOn": "2026-10-22",
+      "entry": {
+        "entryId": "2c130953-3c9c-4d02-a1e8-a8f237eb6b56",
+        "kind": "song_variant",
+        "primaryWorkId": "40aa4d65-a4a1-5928-8cdb-61f4c4ab4b6c",
+        "title": "誰もいない絵で",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "rionos"
+        ],
+        [
+          "work",
+          "composer",
+          "rionos"
+        ],
+        [
+          "work",
+          "lyricist",
+          "rionos"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/1036/",
+      "sourceId": "S-106",
+      "credits": {
+        "arranger": [
+          "rionos"
+        ]
+      },
+      "sourceTrack": {
+        "familyId": "de19530d-b318-5828-b6c8-b381e2a98a30",
+        "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+        "componentId": "4c40e91e-84c9-5bf0-9b50-b03869c978d4",
+        "itemId": "64c52ce0-e960-5691-b0a3-96f1845284e1",
+        "rawPosition": "14",
+        "rawTitle": "誰もいない絵で"
+      },
+      "scopeNote": "Official album credit; exact existing album item-to-vocal-entry correspondence. No sibling or rendition-wide inheritance."
+    },
+    {
+      "key": "album-arranger-4de55741-a8fd-5bc2-9875-2faf4e8d6694",
+      "status": "active",
+      "checkedOn": "2026-10-22",
+      "entry": {
+        "entryId": "8d278884-8e97-4b8d-a1c6-7225863c25b9",
+        "kind": "song_variant",
+        "primaryWorkId": "acbd3faf-005c-5e7d-8c96-ee56a814a265",
+        "title": "ARCADIA",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "composer",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "香椎モイミ"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/1036/",
+      "sourceId": "S-106",
+      "credits": {
+        "arranger": [
+          "香椎モイミ"
+        ]
+      },
+      "sourceTrack": {
+        "familyId": "de19530d-b318-5828-b6c8-b381e2a98a30",
+        "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+        "componentId": "4c40e91e-84c9-5bf0-9b50-b03869c978d4",
+        "itemId": "4de55741-a8fd-5bc2-9875-2faf4e8d6694",
+        "rawPosition": "15",
+        "rawTitle": "ARCADIA"
+      },
+      "scopeNote": "Official album credit; exact existing album item-to-vocal-entry correspondence. No sibling or rendition-wide inheritance."
+    },
+    {
+      "key": "album-arranger-0b5996fd-6c44-5b79-91b8-5c721838a072",
+      "status": "active",
+      "checkedOn": "2026-10-22",
+      "entry": {
+        "entryId": "0c4b689c-3fc3-4d82-8d3d-1af7490887a0",
+        "kind": "song_variant",
+        "primaryWorkId": "a355c405-a4ac-58b6-9a6a-32c46c129acd",
+        "title": "そして白に還る",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "composer",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "香椎モイミ"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/3471/",
+      "sourceId": "S-106",
+      "credits": {
+        "arranger": [
+          "香椎モイミ"
+        ]
+      },
+      "sourceTrack": {
+        "familyId": "bca6130e-c29e-5cbd-a898-cc695bcce702",
+        "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+        "componentId": "aa863904-2469-5e83-8e57-50c53b5fbb8e",
+        "itemId": "0b5996fd-6c44-5b79-91b8-5c721838a072",
+        "rawPosition": "2",
+        "rawTitle": "そして白に還る"
+      },
+      "scopeNote": "Official album credit; exact existing album item-to-vocal-entry correspondence. No sibling or rendition-wide inheritance."
+    },
+    {
+      "key": "album-arranger-29d8df9e-8152-54f5-8801-5958209fa86e",
+      "status": "active",
+      "checkedOn": "2026-10-22",
+      "entry": {
+        "entryId": "e3d9c3a1-8c3d-49e6-947b-d0e200e8b6d4",
+        "kind": "song_variant",
+        "primaryWorkId": "b966dc71-8a4c-561e-86eb-c6321ea93b61",
+        "title": "ラピスのお人形",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "はるまきごはん"
+        ],
+        [
+          "work",
+          "composer",
+          "はるまきごはん"
+        ],
+        [
+          "work",
+          "lyricist",
+          "はるまきごはん"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/3471/",
+      "sourceId": "S-106",
+      "credits": {
+        "arranger": [
+          "はるまきごはん"
+        ]
+      },
+      "sourceTrack": {
+        "familyId": "bca6130e-c29e-5cbd-a898-cc695bcce702",
+        "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+        "componentId": "aa863904-2469-5e83-8e57-50c53b5fbb8e",
+        "itemId": "29d8df9e-8152-54f5-8801-5958209fa86e",
+        "rawPosition": "3",
+        "rawTitle": "ラピスのお人形"
+      },
+      "scopeNote": "Official album credit; exact existing album item-to-vocal-entry correspondence. No sibling or rendition-wide inheritance."
+    },
+    {
+      "key": "album-arranger-187fbd0d-c555-5dc7-9b84-5881fcf1d6a4",
+      "status": "active",
+      "checkedOn": "2026-10-22",
+      "entry": {
+        "entryId": "4839e979-470a-4b21-b16d-3652da7cb695",
+        "kind": "song_variant",
+        "primaryWorkId": "44be232d-ef64-5051-97b0-0e7677d02410",
+        "title": "パンドラコール",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "廉"
+        ],
+        [
+          "work",
+          "composer",
+          "廉"
+        ],
+        [
+          "work",
+          "lyricist",
+          "廉"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/3471/",
+      "sourceId": "S-106",
+      "credits": {
+        "arranger": [
+          "廉"
+        ]
+      },
+      "sourceTrack": {
+        "familyId": "bca6130e-c29e-5cbd-a898-cc695bcce702",
+        "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+        "componentId": "aa863904-2469-5e83-8e57-50c53b5fbb8e",
+        "itemId": "187fbd0d-c555-5dc7-9b84-5881fcf1d6a4",
+        "rawPosition": "4",
+        "rawTitle": "パンドラコール"
+      },
+      "scopeNote": "Official album credit; exact existing album item-to-vocal-entry correspondence. No sibling or rendition-wide inheritance."
+    },
+    {
+      "key": "album-arranger-c6da7d59-34bd-5a79-94aa-593fb13165a2",
+      "status": "active",
+      "checkedOn": "2026-10-22",
+      "entry": {
+        "entryId": "e71238fd-48bd-4dd9-8e76-50d0b191acf6",
+        "kind": "song_variant",
+        "primaryWorkId": "c5992ad9-6d50-5abc-801d-d2232a296b15",
+        "title": "ディメンション",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "柊マグネタイト"
+        ],
+        [
+          "work",
+          "composer",
+          "柊マグネタイト"
+        ],
+        [
+          "work",
+          "lyricist",
+          "柊マグネタイト"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/3471/",
+      "sourceId": "S-106",
+      "credits": {
+        "arranger": [
+          "柊マグネタイト"
+        ]
+      },
+      "sourceTrack": {
+        "familyId": "bca6130e-c29e-5cbd-a898-cc695bcce702",
+        "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+        "componentId": "aa863904-2469-5e83-8e57-50c53b5fbb8e",
+        "itemId": "c6da7d59-34bd-5a79-94aa-593fb13165a2",
+        "rawPosition": "5",
+        "rawTitle": "ディメンション"
+      },
+      "scopeNote": "Official album credit; exact existing album item-to-vocal-entry correspondence. No sibling or rendition-wide inheritance."
+    },
+    {
+      "key": "album-arranger-dbcedf43-64fe-5264-81a6-13fc693ae0d5",
+      "status": "active",
+      "checkedOn": "2026-10-22",
+      "entry": {
+        "entryId": "ed6e982f-31fc-4d7a-9c7b-76896b868fdd",
+        "kind": "song_variant",
+        "primaryWorkId": "24ea10b6-6aa0-5e9c-b2b1-c9cf882d1709",
+        "title": "キミ消失セカイ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "廉"
+        ],
+        [
+          "work",
+          "composer",
+          "廉"
+        ],
+        [
+          "work",
+          "lyricist",
+          "廉"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/3471/",
+      "sourceId": "S-106",
+      "credits": {
+        "arranger": [
+          "廉"
+        ]
+      },
+      "sourceTrack": {
+        "familyId": "bca6130e-c29e-5cbd-a898-cc695bcce702",
+        "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+        "componentId": "aa863904-2469-5e83-8e57-50c53b5fbb8e",
+        "itemId": "dbcedf43-64fe-5264-81a6-13fc693ae0d5",
+        "rawPosition": "6",
+        "rawTitle": "キミ消失セカイ"
+      },
+      "scopeNote": "Official album credit; exact existing album item-to-vocal-entry correspondence. No sibling or rendition-wide inheritance."
+    },
+    {
+      "key": "album-arranger-4bea6ef8-6c3e-57ef-9d69-382a9c3e2336",
+      "status": "active",
+      "checkedOn": "2026-10-22",
+      "entry": {
+        "entryId": "1ff62e3c-7c55-4eb9-b24f-2fc7bb7f3f43",
+        "kind": "song_variant",
+        "primaryWorkId": "f7da9929-1aa4-509a-9625-6a8bbcad076c",
+        "title": "グレイスケイル",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "糸井塔"
+        ],
+        [
+          "work",
+          "composer",
+          "糸井塔"
+        ],
+        [
+          "work",
+          "lyricist",
+          "糸井塔"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/3471/",
+      "sourceId": "S-106",
+      "credits": {
+        "arranger": [
+          "糸井塔"
+        ]
+      },
+      "sourceTrack": {
+        "familyId": "bca6130e-c29e-5cbd-a898-cc695bcce702",
+        "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+        "componentId": "aa863904-2469-5e83-8e57-50c53b5fbb8e",
+        "itemId": "4bea6ef8-6c3e-57ef-9d69-382a9c3e2336",
+        "rawPosition": "7",
+        "rawTitle": "グレイスケイル"
+      },
+      "scopeNote": "Official album credit; exact existing album item-to-vocal-entry correspondence. No sibling or rendition-wide inheritance."
+    },
+    {
+      "key": "album-arranger-72396545-9147-535d-a11e-de6e37adb911",
+      "status": "active",
+      "checkedOn": "2026-10-22",
+      "entry": {
+        "entryId": "6d6acdf5-10ef-4392-8118-263b1c188ae5",
+        "kind": "song_variant",
+        "primaryWorkId": "f4e9a7e2-f760-5174-8541-f40dfb2b5f96",
+        "title": "此処に棘と死を",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "SLAVE.V-V-R"
+        ],
+        [
+          "work",
+          "composer",
+          "SLAVE.V-V-R"
+        ],
+        [
+          "work",
+          "lyricist",
+          "SLAVE.V-V-R"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/3471/",
+      "sourceId": "S-106",
+      "credits": {
+        "arranger": [
+          "SLAVE.V-V-R"
+        ]
+      },
+      "sourceTrack": {
+        "familyId": "bca6130e-c29e-5cbd-a898-cc695bcce702",
+        "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+        "componentId": "aa863904-2469-5e83-8e57-50c53b5fbb8e",
+        "itemId": "72396545-9147-535d-a11e-de6e37adb911",
+        "rawPosition": "8",
+        "rawTitle": "此処に棘と死を"
+      },
+      "scopeNote": "Official album credit; exact existing album item-to-vocal-entry correspondence. No sibling or rendition-wide inheritance."
+    },
+    {
+      "key": "album-arranger-fcaa9c03-6e3d-54ac-84a2-9c1cf343671a",
+      "status": "active",
+      "checkedOn": "2026-10-22",
+      "entry": {
+        "entryId": "c0627266-535c-474f-b650-b956a6000466",
+        "kind": "song_variant",
+        "primaryWorkId": "c6f3ca5f-8ad5-542a-92ee-98ebbc0e2216",
+        "title": "ネリネの内緒事",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "composer",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "香椎モイミ"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/3471/",
+      "sourceId": "S-106",
+      "credits": {
+        "arranger": [
+          "香椎モイミ"
+        ]
+      },
+      "sourceTrack": {
+        "familyId": "bca6130e-c29e-5cbd-a898-cc695bcce702",
+        "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+        "componentId": "aa863904-2469-5e83-8e57-50c53b5fbb8e",
+        "itemId": "fcaa9c03-6e3d-54ac-84a2-9c1cf343671a",
+        "rawPosition": "9",
+        "rawTitle": "ネリネの内緒事"
+      },
+      "scopeNote": "Official album credit; exact existing album item-to-vocal-entry correspondence. No sibling or rendition-wide inheritance."
+    },
+    {
+      "key": "album-arranger-9c8fc092-1bde-5cfb-8218-6019ec57b546",
+      "status": "active",
+      "checkedOn": "2026-10-22",
+      "entry": {
+        "entryId": "f27f9134-825c-4a0b-9dab-dc57c8e9c966",
+        "kind": "song_variant",
+        "primaryWorkId": "8e8e2788-72b4-50d5-8384-92d9b6ee4553",
+        "title": "暮れなずむ約束",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "composer",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "香椎モイミ"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/3471/",
+      "sourceId": "S-106",
+      "credits": {
+        "arranger": [
+          "香椎モイミ"
+        ]
+      },
+      "sourceTrack": {
+        "familyId": "bca6130e-c29e-5cbd-a898-cc695bcce702",
+        "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+        "componentId": "aa863904-2469-5e83-8e57-50c53b5fbb8e",
+        "itemId": "9c8fc092-1bde-5cfb-8218-6019ec57b546",
+        "rawPosition": "10",
+        "rawTitle": "暮れなずむ約束"
+      },
+      "scopeNote": "Official album credit; exact existing album item-to-vocal-entry correspondence. No sibling or rendition-wide inheritance."
+    },
+    {
+      "key": "album-arranger-a1628b16-a3e2-5417-a435-913ab1f64fab",
+      "status": "active",
+      "checkedOn": "2026-10-22",
+      "entry": {
+        "entryId": "36ee93d1-5886-4ed4-b089-276bd70ef54c",
+        "kind": "song_variant",
+        "primaryWorkId": "f0ed13b5-fdf3-5ce9-8f1a-876282fe71cb",
+        "title": "ヴァーミリオン",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "柊マグネタイト"
+        ],
+        [
+          "work",
+          "composer",
+          "柊マグネタイト"
+        ],
+        [
+          "work",
+          "lyricist",
+          "柊マグネタイト"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/3471/",
+      "sourceId": "S-106",
+      "credits": {
+        "arranger": [
+          "柊マグネタイト"
+        ]
+      },
+      "sourceTrack": {
+        "familyId": "bca6130e-c29e-5cbd-a898-cc695bcce702",
+        "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+        "componentId": "aa863904-2469-5e83-8e57-50c53b5fbb8e",
+        "itemId": "a1628b16-a3e2-5417-a435-913ab1f64fab",
+        "rawPosition": "11",
+        "rawTitle": "ヴァーミリオン"
+      },
+      "scopeNote": "Official album credit; exact existing album item-to-vocal-entry correspondence. No sibling or rendition-wide inheritance."
+    },
+    {
+      "key": "album-arranger-f40408a4-33aa-5957-9eb8-c835c61a3a9e",
+      "status": "active",
+      "checkedOn": "2026-10-22",
+      "entry": {
+        "entryId": "57664785-b4a1-4615-9868-38acc614320f",
+        "kind": "song_variant",
+        "primaryWorkId": "678c2d1f-b445-53e0-a852-ee8f564e7bb4",
+        "title": "描き続けた君へ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "composer",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "香椎モイミ"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/3471/",
+      "sourceId": "S-106",
+      "credits": {
+        "arranger": [
+          "香椎モイミ"
+        ]
+      },
+      "sourceTrack": {
+        "familyId": "bca6130e-c29e-5cbd-a898-cc695bcce702",
+        "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+        "componentId": "aa863904-2469-5e83-8e57-50c53b5fbb8e",
+        "itemId": "f40408a4-33aa-5957-9eb8-c835c61a3a9e",
+        "rawPosition": "12",
+        "rawTitle": "描き続けた君へ"
+      },
+      "scopeNote": "Official album credit; exact existing album item-to-vocal-entry correspondence. No sibling or rendition-wide inheritance."
+    },
+    {
+      "key": "album-arranger-1db733e5-be01-5d4f-8194-75b3b9881f11",
+      "status": "active",
+      "checkedOn": "2026-10-22",
+      "entry": {
+        "entryId": "7f3d424f-1ae1-45b6-88b1-9abd5498c514",
+        "kind": "song_variant",
+        "primaryWorkId": "afc3bd45-9f8b-5a67-abda-f0e07ffdd24b",
+        "title": "かたちなきもの",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "composer",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "ヰ世界情緒・香椎モイミ"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/3471/",
+      "sourceId": "S-106",
+      "credits": {
+        "arranger": [
+          "香椎モイミ"
+        ]
+      },
+      "sourceTrack": {
+        "familyId": "bca6130e-c29e-5cbd-a898-cc695bcce702",
+        "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+        "componentId": "aa863904-2469-5e83-8e57-50c53b5fbb8e",
+        "itemId": "1db733e5-be01-5d4f-8194-75b3b9881f11",
+        "rawPosition": "13",
+        "rawTitle": "かたちなきもの"
+      },
+      "scopeNote": "Official album credit; exact existing album item-to-vocal-entry correspondence. No sibling or rendition-wide inheritance."
+    },
+    {
+      "key": "album-arranger-c7bb503f-4db8-5f7c-b124-7c5765ebe53c",
+      "status": "active",
+      "checkedOn": "2026-10-22",
+      "entry": {
+        "entryId": "c99af613-812d-4245-ae37-0f52eae925ea",
+        "kind": "song_variant",
+        "primaryWorkId": "bfe8c938-b25e-5def-93f6-455f8e2d2603",
+        "title": "ANGELIC",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "composer",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "香椎モイミ"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/3471/",
+      "sourceId": "S-106",
+      "credits": {
+        "arranger": [
+          "香椎モイミ"
+        ]
+      },
+      "sourceTrack": {
+        "familyId": "bca6130e-c29e-5cbd-a898-cc695bcce702",
+        "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+        "componentId": "aa863904-2469-5e83-8e57-50c53b5fbb8e",
+        "itemId": "c7bb503f-4db8-5f7c-b124-7c5765ebe53c",
+        "rawPosition": "14",
+        "rawTitle": "ANGELIC"
+      },
+      "scopeNote": "Official album credit; exact existing album item-to-vocal-entry correspondence. No sibling or rendition-wide inheritance."
+    },
+    {
+      "key": "wind-name-tunecore-20261013",
+      "status": "active",
+      "checkedOn": "2026-10-22",
+      "entry": {
+        "entryId": "5ea0b6b3-53e4-446a-b7f3-0bcfd829889a",
+        "kind": "song_variant",
+        "primaryWorkId": "d106e67d-72e0-4b5e-b382-77e9fce47507",
+        "title": "風の名前",
+        "displayCredit": null,
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://linkco.re/G5dx24ge?lang=ja",
+      "sourceId": "S-107",
+      "credits": {
+        "lyricist": [
+          "MIMI"
+        ],
+        "composer": [
+          "MIMI"
+        ]
+      },
+      "metadata": {
+        "lyricsUrl": "https://linkco.re/G5dx24ge/songs/5630055/lyrics?lang=ja",
+        "tieUp": "『鳴潮』公式同人楽曲（モーニエ）"
+      },
+      "scopeNote": "Artist-distributed release credits; arranger unspecified. Release mixing/mastering is not assigned to the MV."
+    }
   ]
 }

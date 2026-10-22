@@ -31,6 +31,13 @@ export const missingSongText=review=>review?.outcome==='not_found'?'見つかっ
 // stored Discover category or positive full/free/current listening facts.
 export const SONG_SOURCE_RECORDS=sourceRegistry.records;
 export const SONG_SOURCE_EXCLUSIONS=sourceRegistry.exclusions??[];
+export const SONG_FACT_RECORDS=sourceRegistry.facts??[];
+const creditBasis=entry=>arr(entry?.credits?.credits).map(c=>[c.scope,c.role,c.name||c.rawName||'']).sort((a,b)=>JSON.stringify(a).localeCompare(JSON.stringify(b),'en'));
+export function registeredSongFactsForEntry(entry,records=SONG_FACT_RECORDS){
+ return arr(records).filter(r=>r.status==='active'&&artworkEntryMatches(entry,r.entry)&&
+  str(r.entry.displayCredit)===str(entry.detail.displayCredit)&&safeSongUrl(r.url)&&
+  JSON.stringify(r.creditBasis)===JSON.stringify(creditBasis(entry)));
+}
 export function registeredSongSourcesForEntry(entry,records=SONG_SOURCE_RECORDS){
  return arr(records).filter(r=>r.status==='active'&&artworkEntryMatches(entry,r.entry)&&
   str(r.entry.displayCredit)===str(entry.detail.displayCredit)&&safeSongUrl(r.url)&&
@@ -57,7 +64,7 @@ function legacyRecords(entry){
 }
 /** A complete canonical metadata object wins, even when its values are null.
  * The bridge never resurrects a value deliberately cleared in a newer record. */
-export function songMetadataForEntry(entry){
+export function songMetadataForEntry(entry,factRecords=SONG_FACT_RECORDS){
  if(object(entry?.detail?.songMetadata))return entry.detail.songMetadata;
  const records=legacyRecords(entry),fields=['titleKana','firstAppearance','firstFull','tieUp','originalArtist','originalVocal'];
  const out=Object.fromEntries(fields.map(k=>[k,known(records.map(x=>x.metadata[k]))]));
@@ -68,19 +75,28 @@ export function songMetadataForEntry(entry){
  if(entry?.detail?.primaryWorkId===SIRIUS_WORK&&entry.detail.title==='シリウスの心臓'){
   out.titleKana??='しりうすのしんぞう';out.lyricsUrl??='https://piapro.jp/t/S1w7';
  }
+ const facts=registeredSongFactsForEntry(entry,factRecords);
+ for(const key of ['tieUp','lyricsUrl'])if(!out[key]){
+  const value=known(facts.map(r=>r.metadata?.[key]));if(value&&(key!=='lyricsUrl'||safeSongUrl(value)))out[key]=value;
+ }
  return out;
 }
 function exactSiriusSolo(entry){
  return entry?.detail?.entryId===SIRIUS_SOLO&&entry.detail.primaryWorkId===SIRIUS_WORK&&entry.detail.title==='シリウスの心臓'&&arr(entry.detail.variations).length===0&&arr(entry.legacyIds).includes(41)&&entry.singerIds?.length===1&&entry.singerIds[0]==='81a01233-230e-50a8-a309-11275c794cd0';
 }
-export function songCreditsForEntry(entry,metadata=songMetadataForEntry(entry)){
+export function songCreditsForEntry(entry,metadata=songMetadataForEntry(entry),factRecords=SONG_FACT_RECORDS){
  const credits=arr(entry?.credits?.credits),names=(scope,role)=>unique(credits.filter(c=>c.scope===scope&&c.role===role).map(c=>str(c.name||c.rawName)).filter(Boolean));
+ const facts=registeredSongFactsForEntry(entry,factRecords);
  const rows=['lyricist','composer','arranger'].map(role=>{
   let values=names('version',role);
   if(!values.length&&role!=='arranger')values=names('work',role);
   if(!values.length&&role!=='arranger')values=names('original',role);
   // Explicit original solo MV credit, retained from the user-supplied description.
   if(!values.length&&role==='arranger'&&exactSiriusSolo(entry))values=['傘村トータ'];
+  if(!values.length&&!['not_found','not_applicable'].includes(metadata.fieldReview?.credits?.[role]?.outcome)){
+   const candidates=unique(facts.map(r=>r.credits?.[role]).filter(x=>Array.isArray(x)&&x.length&&x.every(n=>typeof n==='string'&&n.trim())));
+   if(candidates.length===1)values=candidates[0];
+  }
   return {role,names:values,value:values.join('・')||null,review:metadata.fieldReview?.credits?.[role]??null};
  });
  const original=arr(metadata.originalCredits).length?metadata.originalCredits:credits.filter(c=>c.scope==='original');
@@ -179,7 +195,7 @@ export function songArtworkCandidatesForEntry(entry,work={},options={}){
 export function songArtworkForEntry(entry,work={}){return songArtworkCandidatesForEntry(entry,work)[0]??null;}
 export function buildSongDetail(entry,work={},options={}){
  if(!entry?.detail)return null;
- const d=entry.detail,metadata=songMetadataForEntry(entry),creditData=songCreditsForEntry(entry,metadata),videos=songVideosForEntry(entry,work,options.sourceRecords,options.sourceExclusions),releases=songReleasesForEntry(entry,work,options.releaseRecords,options.sourceRecords),allLives=songLivesForEntry(entry,options.eventRecords);
+ const d=entry.detail,metadata=songMetadataForEntry(entry,options.factRecords),creditData=songCreditsForEntry(entry,metadata,options.factRecords),videos=songVideosForEntry(entry,work,options.sourceRecords,options.sourceExclusions),releases=songReleasesForEntry(entry,work,options.releaseRecords,options.sourceRecords),allLives=songLivesForEntry(entry,options.eventRecords);
  const images=artworkCandidates(entry,videos,releases,allLives,options);
  return {detail:d,metadata,credits:creditData.rows,originalArranger:creditData.originalArranger,
   artwork:images[0]??null,artworkCandidates:images,listenUrl:videos[0]?.url??releases.find(r=>r.externalUrl)?.externalUrl??null,videos,releases,lives:allLives,
