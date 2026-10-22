@@ -18,7 +18,7 @@ export default async function Discover({searchParams}:{searchParams:Promise<{cat
    <DiscoveryTabs categories={data.categories} selected={data.category}/>
    <div className="list-toolbar"><p className="toolbar-hint">{data.total}件</p></div>
    {data.items.length?<div className="records records-list">{data.items.map(song=><Link className="record" key={song.entryId} href={'/songs/'+song.entryId}>
-    <RecordArtwork url={song.thumbnailUrl} urls={song.thumbnailUrls}/><span className="record-copy"><span className="record-title">{song.title}</span><span className="record-meta">{song.displayCredit}</span></span><span className="record-arrow" aria-hidden="true">↗</span>
+    <RecordArtwork url={song.thumbnailUrl} urls={song.thumbnailUrls}/><span className="record-copy"><span className="record-title">{song.title}</span><span className="record-meta">{[song.displayCredit,song.sourceLabel].filter(Boolean).join(' · ')}</span></span><span className="record-arrow" aria-hidden="true">↗</span>
    </Link>)}</div>:<p className="empty">この分類に該当する楽曲はありません。</p>}
    {data.pages>1&&<nav className="pages" aria-label="楽曲のページ送り">{data.page>1&&<Link href={href(data.category,data.page-1)}>← 前のページ</Link>}<span>{data.page} / {data.pages} ページ</span>{data.page<data.pages&&<Link href={href(data.category,data.page+1)}>次のページ →</Link>}</nav>}
   </>:<p className="empty">準備中</p>}

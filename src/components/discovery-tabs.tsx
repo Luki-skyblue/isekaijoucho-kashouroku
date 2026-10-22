@@ -21,5 +21,5 @@ export function DiscoveryTabs({categories,selected}:{categories:Array<{id:string
   resize.observe(container);for(const tab of container.children)resize.observe(tab);
   return ()=>resize.disconnect();
  },[selected]);
- return <nav ref={nav} className="discovery-categories" aria-label="公開・収録先">{categories.filter(c=>c.id!=='unclassified'||c.count>0).map(c=><Link key={c.id} className={c.id==='unclassified'?'discovery-unclassified':undefined} href={'/discover?category='+c.id} scroll={false} aria-current={c.id===selected?'page':undefined}><span>{c.label}</span><small>{c.count}</small></Link>)}</nav>;
+ return <nav ref={nav} className="discovery-categories" aria-label="公開・収録先">{categories.filter(c=>c.id!=='unclassified'||c.count>0||c.id===selected).map(c=><Link key={c.id} className={c.id==='unclassified'?'discovery-unclassified':undefined} href={'/discover?category='+c.id} scroll={false} aria-current={c.id===selected?'page':undefined}><span>{c.label}</span><small>{c.count}</small></Link>)}</nav>;
 }

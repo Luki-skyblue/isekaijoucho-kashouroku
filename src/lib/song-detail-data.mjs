@@ -2,6 +2,7 @@
 // Empty reads are not negative findings. Work-scoped links never establish a
 // particular vocal configuration, and a work arranger is not a version arranger.
 import legacy from './song-legacy-data.json' with {type:'json'};
+import sourceRegistry from './catalog-song-sources.json' with {type:'json'};
 import {artworkEntryMatches,catalogArtworkCandidatesForEntry,eventArtworkForEvent,rankArtworkCandidates} from './catalog-artwork.mjs';
 import {ARTWORK_RECORDS,RELEASE_ARTWORK_RECORDS,EVENT_ARTWORK_RECORDS} from './catalog-artwork-data.mjs';
 
@@ -24,6 +25,24 @@ export function safeSongUrl(value){
  try{const u=new URL(value);return ['https:','http:'].includes(u.protocol)&&!u.username&&!u.password&&!/^localhost$|^127\.|^10\.|^192\.168\.|^169\.254\.|\.local$/i.test(u.hostname)&&![...u.searchParams.keys()].some(k=>/token|secret|password|credential|auth|session|api.?key|signature/i.test(k))?u.toString():null;}catch{return null;}
 }
 export const missingSongText=review=>review?.outcome==='not_found'?'見つかっていません。':review?.outcome==='not_applicable'?'該当なし':'準備中';
+
+// Public, entry-scoped source additions. They supply destinations, never a
+// stored Discover category or positive full/free/current listening facts.
+export const SONG_SOURCE_RECORDS=sourceRegistry.records;
+export function registeredSongSourcesForEntry(entry,records=SONG_SOURCE_RECORDS){
+ return arr(records).filter(r=>r.status==='active'&&artworkEntryMatches(entry,r.entry)&&
+  str(r.entry.displayCredit)===str(entry.detail.displayCredit)&&safeSongUrl(r.url)&&
+  (r.kind==='youtube'?youtubeId(r.url):r.kind==='x'?/^https:\/\/(?:x|twitter)\.com\/[^/]+\/status\/\d+$/.test(r.url):r.kind==='digital_single'));
+}
+function sourceReleaseMatches(source,release){
+ return source.kind==='digital_single'&&str(source.catalogNumber)!==''&&source.catalogNumber===release.edition?.catalogNumber&&
+  source.trackNumber===release.trackNumber;
+}
+const sourceKey=url=>youtubeId(url)?'youtube:'+youtubeId(url):safeSongUrl(url)?.replace(/^https:\/\/twitter\.com\//,'https://x.com/');
+export function songListenLabel(url){
+ if(youtubeId(url))return 'YouTubeで聴く';
+ try{return ['x.com','twitter.com'].includes(new URL(url).hostname)?'Xで見る':'動画を見る';}catch{return '動画を見る';}
+}
 
 function legacyRecords(entry){
  const d=entry?.detail??{};
@@ -69,7 +88,7 @@ function releaseCandidates(r,records){
  const titles=[norm(f.title),norm(str(f.title)+str(e.editionName)),norm(str(f.title)+'(type:'+str(e.editionName)+')')];
  return records.flatMap(x=>x.releases).filter(x=>titles.includes(norm(x.title))&&x.trackNumber===r.trackNumber&&(x.discNumber===null||x.discNumber===c.componentNo));
 }
-function songVideosForEntry(entry,work){
+function songVideosForEntry(entry,work,sourceRecords){
  const d=entry.detail,records=legacyRecords(entry),solo=exactSiriusSolo(entry);
  const directRenditions=new Set(arr(d.linkedRenditions).map(x=>x.renditionId));
  for(const h of arr(entry.history))if(['explicit_part','legacy_rendition'].includes(h.matchBasis)&&h.multiWork!==true)directRenditions.add(h.renditionId);
@@ -88,22 +107,40 @@ function songVideosForEntry(entry,work){
    if(!videos.some(x=>youtubeId(x.url)&&youtubeId(x.url)===id||x.url===url))videos.push(video);
   }
  }
+ for(const source of registeredSongSourcesForEntry(entry,sourceRecords).filter(r=>['youtube','x'].includes(r.kind))){
+  const existing=videos.find(v=>sourceKey(v.url)===sourceKey(source.url));
+  if(existing){existing.authorName=source.authorName??null;existing.authorUrl=source.authorUrl??null;continue;}
+  const id=youtubeId(source.url);
+  const canonical=arr(work.media).find(m=>arr(m.publications).some(p=>sourceKey(p.url)===sourceKey(source.url)));
+  const publication=arr(canonical?.publications).find(p=>sourceKey(p.url)===sourceKey(source.url));
+  videos.push({mediaId:canonical?.mediaId??'registered:'+source.key,url:source.url,title:canonical?.canonicalTitle||publication?.rawTitle||source.title||null,
+   kind:canonical?.mediaKind&&canonical.mediaKind!=='unknown'?canonical.mediaKind:source.mediaKind||null,publishedOn:publication?.publishedOn??source.publishedOn??null,
+   imageUrl:id?`https://i.ytimg.com/vi/${id}/hqdefault.jpg`:null,credits:[],authorName:source.authorName??null,authorUrl:source.authorUrl??null});
+ }
  videos.sort((a,b)=>(a.kind==='music_video'?0:1)-(b.kind==='music_video'?0:1)||str(a.publishedOn).localeCompare(str(b.publishedOn)));
  return videos;
 }
-export function songReleasesForEntry(entry,work={},releaseRecords=RELEASE_ARTWORK_RECORDS){
+export function songReleasesForEntry(entry,work={},releaseRecords=RELEASE_ARTWORK_RECORDS,sourceRecords){
  const records=legacyRecords(entry),solo=exactSiriusSolo(entry);
+ const sources=registeredSongSourcesForEntry(entry,sourceRecords).filter(r=>r.kind==='digital_single');
  const rawReleases=arr(work.releases),releases=[];
  for(const r of rawReleases){
   const candidates=releaseCandidates(r,records);
   const unambiguous=candidates.some(old=>rawReleases.filter(other=>releaseCandidates(other,[{releases:[old]}]).length).length===1);
   const registered=releaseRecords.filter(x=>x.familyId===r.family?.familyId&&x.editionId===r.edition?.editionId);
   const explicit=registered.some(x=>arr(x.entries).some(target=>artworkEntryMatches(entry,target)));
-  if(!unambiguous&&!explicit&&!(solo&&SIRIUS_SOLO_RELEASES.includes(r.releaseItemId)))continue;
+  const source=sources.find(s=>sourceReleaseMatches(s,r)&&rawReleases.filter(x=>sourceReleaseMatches(s,x)).length===1);
+  if(!unambiguous&&!explicit&&!source&&!(solo&&SIRIUS_SOLO_RELEASES.includes(r.releaseItemId)))continue;
   const cover=known(candidates.map(x=>safeSongUrl(x.imageUrl))),shared=SHARED_RELEASE_TRACKLISTS.some(x=>x.familyId===r.family?.familyId&&x.title===r.family?.title);
   const image=rankArtworkCandidates(registered.map(x=>({kind:'release',imageUrl:x.imageUrl,sourceUrl:x.sourceUrl})))[0];
-  releases.push({...r,imageUrl:image?.imageUrl??(cover?.startsWith('https:')?cover:null),imageSourceUrl:image?.sourceUrl??records.find(x=>x.releases.some(y=>candidates.includes(y)))?.sourceUrl??null,editionLabel:shared?null:r.edition?.editionKind==='digital'?'配信':r.edition?.editionName??null});
+  releases.push({...r,imageUrl:image?.imageUrl??(cover?.startsWith('https:')?cover:source?.imageUrl??null),imageSourceUrl:image?.sourceUrl??source?.url??records.find(x=>x.releases.some(y=>candidates.includes(y)))?.sourceUrl??null,editionLabel:shared?null:r.edition?.editionKind==='digital'?'配信':r.edition?.editionName??null});
  }
+ // A registered external product remains an external link until it has an
+ // actual catalogue family. Never invent a DB family ID or an empty detail.
+ for(const source of sources)if(rawReleases.filter(r=>sourceReleaseMatches(source,r)).length!==1)releases.push({
+  releaseItemId:'registered:'+source.key,family:{title:source.title,releaseKind:'single'},
+  edition:{editionKind:'digital',releaseDate:source.releaseDate??null,catalogNumber:source.catalogNumber??null},
+  trackNumber:source.trackNumber??null,editionLabel:'配信',externalUrl:source.url,imageUrl:source.imageUrl??null,imageSourceUrl:source.url});
  return releases;
 }
 function songLivesForEntry(entry,eventRecords=EVENT_ARTWORK_RECORDS){
@@ -132,15 +169,15 @@ function artworkCandidates(entry,videos,releases,lives,{entryRecords=ARTWORK_REC
 /** All display surfaces and failure fallbacks share the same ordered candidates. */
 export function songArtworkCandidatesForEntry(entry,work={},options={}){
  if(!entry?.detail)return [];
- return artworkCandidates(entry,songVideosForEntry(entry,work),songReleasesForEntry(entry,work,options.releaseRecords),songLivesForEntry(entry,options.eventRecords),options);
+ return artworkCandidates(entry,songVideosForEntry(entry,work,options.sourceRecords),songReleasesForEntry(entry,work,options.releaseRecords,options.sourceRecords),songLivesForEntry(entry,options.eventRecords),options);
 }
 export function songArtworkForEntry(entry,work={}){return songArtworkCandidatesForEntry(entry,work)[0]??null;}
 export function buildSongDetail(entry,work={},options={}){
  if(!entry?.detail)return null;
- const d=entry.detail,metadata=songMetadataForEntry(entry),creditData=songCreditsForEntry(entry,metadata),videos=songVideosForEntry(entry,work),releases=songReleasesForEntry(entry,work,options.releaseRecords),allLives=songLivesForEntry(entry,options.eventRecords);
+ const d=entry.detail,metadata=songMetadataForEntry(entry),creditData=songCreditsForEntry(entry,metadata),videos=songVideosForEntry(entry,work,options.sourceRecords),releases=songReleasesForEntry(entry,work,options.releaseRecords,options.sourceRecords),allLives=songLivesForEntry(entry,options.eventRecords);
  const images=artworkCandidates(entry,videos,releases,allLives,options);
  return {detail:d,metadata,credits:creditData.rows,originalArranger:creditData.originalArranger,
-  artwork:images[0]??null,artworkCandidates:images,listenUrl:videos[0]?.url??null,videos,releases,lives:allLives,
+  artwork:images[0]??null,artworkCandidates:images,listenUrl:videos[0]?.url??releases.find(r=>r.externalUrl)?.externalUrl??null,videos,releases,lives:allLives,
   hasUncertainLives:allLives.some(x=>x.uncertain),comparison:entry.compare??null,
   versionLabel:d.entryId===SIRIUS_DUET&&d.primaryWorkId===SIRIUS_WORK?'デュエット':null};
 }

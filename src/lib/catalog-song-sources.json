@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "purpose": "PUBLIC_CATALOG_SONG_SOURCES_V1",
+  "records": [
+    {
+      "checkedOn": "2026-10-22",
+      "status": "active",
+      "key": "silhouette-digital-20250919",
+      "entry": {
+        "entryId": "eb2cc17e-0b79-4aeb-a78d-106b1bd17959",
+        "kind": "song_variant",
+        "primaryWorkId": "c420cb40-6041-5eb7-9891-a80e270614c3",
+        "title": "Silhouette",
+        "displayCredit": "Project HYKE feat. ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "kind": "digital_single",
+      "url": "https://anxmusic.lnk.to/T9At5D",
+      "title": "Silhouette (feat. ヰ世界情緒)",
+      "releaseDate": "2025-09-19",
+      "catalogNumber": "ANXX01360B00Z",
+      "trackNumber": 1,
+      "imageUrl": "/artwork/silhouette-single-20250919.webp",
+      "imageSourceUrl": "https://linkstorage.linkfire.com/medialinks/images/c7b2f293-1541-4170-a040-9e58e79e95b2/artwork-440x440.jpg",
+      "evidenceUrls": [
+        "https://hyke-northernlights.com/news/?article_id=68778",
+        "https://ototoy.jp/_/default/p/3022105"
+      ]
+    },
+    {
+      "checkedOn": "2026-10-22",
+      "status": "active",
+      "key": "nemesis-orihime-cover",
+      "entry": {
+        "entryId": "c71a24e0-633a-4a03-b1f3-246db3154b20",
+        "kind": "song_variant",
+        "primaryWorkId": "068f81cc-2da3-52e7-9542-44dc41a7bb4c",
+        "title": "亡国のネメシス",
+        "displayCredit": "御莉姫 × ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=5B9jvRK8Zes",
+      "title": "【歌ってみた】亡国のネメシス / ひとしずく×やま△ covered by 御莉姫 × ヰ世界情緒【神椿】",
+      "mediaKind": "cover_video",
+      "publishedOn": null,
+      "authorName": "御莉姫 -ORIHIME- / 心世紀 from 少女革命計画",
+      "authorUrl": "https://www.youtube.com/@orihime_grp",
+      "evidenceUrls": [
+        "https://x.com/orihime_gr/status/2085327026651897925"
+      ]
+    },
+    {
+      "checkedOn": "2026-10-22",
+      "status": "active",
+      "key": "girl-x-1463483863586336769",
+      "entry": {
+        "entryId": "a0909e0e-ff71-4b9c-ab3d-ef0382895080",
+        "kind": "song_variant",
+        "primaryWorkId": "3d91a11f-8f7f-5725-8f06-d28e48778d21",
+        "title": "女の子になりたい",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "kind": "x",
+      "url": "https://x.com/isekaijoucho/status/1463483863586336769",
+      "title": "女の子になりたい",
+      "mediaKind": "cover_video",
+      "publishedOn": null,
+      "evidenceUrls": [
+        "https://x.com/isekaijoucho/status/1463483863586336769"
+      ]
+    },
+    {
+      "checkedOn": "2026-10-22",
+      "status": "active",
+      "key": "lagtrain-x-1384085061297840137",
+      "entry": {
+        "entryId": "5e54a83f-30a8-47bf-aa38-bb2c6a7571e2",
+        "kind": "song_variant",
+        "primaryWorkId": "c848efca-ba82-5ecf-88a9-0e70b67b4525",
+        "title": "ラグトレイン (Twitter cover)",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": [
+          {
+            "kind": "key",
+            "semitoneOffset": null,
+            "value": "Historical note reports a key change; magnitude unknown"
+          }
+        ]
+      },
+      "kind": "x",
+      "url": "https://x.com/isekaijoucho/status/1384085061297840137",
+      "title": "ラグトレイン",
+      "mediaKind": "cover_video",
+      "publishedOn": "2021-04-19",
+      "evidenceUrls": [
+        "https://x.com/isekaijoucho/status/1384085061297840137"
+      ]
+    }
+  ]
+}

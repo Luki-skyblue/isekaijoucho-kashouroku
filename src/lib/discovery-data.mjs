@@ -82,17 +82,17 @@ export function discoveryRoutesForEntry(model,entryId,metadata={}){
  const song=songDetailFromModel(model,entryId),work=model.works.get(entry.detail.primaryWorkId),routes=[];
  for(const video of song.videos){
   const videoId=youtubeId(video.url),records=arr(metadata.videos).filter(r=>r.videoId===videoId),record=records.length===1?records[0]:null;
-  const media=arr(work?.media).find(m=>m.mediaId===video.mediaId),publication=arr(media?.publications).find(p=>safeSongUrl(p.url)===safeSongUrl(video.url));
+  const media=arr(work?.media).find(m=>m.mediaId===video.mediaId),publication=arr(media?.publications).find(p=>safeSongUrl(p.url)===safeSongUrl(video.url)||videoId&&youtubeId(p.url)===videoId);
   // Only explicitly recorded listening facts can qualify a current full route.
   // Current schema availability is unknown; do not turn metadata reads into it.
-  routes.push({key:'media:'+video.mediaId+':'+video.url,kind:videoId?'youtube':'other',category:videoId?channelCategory(record,metadata):'other',
-   exactEntry:true,label:str(record?.authorName)||video.title||'動画',sourceUrl:video.url,date:video.publishedOn,
+  routes.push({key:'media:'+video.mediaId+':'+video.url,kind:videoId?'youtube':'other',category:videoId?channelCategory(record?.authorUrl?record:video,metadata):'other',
+   exactEntry:true,label:str(record?.authorName||video.authorName)||video.title||'動画',sourceUrl:video.url,date:video.publishedOn,
    current:publication?.availability==='unavailable'?false:null,coverage:'unknown',access:'unknown'});
  }
  for(const release of song.releases){
   const family=release.family??{},detail=model.releases.get(family.familyId)?.detail??family;
   routes.push({key:'release:'+release.releaseItemId,kind:'release',category:isLiveRelease(detail)?'live_event':'cd_album',exactEntry:true,
-   label:family.title||'収録作品',sourceUrl:'/releases/'+family.familyId,date:release.edition?.releaseDate??null,current:null,coverage:'unknown',access:'unknown'});
+   label:family.title||'収録作品',sourceUrl:safeSongUrl(release.externalUrl)??'/releases/'+family.familyId,date:release.edition?.releaseDate??null,current:null,coverage:'unknown',access:'unknown'});
  }
  const seen=new Set(),addEvent=(event,date,basis)=>{
   const source=eventSource(event,metadata),d=event?.detail;if(!source||source.category==='unclassified')return;
@@ -114,6 +114,11 @@ export function discoveryRoutesForEntry(model,entryId,metadata={}){
  }
  return routes;
 }
+function otherSourceLabel(primary){
+ const label=sourceLabel(primary?.label),url=primary?.sourceUrl??'';
+ if(/^(twitter(?:\(現x\))?|x)$/.test(label)||/^https:\/\/(?:x|twitter)\.com\//.test(url))return 'X';
+ return /第\d+話$/.test(label)?'アニメ':null;
+}
 const cache=new WeakMap();
 function indexFor(model,metadata){
  let byMetadata=cache.get(model);if(!byMetadata){byMetadata=new WeakMap();cache.set(model,byMetadata);}
@@ -121,7 +126,8 @@ function indexFor(model,metadata){
  const rows=[...model.entries].map(([entryId,entry])=>{
   const result=classifyDiscoveryRoutes(discoveryRoutesForEntry(model,entryId,metadata)),d=entry.detail;
   return {entryId,title:d.title,displayCredit:str(d.displayCredit)||arr(d.singers).map(s=>str(s.name)).filter(Boolean).join('・'),category:result.category,
-   currentFullCategory:result.currentFullCategory,sortTitle:str(entry.sortTitle)||d.title};
+   currentFullCategory:result.currentFullCategory,sortTitle:str(entry.sortTitle)||d.title,
+   sourceLabel:result.category==='other'?otherSourceLabel(result.primary):null};
  }).sort((a,b)=>compare(a.sortTitle,b.sortTitle)||compare(a.entryId,b.entryId));
  byMetadata.set(metadata,rows);return rows;
 }
@@ -130,7 +136,7 @@ export function discoveryFromModel(model,{category='isekai_official',page=1}={},
  const rows=indexFor(model,metadata),selected=categoryIds.has(category)?category:'isekai_official',filtered=rows.filter(r=>r.category===selected),limit=24;
  const pages=Math.max(1,Math.ceil(filtered.length/limit));page=Number.isSafeInteger(page)&&page>0?Math.min(page,pages):1;
  const items=filtered.slice((page-1)*limit,page*limit).map(row=>{
-  const song=songDetailFromModel(model,row.entryId);return {entryId:row.entryId,title:row.title,displayCredit:row.displayCredit,thumbnailUrl:song.artwork?.imageUrl??null,thumbnailUrls:song.artworkCandidates.map(x=>x.imageUrl)};
+  const song=songDetailFromModel(model,row.entryId);return {entryId:row.entryId,title:row.title,displayCredit:row.displayCredit,sourceLabel:row.sourceLabel,thumbnailUrl:song.artwork?.imageUrl??null,thumbnailUrls:song.artworkCandidates.map(x=>x.imageUrl)};
  });
  return {category:selected,page,pages,total:filtered.length,allEntries:rows.length,categories:DISCOVERY_CATEGORIES.map(c=>({...c,count:rows.filter(r=>r.category===c.id).length})),items};
 }
