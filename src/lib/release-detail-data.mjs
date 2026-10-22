@@ -23,14 +23,15 @@ export function releaseDuration(value){
  const total=Math.floor(value/1000),seconds=String(total%60).padStart(2,'0'),minutes=Math.floor(total/60);
  return minutes<60?`${minutes}:${seconds}`:`${Math.floor(minutes/60)}:${String(minutes%60).padStart(2,'0')}:${seconds}`;
 }
-export function releaseLinks(release){
+export function releaseLinks(release,editionId=null){
  const editions=arr(release?.editions),links=new Map();
  for(const r of arr(release?.resources)){
+  if(editionId&&r.targetScope==='edition'&&r.targetEditionId!==editionId)continue;
   const url=safeSongUrl(r.url);if(!url)continue;
   const official=r.officiality==='official';
   const label=official?(r.resourceKind==='official_store_page'?'公式ストア':'公式情報'):'関連ページ';
   const edition=r.targetScope==='edition'?editions.find(e=>e.editionId===r.targetEditionId):null;
-  const suffix=editions.length>1?text(edition?.name):'';
+  const suffix=!editionId&&editions.length>1?text(edition?.name):'';
   const key=url+'|'+label;
   if(!links.has(key))links.set(key,{url,label,editions:[]});
   if(suffix&&!links.get(key).editions.includes(suffix))links.get(key).editions.push(suffix);
@@ -61,10 +62,11 @@ export function groupReleaseItems(release,items){
 export function releaseDisplayContextFromModel(model,familyId,options={}){
  const release=model.releases.get(familyId);if(!release)return null;
  const detail=release.detail,editions=arr(detail.editions),editionIds=new Set(editions.map(x=>x.editionId));
- const items=new Map(release.items.map(x=>[x.itemId,x])),targets=new Map(),candidates=[];
+ const items=new Map(release.items.map(x=>[x.itemId,x])),targets=new Map(),candidates=[],byEdition=new Map();
+ const addImage=(editionId,image)=>{candidates.push(image);if(!byEdition.has(editionId))byEdition.set(editionId,[]);byEdition.get(editionId).push(image);};
  const records=options.releaseRecords??RELEASE_ARTWORK_RECORDS;
  for(const image of records.filter(x=>x.familyId===familyId&&editionIds.has(x.editionId))){
-  candidates.push({kind:'release',imageUrl:image.imageUrl,sourceUrl:image.sourceUrl,date:editions.find(x=>x.editionId===image.editionId)?.releaseDate??null});
+  addImage(image.editionId,{kind:'release',imageUrl:image.imageUrl,sourceUrl:image.sourceUrl,date:editions.find(x=>x.editionId===image.editionId)?.releaseDate??null});
  }
  for(const [entryId,entry]of model.entries){
   const work=model.works.get(entry.detail.primaryWorkId);
@@ -76,13 +78,50 @@ export function releaseDisplayContextFromModel(model,familyId,options={}){
    const item=items.get(row.releaseItemId);
    if(!item||item.editionId!==row.edition?.editionId||item.componentId!==row.component?.componentId)continue;
    if(!targets.has(item.itemId))targets.set(item.itemId,new Set());targets.get(item.itemId).add(entryId);
-   if(row.imageUrl)candidates.push({kind:'release',imageUrl:row.imageUrl,sourceUrl:row.imageSourceUrl,date:row.edition?.releaseDate??null});
+   if(row.imageUrl){
+    const image={kind:'release',imageUrl:row.imageUrl,sourceUrl:row.imageSourceUrl,date:row.edition?.releaseDate??null};
+    if(records.some(r=>r.familyId===familyId&&r.editionId===row.edition.editionId))candidates.push(image);
+    else addImage(row.edition.editionId,image);
+   }
   }
  }
  const itemLinks=Object.fromEntries([...targets].filter(([,ids])=>ids.size===1).map(([id,ids])=>[id,{entryId:[...ids][0]}]));
  const artwork=rankArtworkCandidates(candidates);
  const shared=SHARED_RELEASE_TRACKLISTS.find(x=>x.familyId===familyId&&x.title===detail.title&&x.editionIds.length===editionIds.size&&x.editionIds.every(id=>editionIds.has(id)));
- return {artwork,itemLinks,sharedTracklistLabel:shared?.label??null};
+ return {artwork,editionArtwork:Object.fromEntries([...byEdition].map(([id,images])=>[id,rankArtworkCandidates(images)])),itemLinks,sharedTracklistLabel:shared?.label??null};
+}
+export function releaseEditionName(edition){
+ const name=text(edition?.name),names={regular:'通常版',special_box_first_press:'初回限定BOX',digital:'配信'};
+ return Object.hasOwn(names,name)?names[name]:name||'版名未登録';
+}
+export function releaseDetailHref(familyId,{editionId=null,page=1}={}){
+ const query=new URLSearchParams();if(editionId)query.set('edition',editionId);if(page>1)query.set('itemsPage',String(page));
+ return '/releases/'+encodeURIComponent(familyId)+(query.size?'?'+query.toString():'');
+}
+/** Select from complete saved items before paging. Common music is admitted
+ * only by the reviewed family, editions and exact printed source rows. */
+export function releaseDetailFromModel(model,familyId,{editionId=null,page=1,limit=100}={}){
+ const saved=model.releases.get(familyId);if(!saved)return null;
+ const release=saved.detail,context=releaseDisplayContextFromModel(model,familyId);
+ const rawEditions=arr(release.editions),ids=rawEditions.map(e=>e.editionId);
+ const shared=SHARED_RELEASE_TRACKLISTS.find(r=>r.familyId===familyId&&r.title===release.title&&r.editionIds.length===ids.length&&r.editionIds.every(id=>ids.includes(id))&&r.editions.every(e=>rawEditions.some(x=>x.editionId===e.editionId&&x.name===e.name)));
+ const editions=rawEditions.map(e=>{const info=shared?.editions.find(x=>x.editionId===e.editionId);return {...e,catalogNumber:e.catalogNumber||info?.catalogNumber||null,mediaLabel:info?.mediaLabel??null,inclusionLabels:arr(e.inclusions).length?arr(e.inclusions).map(i=>text(i.rawName)).filter(Boolean):info?.inclusionLabels??[]};});
+ const selectedEdition=editions.find(e=>e.editionId===editionId)??null;
+ let groups=groupReleaseItems(release,saved.items);
+ const common=shared?.tracks.map(expected=>saved.items.find(item=>['itemId','editionId','componentId','rawTitle','rawPosition','sequenceNo'].every(k=>item[k]===expected[k])));
+ if(common?.length&&common.every(Boolean)){
+  const commonIds=new Set(common.map(i=>i.itemId));
+  groups=[{key:'shared',editionId:null,editionName:shared.label,label:null,componentKind:'audio_program',items:common},...groupReleaseItems(release,saved.items.filter(i=>!commonIds.has(i.itemId))).filter(g=>g.items.length)];
+ }
+ if(selectedEdition)groups=groups.filter(g=>g.editionId===null||g.editionId===selectedEdition.editionId);
+ const total=groups.reduce((count,g)=>count+g.items.length,0),size=Number.isSafeInteger(limit)&&limit>0?Math.min(limit,100):100;
+ const pages=Math.max(1,Math.ceil(total/size)),current=Math.min(Number.isSafeInteger(page)&&page>0?page:1,pages);
+ const visible=new Set(groups.flatMap(g=>g.items).slice((current-1)*size,current*size).map(i=>i.itemId));
+ groups=groups.map(g=>({...g,items:g.items.filter(i=>visible.has(i.itemId))})).filter(g=>g.items.length||total===0);
+ const components=arr(release.components).filter(c=>!selectedEdition||c.editionId===selectedEdition.editionId);
+ return {release,context,editions,selectedEdition,components,groups,total,page:current,pages,
+  artwork:selectedEdition?context.editionArtwork[selectedEdition.editionId]??[]:context.artwork,
+  links:releaseLinks(release,selectedEdition?.editionId??null)};
 }
 export function releaseListArtworkFromModel(model,result){
  if(!result)return result;

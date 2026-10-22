@@ -7,7 +7,7 @@ import type {CatalogListFilters} from './catalog-entry-api';
 import type {JsonObject} from './core';
 import {songDetailFromModel} from './song-detail-data.mjs';
 import {liveDisplayContextFromModel} from './live-detail-data.mjs';
-import {releaseDisplayContextFromModel,releaseListArtworkFromModel} from './release-detail-data.mjs';
+import {releaseDisplayContextFromModel,releaseListArtworkFromModel,releaseDetailFromModel,type ReleaseDetailQuery} from './release-detail-data.mjs';
 import {releaseListFromModel,type ReleaseListQuery} from './release-list-data.mjs';
 import {homeRecentFromModel} from './home-recent-data.mjs';
 import {personDetailFromModel} from './person-detail-data.mjs';
@@ -37,6 +37,7 @@ export async function privateHomeRecent(){return homeRecentFromModel(await load(
 export async function privatePersonDetail(key:string,page=1){return personDetailFromModel(await load(),key,{page});}
 export async function privateDiscovery(query:{category?:string;page?:number}){return discoveryFromModel(await load(),query,discoveryChannels);}
 export async function privateReleaseDisplayContext(familyId:string){return releaseDisplayContextFromModel(await load(),familyId);}
+export async function privateReleaseDetail(familyId:string,query:ReleaseDetailQuery){return releaseDetailFromModel(await load(),familyId,query);}
 export async function privateReleaseList(query:ReleaseListQuery){return releaseListFromModel(await load(),query);}
 export async function privateCatalogList(filters:CatalogListFilters) {return queryEntries(await load(),filters);}
 async function liveContext() {

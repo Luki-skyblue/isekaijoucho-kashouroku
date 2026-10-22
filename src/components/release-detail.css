@@ -4,6 +4,11 @@
 .release-detail-art img{object-fit:contain}.release-detail-art .record-cover:has(img)::before,.release-detail-art .record-cover:has(img) .record-cover-glyph{visibility:hidden}
 .release-detail-copy{min-width:0}.release-detail-kind{font-size:12px;color:var(--quiet);margin:0 0 8px;line-height:1.8}
 .release-detail-heading h1{font-family:SongMincho,var(--serif);font-size:34px;font-weight:500;line-height:1.6;letter-spacing:.035em;overflow-wrap:anywhere;margin:0}
+.release-edition-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;font-family:var(--sans);font-size:11px;line-height:1.6}
+.release-edition-tabs a{padding:6px 11px;border:1px solid var(--hair);border-radius:3px;color:var(--quiet);text-decoration:none;overflow-wrap:anywhere}
+.release-edition-tabs a[aria-current="page"]{background:var(--accent-soft);border-color:var(--accent-soft);color:var(--accent-deep)}
+.release-edition-tabs a:hover{color:var(--accent-deep)}.release-edition-tabs a:focus-visible{outline:2px solid var(--accent-deep);outline-offset:3px}
+.release-detail-inclusions{list-style:none;padding:0;margin:0}.release-detail-inclusions li+li{margin-top:3px}
 .release-detail-facts{display:grid;grid-template-columns:100px minmax(0,1fr);gap:12px 20px;font-size:13px;line-height:1.9;margin:0;padding:0}
 .release-detail-facts>div{display:contents}.release-detail-facts dt{color:var(--quiet)}.release-detail-facts dd{margin:0;overflow-wrap:anywhere}.release-detail-fact-value{display:block}
 .release-detail-missing{font-size:12px;color:var(--quiet);font-weight:400}

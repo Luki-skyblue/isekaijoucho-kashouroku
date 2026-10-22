@@ -1,0 +1,333 @@
+{
+  "schemaVersion": 1,
+  "releases": [
+    {
+      "familyId": "de19530d-b318-5828-b6c8-b381e2a98a30",
+      "title": "創生",
+      "editionIds": [
+        "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+        "ecdc3b97-33b2-5a66-a13c-3ca302f3358f"
+      ],
+      "label": "α・β共通",
+      "sourceUrl": "https://kamitsubaki.jp/discography/isekaijoucho/1036/",
+      "checkedOn": "2026-10-22",
+      "editions": [
+        {
+          "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+          "name": "α",
+          "mediaLabel": "CD",
+          "catalogNumber": "KTR-034",
+          "inclusionLabels": [
+            "ファンブックα（36ページ）",
+            "アクリルキーホルダーα",
+            "缶バッジα（3個セット）",
+            "ポストカードα",
+            "ヰ世界情緒音声記録α収録カード"
+          ],
+          "sourceUrl": "https://kamitsubaki.jp/discography/isekaijoucho/1036/"
+        },
+        {
+          "editionId": "ecdc3b97-33b2-5a66-a13c-3ca302f3358f",
+          "name": "β",
+          "mediaLabel": "CD",
+          "catalogNumber": "KTR-035",
+          "inclusionLabels": [
+            "ファンブックβ（32ページ）",
+            "アクリルキーホルダーβ",
+            "缶バッジβ（3個セット）",
+            "ポストカードβ",
+            "ヰ世界情緒音声記録β収録カード"
+          ],
+          "sourceUrl": "https://kamitsubaki.jp/discography/isekaijoucho/1081/"
+        }
+      ],
+      "tracks": [
+        {
+          "itemId": "46599083-2609-5110-a6a3-464706e84a58",
+          "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+          "componentId": "4c40e91e-84c9-5bf0-9b50-b03869c978d4",
+          "rawTitle": "創生 -Instrumental-",
+          "rawPosition": "1",
+          "sequenceNo": 1
+        },
+        {
+          "itemId": "e7a10406-c578-5869-9b6b-4b8c509bd20f",
+          "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+          "componentId": "4c40e91e-84c9-5bf0-9b50-b03869c978d4",
+          "rawTitle": "物語りのワルツ",
+          "rawPosition": "2",
+          "sequenceNo": 2
+        },
+        {
+          "itemId": "0ef94aab-407d-57a7-a29e-8ae715203edd",
+          "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+          "componentId": "4c40e91e-84c9-5bf0-9b50-b03869c978d4",
+          "rawTitle": "いろはに咲きて",
+          "rawPosition": "3",
+          "sequenceNo": 3
+        },
+        {
+          "itemId": "a0f9ab99-e3ca-574d-a33e-ea4d9b1f0ae2",
+          "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+          "componentId": "4c40e91e-84c9-5bf0-9b50-b03869c978d4",
+          "rawTitle": "ハイドレンジア",
+          "rawPosition": "4",
+          "sequenceNo": 4
+        },
+        {
+          "itemId": "c481e653-5a46-5a13-bc54-08026c87cee2",
+          "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+          "componentId": "4c40e91e-84c9-5bf0-9b50-b03869c978d4",
+          "rawTitle": "ジオラマドラマ",
+          "rawPosition": "5",
+          "sequenceNo": 5
+        },
+        {
+          "itemId": "cac6041f-8074-5bdc-b9a1-91346ed3dda5",
+          "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+          "componentId": "4c40e91e-84c9-5bf0-9b50-b03869c978d4",
+          "rawTitle": "斯く美しき造花",
+          "rawPosition": "6",
+          "sequenceNo": 6
+        },
+        {
+          "itemId": "05876b66-7264-5705-8102-a0be86d2001e",
+          "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+          "componentId": "4c40e91e-84c9-5bf0-9b50-b03869c978d4",
+          "rawTitle": "マボロシのまち",
+          "rawPosition": "7",
+          "sequenceNo": 7
+        },
+        {
+          "itemId": "88897dd2-341b-563e-adc3-9fccffd2440c",
+          "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+          "componentId": "4c40e91e-84c9-5bf0-9b50-b03869c978d4",
+          "rawTitle": "やさしいせかい",
+          "rawPosition": "8",
+          "sequenceNo": 8
+        },
+        {
+          "itemId": "4c0bec7c-c0f7-502e-9c5b-de02aaa784c3",
+          "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+          "componentId": "4c40e91e-84c9-5bf0-9b50-b03869c978d4",
+          "rawTitle": "ANEMONE",
+          "rawPosition": "9",
+          "sequenceNo": 9
+        },
+        {
+          "itemId": "366fb648-c9ca-5b45-9db5-a2bb7c901b14",
+          "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+          "componentId": "4c40e91e-84c9-5bf0-9b50-b03869c978d4",
+          "rawTitle": "ヰ世界の宝石譚",
+          "rawPosition": "10",
+          "sequenceNo": 10
+        },
+        {
+          "itemId": "a5253209-7c10-5945-aedc-dabc8779e75e",
+          "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+          "componentId": "4c40e91e-84c9-5bf0-9b50-b03869c978d4",
+          "rawTitle": "シリウスの心臓",
+          "rawPosition": "11",
+          "sequenceNo": 11
+        },
+        {
+          "itemId": "1a79acd5-6afd-5701-b9d9-dd69a935c3f9",
+          "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+          "componentId": "4c40e91e-84c9-5bf0-9b50-b03869c978d4",
+          "rawTitle": "とめどなき白情",
+          "rawPosition": "12",
+          "sequenceNo": 12
+        },
+        {
+          "itemId": "1ff3a3f7-2d48-5fa7-aed8-b95d5aecb1ca",
+          "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+          "componentId": "4c40e91e-84c9-5bf0-9b50-b03869c978d4",
+          "rawTitle": "霞がついてくる",
+          "rawPosition": "13",
+          "sequenceNo": 13
+        },
+        {
+          "itemId": "64c52ce0-e960-5691-b0a3-96f1845284e1",
+          "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+          "componentId": "4c40e91e-84c9-5bf0-9b50-b03869c978d4",
+          "rawTitle": "誰もいない絵で",
+          "rawPosition": "14",
+          "sequenceNo": 14
+        },
+        {
+          "itemId": "4de55741-a8fd-5bc2-9875-2faf4e8d6694",
+          "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+          "componentId": "4c40e91e-84c9-5bf0-9b50-b03869c978d4",
+          "rawTitle": "ARCADIA",
+          "rawPosition": "15",
+          "sequenceNo": 15
+        }
+      ]
+    },
+    {
+      "familyId": "bca6130e-c29e-5cbd-a898-cc695bcce702",
+      "title": "色彩",
+      "editionIds": [
+        "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+        "f1bc2f2a-b4e2-56e5-ba32-bfa7b23c8d27"
+      ],
+      "label": "α・β共通",
+      "sourceUrl": "https://kamitsubaki.jp/discography/isekaijoucho/3471/",
+      "checkedOn": "2026-10-22",
+      "editions": [
+        {
+          "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+          "name": "α",
+          "mediaLabel": "CD",
+          "catalogNumber": "KTR-0127",
+          "inclusionLabels": [
+            "BOXパッケージ",
+            "色鉛筆",
+            "ヰ世界音声記録収録カード",
+            "アクリルキーホルダー（αデザイン）",
+            "ポストカード（αデザイン・3枚セット）",
+            "ファンブック（αデザイン）"
+          ],
+          "sourceUrl": "https://kamitsubaki.jp/discography/isekaijoucho/3471/"
+        },
+        {
+          "editionId": "f1bc2f2a-b4e2-56e5-ba32-bfa7b23c8d27",
+          "name": "β",
+          "mediaLabel": "CD",
+          "catalogNumber": "KTR-0128",
+          "inclusionLabels": [
+            "BOXパッケージ",
+            "色鉛筆",
+            "ヰ世界音声記録収録カード",
+            "アクリルキーホルダー（βデザイン）",
+            "ポストカード（βデザイン・3枚セット）",
+            "ファンブック（βデザイン）"
+          ],
+          "sourceUrl": "https://kamitsubaki.jp/discography/isekaijoucho/3472/"
+        }
+      ],
+      "tracks": [
+        {
+          "itemId": "4b92b5bf-18cd-5445-8f5c-b3a9d86da737",
+          "editionId": "f1bc2f2a-b4e2-56e5-ba32-bfa7b23c8d27",
+          "componentId": "94c7da85-9c6b-5a57-badd-2781c9b88430",
+          "rawTitle": "息吹-instrumental-",
+          "rawPosition": "1",
+          "sequenceNo": 1
+        },
+        {
+          "itemId": "0b5996fd-6c44-5b79-91b8-5c721838a072",
+          "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+          "componentId": "aa863904-2469-5e83-8e57-50c53b5fbb8e",
+          "rawTitle": "そして白に還る",
+          "rawPosition": "2",
+          "sequenceNo": 2
+        },
+        {
+          "itemId": "29d8df9e-8152-54f5-8801-5958209fa86e",
+          "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+          "componentId": "aa863904-2469-5e83-8e57-50c53b5fbb8e",
+          "rawTitle": "ラピスのお人形",
+          "rawPosition": "3",
+          "sequenceNo": 3
+        },
+        {
+          "itemId": "187fbd0d-c555-5dc7-9b84-5881fcf1d6a4",
+          "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+          "componentId": "aa863904-2469-5e83-8e57-50c53b5fbb8e",
+          "rawTitle": "パンドラコール",
+          "rawPosition": "4",
+          "sequenceNo": 4
+        },
+        {
+          "itemId": "c6da7d59-34bd-5a79-94aa-593fb13165a2",
+          "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+          "componentId": "aa863904-2469-5e83-8e57-50c53b5fbb8e",
+          "rawTitle": "ディメンション",
+          "rawPosition": "5",
+          "sequenceNo": 5
+        },
+        {
+          "itemId": "dbcedf43-64fe-5264-81a6-13fc693ae0d5",
+          "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+          "componentId": "aa863904-2469-5e83-8e57-50c53b5fbb8e",
+          "rawTitle": "キミ消失セカイ",
+          "rawPosition": "6",
+          "sequenceNo": 6
+        },
+        {
+          "itemId": "4bea6ef8-6c3e-57ef-9d69-382a9c3e2336",
+          "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+          "componentId": "aa863904-2469-5e83-8e57-50c53b5fbb8e",
+          "rawTitle": "グレイスケイル",
+          "rawPosition": "7",
+          "sequenceNo": 7
+        },
+        {
+          "itemId": "72396545-9147-535d-a11e-de6e37adb911",
+          "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+          "componentId": "aa863904-2469-5e83-8e57-50c53b5fbb8e",
+          "rawTitle": "此処に棘と死を",
+          "rawPosition": "8",
+          "sequenceNo": 8
+        },
+        {
+          "itemId": "fcaa9c03-6e3d-54ac-84a2-9c1cf343671a",
+          "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+          "componentId": "aa863904-2469-5e83-8e57-50c53b5fbb8e",
+          "rawTitle": "ネリネの内緒事",
+          "rawPosition": "9",
+          "sequenceNo": 9
+        },
+        {
+          "itemId": "9c8fc092-1bde-5cfb-8218-6019ec57b546",
+          "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+          "componentId": "aa863904-2469-5e83-8e57-50c53b5fbb8e",
+          "rawTitle": "暮れなずむ約束",
+          "rawPosition": "10",
+          "sequenceNo": 10
+        },
+        {
+          "itemId": "a1628b16-a3e2-5417-a435-913ab1f64fab",
+          "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+          "componentId": "aa863904-2469-5e83-8e57-50c53b5fbb8e",
+          "rawTitle": "ヴァーミリオン",
+          "rawPosition": "11",
+          "sequenceNo": 11
+        },
+        {
+          "itemId": "f40408a4-33aa-5957-9eb8-c835c61a3a9e",
+          "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+          "componentId": "aa863904-2469-5e83-8e57-50c53b5fbb8e",
+          "rawTitle": "描き続けた君へ",
+          "rawPosition": "12",
+          "sequenceNo": 12
+        },
+        {
+          "itemId": "1db733e5-be01-5d4f-8194-75b3b9881f11",
+          "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+          "componentId": "aa863904-2469-5e83-8e57-50c53b5fbb8e",
+          "rawTitle": "かたちなきもの",
+          "rawPosition": "13",
+          "sequenceNo": 13
+        },
+        {
+          "itemId": "c7bb503f-4db8-5f7c-b124-7c5765ebe53c",
+          "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+          "componentId": "aa863904-2469-5e83-8e57-50c53b5fbb8e",
+          "rawTitle": "ANGELIC",
+          "rawPosition": "14",
+          "sequenceNo": 14
+        },
+        {
+          "itemId": "658bc179-c8a3-5a89-9c3b-9a0ea43fdca6",
+          "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+          "componentId": "aa863904-2469-5e83-8e57-50c53b5fbb8e",
+          "rawTitle": "色彩-instrumental-",
+          "rawPosition": "15",
+          "sequenceNo": 15
+        }
+      ]
+    }
+  ]
+}

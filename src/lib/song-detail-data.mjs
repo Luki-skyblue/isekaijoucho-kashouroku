@@ -5,6 +5,7 @@ import legacy from './song-legacy-data.json' with {type:'json'};
 import sourceRegistry from './catalog-song-sources.json' with {type:'json'};
 import {artworkEntryMatches,catalogArtworkCandidatesForEntry,eventArtworkForEvent,rankArtworkCandidates} from './catalog-artwork.mjs';
 import {ARTWORK_RECORDS,RELEASE_ARTWORK_RECORDS,EVENT_ARTWORK_RECORDS} from './catalog-artwork-data.mjs';
+import releaseEditions from './catalog-release-editions.json' with {type:'json'};
 
 const arr=x=>Array.isArray(x)?x:[],str=x=>typeof x==='string'?x:'',object=x=>x!==null&&typeof x==='object'&&!Array.isArray(x);
 const byLegacyId=new Map(legacy.records.map(x=>[x.legacyId,x]));
@@ -16,7 +17,7 @@ const SIRIUS_SOLO_MEDIA=['64c5a08c-b2b6-5738-b5ce-bd418445525a','75be6381-71ba-5
 const SIRIUS_SOLO_RELEASES=['ff946479-c1ef-5b05-8d43-93c3163779f3','a5253209-7c10-5945-aedc-dabc8779e75e'];
 // Official alpha/beta pages explicitly state that the fifteen tracks are shared.
 // This is a presentation hint, not a copy of beta tracks or an edition merge.
-export const SHARED_RELEASE_TRACKLISTS=[{familyId:'de19530d-b318-5828-b6c8-b381e2a98a30',title:'創生',editionIds:['43236903-58cb-52cb-b3c6-65f2ba4371fb','ecdc3b97-33b2-5a66-a13c-3ca302f3358f'],label:'α・β共通',sourceUrl:'https://kamitsubaki.jp/discography/isekaijoucho/1036/'}];
+export const SHARED_RELEASE_TRACKLISTS=releaseEditions.releases;
 export function youtubeId(value){
  try{const u=new URL(value);const id=u.hostname==='youtu.be'?u.pathname.slice(1):['www.youtube.com','youtube.com','m.youtube.com'].includes(u.hostname)?u.searchParams.get('v'):null;return /^[\w-]{11}$/.test(id??'')?id:null;}catch{return null;}
 }

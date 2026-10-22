@@ -68,7 +68,36 @@
       ]
     }
   ],
-  "releases": [],
+  "releases": [
+    {
+      "familyId": "de19530d-b318-5828-b6c8-b381e2a98a30",
+      "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+      "imageUrl": "/artwork/releases/sosei-alpha.webp",
+      "sourceUrl": "https://kamitsubaki.jp/discography/isekaijoucho/1036/",
+      "entries": []
+    },
+    {
+      "familyId": "de19530d-b318-5828-b6c8-b381e2a98a30",
+      "editionId": "ecdc3b97-33b2-5a66-a13c-3ca302f3358f",
+      "imageUrl": "/artwork/releases/sosei-beta.webp",
+      "sourceUrl": "https://kamitsubaki.jp/discography/isekaijoucho/1081/",
+      "entries": []
+    },
+    {
+      "familyId": "bca6130e-c29e-5cbd-a898-cc695bcce702",
+      "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+      "imageUrl": "/artwork/releases/shikisai-alpha.webp",
+      "sourceUrl": "https://kamitsubaki.jp/discography/isekaijoucho/3471/",
+      "entries": []
+    },
+    {
+      "familyId": "bca6130e-c29e-5cbd-a898-cc695bcce702",
+      "editionId": "f1bc2f2a-b4e2-56e5-ba32-bfa7b23c8d27",
+      "imageUrl": "/artwork/releases/shikisai-beta.webp",
+      "sourceUrl": "https://kamitsubaki.jp/discography/isekaijoucho/3472/",
+      "entries": []
+    }
+  ],
   "events": [
     {
       "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
