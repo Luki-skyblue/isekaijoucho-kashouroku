@@ -4,6 +4,7 @@ import {createHash} from 'node:crypto';
 import {gzipSync} from 'node:zlib';
 import {performance} from 'node:perf_hooks';
 import {songArtworkCandidatesForEntry} from './song-detail-data.mjs';
+import {singerIdsForEntry} from './catalog-people.mjs';
 import {eventArtworkForEvent} from './catalog-artwork.mjs';
 import {isAbsolute} from 'node:path';
 
@@ -194,7 +195,8 @@ function closed(e) {
 const cmp = (a,b) => Buffer.compare(Buffer.from(a,'utf8'),Buffer.from(b,'utf8'));
 const matches = (a,b) => typeof a === 'string' && a.toLowerCase().includes(b.toLowerCase());
 
-/** Reuses persisted candidate sets. Never applies the frozen fixture's editorial overlays. */
+/** Reads persisted candidates and reviewed named-vocal links. Supplemental IDs
+ * do not change the raw set or its completeness/verification state. */
 export function queryEntries(model, filters = {}) {
   check(readable(model), 'A validated catalog model is required');
   const {search = '',singerIds = [],singerMatch = 'contains',selectedKinds = [],sort = 'title_asc',limit = 24,offset = 0} = filters;
@@ -205,13 +207,15 @@ export function queryEntries(model, filters = {}) {
   const q = search.trim().slice(0,100), chosen = new Set(singerIds);
   const rows = [];
   for (const [entryId,e] of model.entries) {
-    const d = e.detail, actual = new Set(e.singerIds);
+    const d = e.detail, actual = new Set(singerIdsForEntry(e));
+    // Supplementing a named candidate cannot close an old incomplete set.
+    const exhaustive=closed(e)&&actual.size===new Set(e.singerIds).size;
     if (chosen.size) {
       const overlap = [...chosen].some(x => actual.has(x));
       if (singerMatch === 'any' && !overlap) continue;
       if (singerMatch === 'contains' && ![...chosen].every(x => actual.has(x))) continue;
-      if (singerMatch === 'only' && !(closed(e) && actual.size === chosen.size && [...chosen].every(x => actual.has(x)))) continue;
-      if (singerMatch === 'subset' && !(closed(e) && [...actual].every(x => chosen.has(x)))) continue;
+      if (singerMatch === 'only' && !(exhaustive && actual.size === chosen.size && [...chosen].every(x => actual.has(x)))) continue;
+      if (singerMatch === 'subset' && !(exhaustive && [...actual].every(x => chosen.has(x)))) continue;
     }
     if (selectedKinds.length && !selectedKinds.includes(d.kind === 'medley' ? 'medley' : d.legacySongType)) continue;
     const workTitles = id => {

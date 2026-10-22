@@ -3,14 +3,14 @@ import {RecordArtwork} from './record-artwork';
 import type {CatalogEntryCard} from '@/lib/catalog-entry-api';
 import {asArray,asObject,displayDate,explicitThumbnail,num,str,textOr,validId,JsonObject} from '@/lib/core';
 import {Breadcrumb,Heading,Panel,Empty} from '@/components/ui';
-import {CATALOG_SORTS,catalogHref,activeCatalogFilters,activeCatalogConditions,ParsedCatalogQuery} from '@/lib/catalog-list-params';
+import {CATALOG_SORTS,SINGERS,catalogHref,activeCatalogFilters,activeCatalogConditions,ParsedCatalogQuery,type SingerChoice} from '@/lib/catalog-list-params';
 import {CatalogSearchInput} from '@/components/catalog-search-input';
 import {CatalogFilterFields} from '@/components/catalog-filter-fields';
 import {ListSort} from '@/components/list-sort';
 
 const CATEGORY:Record<string,string>={original:'オリジナル',cover:'カバー',collaboration:'コラボ',variant:'その他'};
-export function CatalogIndex({items,total,query,limit}: {items:CatalogEntryCard[];total:number;query:ParsedCatalogQuery;limit:number}){
- const pages=Math.ceil(total/limit),conditions=activeCatalogConditions(query);
+export function CatalogIndex({items,total,query,limit,singerChoices=SINGERS}: {items:CatalogEntryCard[];total:number;query:ParsedCatalogQuery;limit:number;singerChoices?:ReadonlyArray<SingerChoice>}){
+ const pages=Math.ceil(total/limit),conditions=activeCatalogConditions(query,singerChoices);
  return <><Breadcrumb parts={[{label:'楽曲一覧'}]}/><Heading title="楽曲一覧"/>
  <form className="search" action="/songs" method="get">
   <div className="search-line"><CatalogSearchInput query={query.q}/><button type="submit">検索</button></div>
@@ -22,7 +22,7 @@ export function CatalogIndex({items,total,query,limit}: {items:CatalogEntryCard[
  </form>
  <details className="catalog-filter" open={activeCatalogFilters(query)||undefined}>
   <summary>絞り込み <span aria-hidden="true">⌄</span></summary>
-  <CatalogFilterFields query={query}/>
+  <CatalogFilterFields key={JSON.stringify(query)} query={query} choices={singerChoices}/>
  </details>
  {conditions.length>0&&<div className="catalog-applied" aria-label="適用中の条件"><span className="catalog-applied-heading">適用中</span><div className="catalog-applied-tags">{conditions.map(c=><Link key={c.key} href={c.href} className="catalog-applied-tag" aria-label={`${c.label}を解除`}>{c.label}<span aria-hidden="true">×</span></Link>)}<Link className="catalog-applied-reset" href={catalogHref({...query,q:'',singerIds:[],singerMatch:'any',kinds:[],page:1})}>すべて解除</Link></div></div>}
  <div className="list-toolbar"><p className="toolbar-hint">{total}件</p><div className="catalog-toolbar-controls"><ListSort id="catalog-sort" action="/songs" value={query.sort} options={CATALOG_SORTS.map(s=>({value:s.id,label:s.label,href:catalogHref(query,{sort:s.id,page:1})}))}>

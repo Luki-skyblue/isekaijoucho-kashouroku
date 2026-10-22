@@ -2,23 +2,27 @@
 
 import {useMemo,useState} from 'react';
 import {CatalogHelp} from '@/components/catalog-help';
-import {MAIN_SINGERS,OTHER_SINGER_GROUPS,OTHER_SINGERS,CATEGORIES,type ParsedCatalogQuery} from '@/lib/catalog-list-params';
+import {MAIN_SINGERS,SINGERS,CATEGORIES,type ParsedCatalogQuery,type SingerChoice} from '@/lib/catalog-list-params';
+import {catalogNameMatches} from '@/lib/catalog-name-search.mjs';
 import type {SingerMatch,CatalogCategory} from '@/lib/catalog-entry-api';
 
 /** Draft filter state is local to this form. Only form submit changes the URL
  * and server-side results; applied tags remain sourced from the URL.
  */
-export function CatalogFilterFields({query}:{query:ParsedCatalogQuery}){
+export function CatalogFilterFields({query,choices=SINGERS}:{query:ParsedCatalogQuery;choices?:ReadonlyArray<SingerChoice>}){
  const [chosen,setChosen]=useState<string[]>(query.singerIds);
  const [match,setMatch]=useState<SingerMatch>(query.singerMatch);
  const [kinds,setKinds]=useState<CatalogCategory[]>(query.kinds);
  const [lookup,setLookup]=useState('');
- const others=OTHER_SINGERS.filter(s=>chosen.includes(s.id));
+ const mainIds=new Set<string>(MAIN_SINGERS.map(s=>s.id)),main=choices.filter(s=>mainIds.has(s.id));
+ const otherChoices=choices.filter(s=>!mainIds.has(s.id)),others=otherChoices.filter(s=>chosen.includes(s.id));
+ const groupNames=[...new Set(otherChoices.map(s=>s.group??'その他の歌唱者'))];
+ const groups=groupNames.map(label=>({label,members:otherChoices.filter(s=>(s.group??'その他の歌唱者')===label&&catalogNameMatches(s,lookup))})).filter(g=>g.members.length);
  const dirty=useMemo(()=>{
   const same=(a:readonly string[],b:readonly string[])=>a.length===b.length&&a.every(x=>b.includes(x));
   return !same(chosen,query.singerIds)||match!==query.singerMatch||!same(kinds,query.kinds);
  },[chosen,kinds,match,query.singerIds,query.kinds,query.singerMatch]);
- const toggleSinger=(id:string,checked:boolean)=>setChosen(old=>checked?old.includes(id)?old:[...old,id]:old.filter(x=>x!==id));
+ const toggleSinger=(id:string,checked:boolean)=>setChosen(old=>checked?old.includes(id)||old.length>=20?old:[...old,id]:old.filter(x=>x!==id));
  const toggleKind=(id:CatalogCategory,checked:boolean)=>setKinds(old=>checked?old.includes(id)?old:[...old,id]:old.filter(x=>x!==id));
  const clearSelection=()=>{setChosen([]);setKinds([]);setMatch('any');setLookup('');};
  return <form method="get" action="/songs" className="catalog-filter-fields">
@@ -38,32 +42,32 @@ export function CatalogFilterFields({query}:{query:ParsedCatalogQuery}){
     <p>のみから構成：選択した人の一部だけでも可。他の人がいない曲</p>
     <p>歌唱者集合に未解決部分がある曲は「完全一致」「のみから構成」の対象外です。</p>
    </CatalogHelp>
-   <div className="catalog-singer-options">{MAIN_SINGERS.map(s=><label key={s.id}>
-    <input type="checkbox" checked={chosen.includes(s.id)} onChange={e=>toggleSinger(s.id,e.target.checked)}/>{s.name}
+   <div className="catalog-singer-options">{main.map(s=><label key={s.id}>
+    <input type="checkbox" checked={chosen.includes(s.id)} disabled={!chosen.includes(s.id)&&chosen.length>=20} onChange={e=>toggleSinger(s.id,e.target.checked)}/>{s.name}
    </label>)}</div>
    <div className="catalog-more-picker">
     <details className="catalog-more-details">
      <summary>その他の歌唱者を選ぶ <span aria-hidden="true">⌄</span></summary>
      <div className="catalog-more-popover">
       <label className="catalog-other-search-label" htmlFor="catalog-other-singer-search">歌唱者を探す</label>
-      <input id="catalog-other-singer-search" type="search" value={lookup} onChange={e=>setLookup(e.target.value)} placeholder="名前で検索" autoComplete="off"/>
+      <input id="catalog-other-singer-search" type="search" value={lookup} onChange={e=>setLookup(e.target.value)} placeholder="名前・別名で検索" autoComplete="off"/>
       <div className="catalog-other-results">
-       {OTHER_SINGER_GROUPS.map(group=>{
-        const matching=group.members.filter(s=>s.name.toLocaleLowerCase().includes(lookup.trim().toLocaleLowerCase()));
-        return matching.length?<div className="catalog-other-group" key={group.label}>
+       {groups.map(group=>{
+        return <div className="catalog-other-group" key={group.label}>
          <p>{group.label}</p>
-         {matching.map(s=><label key={s.id} className="catalog-other-choice">
-          <input type="checkbox" checked={chosen.includes(s.id)} onChange={e=>toggleSinger(s.id,e.target.checked)}/>{s.name}
+         {group.members.map(s=><label key={s.id} className="catalog-other-choice">
+          <input type="checkbox" checked={chosen.includes(s.id)} disabled={!chosen.includes(s.id)&&chosen.length>=20} onChange={e=>toggleSinger(s.id,e.target.checked)}/>{s.name}
          </label>)}
-        </div>:null;
+        </div>;
        })}
-       {OTHER_SINGER_GROUPS.every(g=>g.members.every(s=>!s.name.toLocaleLowerCase().includes(lookup.trim().toLocaleLowerCase())))&&
+       {groups.length===0&&
         <p className="catalog-other-empty">候補がありません。</p>}
       </div>
      </div>
     </details>
     {others.length>0&&<p className="catalog-draft-singers"><span>選択中：</span>{others.map(s=><span className="catalog-draft-name" key={s.id}>{s.name}</span>)}</p>}
    </div>
+   {chosen.length>=20&&<p className="catalog-filter-help">一度に20名まで選択できます。</p>}
    <div className="catalog-match-line"><label htmlFor="catalog-singer-match">選択した歌唱者：</label>
     <select id="catalog-singer-match" value={match} onChange={e=>setMatch(e.target.value as SingerMatch)}>
      <option value="only">完全一致</option>

@@ -1,0 +1,11 @@
+.people-list-tabs{display:flex;gap:24px;border-bottom:1px solid var(--hair);margin:24px 0}
+.people-list-tabs a{display:flex;align-items:center;gap:8px;padding:12px 0;color:var(--quiet);text-decoration:none;border-bottom:2px solid transparent;font-size:14px}
+.people-list-tabs a[aria-current=page]{color:var(--ink);border-color:var(--accent)}
+.people-list-tabs small{font-size:11px;font-family:var(--mono);font-weight:400}
+.people-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:36px;margin-top:12px}
+.people-list-person{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:76px;padding:18px 0;border-bottom:1px solid var(--hair);text-decoration:none;overflow-wrap:anywhere}
+.people-list-person>span:first-child{min-width:0;display:flex;flex-direction:column;gap:7px}
+.people-list-person strong{font-size:16px;font-weight:500;line-height:1.5}
+.people-list-person small{font-size:11px;line-height:1.7;color:var(--quiet)}
+.people-list-person>span:last-child{font-size:14px;color:var(--quiet)}
+@media(max-width:620px){.people-list{grid-template-columns:1fr}.people-list-tabs{gap:20px}}

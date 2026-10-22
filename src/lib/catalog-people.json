@@ -1,0 +1,1154 @@
+{
+  "schemaVersion": 1,
+  "purpose": "CATALOG_IDENTITY_REGISTRY",
+  "databaseRead": {
+    "readAt": "2026-10-22T14:50:52.947046+00:00",
+    "sha256": "35d97f798904068cadb83c65e9a39ad6c40c5dabc998ae086411a317465e1326",
+    "entityCount": 53,
+    "aliasCount": 1,
+    "creditCount": 215
+  },
+  "entities": [
+    {
+      "id": "b5a65fe6-b2f8-535e-94d0-f35f90ac65b2",
+      "name": "AKB48",
+      "type": "group",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "3b3e5254-eac0-5a6e-97e0-e9bb5d12878d",
+      "name": "Aira(Dream Monster)",
+      "type": "artist",
+      "origin": "database",
+      "aliases": [
+        "Aira（Dream Monster）"
+      ]
+    },
+    {
+      "id": "b4a1c9cb-987f-5e92-863f-5bd1206dcbaa",
+      "name": "CIEL",
+      "type": "artist",
+      "origin": "database",
+      "aliases": [],
+      "picker": true,
+      "pickerGroup": "神椿・関連"
+    },
+    {
+      "id": "43d20079-de3d-5e69-aba2-eaed2aa0ac68",
+      "name": "IA",
+      "type": "voicebank",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "775adcfb-12ed-57de-bb7a-2b420da7b98c",
+      "name": "Junky",
+      "type": "artist",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "b5653de5-e5b2-5cd1-b30a-863c1d7447c5",
+      "name": "MIMI",
+      "type": "artist",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "b94379ef-3590-5a8f-8384-a1d262dd884a",
+      "name": "V.I.P",
+      "type": "group",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "ad4bc5e2-01f4-574a-91a0-69ad7ed0dfe0",
+      "name": "V.W.P",
+      "type": "group",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "0c52b490-a483-57aa-a266-3f5922cae6ab",
+      "name": "VALIS",
+      "type": "group",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "0f74f632-d887-527c-b0c6-e0e53adb22c9",
+      "name": "Yaffle",
+      "type": "artist",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "57e1a5a3-d1e2-5c3f-ad73-22214792f369",
+      "name": "samayuzame",
+      "type": "artist",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "92c87749-cdb6-57c0-b319-63458c19fc27",
+      "name": "somunia",
+      "type": "artist",
+      "origin": "database",
+      "aliases": [],
+      "picker": true
+    },
+    {
+      "id": "a4930bb0-54e0-5741-9b94-ad267c1900a6",
+      "name": "じん",
+      "type": "artist",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "220c0103-6b52-54fa-8e44-ed9892dce32f",
+      "name": "はるまきごはん",
+      "type": "artist",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "8b62e744-cff2-5116-bd00-778662f556d3",
+      "name": "カンザキイオリ",
+      "type": "artist",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "81a01233-230e-50a8-a309-11275c794cd0",
+      "name": "ヰ世界情緒",
+      "type": "artist",
+      "origin": "database",
+      "aliases": [
+        "情緒"
+      ],
+      "picker": true
+    },
+    {
+      "id": "a4f2c16a-1d22-5631-84a6-8fe3d4016653",
+      "name": "佳鏡院",
+      "type": "artist",
+      "origin": "database",
+      "aliases": [],
+      "picker": true,
+      "pickerGroup": "神椿・関連"
+    },
+    {
+      "id": "85277760-fe34-5d03-adb8-e486dea3bb32",
+      "name": "初音ミク",
+      "type": "voicebank",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "c3f6ae36-4e25-5dcc-a7e0-c26761881730",
+      "name": "及川創介",
+      "type": "artist",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "3306ddbd-8f3c-52ac-8dad-bec91fda87a4",
+      "name": "可不",
+      "type": "voicebank",
+      "origin": "database",
+      "aliases": [],
+      "picker": true,
+      "pickerGroup": "音楽的同位体"
+    },
+    {
+      "id": "a5a70c55-101c-5a56-a279-96d6b1513950",
+      "name": "夕凪機",
+      "type": "artist",
+      "origin": "database",
+      "aliases": [],
+      "picker": true,
+      "pickerGroup": "神椿・関連"
+    },
+    {
+      "id": "f1d88444-8f3c-5ae2-a703-48e5d620c8d2",
+      "name": "夜河世界",
+      "type": "character",
+      "origin": "database",
+      "aliases": [],
+      "pickerGroup": "キャラクター"
+    },
+    {
+      "id": "c87f6367-3740-5d1b-9e67-4ab213106c65",
+      "name": "大川茂伸",
+      "type": "artist",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "52f73703-fcfe-54b9-9595-7b8d8be43456",
+      "name": "大沼パセリ",
+      "type": "artist",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "5dde2241-fd42-54c3-a236-f8de701f4d73",
+      "name": "宅見将典",
+      "type": "artist",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "31809f41-9742-55a0-9365-658e55c8ac2c",
+      "name": "宇多田ヒカル",
+      "type": "artist",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "9971a957-90bc-5f96-a90a-245983d4733a",
+      "name": "安宅秀紀",
+      "type": "artist",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "b4c893f4-75f8-5e6b-8bee-403fe19a6ff6",
+      "name": "宮崎恵里花",
+      "type": "artist",
+      "origin": "database",
+      "aliases": [],
+      "picker": true
+    },
+    {
+      "id": "cf7ee8d9-1bfb-5090-860c-101143772400",
+      "name": "小原琉生",
+      "type": "artist",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "accfbdb4-c5f8-593e-9760-de3aff08d02e",
+      "name": "山崎燿",
+      "type": "artist",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+      "name": "幸祜",
+      "type": "artist",
+      "origin": "database",
+      "aliases": [],
+      "picker": true
+    },
+    {
+      "id": "35f4c4d4-26e3-58b2-9a34-4584e6a76f3b",
+      "name": "廉",
+      "type": "artist",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "e8268f54-7be5-5c8a-82d1-e9b9d5648d81",
+      "name": "日暮紅",
+      "type": "character",
+      "origin": "database",
+      "aliases": [],
+      "pickerGroup": "キャラクター"
+    },
+    {
+      "id": "2b1800fd-3f87-5186-9d31-874afc9afa17",
+      "name": "日暮翠",
+      "type": "character",
+      "origin": "database",
+      "aliases": [],
+      "pickerGroup": "キャラクター"
+    },
+    {
+      "id": "1867981b-c3c0-551b-9337-a8df05385348",
+      "name": "星界",
+      "type": "voicebank",
+      "origin": "database",
+      "aliases": [],
+      "picker": true,
+      "pickerGroup": "音楽的同位体"
+    },
+    {
+      "id": "b8307e06-2046-5415-a1f7-0b892dd41041",
+      "name": "春猿火",
+      "type": "artist",
+      "origin": "database",
+      "aliases": [],
+      "picker": true
+    },
+    {
+      "id": "4f8e004e-6329-5efa-b132-a748b75c6e08",
+      "name": "朝比奈健人",
+      "type": "artist",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "55f5c5e0-38a8-58ff-bad7-2ccdba5f1137",
+      "name": "柊マグネタイト",
+      "type": "artist",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "79955bc8-17c6-5859-95c3-dc82560eba60",
+      "name": "森先化歩",
+      "type": "character",
+      "origin": "database",
+      "aliases": [],
+      "pickerGroup": "キャラクター"
+    },
+    {
+      "id": "fc3aaae9-2c80-57ef-9e8f-2f70811a7c80",
+      "name": "歌愛ユキ",
+      "type": "voicebank",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "7015cec6-5455-55ae-858b-1c4e5d755966",
+      "name": "水野あつ",
+      "type": "artist",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79",
+      "name": "狐子",
+      "type": "voicebank",
+      "origin": "database",
+      "aliases": [],
+      "picker": true,
+      "pickerGroup": "音楽的同位体"
+    },
+    {
+      "id": "ae41fa12-3b09-52c0-bc08-1d9218492391",
+      "name": "理芽",
+      "type": "artist",
+      "origin": "database",
+      "aliases": [],
+      "picker": true
+    },
+    {
+      "id": "1e3522b0-1f2d-50a4-a6af-f0f53f24bb20",
+      "name": "田中ユウスケ",
+      "type": "artist",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "a45bcb20-bc76-59b1-a585-2600aa08c697",
+      "name": "矢野達也",
+      "type": "artist",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "575a1023-87d5-5c33-b24f-18c541817cfe",
+      "name": "秋元康",
+      "type": "artist",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "6cbf026b-463c-5e62-afe3-8a26280d46a4",
+      "name": "稲葉曇",
+      "type": "artist",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "84811994-89e7-5661-8a1a-826ca0ca3879",
+      "name": "米津玄師",
+      "type": "artist",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "39b82835-a038-5b94-95e6-d01ca0bf8300",
+      "name": "羽累",
+      "type": "voicebank",
+      "origin": "database",
+      "aliases": [],
+      "picker": true,
+      "pickerGroup": "音楽的同位体"
+    },
+    {
+      "id": "36129afb-1fe8-5255-958e-b090e17c7905",
+      "name": "花譜",
+      "type": "artist",
+      "origin": "database",
+      "aliases": [],
+      "picker": true
+    },
+    {
+      "id": "6495e046-c6c7-5bfa-bcca-64e962a2ac86",
+      "name": "裏命",
+      "type": "voicebank",
+      "origin": "database",
+      "aliases": [],
+      "picker": true,
+      "pickerGroup": "音楽的同位体"
+    },
+    {
+      "id": "11990299-8a34-52cb-bed8-00eba4d75aec",
+      "name": "跳亜",
+      "type": "artist",
+      "origin": "database",
+      "aliases": [],
+      "picker": true,
+      "pickerGroup": "神椿・関連"
+    },
+    {
+      "id": "cdd1834b-78ff-57c9-8103-e09a048d6503",
+      "name": "香椎モイミ",
+      "type": "artist",
+      "origin": "database",
+      "aliases": []
+    },
+    {
+      "id": "51f08059-db8e-4ce2-838b-2798b44b1efe",
+      "name": "御莉姫",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [
+        "ORIHIME",
+        "おりひめ"
+      ],
+      "sourceUrls": [
+        "https://girlsrevolutionproject.jp/artist/"
+      ],
+      "pickerGroup": "神椿・関連"
+    },
+    {
+      "id": "76a6f741-785e-4f2d-b83b-38e1d682fb8d",
+      "name": "LOLUET",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://alltstudio.jp/news/274/"
+      ]
+    },
+    {
+      "id": "a1ee4371-0462-4d18-928c-e2a9a8fdadc5",
+      "name": "梓川",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [
+        "Azusagawa",
+        "Azsagawa",
+        "あずさがわ"
+      ],
+      "sourceUrls": [
+        "https://www.youtube.com/channel/UCPU4xwtLBFXB3sXI6mfdp3g"
+      ],
+      "pickerGroup": "神椿・関連"
+    },
+    {
+      "id": "f4e3396a-1b47-40e9-876d-1e27eae72849",
+      "name": "ひとしずく×やま△",
+      "type": "group",
+      "origin": "catalog",
+      "aliases": [
+        "ひとしずく✕やま△"
+      ],
+      "sourceUrls": [
+        "https://hitoyamamusic.com/profile/"
+      ]
+    },
+    {
+      "id": "68f27425-1b3a-4dd3-8fa6-34817730e3cf",
+      "name": "とうかさ",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://kamitsubaki.jp/discography/isekaijoucho/1036/"
+      ]
+    },
+    {
+      "id": "521d6def-becd-40c4-ab94-d09aef2f37e9",
+      "name": "sasakure.UK",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://kamitsubaki.jp/discography/isekaijoucho/1036/"
+      ]
+    },
+    {
+      "id": "0da232ad-d0ce-444b-8ad9-f934f6104d8f",
+      "name": "rionos",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://kamitsubaki.jp/discography/isekaijoucho/1036/"
+      ]
+    },
+    {
+      "id": "ec34b1f2-3233-47ca-a3e5-74ab4643d914",
+      "name": "糸井塔",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://kamitsubaki.jp/discography/isekaijoucho/3471/"
+      ]
+    },
+    {
+      "id": "fa358e43-4a83-4446-a63a-447624333a41",
+      "name": "SLAVE.V-V-R",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://kamitsubaki.jp/discography/isekaijoucho/3471/"
+      ]
+    },
+    {
+      "id": "e91bd645-1294-439c-afea-0f6155fd9d25",
+      "name": "傘村トータ",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=UKZt1vq8bKI"
+      ]
+    },
+    {
+      "id": "0bcf40d1-59ee-427e-b927-0240a438530e",
+      "name": "心世紀",
+      "type": "group",
+      "origin": "catalog",
+      "aliases": [
+        "SINSEIKI"
+      ],
+      "sourceUrls": [
+        "https://girlsrevolutionproject.jp/artist/"
+      ]
+    },
+    {
+      "id": "98d06875-251e-472d-a4da-d1824e74cff0",
+      "name": "罪十罰",
+      "type": "group",
+      "origin": "catalog",
+      "aliases": [
+        "TSUMITOBATSU"
+      ],
+      "sourceUrls": [
+        "https://girlsrevolutionproject.jp/artist/"
+      ]
+    }
+  ],
+  "vocalLinks": [
+    {
+      "status": "active",
+      "entry": {
+        "entryId": "0555c6cd-50cb-4051-b820-9eb8237d18c2",
+        "kind": "song_variant",
+        "primaryWorkId": "7eaf76a0-8809-5fe4-acc3-d2f81291c38a",
+        "title": "天命 (現象II(再) ver.)",
+        "displayCredit": "V.W.P with 狐子",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "entityIds": [
+        "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79"
+      ],
+      "basis": "named_vocal_candidate_in_saved_billing",
+      "sourceReleaseId": "81f014e7-ba94-4e21-a51d-a04a1596952b"
+    },
+    {
+      "status": "active",
+      "entry": {
+        "entryId": "0dd053d3-bb52-4283-b053-439d9fac3ca2",
+        "kind": "song_variant",
+        "primaryWorkId": "ae2bbe13-3978-541d-8abb-552222c16300",
+        "title": "祭壇",
+        "displayCredit": "V.W.P & 裏命",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "entityIds": [
+        "6495e046-c6c7-5bfa-bcca-64e962a2ac86"
+      ],
+      "basis": "named_vocal_candidate_in_saved_billing",
+      "sourceReleaseId": "81f014e7-ba94-4e21-a51d-a04a1596952b"
+    },
+    {
+      "status": "active",
+      "entry": {
+        "entryId": "14cd4348-8f04-494c-91b8-1d0585f73408",
+        "kind": "song_variant",
+        "primaryWorkId": "b1a67792-0781-56af-b2e7-9f73e9ff9577",
+        "title": "共鳴 (現象II(再) ver.)",
+        "displayCredit": "V.W.P with 狐子",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "entityIds": [
+        "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79"
+      ],
+      "basis": "named_vocal_candidate_in_saved_billing",
+      "sourceReleaseId": "81f014e7-ba94-4e21-a51d-a04a1596952b"
+    },
+    {
+      "status": "active",
+      "entry": {
+        "entryId": "1bdd1ece-22cd-493a-b17b-856edfe96e2c",
+        "kind": "song_variant",
+        "primaryWorkId": "09c71502-e652-54bb-88d0-144bb9c78620",
+        "title": "双生コンフリクト",
+        "displayCredit": "LOLUET feat. ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "entityIds": [
+        "76a6f741-785e-4f2d-b83b-38e1d682fb8d"
+      ],
+      "basis": "named_vocal_candidate_in_saved_billing",
+      "sourceReleaseId": "81f014e7-ba94-4e21-a51d-a04a1596952b"
+    },
+    {
+      "status": "active",
+      "entry": {
+        "entryId": "2b06be9b-5835-4d6c-9251-c3ab496ad9f7",
+        "kind": "song_variant",
+        "primaryWorkId": "c6b9caf2-6682-571e-95d0-98f7d7a7e352",
+        "title": "生きていく光は",
+        "displayCredit": "夜河世界",
+        "variations": [],
+        "singerIds": []
+      },
+      "entityIds": [
+        "f1d88444-8f3c-5ae2-a703-48e5d620c8d2"
+      ],
+      "basis": "named_vocal_candidate_in_saved_billing",
+      "sourceReleaseId": "81f014e7-ba94-4e21-a51d-a04a1596952b"
+    },
+    {
+      "status": "active",
+      "entry": {
+        "entryId": "3212a1f3-1f6b-40c2-acdf-be2c722994c8",
+        "kind": "song_variant",
+        "primaryWorkId": "368d691c-4524-527b-87db-5b7d04662381",
+        "title": "キレイナヒカリ",
+        "displayCredit": "夜河世界",
+        "variations": [],
+        "singerIds": []
+      },
+      "entityIds": [
+        "f1d88444-8f3c-5ae2-a703-48e5d620c8d2"
+      ],
+      "basis": "named_vocal_candidate_in_saved_billing",
+      "sourceReleaseId": "81f014e7-ba94-4e21-a51d-a04a1596952b"
+    },
+    {
+      "status": "active",
+      "entry": {
+        "entryId": "3f479f1a-d76d-4efd-bfa4-d21c98118305",
+        "kind": "song_variant",
+        "primaryWorkId": "0d8f0274-e167-5ae2-b432-98e57623c360",
+        "title": "定命 (現象II(再) ver.)",
+        "displayCredit": "V.W.P with 狐子",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "entityIds": [
+        "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79"
+      ],
+      "basis": "named_vocal_candidate_in_saved_billing",
+      "sourceReleaseId": "81f014e7-ba94-4e21-a51d-a04a1596952b"
+    },
+    {
+      "status": "active",
+      "entry": {
+        "entryId": "48432623-3315-49c5-8f86-461c6e771ab0",
+        "kind": "song_variant",
+        "primaryWorkId": "aaf251d0-c51b-5167-8401-7214d93d8051",
+        "title": "変身",
+        "displayCredit": "V.W.P & 裏命",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "entityIds": [
+        "6495e046-c6c7-5bfa-bcca-64e962a2ac86"
+      ],
+      "basis": "named_vocal_candidate_in_saved_billing",
+      "sourceReleaseId": "81f014e7-ba94-4e21-a51d-a04a1596952b"
+    },
+    {
+      "status": "active",
+      "entry": {
+        "entryId": "49cc367b-b40c-4fbf-bfd1-3181827f3121",
+        "kind": "song_variant",
+        "primaryWorkId": "a0930d24-2796-5f59-b838-4e382d18b83a",
+        "title": "ドッペルゲンガー",
+        "displayCredit": "日暮翠 & 日暮紅",
+        "variations": [],
+        "singerIds": []
+      },
+      "entityIds": [
+        "2b1800fd-3f87-5186-9d31-874afc9afa17",
+        "e8268f54-7be5-5c8a-82d1-e9b9d5648d81"
+      ],
+      "basis": "named_vocal_candidate_in_saved_billing",
+      "sourceReleaseId": "81f014e7-ba94-4e21-a51d-a04a1596952b"
+    },
+    {
+      "status": "active",
+      "entry": {
+        "entryId": "4cb58e58-b91e-4365-9f35-4c8f64c041b9",
+        "kind": "song_variant",
+        "primaryWorkId": "5f0d7c18-3e07-58f0-88b0-b9b57baf73e9",
+        "title": "飛翔 (現象II(再) ver.)",
+        "displayCredit": "V.W.P with 狐子",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "entityIds": [
+        "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79"
+      ],
+      "basis": "named_vocal_candidate_in_saved_billing",
+      "sourceReleaseId": "81f014e7-ba94-4e21-a51d-a04a1596952b"
+    },
+    {
+      "status": "active",
+      "entry": {
+        "entryId": "4f5012fd-a539-4396-bb98-11419b1502e3",
+        "kind": "song_variant",
+        "primaryWorkId": "05f1b5bb-7da9-51b2-bdbb-6c2b0a98dd34",
+        "title": "秘密",
+        "displayCredit": "V.W.P & 裏命",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "entityIds": [
+        "6495e046-c6c7-5bfa-bcca-64e962a2ac86"
+      ],
+      "basis": "named_vocal_candidate_in_saved_billing",
+      "sourceReleaseId": "81f014e7-ba94-4e21-a51d-a04a1596952b"
+    },
+    {
+      "status": "active",
+      "entry": {
+        "entryId": "51ed3fb0-a166-4a72-8c56-4e3b5ed697a6",
+        "kind": "song_variant",
+        "primaryWorkId": "917bf995-b8a3-54d9-9466-048d0628de78",
+        "title": "遊戯 (現象II(再) ver.)",
+        "displayCredit": "V.W.P with 狐子",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "entityIds": [
+        "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79"
+      ],
+      "basis": "named_vocal_candidate_in_saved_billing",
+      "sourceReleaseId": "81f014e7-ba94-4e21-a51d-a04a1596952b"
+    },
+    {
+      "status": "active",
+      "entry": {
+        "entryId": "576677eb-39e2-4dac-8b45-ec25e88d7e1a",
+        "kind": "song_variant",
+        "primaryWorkId": "3ec1386b-ee7e-545d-9615-bbf6bc820396",
+        "title": "花束 (現象II(再) ver.)",
+        "displayCredit": "V.W.P with 狐子",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "entityIds": [
+        "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79"
+      ],
+      "basis": "named_vocal_candidate_in_saved_billing",
+      "sourceReleaseId": "81f014e7-ba94-4e21-a51d-a04a1596952b"
+    },
+    {
+      "status": "active",
+      "entry": {
+        "entryId": "58bdce8d-509d-447d-8ce2-dd1da5fba2eb",
+        "kind": "song_variant",
+        "primaryWorkId": "8e16feeb-3e73-5b56-b0bb-69c14baf53d4",
+        "title": "輪廻 (KAMITSUBAKI FES '23 ver.)",
+        "displayCredit": "V.W.P & 裏命 & CIEL",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b4a1c9cb-987f-5e92-863f-5bd1206dcbaa",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "entityIds": [
+        "6495e046-c6c7-5bfa-bcca-64e962a2ac86"
+      ],
+      "basis": "named_vocal_candidate_in_saved_billing",
+      "sourceReleaseId": "81f014e7-ba94-4e21-a51d-a04a1596952b"
+    },
+    {
+      "status": "active",
+      "entry": {
+        "entryId": "6412a764-fe86-4d77-90b0-46b38af51cf9",
+        "kind": "song_variant",
+        "primaryWorkId": "8e16feeb-3e73-5b56-b0bb-69c14baf53d4",
+        "title": "輪廻 (現象II(再) ver.)",
+        "displayCredit": "V.W.P with 狐子",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "entityIds": [
+        "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79"
+      ],
+      "basis": "named_vocal_candidate_in_saved_billing",
+      "sourceReleaseId": "81f014e7-ba94-4e21-a51d-a04a1596952b"
+    },
+    {
+      "status": "active",
+      "entry": {
+        "entryId": "6cc15677-81aa-4025-8684-850fd84d2cc7",
+        "kind": "song_variant",
+        "primaryWorkId": "33a700f2-774d-5000-911f-6fbaef299687",
+        "title": "ULTRA C",
+        "displayCredit": "ヰ世界情緒 × LOLUET",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "entityIds": [
+        "76a6f741-785e-4f2d-b83b-38e1d682fb8d"
+      ],
+      "basis": "named_vocal_candidate_in_saved_billing",
+      "sourceReleaseId": "81f014e7-ba94-4e21-a51d-a04a1596952b"
+    },
+    {
+      "status": "active",
+      "entry": {
+        "entryId": "6e21b449-c749-4d82-a8f3-d5f1b2a84789",
+        "kind": "song_variant",
+        "primaryWorkId": "38e778f1-f037-56ee-b421-f3900328db8b",
+        "title": "再会 (現象II(再) ver.)",
+        "displayCredit": "V.W.P with 狐子",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "entityIds": [
+        "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79"
+      ],
+      "basis": "named_vocal_candidate_in_saved_billing",
+      "sourceReleaseId": "81f014e7-ba94-4e21-a51d-a04a1596952b"
+    },
+    {
+      "status": "active",
+      "entry": {
+        "entryId": "86d0e45c-a23c-4c44-b8b0-9210f431a14f",
+        "kind": "song_variant",
+        "primaryWorkId": "05f1b5bb-7da9-51b2-bdbb-6c2b0a98dd34",
+        "title": "秘密 (現象II(再) ver.)",
+        "displayCredit": "V.W.P with 狐子",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "entityIds": [
+        "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79"
+      ],
+      "basis": "named_vocal_candidate_in_saved_billing",
+      "sourceReleaseId": "81f014e7-ba94-4e21-a51d-a04a1596952b"
+    },
+    {
+      "status": "active",
+      "entry": {
+        "entryId": "98d8431e-00f4-40b7-b503-884b4b817835",
+        "kind": "song_variant",
+        "primaryWorkId": "f4f40200-a117-51e0-ba3a-4e5f324e7821",
+        "title": "切札 (現象II(再) ver.)",
+        "displayCredit": "V.W.P with 狐子",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "entityIds": [
+        "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79"
+      ],
+      "basis": "named_vocal_candidate_in_saved_billing",
+      "sourceReleaseId": "81f014e7-ba94-4e21-a51d-a04a1596952b"
+    },
+    {
+      "status": "active",
+      "entry": {
+        "entryId": "a7b1e00d-4f2d-48fe-a54d-824ce237dd0b",
+        "kind": "song_variant",
+        "primaryWorkId": "5ab3b234-b19b-5ddb-8ed2-4a451a308783",
+        "title": "同盟 (現象II(再) ver.)",
+        "displayCredit": "V.W.P with 狐子",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "entityIds": [
+        "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79"
+      ],
+      "basis": "named_vocal_candidate_in_saved_billing",
+      "sourceReleaseId": "81f014e7-ba94-4e21-a51d-a04a1596952b"
+    },
+    {
+      "status": "active",
+      "entry": {
+        "entryId": "b917906f-3323-41e6-acaf-2b1f50b2c89f",
+        "kind": "song_variant",
+        "primaryWorkId": "9d3fb83d-e0b3-5b96-b347-75711308d94d",
+        "title": "玩具",
+        "displayCredit": "V.W.P & 裏命",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "entityIds": [
+        "6495e046-c6c7-5bfa-bcca-64e962a2ac86"
+      ],
+      "basis": "named_vocal_candidate_in_saved_billing",
+      "sourceReleaseId": "81f014e7-ba94-4e21-a51d-a04a1596952b"
+    },
+    {
+      "status": "active",
+      "entry": {
+        "entryId": "c2e31eb6-e452-484f-8945-b915d971ba66",
+        "kind": "song_variant",
+        "primaryWorkId": "d76d97bb-3149-53b8-9888-f01e4b4aab3f",
+        "title": "JANE DOE",
+        "displayCredit": "梓川 × ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "entityIds": [
+        "a1ee4371-0462-4d18-928c-e2a9a8fdadc5"
+      ],
+      "basis": "named_vocal_candidate_in_saved_billing",
+      "sourceReleaseId": "81f014e7-ba94-4e21-a51d-a04a1596952b"
+    },
+    {
+      "status": "active",
+      "entry": {
+        "entryId": "c71a24e0-633a-4a03-b1f3-246db3154b20",
+        "kind": "song_variant",
+        "primaryWorkId": "068f81cc-2da3-52e7-9542-44dc41a7bb4c",
+        "title": "亡国のネメシス",
+        "displayCredit": "御莉姫 × ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "entityIds": [
+        "51f08059-db8e-4ce2-838b-2798b44b1efe"
+      ],
+      "basis": "named_vocal_candidate_in_saved_billing",
+      "sourceReleaseId": "81f014e7-ba94-4e21-a51d-a04a1596952b"
+    },
+    {
+      "status": "active",
+      "entry": {
+        "entryId": "c88c2b28-3f04-40f6-ad06-9cc3e7cb560a",
+        "kind": "song_variant",
+        "primaryWorkId": "b979a25e-9538-5318-ace1-33f0fa0dcec4",
+        "title": "革命道中",
+        "displayCredit": "ヰ世界情緒 × 梓川",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "entityIds": [
+        "a1ee4371-0462-4d18-928c-e2a9a8fdadc5"
+      ],
+      "basis": "named_vocal_candidate_in_saved_billing",
+      "sourceReleaseId": "81f014e7-ba94-4e21-a51d-a04a1596952b"
+    },
+    {
+      "status": "active",
+      "entry": {
+        "entryId": "cf778c73-21b5-44d7-a522-f177a6c315fa",
+        "kind": "song_variant",
+        "primaryWorkId": "76f636da-5052-5fd6-a607-06564613e8fc",
+        "title": "欲望 (現象II(再) ver.)",
+        "displayCredit": "V.W.P with 狐子",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "entityIds": [
+        "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79"
+      ],
+      "basis": "named_vocal_candidate_in_saved_billing",
+      "sourceReleaseId": "81f014e7-ba94-4e21-a51d-a04a1596952b"
+    },
+    {
+      "status": "active",
+      "entry": {
+        "entryId": "f151f601-f68c-443f-b969-daa55b2cc818",
+        "kind": "song_variant",
+        "primaryWorkId": "e8e33858-753f-5b07-8822-879633783522",
+        "title": "魔女(真) (現象II(再) ver.)",
+        "displayCredit": "V.W.P with 狐子",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "entityIds": [
+        "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79"
+      ],
+      "basis": "named_vocal_candidate_in_saved_billing",
+      "sourceReleaseId": "81f014e7-ba94-4e21-a51d-a04a1596952b"
+    },
+    {
+      "status": "active",
+      "entry": {
+        "entryId": "f16c5233-cac3-4846-856f-2eef892760e7",
+        "kind": "song_variant",
+        "primaryWorkId": "577f2ece-5691-5a2b-ae2d-a53b7df9b9fb",
+        "title": "あわく心模様",
+        "displayCredit": "森先化歩 & 夜河世界",
+        "variations": [],
+        "singerIds": []
+      },
+      "entityIds": [
+        "f1d88444-8f3c-5ae2-a703-48e5d620c8d2",
+        "79955bc8-17c6-5859-95c3-dc82560eba60"
+      ],
+      "basis": "named_vocal_candidate_in_saved_billing",
+      "sourceReleaseId": "81f014e7-ba94-4e21-a51d-a04a1596952b"
+    },
+    {
+      "status": "active",
+      "entry": {
+        "entryId": "3c97ed9f-9e12-4685-b8bc-a87b37219549",
+        "kind": "song_variant",
+        "primaryWorkId": "673f5a05-fece-5d1a-8537-e4f1885ff7de",
+        "title": "反逆者の僕ら",
+        "displayCredit": "理芽×情緒×CIEL",
+        "variations": [],
+        "singerIds": [
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b4a1c9cb-987f-5e92-863f-5bd1206dcbaa"
+        ]
+      },
+      "entityIds": [
+        "81a01233-230e-50a8-a309-11275c794cd0"
+      ],
+      "basis": "named_vocal_candidate_in_saved_billing_existing_database_alias",
+      "sourceReleaseId": "81f014e7-ba94-4e21-a51d-a04a1596952b"
+    }
+  ]
+}

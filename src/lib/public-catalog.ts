@@ -10,7 +10,8 @@ import {liveDisplayContextFromModel} from './live-detail-data.mjs';
 import {releaseDisplayContextFromModel,releaseListArtworkFromModel,releaseDetailFromModel,type ReleaseDetailQuery} from './release-detail-data.mjs';
 import {releaseListFromModel,type ReleaseListQuery} from './release-list-data.mjs';
 import {homeRecentFromModel} from './home-recent-data.mjs';
-import {personDetailFromModel} from './person-detail-data.mjs';
+import {personDetailFromModel,peopleListFromModel,type PeopleListQuery} from './person-detail-data.mjs';
+import {catalogSingerChoices} from './catalog-people.mjs';
 import {discoveryFromModel} from './discovery-data.mjs';
 import discoveryChannels from './discovery-channel-data.json';
 
@@ -25,6 +26,8 @@ function load():PrivateModel{
  catch{throw new Error('Public catalog validation failed; live fallback is disabled');}
 }
 export function publicCatalogList(filters:CatalogListFilters){return queryEntries(load(),filters);}
+export function publicSingerChoices(){return catalogSingerChoices(load());}
+export function publicPeopleList(query:PeopleListQuery){return peopleListFromModel(load(),query);}
 export function publicLiveList(filters:LiveListFilters){return queryEvents(load(),filters);}
 export function publicLiveFilterOptions(){return {...eventFilterOptions(load()),review:{id:null,applied:false,publicRelease:true}};}
 export function publicCatalogRpc(name:string,params:JsonObject){const model=load(),result=snapshotRpc(model,name,params);return name==='kashouroku_v3_release_families'?releaseListArtworkFromModel(model,result):result;}

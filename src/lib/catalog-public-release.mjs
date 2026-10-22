@@ -9,7 +9,7 @@ const obj=(names='',children={})=>({...Object.fromEntries(names.split(' ').filte
 const list=schema=>[schema];
 const version=obj('id kind label labelBasis officialTitle');
 const localizedTitle=obj('language languageCode locale title kind titleKind script');
-const credit=obj('creditId name rawName role scope basis verificationStatus');
+const credit=obj('creditId entityId name rawName role scope basis verificationStatus');
 const singer=obj('entityId name role');
 const variation=obj('kind semitoneOffset value');
 const cast=obj('castId castStatus entityId name rawName role scope provesParticipationInEverySong');

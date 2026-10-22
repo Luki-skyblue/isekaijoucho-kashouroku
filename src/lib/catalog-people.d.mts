@@ -1,0 +1,16 @@
+import type {JsonObject} from './core';
+import type {PrivateModel,PrivateEntry} from './private-read-model.mjs';
+export type CatalogEntity={id:string;name:string;type:string;origin:string;aliases:string[];picker?:boolean;pickerGroup?:string;sourceUrls?:string[]};
+export type SingerChoice={id:string;name:string;aliases?:string[];group?:string};
+export const ENTITY_RECORDS:CatalogEntity[];
+export const VOCAL_LINK_RECORDS:JsonObject[];
+export const MAIN_SINGER_IDS:string[];
+export function entityForName(name:string):CatalogEntity|null;
+export function entityForId(id:string):CatalogEntity|null;
+export function creditNameKey(name:unknown):string|null;
+export function personKeyForCredit(name:string,credits?:JsonObject[]):string|null;
+export function vocalLinkMatches(entry:JsonObject,link:JsonObject):boolean;
+export function singersForEntry(entry:JsonObject,links?:JsonObject[]):JsonObject[];
+export function singerIdsForEntry(entry:JsonObject):string[];
+export function billingPeopleForEntry(entry:JsonObject):CatalogEntity[];
+export function catalogSingerChoices(model:PrivateModel):SingerChoice[];

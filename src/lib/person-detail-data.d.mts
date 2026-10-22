@@ -5,3 +5,6 @@ export function creditNameKey(name:unknown):string|null;
 export function validPersonKey(key:unknown):boolean;
 export function singerCreditParts(detail:JsonObject):Array<{text:string;personKey:string|null}>;
 export function personDetailFromModel(model:PrivateModel,key:string,options?:{page?:number;limit?:number}):PersonDetailData|null;
+export type PeopleListQuery={category?:string;term?:string;page?:number;limit?:number};
+export function peopleListFromModel(model:PrivateModel,query?:PeopleListQuery):{category:string;term:string;page:number;pages:number;total:number;categories:Array<{id:string;label:string;count:number}>;items:Array<{key:string;name:string;type:string;roles:string[];songCount:number}>};
+export function peopleListHref(query?:PeopleListQuery):string;

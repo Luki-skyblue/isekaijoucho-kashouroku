@@ -29,7 +29,7 @@ export function CatalogSongDetail({song,initialTab='info'}:{song:SongDetailData;
    {str(d.editorialOriginLabel)&&<><dt>バージョン名</dt><dd>{str(d.editorialOriginLabel)}</dd></>}
    {variations.length>0&&<><dt>バリエーション</dt><dd>{variations.join(' / ')}</dd></>}
   </dl>
-  <div className="song-detail-credits"><dl className="song-detail-facts">{song.credits.map(c=><div className="song-detail-fact-pair" key={c.role}><dt>{ROLES[c.role]||c.role}</dt><dd>{c.names.length?c.names.map((name,i)=><span key={name}>{i>0?'・':''}<CreditName name={name}/></span>):<Value value={c.value} review={c.review}/>}</dd></div>)}</dl></div>
+  <div className="song-detail-credits"><dl className="song-detail-facts">{song.credits.map(c=><div className="song-detail-fact-pair" key={c.role}><dt>{ROLES[c.role]||c.role}</dt><dd>{c.people.length?c.people.map((person,i)=><span key={person.name}>{i>0?'・':''}<CreditName name={person.name} personKey={person.personKey}/></span>):<Value value={c.value} review={c.review}/>}</dd></div>)}</dl></div>
   {originalInfo&&<div className="song-detail-original"><h2>原曲</h2><dl className="song-detail-facts">
    {str(m.originalArtist)&&<><dt>アーティスト</dt><dd>{str(m.originalArtist)}</dd></>}{str(m.originalVocal)&&<><dt>歌唱</dt><dd>{str(m.originalVocal)}</dd></>}{song.originalArranger&&<><dt>編曲</dt><dd><CreditName name={song.originalArranger}/></dd></>}
   </dl></div>}

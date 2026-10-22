@@ -6,6 +6,7 @@ import sourceRegistry from './catalog-song-sources.json' with {type:'json'};
 import {artworkEntryMatches,catalogArtworkCandidatesForEntry,eventArtworkForEvent,rankArtworkCandidates} from './catalog-artwork.mjs';
 import {ARTWORK_RECORDS,RELEASE_ARTWORK_RECORDS,EVENT_ARTWORK_RECORDS} from './catalog-artwork-data.mjs';
 import releaseEditions from './catalog-release-editions.json' with {type:'json'};
+import {singersForEntry,personKeyForCredit} from './catalog-people.mjs';
 
 const arr=x=>Array.isArray(x)?x:[],str=x=>typeof x==='string'?x:'',object=x=>x!==null&&typeof x==='object'&&!Array.isArray(x);
 const byLegacyId=new Map(legacy.records.map(x=>[x.legacyId,x]));
@@ -88,16 +89,16 @@ export function songCreditsForEntry(entry,metadata=songMetadataForEntry(entry),f
  const credits=arr(entry?.credits?.credits),names=(scope,role)=>unique(credits.filter(c=>c.scope===scope&&c.role===role).map(c=>str(c.name||c.rawName)).filter(Boolean));
  const facts=registeredSongFactsForEntry(entry,factRecords);
  const rows=['lyricist','composer','arranger'].map(role=>{
-  let values=names('version',role);
-  if(!values.length&&role!=='arranger')values=names('work',role);
-  if(!values.length&&role!=='arranger')values=names('original',role);
+  let scope='version',values=names(scope,role);
+  if(!values.length&&role!=='arranger'){scope='work';values=names(scope,role);}
+  if(!values.length&&role!=='arranger'){scope='original';values=names(scope,role);}
   // Explicit original solo MV credit, retained from the user-supplied description.
   if(!values.length&&role==='arranger'&&exactSiriusSolo(entry))values=['傘村トータ'];
   if(!values.length&&!['not_found','not_applicable'].includes(metadata.fieldReview?.credits?.[role]?.outcome)){
    const candidates=unique(facts.map(r=>r.credits?.[role]).filter(x=>Array.isArray(x)&&x.length&&x.every(n=>typeof n==='string'&&n.trim())));
    if(candidates.length===1)values=candidates[0];
   }
-  return {role,names:values,value:values.join('・')||null,review:metadata.fieldReview?.credits?.[role]??null};
+  return {role,names:values,people:values.map(name=>({name,personKey:personKeyForCredit(name,credits.filter(c=>c.role===role&&c.scope===scope))})),value:values.join('・')||null,review:metadata.fieldReview?.credits?.[role]??null};
  });
  const original=arr(metadata.originalCredits).length?metadata.originalCredits:credits.filter(c=>c.scope==='original');
  return {rows,originalArranger:known(original.filter(c=>c.role==='arranger').map(c=>c.name))};
@@ -197,7 +198,7 @@ export function buildSongDetail(entry,work={},options={}){
  if(!entry?.detail)return null;
  const d=entry.detail,metadata=songMetadataForEntry(entry,options.factRecords),creditData=songCreditsForEntry(entry,metadata,options.factRecords),videos=songVideosForEntry(entry,work,options.sourceRecords,options.sourceExclusions),releases=songReleasesForEntry(entry,work,options.releaseRecords,options.sourceRecords),allLives=songLivesForEntry(entry,options.eventRecords);
  const images=artworkCandidates(entry,videos,releases,allLives,options);
- return {detail:d,metadata,credits:creditData.rows,originalArranger:creditData.originalArranger,
+ return {detail:{...d,singers:singersForEntry(entry)},metadata,credits:creditData.rows,originalArranger:creditData.originalArranger,
   artwork:images[0]??null,artworkCandidates:images,listenUrl:videos[0]?.url??releases.find(r=>r.externalUrl)?.externalUrl??null,videos,releases,lives:allLives,
   hasUncertainLives:allLives.some(x=>x.uncertain),comparison:entry.compare??null,
   versionLabel:d.entryId===SIRIUS_DUET&&d.primaryWorkId===SIRIUS_WORK?'デュエット':null};

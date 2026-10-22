@@ -2,9 +2,9 @@ import {pageNumber,searchTerm,viewMode,validId} from './core';
 import type {CatalogSort,LegacySongType,SingerMatch,CatalogCategory} from './catalog-entry-api';
 import {VOICEBANK_SINGERS} from './catalog-vocal-identities';
 
-/** Ordered front-page singers. All other available *resolved vocalists* live in a
- * searchable picker. This roster is NOT an exhaustive list of legacy credits:
- * unknown singer/entity mappings remain an explicit F5 audit task.
+/** Compatibility choices for the old RPC/fixture reader. Snapshot/public pages
+ * supply catalogSingerChoices(model) to both parsing and the picker instead.
+ * Main-five order stays stable; this fallback is not a whitelist for new IDs.
  */
 export const MAIN_SINGERS = [
  {name:'ヰ世界情緒',id:'81a01233-230e-50a8-a309-11275c794cd0'},
@@ -13,7 +13,7 @@ export const MAIN_SINGERS = [
  {name:'春猿火',id:'b8307e06-2046-5415-a1f7-0b892dd41041'},
  {name:'幸祜',id:'9ab42d1f-671c-57c5-a5ce-b5bd4303232c'},
 ] as const;
-export type SingerChoice={name:string;id:string};
+export type SingerChoice={name:string;id:string;aliases?:string[];group?:string};
 export const OTHER_SINGER_GROUPS:ReadonlyArray<{label:string;members:ReadonlyArray<SingerChoice>}> = [
  {label:'神椿・関連',members:[
   {name:'CIEL',id:'b4a1c9cb-987f-5e92-863f-5bd1206dcbaa'},
@@ -44,10 +44,10 @@ export const CATALOG_SORTS:ReadonlyArray<{id:CatalogSort;label:string}> = [
 ];
 export type CatalogQuery={q?:string;page?:string;view?:string;singer?:string|string[];
  singerMatch?:string;type?:string|string[];medleys?:string;sort?:string;};
-export function readCatalogQuery(raw:CatalogQuery){
+export function readCatalogQuery(raw:CatalogQuery,choices:ReadonlyArray<SingerChoice>=SINGERS){
  const q=searchTerm(raw.q),page=pageNumber(raw.page),view=viewMode(raw.view);
  const requested=Array.isArray(raw.singer)?raw.singer:raw.singer?[raw.singer]:[];
- const singerIds=SINGERS.filter(s=>requested.includes(s.id)).map(s=>s.id);
+ const singerIds=[...new Set(choices.filter(s=>validId(s.id)&&requested.includes(s.id)).map(s=>s.id))].slice(0,20);
  // Missing singerMatch on an old shared URL meant AND ('contains').
  // A new, unfiltered form defaults to OR; new links always encode OR explicitly.
  const singerMatch:SingerMatch=raw.singerMatch==='only'?'only':raw.singerMatch==='subset'?'subset':raw.singerMatch==='any'?'any':raw.singerMatch==='contains'?'contains':singerIds.length?'contains':'any';
@@ -80,11 +80,11 @@ export function activeCatalogFilters(v:ParsedCatalogQuery):boolean{
 }
 export type ActiveCatalogCondition={key:string;label:string;href:string};
 /** Conditions that were applied, rather than the unsubmitted checkbox state. */
-export function activeCatalogConditions(q:ParsedCatalogQuery):ActiveCatalogCondition[]{
+export function activeCatalogConditions(q:ParsedCatalogQuery,choices:ReadonlyArray<SingerChoice>=SINGERS):ActiveCatalogCondition[]{
  const tags:ActiveCatalogCondition[]=[];
  if(q.q)tags.push({key:'search',label:`検索：${q.q}`,href:catalogHref(q,{q:'',page:1})});
  if(q.singerIds.length){
-  const names=q.singerIds.map(id=>SINGERS.find(s=>s.id===id)?.name??'不明');
+  const names=q.singerIds.map(id=>choices.find(s=>s.id===id)?.name??'不明');
   const label={only:`${names.join('・')}（完全一致）`,any:`${names.join('・')}のいずれかを含む`,contains:`${names.join('・')}の全員を含む`,subset:`${names.join('・')}のみから構成`}[q.singerMatch];
   tags.push({key:'singers',label:`歌唱者：${label}`,href:catalogHref(q,{singerIds:[],singerMatch:'any',page:1})});
  }

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import {notFound} from 'next/navigation';
+import {notFound,redirect} from 'next/navigation';
 import {getPersonDetail} from '@/lib/person-api';
 import {pageNumber} from '@/lib/core';
 import {RecordArtwork} from '@/components/record-artwork';
@@ -11,11 +11,12 @@ export async function generateMetadata({params}:{params:Promise<{personKey:strin
  return {title:person?.name??'人物'};
 }
 export default async function PersonDetail({params,searchParams}:{params:Promise<{personKey:string}>;searchParams:Promise<{page?:string}>}){
- const person=await getPersonDetail((await params).personKey,pageNumber((await searchParams).page));
+ const key=(await params).personKey,person=await getPersonDetail(key,pageNumber((await searchParams).page));
  if(!person)notFound();
+ if(person.key!==key)redirect(`/people/${person.key}${person.page>1?'?page='+person.page:''}`);
  const href=(page:number)=>`/people/${person.key}${page>1?'?page='+page:''}`;
  return <article className="person-detail-page">
-  <Breadcrumb parts={[{label:'楽曲一覧',href:'/songs'},{label:person.name}]}/>
+  <Breadcrumb parts={[{label:'関係者一覧',href:'/people'},{label:person.name}]}/>
   <header className="person-detail-heading"><h1>{person.name}</h1><p>{person.roles.join('・')}</p></header>
   <section aria-labelledby="person-songs-title"><h2 id="person-songs-title">関連楽曲 <span className="person-detail-count">{person.total}</span></h2>
    <div className="records records-list">{person.items.map(song=><Link className="record" key={song.entryId} href={'/songs/'+song.entryId}>

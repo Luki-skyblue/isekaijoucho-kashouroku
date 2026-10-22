@@ -2,7 +2,7 @@ import type {JsonObject} from './core';
 import type {PrivateModel,PrivateWork} from './private-read-model.mjs';
 export type SongDetailData={
  detail:JsonObject;metadata:JsonObject;
- credits:Array<{role:string;names:string[];value:string|null;review:JsonObject|null}>;
+ credits:Array<{role:string;names:string[];people:Array<{name:string;personKey:string|null}>;value:string|null;review:JsonObject|null}>;
  originalArranger:string|null;
  artwork:SongArtwork|null;artworkCandidates:SongArtwork[];listenUrl:string|null;
  videos:Array<{mediaId:string;url:string;title:string|null;kind:string|null;publishedOn:string|null;imageUrl:string|null;authorName?:string|null;authorUrl?:string|null;credits:Array<{role:string;name:string}>}>;

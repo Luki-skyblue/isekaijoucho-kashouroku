@@ -17,6 +17,7 @@ const LINKS = [
   { href: '/songs', label: '楽曲一覧', en: 'SONGS' },
   { href: '/lives', label: 'LIVE一覧', en: 'LIVE' },
   { href: '/releases', label: '収録作品', en: 'RELEASES' },
+  { href: '/people', label: '関係者一覧', en: 'PEOPLE' },
   { href: '/discover', label: '公開・収録先から探す', en: 'DISCOVER' },
   { href: '/guide', label: '使い方', en: 'GUIDE' },
   { href: '/about', label: 'このサイトについて', en: 'ABOUT' },
