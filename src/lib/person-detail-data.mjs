@@ -1,7 +1,7 @@
 // Shared identity and whole-credit index. Displayed roles keep their original
 // scope; neither billing nor entity resolution verifies a performance.
 import {songDetailFromModel,songArtworkCandidatesForEntry} from './song-detail-data.mjs';
-import {creditNameKey,personKeyForCredit,entityForId,singersForEntry,billingPeopleForEntry} from './catalog-people.mjs';
+import {creditNameKey,personKeyForCredit,entityForId,singersForEntry,billingPeopleForEntry,membershipsForEntity} from './catalog-people.mjs';
 import {catalogNameMatches} from './catalog-name-search.mjs';
 import {creditRoleLabel,orderedCreditRoles} from './catalog-credit-labels.mjs';
 export {creditNameKey} from './catalog-people.mjs';
@@ -38,7 +38,7 @@ export function singerCreditParts(detail){
 
 function indexFor(model){
  if(cache.has(model))return cache.get(model);
- const people=new Map(),aliases=new Map();
+ const people=new Map(),aliases=new Map(),billedGroups=new Map();
  function add(key,name,entryId,role){
   if(!key||!name)return;
   const entity=entityForId(key);
@@ -50,36 +50,44 @@ function indexFor(model){
  for(const [entryId,entry]of model.entries){
   const song=songDetailFromModel(model,entryId);
   for(const singer of singersForEntry(entry))if(uuid.test(text(singer.entityId)))add(singer.entityId,text(singer.name),entryId,'vocal');
-  for(const entity of billingPeopleForEntry(entry))if(entity.type==='group'||!song.detail.singers.some(s=>s.entityId===entity.id))add(entity.id,entity.name,entryId,'artist');
+  const billing=billingPeopleForEntry(entry);billedGroups.set(entryId,new Set(billing.filter(p=>p.type==='group').map(p=>p.id)));
+  for(const entity of billing)if(entity.type==='group'||!song.detail.singers.some(s=>s.entityId===entity.id))add(entity.id,entity.name,entryId,'artist');
   for(const credit of song.credits)for(const person of credit.people)add(person.personKey,person.name,entryId,credit.role);
   if(entry.detail.legacySongType==='cover'&&song.originalArranger)add(personKeyForCredit(song.originalArranger),song.originalArranger,entryId,'original_arranger');
   for(const video of song.videos)for(const credit of video.credits)add(personKeyForCredit(credit.name,[credit]),credit.name,entryId,`video:${credit.role}`);
  }
- const result={people,aliases};cache.set(model,result);return result;
+ const result={people,aliases,billedGroups};cache.set(model,result);return result;
 }
 const roleLabels=values=>orderedCreditRoles(values).map(creditRoleLabel);
 const kindLabel=person=>person.type==='group'?'グループ':person.type==='character'?'キャラクター':person.type==='voicebank'?'音声ライブラリ':[...person.roles].some(r=>['vocal','artist'].includes(r))?'アーティスト':'クリエイター';
-export function personDetailFromModel(model,key,{page=1,limit=24,role='all'}={}){
+export function personDetailFromModel(model,key,{page=1,limit=24,role='all',billing='all'}={}){
  if(!validPersonKey(key))return null;
  const index=indexFor(model),targets=index.aliases.get(key);
  const person=index.people.get(key)??(targets?.size===1?index.people.get([...targets][0]):null);if(!person)return null;
- const activeRole=typeof role==='string'&&person.roles.has(role)?role:'all';
- const roleTabs=[{id:'all',label:'すべて',count:person.songs.size},...orderedCreditRoles(person.roles).map(r=>({id:r,label:creditRoleLabel(r),count:[...person.songs.values()].filter(rs=>rs.has(r)).length}))];
- const songs=[...person.songs].filter(([,entryRoles])=>activeRole==='all'||entryRoles.has(activeRole)).map(([entryId,entryRoles])=>{
+ const relations=membershipsForEntity(person.key),groups=relations.filter(r=>r.memberId===person.key).map(r=>entityForId(r.groupId));
+ const members=person.type==='group'?relations.filter(r=>r.groupId===person.key).map(r=>entityForId(r.memberId)).map(e=>({key:e.id,name:e.name,href:index.people.has(e.id)?personDetailHref(e.id,{billing:person.key}):null})):null;
+ const groupIdsFor=(entryId,entryRoles)=>['vocal','artist'].some(r=>entryRoles.has(r))?groups.filter(g=>index.billedGroups.get(entryId)?.has(g.id)).map(g=>g.id):[];
+ const groupCounts=new Map(groups.map(g=>[g.id,[...person.songs].filter(([id,rs])=>groupIdsFor(id,rs).includes(g.id)).length]));
+ const billingTabs=[...groupCounts.values()].some(n=>n>0)?[{id:'all',label:'すべて',count:person.songs.size},{id:'self',label:person.name,count:[...person.songs].filter(([id,rs])=>groupIdsFor(id,rs).length===0).length},...groups.filter(g=>groupCounts.get(g.id)>0).map(g=>({id:g.id,label:g.name,count:groupCounts.get(g.id)}))]:[];
+ const activeBilling=billingTabs.some(t=>t.id===billing)?billing:'all';
+ const billedSongs=[...person.songs].filter(([id,rs])=>activeBilling==='all'||(activeBilling==='self'?groupIdsFor(id,rs).length===0:groupIdsFor(id,rs).includes(activeBilling)));
+ const availableRoles=new Set(billedSongs.flatMap(([,rs])=>[...rs])),activeRole=typeof role==='string'&&availableRoles.has(role)?role:'all';
+ const roleTabs=[{id:'all',label:'すべて',count:billedSongs.length},...orderedCreditRoles(availableRoles).map(r=>({id:r,label:creditRoleLabel(r),count:billedSongs.filter(([,rs])=>rs.has(r)).length}))];
+ const songs=billedSongs.filter(([,entryRoles])=>activeRole==='all'||entryRoles.has(activeRole)).map(([entryId,entryRoles])=>{
   const entry=model.entries.get(entryId),d=entry.detail;
   return {entryId,href:'/songs/'+entryId+(activeRole.startsWith('video:')?'?tab=videos':''),title:d.title,displayCredit:text(d.displayCredit)||arr(d.singers).map(s=>text(s.name)).filter(Boolean).join('・'),roles:roleLabels(entryRoles)};
  }).sort((a,b)=>compare(text(model.entries.get(a.entryId).sortTitle)||a.title,text(model.entries.get(b.entryId).sortTitle)||b.title)||compare(a.entryId,b.entryId));
  limit=Number.isSafeInteger(limit)&&limit>0&&limit<=100?limit:24;
- const pages=Math.ceil(songs.length/limit);page=Number.isSafeInteger(page)&&page>0?Math.min(page,pages):1;
+ const pages=Math.ceil(songs.length/limit);page=Number.isSafeInteger(page)&&page>0?Math.min(page,Math.max(pages,1)):1;
  const items=songs.slice((page-1)*limit,page*limit).map(song=>{
   const entry=model.entries.get(song.entryId),images=songArtworkCandidatesForEntry(entry,model.works.get(entry.detail.primaryWorkId));
   return {...song,thumbnailUrl:images[0]?.imageUrl??null,thumbnailUrls:images.map(x=>x.imageUrl)};
  });
- return {key:person.key,name:person.name,kindLabel:kindLabel(person),roles:roleLabels(person.roles),role:activeRole,roleTabs,total:songs.length,page,pages,items};
+ return {key:person.key,name:person.name,kindLabel:kindLabel(person),groups:groups.map(g=>({key:g.id,name:g.name,href:index.people.has(g.id)?personDetailHref(g.id):null})),members,billing:activeBilling,billingTabs,roles:roleLabels(person.roles),role:activeRole,roleTabs,total:songs.length,page,pages,items};
 }
 
-export function personDetailHref(key,{page=1,role='all'}={}){
- const p=new URLSearchParams();if(role&&role!=='all')p.set('role',role);if(page>1)p.set('page',String(page));return '/people/'+key+(p.size?'?'+p.toString():'');
+export function personDetailHref(key,{page=1,role='all',billing='all'}={}){
+ const p=new URLSearchParams();if(billing&&billing!=='all')p.set('billing',billing);if(role&&role!=='all')p.set('role',role);if(page>1)p.set('page',String(page));return '/people/'+key+(p.size?'?'+p.toString():'');
 }
 
 export function peopleListFromModel(model,{category='artists',term='',role='all',page=1,limit=48}={}){

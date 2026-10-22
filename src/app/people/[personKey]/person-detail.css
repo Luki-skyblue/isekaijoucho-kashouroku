@@ -8,3 +8,11 @@
 .person-role-tabs a{display:flex;align-items:center;gap:7px;white-space:nowrap;flex-shrink:0;padding:10px 0;color:var(--quiet);text-decoration:none;border-bottom:2px solid transparent;font-size:13px}
 .person-role-tabs a[aria-current=page]{color:var(--ink);border-color:var(--accent)}
 .person-role-tabs small{font-size:10px;font-family:var(--mono)}
+.person-members{margin:0 0 32px}
+.person-members ul{display:flex;flex-wrap:wrap;gap:10px 24px;padding:0;margin:0;list-style:none}
+.person-members li{font-size:14px}
+.person-members a{text-decoration:none}
+.person-members a span{font-size:11px;color:var(--quiet)}
+.person-members .muted{font-size:13px}
+.person-groups{display:flex;gap:18px;margin:-22px 0 26px;font-size:12px}
+.person-groups a{color:var(--quiet);text-decoration:none}

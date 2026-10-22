@@ -7,6 +7,8 @@ import registry from './catalog-people.json' with {type:'json'};
 const arr=x=>Array.isArray(x)?x:[],str=x=>typeof x==='string'?x:'';
 export const ENTITY_RECORDS=registry.entities;
 export const VOCAL_LINK_RECORDS=registry.vocalLinks;
+export const MEMBERSHIP_RECORDS=registry.memberships??[];
+export const VOCAL_CORRECTION_RECORDS=registry.vocalCorrections??[];
 const uuid=/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const byId=new Map(ENTITY_RECORDS.map(e=>[e.id,e]));
 const byName=new Map();
@@ -29,14 +31,29 @@ export function vocalLinkMatches(entry,link){
   JSON.stringify(d.variations??[])===JSON.stringify(t.variations??[])&&
   arr(entry.singerIds).length===arr(t.singerIds).length&&arr(t.singerIds).every(id=>entry.singerIds.includes(id));
 }
-export function singersForEntry(entry,links=VOCAL_LINK_RECORDS){
+const historyKey=rows=>JSON.stringify(arr(rows).map(h=>({renditionId:h.renditionId,renditionPartId:h.renditionPartId,occurredOn:h.occurredOn,eventIds:arr(h.eventIds??h.relatedEvents?.map(e=>e.eventId)).slice().sort()})).sort((a,b)=>JSON.stringify(a).localeCompare(JSON.stringify(b))));
+export function vocalCorrectionMatches(entry,record){
+ return vocalLinkMatches(entry,record)&&arr(entry?.legacyIds).includes(record.legacyId)&&historyKey(entry.history)===historyKey(record.history)&&
+  arr(record.entityIds).length>0&&new Set(record.entityIds).size===record.entityIds.length&&record.entityIds.every(id=>['artist','character','voicebank'].includes(byId.get(id)?.type));
+}
+function vocalCorrectionFor(entry,records=VOCAL_CORRECTION_RECORDS){
+ const matches=arr(records).filter(r=>vocalCorrectionMatches(entry,r));return matches.length===1?matches[0]:null;
+}
+export function singersForEntry(entry,links=VOCAL_LINK_RECORDS,corrections=VOCAL_CORRECTION_RECORDS){
+ const corrected=vocalCorrectionFor(entry,corrections);
+ if(corrected)return corrected.entityIds.map(id=>({entityId:id,name:byId.get(id).name,role:'vocal'}));
  const singers=new Map(arr(entry?.detail?.singers).filter(s=>uuid.test(str(s.entityId))&&str(s.name)).map(s=>[s.entityId,s]));
  for(const link of arr(links))if(vocalLinkMatches(entry,link))for(const id of arr(link.entityIds)){
   const entity=byId.get(id);if(entity&&['artist','character','voicebank'].includes(entity.type)&&!singers.has(id))singers.set(id,{entityId:id,name:entity.name,role:'vocal'});
  }
  return [...singers.values()];
 }
-export function singerIdsForEntry(entry){return [...new Set([...arr(entry?.singerIds),...singersForEntry(entry).map(s=>s.entityId)])];}
+export function singerIdsForEntry(entry){const correction=vocalCorrectionFor(entry);return correction?[...correction.entityIds]:[...new Set([...arr(entry?.singerIds),...singersForEntry(entry).map(s=>s.entityId)])];}
+
+/** Membership supplies navigation only. It never adds singers to an entry. */
+export function membershipsForEntity(id,records=MEMBERSHIP_RECORDS){
+ return arr(records).filter(r=>r.status==='active'&&r.relation==='member_of'&&['artist','character','voicebank'].includes(byId.get(r.memberId)?.type)&&byId.get(r.groupId)?.type==='group'&&(r.memberId===id||r.groupId===id));
+}
 
 const boundary=c=>c===undefined||/[\s・･·×✕✖&＆+＋/／,，、（）()「」【】\[\]<>〈〉]/u.test(c);
 /** Billing identities are separate from vocals. A group never expands to its

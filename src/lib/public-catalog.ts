@@ -38,7 +38,7 @@ export function publicReleaseDisplayContext(familyId:string){return releaseDispl
 export function publicReleaseDetail(familyId:string,query:ReleaseDetailQuery){return releaseDetailFromModel(load(),familyId,query);}
 export function publicReleaseList(query:ReleaseListQuery){return releaseListFromModel(load(),query);}
 export function publicHomeRecent(){return homeRecentFromModel(load());}
-export function publicPersonDetail(key:string,page=1,role='all'){return personDetailFromModel(load(),key,{page,role});}
+export function publicPersonDetail(key:string,page=1,role='all',billing='all'){return personDetailFromModel(load(),key,{page,role,billing});}
 export function publicDiscovery(query:{category?:string;page?:number}){return discoveryFromModel(load(),query,discoveryChannels);}
 export function publicLegacySongTarget(id:number):string|null{
  const matches=[...load().entries.values()].filter(e=>e.legacyIds.includes(id));

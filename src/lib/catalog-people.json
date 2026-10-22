@@ -1150,5 +1150,874 @@
       "basis": "named_vocal_candidate_in_saved_billing_existing_database_alias",
       "sourceReleaseId": "81f014e7-ba94-4e21-a51d-a04a1596952b"
     }
+  ],
+  "memberships": [
+    {
+      "status": "active",
+      "memberId": "36129afb-1fe8-5255-958e-b090e17c7905",
+      "groupId": "ad4bc5e2-01f4-574a-91a0-69ad7ed0dfe0",
+      "relation": "member_of",
+      "checkedOn": "2026-10-23",
+      "sourceId": "S-112",
+      "sourceUrls": [
+        "https://kamitsubaki.jp/artist/v-w-p/"
+      ]
+    },
+    {
+      "status": "active",
+      "memberId": "ae41fa12-3b09-52c0-bc08-1d9218492391",
+      "groupId": "ad4bc5e2-01f4-574a-91a0-69ad7ed0dfe0",
+      "relation": "member_of",
+      "checkedOn": "2026-10-23",
+      "sourceId": "S-112",
+      "sourceUrls": [
+        "https://kamitsubaki.jp/artist/v-w-p/"
+      ]
+    },
+    {
+      "status": "active",
+      "memberId": "b8307e06-2046-5415-a1f7-0b892dd41041",
+      "groupId": "ad4bc5e2-01f4-574a-91a0-69ad7ed0dfe0",
+      "relation": "member_of",
+      "checkedOn": "2026-10-23",
+      "sourceId": "S-112",
+      "sourceUrls": [
+        "https://kamitsubaki.jp/artist/v-w-p/"
+      ]
+    },
+    {
+      "status": "active",
+      "memberId": "81a01233-230e-50a8-a309-11275c794cd0",
+      "groupId": "ad4bc5e2-01f4-574a-91a0-69ad7ed0dfe0",
+      "relation": "member_of",
+      "checkedOn": "2026-10-23",
+      "sourceId": "S-112",
+      "sourceUrls": [
+        "https://kamitsubaki.jp/artist/v-w-p/"
+      ]
+    },
+    {
+      "status": "active",
+      "memberId": "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+      "groupId": "ad4bc5e2-01f4-574a-91a0-69ad7ed0dfe0",
+      "relation": "member_of",
+      "checkedOn": "2026-10-23",
+      "sourceId": "S-112",
+      "sourceUrls": [
+        "https://kamitsubaki.jp/artist/v-w-p/"
+      ]
+    }
+  ],
+  "vocalCorrections": [
+    {
+      "key": "historical-vocal-390",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "sourceId": "S-113",
+      "legacyId": 390,
+      "entry": {
+        "entryId": "14cd4348-8f04-494c-91b8-1d0585f73408",
+        "kind": "song_variant",
+        "primaryWorkId": "b1a67792-0781-56af-b2e7-9f73e9ff9577",
+        "title": "共鳴 (現象II(再) ver.)",
+        "displayCredit": "V.W.P with 狐子",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "history": [
+        {
+          "renditionId": "8e95973b-b93c-5720-9efb-a238f31f2da1",
+          "renditionPartId": "73549f2f-b003-5a36-bb57-f284833553e6",
+          "occurredOn": "2024-11-02",
+          "eventIds": [
+            "b397f523-88e5-53d1-82c9-5554ee3e1085"
+          ]
+        }
+      ],
+      "entityIds": [
+        "36129afb-1fe8-5255-958e-b090e17c7905",
+        "ae41fa12-3b09-52c0-bc08-1d9218492391",
+        "b8307e06-2046-5415-a1f7-0b892dd41041",
+        "81a01233-230e-50a8-a309-11275c794cd0",
+        "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79"
+      ],
+      "absentId": "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+    },
+    {
+      "key": "historical-vocal-391",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "sourceId": "S-113",
+      "legacyId": 391,
+      "entry": {
+        "entryId": "6e21b449-c749-4d82-a8f3-d5f1b2a84789",
+        "kind": "song_variant",
+        "primaryWorkId": "38e778f1-f037-56ee-b421-f3900328db8b",
+        "title": "再会 (現象II(再) ver.)",
+        "displayCredit": "V.W.P with 狐子",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "history": [
+        {
+          "renditionId": "046e0be9-8387-5679-8398-1df6f590e556",
+          "renditionPartId": "d33d643b-ad37-5409-882a-9ed932c662f1",
+          "occurredOn": "2024-11-02",
+          "eventIds": [
+            "b397f523-88e5-53d1-82c9-5554ee3e1085"
+          ]
+        }
+      ],
+      "entityIds": [
+        "36129afb-1fe8-5255-958e-b090e17c7905",
+        "ae41fa12-3b09-52c0-bc08-1d9218492391",
+        "b8307e06-2046-5415-a1f7-0b892dd41041",
+        "81a01233-230e-50a8-a309-11275c794cd0",
+        "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79"
+      ],
+      "absentId": "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+    },
+    {
+      "key": "historical-vocal-392",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "sourceId": "S-113",
+      "legacyId": 392,
+      "entry": {
+        "entryId": "98d8431e-00f4-40b7-b503-884b4b817835",
+        "kind": "song_variant",
+        "primaryWorkId": "f4f40200-a117-51e0-ba3a-4e5f324e7821",
+        "title": "切札 (現象II(再) ver.)",
+        "displayCredit": "V.W.P with 狐子",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "history": [
+        {
+          "renditionId": "49e7b72b-1861-52c1-a4ee-291c9540d186",
+          "renditionPartId": "cb8bbbf5-5bf6-590a-a46a-316b727a40b1",
+          "occurredOn": "2024-11-02",
+          "eventIds": [
+            "b397f523-88e5-53d1-82c9-5554ee3e1085"
+          ]
+        }
+      ],
+      "entityIds": [
+        "36129afb-1fe8-5255-958e-b090e17c7905",
+        "ae41fa12-3b09-52c0-bc08-1d9218492391",
+        "b8307e06-2046-5415-a1f7-0b892dd41041",
+        "81a01233-230e-50a8-a309-11275c794cd0",
+        "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79"
+      ],
+      "absentId": "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+    },
+    {
+      "key": "historical-vocal-393",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "sourceId": "S-113",
+      "legacyId": 393,
+      "entry": {
+        "entryId": "a7b1e00d-4f2d-48fe-a54d-824ce237dd0b",
+        "kind": "song_variant",
+        "primaryWorkId": "5ab3b234-b19b-5ddb-8ed2-4a451a308783",
+        "title": "同盟 (現象II(再) ver.)",
+        "displayCredit": "V.W.P with 狐子",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "history": [
+        {
+          "renditionId": "9b8a68f9-d2d1-5aa7-8671-bc4ccae40d4a",
+          "renditionPartId": "40fda404-e920-57f9-8022-c89c8f5027f9",
+          "occurredOn": "2024-11-02",
+          "eventIds": [
+            "b397f523-88e5-53d1-82c9-5554ee3e1085"
+          ]
+        }
+      ],
+      "entityIds": [
+        "36129afb-1fe8-5255-958e-b090e17c7905",
+        "ae41fa12-3b09-52c0-bc08-1d9218492391",
+        "b8307e06-2046-5415-a1f7-0b892dd41041",
+        "81a01233-230e-50a8-a309-11275c794cd0",
+        "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79"
+      ],
+      "absentId": "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+    },
+    {
+      "key": "historical-vocal-396",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "sourceId": "S-113",
+      "legacyId": 396,
+      "entry": {
+        "entryId": "0555c6cd-50cb-4051-b820-9eb8237d18c2",
+        "kind": "song_variant",
+        "primaryWorkId": "7eaf76a0-8809-5fe4-acc3-d2f81291c38a",
+        "title": "天命 (現象II(再) ver.)",
+        "displayCredit": "V.W.P with 狐子",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "history": [
+        {
+          "renditionId": "1c0a99de-4f1d-54e2-96b2-669259a7015e",
+          "renditionPartId": "9f2b132b-18ac-5afe-ac08-1646f47ba3b2",
+          "occurredOn": "2024-11-02",
+          "eventIds": [
+            "b397f523-88e5-53d1-82c9-5554ee3e1085"
+          ]
+        }
+      ],
+      "entityIds": [
+        "36129afb-1fe8-5255-958e-b090e17c7905",
+        "ae41fa12-3b09-52c0-bc08-1d9218492391",
+        "b8307e06-2046-5415-a1f7-0b892dd41041",
+        "81a01233-230e-50a8-a309-11275c794cd0",
+        "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79"
+      ],
+      "absentId": "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+    },
+    {
+      "key": "historical-vocal-397",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "sourceId": "S-113",
+      "legacyId": 397,
+      "entry": {
+        "entryId": "3f479f1a-d76d-4efd-bfa4-d21c98118305",
+        "kind": "song_variant",
+        "primaryWorkId": "0d8f0274-e167-5ae2-b432-98e57623c360",
+        "title": "定命 (現象II(再) ver.)",
+        "displayCredit": "V.W.P with 狐子",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "history": [
+        {
+          "renditionId": "f1160c55-4a49-5e0b-a1f6-3c2cfa184cb8",
+          "renditionPartId": "e811f9bf-713f-5608-8ca5-b763680706ae",
+          "occurredOn": "2024-11-02",
+          "eventIds": [
+            "b397f523-88e5-53d1-82c9-5554ee3e1085"
+          ]
+        }
+      ],
+      "entityIds": [
+        "36129afb-1fe8-5255-958e-b090e17c7905",
+        "ae41fa12-3b09-52c0-bc08-1d9218492391",
+        "b8307e06-2046-5415-a1f7-0b892dd41041",
+        "81a01233-230e-50a8-a309-11275c794cd0",
+        "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79"
+      ],
+      "absentId": "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+    },
+    {
+      "key": "historical-vocal-399",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "sourceId": "S-113",
+      "legacyId": 399,
+      "entry": {
+        "entryId": "cf778c73-21b5-44d7-a522-f177a6c315fa",
+        "kind": "song_variant",
+        "primaryWorkId": "76f636da-5052-5fd6-a607-06564613e8fc",
+        "title": "欲望 (現象II(再) ver.)",
+        "displayCredit": "V.W.P with 狐子",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "history": [
+        {
+          "renditionId": "af55e354-2a7a-5f4d-8d4e-cba98b2054b7",
+          "renditionPartId": "bf8b6dd8-2181-5d66-8fe3-976229d6a568",
+          "occurredOn": "2024-11-02",
+          "eventIds": [
+            "b397f523-88e5-53d1-82c9-5554ee3e1085"
+          ]
+        }
+      ],
+      "entityIds": [
+        "36129afb-1fe8-5255-958e-b090e17c7905",
+        "ae41fa12-3b09-52c0-bc08-1d9218492391",
+        "b8307e06-2046-5415-a1f7-0b892dd41041",
+        "81a01233-230e-50a8-a309-11275c794cd0",
+        "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79"
+      ],
+      "absentId": "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+    },
+    {
+      "key": "historical-vocal-403",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "sourceId": "S-113",
+      "legacyId": 403,
+      "entry": {
+        "entryId": "86d0e45c-a23c-4c44-b8b0-9210f431a14f",
+        "kind": "song_variant",
+        "primaryWorkId": "05f1b5bb-7da9-51b2-bdbb-6c2b0a98dd34",
+        "title": "秘密 (現象II(再) ver.)",
+        "displayCredit": "V.W.P with 狐子",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "history": [
+        {
+          "renditionId": "335f91c8-80ce-58ec-8e31-89e90ad8c5e4",
+          "renditionPartId": "307f16e3-db42-5394-9d48-6534396868d3",
+          "occurredOn": "2024-11-02",
+          "eventIds": [
+            "b397f523-88e5-53d1-82c9-5554ee3e1085"
+          ]
+        }
+      ],
+      "entityIds": [
+        "36129afb-1fe8-5255-958e-b090e17c7905",
+        "ae41fa12-3b09-52c0-bc08-1d9218492391",
+        "b8307e06-2046-5415-a1f7-0b892dd41041",
+        "81a01233-230e-50a8-a309-11275c794cd0",
+        "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79"
+      ],
+      "absentId": "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+    },
+    {
+      "key": "historical-vocal-404",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "sourceId": "S-113",
+      "legacyId": 404,
+      "entry": {
+        "entryId": "576677eb-39e2-4dac-8b45-ec25e88d7e1a",
+        "kind": "song_variant",
+        "primaryWorkId": "3ec1386b-ee7e-545d-9615-bbf6bc820396",
+        "title": "花束 (現象II(再) ver.)",
+        "displayCredit": "V.W.P with 狐子",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "history": [
+        {
+          "renditionId": "4ff29799-3252-5f6b-ada0-8d539eaebae0",
+          "renditionPartId": "6c8f2b11-e0fe-5cbc-a2a9-5a8149312227",
+          "occurredOn": "2024-11-02",
+          "eventIds": [
+            "b397f523-88e5-53d1-82c9-5554ee3e1085"
+          ]
+        }
+      ],
+      "entityIds": [
+        "36129afb-1fe8-5255-958e-b090e17c7905",
+        "ae41fa12-3b09-52c0-bc08-1d9218492391",
+        "b8307e06-2046-5415-a1f7-0b892dd41041",
+        "81a01233-230e-50a8-a309-11275c794cd0",
+        "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79"
+      ],
+      "absentId": "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+    },
+    {
+      "key": "historical-vocal-405",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "sourceId": "S-113",
+      "legacyId": 405,
+      "entry": {
+        "entryId": "6412a764-fe86-4d77-90b0-46b38af51cf9",
+        "kind": "song_variant",
+        "primaryWorkId": "8e16feeb-3e73-5b56-b0bb-69c14baf53d4",
+        "title": "輪廻 (現象II(再) ver.)",
+        "displayCredit": "V.W.P with 狐子",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "history": [
+        {
+          "renditionId": "e32a7ccd-f666-53b8-b09b-8d225878a2f1",
+          "renditionPartId": "b900643c-730a-58cd-8532-b369dbd97a10",
+          "occurredOn": "2024-11-02",
+          "eventIds": [
+            "b397f523-88e5-53d1-82c9-5554ee3e1085"
+          ]
+        }
+      ],
+      "entityIds": [
+        "36129afb-1fe8-5255-958e-b090e17c7905",
+        "ae41fa12-3b09-52c0-bc08-1d9218492391",
+        "b8307e06-2046-5415-a1f7-0b892dd41041",
+        "81a01233-230e-50a8-a309-11275c794cd0",
+        "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79"
+      ],
+      "absentId": "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+    },
+    {
+      "key": "historical-vocal-406",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "sourceId": "S-113",
+      "legacyId": 406,
+      "entry": {
+        "entryId": "51ed3fb0-a166-4a72-8c56-4e3b5ed697a6",
+        "kind": "song_variant",
+        "primaryWorkId": "917bf995-b8a3-54d9-9466-048d0628de78",
+        "title": "遊戯 (現象II(再) ver.)",
+        "displayCredit": "V.W.P with 狐子",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "history": [
+        {
+          "renditionId": "07e06d8a-f990-5b70-9977-62b4004ac7e7",
+          "renditionPartId": "791cb301-1725-54e6-bdfb-89ec32fef600",
+          "occurredOn": "2024-11-02",
+          "eventIds": [
+            "b397f523-88e5-53d1-82c9-5554ee3e1085"
+          ]
+        }
+      ],
+      "entityIds": [
+        "36129afb-1fe8-5255-958e-b090e17c7905",
+        "ae41fa12-3b09-52c0-bc08-1d9218492391",
+        "b8307e06-2046-5415-a1f7-0b892dd41041",
+        "81a01233-230e-50a8-a309-11275c794cd0",
+        "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79"
+      ],
+      "absentId": "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+    },
+    {
+      "key": "historical-vocal-408",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "sourceId": "S-113",
+      "legacyId": 408,
+      "entry": {
+        "entryId": "4cb58e58-b91e-4365-9f35-4c8f64c041b9",
+        "kind": "song_variant",
+        "primaryWorkId": "5f0d7c18-3e07-58f0-88b0-b9b57baf73e9",
+        "title": "飛翔 (現象II(再) ver.)",
+        "displayCredit": "V.W.P with 狐子",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "history": [
+        {
+          "renditionId": "fe5b7850-4e65-5bd5-bd07-4a0cea43b394",
+          "renditionPartId": "63c29588-a81e-590c-ae73-824e844ce5b2",
+          "occurredOn": "2024-11-02",
+          "eventIds": [
+            "b397f523-88e5-53d1-82c9-5554ee3e1085"
+          ]
+        }
+      ],
+      "entityIds": [
+        "36129afb-1fe8-5255-958e-b090e17c7905",
+        "ae41fa12-3b09-52c0-bc08-1d9218492391",
+        "b8307e06-2046-5415-a1f7-0b892dd41041",
+        "81a01233-230e-50a8-a309-11275c794cd0",
+        "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79"
+      ],
+      "absentId": "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+    },
+    {
+      "key": "historical-vocal-409",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "sourceId": "S-113",
+      "legacyId": 409,
+      "entry": {
+        "entryId": "f151f601-f68c-443f-b969-daa55b2cc818",
+        "kind": "song_variant",
+        "primaryWorkId": "e8e33858-753f-5b07-8822-879633783522",
+        "title": "魔女(真) (現象II(再) ver.)",
+        "displayCredit": "V.W.P with 狐子",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "history": [
+        {
+          "renditionId": "a59d3558-fb5b-577b-aeb2-4be3de1e7c00",
+          "renditionPartId": "a4d08a43-3262-5f9a-87e6-ce5ad3d4d125",
+          "occurredOn": "2024-11-02",
+          "eventIds": [
+            "b397f523-88e5-53d1-82c9-5554ee3e1085"
+          ]
+        }
+      ],
+      "entityIds": [
+        "36129afb-1fe8-5255-958e-b090e17c7905",
+        "ae41fa12-3b09-52c0-bc08-1d9218492391",
+        "b8307e06-2046-5415-a1f7-0b892dd41041",
+        "81a01233-230e-50a8-a309-11275c794cd0",
+        "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79"
+      ],
+      "absentId": "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+    },
+    {
+      "key": "historical-vocal-414",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "sourceId": "S-114",
+      "legacyId": 414,
+      "entry": {
+        "entryId": "48432623-3315-49c5-8f86-461c6e771ab0",
+        "kind": "song_variant",
+        "primaryWorkId": "aaf251d0-c51b-5167-8401-7214d93d8051",
+        "title": "変身",
+        "displayCredit": "V.W.P & 裏命",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "history": [
+        {
+          "renditionId": "d43d4a65-2396-5b0b-a5d4-5d19b301dd20",
+          "renditionPartId": "fafe5cc3-20a3-5b56-b958-fb6ebdfdee71",
+          "occurredOn": "2023-03-30",
+          "eventIds": [
+            "9c50d470-b49a-5139-9595-09a62e8bc8bd"
+          ]
+        }
+      ],
+      "entityIds": [
+        "36129afb-1fe8-5255-958e-b090e17c7905",
+        "b8307e06-2046-5415-a1f7-0b892dd41041",
+        "81a01233-230e-50a8-a309-11275c794cd0",
+        "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+        "6495e046-c6c7-5bfa-bcca-64e962a2ac86"
+      ],
+      "absentId": "ae41fa12-3b09-52c0-bc08-1d9218492391"
+    },
+    {
+      "key": "historical-vocal-417",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "sourceId": "S-114",
+      "legacyId": 417,
+      "entry": {
+        "entryId": "b917906f-3323-41e6-acaf-2b1f50b2c89f",
+        "kind": "song_variant",
+        "primaryWorkId": "9d3fb83d-e0b3-5b96-b347-75711308d94d",
+        "title": "玩具",
+        "displayCredit": "V.W.P & 裏命",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "history": [
+        {
+          "renditionId": "1fbfe33a-2adb-5ef0-86cb-a16ae63364aa",
+          "renditionPartId": "3ee3c139-67a0-50ac-bff7-b46a651c4336",
+          "occurredOn": "2023-03-30",
+          "eventIds": [
+            "9c50d470-b49a-5139-9595-09a62e8bc8bd"
+          ]
+        }
+      ],
+      "entityIds": [
+        "36129afb-1fe8-5255-958e-b090e17c7905",
+        "b8307e06-2046-5415-a1f7-0b892dd41041",
+        "81a01233-230e-50a8-a309-11275c794cd0",
+        "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+        "6495e046-c6c7-5bfa-bcca-64e962a2ac86"
+      ],
+      "absentId": "ae41fa12-3b09-52c0-bc08-1d9218492391"
+    },
+    {
+      "key": "historical-vocal-418",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "sourceId": "S-114",
+      "legacyId": 418,
+      "entry": {
+        "entryId": "4f5012fd-a539-4396-bb98-11419b1502e3",
+        "kind": "song_variant",
+        "primaryWorkId": "05f1b5bb-7da9-51b2-bdbb-6c2b0a98dd34",
+        "title": "秘密",
+        "displayCredit": "V.W.P & 裏命",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "history": [
+        {
+          "renditionId": "06d0d06c-a395-5f11-af32-0ffd4fa699f3",
+          "renditionPartId": "e86e2172-d963-58ef-9313-b3369f028d34",
+          "occurredOn": "2023-03-30",
+          "eventIds": [
+            "9c50d470-b49a-5139-9595-09a62e8bc8bd"
+          ]
+        }
+      ],
+      "entityIds": [
+        "36129afb-1fe8-5255-958e-b090e17c7905",
+        "b8307e06-2046-5415-a1f7-0b892dd41041",
+        "81a01233-230e-50a8-a309-11275c794cd0",
+        "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+        "6495e046-c6c7-5bfa-bcca-64e962a2ac86"
+      ],
+      "absentId": "ae41fa12-3b09-52c0-bc08-1d9218492391"
+    },
+    {
+      "key": "historical-vocal-428",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "sourceId": "S-114",
+      "legacyId": 428,
+      "entry": {
+        "entryId": "0dd053d3-bb52-4283-b053-439d9fac3ca2",
+        "kind": "song_variant",
+        "primaryWorkId": "ae2bbe13-3978-541d-8abb-552222c16300",
+        "title": "祭壇",
+        "displayCredit": "V.W.P & 裏命",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "history": [
+        {
+          "renditionId": "cf3d2562-7833-56b6-b0e0-7b84e76f3dab",
+          "renditionPartId": "3a76646e-52f7-5d91-9423-6ea3fc23fe52",
+          "occurredOn": "2023-03-31",
+          "eventIds": [
+            "125722bd-0b69-5fa9-8070-3feaa7f6da47"
+          ]
+        }
+      ],
+      "entityIds": [
+        "36129afb-1fe8-5255-958e-b090e17c7905",
+        "b8307e06-2046-5415-a1f7-0b892dd41041",
+        "81a01233-230e-50a8-a309-11275c794cd0",
+        "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+        "6495e046-c6c7-5bfa-bcca-64e962a2ac86"
+      ],
+      "absentId": "ae41fa12-3b09-52c0-bc08-1d9218492391"
+    },
+    {
+      "key": "historical-vocal-354",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "sourceId": "S-114",
+      "legacyId": 354,
+      "entry": {
+        "entryId": "58bdce8d-509d-447d-8ce2-dd1da5fba2eb",
+        "kind": "song_variant",
+        "primaryWorkId": "8e16feeb-3e73-5b56-b0bb-69c14baf53d4",
+        "title": "輪廻 (KAMITSUBAKI FES '23 ver.)",
+        "displayCredit": "V.W.P & 裏命 & CIEL",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b4a1c9cb-987f-5e92-863f-5bd1206dcbaa",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "history": [
+        {
+          "renditionId": "6336f01b-abb9-594d-935f-40dddab72114",
+          "renditionPartId": "bad7c603-48dd-5ba3-b16f-947631257dea",
+          "occurredOn": "2023-03-31",
+          "eventIds": [
+            "125722bd-0b69-5fa9-8070-3feaa7f6da47"
+          ]
+        }
+      ],
+      "entityIds": [
+        "36129afb-1fe8-5255-958e-b090e17c7905",
+        "b8307e06-2046-5415-a1f7-0b892dd41041",
+        "81a01233-230e-50a8-a309-11275c794cd0",
+        "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+        "6495e046-c6c7-5bfa-bcca-64e962a2ac86",
+        "b4a1c9cb-987f-5e92-863f-5bd1206dcbaa"
+      ],
+      "absentId": "ae41fa12-3b09-52c0-bc08-1d9218492391"
+    },
+    {
+      "key": "historical-vocal-415",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "sourceId": "S-114",
+      "legacyId": 415,
+      "entry": {
+        "entryId": "dd11417c-ef0f-4639-b9e1-fb213ecfb453",
+        "kind": "song_variant",
+        "primaryWorkId": "0d8f0274-e167-5ae2-b432-98e57623c360",
+        "title": "定命",
+        "displayCredit": "V.W.P & V.I.P",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "history": [
+        {
+          "renditionId": "b0490d1f-c25c-54b9-9477-d7f4855c3a50",
+          "renditionPartId": "da9a6803-fae1-5259-b6a1-3a2463450ba9",
+          "occurredOn": "2023-03-30",
+          "eventIds": [
+            "9c50d470-b49a-5139-9595-09a62e8bc8bd"
+          ]
+        }
+      ],
+      "entityIds": [
+        "36129afb-1fe8-5255-958e-b090e17c7905",
+        "b8307e06-2046-5415-a1f7-0b892dd41041",
+        "81a01233-230e-50a8-a309-11275c794cd0",
+        "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+        "3306ddbd-8f3c-52ac-8dad-bec91fda87a4",
+        "6495e046-c6c7-5bfa-bcca-64e962a2ac86",
+        "39b82835-a038-5b94-95e6-d01ca0bf8300",
+        "1867981b-c3c0-551b-9337-a8df05385348",
+        "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79"
+      ],
+      "absentId": "ae41fa12-3b09-52c0-bc08-1d9218492391"
+    },
+    {
+      "key": "historical-vocal-432",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "sourceId": "S-114",
+      "legacyId": 432,
+      "entry": {
+        "entryId": "b814bf14-9662-4280-879c-81c41069d335",
+        "kind": "song_variant",
+        "primaryWorkId": "ad4d19c0-1b4d-5744-92ef-cab362ce1ec9",
+        "title": "電脳",
+        "displayCredit": "V.W.P & V.I.P",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "history": [
+        {
+          "renditionId": "769f4f9f-1c6f-58e8-8680-2233763ba1fe",
+          "renditionPartId": "513a9e0a-5c82-5343-b4b8-0625d0da1360",
+          "occurredOn": "2023-03-30",
+          "eventIds": [
+            "9c50d470-b49a-5139-9595-09a62e8bc8bd"
+          ]
+        }
+      ],
+      "entityIds": [
+        "36129afb-1fe8-5255-958e-b090e17c7905",
+        "b8307e06-2046-5415-a1f7-0b892dd41041",
+        "81a01233-230e-50a8-a309-11275c794cd0",
+        "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+        "3306ddbd-8f3c-52ac-8dad-bec91fda87a4",
+        "6495e046-c6c7-5bfa-bcca-64e962a2ac86",
+        "39b82835-a038-5b94-95e6-d01ca0bf8300",
+        "1867981b-c3c0-551b-9337-a8df05385348",
+        "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79"
+      ],
+      "absentId": "ae41fa12-3b09-52c0-bc08-1d9218492391"
+    }
   ]
 }
