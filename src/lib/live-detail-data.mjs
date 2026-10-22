@@ -1,6 +1,9 @@
 // Presentation only. A public programme/entry link is not a full-song or
 // singer-verification assertion. Keep the original rows and their scope intact.
+import registry from './catalog-live-program-links.json' with {type:'json'};
+import {artworkEntryMatches} from './catalog-artwork.mjs';
 const arr=x=>Array.isArray(x)?x:[];
+export const LIVE_PROGRAM_RECORDS=registry.records;
 const extraLabels={special_rebroadcast:'再配信',special_distribution_bonus:'配信特典'};
 export const isLiveSupplement=occurrence=>Object.hasOwn(extraLabels,occurrence?.sessionLabel??'');
 export function liveSessionLabel(occurrence){
@@ -17,7 +20,31 @@ export function liveProgramPosition(item){
  if(raw&&!/^\d+$/.test(raw))return raw;
  return Number.isSafeInteger(item?.sequenceNo)&&item.sequenceNo>0?String(item.sequenceNo).padStart(2,'0'):raw||'—';
 }
-export function liveDisplayContextFromModel(model,eventId){
+function registeredProgramTargets(model,event,program,item,records){
+ const targets=[];
+ for(const record of arr(records)){
+  if(record.status!=='active'||record.eventId!==event.detail.eventId||record.title!==event.detail.title||record.occurrenceId!==program.occurrenceId)continue;
+  const occurrence=arr(event.occurrences).find(o=>o.occurrenceId===record.occurrenceId);
+  if(!occurrence||occurrence.officialDate!==record.officialDate||occurrence.sessionLabel!==record.sessionLabel||
+   occurrence.programId!==record.programId||program.pages?.[0]?.programId!==record.programId)continue;
+  for(const link of arr(record.items)){
+   // Numbering and a song's earliest date can change independently of this
+   // performance. Keep the stable programme/capture identities authoritative.
+   if(link.programItemId!==item.programItemId||link.rawLabel!==item.rawLabel)continue;
+   const entry=model.entries.get(link.entry?.entryId);
+   if(!artworkEntryMatches(entry,link.entry)||entry.detail.displayCredit!==link.entry.displayCredit)continue;
+   const associations=arr(item.associations),association=associations[0],parts=arr(association?.renditionParts),part=parts[0];
+   if(associations.length!==1||association.targetKind!=='rendition'||association.renditionId!==link.renditionId||
+    parts.length!==1||part.partId!==link.renditionPartId||part.versionId!==link.versionId||part.workId!==link.entry.primaryWorkId)continue;
+   const history=arr(entry.history).some(h=>h.renditionId===link.renditionId&&h.renditionPartId===link.renditionPartId&&
+    h.workId===link.entry.primaryWorkId&&h.versionId===link.versionId&&h.occurredOn===record.officialDate&&h.multiWork!==true&&
+    arr(h.relatedEvents).some(e=>e.eventId===record.eventId));
+   if(history)targets.push(link.entry.entryId);
+  }
+ }
+ return targets;
+}
+export function liveDisplayContextFromModel(model,eventId,options={}){
  const event=model.events.get(eventId);if(!event)return null;
  const f=event.filterMetadata??{},names=[...new Set(arr(f.billingArtists).map(x=>x.name).filter(Boolean))];
  const format=f.format??event.detail.eventKind,formatName=format==='one_man'?'ONE-MAN LIVE':format==='festival'?'フェス':'';
@@ -41,7 +68,10 @@ export function liveDisplayContextFromModel(model,eventId){
     if(linked||direct)targets.add(id);
    }
   }
-  // Ambiguous or same-version-only candidates remain readable plain text.
+  // A reviewed source-scoped correspondence can supplement a legacy candidate;
+  // never turn all same-version matches or the event cast into song links.
+  for(const id of registeredProgramTargets(model,event,program,item,options.programRecords??LIVE_PROGRAM_RECORDS))targets.add(id);
+  // A conflicting direct/new correspondence remains plain text.
   if(targets.size===1){const entryId=[...targets][0],e=model.entries.get(entryId);
    programLinks[item.programItemId]={entryId,title:e.detail.title};}
  }
