@@ -1393,6 +1393,103 @@
         "tieUp": "『鳴潮』公式同人楽曲（モーニエ）"
       },
       "scopeNote": "Artist-distributed release credits; arranger unspecified. Release mixing/mastering is not assigned to the MV."
+    },
+    {
+      "key": "video-credit-batch-9lxqrgViCXk",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "entry": {
+        "entryId": "8e455052-c9e4-492e-923c-644f8287ccf2",
+        "kind": "song_variant",
+        "primaryWorkId": "73c47810-c809-5e51-b340-0351146786e5",
+        "title": "アンビバレント",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "笹川真生"
+        ],
+        [
+          "work",
+          "composer",
+          "笹川真生"
+        ],
+        [
+          "work",
+          "lyricist",
+          "笹川真生"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/news/2024/10/23/4846/",
+      "sourceId": "S-119",
+      "credits": {
+        "arranger": [
+          "笹川真生"
+        ]
+      },
+      "scopeNote": "Explicit arrangement credit for this vocal entry and its linked original MV; no composer-based default or inheritance by sibling versions."
+    },
+    {
+      "key": "video-credit-batch-595p1A2GQho",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "entry": {
+        "entryId": "a5304276-792b-47aa-aaef-bca85485b20e",
+        "kind": "song_variant",
+        "primaryWorkId": "def26c05-9432-5f46-b8b0-4cf2ee4d4340",
+        "title": "ほしをみるひと",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "original",
+          "arranger",
+          "近藤芳樹"
+        ],
+        [
+          "original",
+          "composer",
+          "橘井健一・大川茂伸"
+        ],
+        [
+          "original",
+          "lyricist",
+          "西憂花・まだら牛"
+        ],
+        [
+          "work",
+          "arranger",
+          "近藤芳樹"
+        ],
+        [
+          "work",
+          "composer",
+          "橘井健一・大川茂伸"
+        ],
+        [
+          "work",
+          "lyricist",
+          "西憂花・まだら牛"
+        ]
+      ],
+      "url": "https://camp-fire.jp/projects/653933/view/activities/474697",
+      "sourceId": "S-120",
+      "credits": {
+        "arranger": [
+          "近藤芳樹"
+        ]
+      },
+      "scopeNote": "Explicit arrangement credit for this vocal entry and its linked original MV; no composer-based default or inheritance by sibling versions."
     }
   ],
   "mediaCredits": [
@@ -1424,6 +1521,252 @@
       ],
       "sourceWording": "作詞・作曲・編曲・原案：香椎モイミ",
       "scopeNote": "Official news MV-information section. Concept is attached to this exact MV, not inherited by other media or vocal versions."
+    },
+    {
+      "key": "video-credit-batch-mQz2IA56VCo",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "entry": {
+        "entryId": "4839e979-470a-4b21-b16d-3652da7cb695",
+        "kind": "song_variant",
+        "primaryWorkId": "44be232d-ef64-5051-97b0-0e7677d02410",
+        "title": "パンドラコール",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "mediaId": "83947a01-e1a1-51f5-b0d6-ebfa028c6e93",
+      "mediaUrl": "https://www.youtube.com/watch?v=mQz2IA56VCo",
+      "url": "https://kamitsubaki.jp/news/2022/08/17/1536/",
+      "sourceId": "S-116",
+      "credits": [
+        {
+          "role": "映像",
+          "name": "鈴本 蓮"
+        },
+        {
+          "role": "タイトル・タイポデザイン",
+          "name": "岩佐 知昂"
+        }
+      ],
+      "scopeNote": "Credits published with the linked recording/MV. Only this exact displayed media and vocal entry; not the work or sibling live versions. Source role/name wording retained; no personnel aliases inferred."
+    },
+    {
+      "key": "video-credit-batch-kKd5Gi08H5s",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "entry": {
+        "entryId": "a4e71ff7-1c06-4d92-9213-c88c52720c82",
+        "kind": "song_variant",
+        "primaryWorkId": "256052cc-45b4-53c5-9517-56f270b6bfe7",
+        "title": "システムズコア",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "mediaId": "9850154a-c18b-5369-b06e-c12d42d9ba5c",
+      "mediaUrl": "https://www.youtube.com/watch?v=kKd5Gi08H5s",
+      "url": "https://kamitsubaki.jp/news/2024/08/01/3649/",
+      "sourceId": "S-117",
+      "credits": [
+        {
+          "role": "Director",
+          "name": "Yazhirushi（THINKR）"
+        },
+        {
+          "role": "Supervisor",
+          "name": "Rei Kurashima（flapper3 Inc.）"
+        },
+        {
+          "role": "Character Technical",
+          "name": "Hiroyuki Nakatomi"
+        },
+        {
+          "role": "Character Motion Editor",
+          "name": "Go Akagi（THINKR）"
+        },
+        {
+          "role": "Title Design",
+          "name": "Punch"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kentaro Iwaki（THINKR）"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi（THINKR）"
+        },
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        }
+      ],
+      "scopeNote": "Credits published with the linked recording/MV. Only this exact displayed media and vocal entry; not the work or sibling live versions. Source role/name wording retained; no personnel aliases inferred."
+    },
+    {
+      "key": "video-credit-batch-ls_fmM2-inQ",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "entry": {
+        "entryId": "ed6e982f-31fc-4d7a-9c7b-76896b868fdd",
+        "kind": "song_variant",
+        "primaryWorkId": "24ea10b6-6aa0-5e9c-b2b1-c9cf882d1709",
+        "title": "キミ消失セカイ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "mediaId": "c95dcaec-dcb1-5125-aab0-8d7d41a046ee",
+      "mediaUrl": "https://www.youtube.com/watch?v=ls_fmM2-inQ",
+      "url": "https://kamitsubaki.jp/news/2023/07/04/2424/",
+      "sourceId": "S-118",
+      "credits": [
+        {
+          "role": "ギター",
+          "name": "伊藤翔磨"
+        }
+      ],
+      "scopeNote": "Credits published with the linked recording/MV. Only this exact displayed media and vocal entry; not the work or sibling live versions. Source role/name wording retained; no personnel aliases inferred."
+    },
+    {
+      "key": "video-credit-batch-9lxqrgViCXk",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "entry": {
+        "entryId": "8e455052-c9e4-492e-923c-644f8287ccf2",
+        "kind": "song_variant",
+        "primaryWorkId": "73c47810-c809-5e51-b340-0351146786e5",
+        "title": "アンビバレント",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "mediaId": "41d01a54-ab99-5109-88db-7dfbccdb744b",
+      "mediaUrl": "https://www.youtube.com/watch?v=9lxqrgViCXk",
+      "url": "https://kamitsubaki.jp/news/2024/10/23/4846/",
+      "sourceId": "S-119",
+      "credits": [
+        {
+          "role": "Dir",
+          "name": "NNNuventus"
+        },
+        {
+          "role": "Creative Director",
+          "name": "Satoru Ohno（THINKR）"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kentaro Iwaki (THINKR)"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi (THINKR)"
+        },
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        },
+        {
+          "role": "Mix",
+          "name": "Hiroshi Ikeda (hmc studio)"
+        }
+      ],
+      "scopeNote": "Credits published with the linked recording/MV. Only this exact displayed media and vocal entry; not the work or sibling live versions. Source role/name wording retained; no personnel aliases inferred.",
+      "creditSources": [
+        {
+          "role": "Mix",
+          "url": "https://www.youtube.com/watch?v=9lxqrgViCXk",
+          "supportingUrl": "https://www.maosasagawa.jp/blogs/works/241023isekai"
+        }
+      ]
+    },
+    {
+      "key": "video-credit-batch-595p1A2GQho",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "entry": {
+        "entryId": "a5304276-792b-47aa-aaef-bca85485b20e",
+        "kind": "song_variant",
+        "primaryWorkId": "def26c05-9432-5f46-b8b0-4cf2ee4d4340",
+        "title": "ほしをみるひと",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "mediaId": "bce89153-8458-5822-9ff7-4c7039af0d70",
+      "mediaUrl": "https://www.youtube.com/watch?v=595p1A2GQho",
+      "url": "https://camp-fire.jp/projects/653933/view/activities/474697",
+      "sourceId": "S-120",
+      "credits": [
+        {
+          "role": "Strings",
+          "name": "NATSUMI Strings"
+        },
+        {
+          "role": "Violin & Viola",
+          "name": "NATSUMI"
+        },
+        {
+          "role": "Cello",
+          "name": "安藤葉月"
+        },
+        {
+          "role": "Piano & keyboard & Synthesizer programmer",
+          "name": "近藤芳樹"
+        },
+        {
+          "role": "Score＆Orchestration",
+          "name": "近藤芳樹"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        },
+        {
+          "role": "映像制作",
+          "name": "ステロタイプ"
+        },
+        {
+          "role": "監督・コンテ",
+          "name": "熊谷友作"
+        },
+        {
+          "role": "映像演出・コンポジット",
+          "name": "石見優作"
+        },
+        {
+          "role": "3Dデザイン",
+          "name": "三好大生"
+        },
+        {
+          "role": "3Dレイアウト",
+          "name": "長井秀司"
+        },
+        {
+          "role": "2Dデザイン",
+          "name": "川口七葉"
+        },
+        {
+          "role": "テロップデザイン",
+          "name": "渡邉翔太"
+        },
+        {
+          "role": "プロダクションマネジメント",
+          "name": "児玉健一"
+        }
+      ],
+      "scopeNote": "Credits published with the linked recording/MV. Only this exact displayed media and vocal entry; not the work or sibling live versions. Source role/name wording retained; no personnel aliases inferred."
     }
   ]
 }

@@ -1,6 +1,6 @@
 import type {JsonObject} from './core';
 import type {PrivateModel,PrivateEntry} from './private-read-model.mjs';
-export type CatalogEntity={id:string;name:string;type:string;origin:string;aliases:string[];picker?:boolean;pickerGroup?:string;sourceUrls?:string[]};
+export type CatalogEntity={id:string;name:string;type:string;origin:string;aliases:string[];picker?:boolean;pickerGroup?:string;sourceUrls?:string[];presentation?:{kind:string;categories:string[]}};
 export type SingerChoice={id:string;name:string;aliases?:string[];group?:string};
 export const ENTITY_RECORDS:CatalogEntity[];
 export const VOCAL_LINK_RECORDS:JsonObject[];

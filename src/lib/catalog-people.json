@@ -14,7 +14,13 @@
       "name": "AKB48",
       "type": "group",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "group",
+        "categories": [
+          "groups"
+        ]
+      }
     },
     {
       "id": "3b3e5254-eac0-5a6e-97e0-e9bb5d12878d",
@@ -23,7 +29,13 @@
       "origin": "database",
       "aliases": [
         "Aira（Dream Monster）"
-      ]
+      ],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "b4a1c9cb-987f-5e92-863f-5bd1206dcbaa",
@@ -32,63 +44,117 @@
       "origin": "database",
       "aliases": [],
       "picker": true,
-      "pickerGroup": "神椿・関連"
+      "pickerGroup": "神椿・関連",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
     },
     {
       "id": "43d20079-de3d-5e69-aba2-eaed2aa0ac68",
       "name": "IA",
       "type": "voicebank",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "voicebank",
+        "categories": [
+          "artists"
+        ]
+      }
     },
     {
       "id": "775adcfb-12ed-57de-bb7a-2b420da7b98c",
       "name": "Junky",
       "type": "artist",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "b5653de5-e5b2-5cd1-b30a-863c1d7447c5",
       "name": "MIMI",
       "type": "artist",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "b94379ef-3590-5a8f-8384-a1d262dd884a",
       "name": "V.I.P",
       "type": "group",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "group",
+        "categories": [
+          "groups"
+        ]
+      }
     },
     {
       "id": "ad4bc5e2-01f4-574a-91a0-69ad7ed0dfe0",
       "name": "V.W.P",
       "type": "group",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "group",
+        "categories": [
+          "groups"
+        ]
+      }
     },
     {
       "id": "0c52b490-a483-57aa-a266-3f5922cae6ab",
       "name": "VALIS",
       "type": "group",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "group",
+        "categories": [
+          "groups"
+        ]
+      }
     },
     {
       "id": "0f74f632-d887-527c-b0c6-e0e53adb22c9",
       "name": "Yaffle",
       "type": "artist",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "57e1a5a3-d1e2-5c3f-ad73-22214792f369",
       "name": "samayuzame",
       "type": "artist",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "92c87749-cdb6-57c0-b319-63458c19fc27",
@@ -96,28 +162,52 @@
       "type": "artist",
       "origin": "database",
       "aliases": [],
-      "picker": true
+      "picker": true,
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
     },
     {
       "id": "a4930bb0-54e0-5741-9b94-ad267c1900a6",
       "name": "じん",
       "type": "artist",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "220c0103-6b52-54fa-8e44-ed9892dce32f",
       "name": "はるまきごはん",
       "type": "artist",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "8b62e744-cff2-5116-bd00-778662f556d3",
       "name": "カンザキイオリ",
       "type": "artist",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "81a01233-230e-50a8-a309-11275c794cd0",
@@ -127,7 +217,13 @@
       "aliases": [
         "情緒"
       ],
-      "picker": true
+      "picker": true,
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
     },
     {
       "id": "a4f2c16a-1d22-5631-84a6-8fe3d4016653",
@@ -136,21 +232,39 @@
       "origin": "database",
       "aliases": [],
       "picker": true,
-      "pickerGroup": "神椿・関連"
+      "pickerGroup": "神椿・関連",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
     },
     {
       "id": "85277760-fe34-5d03-adb8-e486dea3bb32",
       "name": "初音ミク",
       "type": "voicebank",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "voicebank",
+        "categories": [
+          "artists"
+        ]
+      }
     },
     {
       "id": "c3f6ae36-4e25-5dcc-a7e0-c26761881730",
       "name": "及川創介",
       "type": "artist",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "3306ddbd-8f3c-52ac-8dad-bec91fda87a4",
@@ -159,7 +273,13 @@
       "origin": "database",
       "aliases": [],
       "picker": true,
-      "pickerGroup": "音楽的同位体"
+      "pickerGroup": "音楽的同位体",
+      "presentation": {
+        "kind": "musical_isotope",
+        "categories": [
+          "artists"
+        ]
+      }
     },
     {
       "id": "a5a70c55-101c-5a56-a279-96d6b1513950",
@@ -168,7 +288,13 @@
       "origin": "database",
       "aliases": [],
       "picker": true,
-      "pickerGroup": "神椿・関連"
+      "pickerGroup": "神椿・関連",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
     },
     {
       "id": "f1d88444-8f3c-5ae2-a703-48e5d620c8d2",
@@ -176,42 +302,78 @@
       "type": "character",
       "origin": "database",
       "aliases": [],
-      "pickerGroup": "キャラクター"
+      "pickerGroup": "キャラクター",
+      "presentation": {
+        "kind": "character",
+        "categories": [
+          "artists"
+        ]
+      }
     },
     {
       "id": "c87f6367-3740-5d1b-9e67-4ab213106c65",
       "name": "大川茂伸",
       "type": "artist",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "52f73703-fcfe-54b9-9595-7b8d8be43456",
       "name": "大沼パセリ",
       "type": "artist",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "5dde2241-fd42-54c3-a236-f8de701f4d73",
       "name": "宅見将典",
       "type": "artist",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "31809f41-9742-55a0-9365-658e55c8ac2c",
       "name": "宇多田ヒカル",
       "type": "artist",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "9971a957-90bc-5f96-a90a-245983d4733a",
       "name": "安宅秀紀",
       "type": "artist",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "b4c893f4-75f8-5e6b-8bee-403fe19a6ff6",
@@ -219,21 +381,39 @@
       "type": "artist",
       "origin": "database",
       "aliases": [],
-      "picker": true
+      "picker": true,
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "cf7ee8d9-1bfb-5090-860c-101143772400",
       "name": "小原琉生",
       "type": "artist",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "accfbdb4-c5f8-593e-9760-de3aff08d02e",
       "name": "山崎燿",
       "type": "artist",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
@@ -241,14 +421,26 @@
       "type": "artist",
       "origin": "database",
       "aliases": [],
-      "picker": true
+      "picker": true,
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
     },
     {
       "id": "35f4c4d4-26e3-58b2-9a34-4584e6a76f3b",
       "name": "廉",
       "type": "artist",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "e8268f54-7be5-5c8a-82d1-e9b9d5648d81",
@@ -256,7 +448,13 @@
       "type": "character",
       "origin": "database",
       "aliases": [],
-      "pickerGroup": "キャラクター"
+      "pickerGroup": "キャラクター",
+      "presentation": {
+        "kind": "character",
+        "categories": [
+          "artists"
+        ]
+      }
     },
     {
       "id": "2b1800fd-3f87-5186-9d31-874afc9afa17",
@@ -264,7 +462,13 @@
       "type": "character",
       "origin": "database",
       "aliases": [],
-      "pickerGroup": "キャラクター"
+      "pickerGroup": "キャラクター",
+      "presentation": {
+        "kind": "character",
+        "categories": [
+          "artists"
+        ]
+      }
     },
     {
       "id": "1867981b-c3c0-551b-9337-a8df05385348",
@@ -273,7 +477,13 @@
       "origin": "database",
       "aliases": [],
       "picker": true,
-      "pickerGroup": "音楽的同位体"
+      "pickerGroup": "音楽的同位体",
+      "presentation": {
+        "kind": "musical_isotope",
+        "categories": [
+          "artists"
+        ]
+      }
     },
     {
       "id": "b8307e06-2046-5415-a1f7-0b892dd41041",
@@ -281,21 +491,39 @@
       "type": "artist",
       "origin": "database",
       "aliases": [],
-      "picker": true
+      "picker": true,
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
     },
     {
       "id": "4f8e004e-6329-5efa-b132-a748b75c6e08",
       "name": "朝比奈健人",
       "type": "artist",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "55f5c5e0-38a8-58ff-bad7-2ccdba5f1137",
       "name": "柊マグネタイト",
       "type": "artist",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "79955bc8-17c6-5859-95c3-dc82560eba60",
@@ -303,21 +531,39 @@
       "type": "character",
       "origin": "database",
       "aliases": [],
-      "pickerGroup": "キャラクター"
+      "pickerGroup": "キャラクター",
+      "presentation": {
+        "kind": "character",
+        "categories": [
+          "artists"
+        ]
+      }
     },
     {
       "id": "fc3aaae9-2c80-57ef-9e8f-2f70811a7c80",
       "name": "歌愛ユキ",
       "type": "voicebank",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "voicebank",
+        "categories": [
+          "artists"
+        ]
+      }
     },
     {
       "id": "7015cec6-5455-55ae-858b-1c4e5d755966",
       "name": "水野あつ",
       "type": "artist",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79",
@@ -326,7 +572,13 @@
       "origin": "database",
       "aliases": [],
       "picker": true,
-      "pickerGroup": "音楽的同位体"
+      "pickerGroup": "音楽的同位体",
+      "presentation": {
+        "kind": "musical_isotope",
+        "categories": [
+          "artists"
+        ]
+      }
     },
     {
       "id": "ae41fa12-3b09-52c0-bc08-1d9218492391",
@@ -334,42 +586,78 @@
       "type": "artist",
       "origin": "database",
       "aliases": [],
-      "picker": true
+      "picker": true,
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
     },
     {
       "id": "1e3522b0-1f2d-50a4-a6af-f0f53f24bb20",
       "name": "田中ユウスケ",
       "type": "artist",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "a45bcb20-bc76-59b1-a585-2600aa08c697",
       "name": "矢野達也",
       "type": "artist",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "575a1023-87d5-5c33-b24f-18c541817cfe",
       "name": "秋元康",
       "type": "artist",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "6cbf026b-463c-5e62-afe3-8a26280d46a4",
       "name": "稲葉曇",
       "type": "artist",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "84811994-89e7-5661-8a1a-826ca0ca3879",
       "name": "米津玄師",
       "type": "artist",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "39b82835-a038-5b94-95e6-d01ca0bf8300",
@@ -378,7 +666,13 @@
       "origin": "database",
       "aliases": [],
       "picker": true,
-      "pickerGroup": "音楽的同位体"
+      "pickerGroup": "音楽的同位体",
+      "presentation": {
+        "kind": "musical_isotope",
+        "categories": [
+          "artists"
+        ]
+      }
     },
     {
       "id": "36129afb-1fe8-5255-958e-b090e17c7905",
@@ -386,7 +680,13 @@
       "type": "artist",
       "origin": "database",
       "aliases": [],
-      "picker": true
+      "picker": true,
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
     },
     {
       "id": "6495e046-c6c7-5bfa-bcca-64e962a2ac86",
@@ -395,7 +695,13 @@
       "origin": "database",
       "aliases": [],
       "picker": true,
-      "pickerGroup": "音楽的同位体"
+      "pickerGroup": "音楽的同位体",
+      "presentation": {
+        "kind": "musical_isotope",
+        "categories": [
+          "artists"
+        ]
+      }
     },
     {
       "id": "11990299-8a34-52cb-bed8-00eba4d75aec",
@@ -404,14 +710,26 @@
       "origin": "database",
       "aliases": [],
       "picker": true,
-      "pickerGroup": "神椿・関連"
+      "pickerGroup": "神椿・関連",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
     },
     {
       "id": "cdd1834b-78ff-57c9-8103-e09a048d6503",
       "name": "香椎モイミ",
       "type": "artist",
       "origin": "database",
-      "aliases": []
+      "aliases": [],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "51f08059-db8e-4ce2-838b-2798b44b1efe",
@@ -425,7 +743,13 @@
       "sourceUrls": [
         "https://girlsrevolutionproject.jp/artist/"
       ],
-      "pickerGroup": "神椿・関連"
+      "pickerGroup": "神椿・関連",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
     },
     {
       "id": "76a6f741-785e-4f2d-b83b-38e1d682fb8d",
@@ -435,7 +759,13 @@
       "aliases": [],
       "sourceUrls": [
         "https://alltstudio.jp/news/274/"
-      ]
+      ],
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
     },
     {
       "id": "a1ee4371-0462-4d18-928c-e2a9a8fdadc5",
@@ -450,7 +780,13 @@
       "sourceUrls": [
         "https://www.youtube.com/channel/UCPU4xwtLBFXB3sXI6mfdp3g"
       ],
-      "pickerGroup": "神椿・関連"
+      "pickerGroup": "神椿・関連",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
     },
     {
       "id": "f4e3396a-1b47-40e9-876d-1e27eae72849",
@@ -462,7 +798,13 @@
       ],
       "sourceUrls": [
         "https://hitoyamamusic.com/profile/"
-      ]
+      ],
+      "presentation": {
+        "kind": "group",
+        "categories": [
+          "groups"
+        ]
+      }
     },
     {
       "id": "68f27425-1b3a-4dd3-8fa6-34817730e3cf",
@@ -472,7 +814,13 @@
       "aliases": [],
       "sourceUrls": [
         "https://kamitsubaki.jp/discography/isekaijoucho/1036/"
-      ]
+      ],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "521d6def-becd-40c4-ab94-d09aef2f37e9",
@@ -482,7 +830,13 @@
       "aliases": [],
       "sourceUrls": [
         "https://kamitsubaki.jp/discography/isekaijoucho/1036/"
-      ]
+      ],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "0da232ad-d0ce-444b-8ad9-f934f6104d8f",
@@ -492,7 +846,13 @@
       "aliases": [],
       "sourceUrls": [
         "https://kamitsubaki.jp/discography/isekaijoucho/1036/"
-      ]
+      ],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "ec34b1f2-3233-47ca-a3e5-74ab4643d914",
@@ -502,7 +862,13 @@
       "aliases": [],
       "sourceUrls": [
         "https://kamitsubaki.jp/discography/isekaijoucho/3471/"
-      ]
+      ],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "fa358e43-4a83-4446-a63a-447624333a41",
@@ -512,7 +878,13 @@
       "aliases": [],
       "sourceUrls": [
         "https://kamitsubaki.jp/discography/isekaijoucho/3471/"
-      ]
+      ],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "e91bd645-1294-439c-afea-0f6155fd9d25",
@@ -522,7 +894,13 @@
       "aliases": [],
       "sourceUrls": [
         "https://www.youtube.com/watch?v=UKZt1vq8bKI"
-      ]
+      ],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     },
     {
       "id": "0bcf40d1-59ee-427e-b927-0240a438530e",
@@ -534,7 +912,13 @@
       ],
       "sourceUrls": [
         "https://girlsrevolutionproject.jp/artist/"
-      ]
+      ],
+      "presentation": {
+        "kind": "group",
+        "categories": [
+          "groups"
+        ]
+      }
     },
     {
       "id": "98d06875-251e-472d-a4da-d1824e74cff0",
@@ -546,7 +930,13 @@
       ],
       "sourceUrls": [
         "https://girlsrevolutionproject.jp/artist/"
-      ]
+      ],
+      "presentation": {
+        "kind": "group",
+        "categories": [
+          "groups"
+        ]
+      }
     }
   ],
   "vocalLinks": [

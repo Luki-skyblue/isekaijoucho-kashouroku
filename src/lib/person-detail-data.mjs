@@ -59,7 +59,9 @@ function indexFor(model){
  const result={people,aliases,billedGroups};cache.set(model,result);return result;
 }
 const roleLabels=values=>orderedCreditRoles(values).map(creditRoleLabel);
-const kindLabel=person=>person.type==='group'?'グループ':person.type==='character'?'キャラクター':person.type==='voicebank'?'音声ライブラリ':[...person.roles].some(r=>['vocal','artist'].includes(r))?'アーティスト':'クリエイター';
+const presentation=person=>entityForId(person.key)?.presentation;
+const kindLabels={artist:'アーティスト',creator:'クリエイター',group:'グループ',character:'キャラクター',voicebank:'音声ライブラリ',musical_isotope:'音楽的同位体'};
+const kindLabel=person=>kindLabels[presentation(person)?.kind]??(person.key.startsWith('credit-')?'クリエイター':'関係者');
 export function personDetailFromModel(model,key,{page=1,limit=24,role='all',billing='all'}={}){
  if(!validPersonKey(key))return null;
  const index=indexFor(model),targets=index.aliases.get(key);
@@ -75,7 +77,8 @@ export function personDetailFromModel(model,key,{page=1,limit=24,role='all',bill
  const roleTabs=[{id:'all',label:'すべて',count:billedSongs.length},...orderedCreditRoles(availableRoles).map(r=>({id:r,label:creditRoleLabel(r),count:billedSongs.filter(([,rs])=>rs.has(r)).length}))];
  const songs=billedSongs.filter(([,entryRoles])=>activeRole==='all'||entryRoles.has(activeRole)).map(([entryId,entryRoles])=>{
   const entry=model.entries.get(entryId),d=entry.detail;
-  return {entryId,href:'/songs/'+entryId+(activeRole.startsWith('video:')?'?tab=videos':''),title:d.title,displayCredit:text(d.displayCredit)||arr(d.singers).map(s=>text(s.name)).filter(Boolean).join('・'),roles:roleLabels(entryRoles)};
+  const videoOnly=[...entryRoles].every(r=>r.startsWith('video:'));
+  return {entryId,href:'/songs/'+entryId+(activeRole.startsWith('video:')||videoOnly?'?tab=videos':''),title:d.title,displayCredit:text(d.displayCredit)||arr(d.singers).map(s=>text(s.name)).filter(Boolean).join('・'),roles:roleLabels(entryRoles)};
  }).sort((a,b)=>compare(text(model.entries.get(a.entryId).sortTitle)||a.title,text(model.entries.get(b.entryId).sortTitle)||b.title)||compare(a.entryId,b.entryId));
  limit=Number.isSafeInteger(limit)&&limit>0&&limit<=100?limit:24;
  const pages=Math.ceil(songs.length/limit);page=Number.isSafeInteger(page)&&page>0?Math.min(page,Math.max(pages,1)):1;
@@ -93,7 +96,9 @@ export function personDetailHref(key,{page=1,role='all',billing='all'}={}){
 export function peopleListFromModel(model,{category='artists',term='',role='all',page=1,limit=48}={}){
  category=['creators','groups'].includes(category)?category:'artists';term=text(term).trim().slice(0,100);
  const people=[...indexFor(model).people.values()];
- const belongs=(person,tab)=>tab==='groups'?person.type==='group':tab==='artists'?person.type!=='group'&&[...person.roles].some(r=>['vocal','artist'].includes(r)):[...person.roles].some(r=>!['vocal','artist'].includes(r));
+ // The editorial placement is separate from song duties and broad DB types.
+ // A named producer in billing is not automatically an artist or a singer.
+ const belongs=(person,tab)=>arr(presentation(person)?.categories).includes(tab)||(tab==='creators'&&[...person.roles].some(r=>!['vocal','artist'].includes(r)));
  const categories=[{id:'artists',label:'アーティスト'},{id:'groups',label:'グループ'},{id:'creators',label:'クリエイター'}].map(c=>({...c,count:people.filter(p=>belongs(p,c.id)).length}));
  const creators=people.filter(p=>belongs(p,'creators'));
  const creatorRoles=orderedCreditRoles(creators.flatMap(p=>[...p.roles].filter(r=>!['vocal','artist'].includes(r))));
