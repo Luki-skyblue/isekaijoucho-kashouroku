@@ -27,7 +27,7 @@ export default async function Home() {
     <div className="home-recent-heading"><h2 id="home-songs-title">最近の楽曲</h2><Link href="/songs">楽曲一覧 <span aria-hidden="true">→</span></Link></div>
     {recent.songs.length?<div className="home-recent-list">{recent.songs.map(song=><Link className="home-recent-item home-recent-song" href={'/songs/'+song.entryId} key={song.entryId}>
      <RecordArtwork url={song.thumbnailUrl} urls={song.thumbnailUrls}/>
-     <span className="home-recent-copy"><strong className="home-recent-title">{song.title}</strong><span className="home-recent-credit">{song.displayCredit||'歌唱者未確認'}</span><span className="home-recent-meta"><time dateTime={song.date}>初出 {displayDate(song.date)}</time>{song.sourceLabel&&<span>{song.sourceLabel}</span>}</span></span>
+     <span className="home-recent-copy"><strong className="home-recent-title">{song.title}</strong><span className="home-recent-credit">{song.displayCredit||'歌唱者未確認'}</span><span className="home-recent-meta"><time dateTime={song.date}>{song.dateLabel} {displayDate(song.date)}</time>{song.sourceLabel&&<span>{song.sourceLabel}</span>}</span></span>
     </Link>)}</div>:<p className="home-recent-empty">準備中</p>}
    </section>
    <section className="home-recent-section" aria-labelledby="home-releases-title">

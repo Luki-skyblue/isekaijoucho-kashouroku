@@ -1,6 +1,7 @@
-// Home uses registered first-appearance/release dates, never insertion order
-// or a work's shared performance history. This does not verify those dates.
-import {songMetadataForEntry,songArtworkCandidatesForEntry} from './song-detail-data.mjs';
+// Prefer the entry's first appearance. When it is unknown, the earliest dated
+// video for this exact vocal form is labelled as video publication, not debut.
+// Never use insertion order or a work's shared performance history.
+import {songMetadataForEntry,songArtworkCandidatesForEntry,buildSongDetail,youtubeId} from './song-detail-data.mjs';
 import {releaseListArtworkFromModel,releaseKindLabel,releaseMediaLabel,isLiveRelease} from './release-detail-data.mjs';
 
 const arr=x=>Array.isArray(x)?x:[],text=x=>typeof x==='string'?x.trim():'';
@@ -14,9 +15,12 @@ export function homeToday(){return new Intl.DateTimeFormat('sv-SE',{timeZone:'As
 export function homeRecentFromModel(model,{today=homeToday()}={}){
  const songs=[];
  for(const entry of model.entries.values()){
-  const d=entry.detail,first=songMetadataForEntry(entry).firstAppearance,date=day(first?.date);
-  if(!date||date>today)continue;
-  songs.push({entryId:d.entryId,title:d.title,date,sourceLabel:text(first?.label),
+  const d=entry.detail,first=songMetadataForEntry(entry).firstAppearance,firstDate=day(first?.date);
+  if(firstDate&&firstDate>today)continue;
+  const video=firstDate?null:buildSongDetail(entry,model.works.get(d.primaryWorkId)).videos
+   .filter(v=>day(v.publishedOn)&&v.publishedOn<=today).sort((a,b)=>compare(a.publishedOn,b.publishedOn)||compare(a.url,b.url))[0];
+  const date=firstDate??video?.publishedOn;if(!date)continue;
+  songs.push({entryId:d.entryId,title:d.title,date,dateLabel:firstDate?'初出':'動画公開',sourceLabel:firstDate?text(first?.label):youtubeId(video.url)?'YouTube':'',
    displayCredit:text(d.displayCredit)||arr(d.singers).map(s=>text(s.name)).filter(Boolean).join('・')});
  }
  songs.sort((a,b)=>compare(b.date,a.date)||compare(a.entryId,b.entryId));

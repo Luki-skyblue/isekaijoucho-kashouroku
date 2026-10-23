@@ -131,14 +131,15 @@
       "titleBasis": "editorial",
       "songType": "cover",
       "mediaKind": "cover_video",
-      "publishedOn": null,
+      "publishedOn": "2026-08-23",
       "authorName": "ヰ世界情緒 -Isekaijoucho-",
       "authorUrl": "https://www.youtube.com/@isekaijoucho",
       "evidenceUrls": [
         "https://x.com/isekaijoucho/status/2091469694981357996"
       ],
       "sourceIds": [
-        "S-135"
+        "S-135",
+        "S-140"
       ]
     },
     {
@@ -162,14 +163,15 @@
       "titleBasis": "editorial",
       "songType": "cover",
       "mediaKind": "cover_video",
-      "publishedOn": null,
+      "publishedOn": "2026-09-26",
       "authorName": "ヰ世界情緒 -Isekaijoucho-",
       "authorUrl": "https://www.youtube.com/@isekaijoucho",
       "evidenceUrls": [
         "https://x.com/isekaijoucho/status/2103801760116527378"
       ],
       "sourceIds": [
-        "S-135"
+        "S-135",
+        "S-140"
       ]
     },
     {
@@ -193,14 +195,15 @@
       "titleBasis": "editorial",
       "songType": "cover",
       "mediaKind": "cover_video",
-      "publishedOn": null,
+      "publishedOn": "2026-10-16",
       "authorName": "ヰ世界情緒 -Isekaijoucho-",
       "authorUrl": "https://www.youtube.com/@isekaijoucho",
       "evidenceUrls": [
         "https://x.com/isekaijoucho/status/2111049525641290184"
       ],
       "sourceIds": [
-        "S-135"
+        "S-135",
+        "S-140"
       ]
     },
     {
@@ -224,12 +227,13 @@
       "titleBasis": "editorial",
       "songType": "original",
       "mediaKind": "opening_video",
-      "publishedOn": null,
+      "publishedOn": "2026-09-18",
       "evidenceUrls": [
         "https://isekaijoucho.kamitsubaki.jp/contents/1113598?tag=all"
       ],
       "sourceIds": [
-        "S-136"
+        "S-136",
+        "S-140"
       ]
     }
   ],
