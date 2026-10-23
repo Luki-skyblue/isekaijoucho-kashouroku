@@ -7,6 +7,7 @@ import {releaseListHref} from '@/lib/release-list-data.mjs';
 import {homeToday} from '@/lib/home-recent-data.mjs';
 import {Breadcrumb,Heading,ListPage} from '@/components/ui';
 import {RecordArtwork} from '@/components/record-artwork';
+import {detailSearchHref} from '@/lib/search-navigation.mjs';
 import './releases.css';
 
 export const metadata: Metadata = {title:'収録作品',description:'ヰ世界情緒に関連するリリースとLIVE音源・映像。'};
@@ -24,7 +25,7 @@ export default async function Releases({searchParams}:{searchParams:Promise<{q?:
   <Breadcrumb parts={[{label:'収録作品'}]}/><Heading title="収録作品"/>
   <nav className="release-list-categories" aria-label="収録作品の分類">{data.categories.map(category=><Link key={category.id} href={href({category:category.id,page:1})} aria-current={category.id===data.category?'page':undefined}>{category.label}<small>{category.count}</small></Link>)}</nav>
   <form className="search" method="get" action="/releases">
-   <div className="search-line"><input id="q" type="search" name="q" defaultValue={term} maxLength={100} aria-label="作品名を入力" placeholder="作品名を入力"/><button type="submit">検索</button></div>
+   <div className="search-line"><input id="q" type="search" name="q" defaultValue={term} maxLength={100} aria-label="作品名を入力" placeholder="作品名を入力"/><button type="submit">検索</button><Link className="search-detail-link" href={detailSearchHref(href())}>詳細検索</Link></div>
    <input name="category" type="hidden" value={data.category}/><input name="view" type="hidden" value={view}/>
   </form>
   <div className="list-toolbar"><p className="toolbar-hint">{data.total}件</p>

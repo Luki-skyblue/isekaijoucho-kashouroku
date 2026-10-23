@@ -62,6 +62,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(-
 .search input{min-width:0;flex:1;background:transparent;padding:11px 13px;border:1px solid var(--hair-strong);border-radius:0;color:var(--ink)}
 .search input::placeholder{color:var(--quiet)}
 .search button{font-size:12px;letter-spacing:.04em;padding-inline:28px}
+.search-detail-link{align-self:center;flex-shrink:0;margin-left:8px;font-size:12px;color:var(--muted);text-underline-offset:4px}
 .records{display:flex;flex-direction:column;border-bottom:1px solid var(--hair)}
 .record{display:grid;align-items:center;grid-template-columns:minmax(0,1fr) minmax(120px,auto) 20px;gap:16px;min-height:76px;padding:16px 5px;border-bottom:1px solid var(--hair);text-decoration:none;color:var(--ink);transition:background .16s}
 .record:hover{background:rgba(0,0,0,.025);color:var(--ink)}
@@ -201,6 +202,8 @@ html, body {background:var(--paper);color:var(--ink)}
 .site-header .drawer-links a {display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:12px 0;text-decoration:none;border-bottom:1px solid var(--hair);color:var(--ink);font-family:var(--serif);font-size:18px;letter-spacing:.04em}
 .site-header .drawer-links a:hover,.site-header .drawer-links a[aria-current="page"] {color:var(--accent-deep)}
 .drawer-links small {font:500 9px/1.5 var(--mono);letter-spacing:.06em;color:var(--muted)}
+.site-header .drawer-links-secondary{margin-top:22px;border-top:1px solid var(--hair-strong);padding-top:10px}
+.site-header .drawer-links-secondary a{font:12px var(--sans);letter-spacing:0;border-bottom:0;padding:9px 0;color:var(--muted)}
 .drawer-theme {margin-top:22px}
 .theme-beta {font:11px/1.5 var(--sans);letter-spacing:0;padding-left:6px}
 .theme-options {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}

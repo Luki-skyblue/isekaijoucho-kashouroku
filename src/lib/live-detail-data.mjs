@@ -75,7 +75,7 @@ export function liveDisplayContextFromModel(model,eventId,options={}){
  const format=f.format??event.detail.eventKind,formatName=format==='one_man'?'ONE-MAN LIVE':format==='festival'?'フェス':'';
  const eligible=(rows,scope)=>arr(rows).filter(c=>c.scope===scope&&c.role==='performer'&&c.castStatus==='confirmed_present'&&c.entityId&&c.name);
  const cast=[...eligible(event.detail.eventCast,'event'),...eligible(f.castAdditions,'event'),...arr(event.occurrences).flatMap(o=>eligible(o.occurrenceCast,'occurrence'))];
- const performers=[...new Map(cast.map(c=>[c.entityId,{entityId:c.entityId,name:c.name}])).values()];
+ const performers=[...new Map(cast.map(c=>[c.entityId,{entityId:c.entityId,name:c.name,personKey:personDetailFromModel(model,c.entityId)?c.entityId:null}])).values()];
  const dates=[...new Set(arr(event.occurrences).filter(o=>!isLiveSupplement(o)).map(o=>o.officialDate).filter(Boolean))].sort();
  const programLinks={},programVocals={};
  for(const program of arr(event.programs))for(const item of arr(program.items)){

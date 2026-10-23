@@ -12,7 +12,7 @@ export default async function Discover({searchParams}:{searchParams:Promise<{cat
  const query=await searchParams,data=await getDiscovery({category:query.category,page:pageNumber(query.page)});
  const href=(category:string,page=1)=>'/discover?'+new URLSearchParams({category,...(page>1?{page:String(page)}:{})});
  return <article className="discovery-page">
-  <Breadcrumb parts={[{label:'公開・収録先'}]}/><Heading title="公開・収録先から探す"/>
+  <Breadcrumb parts={[{label:'詳細検索',href:'/search'},{label:'公開・収録先'}]}/><Heading title="公開・収録先から探す"/>
   <p className="discovery-note">登録された公開・収録先で分類しています。現在の視聴可否は未確認の情報を含みます。</p>
   {data?<>
    <DiscoveryTabs categories={data.categories} selected={data.category}/>

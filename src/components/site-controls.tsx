@@ -17,8 +17,10 @@ const LINKS = [
   { href: '/songs', label: '楽曲一覧', en: 'SONGS' },
   { href: '/lives', label: 'LIVE一覧', en: 'LIVE' },
   { href: '/releases', label: '収録作品', en: 'RELEASES' },
-  { href: '/people', label: '関係者一覧', en: 'PEOPLE' },
-  { href: '/discover', label: '公開・収録先から探す', en: 'DISCOVER' },
+  { href: '/people', label: '関係者検索', en: 'PEOPLE' },
+  { href: '/search', label: '詳細検索', en: 'SEARCH' },
+] as const;
+const SUPPORT_LINKS = [
   { href: '/guide', label: '使い方', en: 'GUIDE' },
   { href: '/about', label: 'このサイトについて', en: 'ABOUT' },
   { href: '/contribute', label: '情報提供・訂正', en: 'SUBMIT INFO' },
@@ -79,11 +81,13 @@ export default function SiteControls() {
       <span className="menu-word">MENU</span>
     </button>
     {open && <div className="menu-panel" id={panelId}>
-      <p className="menu-section-caption">ページ</p>
       <nav aria-label="サイト内メニュー" className="drawer-links">
         {LINKS.map(({ href, label, en }) => <Link key={href} href={href} aria-current={path === href ? 'page' : undefined} onClick={() => setOpen(false)}>
           <span>{label}</span><small>{en}</small>
         </Link>)}
+      </nav>
+      <nav aria-label="サイトの案内" className="drawer-links drawer-links-secondary">
+        {SUPPORT_LINKS.map(({href,label,en})=><Link key={href} href={href} aria-current={path===href?'page':undefined} onClick={()=>setOpen(false)}><span>{label}</span><small>{en}</small></Link>)}
       </nav>
       <div className="drawer-theme">
         <p className="menu-section-caption">衣装テーマ</p>
@@ -93,7 +97,6 @@ export default function SiteControls() {
             <span><strong>{label}</strong><small>{japanese}</small></span>
           </button>)}
         </div>
-        <p className="theme-help">配色を切り替えます。</p>
       </div>
     </div>}
   </div>;

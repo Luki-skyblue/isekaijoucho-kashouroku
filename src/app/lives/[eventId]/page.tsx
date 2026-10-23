@@ -4,7 +4,6 @@ import {rpc} from '@/lib/api';
 import {asArray,displayDate,num,str,validId,JsonObject,rpcDetailPage,numberOfPages,safeExternalUrl} from '@/lib/core';
 import {Breadcrumb} from '@/components/ui';
 import {RecordArtwork} from '@/components/record-artwork';
-import {SingerNames} from '@/components/person-name';
 import {eventArtworkForEvent} from '@/lib/catalog-artwork.mjs';
 import {isLiveSupplement,liveSessionLabel,liveCoverageNote,liveProgramPosition,type LiveDisplayContext} from '@/lib/live-detail-data.mjs';
 import {publicCatalogEnabled,publicLiveDisplayContext} from '@/lib/public-catalog';
@@ -39,7 +38,7 @@ export default async function EventDetail({params,searchParams}:{params:Promise<
   <dl className="live-detail-facts">
    <div><dt>開催日</dt><dd>{dates.length?dates.map(d=>displayDate(d)).join('・'):<Missing/>}</dd></div>
    <div><dt>会場</dt><dd>{venues.length?venues.join('・'):<Missing/>}</dd></div>
-   <div><dt>出演</dt><dd>{cast.length?cast.map(c=>str(c.name)).join('・'):<Missing/>}</dd></div>
+   <div><dt>出演</dt><dd>{cast.length?cast.map((c,i)=><span key={str(c.entityId)||i}>{i>0?'・':''}{context&&str(c.personKey)?<Link className="person-name" href={'/people/'+str(c.personKey)}>{str(c.name)}</Link>:str(c.name)}</span>):<Missing/>}</dd></div>
   </dl>
   <section className="live-detail-section" id="event-occurrences" aria-labelledby="live-setlist-heading">
    <div className="live-detail-section-title"><h2 id="live-setlist-heading">セットリスト</h2>{total>0&&<span className="live-detail-count" aria-label={`${total}演目`}>{total}</span>}</div>
@@ -59,7 +58,7 @@ function SessionView({occurrence,program,page,eventId,occurrencePage,context,sho
   {items.length?<ol className="live-detail-setlist">{items.map((item,i)=>{
    const target=context?.programLinks[str(item.programItemId)],vocals=context?.programVocals[str(item.programItemId)],title=str(item.rawLabel)||'名称未登録';
    const endRoll=str(item.itemKind)==='end_roll'&&!/エンドロール|（ED）|\(ED\)/i.test(title);
-   return <li className={'live-detail-program-row'+(vocals?.targetVocal==='absent'?' live-detail-other-vocals':'')} key={str(item.programItemId)||i}><span className="live-detail-position" aria-hidden="true">{liveProgramPosition(item)}</span><span className="live-detail-program-title">{target?<Link className="live-detail-song-link" href={'/songs/'+target.entryId}>{title}</Link>:title}{vocals&&<span className="live-detail-program-vocals"><span aria-hidden="true"> / </span><span className="sr-only">　歌唱：</span><SingerNames detail={{displayCredit:vocals.displayCredit,singers:vocals.people}}/></span>}</span>{endRoll&&<span className="live-detail-program-tag">エンドロール</span>}</li>;
+   return <li className={'live-detail-program-row'+(vocals?.targetVocal==='absent'?' live-detail-other-vocals':'')} key={str(item.programItemId)||i}><span className="live-detail-position" aria-hidden="true">{liveProgramPosition(item)}</span><span className="live-detail-program-title">{target?<Link className="live-detail-song-link" href={'/songs/'+target.entryId}>{title}</Link>:title}{vocals&&<span className="live-detail-program-vocals"><span aria-hidden="true"> / </span><span className="sr-only">　歌唱：</span>{vocals.displayCredit}</span>}</span>{endRoll&&<span className="live-detail-program-tag">エンドロール</span>}</li>;
   })}</ol>:num(program?.totalItems)>0?<p className="live-detail-missing">このページに項目がありません。</p>:<Missing/>}
   <ProgramPager eventId={eventId} occurrenceId={str(occurrence.occurrenceId)} occurrencePage={occurrencePage} page={page} pages={numberOfPages(num(program?.totalItems),PROGRAM_ITEMS_PER_PAGE)}/>
  </section>;

@@ -17,7 +17,7 @@ export default async function PersonDetail({params,searchParams}:{params:Promise
  if(person.key!==key)redirect(personDetailHref(person.key,{page:person.page,role:person.role,billing:person.billing}));
  const href=(page:number)=>personDetailHref(person.key,{page,role:person.role,billing:person.billing});
  return <article className="person-detail-page">
-  <Breadcrumb parts={[{label:'関係者一覧',href:'/people'},{label:person.name}]}/>
+  <Breadcrumb parts={[{label:'関係者検索',href:'/people'},{label:person.name}]}/>
   <header className="person-detail-heading"><h1>{person.name}</h1><p>{person.kindLabel}</p></header>
   {person.members!==null&&<section className="person-members" aria-labelledby="person-members-title"><h2 id="person-members-title">メンバー</h2>{person.members.length?<ul>{person.members.map(member=><li key={member.key}>{member.href?<Link href={member.href}>{member.name}<span aria-hidden="true"> ↗</span></Link>:member.name}</li>)}</ul>:<p className="muted">準備中</p>}</section>}
   {person.groups.some(g=>g.href)&&<nav className="person-groups" aria-label="グループのページ">{person.groups.filter(g=>g.href).map(g=><Link key={g.key} href={g.href!}>{g.name} <span aria-hidden="true">↗</span></Link>)}</nav>}

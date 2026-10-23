@@ -4,7 +4,7 @@ import {useState} from 'react';
 import {CatalogHelp} from '@/components/catalog-help';
 import {LIVE_FORMATS,type LiveFormat,type LiveArtist,type ParsedLiveQuery} from '@/lib/live-list-params';
 
-export function LiveFilterFields({query,artists}:{query:ParsedLiveQuery;artists:LiveArtist[]}) {
+export function LiveFilterFields({query,artists,titleSearch=false}:{query:ParsedLiveQuery;artists:LiveArtist[];titleSearch?:boolean}) {
  const [chosen,setChosen]=useState(query.artistIds),[scope,setScope]=useState(query.artistScope),[match,setMatch]=useState(query.artistMatch);
  const [formats,setFormats]=useState(query.formats),[lookup,setLookup]=useState('');
  const same=(a:string[],b:string[])=>a.length===b.length&&a.every(x=>b.includes(x));
@@ -15,7 +15,7 @@ export function LiveFilterFields({query,artists}:{query:ParsedLiveQuery;artists:
  const toggle=(id:string,checked:boolean)=>setChosen(old=>checked?[...new Set([...old,id])]:old.filter(x=>x!==id));
  const toggleFormat=(id:LiveFormat,checked:boolean)=>setFormats(old=>checked?[...new Set([...old,id])]:old.filter(x=>x!==id));
  return <form action="/lives" method="get" className="catalog-filter-fields">
-  {query.q&&<input type="hidden" name="q" value={query.q}/>}
+  {titleSearch?<label className="search-detail-title">公演名<input type="search" name="q" defaultValue={query.q} maxLength={100}/></label>:query.q&&<input type="hidden" name="q" value={query.q}/>}
   <input type="hidden" name="view" value={query.view}/><input type="hidden" name="sort" value={query.sort}/>
   <input type="hidden" name="artistScope" value={scope}/><input type="hidden" name="artistMatch" value={match}/>
   {chosen.map(id=><input key={id} type="hidden" name="artist" value={id}/>)}
@@ -40,6 +40,6 @@ export function LiveFilterFields({query,artists}:{query:ParsedLiveQuery;artists:
    <div className="catalog-category-options">{LIVE_FORMATS.map(f=><label key={f.id}><input type="checkbox" checked={formats.includes(f.id)} onChange={e=>toggleFormat(f.id,e.target.checked)}/>{f.label}</label>)}</div>
    <p className="catalog-filter-help">複数選択はいずれかに該当。未選択なら区分では絞り込みません。未分類は順次整備します。</p>
   </fieldset>
-  <div className="catalog-filter-actions"><button type="submit">適用</button><button type="button" className="catalog-filter-clear" onClick={()=>{setChosen([]);setFormats([]);setMatch('any');setLookup('');}}>選択をクリア</button>{dirty&&<span className="catalog-filter-pending" role="status">未適用の変更あり<small>「適用」で結果に反映</small></span>}</div>
+  <div className="catalog-filter-actions"><button type="submit">{titleSearch?'検索':'適用'}</button><button type="button" className="catalog-filter-clear" onClick={()=>{setChosen([]);setFormats([]);setMatch('any');setLookup('');}}>選択をクリア</button>{dirty&&<span className="catalog-filter-pending" role="status">未適用の変更あり<small>「{titleSearch?'検索':'適用'}」で結果に反映</small></span>}</div>
  </form>;
 }

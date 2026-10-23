@@ -9,7 +9,7 @@ import type {SingerMatch,CatalogCategory} from '@/lib/catalog-entry-api';
 /** Draft filter state is local to this form. Only form submit changes the URL
  * and server-side results; applied tags remain sourced from the URL.
  */
-export function CatalogFilterFields({query,choices=SINGERS}:{query:ParsedCatalogQuery;choices?:ReadonlyArray<SingerChoice>}){
+export function CatalogFilterFields({query,choices=SINGERS,titleSearch=false}:{query:ParsedCatalogQuery;choices?:ReadonlyArray<SingerChoice>;titleSearch?:boolean}){
  const [chosen,setChosen]=useState<string[]>(query.singerIds);
  const [match,setMatch]=useState<SingerMatch>(query.singerMatch);
  const [kinds,setKinds]=useState<CatalogCategory[]>(query.kinds);
@@ -26,7 +26,7 @@ export function CatalogFilterFields({query,choices=SINGERS}:{query:ParsedCatalog
  const toggleKind=(id:CatalogCategory,checked:boolean)=>setKinds(old=>checked?old.includes(id)?old:[...old,id]:old.filter(x=>x!==id));
  const clearSelection=()=>{setChosen([]);setKinds([]);setMatch('any');setLookup('');};
  return <form method="get" action="/songs" className="catalog-filter-fields">
-  {query.q&&<input type="hidden" name="q" value={query.q}/>}
+  {titleSearch?<label className="search-detail-title">楽曲名<input type="search" name="q" defaultValue={query.q} maxLength={100} placeholder="楽曲名・メドレーの構成曲名"/></label>:query.q&&<input type="hidden" name="q" value={query.q}/>}
   <input type="hidden" name="view" value={query.view}/>
   {query.sort==='title_desc'&&<input type="hidden" name="sort" value="title_desc"/>}
   {chosen.map(id=><input key={id} type="hidden" name="singer" value={id}/>)}
@@ -89,9 +89,9 @@ export function CatalogFilterFields({query,choices=SINGERS}:{query:ParsedCatalog
    <p className="catalog-filter-help">複数選択はOR検索。未選択なら全件表示。</p>
   </fieldset>
   <div className="catalog-filter-actions">
-   <button type="submit">適用</button>
+   <button type="submit">{titleSearch?'検索':'適用'}</button>
    <button type="button" className="catalog-filter-clear" onClick={clearSelection}>選択をクリア</button>
-   {dirty&&<span className="catalog-filter-pending" role="status">未適用の変更あり<small>「適用」で結果に反映</small></span>}
+   {dirty&&<span className="catalog-filter-pending" role="status">未適用の変更あり<small>「{titleSearch?'検索':'適用'}」で結果に反映</small></span>}
   </div>
  </form>;
 }
