@@ -800,9 +800,9 @@
         "https://hitoyamamusic.com/profile/"
       ],
       "presentation": {
-        "kind": "group",
+        "kind": "creator",
         "categories": [
-          "groups"
+          "creators"
         ]
       }
     },

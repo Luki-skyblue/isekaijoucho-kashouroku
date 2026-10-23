@@ -2162,6 +2162,72 @@
       "metadata": {
         "tieUp": "「偽りのアリス -Retold Tale-」オープニング主題歌"
       }
+    },
+    {
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "e3b3ebb5-8004-4a5a-af65-dfa338dfb214",
+        "kind": "song_variant",
+        "primaryWorkId": "b7bbc0fe-8c00-4bec-8596-c542a0de5ec4",
+        "title": "呪って呪って",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://x.com/isekaijoucho/status/2091469694981357996",
+      "sourceIds": [
+        "S-135"
+      ],
+      "key": "recent-credit-recent-norotte-norotte-writers",
+      "creditBasis": [],
+      "credits": {
+        "lyricist": [
+          "指原莉乃"
+        ],
+        "composer": [
+          "白根一成"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "81ec6b69-3b37-4f09-a1fb-1b25d156cccd",
+        "kind": "song_variant",
+        "primaryWorkId": "db5f4cbe-1dc2-4b5c-88d4-333e1d589826",
+        "title": "Alias",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://prtimes.jp/main/html/rd/p/000000097.000147227.html",
+      "sourceIds": [
+        "S-144"
+      ],
+      "key": "recent-credit-recent-alias-writers",
+      "creditBasis": [],
+      "credits": {
+        "lyricist": [
+          "ナナホシ管弦楽団"
+        ],
+        "composer": [
+          "岩見 陸"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "work",
+        "composer": "work"
+      }
     }
   ],
   "mediaCredits": [
@@ -2487,6 +2553,126 @@
         {
           "role": "Illustration",
           "name": "bakumae"
+        }
+      ]
+    },
+    {
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "e3b3ebb5-8004-4a5a-af65-dfa338dfb214",
+        "kind": "song_variant",
+        "primaryWorkId": "b7bbc0fe-8c00-4bec-8596-c542a0de5ec4",
+        "title": "呪って呪って",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://x.com/isekaijoucho/status/2091469694981357996",
+      "sourceIds": [
+        "S-135"
+      ],
+      "key": "recent-credit-recent-norotte-norotte-media",
+      "mediaId": "b2613691-81f3-4f41-901e-e95ca3b1bab8",
+      "mediaUrl": "https://www.youtube.com/watch?v=eV1hOTU9Ylo",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "ハナモト"
+        }
+      ]
+    },
+    {
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "ec7a3087-97d2-416a-a950-21562334b698",
+        "kind": "song_variant",
+        "primaryWorkId": "82276abc-fce5-48a1-8650-2608481bb2bb",
+        "title": "ループザルーム",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://x.com/isekaijoucho/status/2103801760116527378",
+      "sourceIds": [
+        "S-135"
+      ],
+      "key": "recent-credit-recent-loop-the-room-media",
+      "mediaId": "46c5aaa1-02f4-4089-8e26-da3b5e77e1cb",
+      "mediaUrl": "https://www.youtube.com/watch?v=N4nnSxcNr9c",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "052"
+        }
+      ]
+    },
+    {
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "e2035c03-dc9b-4f10-9f2f-06b956556707",
+        "kind": "song_variant",
+        "primaryWorkId": "1f45268e-fb48-4206-a6fe-c1182e0a3c7d",
+        "title": "String Theocracy",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://x.com/isekaijoucho/status/2111049525641290184",
+      "sourceIds": [
+        "S-135"
+      ],
+      "key": "recent-credit-recent-string-theocracy-media",
+      "mediaId": "6ce7ff34-f054-4d4f-b70d-bbd028fa3c67",
+      "mediaUrl": "https://www.youtube.com/watch?v=bi5Kgp9o594",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "水澄ぐみ"
+        }
+      ]
+    },
+    {
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "81ec6b69-3b37-4f09-a1fb-1b25d156cccd",
+        "kind": "song_variant",
+        "primaryWorkId": "db5f4cbe-1dc2-4b5c-88d4-333e1d589826",
+        "title": "Alias",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://prtimes.jp/main/html/rd/p/000000097.000147227.html",
+      "sourceIds": [
+        "S-144"
+      ],
+      "key": "recent-credit-recent-alias-media",
+      "mediaId": "1b00ee63-65dc-44aa-9cc6-ec6442b09e5c",
+      "mediaUrl": "https://www.youtube.com/watch?v=V6ISfJpDthE",
+      "credits": [
+        {
+          "role": "レコーディングエンジニア",
+          "name": "中村 涼真"
+        },
+        {
+          "role": "ミックスエンジニア",
+          "name": "中村 涼真"
+        },
+        {
+          "role": "映像",
+          "name": "癸乙夜［Mju:Z］"
         }
       ]
     }
