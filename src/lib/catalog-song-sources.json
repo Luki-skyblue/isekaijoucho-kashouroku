@@ -1642,6 +1642,309 @@
       "creditScopes": {
         "arranger": "version"
       }
+    },
+    {
+      "key": "lyrics-link-batch3-053c8f07-bd79-4eec-8a22-3321c79f5765",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "entry": {
+        "entryId": "053c8f07-bd79-4eec-8a22-3321c79f5765",
+        "kind": "song_variant",
+        "primaryWorkId": "920dfba2-a65d-5cc9-b986-a7cfef19f697",
+        "title": "霞がついてくる",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "original",
+          "arranger",
+          "はるまきごはん"
+        ],
+        [
+          "original",
+          "composer",
+          "はるまきごはん"
+        ],
+        [
+          "original",
+          "lyricist",
+          "はるまきごはん"
+        ],
+        [
+          "version",
+          "arranger",
+          "はるまきごはん"
+        ],
+        [
+          "version",
+          "composer",
+          "はるまきごはん"
+        ],
+        [
+          "version",
+          "lyricist",
+          "はるまきごはん"
+        ],
+        [
+          "work",
+          "arranger",
+          "はるまきごはん"
+        ],
+        [
+          "work",
+          "composer",
+          "はるまきごはん"
+        ],
+        [
+          "work",
+          "lyricist",
+          "はるまきごはん"
+        ]
+      ],
+      "url": "https://piapro.jp/t/7zBL",
+      "sourceId": "S-128",
+      "metadata": {
+        "lyricsUrl": "https://piapro.jp/t/7zBL"
+      },
+      "scopeNote": "Artist-published Piapro lyrics page for this exact solo entry. Existing music credits cross-checked, not duplicated; no video-production credit or sibling inheritance."
+    },
+    {
+      "key": "lyrics-link-batch3-2c130953-3c9c-4d02-a1e8-a8f237eb6b56",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "entry": {
+        "entryId": "2c130953-3c9c-4d02-a1e8-a8f237eb6b56",
+        "kind": "song_variant",
+        "primaryWorkId": "40aa4d65-a4a1-5928-8cdb-61f4c4ab4b6c",
+        "title": "誰もいない絵で",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "rionos"
+        ],
+        [
+          "work",
+          "composer",
+          "rionos"
+        ],
+        [
+          "work",
+          "lyricist",
+          "rionos"
+        ]
+      ],
+      "url": "https://piapro.jp/t/ctmb",
+      "sourceId": "S-129",
+      "metadata": {
+        "lyricsUrl": "https://piapro.jp/t/ctmb"
+      },
+      "scopeNote": "Artist-published Piapro lyrics page for this exact solo entry. Existing music credits cross-checked, not duplicated; no video-production credit or sibling inheritance."
+    },
+    {
+      "key": "lyrics-link-batch3-e71238fd-48bd-4dd9-8e76-50d0b191acf6",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "entry": {
+        "entryId": "e71238fd-48bd-4dd9-8e76-50d0b191acf6",
+        "kind": "song_variant",
+        "primaryWorkId": "c5992ad9-6d50-5abc-801d-d2232a296b15",
+        "title": "ディメンション",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "柊マグネタイト"
+        ],
+        [
+          "work",
+          "composer",
+          "柊マグネタイト"
+        ],
+        [
+          "work",
+          "lyricist",
+          "柊マグネタイト"
+        ]
+      ],
+      "url": "https://piapro.jp/t/7WFN",
+      "sourceId": "S-130",
+      "metadata": {
+        "lyricsUrl": "https://piapro.jp/t/7WFN"
+      },
+      "scopeNote": "Artist-published Piapro lyrics page for this exact solo entry. Existing music credits cross-checked, not duplicated; no video-production credit or sibling inheritance."
+    },
+    {
+      "key": "lyrics-link-batch3-a4ca0573-48d6-49d0-a3d2-d8b4d4352227",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "entry": {
+        "entryId": "a4ca0573-48d6-49d0-a3d2-d8b4d4352227",
+        "kind": "song_variant",
+        "primaryWorkId": "f6d7d3c1-33e9-5649-be74-f4f18f3244e0",
+        "title": "物語りのワルツ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "samayuzame"
+        ],
+        [
+          "work",
+          "composer",
+          "samayuzame"
+        ],
+        [
+          "work",
+          "lyricist",
+          "samayuzame"
+        ]
+      ],
+      "url": "https://piapro.jp/t/bZDA",
+      "sourceId": "S-131",
+      "metadata": {
+        "lyricsUrl": "https://piapro.jp/t/bZDA"
+      },
+      "scopeNote": "Artist-published Piapro lyrics page for this exact solo entry. Existing music credits cross-checked, not duplicated; no video-production credit or sibling inheritance."
+    },
+    {
+      "key": "lyrics-link-batch3-ffe9cbc0-27b8-48c2-8631-7ad4562f9a47",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "entry": {
+        "entryId": "ffe9cbc0-27b8-48c2-8631-7ad4562f9a47",
+        "kind": "song_variant",
+        "primaryWorkId": "078d4b75-9ac7-5f5a-8701-a50ef78a70d0",
+        "title": "ハイドレンジア",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "とうかさ"
+        ],
+        [
+          "work",
+          "composer",
+          "とうかさ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "とうかさ"
+        ]
+      ],
+      "url": "https://piapro.jp/t/uMip",
+      "sourceId": "S-132",
+      "metadata": {
+        "lyricsUrl": "https://piapro.jp/t/uMip"
+      },
+      "scopeNote": "Artist-published Piapro lyrics page for this exact solo entry. Existing music credits cross-checked, not duplicated; no video-production credit or sibling inheritance."
+    },
+    {
+      "key": "lyrics-link-batch3-df11fb8c-32af-4caa-879d-736c6331f8d4",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "entry": {
+        "entryId": "df11fb8c-32af-4caa-879d-736c6331f8d4",
+        "kind": "song_variant",
+        "primaryWorkId": "64cf8656-1302-527e-94e1-0b31d0595354",
+        "title": "斯く美しき造花",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "とうかさ"
+        ],
+        [
+          "work",
+          "composer",
+          "とうかさ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "とうかさ"
+        ]
+      ],
+      "url": "https://piapro.jp/t/rFnn",
+      "sourceId": "S-133",
+      "metadata": {
+        "lyricsUrl": "https://piapro.jp/t/rFnn"
+      },
+      "scopeNote": "Artist-published Piapro lyrics page for this exact solo entry. Existing music credits cross-checked, not duplicated; no video-production credit or sibling inheritance."
+    },
+    {
+      "key": "lyrics-link-batch3-ec467200-b1d9-4a89-9612-6ebe94228004",
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "entry": {
+        "entryId": "ec467200-b1d9-4a89-9612-6ebe94228004",
+        "kind": "song_variant",
+        "primaryWorkId": "90eb3cce-a1d4-505d-9d37-586577ec1d74",
+        "title": "いろはに咲きて",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "samayuzame"
+        ],
+        [
+          "work",
+          "composer",
+          "samayuzame"
+        ],
+        [
+          "work",
+          "lyricist",
+          "samayuzame"
+        ]
+      ],
+      "url": "https://piapro.jp/t/q3mE",
+      "sourceId": "S-134",
+      "metadata": {
+        "lyricsUrl": "https://piapro.jp/t/q3mE"
+      },
+      "scopeNote": "Artist-published Piapro lyrics page for this exact solo entry. Existing music credits cross-checked, not duplicated; no video-production credit or sibling inheritance."
     }
   ],
   "mediaCredits": [
