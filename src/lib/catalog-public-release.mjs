@@ -111,7 +111,7 @@ export function createPublicRelease(input,{releaseId=randomUUID(),createdAt=new 
   if(r.record_type==='entry'){
    const e=base.entries.get(r.record_id);p.visibility='listed';
    p.detail.legacySongType=songTypeForEntry(e);
-   p.detail.songMetadata=project(songMetadata,songMetadataForEntry(e));
+   p.detail.songMetadata=project(songMetadata,songMetadataForEntry(e,undefined,base.works.get(e.detail.primaryWorkId)));
    p.candidateSetExhaustive=e.candidateSetExhaustive===true&&(e.unresolvedTokens??[]).length===0&&e.singerIds.length>0&&
     !(e.flags??[]).some(x=>['group_without_membership','role_or_identity_review_voicebank'].includes(x));
    p.detail.relatedVariants=p.detail.relatedVariants.filter(x=>ids.has(x.entryId));

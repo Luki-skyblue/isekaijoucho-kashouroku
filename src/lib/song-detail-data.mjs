@@ -70,10 +70,21 @@ function legacyRecords(entry){
   t.entryId===d.entryId&&t.primaryWorkId===d.primaryWorkId&&t.title===d.title&&JSON.stringify(t.variations??[])===JSON.stringify(d.variations??[])&&
   Array.isArray(entry.singerIds)&&t.singerIds.length===entry.singerIds.length&&t.singerIds.every(id=>entry.singerIds.includes(id))));
 }
-/** A complete canonical metadata object wins, even when its values are null.
- * The bridge never resurrects a value deliberately cleared in a newer record. */
-export function songMetadataForEntry(entry,factRecords=SONG_FACT_RECORDS){
- if(object(entry?.detail?.songMetadata))return entry.detail.songMetadata;
+const dated=value=>typeof value==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(value)&&Number.isFinite(Date.parse(value+'T00:00:00Z'))&&new Date(value+'T00:00:00Z').toISOString().slice(0,10)===value;
+function earliestKnownAppearance(entry,metadata,work,options){
+ const first=metadata.firstAppearance;
+ const video=songVideosForEntry(entry,work,options.sourceRecords,options.sourceExclusions)
+  .filter(v=>dated(v.publishedOn)).sort((a,b)=>a.publishedOn.localeCompare(b.publishedOn)||a.url.localeCompare(b.url))[0];
+ if(!video||(dated(first?.date)&&first.date<=video.publishedOn))return metadata;
+ // First appearance means the earliest publication currently known. A null
+ // first date is a research gap; an older exact publication advances it.
+ return {...metadata,firstAppearance:{date:video.publishedOn,label:youtubeId(video.url)?'YouTube':songListenLabel(video.url)==='Xで見る'?'X':'動画'},
+  firstAppearanceReview:{coverage:'unknown',partialConfirmed:false}};
+}
+/** Canonical fields retain precedence, including explicit nulls, except that
+ * first appearance incorporates an earlier known publication (D-084). */
+export function songMetadataForEntry(entry,factRecords=SONG_FACT_RECORDS,work={},options={}){
+ if(object(entry?.detail?.songMetadata))return earliestKnownAppearance(entry,entry.detail.songMetadata,work,options);
  const records=legacyRecords(entry),fields=['titleKana','firstAppearance','firstFull','tieUp','originalArtist','originalVocal'];
  const out=Object.fromEntries(fields.map(k=>[k,known(records.map(x=>x.metadata[k]))]));
  out.originalCredits=unique(records.flatMap(x=>arr(x.metadata.originalCredits)));
@@ -87,7 +98,7 @@ export function songMetadataForEntry(entry,factRecords=SONG_FACT_RECORDS){
  for(const key of ['tieUp','lyricsUrl'])if(!out[key]){
   const value=known(facts.map(r=>r.metadata?.[key]));if(value&&(key!=='lyricsUrl'||safeSongUrl(value)))out[key]=value;
  }
- return out;
+ return earliestKnownAppearance(entry,out,work,options);
 }
 function exactSiriusSolo(entry){
  return entry?.detail?.entryId===SIRIUS_SOLO&&entry.detail.primaryWorkId===SIRIUS_WORK&&entry.detail.title==='シリウスの心臓'&&arr(entry.detail.variations).length===0&&arr(entry.legacyIds).includes(41)&&entry.singerIds?.length===1&&entry.singerIds[0]==='81a01233-230e-50a8-a309-11275c794cd0';
@@ -231,7 +242,7 @@ export function songArtworkCandidatesForEntry(entry,work={},options={}){
 export function songArtworkForEntry(entry,work={}){return songArtworkCandidatesForEntry(entry,work)[0]??null;}
 export function buildSongDetail(entry,work={},options={}){
  if(!entry?.detail)return null;
- const d=entry.detail,metadata=songMetadataForEntry(entry,options.factRecords),creditData=songCreditsForEntry(entry,metadata,options.factRecords),videos=songVideosForEntry(entry,work,options.sourceRecords,options.sourceExclusions,options.mediaCreditRecords),releases=songReleasesForEntry(entry,work,options.releaseRecords,options.sourceRecords),allLives=songLivesForEntry(entry,options.eventRecords);
+ const d=entry.detail,metadata=songMetadataForEntry(entry,options.factRecords,work,options),creditData=songCreditsForEntry(entry,metadata,options.factRecords),videos=songVideosForEntry(entry,work,options.sourceRecords,options.sourceExclusions,options.mediaCreditRecords),releases=songReleasesForEntry(entry,work,options.releaseRecords,options.sourceRecords),allLives=songLivesForEntry(entry,options.eventRecords);
  const images=artworkCandidates(entry,videos,releases,allLives,options);
  return {detail:{...d,legacySongType:songTypeForEntry(entry,options.sourceRecords),singers:singersForEntry(entry)},metadata,credits:creditData.rows,originalCredits:creditData.originalCredits,originalArranger:creditData.originalArranger,
   artwork:images[0]??null,artworkCandidates:images,listenUrl:videos[0]?.url??releases.find(r=>r.externalUrl)?.externalUrl??null,videos,releases,lives:allLives,
