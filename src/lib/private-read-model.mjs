@@ -6,6 +6,7 @@ import {performance} from 'node:perf_hooks';
 import {songArtworkCandidatesForEntry,songTypeForEntry} from './song-detail-data.mjs';
 import {singerIdsForEntry} from './catalog-people.mjs';
 import {eventArtworkForEvent} from './catalog-artwork.mjs';
+import {supplementalLivesForEntry} from './live-program-supplements.mjs';
 import {isAbsolute} from 'node:path';
 
 export const PURPOSE = 'PRIVATE_G0_READ_MODEL_EXPERIMENT_NOT_FOR_PUBLICATION';
@@ -233,7 +234,7 @@ export function queryEntries(model, filters = {}) {
   rows.sort((a,b) => a.rank-b.rank || (sort === 'title_desc' ? -1 : 1)*cmp(a.sortTitle,b.sortTitle) || cmp(a.entryId,b.entryId));
   return {items:rows.slice(offset,offset+limit).map(({rank,sortTitle,...x}) => {
     const entry=model.entries.get(x.entryId);
-    const images=songArtworkCandidatesForEntry(entry,model.works.get(entry.detail.primaryWorkId));
+    const images=songArtworkCandidatesForEntry(entry,model.works.get(entry.detail.primaryWorkId),{additionalLives:supplementalLivesForEntry(model,x.entryId)});
     return {...x,thumbnailUrl:images[0]?.imageUrl??null,thumbnailUrls:images.map(image=>image.imageUrl)};
   }),total:rows.length,limit,offset};
 }

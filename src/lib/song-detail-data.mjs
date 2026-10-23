@@ -7,6 +7,8 @@ import {artworkEntryMatches,catalogArtworkCandidatesForEntry,eventArtworkForEven
 import {ARTWORK_RECORDS,RELEASE_ARTWORK_RECORDS,EVENT_ARTWORK_RECORDS} from './catalog-artwork-data.mjs';
 import releaseEditions from './catalog-release-editions.json' with {type:'json'};
 import {singersForEntry,personKeyForCredit} from './catalog-people.mjs';
+import {supplementalLivesForEntry} from './live-program-supplements.mjs';
+import {liveVocalRecordsForEntry} from './live-vocal-entries.mjs';
 
 const arr=x=>Array.isArray(x)?x:[],str=x=>typeof x==='string'?x:'',object=x=>x!==null&&typeof x==='object'&&!Array.isArray(x);
 const byLegacyId=new Map(legacy.records.map(x=>[x.legacyId,x]));
@@ -41,7 +43,8 @@ export function registeredSongFactsForEntry(entry,records=SONG_FACT_RECORDS){
   JSON.stringify(r.creditBasis)===JSON.stringify(creditBasis(entry)));
 }
 export function registeredSongSourcesForEntry(entry,records=SONG_SOURCE_RECORDS){
- return arr(records).filter(r=>r.status==='active'&&artworkEntryMatches(entry,r.entry)&&
+ const liveVideos=records===SONG_SOURCE_RECORDS?liveVocalRecordsForEntry(entry).filter(r=>r.video).map(r=>({key:r.key,status:'active',kind:'youtube',songType:r.songType,...r.video,entry:{...r.match,entryId:entry.detail.entryId}})):[];
+ return [...arr(records),...liveVideos].filter(r=>r.status==='active'&&artworkEntryMatches(entry,r.entry)&&
   str(r.entry.displayCredit)===str(entry.detail.displayCredit)&&safeSongUrl(r.url)&&
   (r.kind==='youtube'?youtubeId(r.url):r.kind==='x'?/^https:\/\/(?:x|twitter)\.com\/[^/]+\/status\/\d+$/.test(r.url):r.kind==='digital_single'));
 }
@@ -49,7 +52,7 @@ export function registeredSongSourcesForEntry(entry,records=SONG_SOURCE_RECORDS)
 // a display fallback for the exact entry, never a change to its DB review state.
 export function songTypeForEntry(entry,records=SONG_SOURCE_RECORDS){
  if(entry?.detail?.legacySongType)return entry.detail.legacySongType;
- return known(registeredSongSourcesForEntry(entry,records).map(r=>r.songType).filter(t=>['original','cover','collaboration','variant'].includes(t)));
+ return known([...registeredSongSourcesForEntry(entry,records),...liveVocalRecordsForEntry(entry)].map(r=>r.songType).filter(t=>['original','cover','collaboration','variant'].includes(t)));
 }
 function sourceReleaseMatches(source,release){
  return source.kind==='digital_single'&&str(source.catalogNumber)!==''&&source.catalogNumber===release.edition?.catalogNumber&&
@@ -72,6 +75,11 @@ function legacyRecords(entry){
 }
 const dated=value=>typeof value==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(value)&&Number.isFinite(Date.parse(value+'T00:00:00Z'))&&new Date(value+'T00:00:00Z').toISOString().slice(0,10)===value;
 function earliestKnownAppearance(entry,metadata,work,options){
+ for(const record of liveVocalRecordsForEntry(entry)){
+  const sourced=record.metadata;
+  metadata={...metadata,titleKana:metadata.titleKana??sourced.titleKana,originalArtist:metadata.originalArtist??sourced.originalArtist};
+  if(dated(sourced.firstAppearance?.date)&&(!dated(metadata.firstAppearance?.date)||sourced.firstAppearance.date<metadata.firstAppearance.date))metadata.firstAppearance=sourced.firstAppearance;
+ }
  const first=metadata.firstAppearance;
  const video=songVideosForEntry(entry,work,options.sourceRecords,options.sourceExclusions)
   .filter(v=>dated(v.publishedOn)).sort((a,b)=>a.publishedOn.localeCompare(b.publishedOn)||a.url.localeCompare(b.url))[0];
@@ -157,7 +165,7 @@ function songVideosForEntry(entry,work,sourceRecords,sourceExclusions,mediaCredi
  for(const m of arr(work.media)){
   const direct=arr(m.associations).some(a=>a.identityScope==='rendition'&&directRenditions.has(a.targetRenditionId)&&a.renditionContainsAnotherWork!==true);
   for(const publication of arr(m.publications)){
-   const url=safeSongUrl(publication.url);if(!url)continue;
+   const url=safeSongUrl(publication.url);if(!url||liveVocalRecordsForEntry(entry).some(r=>r.sourcePageUrl===url))continue;
    const id=youtubeId(url),old=id?oldVideos.get(id):null;
    if(!old&&!direct&&!(solo&&SIRIUS_SOLO_MEDIA.includes(m.mediaId)))continue;
    const kind=m.mediaKind==='unknown'?({'MV':'music_video','LYRIC MV':'lyric_video','LIVE MV':'live_video'})[old?.kind]||null:m.mediaKind;
@@ -210,12 +218,13 @@ export function songReleasesForEntry(entry,work={},releaseRecords=RELEASE_ARTWOR
   trackNumber:source.trackNumber??null,editionLabel:'配信',externalUrl:source.url,imageUrl:source.imageUrl??null,imageSourceUrl:source.url});
  return releases;
 }
-function songLivesForEntry(entry,eventRecords=EVENT_ARTWORK_RECORDS){
+function songLivesForEntry(entry,eventRecords=EVENT_ARTWORK_RECORDS,additionalLives=[]){
  const lives=new Map();
  for(const h of arr(entry.history))for(const ev of arr(h.relatedEvents)){
   const key=ev.eventId+'|'+str(h.occurredOn),previous=lives.get(key),uncertain=h.matchBasis==='same_version_only'&&h.singerSetConfirmedForEntry!==true;
   lives.set(key,{eventId:ev.eventId,title:ev.title,date:h.occurredOn??null,uncertain:previous?previous.uncertain&&uncertain:uncertain});
  }
+ for(const live of additionalLives){const key=live.eventId+'|'+str(live.date);if(!lives.has(key))lives.set(key,live);}
  return [...lives.values()].map(live=>({...live,imageUrl:eventArtworkForEvent(live,eventRecords)?.imageUrl??null})).sort((a,b)=>str(b.date).localeCompare(str(a.date)));
 }
 function artworkCandidates(entry,videos,releases,lives,{entryRecords=ARTWORK_RECORDS,releaseRecords=RELEASE_ARTWORK_RECORDS,eventRecords=EVENT_ARTWORK_RECORDS,sourceExclusions}={}){
@@ -237,12 +246,12 @@ function artworkCandidates(entry,videos,releases,lives,{entryRecords=ARTWORK_REC
 /** All display surfaces and failure fallbacks share the same ordered candidates. */
 export function songArtworkCandidatesForEntry(entry,work={},options={}){
  if(!entry?.detail)return [];
- return artworkCandidates(entry,songVideosForEntry(entry,work,options.sourceRecords,options.sourceExclusions,options.mediaCreditRecords),songReleasesForEntry(entry,work,options.releaseRecords,options.sourceRecords),songLivesForEntry(entry,options.eventRecords),options);
+ return artworkCandidates(entry,songVideosForEntry(entry,work,options.sourceRecords,options.sourceExclusions,options.mediaCreditRecords),songReleasesForEntry(entry,work,options.releaseRecords,options.sourceRecords),songLivesForEntry(entry,options.eventRecords,options.additionalLives),options);
 }
 export function songArtworkForEntry(entry,work={}){return songArtworkCandidatesForEntry(entry,work)[0]??null;}
 export function buildSongDetail(entry,work={},options={}){
  if(!entry?.detail)return null;
- const d=entry.detail,metadata=songMetadataForEntry(entry,options.factRecords,work,options),creditData=songCreditsForEntry(entry,metadata,options.factRecords),videos=songVideosForEntry(entry,work,options.sourceRecords,options.sourceExclusions,options.mediaCreditRecords),releases=songReleasesForEntry(entry,work,options.releaseRecords,options.sourceRecords),allLives=songLivesForEntry(entry,options.eventRecords);
+ const d=entry.detail,metadata=songMetadataForEntry(entry,options.factRecords,work,options),creditData=songCreditsForEntry(entry,metadata,options.factRecords),videos=songVideosForEntry(entry,work,options.sourceRecords,options.sourceExclusions,options.mediaCreditRecords),releases=songReleasesForEntry(entry,work,options.releaseRecords,options.sourceRecords),allLives=songLivesForEntry(entry,options.eventRecords,options.additionalLives);
  const images=artworkCandidates(entry,videos,releases,allLives,options);
  return {detail:{...d,legacySongType:songTypeForEntry(entry,options.sourceRecords),singers:singersForEntry(entry)},metadata,credits:creditData.rows,originalCredits:creditData.originalCredits,originalArranger:creditData.originalArranger,
   artwork:images[0]??null,artworkCandidates:images,listenUrl:videos[0]?.url??releases.find(r=>r.externalUrl)?.externalUrl??null,videos,releases,lives:allLives,
@@ -251,5 +260,5 @@ export function buildSongDetail(entry,work={},options={}){
 }
 export function songDetailFromModel(model,entryId){
  const entry=model.entries.get(entryId);if(!entry)return null;
- return buildSongDetail(entry,model.works.get(entry.detail.primaryWorkId)??{});
+ return buildSongDetail(entry,model.works.get(entry.detail.primaryWorkId)??{},{additionalLives:supplementalLivesForEntry(model,entryId)});
 }

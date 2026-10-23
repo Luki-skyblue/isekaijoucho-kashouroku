@@ -25,7 +25,11 @@ export default async function EventDetail({params,searchParams}:{params:Promise<
   const page=activeOccurrence===occurrenceId?requestedProgramPage:1;
   return rpc('kashouroku_v3_event_program',{p_occurrence_id:occurrenceId,p_limit:PROGRAM_ITEMS_PER_PAGE,p_offset:(page-1)*PROGRAM_ITEMS_PER_PAGE});
  }));
- const sessions=occurrences.map((o,i)=>({occurrence:o,program:programs[i],page:activeOccurrence===str(o.occurrenceId)?requestedProgramPage:1}));
+ const sessions=occurrences.map((o,i)=>{
+  const page=activeOccurrence===str(o.occurrenceId)?requestedProgramPage:1,supplement=context?.programSupplements[str(o.occurrenceId)];
+  const program=supplement?{...programs[i],totalItems:supplement.totalItems,items:page===1?supplement.items:[]}:programs[i];
+  return {occurrence:o,program,page};
+ });
  const main=sessions.filter(x=>!isLiveSupplement(x.occurrence)),supplements=sessions.filter(x=>isLiveSupplement(x.occurrence));
  const dates=context?.dates??[...new Set(main.map(x=>str(x.occurrence.officialDate)).filter(Boolean))].sort();
  const cast=context?.performers??asArray(event.eventCast).filter(c=>c.scope==='event'&&c.role==='performer'&&c.castStatus==='confirmed_present');
@@ -50,16 +54,17 @@ export default async function EventDetail({params,searchParams}:{params:Promise<
 }
 function Missing(){return <span className="live-detail-missing">準備中</span>;}
 function SessionView({occurrence,program,page,eventId,occurrencePage,context,showHeading}:{occurrence:JsonObject;program:JsonObject|null;page:number;eventId:string;occurrencePage:number;context:LiveDisplayContext|null;showHeading:boolean}){
- const items=asArray(program?.items),note=liveCoverageNote(occurrence.programCoverageScope),label=liveSessionLabel(occurrence);
+ const items=asArray(program?.items),note=liveCoverageNote(occurrence.programCoverageScope),label=liveSessionLabel(occurrence),supplement=context?.programSupplements[str(occurrence.occurrenceId)];
  return <section className="live-detail-session" id={`occ-${str(occurrence.occurrenceId)}`}>
   {showHeading&&<h3>{label||displayDate(occurrence.officialDate,'日付未確認')}</h3>}
   {showHeading&&label&&str(occurrence.officialDate)&&<p className="live-detail-session-date">{displayDate(occurrence.officialDate)}</p>}
   {items.length>0&&note&&<p className="live-detail-coverage">{note}</p>}
   {items.length?<ol className="live-detail-setlist">{items.map((item,i)=>{
-   const target=context?.programLinks[str(item.programItemId)],vocals=context?.programVocals[str(item.programItemId)],title=str(item.rawLabel)||'名称未登録';
+   const target=context?.programLinks[str(item.programItemId)]??supplement?.programLinks[str(item.programItemId)],vocals=context?.programVocals[str(item.programItemId)]??supplement?.programVocals[str(item.programItemId)],title=str(item.rawLabel)||'名称未登録';
    const endRoll=str(item.itemKind)==='end_roll'&&!/エンドロール|（ED）|\(ED\)/i.test(title);
    return <li className={'live-detail-program-row'+(vocals?.targetVocal==='absent'?' live-detail-other-vocals':'')} key={str(item.programItemId)||i}><span className="live-detail-position" aria-hidden="true">{liveProgramPosition(item)}</span><span className="live-detail-program-title">{target?<Link className="live-detail-song-link" href={'/songs/'+target.entryId}>{title}</Link>:title}{vocals&&<span className="live-detail-program-vocals"><span aria-hidden="true"> / </span><span className="sr-only">　歌唱：</span>{vocals.displayCredit}</span>}</span>{endRoll&&<span className="live-detail-program-tag">エンドロール</span>}</li>;
   })}</ol>:num(program?.totalItems)>0?<p className="live-detail-missing">このページに項目がありません。</p>:<Missing/>}
+  {supplement&&<p className="live-detail-source">出典：<a href={supplement.source.url} target="_blank" rel="noopener noreferrer">{supplement.source.label} ↗</a></p>}
   <ProgramPager eventId={eventId} occurrenceId={str(occurrence.occurrenceId)} occurrencePage={occurrencePage} page={page} pages={numberOfPages(num(program?.totalItems),PROGRAM_ITEMS_PER_PAGE)}/>
  </section>;
 }

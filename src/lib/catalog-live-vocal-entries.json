@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "records": [
+    {
+      "key": "fes26-watashi-no-koe",
+      "status": "active",
+      "match": {
+        "primaryWorkId": "b2cba79f-86d7-4dc2-888a-c40a6b5effd1",
+        "title": "わたしの声",
+        "kind": "song_variant",
+        "displayCredit": "ヰ世界情緒×硝子宮×美古途",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "ca6163f9-e9b4-415e-b614-b837ef2bbeef",
+          "9d78227e-d558-4522-a7f8-78e637bc5f92"
+        ],
+        "variations": []
+      },
+      "sourcePageUrl": "https://diskgarage.com/digaonline/liverepo/236761/2",
+      "songType": "cover",
+      "metadata": {
+        "titleKana": "わたしのこえ",
+        "firstAppearance": {
+          "date": "2026-09-05",
+          "label": "KAMITSUBAKI FES ’26"
+        },
+        "originalArtist": "花譜 × MONDO GROSSO"
+      },
+      "video": null
+    },
+    {
+      "key": "fes26-utahime",
+      "status": "active",
+      "match": {
+        "primaryWorkId": "3264c8ed-5d57-5db4-8b4a-f832e1c21356",
+        "title": "歌姫",
+        "kind": "song_variant",
+        "displayCredit": "花譜×理芽×春猿火×ヰ世界情緒×幸祜×CIEL×Sooda×明透×琶舞×御莉姫×佳鏡院×硝子宮×氷夏至×美古途×夕凪機",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "b4a1c9cb-987f-5e92-863f-5bd1206dcbaa",
+          "c821f922-c10a-4072-9cd2-0fdd4ed385d4",
+          "4e204fac-3ee7-4177-9ca5-c3c19bbaee9c",
+          "deeff53f-d187-4edc-90ae-9c2e6a2a21c2",
+          "51f08059-db8e-4ce2-838b-2798b44b1efe",
+          "a4f2c16a-1d22-5631-84a6-8fe3d4016653",
+          "ca6163f9-e9b4-415e-b614-b837ef2bbeef",
+          "69297413-1483-40f4-ba8e-73f05d3a3621",
+          "9d78227e-d558-4522-a7f8-78e637bc5f92",
+          "a5a70c55-101c-5a56-a279-96d6b1513950"
+        ],
+        "variations": []
+      },
+      "sourcePageUrl": "https://diskgarage.com/digaonline/liverepo/236761/2",
+      "songType": "cover",
+      "metadata": {
+        "titleKana": "うたひめ",
+        "firstAppearance": {
+          "date": "2026-09-05",
+          "label": "KAMITSUBAKI FES ’26"
+        },
+        "originalArtist": "V.W.P"
+      },
+      "video": {
+        "url": "https://www.youtube.com/watch?v=_ao1TZuo_5M",
+        "title": "【ライブ映像】「歌姫」Covered by KAMITSUBAKI VIRTUAL ARTISTS【#神椿7周年】",
+        "publishedOn": "2026-10-18",
+        "authorName": "KAMITSUBAKI STUDIO",
+        "authorUrl": "https://www.youtube.com/@kamitsubakistudio3528",
+        "mediaKind": "live_video"
+      }
+    }
+  ]
+}

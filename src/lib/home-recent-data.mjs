@@ -2,6 +2,7 @@
 // form. Home and song detail share it; never use insertion order.
 import {songMetadataForEntry,songArtworkCandidatesForEntry} from './song-detail-data.mjs';
 import {releaseListArtworkFromModel,releaseKindLabel,releaseMediaLabel,isLiveRelease} from './release-detail-data.mjs';
+import {supplementalLivesForEntry} from './live-program-supplements.mjs';
 
 const arr=x=>Array.isArray(x)?x:[],text=x=>typeof x==='string'?x.trim():'';
 const compare=(a,b)=>a<b?-1:a>b?1:0;
@@ -21,7 +22,7 @@ export function homeRecentFromModel(model,{today=homeToday()}={}){
  }
  songs.sort((a,b)=>compare(b.date,a.date)||compare(a.entryId,b.entryId));
  const recentSongs=songs.slice(0,5).map(song=>{
-  const entry=model.entries.get(song.entryId),images=songArtworkCandidatesForEntry(entry,model.works.get(entry.detail.primaryWorkId));
+  const entry=model.entries.get(song.entryId),images=songArtworkCandidatesForEntry(entry,model.works.get(entry.detail.primaryWorkId),{additionalLives:supplementalLivesForEntry(model,song.entryId)});
   return {...song,thumbnailUrl:images[0]?.imageUrl??null,thumbnailUrls:images.map(x=>x.imageUrl)};
  });
  const releases=[];

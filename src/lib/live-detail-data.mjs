@@ -6,6 +6,7 @@ import {artworkEntryMatches} from './catalog-artwork.mjs';
 import {entityForId,MAIN_SINGER_IDS} from './catalog-people.mjs';
 import {personDetailFromModel} from './person-detail-data.mjs';
 import {safeSongUrl} from './song-detail-data.mjs';
+import {liveProgramSupplementsForEvent} from './live-program-supplements.mjs';
 const arr=x=>Array.isArray(x)?x:[];
 export const LIVE_PROGRAM_RECORDS=registry.records;
 export const LIVE_PROGRAM_VOCAL_RECORDS=creditsRegistry.records;
@@ -106,5 +107,6 @@ export function liveDisplayContextFromModel(model,eventId,options={}){
   if(targets.size===1){const entryId=[...targets][0],e=model.entries.get(entryId);
    programLinks[item.programItemId]={entryId,title:e.detail.title};}
  }
- return {billingLabel:[names.join('・'),formatName].filter(Boolean).join(' ')||null,dates,performers,programLinks,programVocals};
+ const programSupplements=Object.fromEntries(liveProgramSupplementsForEvent(model,eventId,options.supplementRecords).map(p=>[p.occurrenceId,p]));
+ return {billingLabel:[names.join('・'),formatName].filter(Boolean).join(' ')||null,dates,performers,programLinks,programVocals,programSupplements};
 }

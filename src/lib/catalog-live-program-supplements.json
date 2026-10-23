@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "records": [
+    {
+      "status": "active",
+      "sourceId": "S-137",
+      "checkedOn": "2026-10-23",
+      "sourceLabel": "THINKR wiki",
+      "url": "https://wikiwiki.jp/thinkr/2026.0905",
+      "evidenceClass": "fan_wiki_not_official_setlist",
+      "eventId": "96047f69-c02b-502e-afaa-103cdf6ccc01",
+      "title": "KAMITSUBAKI FES ’26 FIELD OF RESONANCE",
+      "occurrenceId": "240aadc8-2106-5a95-9b48-3dafe094162d",
+      "officialDate": "2026-09-05",
+      "sessionLabel": null,
+      "items": [
+        {
+          "rawPosition": "01",
+          "rawLabel": "雑几帖",
+          "displayCredit": "心世紀"
+        },
+        {
+          "rawPosition": "02",
+          "rawLabel": "FantastiQ",
+          "displayCredit": "心世紀"
+        },
+        {
+          "rawPosition": "03",
+          "rawLabel": "アウフヘーベン",
+          "displayCredit": "罪十罰"
+        },
+        {
+          "rawPosition": "04",
+          "rawLabel": "大罪",
+          "displayCredit": "罪十罰"
+        },
+        {
+          "rawPosition": "05",
+          "rawLabel": "主人行路",
+          "displayCredit": "心世紀×罪十罰"
+        },
+        {
+          "rawPosition": "06",
+          "rawLabel": "僕たちの群青",
+          "displayCredit": "CIEL"
+        },
+        {
+          "rawPosition": "07",
+          "rawLabel": "君と旅風",
+          "displayCredit": "CIEL"
+        },
+        {
+          "rawPosition": "08",
+          "rawLabel": "透明流星ラプソディ",
+          "displayCredit": "空爽"
+        },
+        {
+          "rawPosition": "09",
+          "rawLabel": "(A)letheia",
+          "displayCredit": "春猿火"
+        },
+        {
+          "rawPosition": "10",
+          "rawLabel": "Deep Invite",
+          "displayCredit": "春猿火"
+        },
+        {
+          "rawPosition": "11",
+          "rawLabel": "META",
+          "displayCredit": "春猿火"
+        },
+        {
+          "rawPosition": "12",
+          "rawLabel": "ピルグリム",
+          "displayCredit": "理芽"
+        },
+        {
+          "rawPosition": "13",
+          "rawLabel": "ノマネ",
+          "displayCredit": "理芽"
+        },
+        {
+          "rawPosition": "14",
+          "rawLabel": "ぷれいや",
+          "displayCredit": "理芽"
+        },
+        {
+          "rawPosition": "15",
+          "rawLabel": "the last bullet",
+          "displayCredit": "幸祜"
+        },
+        {
+          "rawPosition": "16",
+          "rawLabel": "僕は願うことをやめたんだ",
+          "displayCredit": "幸祜"
+        },
+        {
+          "rawPosition": "17",
+          "rawLabel": "切り咲く",
+          "displayCredit": "幸祜"
+        },
+        {
+          "rawPosition": "18",
+          "rawLabel": "そして白に還る",
+          "displayCredit": "ヰ世界情緒",
+          "entry": {
+            "entryId": "0c4b689c-3fc3-4d82-8d3d-1af7490887a0",
+            "primaryWorkId": "a355c405-a4ac-58b6-9a6a-32c46c129acd",
+            "title": "そして白に還る",
+            "kind": "song_variant",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          }
+        },
+        {
+          "rawPosition": "19",
+          "rawLabel": "FARAWAY",
+          "displayCredit": "ヰ世界情緒",
+          "entry": {
+            "entryId": "ccb53089-bcad-4ad4-b157-7a77b267aa60",
+            "primaryWorkId": "60635e39-1165-5fac-b000-551140ad215c",
+            "title": "FARAWAY",
+            "kind": "song_variant",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          }
+        },
+        {
+          "rawPosition": "20",
+          "rawLabel": "永久に枯れぬ花",
+          "displayCredit": "ヰ世界情緒",
+          "entry": {
+            "entryId": "4a9953be-e317-44c4-bc3d-337d5dedda9d",
+            "primaryWorkId": "b26bcd19-ddbd-544e-b926-08c91b111de9",
+            "title": "永久に枯れぬ花",
+            "kind": "song_variant",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          }
+        },
+        {
+          "rawPosition": "21",
+          "rawLabel": "VIPエンジョイ",
+          "displayCredit": "V.I.P"
+        },
+        {
+          "rawPosition": "22",
+          "rawLabel": "Symbiotic Dominion",
+          "displayCredit": "琶舞"
+        },
+        {
+          "rawPosition": "23",
+          "rawLabel": "ファーストエイド",
+          "displayCredit": "琶舞"
+        },
+        {
+          "rawPosition": "24",
+          "rawLabel": "ルートキュア",
+          "displayCredit": "明透"
+        },
+        {
+          "rawPosition": "25",
+          "rawLabel": "ブルーナイトダーリン",
+          "displayCredit": "明透"
+        },
+        {
+          "rawPosition": "26",
+          "rawLabel": "illumina",
+          "displayCredit": "明透"
+        },
+        {
+          "rawPosition": "27",
+          "rawLabel": "過去を喰らう",
+          "displayCredit": "花譜"
+        },
+        {
+          "rawPosition": "28",
+          "rawLabel": "エラーソング",
+          "displayCredit": "花譜"
+        },
+        {
+          "rawPosition": "29",
+          "rawLabel": "代替嬉々",
+          "displayCredit": "花譜"
+        },
+        {
+          "rawPosition": "30",
+          "rawLabel": "Chronicle A",
+          "displayCredit": "理芽×明透×氷夏至"
+        },
+        {
+          "rawPosition": "31",
+          "rawLabel": "天命系メルト",
+          "displayCredit": "春猿火×琶舞×佳鏡院"
+        },
+        {
+          "rawPosition": "32",
+          "rawLabel": "歯車",
+          "displayCredit": "幸祜×Sooda×御莉姫"
+        },
+        {
+          "rawPosition": "33",
+          "rawLabel": "わたしの声",
+          "displayCredit": "ヰ世界情緒×硝子宮×美古途",
+          "vocalEntryKey": "fes26-watashi-no-koe"
+        },
+        {
+          "rawPosition": "34",
+          "rawLabel": "スーパーヒーロー",
+          "displayCredit": "花譜×CIEL×夕凪機"
+        },
+        {
+          "rawPosition": "35",
+          "rawLabel": "歌姫",
+          "displayCredit": "花譜×理芽×春猿火×ヰ世界情緒×幸祜×CIEL×Sooda×明透×琶舞×御莉姫×佳鏡院×硝子宮×氷夏至×美古途×夕凪機",
+          "vocalEntryKey": "fes26-utahime"
+        }
+      ]
+    }
+  ]
+}

@@ -937,6 +937,124 @@
           "groups"
         ]
       }
+    },
+    {
+      "id": "c821f922-c10a-4072-9cd2-0fdd4ed385d4",
+      "name": "Sooda",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://diskgarage.com/digaonline/liverepo/236761"
+      ],
+      "pickerGroup": "神椿・関連",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "4e204fac-3ee7-4177-9ca5-c3c19bbaee9c",
+      "name": "明透",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [
+        "ASU"
+      ],
+      "sourceUrls": [
+        "https://kamitsubaki.jp/artist/asu/"
+      ],
+      "pickerGroup": "神椿・関連",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "deeff53f-d187-4edc-90ae-9c2e6a2a21c2",
+      "name": "琶舞",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [
+        "BEMA"
+      ],
+      "sourceUrls": [
+        "https://kamitsubaki.jp/artist/bema/"
+      ],
+      "pickerGroup": "神椿・関連",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "ca6163f9-e9b4-415e-b614-b837ef2bbeef",
+      "name": "硝子宮",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [
+        "GARASUMIYA",
+        "がらすみや"
+      ],
+      "sourceUrls": [
+        "https://girlsrevolutionproject.jp/artist/",
+        "https://girlsrevolutionproject.jp/news/294/"
+      ],
+      "pickerGroup": "神椿・関連",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "69297413-1483-40f4-ba8e-73f05d3a3621",
+      "name": "氷夏至",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [
+        "HINAGESHI",
+        "ひなげし"
+      ],
+      "sourceUrls": [
+        "https://girlsrevolutionproject.jp/artist/",
+        "https://girlsrevolutionproject.jp/news/294/"
+      ],
+      "pickerGroup": "神椿・関連",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "9d78227e-d558-4522-a7f8-78e637bc5f92",
+      "name": "美古途",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [
+        "MIKOTO",
+        "みこと"
+      ],
+      "sourceUrls": [
+        "https://girlsrevolutionproject.jp/artist/",
+        "https://girlsrevolutionproject.jp/news/294/"
+      ],
+      "pickerGroup": "神椿・関連",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
     }
   ],
   "vocalLinks": [
