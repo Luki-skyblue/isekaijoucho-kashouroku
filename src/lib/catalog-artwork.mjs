@@ -1,6 +1,6 @@
 import {ARTWORK_RECORDS,EVENT_ARTWORK_RECORDS} from './catalog-artwork-data.mjs';
 
-const PRIORITY={manual:0,digital_single:1,mv:2,cover:3,live_mv:4,release:5,live:6};
+const PRIORITY={manual:0,digital_single:1,mv:2,cover:3,live_mv:4,release:5,live:6,other_video:7};
 // Extend this list when adopting an image from another confirmed public source.
 const IMAGE_HOSTS=new Set(['i.ytimg.com','img.youtube.com','is1-ssl.mzstatic.com','kamitsubaki.jp','findmestore.thinkr.jp','pbs.twimg.com','linkstorage.linkfire.com','static.wixstatic.com','lantis.jp']);
 

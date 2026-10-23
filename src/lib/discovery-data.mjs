@@ -83,9 +83,10 @@ export function discoveryRoutesForEntry(model,entryId,metadata={}){
  for(const video of song.videos){
   const videoId=youtubeId(video.url),records=arr(metadata.videos).filter(r=>r.videoId===videoId),record=records.length===1?records[0]:null;
   const media=arr(work?.media).find(m=>m.mediaId===video.mediaId),publication=arr(media?.publications).find(p=>safeSongUrl(p.url)===safeSongUrl(video.url)||videoId&&youtubeId(p.url)===videoId);
+  const channel=channelCategory(record?.authorUrl?record:video,metadata);
   // Only explicitly recorded listening facts can qualify a current full route.
   // Current schema availability is unknown; do not turn metadata reads into it.
-  routes.push({key:'media:'+video.mediaId+':'+video.url,kind:videoId?'youtube':'other',category:videoId?channelCategory(record?.authorUrl?record:video,metadata):'other',
+  routes.push({key:'media:'+video.mediaId+':'+video.url,kind:videoId?'youtube':'other',category:videoId?(channel==='unclassified'&&video.kind==='opening_video'?'other':channel):'other',
    exactEntry:true,label:str(record?.authorName||video.authorName)||video.title||'動画',sourceUrl:video.url,date:video.publishedOn,
    current:publication?.availability==='unavailable'?false:null,coverage:'unknown',access:'unknown'});
  }

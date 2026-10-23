@@ -22,6 +22,7 @@ export const SONG_MEDIA_CREDIT_RECORDS:JsonObject[];
 export function registeredMediaCreditsForVideo(entry:JsonObject,video:{mediaId:string;url:string},records?:JsonObject[]):JsonObject[];
 export function registeredSongFactsForEntry(entry:JsonObject,records?:JsonObject[]):JsonObject[];
 export function registeredSongSourcesForEntry(entry:JsonObject,records?:JsonObject[]):JsonObject[];
+export function songTypeForEntry(entry:JsonObject,records?:JsonObject[]):string|null;
 export function missingSongText(review:unknown):string;
 export function songMetadataForEntry(entry:JsonObject,factRecords?:JsonObject[]):JsonObject;
 export function songCreditsForEntry(entry:JsonObject,metadata?:JsonObject,factRecords?:JsonObject[]):{rows:SongDetailData['credits'];originalCredits:SongDetailData['originalCredits'];originalArranger:string|null};

@@ -3,7 +3,7 @@ import {readFileSync, statSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {gzipSync} from 'node:zlib';
 import {performance} from 'node:perf_hooks';
-import {songArtworkCandidatesForEntry} from './song-detail-data.mjs';
+import {songArtworkCandidatesForEntry,songTypeForEntry} from './song-detail-data.mjs';
 import {singerIdsForEntry} from './catalog-people.mjs';
 import {eventArtworkForEvent} from './catalog-artwork.mjs';
 import {isAbsolute} from 'node:path';
@@ -207,7 +207,7 @@ export function queryEntries(model, filters = {}) {
   const q = search.trim().slice(0,100), chosen = new Set(singerIds);
   const rows = [];
   for (const [entryId,e] of model.entries) {
-    const d = e.detail, actual = new Set(singerIdsForEntry(e));
+    const d = e.detail, songType=songTypeForEntry(e), actual = new Set(singerIdsForEntry(e));
     // Supplementing a named candidate cannot close an old incomplete set.
     const exhaustive=closed(e)&&actual.size===new Set(e.singerIds).size;
     if (chosen.size) {
@@ -217,7 +217,7 @@ export function queryEntries(model, filters = {}) {
       if (singerMatch === 'only' && !(exhaustive && actual.size === chosen.size && [...chosen].every(x => actual.has(x)))) continue;
       if (singerMatch === 'subset' && !(exhaustive && [...actual].every(x => chosen.has(x)))) continue;
     }
-    if (selectedKinds.length && !selectedKinds.includes(d.kind === 'medley' ? 'medley' : d.legacySongType)) continue;
+    if (selectedKinds.length && !selectedKinds.includes(d.kind === 'medley' ? 'medley' : songType)) continue;
     const workTitles = id => {
       const w = model.works.get(id)?.detail;
       return w ? [w.title,...w.localizedTitles.map(x => x.title)] : [];
@@ -227,7 +227,7 @@ export function queryEntries(model, filters = {}) {
       if (d.kind !== 'medley' || !d.medleySegments.some(s => [s.rawLabel,s.workTitle,...workTitles(s.workId)].some(t => matches(t,q)))) continue;
       rank = 1;
     }
-    rows.push({entryId,title:d.title,kind:d.kind,displayCredit:d.displayCredit,legacySongType:d.legacySongType,
+    rows.push({entryId,title:d.title,kind:d.kind,displayCredit:d.displayCredit,legacySongType:songType,
       matchKind:rank ? 'component' : 'title',rank,sortTitle:e.sortTitle ?? d.title});
   }
   rows.sort((a,b) => a.rank-b.rank || (sort === 'title_desc' ? -1 : 1)*cmp(a.sortTitle,b.sortTitle) || cmp(a.entryId,b.entryId));

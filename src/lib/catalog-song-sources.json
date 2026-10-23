@@ -109,6 +109,128 @@
       "evidenceUrls": [
         "https://x.com/isekaijoucho/status/1384085061297840137"
       ]
+    },
+    {
+      "checkedOn": "2026-10-23",
+      "status": "active",
+      "key": "recent-norotte-norotte",
+      "entry": {
+        "entryId": "e3b3ebb5-8004-4a5a-af65-dfa338dfb214",
+        "kind": "song_variant",
+        "primaryWorkId": "b7bbc0fe-8c00-4bec-8596-c542a0de5ec4",
+        "title": "呪って呪って",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=eV1hOTU9Ylo",
+      "title": "呪って呪って / covered by ヰ世界情緒",
+      "titleBasis": "editorial",
+      "songType": "cover",
+      "mediaKind": "cover_video",
+      "publishedOn": null,
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://x.com/isekaijoucho/status/2091469694981357996"
+      ],
+      "sourceIds": [
+        "S-135"
+      ]
+    },
+    {
+      "checkedOn": "2026-10-23",
+      "status": "active",
+      "key": "recent-loop-the-room",
+      "entry": {
+        "entryId": "ec7a3087-97d2-416a-a950-21562334b698",
+        "kind": "song_variant",
+        "primaryWorkId": "82276abc-fce5-48a1-8650-2608481bb2bb",
+        "title": "ループザルーム",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=N4nnSxcNr9c",
+      "title": "ループザルーム / covered by ヰ世界情緒",
+      "titleBasis": "editorial",
+      "songType": "cover",
+      "mediaKind": "cover_video",
+      "publishedOn": null,
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://x.com/isekaijoucho/status/2103801760116527378"
+      ],
+      "sourceIds": [
+        "S-135"
+      ]
+    },
+    {
+      "checkedOn": "2026-10-23",
+      "status": "active",
+      "key": "recent-string-theocracy",
+      "entry": {
+        "entryId": "e2035c03-dc9b-4f10-9f2f-06b956556707",
+        "kind": "song_variant",
+        "primaryWorkId": "1f45268e-fb48-4206-a6fe-c1182e0a3c7d",
+        "title": "String Theocracy",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=bi5Kgp9o594",
+      "title": "String Theocracy / covered by ヰ世界情緒",
+      "titleBasis": "editorial",
+      "songType": "cover",
+      "mediaKind": "cover_video",
+      "publishedOn": null,
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://x.com/isekaijoucho/status/2111049525641290184"
+      ],
+      "sourceIds": [
+        "S-135"
+      ]
+    },
+    {
+      "checkedOn": "2026-10-23",
+      "status": "active",
+      "key": "recent-alias",
+      "entry": {
+        "entryId": "81ec6b69-3b37-4f09-a1fb-1b25d156cccd",
+        "kind": "song_variant",
+        "primaryWorkId": "db5f4cbe-1dc2-4b5c-88d4-333e1d589826",
+        "title": "Alias",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=V6ISfJpDthE",
+      "title": "Alias / 偽りのアリス -Retold Tale- OP",
+      "titleBasis": "editorial",
+      "songType": "original",
+      "mediaKind": "opening_video",
+      "publishedOn": null,
+      "evidenceUrls": [
+        "https://isekaijoucho.kamitsubaki.jp/contents/1113598?tag=all"
+      ],
+      "sourceIds": [
+        "S-136"
+      ]
     }
   ],
   "exclusions": [
@@ -1945,6 +2067,97 @@
         "lyricsUrl": "https://piapro.jp/t/q3mE"
       },
       "scopeNote": "Artist-published Piapro lyrics page for this exact solo entry. Existing music credits cross-checked, not duplicated; no video-production credit or sibling inheritance."
+    },
+    {
+      "checkedOn": "2026-10-23",
+      "status": "active",
+      "key": "recent-loop-the-room-writers",
+      "entry": {
+        "entryId": "ec7a3087-97d2-416a-a950-21562334b698",
+        "kind": "song_variant",
+        "primaryWorkId": "82276abc-fce5-48a1-8650-2608481bb2bb",
+        "title": "ループザルーム",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://x.com/isekaijoucho/status/2103801760116527378",
+      "sourceIds": [
+        "S-135"
+      ],
+      "creditBasis": [],
+      "credits": {
+        "lyricist": [
+          "ルシノ"
+        ],
+        "composer": [
+          "ルシノ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "checkedOn": "2026-10-23",
+      "status": "active",
+      "key": "recent-string-theocracy-writers",
+      "entry": {
+        "entryId": "e2035c03-dc9b-4f10-9f2f-06b956556707",
+        "kind": "song_variant",
+        "primaryWorkId": "1f45268e-fb48-4206-a6fe-c1182e0a3c7d",
+        "title": "String Theocracy",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://x.com/isekaijoucho/status/2111049525641290184",
+      "sourceIds": [
+        "S-135"
+      ],
+      "creditBasis": [],
+      "credits": {
+        "lyricist": [
+          "Cassie Wei"
+        ],
+        "composer": [
+          "Cassie Wei",
+          "Yamato Kasai"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "checkedOn": "2026-10-23",
+      "status": "active",
+      "key": "recent-alias-tieup",
+      "entry": {
+        "entryId": "81ec6b69-3b37-4f09-a1fb-1b25d156cccd",
+        "kind": "song_variant",
+        "primaryWorkId": "db5f4cbe-1dc2-4b5c-88d4-333e1d589826",
+        "title": "Alias",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://isekaijoucho.kamitsubaki.jp/contents/1113598?tag=all",
+      "sourceIds": [
+        "S-136"
+      ],
+      "creditBasis": [],
+      "metadata": {
+        "tieUp": "「偽りのアリス -Retold Tale-」オープニング主題歌"
+      }
     }
   ],
   "mediaCredits": [

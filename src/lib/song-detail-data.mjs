@@ -45,6 +45,12 @@ export function registeredSongSourcesForEntry(entry,records=SONG_SOURCE_RECORDS)
   str(r.entry.displayCredit)===str(entry.detail.displayCredit)&&safeSongUrl(r.url)&&
   (r.kind==='youtube'?youtubeId(r.url):r.kind==='x'?/^https:\/\/(?:x|twitter)\.com\/[^/]+\/status\/\d+$/.test(r.url):r.kind==='digital_single'));
 }
+// New owner drafts have no legacy classification. A sourced classification is
+// a display fallback for the exact entry, never a change to its DB review state.
+export function songTypeForEntry(entry,records=SONG_SOURCE_RECORDS){
+ if(entry?.detail?.legacySongType)return entry.detail.legacySongType;
+ return known(registeredSongSourcesForEntry(entry,records).map(r=>r.songType).filter(t=>['original','cover','collaboration','variant'].includes(t)));
+}
 function sourceReleaseMatches(source,release){
  return source.kind==='digital_single'&&str(source.catalogNumber)!==''&&source.catalogNumber===release.edition?.catalogNumber&&
   source.trackNumber===release.trackNumber;
@@ -98,7 +104,7 @@ export function songCreditsForEntry(entry,metadata=songMetadataForEntry(entry),f
   // Explicit original solo MV credit, retained from the user-supplied description.
   if(!values.length&&role==='arranger'&&exactSiriusSolo(entry))values=['傘村トータ'];
   if(!values.length&&!['not_found','not_applicable'].includes(metadata.fieldReview?.credits?.[role]?.outcome)){
-   const candidates=unique(facts.filter(r=>Array.isArray(r.credits?.[role])&&r.credits[role].length&&r.credits[role].every(n=>typeof n==='string'&&n.trim())).map(r=>({names:r.credits[role],scope:r.creditScopes?.[role]??(entry.detail.legacySongType==='cover'&&['lyricist','composer'].includes(role)?'original':'version')})).filter(c=>['version','work','original'].includes(c.scope)&&(role!=='arranger'||c.scope==='version')));
+   const candidates=unique(facts.filter(r=>Array.isArray(r.credits?.[role])&&r.credits[role].length&&r.credits[role].every(n=>typeof n==='string'&&n.trim())).map(r=>({names:r.credits[role],scope:r.creditScopes?.[role]??(songTypeForEntry(entry)==='cover'&&['lyricist','composer'].includes(role)?'original':'version')})).filter(c=>['version','work','original'].includes(c.scope)&&(role!=='arranger'||c.scope==='version')));
    if(candidates.length===1){values=candidates[0].names;scope=candidates[0].scope;}
   }
   return {role,scope,names:values,people:values.map(name=>({name,personKey:personKeyForCredit(name,credits.filter(c=>c.role===role&&c.scope===scope))})),value:values.join('・')||null,review:metadata.fieldReview?.credits?.[role]??null};
@@ -152,7 +158,13 @@ function songVideosForEntry(entry,work,sourceRecords,sourceExclusions,mediaCredi
  }
  for(const source of registeredSongSourcesForEntry(entry,sourceRecords).filter(r=>['youtube','x'].includes(r.kind))){
   const existing=videos.find(v=>sourceKey(v.url)===sourceKey(source.url));
-  if(existing){existing.authorName=source.authorName??null;existing.authorUrl=source.authorUrl??null;continue;}
+  if(existing){
+   existing.authorName=source.authorName??null;existing.authorUrl=source.authorUrl??null;
+   existing.title??=source.title??null;
+   if(!existing.kind||existing.kind==='unknown')existing.kind=source.mediaKind??null;
+   existing.publishedOn??=source.publishedOn??null;
+   continue;
+  }
   const id=youtubeId(source.url);
   const canonical=arr(work.media).find(m=>arr(m.publications).some(p=>sourceKey(p.url)===sourceKey(source.url)));
   const publication=arr(canonical?.publications).find(p=>sourceKey(p.url)===sourceKey(source.url));
@@ -197,7 +209,7 @@ function songLivesForEntry(entry,eventRecords=EVENT_ARTWORK_RECORDS){
 }
 function artworkCandidates(entry,videos,releases,lives,{entryRecords=ARTWORK_RECORDS,releaseRecords=RELEASE_ARTWORK_RECORDS,eventRecords=EVENT_ARTWORK_RECORDS,sourceExclusions}={}){
  const candidates=catalogArtworkCandidatesForEntry(entry,entryRecords).map(c=>({...c,date:c.date??videos.find(v=>youtubeId(v.url)&&youtubeId(v.url)===youtubeId(c.sourceUrl))?.publishedOn??null}));
- const kinds={music_video:'mv',cover_video:'cover',cover_duet_video:'cover',live_video:'live_mv'};
+ const kinds={music_video:'mv',cover_video:'cover',cover_duet_video:'cover',live_video:'live_mv',opening_video:'other_video'};
  for(const video of videos)if(kinds[video.kind]&&video.imageUrl)candidates.push({kind:kinds[video.kind],imageUrl:video.imageUrl,sourceUrl:video.url,date:video.publishedOn});
  for(const release of releases){
   const registered=releaseRecords.filter(x=>x.familyId===release.family?.familyId&&x.editionId===release.edition?.editionId);
@@ -221,7 +233,7 @@ export function buildSongDetail(entry,work={},options={}){
  if(!entry?.detail)return null;
  const d=entry.detail,metadata=songMetadataForEntry(entry,options.factRecords),creditData=songCreditsForEntry(entry,metadata,options.factRecords),videos=songVideosForEntry(entry,work,options.sourceRecords,options.sourceExclusions,options.mediaCreditRecords),releases=songReleasesForEntry(entry,work,options.releaseRecords,options.sourceRecords),allLives=songLivesForEntry(entry,options.eventRecords);
  const images=artworkCandidates(entry,videos,releases,allLives,options);
- return {detail:{...d,singers:singersForEntry(entry)},metadata,credits:creditData.rows,originalCredits:creditData.originalCredits,originalArranger:creditData.originalArranger,
+ return {detail:{...d,legacySongType:songTypeForEntry(entry,options.sourceRecords),singers:singersForEntry(entry)},metadata,credits:creditData.rows,originalCredits:creditData.originalCredits,originalArranger:creditData.originalArranger,
   artwork:images[0]??null,artworkCandidates:images,listenUrl:videos[0]?.url??releases.find(r=>r.externalUrl)?.externalUrl??null,videos,releases,lives:allLives,
   hasUncertainLives:allLives.some(x=>x.uncertain),comparison:entry.compare??null,
   versionLabel:d.entryId===SIRIUS_DUET&&d.primaryWorkId===SIRIUS_WORK?'デュエット':null};

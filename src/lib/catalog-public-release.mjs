@@ -2,7 +2,7 @@
 import {randomUUID,createHash} from 'node:crypto';
 import {readFileSync,statSync} from 'node:fs';
 import {validateExport,PURPOSE,PUBLIC_PURPOSE,liveCandidatesApplicable,applyLiveFilterCandidates} from './private-read-model.mjs';
-import {songMetadataForEntry} from './song-detail-data.mjs';
+import {songMetadataForEntry,songTypeForEntry} from './song-detail-data.mjs';
 
 const scalar=Symbol('scalar'),url=Symbol('url'),absentUrl=Symbol('absent-url');
 const obj=(names='',children={})=>({...Object.fromEntries(names.split(' ').filter(Boolean).map(k=>[k,scalar])),...children});
@@ -110,6 +110,7 @@ export function createPublicRelease(input,{releaseId=randomUUID(),createdAt=new 
   const p=project(spec,payload(r));p._exportId=releaseId;
   if(r.record_type==='entry'){
    const e=base.entries.get(r.record_id);p.visibility='listed';
+   p.detail.legacySongType=songTypeForEntry(e);
    p.detail.songMetadata=project(songMetadata,songMetadataForEntry(e));
    p.candidateSetExhaustive=e.candidateSetExhaustive===true&&(e.unresolvedTokens??[]).length===0&&e.singerIds.length>0&&
     !(e.flags??[]).some(x=>['group_without_membership','role_or_identity_review_voicebank'].includes(x));

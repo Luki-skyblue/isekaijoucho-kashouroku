@@ -21,7 +21,7 @@ export function CatalogSongDetail({song,initialTab='info'}:{song:SongDetailData;
  const originalAuthors=song.originalCredits.filter(c=>['lyricist','composer'].includes(c.role)&&!song.credits.some(row=>songCreditRole(d,row)==='original_'+c.role&&row.names.includes(c.name)));
  const originalInfo=d.legacySongType==='cover'&&(str(m.originalArtist)||str(m.originalVocal)||song.originalArranger||originalAuthors.length>0);
  const hero=song.artwork;
- const imageUrl=hero?.imageUrl??null,heroShape=hero&&(['mv','cover','live_mv'].includes(hero.kind)||(hero.kind==='manual'&&youtubeId(hero.sourceUrl)))?'video':'jacket';
+ const imageUrl=hero?.imageUrl??null,heroShape=hero&&(['mv','cover','live_mv','other_video'].includes(hero.kind)||(hero.kind==='manual'&&youtubeId(hero.sourceUrl)))?'video':'jacket';
  const info=<>
   <dl className="song-detail-facts"><dt>歌唱</dt><dd>{singers?<SingerNames detail={d}/>:<Value value={singers}/>}</dd><dt>楽曲区分</dt><dd><Value value={d.kind==='medley'?'メドレー':CATEGORIES[str(d.legacySongType)]}/></dd>
    <dt>初出</dt><dd><First value={m.firstAppearance} review={review.firstAppearance}/></dd>
@@ -41,7 +41,7 @@ export function CatalogSongDetail({song,initialTab='info'}:{song:SongDetailData;
  const videos=song.videos.length?<div className="song-detail-video-list">{song.videos.map(video=><article className="song-detail-video" key={video.mediaId+'|'+video.url}>
   <a className="song-detail-video-thumbnail" href={video.url} target="_blank" rel="noopener noreferrer" aria-label={(video.title||'動画')+'を開く'}><SongDetailArtwork url={video.imageUrl} className="song-detail-video-image"/><span className="song-detail-play" aria-hidden="true">▶</span></a>
   <div className="song-detail-video-copy"><a href={video.url} className="song-detail-video-title" target="_blank" rel="noopener noreferrer"><strong className={video.title?undefined:'song-detail-state'}>{video.title||'タイトル未取得'}</strong></a>
-   <div className="song-detail-video-meta">{songListenLabel(video.url)==='Xで見る'&&<span>X</span>}<span className={video.kind&&video.kind!=='unknown'?undefined:'song-detail-state'}>{({music_video:'MV',cover_video:'歌ってみた',cover_duet_video:'歌ってみた',live_video:'LIVE映像'} as Record<string,string>)[video.kind??'']||'種別未取得'}</span>{video.publishedOn?<time dateTime={video.publishedOn}>投稿日 {displayDate(video.publishedOn,video.publishedOn)}</time>:<span className="song-detail-state">投稿日未取得</span>}</div>
+   <div className="song-detail-video-meta">{songListenLabel(video.url)==='Xで見る'&&<span>X</span>}<span className={video.kind&&video.kind!=='unknown'?undefined:'song-detail-state'}>{({music_video:'MV',cover_video:'歌ってみた',cover_duet_video:'歌ってみた',live_video:'LIVE映像',opening_video:'OP映像'} as Record<string,string>)[video.kind??'']||'種別未取得'}</span>{video.publishedOn?<time dateTime={video.publishedOn}>投稿日 {displayDate(video.publishedOn,video.publishedOn)}</time>:<span className="song-detail-state">投稿日未取得</span>}</div>
    {video.credits.length>0&&<details className="song-detail-video-credits"><summary>クレジット</summary><dl className="song-detail-facts">{video.credits.map((c,i)=><div className="song-detail-fact-pair" key={c.role+'|'+c.name+'|'+i}><dt>{creditRoleLabel(c.role)}</dt><dd><CreditName name={c.name} personKey={c.entityId}/></dd></div>)}</dl></details>}
   </div>
  </article>)}</div>:<Empty review={review.media}/>;
