@@ -3,7 +3,7 @@
 import {songDetailFromModel,songArtworkCandidatesForEntry} from './song-detail-data.mjs';
 import {creditNameKey,personKeyForCredit,entityForId,singersForEntry,billingPeopleForEntry,membershipsForEntity} from './catalog-people.mjs';
 import {catalogNameMatches} from './catalog-name-search.mjs';
-import {creditRoleLabel,orderedCreditRoles} from './catalog-credit-labels.mjs';
+import {creditRoleLabel,orderedCreditRoles,songCreditRole} from './catalog-credit-labels.mjs';
 export {creditNameKey} from './catalog-people.mjs';
 
 const arr=x=>Array.isArray(x)?x:[],text=x=>typeof x==='string'?x:'';
@@ -52,8 +52,8 @@ function indexFor(model){
   for(const singer of singersForEntry(entry))if(uuid.test(text(singer.entityId)))add(singer.entityId,text(singer.name),entryId,'vocal');
   const billing=billingPeopleForEntry(entry);billedGroups.set(entryId,new Set(billing.filter(p=>p.type==='group').map(p=>p.id)));
   for(const entity of billing)if(entity.type==='group'||!song.detail.singers.some(s=>s.entityId===entity.id))add(entity.id,entity.name,entryId,'artist');
-  for(const credit of song.credits)for(const person of credit.people)add(person.personKey,person.name,entryId,credit.role);
-  if(entry.detail.legacySongType==='cover'&&song.originalArranger)add(personKeyForCredit(song.originalArranger),song.originalArranger,entryId,'original_arranger');
+  for(const credit of song.credits)for(const person of credit.people)add(person.personKey,person.name,entryId,songCreditRole(entry.detail,credit));
+  if(entry.detail.legacySongType==='cover')for(const credit of song.originalCredits)if(['lyricist','composer','arranger'].includes(credit.role))add(credit.personKey,credit.name,entryId,'original_'+credit.role);
   for(const video of song.videos)for(const credit of video.credits)add(personKeyForCredit(credit.name,[credit]),credit.name,entryId,`video:${credit.role}`);
  }
  const result={people,aliases,billedGroups};cache.set(model,result);return result;

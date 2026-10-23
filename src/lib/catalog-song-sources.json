@@ -1490,6 +1490,158 @@
         ]
       },
       "scopeNote": "Explicit arrangement credit for this vocal entry and its linked original MV; no composer-based default or inheritance by sibling versions."
+    },
+    {
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "key": "video-credit-batch2-364df801-b656-4862-910e-87953d9bd670",
+      "entry": {
+        "entryId": "364df801-b656-4862-910e-87953d9bd670",
+        "kind": "song_variant",
+        "primaryWorkId": "f85e4b9b-abf0-5fa3-ba62-86854320635e",
+        "title": "眠りゆく芽吹き",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "mopi・下村陽子"
+        ],
+        [
+          "work",
+          "composer",
+          "mopi・下村陽子"
+        ],
+        [
+          "work",
+          "lyricist",
+          "mopi"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/4292/",
+      "credits": {
+        "arranger": [
+          "mopi・下村陽子"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      }
+    },
+    {
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "key": "video-credit-batch2-e3f40552-ccec-4d24-ba2f-0290904e83da",
+      "entry": {
+        "entryId": "e3f40552-ccec-4d24-ba2f-0290904e83da",
+        "kind": "song_variant",
+        "primaryWorkId": "fde6aeba-a961-59b8-879f-a6552106fd1a",
+        "title": "お話の続きは、また明日。（Episode Haru Arrange）",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://x.com/clrfnd/status/2054890971247042854",
+      "credits": {
+        "lyricist": [
+          "hako 生活"
+        ],
+        "composer": [
+          "hako 生活"
+        ],
+        "arranger": [
+          "はるまきごはん"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original",
+        "arranger": "version"
+      }
+    },
+    {
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "key": "video-credit-batch2-8c365218-6725-49d2-9273-a467cb804a85",
+      "entry": {
+        "entryId": "8c365218-6725-49d2-9273-a467cb804a85",
+        "kind": "song_variant",
+        "primaryWorkId": "c7bfb311-a858-5516-87b0-08cfe6a9e70d",
+        "title": "デリケートに好きして",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://x.com/PIEDPIPER2045/status/2032037534612799539",
+      "credits": {
+        "lyricist": [
+          "古田 喜昭"
+        ],
+        "composer": [
+          "古田 喜昭"
+        ],
+        "REMIX": [
+          "P.U.O"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original",
+        "REMIX": "version"
+      }
+    },
+    {
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "key": "video-credit-batch2-74072cf8-b29e-4b9e-91ee-5ca9cfb43c8d",
+      "entry": {
+        "entryId": "74072cf8-b29e-4b9e-91ee-5ca9cfb43c8d",
+        "kind": "song_variant",
+        "primaryWorkId": "06698864-577b-504f-b374-a0d4fb9a02aa",
+        "title": "いけないボーダーライン",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "コモリタミノル"
+        ],
+        [
+          "work",
+          "composer",
+          "コモリタミノル"
+        ],
+        [
+          "work",
+          "lyricist",
+          "西直紀"
+        ]
+      ],
+      "url": "https://www.youtube.com/watch?v=i5RE93Exwcs",
+      "credits": {
+        "arranger": [
+          "P.U.O"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      }
     }
   ],
   "mediaCredits": [
@@ -1767,6 +1919,56 @@
         }
       ],
       "scopeNote": "Credits published with the linked recording/MV. Only this exact displayed media and vocal entry; not the work or sibling live versions. Source role/name wording retained; no personnel aliases inferred."
+    },
+    {
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "key": "video-credit-batch2-e3f40552-ccec-4d24-ba2f-0290904e83da-media",
+      "entry": {
+        "entryId": "e3f40552-ccec-4d24-ba2f-0290904e83da",
+        "kind": "song_variant",
+        "primaryWorkId": "fde6aeba-a961-59b8-879f-a6552106fd1a",
+        "title": "お話の続きは、また明日。（Episode Haru Arrange）",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "mediaId": "c2c85c29-5dfb-5546-8644-9fea70800297",
+      "mediaUrl": "https://www.youtube.com/watch?v=-IV_zmh7pmQ",
+      "url": "https://prtimes.jp/main/html/rd/p/000000148.000045335.html",
+      "credits": [
+        {
+          "role": "動画",
+          "name": "ととりか"
+        }
+      ]
+    },
+    {
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "key": "video-credit-batch2-8c365218-6725-49d2-9273-a467cb804a85-media",
+      "entry": {
+        "entryId": "8c365218-6725-49d2-9273-a467cb804a85",
+        "kind": "song_variant",
+        "primaryWorkId": "c7bfb311-a858-5516-87b0-08cfe6a9e70d",
+        "title": "デリケートに好きして",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "mediaId": "8680237b-32e5-5d0b-ac2f-f10131d13c2c",
+      "mediaUrl": "https://www.youtube.com/watch?v=cs2uXyID0NI",
+      "url": "https://x.com/PIEDPIPER2045/status/2032037534612799539",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "bakumae"
+        }
+      ]
     }
   ]
 }

@@ -4,7 +4,7 @@ import {missingSongText,safeSongUrl,songListenLabel,youtubeId,type SongDetailDat
 import {SongDetailTabs} from './song-detail-tabs';
 import {SongDetailArtwork} from './song-detail-artwork';
 import {CreditName,SingerNames} from './person-name';
-import {creditRoleLabel} from '@/lib/catalog-credit-labels.mjs';
+import {creditRoleLabel,songCreditRole} from '@/lib/catalog-credit-labels.mjs';
 import './song-detail.css';
 
 const CATEGORIES:Record<string,string>={original:'オリジナル',cover:'カバー',collaboration:'コラボ',variant:'その他'};
@@ -18,7 +18,8 @@ export function CatalogSongDetail({song,initialTab='info'}:{song:SongDetailData;
  const {detail:d,metadata:m}=song,review=asObject(m.fieldReview),title=str(d.title),entryId=str(d.entryId),siblings=asArray(d.relatedVariants),compare=asArray(song.comparison?.entries);
  const singers=str(d.displayCredit)||singerNames(d.singers),segments=asArray(d.medleySegments),medleys=asArray(d.containingMedleys),variations=asArray(d.variations).map(variation).filter(Boolean);
  const firstReview=asObject(m.firstAppearanceReview),fullVisible=firstReview.coverage==='partial'&&firstReview.partialConfirmed===true;
- const originalInfo=d.legacySongType==='cover'&&(str(m.originalArtist)||str(m.originalVocal)||song.originalArranger);
+ const originalAuthors=song.originalCredits.filter(c=>['lyricist','composer'].includes(c.role)&&!song.credits.some(row=>songCreditRole(d,row)==='original_'+c.role&&row.names.includes(c.name)));
+ const originalInfo=d.legacySongType==='cover'&&(str(m.originalArtist)||str(m.originalVocal)||song.originalArranger||originalAuthors.length>0);
  const hero=song.artwork;
  const imageUrl=hero?.imageUrl??null,heroShape=hero&&(['mv','cover','live_mv'].includes(hero.kind)||(hero.kind==='manual'&&youtubeId(hero.sourceUrl)))?'video':'jacket';
  const info=<>
@@ -29,9 +30,9 @@ export function CatalogSongDetail({song,initialTab='info'}:{song:SongDetailData;
    {str(d.editorialOriginLabel)&&<><dt>バージョン名</dt><dd>{str(d.editorialOriginLabel)}</dd></>}
    {variations.length>0&&<><dt>バリエーション</dt><dd>{variations.join(' / ')}</dd></>}
   </dl>
-  <div className="song-detail-credits"><dl className="song-detail-facts">{song.credits.map(c=><div className="song-detail-fact-pair" key={c.role}><dt>{creditRoleLabel(c.role)}</dt><dd>{c.people.length?c.people.map((person,i)=><span key={person.name}>{i>0?'・':''}<CreditName name={person.name} personKey={person.personKey}/></span>):<Value value={c.value} review={c.review}/>}</dd></div>)}</dl></div>
+  <div className="song-detail-credits"><dl className="song-detail-facts">{song.credits.map(c=><div className="song-detail-fact-pair" key={c.role}><dt>{creditRoleLabel(songCreditRole(d,c))}</dt><dd>{c.people.length?c.people.map((person,i)=><span key={person.name}>{i>0?'・':''}<CreditName name={person.name} personKey={person.personKey}/></span>):<Value value={c.value} review={c.review}/>}</dd></div>)}</dl></div>
   {originalInfo&&<div className="song-detail-original"><h2>原曲</h2><dl className="song-detail-facts">
-   {str(m.originalArtist)&&<><dt>アーティスト</dt><dd>{str(m.originalArtist)}</dd></>}{str(m.originalVocal)&&<><dt>歌唱</dt><dd>{str(m.originalVocal)}</dd></>}{song.originalArranger&&<><dt>編曲</dt><dd><CreditName name={song.originalArranger}/></dd></>}
+   {str(m.originalArtist)&&<><dt>アーティスト</dt><dd>{str(m.originalArtist)}</dd></>}{str(m.originalVocal)&&<><dt>歌唱</dt><dd>{str(m.originalVocal)}</dd></>}{originalAuthors.map(c=><div className="song-detail-fact-pair" key={c.role+'|'+c.name}><dt>{creditRoleLabel(c.role)}</dt><dd><CreditName name={c.name} personKey={c.personKey}/></dd></div>)}{song.originalArranger&&<><dt>編曲</dt><dd><CreditName name={song.originalArranger}/></dd></>}
   </dl></div>}
   {safeSongUrl(m.lyricsUrl)&&<dl className="song-detail-facts song-detail-lyrics"><dt>歌詞</dt><dd><a href={safeSongUrl(m.lyricsUrl)!} target="_blank" rel="noopener noreferrer">{new URL(str(m.lyricsUrl)).hostname==='piapro.jp'?'piaproで読む':'歌詞を見る'} ↗</a></dd></dl>}
   {segments.length>0&&<div className="song-detail-supplement"><h2>構成曲</h2><ol>{segments.map((segment,i)=><li key={str(segment.workId)+'-'+i}>{validId(str(segment.workId))?<Link href={'/songs/'+str(segment.workId)}>{str(segment.rawLabel||segment.workTitle)}</Link>:str(segment.rawLabel||segment.workTitle)}</li>)}</ol></div>}

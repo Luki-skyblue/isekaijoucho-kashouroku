@@ -19,7 +19,8 @@
 .live-detail-program-row{display:grid;grid-template-columns:38px minmax(0,1fr) auto;align-items:baseline;gap:14px;padding:14px 0;border-bottom:1px solid var(--hair);font-size:14px;line-height:1.8}
 .live-detail-position{font-family:var(--mono);font-size:11px;color:var(--quiet);overflow-wrap:anywhere}
 .live-detail-program-title{font-weight:400;min-width:0;overflow-wrap:anywhere}
-.live-detail-song-link{color:inherit;text-decoration:underline;text-decoration-color:var(--hair);text-underline-offset:4px;display:block}.live-detail-song-link:hover{color:var(--accent-deep);text-decoration-color:currentColor}
+.live-detail-song-link{color:inherit;text-decoration:underline;text-decoration-color:var(--hair);text-underline-offset:4px}.live-detail-song-link:hover{color:var(--accent-deep);text-decoration-color:currentColor}
+.live-detail-program-vocals{font-size:12px;color:var(--quiet);font-weight:400}.live-detail-other-vocals .live-detail-program-title{color:var(--quiet)}
 .live-detail-program-tag{font-size:10px;color:var(--quiet)}
 .live-detail-supplements{margin-top:32px;padding-top:28px;border-top:1px solid var(--hair)}
 .live-detail-supplements>.live-detail-session{margin-top:20px}

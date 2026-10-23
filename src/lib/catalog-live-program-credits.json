@@ -1,0 +1,634 @@
+{
+  "schemaVersion": 1,
+  "purpose": "SOURCE_SCOPED_LIVE_PROGRAM_CREDITS_V1",
+  "records": [
+    {
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "sourceId": "S-122",
+      "url": "https://findmestore.thinkr.jp/products/ktr-000-0107",
+      "eventId": "51eab8f7-0f89-54b4-bbc4-c55744895410",
+      "title": "現象",
+      "occurrenceId": "3d8f0930-2800-558f-9dcc-3d0ce9d52a4f",
+      "officialDate": "2022-04-16",
+      "sessionLabel": null,
+      "programId": "4cf6958a-939c-529e-bee8-bce59507b606",
+      "items": [
+        {
+          "programItemId": "903c5cb3-fd01-5216-a8f5-b59114e47f2e",
+          "rawLabel": "古傷",
+          "displayCredit": "春猿火×幸祜",
+          "people": [
+            {
+              "entityId": "b8307e06-2046-5415-a1f7-0b892dd41041",
+              "name": "春猿火"
+            },
+            {
+              "entityId": "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+              "name": "幸祜"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "ac562e26-7088-508f-aeb9-4eb6fa31ad36",
+          "rawLabel": "牢獄",
+          "displayCredit": "春猿火×ヰ世界情緒",
+          "people": [
+            {
+              "entityId": "b8307e06-2046-5415-a1f7-0b892dd41041",
+              "name": "春猿火"
+            },
+            {
+              "entityId": "81a01233-230e-50a8-a309-11275c794cd0",
+              "name": "ヰ世界情緒"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "805c9fd6-27c8-5792-bc86-090039830d39",
+          "rawLabel": "泡沫",
+          "displayCredit": "理芽×ヰ世界情緒",
+          "people": [
+            {
+              "entityId": "ae41fa12-3b09-52c0-bc08-1d9218492391",
+              "name": "理芽"
+            },
+            {
+              "entityId": "81a01233-230e-50a8-a309-11275c794cd0",
+              "name": "ヰ世界情緒"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "2900a4c2-a7cc-5902-b175-2cd1a2196773",
+          "rawLabel": "魔法",
+          "displayCredit": "花譜×理芽",
+          "people": [
+            {
+              "entityId": "36129afb-1fe8-5255-958e-b090e17c7905",
+              "name": "花譜"
+            },
+            {
+              "entityId": "ae41fa12-3b09-52c0-bc08-1d9218492391",
+              "name": "理芽"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "3186ff0b-c844-5bb2-af88-cc69f6a87464",
+          "rawLabel": "共鳴",
+          "displayCredit": "V.W.P",
+          "people": [
+            {
+              "entityId": "ad4bc5e2-01f4-574a-91a0-69ad7ed0dfe0",
+              "name": "V.W.P"
+            }
+          ],
+          "singerSetComplete": false
+        },
+        {
+          "programItemId": "73930d02-3ac4-5151-bd7a-08e5bbdb1252",
+          "rawLabel": "宣戦",
+          "displayCredit": "V.W.P",
+          "people": [
+            {
+              "entityId": "ad4bc5e2-01f4-574a-91a0-69ad7ed0dfe0",
+              "name": "V.W.P"
+            }
+          ],
+          "singerSetComplete": false
+        },
+        {
+          "programItemId": "98bfe042-417c-5d83-a778-8d2bb98955f8",
+          "rawLabel": "祭壇",
+          "displayCredit": "V.W.P",
+          "people": [
+            {
+              "entityId": "ad4bc5e2-01f4-574a-91a0-69ad7ed0dfe0",
+              "name": "V.W.P"
+            }
+          ],
+          "singerSetComplete": false
+        },
+        {
+          "programItemId": "9376ff07-6d34-5ed1-9011-297c76559bca",
+          "rawLabel": "電脳",
+          "displayCredit": "V.W.P",
+          "people": [
+            {
+              "entityId": "ad4bc5e2-01f4-574a-91a0-69ad7ed0dfe0",
+              "name": "V.W.P"
+            }
+          ],
+          "singerSetComplete": false
+        },
+        {
+          "programItemId": "91bff3d3-a3b8-5fab-b216-41c11604f7b7",
+          "rawLabel": "言霊",
+          "displayCredit": "V.W.P",
+          "people": [
+            {
+              "entityId": "ad4bc5e2-01f4-574a-91a0-69ad7ed0dfe0",
+              "name": "V.W.P"
+            }
+          ],
+          "singerSetComplete": false
+        },
+        {
+          "programItemId": "b112da86-a6eb-5ed7-8853-de6a90beef96",
+          "rawLabel": "輪廻",
+          "displayCredit": "V.W.P",
+          "people": [
+            {
+              "entityId": "ad4bc5e2-01f4-574a-91a0-69ad7ed0dfe0",
+              "name": "V.W.P"
+            }
+          ],
+          "singerSetComplete": false
+        },
+        {
+          "programItemId": "52a741ef-1075-57d2-9763-c81d3f9b54ff",
+          "rawLabel": "残火",
+          "displayCredit": "花譜×春猿火",
+          "people": [
+            {
+              "entityId": "36129afb-1fe8-5255-958e-b090e17c7905",
+              "name": "花譜"
+            },
+            {
+              "entityId": "b8307e06-2046-5415-a1f7-0b892dd41041",
+              "name": "春猿火"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "a68a7ae1-27ed-5892-b19f-89ed641905c2",
+          "rawLabel": "魔的",
+          "displayCredit": "花譜×理芽",
+          "people": [
+            {
+              "entityId": "36129afb-1fe8-5255-958e-b090e17c7905",
+              "name": "花譜"
+            },
+            {
+              "entityId": "ae41fa12-3b09-52c0-bc08-1d9218492391",
+              "name": "理芽"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "beef6b05-ef83-5185-885c-e26f81841101",
+          "rawLabel": "素的",
+          "displayCredit": "理芽×幸祜",
+          "people": [
+            {
+              "entityId": "ae41fa12-3b09-52c0-bc08-1d9218492391",
+              "name": "理芽"
+            },
+            {
+              "entityId": "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+              "name": "幸祜"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "851bcc84-8ba1-59a6-8e95-2921e5892686",
+          "rawLabel": "刻印",
+          "displayCredit": "ヰ世界情緒×幸祜",
+          "people": [
+            {
+              "entityId": "81a01233-230e-50a8-a309-11275c794cd0",
+              "name": "ヰ世界情緒"
+            },
+            {
+              "entityId": "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+              "name": "幸祜"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "5235ecb7-1b79-5c58-944a-bb3bbc04949e",
+          "rawLabel": "深淵",
+          "displayCredit": "ヰ世界情緒 feat. 花譜",
+          "people": [
+            {
+              "entityId": "81a01233-230e-50a8-a309-11275c794cd0",
+              "name": "ヰ世界情緒"
+            },
+            {
+              "entityId": "36129afb-1fe8-5255-958e-b090e17c7905",
+              "name": "花譜"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "be5b3982-be70-5369-b937-dd934331b58a",
+          "rawLabel": "変身",
+          "displayCredit": "V.W.P",
+          "people": [
+            {
+              "entityId": "ad4bc5e2-01f4-574a-91a0-69ad7ed0dfe0",
+              "name": "V.W.P"
+            }
+          ],
+          "singerSetComplete": false
+        },
+        {
+          "programItemId": "8e849395-34fd-5ecf-92b2-84d8e22fa5d6",
+          "rawLabel": "玩具",
+          "displayCredit": "V.W.P",
+          "people": [
+            {
+              "entityId": "ad4bc5e2-01f4-574a-91a0-69ad7ed0dfe0",
+              "name": "V.W.P"
+            }
+          ],
+          "singerSetComplete": false
+        },
+        {
+          "programItemId": "ced85641-d76e-5ad6-8eed-89ca97f1eea9",
+          "rawLabel": "秘密",
+          "displayCredit": "V.W.P",
+          "people": [
+            {
+              "entityId": "ad4bc5e2-01f4-574a-91a0-69ad7ed0dfe0",
+              "name": "V.W.P"
+            }
+          ],
+          "singerSetComplete": false
+        },
+        {
+          "programItemId": "e3b199c1-92c6-50f9-9410-ff3d7a897e39",
+          "rawLabel": "定命",
+          "displayCredit": "V.W.P",
+          "people": [
+            {
+              "entityId": "ad4bc5e2-01f4-574a-91a0-69ad7ed0dfe0",
+              "name": "V.W.P"
+            }
+          ],
+          "singerSetComplete": false
+        },
+        {
+          "programItemId": "bce3d10c-7df3-575e-b5da-097612c7f233",
+          "rawLabel": "魔女(真)",
+          "displayCredit": "V.W.P",
+          "people": [
+            {
+              "entityId": "ad4bc5e2-01f4-574a-91a0-69ad7ed0dfe0",
+              "name": "V.W.P"
+            }
+          ],
+          "singerSetComplete": false
+        }
+      ]
+    },
+    {
+      "status": "active",
+      "checkedOn": "2026-10-23",
+      "sourceId": "S-122",
+      "url": "https://findmestore.thinkr.jp/products/ktr-000-0107",
+      "eventId": "718716b6-2d61-55f1-8fe9-ba50d58b8622",
+      "title": "魔女集会",
+      "occurrenceId": "ccc4eab7-17f7-56b5-b02b-0dbf6a30359b",
+      "officialDate": "2022-04-15",
+      "sessionLabel": null,
+      "programId": "ca4c0404-1435-598d-a6c8-d143d15a2dd3",
+      "items": [
+        {
+          "programItemId": "f22db3be-64a0-538c-b3fb-33e7ddac14d2",
+          "rawLabel": "白昼夢",
+          "displayCredit": "幸祜",
+          "people": [
+            {
+              "entityId": "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+              "name": "幸祜"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "c7c66511-247d-537a-a5b3-abefa4c59580",
+          "rawLabel": "レイヴン・フリージア",
+          "displayCredit": "幸祜",
+          "people": [
+            {
+              "entityId": "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+              "name": "幸祜"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "c20e046d-2587-549f-88fa-4990686a2b66",
+          "rawLabel": "瞑目",
+          "displayCredit": "幸祜",
+          "people": [
+            {
+              "entityId": "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+              "name": "幸祜"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "309c9508-9910-5e10-8b9d-1365173f8523",
+          "rawLabel": "夜光を呼ぶ",
+          "displayCredit": "幸祜",
+          "people": [
+            {
+              "entityId": "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+              "name": "幸祜"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "e9e4082f-2d17-5b0c-8460-880a4834932d",
+          "rawLabel": "the last bullet",
+          "displayCredit": "幸祜",
+          "people": [
+            {
+              "entityId": "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+              "name": "幸祜"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "226f6c5d-e8ac-5083-b1c4-6b8e9e550ffe",
+          "rawLabel": "宿木",
+          "displayCredit": "理芽",
+          "people": [
+            {
+              "entityId": "ae41fa12-3b09-52c0-bc08-1d9218492391",
+              "name": "理芽"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "3ab1b177-0343-5ab0-a067-92a6185d2fea",
+          "rawLabel": "さみしいひと",
+          "displayCredit": "理芽",
+          "people": [
+            {
+              "entityId": "ae41fa12-3b09-52c0-bc08-1d9218492391",
+              "name": "理芽"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "a0566743-2808-5040-babc-bd120c0c7c55",
+          "rawLabel": "生きているより楽しそう",
+          "displayCredit": "理芽",
+          "people": [
+            {
+              "entityId": "ae41fa12-3b09-52c0-bc08-1d9218492391",
+              "name": "理芽"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "23a2060f-2c17-546e-a3cc-c93fbcd9258b",
+          "rawLabel": "ピルグリム",
+          "displayCredit": "理芽",
+          "people": [
+            {
+              "entityId": "ae41fa12-3b09-52c0-bc08-1d9218492391",
+              "name": "理芽"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "ce50c1f1-4b14-52c7-9416-346abeecc63f",
+          "rawLabel": "食虫植物",
+          "displayCredit": "理芽",
+          "people": [
+            {
+              "entityId": "ae41fa12-3b09-52c0-bc08-1d9218492391",
+              "name": "理芽"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "30008cb8-1139-5295-bf22-6974a35e75fc",
+          "rawLabel": "逆転",
+          "displayCredit": "春猿火",
+          "people": [
+            {
+              "entityId": "b8307e06-2046-5415-a1f7-0b892dd41041",
+              "name": "春猿火"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "8a34b9a5-6aa9-59a6-9a34-0640e991268d",
+          "rawLabel": "猛進",
+          "displayCredit": "春猿火",
+          "people": [
+            {
+              "entityId": "b8307e06-2046-5415-a1f7-0b892dd41041",
+              "name": "春猿火"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "cd066bc1-58c2-5705-9f8e-63b8d297b60c",
+          "rawLabel": "Gunpowder",
+          "displayCredit": "春猿火",
+          "people": [
+            {
+              "entityId": "b8307e06-2046-5415-a1f7-0b892dd41041",
+              "name": "春猿火"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "de923a34-2246-5a6a-9819-8a87fdf3cc84",
+          "rawLabel": "居場所",
+          "displayCredit": "春猿火",
+          "people": [
+            {
+              "entityId": "b8307e06-2046-5415-a1f7-0b892dd41041",
+              "name": "春猿火"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "06d5ef8e-0894-57a7-8543-3f8cb1fa0c89",
+          "rawLabel": "Oarana",
+          "displayCredit": "春猿火",
+          "people": [
+            {
+              "entityId": "b8307e06-2046-5415-a1f7-0b892dd41041",
+              "name": "春猿火"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "35a343c5-ec44-5e3d-8506-0e462da9c9da",
+          "rawLabel": "いろはに咲きて",
+          "displayCredit": "ヰ世界情緒",
+          "people": [
+            {
+              "entityId": "81a01233-230e-50a8-a309-11275c794cd0",
+              "name": "ヰ世界情緒"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "6a7afa32-d4f7-506f-b877-17238c0322c2",
+          "rawLabel": "ディメンション",
+          "displayCredit": "ヰ世界情緒",
+          "people": [
+            {
+              "entityId": "81a01233-230e-50a8-a309-11275c794cd0",
+              "name": "ヰ世界情緒"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "ff718287-bd28-59a4-957e-2c681dcd4afb",
+          "rawLabel": "霞がついてくる",
+          "displayCredit": "ヰ世界情緒",
+          "people": [
+            {
+              "entityId": "81a01233-230e-50a8-a309-11275c794cd0",
+              "name": "ヰ世界情緒"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "83859ff1-b2cd-5e5d-ae28-cca1bb5808a9",
+          "rawLabel": "ヰ世界の宝石譚",
+          "displayCredit": "ヰ世界情緒",
+          "people": [
+            {
+              "entityId": "81a01233-230e-50a8-a309-11275c794cd0",
+              "name": "ヰ世界情緒"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "a66fc4fe-1505-57d9-bd85-d916771d018f",
+          "rawLabel": "シリウスの心臓",
+          "displayCredit": "ヰ世界情緒",
+          "people": [
+            {
+              "entityId": "81a01233-230e-50a8-a309-11275c794cd0",
+              "name": "ヰ世界情緒"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "a5df39db-5f68-5c52-8548-fd217e806787",
+          "rawLabel": "鏡よ鏡",
+          "displayCredit": "花譜",
+          "people": [
+            {
+              "entityId": "36129afb-1fe8-5255-958e-b090e17c7905",
+              "name": "花譜"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "6dad4cbb-f191-5698-aba9-abe458e35be6",
+          "rawLabel": "イマジナリーフレンド",
+          "displayCredit": "花譜",
+          "people": [
+            {
+              "entityId": "36129afb-1fe8-5255-958e-b090e17c7905",
+              "name": "花譜"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "c100d7ff-b9e2-5472-9166-d0bbd38704c7",
+          "rawLabel": "世惑い子",
+          "displayCredit": "花譜",
+          "people": [
+            {
+              "entityId": "36129afb-1fe8-5255-958e-b090e17c7905",
+              "name": "花譜"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "75f5ed31-5796-524c-a60b-2d777735df5b",
+          "rawLabel": "例えば",
+          "displayCredit": "花譜",
+          "people": [
+            {
+              "entityId": "36129afb-1fe8-5255-958e-b090e17c7905",
+              "name": "花譜"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "1bb0e977-0147-5ad5-b653-86001008b3c4",
+          "rawLabel": "過去を喰らう～海に化ける",
+          "displayCredit": "花譜",
+          "people": [
+            {
+              "entityId": "36129afb-1fe8-5255-958e-b090e17c7905",
+              "name": "花譜"
+            }
+          ],
+          "singerSetComplete": true
+        },
+        {
+          "programItemId": "984a592e-1658-592c-bdc4-045f3ba31cc7",
+          "rawLabel": "共鳴",
+          "displayCredit": "V.W.P",
+          "people": [
+            {
+              "entityId": "ad4bc5e2-01f4-574a-91a0-69ad7ed0dfe0",
+              "name": "V.W.P"
+            }
+          ],
+          "singerSetComplete": false
+        },
+        {
+          "programItemId": "3ea7ae89-fd17-5ecf-95cf-f465d91ca633",
+          "rawLabel": "輪廻",
+          "displayCredit": "V.W.P",
+          "people": [
+            {
+              "entityId": "ad4bc5e2-01f4-574a-91a0-69ad7ed0dfe0",
+              "name": "V.W.P"
+            }
+          ],
+          "singerSetComplete": false
+        }
+      ]
+    }
+  ]
+}
