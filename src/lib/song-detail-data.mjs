@@ -75,7 +75,13 @@ function legacyRecords(entry){
   Array.isArray(entry.singerIds)&&t.singerIds.length===entry.singerIds.length&&t.singerIds.every(id=>entry.singerIds.includes(id))));
 }
 const dated=value=>typeof value==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(value)&&Number.isFinite(Date.parse(value+'T00:00:00Z'))&&new Date(value+'T00:00:00Z').toISOString().slice(0,10)===value;
-function earliestKnownAppearance(entry,metadata,work,options){
+function earliestKnownAppearance(entry,metadata,work,options,factRecords){
+ for(const record of registeredSongFactsForEntry(entry,factRecords)){
+  const first=record.metadata?.firstAppearance;
+  if(dated(first?.date)&&(!dated(metadata.firstAppearance?.date)||first.date<metadata.firstAppearance.date)){
+   metadata={...metadata,firstAppearance:first,firstAppearanceReview:{coverage:'unknown',partialConfirmed:false}};
+  }
+ }
  for(const record of liveVocalRecordsForEntry(entry)){
   const sourced=record.metadata;
   metadata={...metadata,titleKana:metadata.titleKana??sourced.titleKana,originalArtist:metadata.originalArtist??sourced.originalArtist};
@@ -93,7 +99,7 @@ function earliestKnownAppearance(entry,metadata,work,options){
 /** Canonical fields retain precedence, including explicit nulls, except that
  * first appearance incorporates an earlier known publication (D-084). */
 export function songMetadataForEntry(entry,factRecords=SONG_FACT_RECORDS,work={},options={}){
- if(object(entry?.detail?.songMetadata))return earliestKnownAppearance(entry,entry.detail.songMetadata,work,options);
+ if(object(entry?.detail?.songMetadata))return earliestKnownAppearance(entry,entry.detail.songMetadata,work,options,factRecords);
  const records=legacyRecords(entry),fields=['titleKana','firstAppearance','firstFull','tieUp','originalArtist','originalVocal'];
  const out=Object.fromEntries(fields.map(k=>[k,known(records.map(x=>x.metadata[k]))]));
  out.originalCredits=unique(records.flatMap(x=>arr(x.metadata.originalCredits)));
@@ -107,7 +113,7 @@ export function songMetadataForEntry(entry,factRecords=SONG_FACT_RECORDS,work={}
  for(const key of ['tieUp','lyricsUrl'])if(!out[key]){
   const value=known(facts.map(r=>r.metadata?.[key]));if(value&&(key!=='lyricsUrl'||safeSongUrl(value)))out[key]=value;
  }
- return earliestKnownAppearance(entry,out,work,options);
+ return earliestKnownAppearance(entry,out,work,options,factRecords);
 }
 function exactSiriusSolo(entry){
  return entry?.detail?.entryId===SIRIUS_SOLO&&entry.detail.primaryWorkId===SIRIUS_WORK&&entry.detail.title==='シリウスの心臓'&&arr(entry.detail.variations).length===0&&arr(entry.legacyIds).includes(41)&&entry.singerIds?.length===1&&entry.singerIds[0]==='81a01233-230e-50a8-a309-11275c794cd0';

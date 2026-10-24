@@ -2275,6 +2275,156 @@
       "creditScopes": {
         "arranger": "version"
       }
+    },
+    {
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "key": "basic-catalog-batch1-291e4210-6f75-42ee-a4b5-0a857d753e49",
+      "entry": {
+        "entryId": "291e4210-6f75-42ee-a4b5-0a857d753e49",
+        "kind": "medley",
+        "primaryWorkId": null,
+        "title": "共鳴／定命／輪廻（メドレー）",
+        "displayCredit": null,
+        "singerIds": [],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.edgeline-tokyo.com/entertainment/93311",
+      "sourceId": "S-162",
+      "metadata": {
+        "firstAppearance": {
+          "date": "2022-07-02",
+          "label": "xR ARTISTS SUPER FES 2022"
+        }
+      }
+    },
+    {
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "key": "basic-catalog-batch1-5ea0b6b3-53e4-446a-b7f3-0bcfd829889a",
+      "entry": {
+        "entryId": "5ea0b6b3-53e4-446a-b7f3-0bcfd829889a",
+        "kind": "song_variant",
+        "primaryWorkId": "d106e67d-72e0-4b5e-b382-77e9fce47507",
+        "title": "風の名前",
+        "displayCredit": null,
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://isekaijoucho.kamitsubaki.jp/contents/1118087?tag=all",
+      "sourceId": "S-161",
+      "metadata": {
+        "firstAppearance": {
+          "date": "2026-10-11",
+          "label": "ソラリス・スターリーステージ Season 2"
+        }
+      }
+    },
+    {
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "key": "basic-catalog-batch1-95cc572d-b1f9-41c9-9d8f-4a916c7bb846",
+      "entry": {
+        "entryId": "95cc572d-b1f9-41c9-9d8f-4a916c7bb846",
+        "kind": "medley",
+        "primaryWorkId": null,
+        "title": "異世界転調リクヱスト／ぼくらの逃避行",
+        "displayCredit": null,
+        "singerIds": [],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kamitsubaki.jp/news/2024/12/09/5397/",
+      "sourceId": "S-163",
+      "metadata": {
+        "firstAppearance": {
+          "date": "2024-08-07",
+          "label": "Anima III"
+        }
+      }
+    },
+    {
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "key": "basic-catalog-batch1-bdd5995d-b11b-40c7-ad30-07b4197a343e",
+      "entry": {
+        "entryId": "bdd5995d-b11b-40c7-ad30-07b4197a343e",
+        "kind": "medley",
+        "primaryWorkId": null,
+        "title": "祭霊",
+        "displayCredit": null,
+        "singerIds": [],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://findmestore.thinkr.jp/products/ktr-100-0184",
+      "sourceId": "S-164",
+      "metadata": {
+        "firstAppearance": {
+          "date": "2024-01-13",
+          "label": "現象II -魔女拡成-"
+        }
+      }
+    },
+    {
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "key": "basic-catalog-batch1-ed83b2e0-b5ec-4cf8-9624-f7e320994a6a",
+      "entry": {
+        "entryId": "ed83b2e0-b5ec-4cf8-9624-f7e320994a6a",
+        "kind": "medley",
+        "primaryWorkId": null,
+        "title": "ARCADIA／ANGELIC／ETERNAL（メドレー）",
+        "displayCredit": null,
+        "singerIds": [],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://findmestore.thinkr.jp/products/ktr-100-0247",
+      "sourceId": "S-165",
+      "metadata": {
+        "firstAppearance": {
+          "date": "2026-05-01",
+          "label": "Flower Closet"
+        }
+      }
+    },
+    {
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "key": "basic-catalog-batch1-2d3bcebb-3f72-4e66-a3cb-b409fcabbfb5",
+      "entry": {
+        "entryId": "2d3bcebb-3f72-4e66-a3cb-b409fcabbfb5",
+        "kind": "song_variant",
+        "primaryWorkId": "b2cba79f-86d7-4dc2-888a-c40a6b5effd1",
+        "title": "わたしの声",
+        "displayCredit": "ヰ世界情緒×硝子宮×美古途",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9d78227e-d558-4522-a7f8-78e637bc5f92",
+          "ca6163f9-e9b4-415e-b614-b837ef2bbeef"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kaf.kamitsubaki.jp/discography/20230908/202/",
+      "sourceId": "S-160",
+      "credits": {
+        "lyricist": [
+          "Shinichi Osawa(MONDO GROSSO)"
+        ],
+        "composer": [
+          "Shinichi Osawa(MONDO GROSSO)"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
     }
   ],
   "mediaCredits": [
