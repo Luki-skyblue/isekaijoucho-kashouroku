@@ -124,6 +124,97 @@
       "imageUrl": "/artwork/releases/singularity4-bd.webp",
       "sourceUrl": "https://isekaijoucho.kamitsubaki.jp/musics/21253",
       "entries": []
+    },
+    {
+      "familyId": "069ec8a1-ecc2-58a4-ab82-81e7ea5c2262",
+      "editionId": "63b6f6de-0317-54f9-aa30-7a14b5ba36cc",
+      "imageUrl": "/artwork/releases/phenomenon2-repeat-bd.webp",
+      "sourceUrl": "https://findmestore.thinkr.jp/products/ktr-100-0185",
+      "entries": []
+    },
+    {
+      "familyId": "148f49f2-82e0-5e64-9928-86110f42a5c6",
+      "editionId": "d27d0e20-f0fd-5d0f-8cb4-55890e6b124a",
+      "imageUrl": "/artwork/releases/koko-code-chord-bd.webp",
+      "sourceUrl": "https://findmestore.thinkr.jp/products/ktr-100-0235",
+      "entries": []
+    },
+    {
+      "familyId": "1ff99019-82da-5cc3-9a50-2fccd9c48662",
+      "editionId": "140539ac-56a8-5a64-b979-8d963aba2d09",
+      "imageUrl": "/artwork/releases/phenomenon2-bd.webp",
+      "sourceUrl": "https://findmestore.thinkr.jp/products/ktr-100-0184",
+      "entries": []
+    },
+    {
+      "familyId": "4d063111-2e71-5969-86d2-5f08102c01b1",
+      "editionId": "279b661e-c320-54b0-8e41-37161c982fd7",
+      "imageUrl": "/artwork/releases/label-sampler2.webp",
+      "sourceUrl": "https://findmestore.thinkr.jp/products/ktr-000-0174",
+      "entries": []
+    },
+    {
+      "familyId": "7c72d5f0-17dc-50f2-b6c0-b0ecd366026c",
+      "editionId": "fdcb438f-d2f9-5353-b2eb-5c858cdc5aad",
+      "imageUrl": "/artwork/releases/housoubu-pleasure-box.webp",
+      "sourceUrl": "https://isekaijoucho.kamitsubaki.jp/musics/21254",
+      "entries": []
+    },
+    {
+      "familyId": "85d7140f-4542-536f-950f-0ad0a43067d1",
+      "editionId": "5f0d1ea5-1419-5216-af3e-56af4a22f562",
+      "imageUrl": "/artwork/releases/anima1-bd.webp",
+      "sourceUrl": "https://isekaijoucho.kamitsubaki.jp/musics/21249",
+      "entries": []
+    },
+    {
+      "familyId": "94b04cfa-2031-5c15-aa67-2f69b645d9dd",
+      "editionId": "bb7d2c60-aee0-53c5-98ec-9c0e7b53dcb8",
+      "imageUrl": "/artwork/releases/2days-regular-bd.webp",
+      "sourceUrl": "https://findmestore.thinkr.jp/products/ktr-100-0247",
+      "entries": []
+    },
+    {
+      "familyId": "94b04cfa-2031-5c15-aa67-2f69b645d9dd",
+      "editionId": "8c5b3969-7f7e-5ec4-a4c8-fe170a1332be",
+      "imageUrl": "/artwork/releases/2days-special-box-bd.webp",
+      "sourceUrl": "https://findmestore.thinkr.jp/products/ktr-100-0246",
+      "entries": []
+    },
+    {
+      "familyId": "9f7fedf5-2c80-5d02-8323-93c3fed9297f",
+      "editionId": "5321b228-0053-5d5c-9b27-162f9a1d04cb",
+      "imageUrl": "/artwork/releases/label-sampler1.webp",
+      "sourceUrl": "https://kamitsubaki.jp/news/2023/12/26/2794/",
+      "entries": []
+    },
+    {
+      "familyId": "a95b94ef-228d-5544-974c-07a8deac9cd0",
+      "editionId": "cd905981-d399-5f0e-b485-4c277c79b24a",
+      "imageUrl": "/artwork/releases/singularity1-bd.webp",
+      "sourceUrl": "https://isekaijoucho.kamitsubaki.jp/musics/21223",
+      "entries": []
+    },
+    {
+      "familyId": "bab8f14d-f329-58e2-b563-eed65f91821e",
+      "editionId": "bd14f41e-eefd-5ccd-bbbf-a6dacbec9304",
+      "imageUrl": "/artwork/releases/label-sampler3.webp",
+      "sourceUrl": "https://findmestore.thinkr.jp/products/ktr-000-0226",
+      "entries": []
+    },
+    {
+      "familyId": "bdcfb740-890a-5ad7-bf1d-e1e249c60ca4",
+      "editionId": "0fceff30-c8c6-5b25-bc0d-bb477bf19d5b",
+      "imageUrl": "/artwork/releases/anima2-bd.webp",
+      "sourceUrl": "https://isekaijoucho.kamitsubaki.jp/musics/21251",
+      "entries": []
+    },
+    {
+      "familyId": "fed3f6c8-c66e-58c6-b667-5a796d5826a8",
+      "editionId": "96692a46-5c55-5189-85a4-2d682209e6d4",
+      "imageUrl": "/artwork/releases/anima3-bd.webp",
+      "sourceUrl": "https://isekaijoucho.kamitsubaki.jp/musics/21252",
+      "entries": []
     }
   ],
   "events": [
@@ -324,6 +415,62 @@
       "officialDate": "2026-09-05",
       "imageUrl": "/artwork/lives/fes26.webp",
       "sourceUrl": "https://kamitsubaki.jp/event/2026/09/05/10996/"
+    },
+    {
+      "eventId": "42474221-23a0-5ffd-a1b8-50acfa626313",
+      "title": "拡成前夜",
+      "officialDate": "2023-12-29",
+      "imageUrl": "/artwork/lives/kakusei-eve.webp",
+      "sourceUrl": "https://kaf.kamitsubaki.jp/schedule/20231229/598/"
+    },
+    {
+      "eventId": "222dbfa4-1098-538c-952e-895782214d26",
+      "title": "拡張前夜",
+      "officialDate": "2025-07-07",
+      "imageUrl": "/artwork/lives/kakucho-eve.webp",
+      "sourceUrl": "https://kamitsubaki.jp/news/2025/07/07/7842/"
+    },
+    {
+      "eventId": "5572be55-c084-56d8-91c2-b30cc04845b8",
+      "title": "御伽噺(染) ver0.92_prototype",
+      "officialDate": "2024-08-13",
+      "imageUrl": "/artwork/lives/otogi-prototype.webp",
+      "sourceUrl": "https://kamitsubaki.jp/news/2024/07/02/3565/"
+    },
+    {
+      "eventId": "2ebc6caa-7bd8-5133-825f-fd0e3a54da1e",
+      "title": "理芽 STREAMING COVER LIVE「チョコレートライブ 2」",
+      "officialDate": "2023-08-19",
+      "imageUrl": "/artwork/lives/chocolate2.webp",
+      "sourceUrl": "https://kamitsubaki.jp/news/2023/08/16/2519/"
+    },
+    {
+      "eventId": "114477aa-24b7-5738-9235-85460fc9e8f3",
+      "title": "幸祜 1st ONE-MAN LIVE「PLAYER」",
+      "officialDate": "2021-12-29",
+      "imageUrl": "/artwork/lives/player1.webp",
+      "sourceUrl": "https://kamitsubaki.jp/news/2021/10/26/927/"
+    },
+    {
+      "eventId": "b68e4e4a-c8d8-5911-901c-656a0257da39",
+      "title": "花譜 2nd ONE-MAN LIVE「不可解弐Q2」",
+      "officialDate": "2021-03-13",
+      "imageUrl": "/artwork/lives/fukakai2-q2.webp",
+      "sourceUrl": "https://kaf.kamitsubaki.jp/schedule/20210313/580/"
+    },
+    {
+      "eventId": "a31dca80-0a94-5354-9935-bb9ca64a7b1e",
+      "title": "不可解弐Q1",
+      "officialDate": "2020-10-10",
+      "imageUrl": "/artwork/lives/fukakai2-q1.webp",
+      "sourceUrl": "https://kaf.kamitsubaki.jp/schedule/20201010/579/"
+    },
+    {
+      "eventId": "10eb73e1-82b6-5dd5-a9c4-980282299297",
+      "title": "花譜 ONE-MAN LIVE「宿聲」 in Hong Kong",
+      "officialDate": "2026-05-30",
+      "imageUrl": "/artwork/lives/kaf-hongkong.webp",
+      "sourceUrl": "https://kaf.kamitsubaki.jp/schedule/20260318/1194/"
     }
   ]
 }
