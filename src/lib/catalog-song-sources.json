@@ -2228,6 +2228,53 @@
         "lyricist": "work",
         "composer": "work"
       }
+    },
+    {
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "key": "video-credit-batch4-ca21fd15-34e8-4037-961e-706831816e9a",
+      "entry": {
+        "entryId": "ca21fd15-34e8-4037-961e-706831816e9a",
+        "kind": "song_variant",
+        "primaryWorkId": "fcb27fc5-478d-55c2-a84e-614e7623141f",
+        "title": "神話",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "朝比奈健人"
+        ],
+        [
+          "work",
+          "composer",
+          "Neuron"
+        ],
+        [
+          "work",
+          "lyricist",
+          "Neuron"
+        ]
+      ],
+      "url": "https://www.foriio.com/MARUICHI/wk_Ab3noedQ14kcKHXtuxrhMEiFIiqeZGKOuHX3BGnM2HTv3rzwnA",
+      "sourceId": "S-158",
+      "credits": {
+        "arranger": [
+          "朝比奈健人"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      }
     }
   ],
   "mediaCredits": [
@@ -2675,6 +2722,286 @@
           "name": "癸乙夜［Mju:Z］"
         }
       ]
+    },
+    {
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "key": "video-credit-batch4-cbf5f682-886e-49f8-93ae-e25ae31c6493-media",
+      "entry": {
+        "entryId": "cbf5f682-886e-49f8-93ae-e25ae31c6493",
+        "kind": "song_variant",
+        "primaryWorkId": "9faddd4f-8ba5-53b5-8ad5-cb9b11dc180d",
+        "title": "モシモノセカイ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "mediaId": "6f89c839-aa83-5072-96ff-6184f6a1c53f",
+      "mediaUrl": "https://www.youtube.com/watch?v=poIYfoFP3Ec",
+      "url": "https://kamitsubaki.jp/news/2026/03/19/10530/",
+      "sourceId": "S-155",
+      "credits": [
+        {
+          "role": "Director",
+          "name": "Maruichi(THINKR)"
+        },
+        {
+          "role": "Supervisor",
+          "name": "Hiromitsu Kawasaki(SIKAKU Inc.)"
+        },
+        {
+          "role": "Motion Edit",
+          "name": "Go Akagi(THINKR)"
+        },
+        {
+          "role": "Character Animation",
+          "name": "Hiroyuki Nakatomi"
+        },
+        {
+          "role": "Title Design",
+          "name": "ragi"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kentaro Iwaki(THINKR)"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Minako Soga(THINKR)"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi(THINKR)"
+        },
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        }
+      ],
+      "scopeNote": "Named production credits transcribed from the publisher or directing creator for this exact original MV. Preserve spelling, including source affiliation/typographical forms. No inference of Mix, full coverage, other videos or person identity."
+    },
+    {
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "key": "video-credit-batch4-386c21cf-c706-4fe3-8d39-b1b59a9ec336-media",
+      "entry": {
+        "entryId": "386c21cf-c706-4fe3-8d39-b1b59a9ec336",
+        "kind": "song_variant",
+        "primaryWorkId": "79154cb8-2990-5070-a15d-3d106cefe675",
+        "title": "みらいのかたち",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "mediaId": "e3c83d45-da7f-5ad1-9121-9047f97b48cf",
+      "mediaUrl": "https://www.youtube.com/watch?v=NWu9EozfR6M",
+      "url": "https://kamitsubaki.jp/news/2025/03/25/6567/",
+      "sourceId": "S-156",
+      "credits": [
+        {
+          "role": "Movie & Animation Studio",
+          "name": "STEREOTYPE Inc."
+        },
+        {
+          "role": "Director",
+          "name": "Yusaku Kumagai"
+        },
+        {
+          "role": "Composite Director",
+          "name": "Yusaku Iwami"
+        },
+        {
+          "role": "3DCG Designer",
+          "name": "Taisho Miyoshi"
+        },
+        {
+          "role": "Motion Edit",
+          "name": "Go Akagi（THINKR）"
+        },
+        {
+          "role": "Graphic / 2D Designer",
+          "name": "Shota Watanabe"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kenichi Kodama"
+        },
+        {
+          "role": "Title Design",
+          "name": "Shota Watanabe"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kentaro Iwaki（THINKR）"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi（THINKR）"
+        },
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        }
+      ],
+      "scopeNote": "Named production credits transcribed from the publisher or directing creator for this exact original MV. Preserve spelling, including source affiliation/typographical forms. No inference of Mix, full coverage, other videos or person identity."
+    },
+    {
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "key": "video-credit-batch4-57664785-b4a1-4615-9868-38acc614320f-media",
+      "entry": {
+        "entryId": "57664785-b4a1-4615-9868-38acc614320f",
+        "kind": "song_variant",
+        "primaryWorkId": "678c2d1f-b445-53e0-a852-ee8f564e7bb4",
+        "title": "描き続けた君へ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "mediaId": "54bf5588-711e-5956-be90-7bb13ce58090",
+      "mediaUrl": "https://www.youtube.com/watch?v=m9WjPbKis0U",
+      "url": "https://prtimes.jp/main/html/rd/p/000000087.000106737.html",
+      "sourceId": "S-157",
+      "credits": [
+        {
+          "role": "Movie & Animation Studio",
+          "name": "STEREOTYPE Inc."
+        },
+        {
+          "role": "Director",
+          "name": "Yusaku Kumagai"
+        },
+        {
+          "role": "Composite Director",
+          "name": "Yusaku Iwami"
+        },
+        {
+          "role": "3DCG Designer",
+          "name": "Taisho Miyoshi"
+        },
+        {
+          "role": "Graphic / 2D Designer",
+          "name": "Shota Watanabe"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kenichi Kodama"
+        },
+        {
+          "role": "Title Design",
+          "name": "Hazuki Tamano"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kentaro Iwaki（THINKR）"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi（THINKR）"
+        },
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        }
+      ],
+      "scopeNote": "Named production credits transcribed from the publisher or directing creator for this exact original MV. Preserve spelling, including source affiliation/typographical forms. No inference of Mix, full coverage, other videos or person identity."
+    },
+    {
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "key": "video-credit-batch4-ca21fd15-34e8-4037-961e-706831816e9a-media",
+      "entry": {
+        "entryId": "ca21fd15-34e8-4037-961e-706831816e9a",
+        "kind": "song_variant",
+        "primaryWorkId": "fcb27fc5-478d-55c2-a84e-614e7623141f",
+        "title": "神話",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "mediaId": "c2ce1b74-faf1-5b22-a494-85358657be0a",
+      "mediaUrl": "https://www.youtube.com/watch?v=0xP_CywwW94",
+      "url": "https://www.foriio.com/MARUICHI/wk_Ab3noedQ14kcKHXtuxrhMEiFIiqeZGKOuHX3BGnM2HTv3rzwnA",
+      "sourceId": "S-158",
+      "credits": [
+        {
+          "role": "Director",
+          "name": "Maruichi（THINKR）"
+        },
+        {
+          "role": "Character Animation",
+          "name": "Hiroyuki Nakatomi"
+        },
+        {
+          "role": "Motion Edit",
+          "name": "Go Akagi（THINKR）"
+        },
+        {
+          "role": "VFX artist",
+          "name": "Atsushi Kawasaki (Honeybee)"
+        },
+        {
+          "role": "VFX artist",
+          "name": "Oh Sanghye (Honeybee)"
+        },
+        {
+          "role": "VFX Production Manager",
+          "name": "Keitaro Ito (Honeybee)"
+        },
+        {
+          "role": "3D Environment",
+          "name": "Ryosuke Mori"
+        },
+        {
+          "role": "Graphic Designer",
+          "name": "Tomotaka Iwasa"
+        },
+        {
+          "role": "Motion Capture Studio",
+          "name": "HANEDA xR STUDIO"
+        },
+        {
+          "role": "Motion Capture Operator",
+          "name": "Masayuki Wakai (Bandai Namco Filmworks Inc.)"
+        },
+        {
+          "role": "Motion Capture Operator",
+          "name": "Sakie Komoda (Bandai Namco Filmworks Inc.)"
+        },
+        {
+          "role": "Motion Capture Operator",
+          "name": "Miki Fukawatase (Banadi Namco Filmworks Inc.)"
+        },
+        {
+          "role": "Motion Capture Operator",
+          "name": "Tomoki Tajima (Bandai Namco Filmworks Inc.)"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi (THINKR)"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kentaro Iwaki (THINKR)"
+        },
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        }
+      ],
+      "scopeNote": "Named production credits transcribed from the publisher or directing creator for this exact original MV. Preserve spelling, including source affiliation/typographical forms. No inference of Mix, full coverage, other videos or person identity."
     }
   ]
 }

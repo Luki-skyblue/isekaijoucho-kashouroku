@@ -1063,11 +1063,13 @@
       "origin": "catalog",
       "aliases": [
         "Hideyuki Negishi (THINKR)",
-        "Hideyuki Negishi（THINKR）"
+        "Hideyuki Negishi（THINKR）",
+        "Hideyuki Negishi(THINKR)"
       ],
       "sourceUrls": [
         "https://kamitsubaki.jp/news/2024/08/01/3649/",
-        "https://kamitsubaki.jp/news/2024/10/23/4846/"
+        "https://kamitsubaki.jp/news/2024/10/23/4846/",
+        "https://kamitsubaki.jp/news/2026/03/19/10530/"
       ],
       "presentation": {
         "kind": "creator",
@@ -1083,11 +1085,13 @@
       "origin": "catalog",
       "aliases": [
         "Kentaro Iwaki (THINKR)",
-        "Kentaro Iwaki（THINKR）"
+        "Kentaro Iwaki（THINKR）",
+        "Kentaro Iwaki(THINKR)"
       ],
       "sourceUrls": [
         "https://kamitsubaki.jp/news/2024/08/01/3649/",
-        "https://kamitsubaki.jp/news/2024/10/23/4846/"
+        "https://kamitsubaki.jp/news/2024/10/23/4846/",
+        "https://kamitsubaki.jp/news/2026/03/19/10530/"
       ],
       "presentation": {
         "kind": "creator",
@@ -1202,6 +1206,46 @@
       ],
       "sourceUrls": [
         "https://butaient.com/nanahoshiorchestra/profile/"
+      ],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
+    },
+    {
+      "id": "c3770ae6-cef4-58b3-b76b-f6fe8aef526c",
+      "name": "Go Akagi",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [
+        "Go Akagi(THINKR)",
+        "Go Akagi（THINKR）"
+      ],
+      "sourceUrls": [
+        "https://kamitsubaki.jp/news/2026/03/19/10530/",
+        "https://kamitsubaki.jp/news/2025/03/25/6567/"
+      ],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
+    },
+    {
+      "id": "479d6bf7-065f-5977-bc03-4048a71341c9",
+      "name": "Maruichi",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [
+        "Maruichi(THINKR)",
+        "Maruichi（THINKR）"
+      ],
+      "sourceUrls": [
+        "https://kamitsubaki.jp/news/2026/03/19/10530/",
+        "https://www.foriio.com/MARUICHI/wk_Ab3noedQ14kcKHXtuxrhMEiFIiqeZGKOuHX3BGnM2HTv3rzwnA"
       ],
       "presentation": {
         "kind": "creator",

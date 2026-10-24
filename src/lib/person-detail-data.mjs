@@ -129,10 +129,12 @@ export function peopleListFromModel(model,{category='artists',term='',role='all'
  // A full reviewed joint label can find its participants, but one member's
  // name must not become another member's identity alias or partial match.
  const matches=person=>catalogNameMatches(person,term)||[...person.jointLabels].some(label=>catalogNameMatches({name:label},term)&&catalogNameMatches({name:term},label));
- const filtered=people.filter(p=>belongs(p,category)&&(activeRole==='all'||p.roles.has(activeRole))&&matches(p)).sort((a,b)=>a.name.localeCompare(b.name,'ja')||compare(a.key,b.key));
+ const creatorRole=role=>!['vocal','artist'].includes(role);
+ const countSongs=person=>category==='creators'?[...person.songs.values()].filter(roles=>activeRole==='all'?[...roles].some(creatorRole):roles.has(activeRole)).length:person.songs.size;
+ const filtered=people.filter(p=>belongs(p,category)&&(activeRole==='all'||p.roles.has(activeRole))&&matches(p)).sort((a,b)=>(category==='creators'?countSongs(b)-countSongs(a):0)||a.name.localeCompare(b.name,'ja')||compare(a.key,b.key));
  limit=Number.isSafeInteger(limit)&&limit>0&&limit<=100?limit:48;
  const pages=Math.ceil(filtered.length/limit);page=Number.isSafeInteger(page)&&page>0?Math.min(page,Math.max(pages,1)):1;
- return {category,term,role:activeRole,roleOptions,page,pages,total:filtered.length,categories,items:filtered.slice((page-1)*limit,page*limit).map(p=>({key:p.key,name:p.name,type:p.type,kindLabel:kindLabel(p),roles:roleLabels(p.roles),songCount:p.songs.size}))};
+ return {category,term,role:activeRole,roleOptions,page,pages,total:filtered.length,categories,items:filtered.slice((page-1)*limit,page*limit).map(p=>({key:p.key,name:p.name,type:p.type,kindLabel:kindLabel(p),roles:roleLabels(category==='creators'?[...p.roles].filter(creatorRole):p.roles),songCount:countSongs(p)}))};
 }
 
 export function peopleListHref({category='artists',term='',role='all',page=1}={}){
