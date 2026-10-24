@@ -10,7 +10,7 @@ export default async function Home() {
  const recent=await homePageData();
  return <div className="home-page">
   <section className="home-cover" aria-labelledby="home-title">
-   <img className="home-cover-art" src="/home-themes/sunflower/hero.webp" width={1672} height={941} alt="" aria-hidden="true" fetchPriority="high"/>
+   {['sunflower','nemophila','anemone'].map(theme=><img key={theme} className="home-cover-art" data-home-theme={theme} src={'/home-themes/'+theme+'/hero.webp'} width={1672} height={941} alt="" aria-hidden="true" loading={theme==='sunflower'?'eager':'lazy'} fetchPriority={theme==='sunflower'?'high':'auto'}/>)}
    <div className="home-cover-haze" aria-hidden="true"/>
    <div className="shell home-cover-inner">
     <p className="home-kicker">非公式ファンサイト</p>

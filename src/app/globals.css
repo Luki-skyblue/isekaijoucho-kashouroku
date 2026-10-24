@@ -239,7 +239,7 @@ html, body {background:var(--paper);color:var(--ink)}
 .records-grid .record-title {font-size:17px}
 .records-grid .record-meta {display:block;line-height:1.6}
 .records-grid .record-arrow {display:none}
-/* Theme changes colors, not the canonical contents; only Sunflower has reviewed artwork. */
+/* Decorative theme artwork and colors never change canonical catalogue contents. */
 @media (max-width:900px){.records-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:700px){
  .shell{padding-inline:18px}

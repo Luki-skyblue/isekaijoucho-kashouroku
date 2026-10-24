@@ -1,9 +1,12 @@
 body:has(.home-page) .main{width:100%;max-width:none;padding:0;min-height:0}
 .home-page{width:100%;position:relative}
-.home-cover{display:grid;position:relative;isolation:isolate;overflow:hidden;min-height:480px;background:linear-gradient(115deg,var(--paper),var(--theme-art-glow))}
-.home-cover-art{grid-area:1/1;align-self:center;position:relative;z-index:-2;display:block;width:100%;height:auto;min-width:0}
+.home-cover{display:grid;position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(115deg,var(--paper),var(--theme-art-glow))}
+.home-cover-art{grid-area:1/1;align-self:center;position:relative;z-index:-2;display:none;width:100%;height:auto;min-width:0}
+.home-cover-art[data-home-theme="sunflower"]{display:block}
+html[data-theme="nemophila"] .home-cover-art[data-home-theme="sunflower"],html[data-theme="anemone"] .home-cover-art[data-home-theme="sunflower"]{display:none}
+html[data-theme="nemophila"] .home-cover-art[data-home-theme="nemophila"],html[data-theme="anemone"] .home-cover-art[data-home-theme="anemone"]{display:block}
 .home-cover-haze{position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 18% 38%,var(--paper) 0%,color-mix(in srgb,var(--paper) 94%,transparent) 25%,color-mix(in srgb,var(--paper) 72%,transparent) 51%,transparent 80%)}
-.home-cover-inner{grid-area:1/1;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-height:480px;padding-block:48px}
+.home-cover-inner{grid-area:1/1;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding-block:clamp(24px,3vw,48px)}
 .home-kicker{font-size:11px;line-height:1.8;color:var(--quiet);letter-spacing:.06em;margin:0}
 .home-page .home-cover h1{font-family:SongMincho,var(--serif);font-size:58px;font-weight:500;line-height:1.35;letter-spacing:.04em;margin:16px 0 32px}
 .home-nav{display:flex;flex-wrap:wrap;gap:12px}
@@ -11,7 +14,6 @@ body:has(.home-page) .main{width:100%;max-width:none;padding:0;min-height:0}
 .home-nav a:first-child{background:var(--accent-deep);border-color:var(--accent-deep);color:#fff}
 .home-nav a:hover{border-color:var(--accent-deep)}.home-nav a:first-child:hover{opacity:.9}
 .home-nav a:focus-visible{outline:2px solid var(--accent-deep);outline-offset:4px}
-html[data-theme="nemophila"] .home-cover-art,html[data-theme="anemone"] .home-cover-art{display:none}
 html[data-theme="nemophila"] .home-cover,html[data-theme="anemone"] .home-cover{background-image:radial-gradient(ellipse at 82% 30%,var(--theme-art-glow),transparent 60%),linear-gradient(120deg,var(--paper),var(--theme-tint))}
 .home-recent{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:48px;padding-block:38px 52px}
 .home-recent-section{min-width:0}.home-recent-heading{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:18px}
