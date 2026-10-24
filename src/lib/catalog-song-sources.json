@@ -2882,6 +2882,316 @@
         "lyricist": "work",
         "composer": "work"
       }
+    },
+    {
+      "key": "basic-catalog-batch3-83609e7b-2b79-44fc-b0ed-7aa68b2ceb1d",
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "83609e7b-2b79-44fc-b0ed-7aa68b2ceb1d",
+        "kind": "song_variant",
+        "primaryWorkId": "29ad70d4-6a9a-5cdf-9c00-3d7854136a3a",
+        "title": "GO! GO! MANIAC",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.tbs.co.jp/anime/k-on/k-on_tv/news/news1002.html",
+      "sourceId": "S-177",
+      "credits": {
+        "lyricist": [
+          "大森祥子"
+        ],
+        "composer": [
+          "Tom-H@ck"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch3-6fefa339-be24-4ab8-81c1-3a51ffaebac7",
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "6fefa339-be24-4ab8-81c1-3a51ffaebac7",
+        "kind": "song_variant",
+        "primaryWorkId": "e54ca383-e09e-53f3-9872-39c3bdfbaa1b",
+        "title": "KICK BACK",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://reissuerecords.net/kickback/",
+      "sourceId": "S-178",
+      "credits": {
+        "lyricist": [
+          "米津玄師"
+        ],
+        "composer": [
+          "米津玄師"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch3-703b2512-8b39-4b12-a8ea-866a9394bb23",
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "703b2512-8b39-4b12-a8ea-866a9394bb23",
+        "kind": "song_variant",
+        "primaryWorkId": "c8d049bf-ca1e-52fc-bda3-838a9d4f3609",
+        "title": "メランコリック",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.youtube.com/watch?v=86_kvUqhY-A",
+      "sourceId": "S-179",
+      "credits": {
+        "lyricist": [
+          "Junky"
+        ],
+        "composer": [
+          "Junky"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch3-ac65c10e-478a-457a-b29f-21d53b0d3efa",
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "ac65c10e-478a-457a-b29f-21d53b0d3efa",
+        "kind": "song_variant",
+        "primaryWorkId": "a314a636-0254-54c0-a8c2-8510b846bb70",
+        "title": "Beautiful World(2024 Mix)",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.qobuz.com/jp-ja/album/science-fiction-hikaru-utada/flcz1vmq6e61b",
+      "sourceId": "S-180",
+      "credits": {
+        "lyricist": [
+          "宇多田ヒカル"
+        ],
+        "composer": [
+          "宇多田ヒカル"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch3-a72021f9-5b9f-4113-9b2c-1cec802d7e5f",
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "a72021f9-5b9f-4113-9b2c-1cec802d7e5f",
+        "kind": "song_variant",
+        "primaryWorkId": "92874734-aecb-5288-969d-b22c7923437e",
+        "title": "HEART STATION",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.qobuz.com/jp-ja/album/utada-hikaru-single-collection-vol2-hikaru-utada/0060256725048",
+      "sourceId": "S-181",
+      "credits": {
+        "lyricist": [
+          "宇多田ヒカル"
+        ],
+        "composer": [
+          "宇多田ヒカル"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch3-ea757974-7334-4380-8f2b-11a917651f37",
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "ea757974-7334-4380-8f2b-11a917651f37",
+        "kind": "song_variant",
+        "primaryWorkId": "57577d2d-8c87-5166-9af7-b45fb5fb061e",
+        "title": "真夏の通り雨",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.qobuz.com/au-en/album/hikaru-utada/0060040671003",
+      "sourceId": "S-182",
+      "credits": {
+        "lyricist": [
+          "宇多田ヒカル"
+        ],
+        "composer": [
+          "宇多田ヒカル"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch3-f4251a0e-5524-48e9-8ff6-c76c31fda7c0",
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "f4251a0e-5524-48e9-8ff6-c76c31fda7c0",
+        "kind": "song_variant",
+        "primaryWorkId": "e077819d-ffda-574c-91e8-dd35e522f9f7",
+        "title": "アイネクライネ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://reissuerecords.net/2021/10/17/%E3%80%8C%E3%82%A2%E3%82%A4%E3%83%8D%E3%82%AF%E3%83%A9%E3%82%A4%E3%83%8D%E3%80%8D%E3%81%8C1%E5%84%84%E5%9B%9E%E5%86%8D%E7%94%9F%E7%AA%81%E7%A0%B4/",
+      "sourceId": "S-183",
+      "credits": {
+        "lyricist": [
+          "米津玄師"
+        ],
+        "composer": [
+          "米津玄師"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch3-24f7099a-a087-467a-90ee-ff672850f9bf",
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "24f7099a-a087-467a-90ee-ff672850f9bf",
+        "kind": "song_variant",
+        "primaryWorkId": "e26367c9-f730-5f56-a2e5-d921cbdf9b6f",
+        "title": "砂の惑星",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.youtube.com/watch?v=AS4q9yaWJkI",
+      "sourceId": "S-184",
+      "credits": {
+        "lyricist": [
+          "ハチ"
+        ],
+        "composer": [
+          "ハチ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch3-567f7651-81fe-4b70-9d29-d6002d77129f",
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "567f7651-81fe-4b70-9d29-d6002d77129f",
+        "kind": "song_variant",
+        "primaryWorkId": "e8959603-3100-5ef4-9648-2655f36454dc",
+        "title": "ray ~livetune cover~",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.qobuz.com/us-en/album/ray-bump-of-chicken-feat-hatsune-miku/o6ajb9hslvj0a",
+      "sourceId": "S-185",
+      "credits": {
+        "lyricist": [
+          "藤原基央"
+        ],
+        "composer": [
+          "藤原基央"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch3-2a06736e-5778-473e-b5c5-044027ab66b5",
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "2a06736e-5778-473e-b5c5-044027ab66b5",
+        "kind": "song_variant",
+        "primaryWorkId": "fd467ab9-5d56-520c-af81-ddfea8a4df51",
+        "title": "もってけ!セーラーふく",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://akihata.jp/works/music/53570/?PageSpeed=noscript",
+      "sourceId": "S-186",
+      "credits": {
+        "lyricist": [
+          "畑亜貴"
+        ],
+        "composer": [
+          "神前暁"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
     }
   ],
   "mediaCredits": [

@@ -1,6 +1,6 @@
 // Shared identity and whole-credit index. Displayed roles keep their original
 // scope; neither billing nor entity resolution verifies a performance.
-import {songDetailFromModel,songArtworkCandidatesForEntry} from './song-detail-data.mjs';
+import {songDetailFromModel} from './song-detail-data.mjs';
 import {creditNameKey,personKeyForCredit,entityForId,singersForEntry,billingPeopleForEntry,membershipsForEntity,personRelationsForEntity} from './catalog-people.mjs';
 import {catalogNameMatches} from './catalog-name-search.mjs';
 import {creditRoleLabel,orderedCreditRoles,songCreditRole} from './catalog-credit-labels.mjs';
@@ -97,7 +97,8 @@ export function personDetailFromModel(model,key,{page=1,limit=24,role='all',bill
  limit=Number.isSafeInteger(limit)&&limit>0&&limit<=100?limit:24;
  const pages=Math.ceil(songs.length/limit);page=Number.isSafeInteger(page)&&page>0?Math.min(page,Math.max(pages,1)):1;
  const items=songs.slice((page-1)*limit,page*limit).map(song=>{
-  const entry=model.entries.get(song.entryId),images=songArtworkCandidatesForEntry(entry,model.works.get(entry.detail.primaryWorkId));
+  // Use the same live supplements and image fallback sequence as song detail.
+  const images=songDetailFromModel(model,song.entryId).artworkCandidates;
   return {...song,thumbnailUrl:images[0]?.imageUrl??null,thumbnailUrls:images.map(x=>x.imageUrl)};
  });
  const creditParticipants=[...person.jointParticipants.values()].map(p=>({key:p.personKey,name:p.name,href:index.people.has(p.personKey)?personDetailHref(p.personKey):null}));
