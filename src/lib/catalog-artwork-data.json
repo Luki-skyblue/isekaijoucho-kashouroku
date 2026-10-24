@@ -96,6 +96,34 @@
       "imageUrl": "/artwork/releases/shikisai-beta.webp",
       "sourceUrl": "https://kamitsubaki.jp/discography/isekaijoucho/3472/",
       "entries": []
+    },
+    {
+      "familyId": "8a409146-e0f7-5d01-8d20-9b3e3377391d",
+      "editionId": "5cbf8cdf-dddf-5c2b-9c27-e80cfc039e32",
+      "imageUrl": "/artwork/releases/candy-album1.webp",
+      "sourceUrl": "https://kamitsubaki.jp/discography/isekaijoucho/382/",
+      "entries": []
+    },
+    {
+      "familyId": "b7843f4d-41a3-55b1-841a-91f7b35f32ba",
+      "editionId": "793eb987-7ad9-588f-aa06-6f51249906c9",
+      "imageUrl": "/artwork/releases/candy-album2.webp",
+      "sourceUrl": "https://kamitsubaki.jp/discography/isekaijoucho/1891/",
+      "entries": []
+    },
+    {
+      "familyId": "b36a9f04-232e-5a55-b8f0-0a78362ac18a",
+      "editionId": "26bfffdf-031e-5b35-9c10-c32350163b28",
+      "imageUrl": "/artwork/releases/candy-album3.webp",
+      "sourceUrl": "https://isekaijoucho.kamitsubaki.jp/musics/21233",
+      "entries": []
+    },
+    {
+      "familyId": "d36ccdfb-891b-56ba-9e9b-795ced896e95",
+      "editionId": "28961576-0bf7-553b-b8bb-29e60c3ba76d",
+      "imageUrl": "/artwork/releases/singularity4-bd.webp",
+      "sourceUrl": "https://isekaijoucho.kamitsubaki.jp/musics/21253",
+      "entries": []
     }
   ],
   "events": [
@@ -240,6 +268,62 @@
       "imageUrl": "/artwork/lives/isekaijoucho-2days.webp",
       "sourceUrl": "https://kamitsubaki.jp/event/2026/05/01/9272/",
       "imageScope": "shared_campaign"
+    },
+    {
+      "eventId": "b534aab3-b7a7-5fc8-aba5-e78f2ef46e0f",
+      "title": "KAMITSUBAKI XPERIENCE DAY1",
+      "officialDate": "2025-06-13",
+      "imageUrl": "/artwork/lives/xperience.webp",
+      "sourceUrl": "https://kamitsubaki.jp/event/2025/06/13/6837/"
+    },
+    {
+      "eventId": "9c50d470-b49a-5139-9595-09a62e8bc8bd",
+      "title": "KAMITSUBAKI FES '23 ＜DAY1-シンギュラリティーのひ＞",
+      "officialDate": "2023-03-30",
+      "imageUrl": "/artwork/lives/fes23-1.webp",
+      "sourceUrl": "https://kamitsubaki.jp/event/2023/03/30/1828/"
+    },
+    {
+      "eventId": "125722bd-0b69-5fa9-8070-3feaa7f6da47",
+      "title": "KAMITSUBAKI FES '23 ＜DAY2-カオスのひ-＞",
+      "officialDate": "2023-03-31",
+      "imageUrl": "/artwork/lives/fes23-2.webp",
+      "sourceUrl": "https://kamitsubaki.jp/event/2023/03/30/1828/"
+    },
+    {
+      "eventId": "db850add-3287-5663-bccc-a62392de7d64",
+      "title": "魔女達の夜会～歌と重大発表と笑い話と～",
+      "officialDate": "2025-09-27",
+      "imageUrl": "/artwork/lives/witches-night.webp",
+      "sourceUrl": "https://www.youtube.com/watch?v=wH2NMAwuyqI"
+    },
+    {
+      "eventId": "2de42803-09ca-55dd-b4f1-2428765960f0",
+      "title": "YouTubeチャンネル登録50万人記念配信",
+      "officialDate": "2026-03-25",
+      "imageUrl": "/artwork/lives/500k-stream-official.webp",
+      "sourceUrl": "https://x.com/isekaijoucho/status/2036739891749675103"
+    },
+    {
+      "eventId": "82d4949a-ecfe-57d4-9af9-2590777f2ea8",
+      "title": "デビュー6周年記念生配信",
+      "officialDate": "2025-12-09",
+      "imageUrl": "/artwork/lives/anniversary6-archive.webp",
+      "sourceUrl": "https://www.youtube.com/watch?v=3GvJ2dac9UM"
+    },
+    {
+      "eventId": "780a3a09-991d-5f4e-87c1-92c450582d47",
+      "title": "KAMITSUBAKI RADIO CLUB VIRTUAL MINI LIVE",
+      "officialDate": "2024-10-13",
+      "imageUrl": "/artwork/lives/radio-club.webp",
+      "sourceUrl": "https://kamitsubaki.jp/news/2024/09/24/4496/"
+    },
+    {
+      "eventId": "96047f69-c02b-502e-afaa-103cdf6ccc01",
+      "title": "KAMITSUBAKI FES ’26 FIELD OF RESONANCE",
+      "officialDate": "2026-09-05",
+      "imageUrl": "/artwork/lives/fes26.webp",
+      "sourceUrl": "https://kamitsubaki.jp/event/2026/09/05/10996/"
     }
   ]
 }

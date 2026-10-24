@@ -1,7 +1,7 @@
 body:has(.home-page) .main{width:100%;max-width:none;padding:0;min-height:0}
 .home-page{width:100%;position:relative}
 .home-cover{position:relative;isolation:isolate;overflow:hidden;min-height:480px;background:linear-gradient(115deg,var(--paper),var(--theme-art-glow))}
-.home-cover-art{position:absolute;inset:0;z-index:-2;background-image:url('/home-themes/sunflower/hero.webp');background-size:cover;background-position:70% center}
+.home-cover-art{position:absolute;inset:0;z-index:-2;max-width:var(--content);margin-inline:auto;background-image:url('/home-themes/sunflower/hero.webp');background-size:auto 100%;background-position:right center;background-repeat:no-repeat}
 .home-cover-haze{position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 18% 38%,var(--paper) 0%,color-mix(in srgb,var(--paper) 94%,transparent) 25%,color-mix(in srgb,var(--paper) 72%,transparent) 51%,transparent 80%)}
 .home-cover-inner{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-height:480px;padding-block:48px}
 .home-kicker{font-size:11px;line-height:1.8;color:var(--quiet);letter-spacing:.06em;margin:0}
