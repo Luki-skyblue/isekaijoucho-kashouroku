@@ -3192,6 +3192,29 @@
         "lyricist": "original",
         "composer": "original"
       }
+    },
+    {
+      "key": "wind-artist-billing-20261024",
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "5ea0b6b3-53e4-446a-b7f3-0bcfd829889a",
+        "kind": "song_variant",
+        "primaryWorkId": "d106e67d-72e0-4b5e-b382-77e9fce47507",
+        "title": "風の名前",
+        "displayCredit": null,
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.youtube.com/channel/UCah4_WVjmr8XA7i5aigwV-Q",
+      "sourceId": "S-187",
+      "metadata": {
+        "artistCredit": "MIMI feat.ヰ世界情緒"
+      },
+      "scopeNote": "Official artist billing, separately displayed from the actual singer set. No extra singer, role assignment, release date or song type is inferred."
     }
   ],
   "mediaCredits": [

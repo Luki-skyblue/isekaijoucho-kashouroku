@@ -76,6 +76,12 @@ function legacyRecords(entry){
 }
 const dated=value=>typeof value==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(value)&&Number.isFinite(Date.parse(value+'T00:00:00Z'))&&new Date(value+'T00:00:00Z').toISOString().slice(0,10)===value;
 function earliestKnownAppearance(entry,metadata,work,options,factRecords){
+ // Artist billing does not establish a singer set or replace vocal credits.
+ // An explicit canonical value, including null, retains precedence.
+ if(!Object.hasOwn(metadata,'artistCredit')){
+  const artistCredit=known(registeredSongFactsForEntry(entry,factRecords).map(r=>r.metadata?.artistCredit).filter(v=>typeof v==='string'&&v.trim()));
+  if(artistCredit)metadata={...metadata,artistCredit};
+ }
  for(const record of registeredSongFactsForEntry(entry,factRecords)){
   const first=record.metadata?.firstAppearance;
   if(dated(first?.date)&&(!dated(metadata.firstAppearance?.date)||first.date<metadata.firstAppearance.date)){

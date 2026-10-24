@@ -23,7 +23,7 @@ export function CatalogSongDetail({song,initialTab='info'}:{song:SongDetailData;
  const hero=song.artwork;
  const imageUrl=hero?.imageUrl??null,heroShape=hero&&(['mv','cover','live_mv','other_video'].includes(hero.kind)||(hero.kind==='manual'&&youtubeId(hero.sourceUrl)))?'video':'jacket';
  const info=<>
-  <dl className="song-detail-facts"><dt>歌唱</dt><dd>{singers?<SingerNames detail={d}/>:<Value value={singers}/>}</dd><dt>楽曲区分</dt><dd><Value value={d.kind==='medley'?'メドレー':CATEGORIES[str(d.legacySongType)]}/></dd>
+  <dl className="song-detail-facts">{str(m.artistCredit)&&<><dt>アーティスト</dt><dd>{str(m.artistCredit)}</dd></>}<dt>歌唱</dt><dd>{singers?<SingerNames detail={d}/>:<Value value={singers}/>}</dd><dt>楽曲区分</dt><dd><Value value={d.kind==='medley'?'メドレー':CATEGORIES[str(d.legacySongType)]}/></dd>
    <dt>初出</dt><dd><First value={m.firstAppearance} review={review.firstAppearance}/></dd>
    {fullVisible&&<><dt>初出（フル）</dt><dd><First value={m.firstFull} review={review.firstFull}/></dd></>}
    <dt>タイアップ</dt><dd><Value value={m.tieUp} review={review.tieUp}/></dd>
