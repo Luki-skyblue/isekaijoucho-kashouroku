@@ -129,9 +129,13 @@ export function songCreditsForEntry(entry,metadata=songMetadataForEntry(entry),f
   if(!values.length&&['lyricist','composer'].includes(role)){scope='original';values=names(scope,role);}
   // Explicit original solo MV credit, retained from the user-supplied description.
   if(!values.length&&role==='arranger'&&exactSiriusSolo(entry))values=['傘村トータ'];
-  if(!values.length&&!['not_found','not_applicable'].includes(metadata.fieldReview?.credits?.[role]?.outcome)){
-   const candidates=unique(facts.filter(r=>Array.isArray(r.credits?.[role])&&r.credits[role].length&&r.credits[role].every(n=>typeof n==='string'&&n.trim())).map(r=>({names:r.credits[role],scope:r.creditScopes?.[role]??(songTypeForEntry(entry)==='cover'&&['lyricist','composer'].includes(role)?'original':'version')})).filter(c=>['version','work','original'].includes(c.scope)&&(role!=='arranger'||c.scope==='version')));
-   if(candidates.length===1){values=candidates[0].names;scope=candidates[0].scope;}
+  if(!['not_found','not_applicable'].includes(metadata.fieldReview?.credits?.[role]?.outcome)){
+   const candidates=records=>unique(records.filter(r=>Array.isArray(r.credits?.[role])&&r.credits[role].length&&r.credits[role].every(n=>typeof n==='string'&&n.trim())).map(r=>({names:r.credits[role],scope:r.creditScopes?.[role]??(songTypeForEntry(entry)==='cover'&&['lyricist','composer'].includes(role)?'original':'version')})).filter(c=>['version','work','original'].includes(c.scope)&&(role!=='arranger'||c.scope==='version')));
+   // A reviewed correction is opt-in and tied to the entire frozen raw credit
+   // basis above. Any subsequent DB correction invalidates that old basis.
+   const replacement=candidates(facts.filter(r=>arr(r.replaceExistingCredits).includes(role)));
+   const selected=replacement.length===1?replacement:!values.length?candidates(facts):[];
+   if(selected.length===1){values=selected[0].names;scope=selected[0].scope;}
   }
   return {role,scope,names:values,people:values.map(name=>resolveCreatorCredit(entry,{name,personKey:personKeyForCredit(name,credits.filter(c=>c.role===role&&c.scope===scope))},{role,scope})),value:values.join('・')||null,review:metadata.fieldReview?.credits?.[role]??null};
  });

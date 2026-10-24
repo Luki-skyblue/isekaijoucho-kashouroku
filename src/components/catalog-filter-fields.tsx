@@ -28,7 +28,7 @@ export function CatalogFilterFields({query,choices=SINGERS,titleSearch=false}:{q
  return <form method="get" action="/songs" className="catalog-filter-fields">
   {titleSearch?<label className="search-detail-title">楽曲名<input type="search" name="q" defaultValue={query.q} maxLength={100} placeholder="楽曲名・メドレーの構成曲名"/></label>:query.q&&<input type="hidden" name="q" value={query.q}/>}
   <input type="hidden" name="view" value={query.view}/>
-  {query.sort==='title_desc'&&<input type="hidden" name="sort" value="title_desc"/>}
+  {query.sort!=='title_asc'&&<input type="hidden" name="sort" value={query.sort}/>}
   {chosen.map(id=><input key={id} type="hidden" name="singer" value={id}/>)}
   <input type="hidden" name="singerMatch" value={match}/>
   {kinds.map(id=><input key={id} type="hidden" name="type" value={id}/>)}

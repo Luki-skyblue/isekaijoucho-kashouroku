@@ -2425,6 +2425,463 @@
         "lyricist": "original",
         "composer": "original"
       }
+    },
+    {
+      "key": "basic-catalog-batch2-09ddca40-c9da-4358-a750-d9ae14da2179",
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "09ddca40-c9da-4358-a750-d9ae14da2179",
+        "kind": "song_variant",
+        "primaryWorkId": "15810889-4c93-5e78-95f0-4c738a04342d",
+        "title": "言霊 (V.W.P結成前)",
+        "displayCredit": "花譜 with 理芽・春猿火・ヰ世界情緒",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kamitsubaki.jp/discography/v-w-p/1097/",
+      "sourceId": "S-168",
+      "credits": {
+        "lyricist": [
+          "カンザキイオリ"
+        ],
+        "composer": [
+          "カンザキイオリ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "work",
+        "composer": "work"
+      }
+    },
+    {
+      "key": "basic-catalog-batch2-0dd053d3-bb52-4283-b053-439d9fac3ca2",
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "0dd053d3-bb52-4283-b053-439d9fac3ca2",
+        "kind": "song_variant",
+        "primaryWorkId": "ae2bbe13-3978-541d-8abb-552222c16300",
+        "title": "祭壇",
+        "displayCredit": "V.W.P & 裏命",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kamitsubaki.jp/discography/v-w-p/3062/",
+      "sourceId": "S-169",
+      "credits": {
+        "lyricist": [
+          "カンザキイオリ"
+        ],
+        "composer": [
+          "カンザキイオリ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "work",
+        "composer": "work"
+      }
+    },
+    {
+      "key": "basic-catalog-batch2-14380c81-cbce-4555-9119-31d9487a3a82",
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "14380c81-cbce-4555-9119-31d9487a3a82",
+        "kind": "song_variant",
+        "primaryWorkId": "ae2bbe13-3978-541d-8abb-552222c16300",
+        "title": "祭壇",
+        "displayCredit": "春猿火 feat. ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kamitsubaki.jp/discography/v-w-p/3062/",
+      "sourceId": "S-169",
+      "credits": {
+        "lyricist": [
+          "カンザキイオリ"
+        ],
+        "composer": [
+          "カンザキイオリ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "work",
+        "composer": "work"
+      }
+    },
+    {
+      "key": "basic-catalog-batch2-58bdce8d-509d-447d-8ce2-dd1da5fba2eb",
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "58bdce8d-509d-447d-8ce2-dd1da5fba2eb",
+        "kind": "song_variant",
+        "primaryWorkId": "8e16feeb-3e73-5b56-b0bb-69c14baf53d4",
+        "title": "輪廻 (KAMITSUBAKI FES '23 ver.)",
+        "displayCredit": "V.W.P & 裏命 & CIEL",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b4a1c9cb-987f-5e92-863f-5bd1206dcbaa",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "カンザキイオリ"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/v-w-p/976/",
+      "sourceId": "S-166",
+      "credits": {
+        "lyricist": [
+          "カンザキイオリ"
+        ],
+        "composer": [
+          "カンザキイオリ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "work",
+        "composer": "work"
+      }
+    },
+    {
+      "key": "basic-catalog-batch2-8101be2c-47f4-4166-8778-a6428539521a",
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "8101be2c-47f4-4166-8778-a6428539521a",
+        "kind": "song_variant",
+        "primaryWorkId": "e8e33858-753f-5b07-8822-879633783522",
+        "title": "魔女(真)",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kamitsubaki.jp/discography/v-w-p/2006/",
+      "sourceId": "S-170",
+      "credits": {
+        "lyricist": [
+          "カンザキイオリ",
+          "たかやん"
+        ],
+        "composer": [
+          "カンザキイオリ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "work",
+        "composer": "work"
+      }
+    },
+    {
+      "key": "basic-catalog-batch2-81b5e1fa-6117-4406-878c-4f8ba7f23627",
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "81b5e1fa-6117-4406-878c-4f8ba7f23627",
+        "kind": "song_variant",
+        "primaryWorkId": "ae2bbe13-3978-541d-8abb-552222c16300",
+        "title": "祭壇",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kamitsubaki.jp/discography/v-w-p/3062/",
+      "sourceId": "S-169",
+      "credits": {
+        "lyricist": [
+          "カンザキイオリ"
+        ],
+        "composer": [
+          "カンザキイオリ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "work",
+        "composer": "work"
+      }
+    },
+    {
+      "key": "basic-catalog-batch2-8552a6b9-d7ff-4aed-877b-e9f902f5b5b6",
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "8552a6b9-d7ff-4aed-877b-e9f902f5b5b6",
+        "kind": "song_variant",
+        "primaryWorkId": "8e16feeb-3e73-5b56-b0bb-69c14baf53d4",
+        "title": "輪廻 (solo ver.)",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "カンザキイオリ"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/v-w-p/976/",
+      "sourceId": "S-166",
+      "credits": {
+        "lyricist": [
+          "カンザキイオリ"
+        ],
+        "composer": [
+          "カンザキイオリ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "work",
+        "composer": "work"
+      }
+    },
+    {
+      "key": "basic-catalog-batch2-cb336c4d-a63e-4503-829e-36b98daa2670",
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "cb336c4d-a63e-4503-829e-36b98daa2670",
+        "kind": "song_variant",
+        "primaryWorkId": "8e16feeb-3e73-5b56-b0bb-69c14baf53d4",
+        "title": "輪廻 acoustic ver.",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "original",
+          "arranger",
+          "カンザキイオリ"
+        ],
+        [
+          "version",
+          "arranger",
+          "カンザキイオリ & 及川創介"
+        ],
+        [
+          "version",
+          "arranger",
+          "及川創介"
+        ],
+        [
+          "work",
+          "arranger",
+          "カンザキイオリ"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/v-w-p/1971/",
+      "sourceId": "S-167",
+      "credits": {
+        "lyricist": [
+          "カンザキイオリ"
+        ],
+        "composer": [
+          "カンザキイオリ"
+        ],
+        "arranger": [
+          "及川創介"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "work",
+        "composer": "work",
+        "arranger": "version"
+      },
+      "replaceExistingCredits": [
+        "arranger"
+      ]
+    },
+    {
+      "key": "basic-catalog-batch2-d091ed57-c261-40f8-9f67-14354955a061",
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "d091ed57-c261-40f8-9f67-14354955a061",
+        "kind": "song_variant",
+        "primaryWorkId": "8e16feeb-3e73-5b56-b0bb-69c14baf53d4",
+        "title": "輪廻 (PLAYER ver.)",
+        "displayCredit": "幸祜 with 春猿火・ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "カンザキイオリ"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/v-w-p/976/",
+      "sourceId": "S-166",
+      "credits": {
+        "lyricist": [
+          "カンザキイオリ"
+        ],
+        "composer": [
+          "カンザキイオリ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "work",
+        "composer": "work"
+      }
+    },
+    {
+      "key": "basic-catalog-batch2-de92ef4f-4b59-49c1-9791-12e2d9bb02ff",
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "de92ef4f-4b59-49c1-9791-12e2d9bb02ff",
+        "kind": "song_variant",
+        "primaryWorkId": "e8e33858-753f-5b07-8822-879633783522",
+        "title": "魔女(真) sinka ver.",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kamitsubaki.jp/discography/v-w-p/2006/",
+      "sourceId": "S-170",
+      "credits": {
+        "lyricist": [
+          "カンザキイオリ",
+          "たかやん"
+        ],
+        "composer": [
+          "カンザキイオリ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "work",
+        "composer": "work"
+      }
+    },
+    {
+      "key": "basic-catalog-batch2-f07d8b04-51bf-4088-ae49-318d6ccab0b3",
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "f07d8b04-51bf-4088-ae49-318d6ccab0b3",
+        "kind": "song_variant",
+        "primaryWorkId": "ae2bbe13-3978-541d-8abb-552222c16300",
+        "title": "祭壇 (V.W.P結成前)",
+        "displayCredit": "花譜 feat. 春猿火 × ヰ世界情緒",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kamitsubaki.jp/discography/v-w-p/3062/",
+      "sourceId": "S-169",
+      "credits": {
+        "lyricist": [
+          "カンザキイオリ"
+        ],
+        "composer": [
+          "カンザキイオリ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "work",
+        "composer": "work"
+      }
+    },
+    {
+      "key": "basic-catalog-batch2-f444568f-6f47-4e83-9bec-b710938924b4",
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "f444568f-6f47-4e83-9bec-b710938924b4",
+        "kind": "song_variant",
+        "primaryWorkId": "15810889-4c93-5e78-95f0-4c738a04342d",
+        "title": "言霊",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kamitsubaki.jp/discography/v-w-p/1097/",
+      "sourceId": "S-168",
+      "credits": {
+        "lyricist": [
+          "カンザキイオリ"
+        ],
+        "composer": [
+          "カンザキイオリ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "work",
+        "composer": "work"
+      }
     }
   ],
   "mediaCredits": [

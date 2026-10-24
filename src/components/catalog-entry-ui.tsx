@@ -17,7 +17,7 @@ export function CatalogIndex({items,total,query,limit,singerChoices=SINGERS}: {i
   {query.singerIds.map(id=><input key={id} type="hidden" name="singer" value={id}/>)}
   {query.singerIds.length>0&&<input type="hidden" name="singerMatch" value={query.singerMatch}/>}
   {query.kinds.map(kind=><input key={kind} type="hidden" name="type" value={kind}/>)}
-  {query.sort==='title_desc'&&<input type="hidden" name="sort" value="title_desc"/>}
+  {query.sort!=='title_asc'&&<input type="hidden" name="sort" value={query.sort}/>}
   {query.view==='grid'&&<input type="hidden" name="view" value="grid"/>}
  </form>
  {conditions.length>0&&<div className="catalog-applied" aria-label="適用中の条件"><span className="catalog-applied-heading">適用中</span><div className="catalog-applied-tags">{conditions.map(c=><Link key={c.key} href={c.href} className="catalog-applied-tag" aria-label={`${c.label}を解除`}>{c.label}<span aria-hidden="true">×</span></Link>)}<Link className="catalog-applied-reset" href={catalogHref({...query,q:'',singerIds:[],singerMatch:'any',kinds:[],page:1})}>すべて解除</Link></div></div>}
@@ -30,7 +30,7 @@ export function CatalogIndex({items,total,query,limit,singerChoices=SINGERS}: {i
  </ListSort><nav className="view-switch" aria-label="一覧の表示形式"><span>VIEW</span><Link href={catalogHref(query,{view:'list'})} aria-current={query.view==='list'?'page':undefined}>リスト</Link><Link href={catalogHref(query,{view:'grid'})} aria-current={query.view==='grid'?'page':undefined}>グリッド</Link></nav></div></div>
  {items.length?<div className={`records records-${query.view}`}>{items.map(x=><Link className="record" href={`/songs/${encodeURIComponent(x.entryId)}`} key={x.entryId}>
  <RecordArtwork url={explicitThumbnail({...x})} urls={x.thumbnailUrls}/>
- <span className="record-copy"><span className="record-title">{x.title}</span>{x.displayCredit&&<span className="record-meta">{x.displayCredit}</span>}{x.kind==='medley'&&<span className="catalog-meta-kind">メドレー</span>}</span>
+ <span className="record-copy"><span className="record-title">{x.title}</span>{x.displayCredit&&<span className="record-meta">{x.displayCredit}</span>}{query.sort.startsWith('first_')&&<span className="record-meta">初出：{x.firstAppearanceDate?displayDate(x.firstAppearanceDate):'準備中'}</span>}{x.kind==='medley'&&<span className="catalog-meta-kind">メドレー</span>}</span>
  <span className="record-arrow" aria-hidden="true">↗</span></Link>)}</div>:<Empty>条件に該当する楽曲はありません。</Empty>}
  {pages>1&&<nav className="pages" aria-label="ページ送り">{query.page>1&&<Link href={catalogHref(query,{page:query.page-1})}>← 前のページ</Link>}<span>{query.page} / {pages} ページ</span>{query.page<pages&&<Link href={catalogHref(query,{page:query.page+1})}>次のページ →</Link>}</nav>}
  </>;

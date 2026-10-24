@@ -3,7 +3,7 @@ import {readFileSync, statSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {gzipSync} from 'node:zlib';
 import {performance} from 'node:perf_hooks';
-import {songArtworkCandidatesForEntry,songTypeForEntry} from './song-detail-data.mjs';
+import {songArtworkCandidatesForEntry,songTypeForEntry,songMetadataForEntry} from './song-detail-data.mjs';
 import {singerIdsForEntry} from './catalog-people.mjs';
 import {eventArtworkForEvent} from './catalog-artwork.mjs';
 import {supplementalLivesForEntry} from './live-program-supplements.mjs';
@@ -204,7 +204,8 @@ export function queryEntries(model, filters = {}) {
   check(typeof search === 'string' && Array.isArray(singerIds) && singerIds.length <= 20 && singerIds.every(x => typeof x === 'string' && uuid.test(x)), 'Invalid query');
   check(['contains','only','any','subset'].includes(singerMatch), 'Invalid singer mode');
   check(Array.isArray(selectedKinds) && new Set(selectedKinds).size === selectedKinds.length && selectedKinds.every(x => ['original','cover','collaboration','variant','medley'].includes(x)), 'Invalid categories');
-  check(['title_asc','title_desc'].includes(sort) && integer(limit) && limit >= 1 && limit <= 100 && integer(offset) && offset <= 100000, 'Invalid pagination/sort');
+  check(['title_asc','title_desc','first_asc','first_desc'].includes(sort) && integer(limit) && limit >= 1 && limit <= 100 && integer(offset) && offset <= 100000, 'Invalid pagination/sort');
+  const chronological=sort==='first_asc'||sort==='first_desc';
   const q = search.trim().slice(0,100), chosen = new Set(singerIds);
   const rows = [];
   for (const [entryId,e] of model.entries) {
@@ -228,10 +229,22 @@ export function queryEntries(model, filters = {}) {
       if (d.kind !== 'medley' || !d.medleySegments.some(s => [s.rawLabel,s.workTitle,...workTitles(s.workId)].some(t => matches(t,q)))) continue;
       rank = 1;
     }
+    let firstAppearanceDate=null;
+    if(chronological){
+      const value=songMetadataForEntry(e,undefined,model.works.get(d.primaryWorkId)).firstAppearance?.date;
+      if(typeof value==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(value)&&Number.isFinite(Date.parse(value+'T00:00:00Z'))&&new Date(value+'T00:00:00Z').toISOString().slice(0,10)===value)firstAppearanceDate=value;
+    }
     rows.push({entryId,title:d.title,kind:d.kind,displayCredit:d.displayCredit,legacySongType:songType,
-      matchKind:rank ? 'component' : 'title',rank,sortTitle:e.sortTitle ?? d.title});
+      matchKind:rank ? 'component' : 'title',rank,sortTitle:e.sortTitle ?? d.title,...(chronological?{firstAppearanceDate}:{})});
   }
-  rows.sort((a,b) => a.rank-b.rank || (sort === 'title_desc' ? -1 : 1)*cmp(a.sortTitle,b.sortTitle) || cmp(a.entryId,b.entryId));
+  rows.sort((a,b) => {
+    if(chronological){
+      if(!a.firstAppearanceDate||!b.firstAppearanceDate){if(a.firstAppearanceDate!==b.firstAppearanceDate)return a.firstAppearanceDate?-1:1;}
+      else if(a.firstAppearanceDate!==b.firstAppearanceDate)return (sort==='first_desc'?-1:1)*cmp(a.firstAppearanceDate,b.firstAppearanceDate);
+      return cmp(a.sortTitle,b.sortTitle)||cmp(a.entryId,b.entryId);
+    }
+    return a.rank-b.rank || (sort === 'title_desc' ? -1 : 1)*cmp(a.sortTitle,b.sortTitle) || cmp(a.entryId,b.entryId);
+  });
   return {items:rows.slice(offset,offset+limit).map(({rank,sortTitle,...x}) => {
     const entry=model.entries.get(x.entryId);
     const images=songArtworkCandidatesForEntry(entry,model.works.get(entry.detail.primaryWorkId),{additionalLives:supplementalLivesForEntry(model,x.entryId)});
