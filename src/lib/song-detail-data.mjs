@@ -79,7 +79,7 @@ function earliestKnownAppearance(entry,metadata,work,options,factRecords){
  // Artist billing does not establish a singer set or replace vocal credits.
  // An explicit canonical value, including null, retains precedence.
  if(!Object.hasOwn(metadata,'artistCredit')){
-  const artistCredit=known(registeredSongFactsForEntry(entry,factRecords).map(r=>r.metadata?.artistCredit).filter(v=>typeof v==='string'&&v.trim()));
+  const artistCredit=artistCreditForEntry(entry,metadata,factRecords);
   if(artistCredit)metadata={...metadata,artistCredit};
  }
  for(const record of registeredSongFactsForEntry(entry,factRecords)){
@@ -101,6 +101,18 @@ function earliestKnownAppearance(entry,metadata,work,options,factRecords){
  // first date is a research gap; an older exact publication advances it.
  return {...metadata,firstAppearance:{date:video.publishedOn,label:youtubeId(video.url)?'YouTube':songListenLabel(video.url)==='Xで見る'?'X':'動画'},
   firstAppearanceReview:{coverage:'unknown',partialConfirmed:false}};
+}
+function artistCreditForEntry(entry,metadata,factRecords){
+ if(Object.hasOwn(metadata??{},'artistCredit'))return str(metadata.artistCredit).trim()?metadata.artistCredit:null;
+ return known(registeredSongFactsForEntry(entry,factRecords).map(r=>r.metadata?.artistCredit).filter(v=>typeof v==='string'&&v.trim()));
+}
+/** One title caption across home, lists and detail. Official billing is not a
+ * singer set and must not change singer filters, roles or verification. */
+export function songTitleCreditForEntry(entry,metadata=entry?.detail?.songMetadata??{},factRecords=SONG_FACT_RECORDS){
+ const official=artistCreditForEntry(entry,metadata,factRecords);if(official)return official;
+ const existing=str(entry?.detail?.displayCredit);if(existing.trim())return existing;
+ const named=arr(entry?.detail?.singers).map(s=>str(s.name)).filter(Boolean);if(named.length)return named.join('・');
+ return singersForEntry(entry).map(s=>str(s.name)).filter(Boolean).join('・');
 }
 /** Canonical fields retain precedence, including explicit nulls, except that
  * first appearance incorporates an earlier known publication (D-084). */

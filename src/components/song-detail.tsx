@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import {asArray,asObject,displayDate,str,validId,type JsonObject} from '@/lib/core';
-import {missingSongText,safeSongUrl,songListenLabel,youtubeId,type SongDetailData} from '@/lib/song-detail-data.mjs';
+import {missingSongText,safeSongUrl,songListenLabel,songTitleCreditForEntry,youtubeId,type SongDetailData} from '@/lib/song-detail-data.mjs';
 import {SongDetailTabs} from './song-detail-tabs';
 import {SongDetailArtwork} from './song-detail-artwork';
 import {CreditName,SingerNames} from './person-name';
@@ -17,13 +17,14 @@ function variation(value:JsonObject){return str(value.value)||(typeof value.semi
 export function CatalogSongDetail({song,initialTab='info'}:{song:SongDetailData;initialTab?:string}){
  const {detail:d,metadata:m}=song,review=asObject(m.fieldReview),title=str(d.title),entryId=str(d.entryId),siblings=asArray(d.relatedVariants),compare=asArray(song.comparison?.entries);
  const singers=str(d.displayCredit)||singerNames(d.singers),segments=asArray(d.medleySegments),medleys=asArray(d.containingMedleys),variations=asArray(d.variations).map(variation).filter(Boolean);
+ const titleCredit=songTitleCreditForEntry({detail:d},m);
  const firstReview=asObject(m.firstAppearanceReview),fullVisible=firstReview.coverage==='partial'&&firstReview.partialConfirmed===true;
  const originalAuthors=song.originalCredits.filter(c=>['lyricist','composer'].includes(c.role)&&!song.credits.some(row=>songCreditRole(d,row)==='original_'+c.role&&row.names.includes(c.name)));
  const originalInfo=d.legacySongType==='cover'&&(str(m.originalArtist)||str(m.originalVocal)||song.originalArranger||originalAuthors.length>0);
  const hero=song.artwork;
  const imageUrl=hero?.imageUrl??null,heroShape=hero&&(['mv','cover','live_mv','other_video'].includes(hero.kind)||(hero.kind==='manual'&&youtubeId(hero.sourceUrl)))?'video':'jacket';
  const info=<>
-  <dl className="song-detail-facts">{str(m.artistCredit)&&<><dt>アーティスト</dt><dd>{str(m.artistCredit)}</dd></>}<dt>歌唱</dt><dd>{singers?<SingerNames detail={d}/>:<Value value={singers}/>}</dd><dt>楽曲区分</dt><dd><Value value={d.kind==='medley'?'メドレー':CATEGORIES[str(d.legacySongType)]}/></dd>
+  <dl className="song-detail-facts"><dt>歌唱</dt><dd>{singers?<SingerNames detail={d}/>:<Value value={singers}/>}</dd><dt>楽曲区分</dt><dd><Value value={d.kind==='medley'?'メドレー':CATEGORIES[str(d.legacySongType)]}/></dd>
    <dt>初出</dt><dd><First value={m.firstAppearance} review={review.firstAppearance}/></dd>
    {fullVisible&&<><dt>初出（フル）</dt><dd><First value={m.firstFull} review={review.firstFull}/></dd></>}
    <dt>タイアップ</dt><dd><Value value={m.tieUp} review={review.tieUp}/></dd>
@@ -53,7 +54,7 @@ export function CatalogSongDetail({song,initialTab='info'}:{song:SongDetailData;
  </>;
  return <article className="song-detail-page" data-song-entry={entryId}>
   <Link className="song-detail-back" href="/songs">← 楽曲一覧</Link>
-  <header className="song-detail-hero"><SongDetailArtwork url={imageUrl} urls={song.artworkCandidates.map(image=>image.imageUrl)} eager className={'song-detail-art song-detail-art-'+heroShape}/><div className="song-detail-heading">{str(m.titleKana)&&<p className="song-detail-kana">{str(m.titleKana)}</p>}<div className="song-detail-title-line"><h1>{title}</h1>{song.versionLabel&&<span className="song-detail-version-tag">{song.versionLabel}</span>}</div><p className="song-detail-singer">{singers?<SingerNames detail={d}/>:<Value value={singers}/>}</p>{song.listenUrl&&<a className="song-detail-primary" href={song.listenUrl} target="_blank" rel="noopener noreferrer">{song.videos.some(v=>v.url===song.listenUrl)?songListenLabel(song.listenUrl):'配信で聴く'} ↗</a>}</div></header>
+  <header className="song-detail-hero"><SongDetailArtwork url={imageUrl} urls={song.artworkCandidates.map(image=>image.imageUrl)} eager className={'song-detail-art song-detail-art-'+heroShape}/><div className="song-detail-heading">{str(m.titleKana)&&<p className="song-detail-kana">{str(m.titleKana)}</p>}<div className="song-detail-title-line"><h1>{title}</h1>{song.versionLabel&&<span className="song-detail-version-tag">{song.versionLabel}</span>}</div><p className="song-detail-singer">{titleCredit===singers&&singers?<SingerNames detail={d}/>:<Value value={titleCredit}/>}</p>{song.listenUrl&&<a className="song-detail-primary" href={song.listenUrl} target="_blank" rel="noopener noreferrer">{song.videos.some(v=>v.url===song.listenUrl)?songListenLabel(song.listenUrl):'配信で聴く'} ↗</a>}</div></header>
   <SongDetailTabs key={entryId+'|'+initialTab} initialTab={initialTab} tabs={[{id:'info',label:'楽曲情報',count:null,content:info},{id:'videos',label:'関連動画',count:song.videos.length,content:videos},{id:'history',label:'披露歴',count:song.lives.length,content:history},{id:'releases',label:'収録作品',count:song.releases.length,content:releases},{id:'versions',label:'別バージョン',count:siblings.length,content:versions}]}/>
  </article>;
 }

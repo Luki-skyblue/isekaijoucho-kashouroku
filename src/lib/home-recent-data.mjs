@@ -1,6 +1,6 @@
 // First appearance is the earliest publication currently known for this vocal
 // form. Home and song detail share it; never use insertion order.
-import {songMetadataForEntry,songArtworkCandidatesForEntry} from './song-detail-data.mjs';
+import {songMetadataForEntry,songArtworkCandidatesForEntry,songTitleCreditForEntry} from './song-detail-data.mjs';
 import {releaseListArtworkFromModel,releaseKindLabel,releaseMediaLabel,isLiveRelease} from './release-detail-data.mjs';
 import {supplementalLivesForEntry} from './live-program-supplements.mjs';
 import {liveDisplayContextFromModel} from './live-detail-data.mjs';
@@ -46,7 +46,7 @@ export function homeRecentFromModel(model,{today=homeToday()}={}){
   const d=entry.detail,first=songMetadataForEntry(entry,undefined,model.works.get(d.primaryWorkId)).firstAppearance,date=day(first?.date);
   if(!date||date>today)continue;
   songs.push({entryId:d.entryId,title:d.title,date,sourceLabel:text(first?.label),
-   displayCredit:text(d.displayCredit)||arr(d.singers).map(s=>text(s.name)).filter(Boolean).join('・')});
+   displayCredit:songTitleCreditForEntry(entry)});
  }
  const order=debutProgramOrder(model,songs);
  songs.sort((a,b)=>compare(b.date,a.date)||compare(order.get(a.entryId)?.bucket??a.entryId,order.get(b.entryId)?.bucket??b.entryId)||compare(order.get(b.entryId)?.sequence??0,order.get(a.entryId)?.sequence??0)||compare(a.entryId,b.entryId));
