@@ -9,6 +9,7 @@ export const ENTITY_RECORDS=registry.entities;
 export const VOCAL_LINK_RECORDS=registry.vocalLinks;
 export const MEMBERSHIP_RECORDS=registry.memberships??[];
 export const VOCAL_CORRECTION_RECORDS=registry.vocalCorrections??[];
+export const PERSON_RELATION_RECORDS=registry.personRelations??[];
 const uuid=/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const byId=new Map(ENTITY_RECORDS.map(e=>[e.id,e]));
 const byName=new Map();
@@ -53,6 +54,16 @@ export function singerIdsForEntry(entry){const correction=vocalCorrectionFor(ent
 /** Membership supplies navigation only. It never adds singers to an entry. */
 export function membershipsForEntity(id,records=MEMBERSHIP_RECORDS){
  return arr(records).filter(r=>r.status==='active'&&r.relation==='member_of'&&['artist','character','voicebank'].includes(byId.get(r.memberId)?.type)&&byId.get(r.groupId)?.type==='group'&&(r.memberId===id||r.groupId===id));
+}
+
+/** Navigation between distinct credited identities. Neither an activity-name
+ * relationship nor a CV credit copies song duties, singers or membership. */
+export function personRelationsForEntity(id,records=PERSON_RELATION_RECORDS){
+ return arr(records).filter(r=>{
+  if(r.status!=='active'||r.fromId===r.toId||![r.fromId,r.toId].includes(id)||!arr(r.sourceUrls).some(url=>typeof url==='string'&&url.startsWith('https://')))return false;
+  const from=byId.get(r.fromId),to=byId.get(r.toId);
+  return r.relation==='alternate_name'?from?.type==='artist'&&to?.type==='artist':r.relation==='character_voice'?from?.type==='character'&&to?.type==='artist':false;
+ });
 }
 
 const boundary=c=>c===undefined||/[\s・･·×✕✖&＆+＋/／,，、（）()「」【】\[\]<>〈〉]/u.test(c);

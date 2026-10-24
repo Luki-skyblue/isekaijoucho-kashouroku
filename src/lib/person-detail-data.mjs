@@ -1,7 +1,7 @@
 // Shared identity and whole-credit index. Displayed roles keep their original
 // scope; neither billing nor entity resolution verifies a performance.
 import {songDetailFromModel,songArtworkCandidatesForEntry} from './song-detail-data.mjs';
-import {creditNameKey,personKeyForCredit,entityForId,singersForEntry,billingPeopleForEntry,membershipsForEntity} from './catalog-people.mjs';
+import {creditNameKey,personKeyForCredit,entityForId,singersForEntry,billingPeopleForEntry,membershipsForEntity,personRelationsForEntity} from './catalog-people.mjs';
 import {catalogNameMatches} from './catalog-name-search.mjs';
 import {creditRoleLabel,orderedCreditRoles,songCreditRole} from './catalog-credit-labels.mjs';
 export {creditNameKey} from './catalog-people.mjs';
@@ -101,7 +101,11 @@ export function personDetailFromModel(model,key,{page=1,limit=24,role='all',bill
   return {...song,thumbnailUrl:images[0]?.imageUrl??null,thumbnailUrls:images.map(x=>x.imageUrl)};
  });
  const creditParticipants=[...person.jointParticipants.values()].map(p=>({key:p.personKey,name:p.name,href:index.people.has(p.personKey)?personDetailHref(p.personKey):null}));
- return {key:person.key,name:person.name,kindLabel:kindLabel(person),groups:groups.map(g=>({key:g.id,name:g.name,href:index.people.has(g.id)?personDetailHref(g.id):null})),members,...(creditParticipants.length?{creditParticipants}:{}),billing:activeBilling,billingTabs,roles:roleLabels(person.roles),role:activeRole,roleTabs,total:songs.length,page,pages,items};
+ const related=personRelationsForEntity(person.key),link=(id,context)=>({key:id,name:entityForId(id).name,href:index.people.has(id)?personDetailHref(id):null,...(context?{context}:{})});
+ const alternateNames=related.filter(r=>r.relation==='alternate_name').map(r=>link(r.fromId===person.key?r.toId:r.fromId));
+ const characters=related.filter(r=>r.relation==='character_voice'&&r.toId===person.key).map(r=>link(r.fromId,r.context));
+ const voiceActors=related.filter(r=>r.relation==='character_voice'&&r.fromId===person.key).map(r=>link(r.toId,r.context));
+ return {key:person.key,name:person.name,kindLabel:kindLabel(person),groups:groups.map(g=>({key:g.id,name:g.name,href:index.people.has(g.id)?personDetailHref(g.id):null})),members,...(creditParticipants.length?{creditParticipants}:{}),...(alternateNames.length?{alternateNames}:{}),...(characters.length?{characters}:{}),...(voiceActors.length?{voiceActors}:{}),billing:activeBilling,billingTabs,roles:roleLabels(person.roles),role:activeRole,roleTabs,total:songs.length,page,pages,items};
 }
 
 export function personDetailHref(key,{page=1,role='all',billing='all'}={}){

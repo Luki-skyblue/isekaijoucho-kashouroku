@@ -1,7 +1,7 @@
 import type {JsonObject} from './core';
 import type {PrivateModel} from './private-read-model.mjs';
-type PersonLink={key:string;name:string;href:string|null};
-export type PersonDetailData={key:string;name:string;kindLabel:string;groups:PersonLink[];members:PersonLink[]|null;creditParticipants?:PersonLink[];billing:string;billingTabs:Array<{id:string;label:string;count:number}>;roles:string[];role:string;roleTabs:Array<{id:string;label:string;count:number}>;total:number;page:number;pages:number;items:Array<{entryId:string;href:string;title:string;displayCredit:string;roles:string[];thumbnailUrl:string|null;thumbnailUrls:string[]}>};
+type PersonLink={key:string;name:string;href:string|null;context?:string};
+export type PersonDetailData={key:string;name:string;kindLabel:string;groups:PersonLink[];members:PersonLink[]|null;creditParticipants?:PersonLink[];alternateNames?:PersonLink[];characters?:PersonLink[];voiceActors?:PersonLink[];billing:string;billingTabs:Array<{id:string;label:string;count:number}>;roles:string[];role:string;roleTabs:Array<{id:string;label:string;count:number}>;total:number;page:number;pages:number;items:Array<{entryId:string;href:string;title:string;displayCredit:string;roles:string[];thumbnailUrl:string|null;thumbnailUrls:string[]}>};
 export function creditNameKey(name:unknown):string|null;
 export function validPersonKey(key:unknown):boolean;
 export function singerCreditParts(detail:JsonObject):Array<{text:string;personKey:string|null}>;

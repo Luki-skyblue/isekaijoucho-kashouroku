@@ -1101,10 +1101,7 @@
       "name": "ナナホシ管弦楽団",
       "type": "artist",
       "origin": "catalog",
-      "aliases": [
-        "岩見 陸",
-        "岩見陸"
-      ],
+      "aliases": [],
       "sourceUrls": [
         "https://butaient.com/nanahoshiorchestra/profile/"
       ],
@@ -1187,6 +1184,24 @@
       "aliases": [],
       "sourceUrls": [
         "https://www.universal-music.co.jp/ado/news/2023-08-29/"
+      ],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
+    },
+    {
+      "id": "18396af2-9478-50c3-a336-8ef866fa73be",
+      "name": "岩見 陸",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [
+        "岩見陸"
+      ],
+      "sourceUrls": [
+        "https://butaient.com/nanahoshiorchestra/profile/"
       ],
       "presentation": {
         "kind": "creator",
@@ -2665,6 +2680,52 @@
         "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79"
       ],
       "absentId": "ae41fa12-3b09-52c0-bc08-1d9218492391"
+    }
+  ],
+  "personRelations": [
+    {
+      "key": "activity-name-nanahoshi-iwami",
+      "status": "active",
+      "relation": "alternate_name",
+      "fromId": "c2708164-01db-5d01-b510-629fac0eb7b3",
+      "toId": "18396af2-9478-50c3-a336-8ef866fa73be",
+      "checkedOn": "2026-10-24",
+      "sourceIds": [
+        "S-146"
+      ],
+      "sourceUrls": [
+        "https://butaient.com/nanahoshiorchestra/profile/"
+      ]
+    },
+    {
+      "key": "character-voice-yorukawa-isekaijoucho",
+      "status": "active",
+      "relation": "character_voice",
+      "fromId": "f1d88444-8f3c-5ae2-a703-48e5d620c8d2",
+      "toId": "81a01233-230e-50a8-a309-11275c794cd0",
+      "context": "神椿市建設中。",
+      "checkedOn": "2026-10-24",
+      "sourceIds": [
+        "S-150"
+      ],
+      "sourceUrls": [
+        "https://kamitsubaki.jp/news/2025/03/22/6491/"
+      ]
+    },
+    {
+      "key": "character-voice-higure-isekaijoucho",
+      "status": "active",
+      "relation": "character_voice",
+      "fromId": "2b1800fd-3f87-5186-9d31-874afc9afa17",
+      "toId": "81a01233-230e-50a8-a309-11275c794cd0",
+      "context": "お姉ちゃんごっこ",
+      "checkedOn": "2026-10-24",
+      "sourceIds": [
+        "S-151"
+      ],
+      "sourceUrls": [
+        "https://harumakigohan.com/onego/"
+      ]
     }
   ]
 }
