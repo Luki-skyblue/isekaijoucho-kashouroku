@@ -16,12 +16,13 @@ export default async function PersonDetail({params,searchParams}:{params:Promise
  if(!person)notFound();
  if(person.key!==key)redirect(personDetailHref(person.key,{page:person.page,role:person.role,billing:person.billing}));
  const href=(page:number)=>personDetailHref(person.key,{page,role:person.role,billing:person.billing});
+ const projects=person.kindLabel==='キャラクター'?[...new Set(person.voiceActors?.flatMap(p=>p.context?[p.context]:[])??[])]:[];
  return <article className="person-detail-page">
   <Breadcrumb parts={[{label:'関係者検索',href:'/people'},{label:person.name}]}/>
-  <header className="person-detail-heading"><h1>{person.name}</h1><p>{person.kindLabel}</p></header>
+  <header className="person-detail-heading"><h1>{person.name}</h1><p>{[person.kindLabel,...projects].join('・')}</p></header>
   <div className={'person-detail-layout'+(person.relationGroups.length?' with-relations':'')}>
   {person.relationGroups.length>0&&<aside className="person-relations" aria-label="関係する名義">{person.relationGroups.map(group=><section className="person-relation-group" key={group.id} aria-labelledby={'person-relation-'+group.id}>
-   <h2 id={'person-relation-'+group.id}>{group.label}</h2>{group.items.length?<ul>{group.items.map(p=><li key={p.key+'|'+(p.context??'')}>{p.href?<Link href={p.href}>{p.name}<span aria-hidden="true"> ↗</span></Link>:<span>{p.name}</span>}{p.context&&<small>{p.context}</small>}</li>)}</ul>:<p className="muted">準備中</p>}
+   <h2 id={'person-relation-'+group.id}>{group.label}</h2>{group.items.length?<ul>{group.items.map(p=><li key={p.key+'|'+(p.context??'')}>{p.href?<Link href={p.href}>{p.name}<span aria-hidden="true"> ↗</span></Link>:<span>{p.name}</span>}</li>)}</ul>:<p className="muted">準備中</p>}
   </section>)}</aside>}
   <div className="person-songs">
   {person.billingTabs.length>0&&<nav className="person-role-tabs person-billing-tabs" aria-label="名義で絞り込む">{person.billingTabs.map(tab=><Link key={tab.id} href={personDetailHref(person.key,{billing:tab.id,role:person.role})} aria-current={person.billing===tab.id?'page':undefined}>{tab.label}<small>{tab.count}</small></Link>)}</nav>}
