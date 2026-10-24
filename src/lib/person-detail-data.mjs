@@ -39,29 +39,43 @@ export function singerCreditParts(detail){
 function indexFor(model){
  if(cache.has(model))return cache.get(model);
  const people=new Map(),aliases=new Map(),billedGroups=new Map();
- function add(key,name,entryId,role){
+ function add(key,name,entryId,role,{listed=true,jointParticipants=[],jointLabel=null}={}){
   if(!key||!name)return;
   const entity=entityForId(key);
-  if(!people.has(key))people.set(key,{key,name:entity?.name??name,aliases:arr(entity?.aliases),type:entity?.type??'credit',roles:new Set(),songs:new Map()});
-  const person=people.get(key);person.roles.add(role);
-  const oldKey=creditNameKey(name);if(!aliases.has(oldKey))aliases.set(oldKey,new Set());aliases.get(oldKey).add(key);
+  if(!people.has(key))people.set(key,{key,name:entity?.name??name,aliases:arr(entity?.aliases),type:entity?.type??'credit',roles:new Set(),songs:new Map(),listed:false,jointParticipants:new Map(),jointLabels:new Set()});
+  const person=people.get(key);person.roles.add(role);person.listed ||=listed;
+  for(const participant of jointParticipants)person.jointParticipants.set(participant.personKey,participant);
+  if(jointLabel)person.jointLabels.add(jointLabel);
+  // Keep old name URLs as well as every explicitly reviewed alias. If the
+  // spelling points at multiple current IDs, retain the ambiguity below.
+  for(const spelling of new Set([name,...(entity?[entity.name,...arr(entity.aliases)]:[])])){
+   const oldKey=creditNameKey(spelling);if(!aliases.has(oldKey))aliases.set(oldKey,new Set());aliases.get(oldKey).add(key);
+  }
   if(!person.songs.has(entryId))person.songs.set(entryId,new Set());person.songs.get(entryId).add(role);
+ }
+ function addCreator(credit,entryId,role){
+  const key=credit.personKey===undefined?personKeyForCredit(credit.name,[credit]):credit.personKey,participants=arr(credit.participants);
+  if(participants.length>1){
+   // Preserve the old joint-name page while the directory indexes its people.
+   add(key,credit.name,entryId,role,{listed:false,jointParticipants:participants});
+   for(const person of participants)add(person.personKey,person.name,entryId,role,{jointLabel:credit.name});
+  }else add(key,credit.name,entryId,role);
  }
  for(const [entryId,entry]of model.entries){
   const song=songDetailFromModel(model,entryId);
   for(const singer of singersForEntry(entry))if(uuid.test(text(singer.entityId)))add(singer.entityId,text(singer.name),entryId,'vocal');
   const billing=billingPeopleForEntry(entry);billedGroups.set(entryId,new Set(billing.filter(p=>p.type==='group').map(p=>p.id)));
   for(const entity of billing)if(entity.type==='group'||!song.detail.singers.some(s=>s.entityId===entity.id))add(entity.id,entity.name,entryId,'artist');
-  for(const credit of song.credits)for(const person of credit.people)add(person.personKey,person.name,entryId,songCreditRole(song.detail,credit));
-  if(song.detail.legacySongType==='cover')for(const credit of song.originalCredits)if(['lyricist','composer','arranger'].includes(credit.role))add(credit.personKey,credit.name,entryId,'original_'+credit.role);
-  for(const video of song.videos)for(const credit of video.credits)add(personKeyForCredit(credit.name,[credit]),credit.name,entryId,`video:${credit.role}`);
+  for(const credit of song.credits)for(const person of credit.people)addCreator(person,entryId,songCreditRole(song.detail,credit));
+  if(song.detail.legacySongType==='cover')for(const credit of song.originalCredits)if(['lyricist','composer','arranger'].includes(credit.role))addCreator(credit,entryId,'original_'+credit.role);
+  for(const video of song.videos)for(const credit of video.credits)addCreator(credit,entryId,`video:${credit.role}`);
  }
  const result={people,aliases,billedGroups};cache.set(model,result);return result;
 }
 const roleLabels=values=>orderedCreditRoles(values).map(creditRoleLabel);
 const presentation=person=>entityForId(person.key)?.presentation;
 const kindLabels={artist:'アーティスト',creator:'クリエイター',group:'グループ',character:'キャラクター',voicebank:'音声ライブラリ',musical_isotope:'音楽的同位体'};
-const kindLabel=person=>kindLabels[presentation(person)?.kind]??(person.key.startsWith('credit-')?'クリエイター':'関係者');
+const kindLabel=person=>person.jointParticipants.size?'連名':kindLabels[presentation(person)?.kind]??(person.key.startsWith('credit-')?'クリエイター':'関係者');
 export function personDetailFromModel(model,key,{page=1,limit=24,role='all',billing='all'}={}){
  if(!validPersonKey(key))return null;
  const index=indexFor(model),targets=index.aliases.get(key);
@@ -86,7 +100,8 @@ export function personDetailFromModel(model,key,{page=1,limit=24,role='all',bill
   const entry=model.entries.get(song.entryId),images=songArtworkCandidatesForEntry(entry,model.works.get(entry.detail.primaryWorkId));
   return {...song,thumbnailUrl:images[0]?.imageUrl??null,thumbnailUrls:images.map(x=>x.imageUrl)};
  });
- return {key:person.key,name:person.name,kindLabel:kindLabel(person),groups:groups.map(g=>({key:g.id,name:g.name,href:index.people.has(g.id)?personDetailHref(g.id):null})),members,billing:activeBilling,billingTabs,roles:roleLabels(person.roles),role:activeRole,roleTabs,total:songs.length,page,pages,items};
+ const creditParticipants=[...person.jointParticipants.values()].map(p=>({key:p.personKey,name:p.name,href:index.people.has(p.personKey)?personDetailHref(p.personKey):null}));
+ return {key:person.key,name:person.name,kindLabel:kindLabel(person),groups:groups.map(g=>({key:g.id,name:g.name,href:index.people.has(g.id)?personDetailHref(g.id):null})),members,...(creditParticipants.length?{creditParticipants}:{}),billing:activeBilling,billingTabs,roles:roleLabels(person.roles),role:activeRole,roleTabs,total:songs.length,page,pages,items};
 }
 
 export function personDetailHref(key,{page=1,role='all',billing='all'}={}){
@@ -95,7 +110,7 @@ export function personDetailHref(key,{page=1,role='all',billing='all'}={}){
 
 export function peopleListFromModel(model,{category='artists',term='',role='all',page=1,limit=48}={}){
  category=['creators','groups'].includes(category)?category:'artists';term=text(term).trim().slice(0,100);
- const people=[...indexFor(model).people.values()];
+ const people=[...indexFor(model).people.values()].filter(p=>p.listed);
  // The editorial placement is separate from song duties and broad DB types.
  // A named producer in billing is not automatically an artist or a singer.
  const belongs=(person,tab)=>arr(presentation(person)?.categories).includes(tab)||(tab==='creators'&&[...person.roles].some(r=>!['vocal','artist'].includes(r)));
@@ -104,7 +119,10 @@ export function peopleListFromModel(model,{category='artists',term='',role='all'
  const creatorRoles=orderedCreditRoles(creators.flatMap(p=>[...p.roles].filter(r=>!['vocal','artist'].includes(r))));
  const activeRole=category==='creators'&&creatorRoles.includes(role)?role:'all';
  const roleOptions=[{id:'all',label:'すべて'},...creatorRoles.map(r=>({id:r,label:creditRoleLabel(r)}))];
- const filtered=people.filter(p=>belongs(p,category)&&(activeRole==='all'||p.roles.has(activeRole))&&catalogNameMatches(p,term)).sort((a,b)=>a.name.localeCompare(b.name,'ja')||compare(a.key,b.key));
+ // A full reviewed joint label can find its participants, but one member's
+ // name must not become another member's identity alias or partial match.
+ const matches=person=>catalogNameMatches(person,term)||[...person.jointLabels].some(label=>catalogNameMatches({name:label},term)&&catalogNameMatches({name:term},label));
+ const filtered=people.filter(p=>belongs(p,category)&&(activeRole==='all'||p.roles.has(activeRole))&&matches(p)).sort((a,b)=>a.name.localeCompare(b.name,'ja')||compare(a.key,b.key));
  limit=Number.isSafeInteger(limit)&&limit>0&&limit<=100?limit:48;
  const pages=Math.ceil(filtered.length/limit);page=Number.isSafeInteger(page)&&page>0?Math.min(page,Math.max(pages,1)):1;
  return {category,term,role:activeRole,roleOptions,page,pages,total:filtered.length,categories,items:filtered.slice((page-1)*limit,page*limit).map(p=>({key:p.key,name:p.name,type:p.type,kindLabel:kindLabel(p),roles:roleLabels(p.roles),songCount:p.songs.size}))};

@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "purpose": "REVIEWED_JOINT_CREATOR_CREDIT_IDENTITY_LINKS",
+  "records": [
+    {
+      "key": "joint-credit-7f3d424f-1ae1-45b6-88b1-9abd5498c514",
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "7f3d424f-1ae1-45b6-88b1-9abd5498c514",
+        "kind": "song_variant",
+        "primaryWorkId": "afc3bd45-9f8b-5a67-abda-f0e07ffdd24b",
+        "title": "かたちなきもの",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "rawName": "ヰ世界情緒・香椎モイミ",
+      "contexts": [
+        {
+          "role": "lyricist",
+          "scopes": [
+            "work",
+            "original"
+          ]
+        }
+      ],
+      "parts": [
+        {
+          "text": "ヰ世界情緒",
+          "entityId": "81a01233-230e-50a8-a309-11275c794cd0"
+        },
+        {
+          "text": "・"
+        },
+        {
+          "text": "香椎モイミ",
+          "entityId": "cdd1834b-78ff-57c9-8103-e09a048d6503"
+        }
+      ],
+      "sourceIds": [
+        "S-106"
+      ],
+      "sourceUrls": [
+        "https://kamitsubaki.jp/discography/isekaijoucho/3471/"
+      ],
+      "scopeNote": "Exact existing credit wording and roles retained; no verification-state or arrangement inheritance change."
+    },
+    {
+      "key": "joint-credit-364df801-b656-4862-910e-87953d9bd670",
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "364df801-b656-4862-910e-87953d9bd670",
+        "kind": "song_variant",
+        "primaryWorkId": "f85e4b9b-abf0-5fa3-ba62-86854320635e",
+        "title": "眠りゆく芽吹き",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "rawName": "mopi・下村陽子",
+      "contexts": [
+        {
+          "role": "composer",
+          "scopes": [
+            "work",
+            "original"
+          ]
+        },
+        {
+          "role": "arranger",
+          "scopes": [
+            "version",
+            "original"
+          ]
+        }
+      ],
+      "parts": [
+        {
+          "text": "mopi",
+          "entityId": "b2819dcb-9aff-5b1a-b492-b8f7cadffc7c"
+        },
+        {
+          "text": "・"
+        },
+        {
+          "text": "下村陽子",
+          "entityId": "06ced051-2b1c-544a-ab24-d820ac030c12"
+        }
+      ],
+      "sourceIds": [
+        "S-123"
+      ],
+      "sourceUrls": [
+        "https://kamitsubaki.jp/discography/isekaijoucho/4292/"
+      ],
+      "scopeNote": "Exact existing credit wording and roles retained; no verification-state or arrangement inheritance change."
+    },
+    {
+      "key": "joint-credit-2f0d508a-093c-4297-bc89-b2280090d037",
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "2f0d508a-093c-4297-bc89-b2280090d037",
+        "kind": "song_variant",
+        "primaryWorkId": "bb76de01-a99c-5b4c-94ea-f77823a8e9c2",
+        "title": "運命",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "rawName": "はるまきごはん・煮ル果実",
+      "contexts": [
+        {
+          "role": "lyricist",
+          "scopes": [
+            "work",
+            "original"
+          ]
+        },
+        {
+          "role": "composer",
+          "scopes": [
+            "work",
+            "original"
+          ]
+        },
+        {
+          "role": "arranger",
+          "scopes": [
+            "original"
+          ]
+        }
+      ],
+      "parts": [
+        {
+          "text": "はるまきごはん",
+          "entityId": "220c0103-6b52-54fa-8e44-ed9892dce32f"
+        },
+        {
+          "text": "・"
+        },
+        {
+          "text": "煮ル果実",
+          "entityId": "89959e37-7a6c-5ef9-b4c5-78092dd7cda0"
+        }
+      ],
+      "sourceIds": [
+        "S-147"
+      ],
+      "sourceUrls": [
+        "https://linkco.re/QZheaA0T?lang=ja"
+      ],
+      "scopeNote": "Exact existing credit wording and roles retained; no verification-state or arrangement inheritance change."
+    },
+    {
+      "key": "joint-credit-6cc15677-81aa-4025-8684-850fd84d2cc7",
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "6cc15677-81aa-4025-8684-850fd84d2cc7",
+        "kind": "song_variant",
+        "primaryWorkId": "33a700f2-774d-5000-911f-6fbaef299687",
+        "title": "ULTRA C",
+        "displayCredit": "ヰ世界情緒 × LOLUET",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "rawName": "Giga & TeddyLoid",
+      "contexts": [
+        {
+          "role": "composer",
+          "scopes": [
+            "work",
+            "original"
+          ]
+        },
+        {
+          "role": "arranger",
+          "scopes": [
+            "original"
+          ]
+        }
+      ],
+      "parts": [
+        {
+          "text": "Giga",
+          "entityId": "257b93db-e767-562d-adb6-27418398cbc7"
+        },
+        {
+          "text": " & "
+        },
+        {
+          "text": "TeddyLoid",
+          "entityId": "cd93702b-73dc-5646-a3a5-4545cb99ba62"
+        }
+      ],
+      "sourceIds": [
+        "S-148",
+        "S-149"
+      ],
+      "sourceUrls": [
+        "https://www.universal-music.co.jp/ado/news/2023-08-29/",
+        "https://prtimes.jp/main/html/rd/p/000006087.000005397.html"
+      ],
+      "scopeNote": "SEGA identifies Giga and TeddyLoid as the original composers; Ado label credits independently identify the same two people. Existing original-arranger wording is retained without marking it newly verified. No cover-arranger attribution is created."
+    },
+    {
+      "key": "joint-credit-bf1c1adc-97c2-435e-8a88-34efd69a558c",
+      "status": "active",
+      "checkedOn": "2026-10-24",
+      "entry": {
+        "entryId": "bf1c1adc-97c2-435e-8a88-34efd69a558c",
+        "kind": "song_variant",
+        "primaryWorkId": "2c9ccc5a-4929-5569-8f5d-103d7c776950",
+        "title": "唱",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "rawName": "Giga & TeddyLoid",
+      "contexts": [
+        {
+          "role": "composer",
+          "scopes": [
+            "original"
+          ]
+        },
+        {
+          "role": "arranger",
+          "scopes": [
+            "original"
+          ]
+        }
+      ],
+      "parts": [
+        {
+          "text": "Giga",
+          "entityId": "257b93db-e767-562d-adb6-27418398cbc7"
+        },
+        {
+          "text": " & "
+        },
+        {
+          "text": "TeddyLoid",
+          "entityId": "cd93702b-73dc-5646-a3a5-4545cb99ba62"
+        }
+      ],
+      "sourceIds": [
+        "S-148"
+      ],
+      "sourceUrls": [
+        "https://www.universal-music.co.jp/ado/news/2023-08-29/"
+      ],
+      "scopeNote": "Exact existing credit wording and roles retained; no verification-state or arrangement inheritance change."
+    }
+  ]
+}

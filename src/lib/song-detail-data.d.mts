@@ -1,12 +1,13 @@
+import type {ResolvedCreditName,CreditPart,CreditParticipant} from './creator-credit-data.mjs';
 import type {JsonObject} from './core';
 import type {PrivateModel,PrivateWork} from './private-read-model.mjs';
 export type SongDetailData={
  detail:JsonObject;metadata:JsonObject;
- credits:Array<{role:string;scope:string;names:string[];people:Array<{name:string;personKey:string|null}>;value:string|null;review:JsonObject|null}>;
- originalArranger:string|null;
- originalCredits:Array<{role:string;name:string;personKey:string|null}>;
+ credits:Array<{role:string;scope:string;names:string[];people:ResolvedCreditName[];value:string|null;review:JsonObject|null}>;
+ originalArranger:string|null;originalArrangerCredit?:ResolvedCreditName;
+ originalCredits:Array<ResolvedCreditName&{role:string}>;
  artwork:SongArtwork|null;artworkCandidates:SongArtwork[];listenUrl:string|null;
- videos:Array<{mediaId:string;url:string;title:string|null;kind:string|null;publishedOn:string|null;imageUrl:string|null;authorName?:string|null;authorUrl?:string|null;credits:Array<{role:string;name:string;entityId?:string}>}>;
+ videos:Array<{mediaId:string;url:string;title:string|null;kind:string|null;publishedOn:string|null;imageUrl:string|null;authorName?:string|null;authorUrl?:string|null;credits:Array<{role:string;name:string;entityId?:string;parts?:CreditPart[];participants?:CreditParticipant[]}>}>;
  releases:JsonObject[];
  lives:Array<{eventId:string;title:string;date:string|null;uncertain:boolean;imageUrl:string|null}>;
  hasUncertainLives:boolean;comparison:JsonObject|null;versionLabel:string|null;
@@ -25,7 +26,7 @@ export function registeredSongSourcesForEntry(entry:JsonObject,records?:JsonObje
 export function songTypeForEntry(entry:JsonObject,records?:JsonObject[]):string|null;
 export function missingSongText(review:unknown):string;
 export function songMetadataForEntry(entry:JsonObject,factRecords?:JsonObject[],work?:Partial<PrivateWork>,options?:{sourceRecords?:JsonObject[];sourceExclusions?:JsonObject[]}):JsonObject;
-export function songCreditsForEntry(entry:JsonObject,metadata?:JsonObject,factRecords?:JsonObject[]):{rows:SongDetailData['credits'];originalCredits:SongDetailData['originalCredits'];originalArranger:string|null};
+export function songCreditsForEntry(entry:JsonObject,metadata?:JsonObject,factRecords?:JsonObject[]):{rows:SongDetailData['credits'];originalCredits:SongDetailData['originalCredits'];originalArranger:string|null;originalArrangerCredit?:ResolvedCreditName};
 export const SHARED_RELEASE_TRACKLISTS:Array<{familyId:string;title:string;editionIds:string[];label:string;sourceUrl:string}>;
 export function songReleasesForEntry(entry:JsonObject,work?:Partial<PrivateWork>,releaseRecords?:JsonObject[],sourceRecords?:JsonObject[]):JsonObject[];
 export function songArtworkForEntry(entry:JsonObject,work?:Partial<PrivateWork>):SongDetailData['artwork'];

@@ -1055,6 +1055,145 @@
           "artists"
         ]
       }
+    },
+    {
+      "id": "082c8459-03e2-5c53-a2a3-c9d1662384c1",
+      "name": "Hideyuki Negishi",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [
+        "Hideyuki Negishi (THINKR)",
+        "Hideyuki Negishi（THINKR）"
+      ],
+      "sourceUrls": [
+        "https://kamitsubaki.jp/news/2024/08/01/3649/",
+        "https://kamitsubaki.jp/news/2024/10/23/4846/"
+      ],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
+    },
+    {
+      "id": "f92eb239-b042-58cc-afe5-1a7df958c999",
+      "name": "Kentaro Iwaki",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [
+        "Kentaro Iwaki (THINKR)",
+        "Kentaro Iwaki（THINKR）"
+      ],
+      "sourceUrls": [
+        "https://kamitsubaki.jp/news/2024/08/01/3649/",
+        "https://kamitsubaki.jp/news/2024/10/23/4846/"
+      ],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
+    },
+    {
+      "id": "c2708164-01db-5d01-b510-629fac0eb7b3",
+      "name": "ナナホシ管弦楽団",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [
+        "岩見 陸",
+        "岩見陸"
+      ],
+      "sourceUrls": [
+        "https://butaient.com/nanahoshiorchestra/profile/"
+      ],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
+    },
+    {
+      "id": "89959e37-7a6c-5ef9-b4c5-78092dd7cda0",
+      "name": "煮ル果実",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://linkco.re/QZheaA0T?lang=ja"
+      ],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
+    },
+    {
+      "id": "b2819dcb-9aff-5b1a-b492-b8f7cadffc7c",
+      "name": "mopi",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://kamitsubaki.jp/discography/isekaijoucho/4292/"
+      ],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
+    },
+    {
+      "id": "06ced051-2b1c-544a-ab24-d820ac030c12",
+      "name": "下村陽子",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://kamitsubaki.jp/discography/isekaijoucho/4292/"
+      ],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
+    },
+    {
+      "id": "257b93db-e767-562d-adb6-27418398cbc7",
+      "name": "Giga",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://www.universal-music.co.jp/ado/news/2023-08-29/"
+      ],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
+    },
+    {
+      "id": "cd93702b-73dc-5646-a3a5-4545cb99ba62",
+      "name": "TeddyLoid",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://www.universal-music.co.jp/ado/news/2023-08-29/"
+      ],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
+        ]
+      }
     }
   ],
   "vocalLinks": [
