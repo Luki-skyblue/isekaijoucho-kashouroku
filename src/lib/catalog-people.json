@@ -2796,6 +2796,21 @@
       "sourceUrls": [
         "https://musical-isotope.kamitsubaki.jp/product/coko/"
       ]
+    },
+    {
+      "key": "character-voice-kaho-kaf",
+      "status": "active",
+      "relation": "character_voice",
+      "fromId": "79955bc8-17c6-5859-95c3-dc82560eba60",
+      "toId": "36129afb-1fe8-5255-958e-b090e17c7905",
+      "context": "神椿市建設中。",
+      "checkedOn": "2026-10-24",
+      "sourceIds": [
+        "S-150"
+      ],
+      "sourceUrls": [
+        "https://kamitsubaki.jp/news/2025/03/22/6491/"
+      ]
     }
   ]
 }
