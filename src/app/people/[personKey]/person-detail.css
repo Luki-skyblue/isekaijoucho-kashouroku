@@ -1,14 +1,14 @@
 .person-detail-heading{margin:30px 0 36px}
 .person-detail-heading h1{font-family:SongMincho,var(--serif);font-weight:500;font-size:clamp(28px,4vw,42px);line-height:1.55;letter-spacing:.035em;overflow-wrap:anywhere;margin:0 0 12px}
 .person-detail-heading p{font-size:13px;color:var(--quiet);margin:0;line-height:1.8}
-.person-identity-facts{margin:12px 0 0;font-size:13px;line-height:1.8}
-.person-identity-facts>div{display:flex;align-items:baseline;gap:16px}
-.person-identity-facts dt{flex-shrink:0;color:var(--quiet)}
-.person-identity-facts dd{display:flex;flex-wrap:wrap;gap:6px 18px;margin:0;min-width:0}
-.person-identity-facts a{text-decoration:none;overflow-wrap:anywhere}
-.person-identity-facts a span{font-size:11px;color:var(--quiet)}
-.person-characters li{display:flex;flex-direction:column;gap:4px}
-.person-characters small{font-size:11px;color:var(--quiet)}
+.person-detail-layout.with-relations{display:grid;grid-template-columns:200px minmax(0,1fr);gap:48px;align-items:start}
+.person-songs{min-width:0}
+.person-relations{display:grid;gap:28px;min-width:0}
+.person-detail-page .person-relation-group h2{font-size:13px;color:var(--quiet);margin:0 0 10px;line-height:1.8}
+.person-relation-group ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.person-relation-group li{min-width:0;display:flex;flex-direction:column;gap:4px;font-size:14px;line-height:1.7;overflow-wrap:anywhere}
+.person-relation-group a{text-decoration:none}
+.person-relation-group a span,.person-relation-group small{font-size:11px;color:var(--quiet)}
 .person-detail-page h2{font-size:17px;font-weight:500;margin:0 0 15px}
 .person-detail-count{font-family:var(--mono);font-size:12px;color:var(--quiet);margin-left:10px}
 .person-detail-song-roles{font-size:11px;line-height:1.7;color:var(--quiet)}
@@ -16,11 +16,8 @@
 .person-role-tabs a{display:flex;align-items:center;gap:7px;white-space:nowrap;flex-shrink:0;padding:10px 0;color:var(--quiet);text-decoration:none;border-bottom:2px solid transparent;font-size:13px}
 .person-role-tabs a[aria-current=page]{color:var(--ink);border-color:var(--accent)}
 .person-role-tabs small{font-size:10px;font-family:var(--mono)}
-.person-members{margin:0 0 32px}
-.person-members ul{display:flex;flex-wrap:wrap;gap:10px 24px;padding:0;margin:0;list-style:none}
-.person-members li{font-size:14px}
-.person-members a{text-decoration:none}
-.person-members a span{font-size:11px;color:var(--quiet)}
-.person-members .muted{font-size:13px}
-.person-groups{display:flex;gap:18px;margin:-22px 0 26px;font-size:12px}
-.person-groups a{color:var(--quiet);text-decoration:none}
+@media(max-width:860px){
+ .person-detail-layout.with-relations{display:block}
+ .person-relations{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 24px;margin-bottom:32px}
+ .person-relation-group ul{gap:8px}
+}

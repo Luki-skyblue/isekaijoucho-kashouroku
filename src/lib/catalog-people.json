@@ -2726,6 +2726,76 @@
       "sourceUrls": [
         "https://harumakigohan.com/onego/"
       ]
+    },
+    {
+      "key": "musical-isotope-kafu",
+      "status": "active",
+      "relation": "musical_isotope",
+      "fromId": "36129afb-1fe8-5255-958e-b090e17c7905",
+      "toId": "3306ddbd-8f3c-52ac-8dad-bec91fda87a4",
+      "checkedOn": "2026-10-24",
+      "sourceIds": [
+        "S-152"
+      ],
+      "sourceUrls": [
+        "https://musical-isotope.kamitsubaki.jp/product/kafu/"
+      ]
+    },
+    {
+      "key": "musical-isotope-rime",
+      "status": "active",
+      "relation": "musical_isotope",
+      "fromId": "ae41fa12-3b09-52c0-bc08-1d9218492391",
+      "toId": "6495e046-c6c7-5bfa-bcca-64e962a2ac86",
+      "checkedOn": "2026-10-24",
+      "sourceIds": [
+        "S-152"
+      ],
+      "sourceUrls": [
+        "https://musical-isotope.kamitsubaki.jp/product/rime/"
+      ]
+    },
+    {
+      "key": "musical-isotope-haru",
+      "status": "active",
+      "relation": "musical_isotope",
+      "fromId": "b8307e06-2046-5415-a1f7-0b892dd41041",
+      "toId": "39b82835-a038-5b94-95e6-d01ca0bf8300",
+      "checkedOn": "2026-10-24",
+      "sourceIds": [
+        "S-152"
+      ],
+      "sourceUrls": [
+        "https://musical-isotope.kamitsubaki.jp/product/haru/"
+      ]
+    },
+    {
+      "key": "musical-isotope-sekai",
+      "status": "active",
+      "relation": "musical_isotope",
+      "fromId": "81a01233-230e-50a8-a309-11275c794cd0",
+      "toId": "1867981b-c3c0-551b-9337-a8df05385348",
+      "checkedOn": "2026-10-24",
+      "sourceIds": [
+        "S-152"
+      ],
+      "sourceUrls": [
+        "https://musical-isotope.kamitsubaki.jp/product/sekai/"
+      ]
+    },
+    {
+      "key": "musical-isotope-coko",
+      "status": "active",
+      "relation": "musical_isotope",
+      "fromId": "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+      "toId": "3cf9fe02-eab0-56ff-bf72-dd1667ab3c79",
+      "checkedOn": "2026-10-24",
+      "sourceIds": [
+        "S-152"
+      ],
+      "sourceUrls": [
+        "https://musical-isotope.kamitsubaki.jp/product/coko/"
+      ]
     }
   ]
 }

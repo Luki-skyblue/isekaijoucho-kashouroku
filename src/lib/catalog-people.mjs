@@ -62,7 +62,7 @@ export function personRelationsForEntity(id,records=PERSON_RELATION_RECORDS){
  return arr(records).filter(r=>{
   if(r.status!=='active'||r.fromId===r.toId||![r.fromId,r.toId].includes(id)||!arr(r.sourceUrls).some(url=>typeof url==='string'&&url.startsWith('https://')))return false;
   const from=byId.get(r.fromId),to=byId.get(r.toId);
-  return r.relation==='alternate_name'?from?.type==='artist'&&to?.type==='artist':r.relation==='character_voice'?from?.type==='character'&&to?.type==='artist':false;
+  return r.relation==='alternate_name'?from?.type==='artist'&&to?.type==='artist':r.relation==='character_voice'?from?.type==='character'&&to?.type==='artist':r.relation==='musical_isotope'?from?.type==='artist'&&to?.type==='voicebank'&&to.presentation?.kind==='musical_isotope':false;
  });
 }
 

@@ -18,16 +18,12 @@ export default async function PersonDetail({params,searchParams}:{params:Promise
  const href=(page:number)=>personDetailHref(person.key,{page,role:person.role,billing:person.billing});
  return <article className="person-detail-page">
   <Breadcrumb parts={[{label:'関係者検索',href:'/people'},{label:person.name}]}/>
-  <header className="person-detail-heading"><h1>{person.name}</h1><p>{person.kindLabel}</p>
-   {(person.alternateNames?.length||person.voiceActors?.length)?<dl className="person-identity-facts">
-    {person.alternateNames&&<div><dt>別名義</dt><dd>{person.alternateNames.map(p=><span key={p.key}>{p.href?<Link href={p.href}>{p.name}<span aria-hidden="true"> ↗</span></Link>:p.name}</span>)}</dd></div>}
-    {person.voiceActors&&<div><dt>CV</dt><dd>{person.voiceActors.map(p=><span key={p.key+'|'+p.context}>{p.href?<Link href={p.href}>{p.name}<span aria-hidden="true"> ↗</span></Link>:p.name}</span>)}</dd></div>}
-   </dl>:null}
-  </header>
-  {person.characters&&<section className="person-members person-characters" aria-labelledby="person-characters-title"><h2 id="person-characters-title">担当キャラクター</h2><ul>{person.characters.map(p=><li key={p.key+'|'+p.context}>{p.href?<Link href={p.href}>{p.name}<span aria-hidden="true"> ↗</span></Link>:p.name}{p.context&&<small>{p.context}</small>}</li>)}</ul></section>}
-  {person.creditParticipants&&person.creditParticipants.length>0&&<nav className="person-groups" aria-label="連名の参加者">{person.creditParticipants.map(p=>p.href?<Link key={p.key} href={p.href}>{p.name} <span aria-hidden="true">↗</span></Link>:<span key={p.key}>{p.name}</span>)}</nav>}
-  {person.members!==null&&<section className="person-members" aria-labelledby="person-members-title"><h2 id="person-members-title">メンバー</h2>{person.members.length?<ul>{person.members.map(member=><li key={member.key}>{member.href?<Link href={member.href}>{member.name}<span aria-hidden="true"> ↗</span></Link>:member.name}</li>)}</ul>:<p className="muted">準備中</p>}</section>}
-  {person.groups.some(g=>g.href)&&<nav className="person-groups" aria-label="グループのページ">{person.groups.filter(g=>g.href).map(g=><Link key={g.key} href={g.href!}>{g.name} <span aria-hidden="true">↗</span></Link>)}</nav>}
+  <header className="person-detail-heading"><h1>{person.name}</h1><p>{person.kindLabel}</p></header>
+  <div className={'person-detail-layout'+(person.relationGroups.length?' with-relations':'')}>
+  {person.relationGroups.length>0&&<aside className="person-relations" aria-label="関係する名義">{person.relationGroups.map(group=><section className="person-relation-group" key={group.id} aria-labelledby={'person-relation-'+group.id}>
+   <h2 id={'person-relation-'+group.id}>{group.label}</h2>{group.items.length?<ul>{group.items.map(p=><li key={p.key+'|'+(p.context??'')}>{p.href?<Link href={p.href}>{p.name}<span aria-hidden="true"> ↗</span></Link>:<span>{p.name}</span>}{p.context&&<small>{p.context}</small>}</li>)}</ul>:<p className="muted">準備中</p>}
+  </section>)}</aside>}
+  <div className="person-songs">
   {person.billingTabs.length>0&&<nav className="person-role-tabs person-billing-tabs" aria-label="名義で絞り込む">{person.billingTabs.map(tab=><Link key={tab.id} href={personDetailHref(person.key,{billing:tab.id,role:person.role})} aria-current={person.billing===tab.id?'page':undefined}>{tab.label}<small>{tab.count}</small></Link>)}</nav>}
   {person.roleTabs.length>2&&<nav className="person-role-tabs" aria-label="担当で絞り込む">{person.roleTabs.map(tab=><Link key={tab.id} href={personDetailHref(person.key,{role:tab.id,billing:person.billing})} aria-current={person.role===tab.id?'page':undefined}>{tab.label}<small>{tab.count}</small></Link>)}</nav>}
   <section aria-labelledby="person-songs-title"><h2 id="person-songs-title">関連楽曲 <span className="person-detail-count">{person.total}</span></h2>
@@ -38,5 +34,6 @@ export default async function PersonDetail({params,searchParams}:{params:Promise
    </Link>)}</div>:<p className="muted">見つかっていません。</p>}
   </section>
   {person.pages>1&&<nav className="pages" aria-label="関連楽曲のページ送り">{person.page>1&&<Link href={href(person.page-1)}>← 前のページ</Link>}<span>{person.page} / {person.pages} ページ</span>{person.page<person.pages&&<Link href={href(person.page+1)}>次のページ →</Link>}</nav>}
+  </div></div>
  </article>;
 }

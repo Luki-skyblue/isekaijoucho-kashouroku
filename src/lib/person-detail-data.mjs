@@ -105,7 +105,10 @@ export function personDetailFromModel(model,key,{page=1,limit=24,role='all',bill
  const alternateNames=related.filter(r=>r.relation==='alternate_name').map(r=>link(r.fromId===person.key?r.toId:r.fromId));
  const characters=related.filter(r=>r.relation==='character_voice'&&r.toId===person.key).map(r=>link(r.fromId,r.context));
  const voiceActors=related.filter(r=>r.relation==='character_voice'&&r.fromId===person.key).map(r=>link(r.toId,r.context));
- return {key:person.key,name:person.name,kindLabel:kindLabel(person),groups:groups.map(g=>({key:g.id,name:g.name,href:index.people.has(g.id)?personDetailHref(g.id):null})),members,...(creditParticipants.length?{creditParticipants}:{}),...(alternateNames.length?{alternateNames}:{}),...(characters.length?{characters}:{}),...(voiceActors.length?{voiceActors}:{}),billing:activeBilling,billingTabs,roles:roleLabels(person.roles),role:activeRole,roleTabs,total:songs.length,page,pages,items};
+ const isotopes=related.filter(r=>r.relation==='musical_isotope'&&r.fromId===person.key).map(r=>link(r.toId)),voiceOrigins=related.filter(r=>r.relation==='musical_isotope'&&r.toId===person.key).map(r=>link(r.fromId));
+ const groupLinks=groups.map(g=>link(g.id));
+ const relationGroups=[['alternate-names','別名義',alternateNames],['characters','担当キャラクター',characters],['groups','所属グループ',groupLinks],['isotopes','音楽的同位体',isotopes],['voice-actors','CV',voiceActors],['voice-origins','声の提供',voiceOrigins],['members','メンバー',members],['credit-participants','連名の参加者',creditParticipants]].filter(([id,,items])=>items?.length||(id==='members'&&items!==null)).map(([id,label,items])=>({id,label,items}));
+ return {key:person.key,name:person.name,kindLabel:kindLabel(person),groups:groupLinks,members,...(creditParticipants.length?{creditParticipants}:{}),...(alternateNames.length?{alternateNames}:{}),...(characters.length?{characters}:{}),...(voiceActors.length?{voiceActors}:{}),relationGroups,billing:activeBilling,billingTabs,roles:roleLabels(person.roles),role:activeRole,roleTabs,total:songs.length,page,pages,items};
 }
 
 export function personDetailHref(key,{page=1,role='all',billing='all'}={}){
