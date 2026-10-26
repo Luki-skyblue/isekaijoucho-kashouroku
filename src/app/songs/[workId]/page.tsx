@@ -1,24 +1,31 @@
 import Link from 'next/link';
 import {useCatalogEntryIndex} from '@/lib/catalog-mode';
 import {localCatalogReviewEnabled} from '@/lib/catalog-local-review';
-import {getCatalogSongDetail} from '@/lib/catalog-song-api';
-import {CatalogSongDetail} from '@/components/song-detail';
-import {notFound,permanentRedirect} from 'next/navigation';
+import {getCatalogSongDetail,getCatalogSongWork} from '@/lib/catalog-song-api';
+import {CatalogSongDetail,CatalogSongWorkChoices} from '@/components/song-detail';
+import {notFound,permanentRedirect,redirect} from 'next/navigation';
+import {safeCatalogReturnTo,catalogEntryHref} from '@/lib/catalog-navigation';
 import {publicCatalogEnabled,publicLegacySongTarget} from '@/lib/public-catalog';
 import {rpc} from '@/lib/api';
 import {asArray,asObject,confirmedSongFullFromProgram,displayDate,evidenceLabel,exactSingers,mediaGroups,num,pageNumber,safeExternalUrl,recordingDate,relatedRenditionParticipants,str,textOr,validId,JsonObject} from '@/lib/core';
 import {Breadcrumb,Chip,Empty,Heading,Panel} from '@/components/ui';
 
-export default async function SongDetail({params,searchParams}:{params:Promise<{workId:string}>;searchParams:Promise<{historyPage?:string;tab?:string}>}){
- const query=await searchParams,historyPage=pageNumber(query.historyPage),initialTab=['info','videos','history','releases','versions'].includes(query.tab??'')?query.tab:historyPage>1?'history':'info';
+export default async function SongDetail({params,searchParams}:{params:Promise<{workId:string}>;searchParams:Promise<{historyPage?:string;tab?:string;from?:string}>}){
+ const query=await searchParams,returnTo=safeCatalogReturnTo(query.from),historyPage=pageNumber(query.historyPage),initialTab=['info','videos','history','releases','versions'].includes(query.tab??'')?query.tab:historyPage>1?'history':'info';
  const {workId}=await params;
  if(publicCatalogEnabled()&&/^[1-9]\d{0,8}$/.test(workId)){
-  const target=publicLegacySongTarget(Number(workId));if(target)permanentRedirect(`/songs/${target}`);
+  const target=publicLegacySongTarget(Number(workId));if(target)permanentRedirect(catalogEntryHref(target,returnTo));
  }
  if(!validId(workId))notFound();
  if(useCatalogEntryIndex()) {
   const song=await getCatalogSongDetail(workId);
-  if(song)return <>{localCatalogReviewEnabled()&&<p className="catalog-review-warning">開発用・ローカル候補レビュー</p>}<CatalogSongDetail song={song} initialTab={initialTab}/></>;
+  if(song)return <>{localCatalogReviewEnabled()&&<p className="catalog-review-warning">開発用・ローカル候補レビュー</p>}<CatalogSongDetail song={song} initialTab={initialTab} returnTo={returnTo}/></>;
+  const work=await getCatalogSongWork(workId);
+  // A later vocal form may make this work URL ambiguous, so do not cache a
+  // permanent redirect to today's sole entry.
+  if(work?.entries.length===1)redirect(catalogEntryHref(work.entries[0].entryId,returnTo));
+  if(work)return <CatalogSongWorkChoices work={work} returnTo={returnTo}/>;
+  notFound();
  }
  const [work,renditions,media,releases,sources]=await Promise.all([
   rpc('kashouroku_v3_work',{p_work_id:workId}),

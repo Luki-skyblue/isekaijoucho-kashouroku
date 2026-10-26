@@ -3,7 +3,7 @@
  * Non-catalog paths, fragments, unexpected parameters and overly long inputs fail closed.
  */
 const RETURN_KEYS = new Set(['q','page','view','singer','singerMatch','type','sort']);
-const MAX_RETURN_LENGTH = 1800;
+const MAX_RETURN_LENGTH = 4096;
 
 export function safeCatalogReturnTo(value: unknown): string | null {
  if (typeof value !== 'string' || value.length > MAX_RETURN_LENGTH || !value.startsWith('/songs') || /[\u0000-\u001f]/.test(value)) return null;
@@ -11,7 +11,7 @@ export function safeCatalogReturnTo(value: unknown): string | null {
   const url = new URL(value, 'https://catalog.invalid');
   if (url.origin !== 'https://catalog.invalid' || url.pathname !== '/songs' || url.hash) return null;
   const entries = Array.from(url.searchParams.entries());
-  if (entries.length > 28 || entries.some(([key, v])=>!RETURN_KEYS.has(key) || v.length > 120)) return null;
+  if (entries.length > 40 || entries.some(([key, v])=>!RETURN_KEYS.has(key) || v.length > 120)) return null;
   // Preserve validated query parameters, including repeated singer/type values.
   const search = url.searchParams.toString();
   return '/songs' + (search ? '?' + search : '');

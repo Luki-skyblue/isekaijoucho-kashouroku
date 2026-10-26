@@ -6,6 +6,7 @@ import type {PrivateModel,LiveListFilters} from './private-read-model.mjs';
 import type {CatalogListFilters} from './catalog-entry-api';
 import type {JsonObject} from './core';
 import {songDetailFromModel} from './song-detail-data.mjs';
+import {catalogSongWorkFromModel} from './catalog-song-work.mjs';
 import {liveDisplayContextFromModel} from './live-detail-data.mjs';
 import {releaseDisplayContextFromModel,releaseListArtworkFromModel,releaseDetailFromModel,type ReleaseDetailQuery} from './release-detail-data.mjs';
 import {releaseListFromModel,type ReleaseListQuery} from './release-list-data.mjs';
@@ -34,6 +35,7 @@ export async function privateSnapshotInfo():Promise<{exportId:string}> {
  const model=await load();return {exportId:String(model.manifest.exportId)};
 }
 export async function privateSongDetail(entryId:string){return songDetailFromModel(await load(),entryId);}
+export async function privateSongWork(workId:string){return catalogSongWorkFromModel(await load(),workId);}
 export async function privateHomeRecent(){return homeRecentFromModel(await load());}
 export async function privatePersonDetail(key:string,page=1,role='all',billing='all'){return personDetailFromModel(await load(),key,{page,role,billing});}
 export async function privateSingerChoices(){return catalogSingerChoices(await load());}

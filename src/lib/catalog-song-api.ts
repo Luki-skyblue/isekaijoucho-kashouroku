@@ -1,11 +1,19 @@
 import 'server-only';
-import {publicCatalogEnabled,publicSongDetail} from './public-catalog';
-import {privateSnapshotEnabled,privateSongDetail} from './private-snapshot';
+import {publicCatalogEnabled,publicSongDetail,publicSongWork} from './public-catalog';
+import {privateSnapshotEnabled,privateSongDetail,privateSongWork} from './private-snapshot';
 import {localCatalogReviewEnabled} from './catalog-local-review';
 import {getCatalogEntry,compareCatalogEntries,getCatalogEntryCredits,getCatalogEntryHistory} from './catalog-entry-api';
 import {rpc,type RpcName} from './api';
 import {asArray,asObject,num,str,validId,type JsonObject} from './core';
 import {buildSongDetail,type SongDetailData} from './song-detail-data.mjs';
+import type {CatalogSongWork} from './catalog-song-work.mjs';
+
+export async function getCatalogSongWork(workId:string):Promise<CatalogSongWork|null>{
+ if(!validId(workId))return null;
+ if(publicCatalogEnabled())return publicSongWork(workId);
+ if(privateSnapshotEnabled())return privateSongWork(workId);
+ return null;
+}
 
 async function completeCollection(name:RpcName,params:JsonObject,limit:number){
  const first=await rpc(name,{...params,p_limit:limit,p_offset:0});if(!first)return [];

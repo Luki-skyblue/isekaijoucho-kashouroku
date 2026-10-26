@@ -8,5 +8,5 @@ export function singerCreditParts(detail:JsonObject):Array<{text:string;personKe
 export function personDetailFromModel(model:PrivateModel,key:string,options?:{page?:number;limit?:number;role?:string;billing?:string}):PersonDetailData|null;
 export function personDetailHref(key:string,options?:{page?:number;role?:string;billing?:string}):string;
 export type PeopleListQuery={category?:string;term?:string;role?:string;page?:number;limit?:number};
-export function peopleListFromModel(model:PrivateModel,query?:PeopleListQuery):{category:string;term:string;role:string;roleOptions:Array<{id:string;label:string}>;page:number;pages:number;total:number;categories:Array<{id:string;label:string;count:number}>;items:Array<{key:string;name:string;type:string;kindLabel:string;roles:string[];songCount:number}>};
+export function peopleListFromModel(model:PrivateModel,query?:PeopleListQuery):{category:string;term:string;role:string;roleOptions:Array<{id:string;label:string}>;page:number;pages:number;total:number;categories:Array<{id:string;label:string;count:number}>;suggestions:Array<{key:string;name:string;category:string;categoryLabel:string}>;items:Array<{key:string;name:string;type:string;kindLabel:string;roles:string[];songCount:number}>};
 export function peopleListHref(query?:PeopleListQuery):string;

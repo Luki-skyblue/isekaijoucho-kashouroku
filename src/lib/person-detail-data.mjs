@@ -133,9 +133,14 @@ export function peopleListFromModel(model,{category='artists',term='',role='all'
  const creatorRole=role=>!['vocal','artist'].includes(role);
  const countSongs=person=>category==='creators'?[...person.songs.values()].filter(roles=>activeRole==='all'?[...roles].some(creatorRole):roles.has(activeRole)).length:person.songs.size;
  const filtered=people.filter(p=>belongs(p,category)&&(activeRole==='all'||p.roles.has(activeRole))&&matches(p)).sort((a,b)=>(category==='creators'?countSongs(b)-countSongs(a):0)||a.name.localeCompare(b.name,'ja')||compare(a.key,b.key));
+ const suggestions=term&&filtered.length===0?people.filter(p=>!belongs(p,category)&&matches(p))
+  .sort((a,b)=>a.name.localeCompare(b.name,'ja')||compare(a.key,b.key)).slice(0,5).flatMap(person=>{
+   const other=categories.find(c=>c.id!==category&&belongs(person,c.id));
+   return other?[{key:person.key,name:person.name,category:other.id,categoryLabel:other.label}]:[];
+  }):[];
  limit=Number.isSafeInteger(limit)&&limit>0&&limit<=100?limit:48;
  const pages=Math.ceil(filtered.length/limit);page=Number.isSafeInteger(page)&&page>0?Math.min(page,Math.max(pages,1)):1;
- return {category,term,role:activeRole,roleOptions,page,pages,total:filtered.length,categories,items:filtered.slice((page-1)*limit,page*limit).map(p=>({key:p.key,name:p.name,type:p.type,kindLabel:kindLabel(p),roles:roleLabels(category==='creators'?[...p.roles].filter(creatorRole):p.roles),songCount:countSongs(p)}))};
+ return {category,term,role:activeRole,roleOptions,page,pages,total:filtered.length,categories,suggestions,items:filtered.slice((page-1)*limit,page*limit).map(p=>({key:p.key,name:p.name,type:p.type,kindLabel:kindLabel(p),roles:roleLabels(category==='creators'?[...p.roles].filter(creatorRole):p.roles),songCount:countSongs(p)}))};
 }
 
 export function peopleListHref({category='artists',term='',role='all',page=1}={}){

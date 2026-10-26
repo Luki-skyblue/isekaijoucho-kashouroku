@@ -15,4 +15,6 @@
 .people-list-person strong>small{white-space:nowrap;flex-shrink:0;font-weight:400}
 .people-list-person small{font-size:11px;line-height:1.7;color:var(--quiet)}
 .people-list-person>span:last-child{font-size:14px;color:var(--quiet)}
+.people-list-suggestions{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px 16px;font-size:13px;line-height:1.8}
+.people-list-suggestions a{text-underline-offset:4px;overflow-wrap:anywhere}
 @media(max-width:620px){.people-list{grid-template-columns:1fr}.people-list-tabs{gap:20px}}

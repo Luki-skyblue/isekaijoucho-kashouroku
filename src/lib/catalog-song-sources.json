@@ -3215,6 +3215,916 @@
         "artistCredit": "MIMI feat.ヰ世界情緒"
       },
       "scopeNote": "Official artist billing, separately displayed from the actual singer set. No extra singer, role assignment, release date or song type is inferred."
+    },
+    {
+      "key": "basic-catalog-batch4-9136be32-f403-42c8-835b-8cacfe1cc6f5",
+      "status": "active",
+      "checkedOn": "2026-10-25",
+      "entry": {
+        "entryId": "9136be32-f403-42c8-835b-8cacfe1cc6f5",
+        "kind": "song_variant",
+        "primaryWorkId": "e878cbae-8885-569c-99ba-40ff641d74a5",
+        "title": "ローリンガール",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.joysound.com/web/search/song/154595",
+      "sourceId": "S-192",
+      "credits": {
+        "lyricist": [
+          "wowaka"
+        ],
+        "composer": [
+          "wowaka"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch4-b7e4c614-ebe2-447b-a459-c1bf6e66e5ad",
+      "status": "active",
+      "checkedOn": "2026-10-25",
+      "entry": {
+        "entryId": "b7e4c614-ebe2-447b-a459-c1bf6e66e5ad",
+        "kind": "song_variant",
+        "primaryWorkId": "9d90089e-a123-57d1-841a-70188b7b84ac",
+        "title": "ヒビカセ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.youtube.com/watch?v=f_2PqUwdijI",
+      "sourceId": "S-193",
+      "credits": {
+        "lyricist": [
+          "Reol"
+        ],
+        "composer": [
+          "Giga"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch4-cd988d74-b9d8-46a5-b842-42115ca41541",
+      "status": "active",
+      "checkedOn": "2026-10-25",
+      "entry": {
+        "entryId": "cd988d74-b9d8-46a5-b842-42115ca41541",
+        "kind": "song_variant",
+        "primaryWorkId": "e5090915-f931-569f-9d83-f53162b1c36f",
+        "title": "おちゃめ機能",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.joysound.com/web/search/song/227176",
+      "sourceId": "S-194",
+      "credits": {
+        "lyricist": [
+          "ゴジマジP"
+        ],
+        "composer": [
+          "ゴジマジP"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch4-8abcef17-8bb9-4b64-943c-373cb21a17f4",
+      "status": "active",
+      "checkedOn": "2026-10-25",
+      "entry": {
+        "entryId": "8abcef17-8bb9-4b64-943c-373cb21a17f4",
+        "kind": "song_variant",
+        "primaryWorkId": "462a986e-2e68-53cd-9e75-4dc2ff04e932",
+        "title": "I believe～海の底から～",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.joysound.com/web/search/song/145035",
+      "sourceId": "S-195",
+      "credits": {
+        "lyricist": [
+          "KOKIA"
+        ],
+        "composer": [
+          "KOKIA"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch4-61f76611-e10f-4199-9e90-5aafdac30fcd",
+      "status": "active",
+      "checkedOn": "2026-10-25",
+      "entry": {
+        "entryId": "61f76611-e10f-4199-9e90-5aafdac30fcd",
+        "kind": "song_variant",
+        "primaryWorkId": "ae3ee5cc-1023-5e9d-bd5d-354273234806",
+        "title": "酸欠",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.lantis.jp/special/loveliveseries15thtribute/",
+      "sourceId": "S-196",
+      "credits": {
+        "lyricist": [
+          "鈴木エレカ"
+        ],
+        "composer": [
+          "鈴木エレカ",
+          "oni"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch4-718b2798-c12f-4d07-9236-892377c9ad10",
+      "status": "active",
+      "checkedOn": "2026-10-25",
+      "entry": {
+        "entryId": "718b2798-c12f-4d07-9236-892377c9ad10",
+        "kind": "song_variant",
+        "primaryWorkId": "216b849b-afc9-52c9-a983-1db1bf9a0a00",
+        "title": "ODDS ＆ ENDS",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.ryo-supercell.com/ryo-supercell/odds%26ends",
+      "sourceId": "S-197",
+      "credits": {
+        "lyricist": [
+          "ryo (supercell)"
+        ],
+        "composer": [
+          "ryo (supercell)"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch4-c25218ca-a0b7-4150-8171-6c9c49f62391",
+      "status": "active",
+      "checkedOn": "2026-10-25",
+      "entry": {
+        "entryId": "c25218ca-a0b7-4150-8171-6c9c49f62391",
+        "kind": "song_variant",
+        "primaryWorkId": "59ffe461-b95e-5756-84b9-5902ec34a0f8",
+        "title": "マーシャル・マキシマイザー",
+        "displayCredit": "春猿火 × ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.universal-music.co.jp/wagakkiband/news/2022-06-26/",
+      "sourceId": "S-198",
+      "credits": {
+        "lyricist": [
+          "柊マグネタイト"
+        ],
+        "composer": [
+          "柊マグネタイト"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch4-4b22fd90-fdc1-4343-9437-905d3456ba13",
+      "status": "active",
+      "checkedOn": "2026-10-25",
+      "entry": {
+        "entryId": "4b22fd90-fdc1-4343-9437-905d3456ba13",
+        "kind": "song_variant",
+        "primaryWorkId": "88aa6ddf-4f28-5b90-b4f2-a97bffbb5ffe",
+        "title": "キュートなカノジョ",
+        "displayCredit": "春猿火 × ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.joysound.com/web/search/song/876372",
+      "sourceId": "S-199",
+      "credits": {
+        "lyricist": [
+          "syudou"
+        ],
+        "composer": [
+          "syudou"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch4-c127a919-f55e-4091-ac2a-4ad799bb9c03",
+      "status": "active",
+      "checkedOn": "2026-10-25",
+      "entry": {
+        "entryId": "c127a919-f55e-4091-ac2a-4ad799bb9c03",
+        "kind": "song_variant",
+        "primaryWorkId": "3a126252-e717-5f76-bddb-7e462dc4f71f",
+        "title": "III",
+        "displayCredit": "春猿火 × ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://production-hasu.work/works/houshou-kobo-iii/",
+      "sourceId": "S-200",
+      "credits": {
+        "lyricist": [
+          "Sena Kiryuin"
+        ],
+        "composer": [
+          "Giga"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch4-0d1c8cc3-1b44-4898-9a46-3b42d9c140c1",
+      "status": "active",
+      "checkedOn": "2026-10-25",
+      "entry": {
+        "entryId": "0d1c8cc3-1b44-4898-9a46-3b42d9c140c1",
+        "kind": "song_variant",
+        "primaryWorkId": "7a1feee3-d9b3-53ae-b57d-c875cdfa53f2",
+        "title": "魔女 (シンギュラリティライブ4 ver.)",
+        "displayCredit": "春猿火 × ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kamitsubaki.jp/discography/v-w-p/2006/",
+      "sourceId": "S-201",
+      "credits": {
+        "composer": [
+          "カンザキイオリ"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "scopeNote": "Only the common composer of the two identified original editions is adopted. Performed lyric edition and arranger remain unresolved."
+    },
+    {
+      "key": "basic-catalog-batch4-3c97ed9f-9e12-4685-b8bc-a87b37219549",
+      "status": "active",
+      "checkedOn": "2026-10-25",
+      "entry": {
+        "entryId": "3c97ed9f-9e12-4685-b8bc-a87b37219549",
+        "kind": "song_variant",
+        "primaryWorkId": "673f5a05-fece-5d1a-8537-e4f1885ff7de",
+        "title": "反逆者の僕ら",
+        "displayCredit": "理芽×情緒×CIEL",
+        "singerIds": [
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b4a1c9cb-987f-5e92-863f-5bd1206dcbaa"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kamitsubaki.jp/discography/ema/386/",
+      "sourceId": "S-202",
+      "credits": {
+        "lyricist": [
+          "カンザキイオリ"
+        ],
+        "composer": [
+          "カンザキイオリ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch4-e9370651-a9e8-4e08-a84c-3d29495773db",
+      "status": "active",
+      "checkedOn": "2026-10-25",
+      "entry": {
+        "entryId": "e9370651-a9e8-4e08-a84c-3d29495773db",
+        "kind": "song_variant",
+        "primaryWorkId": "936338ac-dca6-536b-95ed-ee89d5516f24",
+        "title": "All Alone With You",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.ryo-supercell.com/egoist/all-alone-with-you",
+      "sourceId": "S-197",
+      "credits": {
+        "lyricist": [
+          "ryo (supercell)"
+        ],
+        "composer": [
+          "ryo (supercell)"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch4-e76f931f-0fba-426c-b45b-8b58b063149e",
+      "status": "active",
+      "checkedOn": "2026-10-25",
+      "entry": {
+        "entryId": "e76f931f-0fba-426c-b45b-8b58b063149e",
+        "kind": "song_variant",
+        "primaryWorkId": "31ba82f7-f120-50b5-802b-f12823632388",
+        "title": "Buffer",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.qobuz.com/us-en/album/candy-live-3/cqk62apqeis2a",
+      "sourceId": "S-191",
+      "credits": {
+        "lyricist": [
+          "Neuron"
+        ],
+        "composer": [
+          "Neuron"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch4-acd6ebb4-a6b3-4787-9f22-6af93f2989f2",
+      "status": "active",
+      "checkedOn": "2026-10-25",
+      "entry": {
+        "entryId": "acd6ebb4-a6b3-4787-9f22-6af93f2989f2",
+        "kind": "song_variant",
+        "primaryWorkId": "f9069282-3ff6-5107-822e-d4814a56109f",
+        "title": "Calc.",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.qobuz.com/us-en/album/candy-live-3/cqk62apqeis2a",
+      "sourceId": "S-191",
+      "credits": {
+        "lyricist": [
+          "ジミーサムP"
+        ],
+        "composer": [
+          "ジミーサムP"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch4-fc0978f4-f30a-430e-bee2-d142a92aaa65",
+      "status": "active",
+      "checkedOn": "2026-10-25",
+      "entry": {
+        "entryId": "fc0978f4-f30a-430e-bee2-d142a92aaa65",
+        "kind": "song_variant",
+        "primaryWorkId": "e0db5518-f4ed-5709-950b-94d4461851e3",
+        "title": "God knows…",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.qobuz.com/us-en/album/candy-live-3/cqk62apqeis2a",
+      "sourceId": "S-191",
+      "credits": {
+        "lyricist": [
+          "畑亜貴"
+        ],
+        "composer": [
+          "神前暁"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch4-c5468534-ce90-4b7c-b917-e6b2c3392d2e",
+      "status": "active",
+      "checkedOn": "2026-10-25",
+      "entry": {
+        "entryId": "c5468534-ce90-4b7c-b917-e6b2c3392d2e",
+        "kind": "song_variant",
+        "primaryWorkId": "d0625d10-7bce-5acf-bd7f-953112bb772b",
+        "title": "non-reflection",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.qobuz.com/us-en/album/candy-live-3/cqk62apqeis2a",
+      "sourceId": "S-191",
+      "credits": {
+        "lyricist": [
+          "宮川弾"
+        ],
+        "composer": [
+          "Aiobahn",
+          "Hundaes"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch4-62864d61-e860-47f3-b61e-9ed3f525ab79",
+      "status": "active",
+      "checkedOn": "2026-10-25",
+      "entry": {
+        "entryId": "62864d61-e860-47f3-b61e-9ed3f525ab79",
+        "kind": "song_variant",
+        "primaryWorkId": "cf43ce34-532a-59cb-bacd-09eae8a80418",
+        "title": "rose",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.qobuz.com/us-en/album/candy-live-3/cqk62apqeis2a",
+      "sourceId": "S-191",
+      "credits": {
+        "lyricist": [
+          "ANNA"
+        ],
+        "composer": [
+          "宮崎歩"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch4-bfa0fa82-69f8-473b-8002-529dfcccdef0",
+      "status": "active",
+      "checkedOn": "2026-10-25",
+      "entry": {
+        "entryId": "bfa0fa82-69f8-473b-8002-529dfcccdef0",
+        "kind": "song_variant",
+        "primaryWorkId": "d8aab45f-c867-579e-a931-89d8c82da73e",
+        "title": "アスノヨゾラ哨戒班",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.qobuz.com/us-en/album/candy-live-3/cqk62apqeis2a",
+      "sourceId": "S-191",
+      "credits": {
+        "lyricist": [
+          "Orangestar"
+        ],
+        "composer": [
+          "Orangestar"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch4-5abafcac-ee82-45a5-ab40-5e575f49d340",
+      "status": "active",
+      "checkedOn": "2026-10-25",
+      "entry": {
+        "entryId": "5abafcac-ee82-45a5-ab40-5e575f49d340",
+        "kind": "song_variant",
+        "primaryWorkId": "47d17e58-8476-56d1-b52b-3509edb8078c",
+        "title": "きゅうくらりん",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.qobuz.com/us-en/album/candy-live-3/cqk62apqeis2a",
+      "sourceId": "S-191",
+      "credits": {
+        "lyricist": [
+          "いよわ"
+        ],
+        "composer": [
+          "いよわ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch4-5205ab7c-bf86-49c2-a07f-2bd13f854fec",
+      "status": "active",
+      "checkedOn": "2026-10-25",
+      "entry": {
+        "entryId": "5205ab7c-bf86-49c2-a07f-2bd13f854fec",
+        "kind": "song_variant",
+        "primaryWorkId": "030d8b45-042e-5ee2-ae1d-ea0ec15e3709",
+        "title": "コネクト",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.qobuz.com/us-en/album/candy-live-3/cqk62apqeis2a",
+      "sourceId": "S-191",
+      "credits": {
+        "lyricist": [
+          "渡辺翔"
+        ],
+        "composer": [
+          "渡辺翔"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch4-ead47c60-04e9-4875-acd7-4215d3973eef",
+      "status": "active",
+      "checkedOn": "2026-10-25",
+      "entry": {
+        "entryId": "ead47c60-04e9-4875-acd7-4215d3973eef",
+        "kind": "song_variant",
+        "primaryWorkId": "fad42051-7749-5398-ae5b-38eab3f3ecba",
+        "title": "ビビビビ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.qobuz.com/us-en/album/candy-live-3/cqk62apqeis2a",
+      "sourceId": "S-191",
+      "credits": {
+        "lyricist": [
+          "フロクロ"
+        ],
+        "composer": [
+          "フロクロ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch4-f63275a1-654d-42f4-9e93-5fe0b3fafd0d",
+      "status": "active",
+      "checkedOn": "2026-10-25",
+      "entry": {
+        "entryId": "f63275a1-654d-42f4-9e93-5fe0b3fafd0d",
+        "kind": "song_variant",
+        "primaryWorkId": "53025e85-3792-57b3-adc9-26c9c115b6dc",
+        "title": "ファンサ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.qobuz.com/us-en/album/candy-live-3/cqk62apqeis2a",
+      "sourceId": "S-191",
+      "credits": {
+        "lyricist": [
+          "HoneyWorks"
+        ],
+        "composer": [
+          "HoneyWorks"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch4-77d4c748-7ca5-41ae-8403-060735926302",
+      "status": "active",
+      "checkedOn": "2026-10-25",
+      "entry": {
+        "entryId": "77d4c748-7ca5-41ae-8403-060735926302",
+        "kind": "song_variant",
+        "primaryWorkId": "88782e5d-30ed-5d9a-af9a-d7b7d243ad82",
+        "title": "愛のまま",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.qobuz.com/us-en/album/candy-live-3/cqk62apqeis2a",
+      "sourceId": "S-191",
+      "credits": {
+        "lyricist": [
+          "花譜",
+          "岸田繁"
+        ],
+        "composer": [
+          "岸田繁"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch4-442a6e7c-33ab-4055-aeff-77219418282c",
+      "status": "active",
+      "checkedOn": "2026-10-25",
+      "entry": {
+        "entryId": "442a6e7c-33ab-4055-aeff-77219418282c",
+        "kind": "song_variant",
+        "primaryWorkId": "14b14c36-dc71-5a86-8b00-e128c5877bdb",
+        "title": "鏡面の波",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.qobuz.com/us-en/album/candy-live-3/cqk62apqeis2a",
+      "sourceId": "S-191",
+      "credits": {
+        "lyricist": [
+          "照井順政"
+        ],
+        "composer": [
+          "照井順政"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch4-efe790af-88d4-4c9b-8831-a270e825c9c5",
+      "status": "active",
+      "checkedOn": "2026-10-25",
+      "entry": {
+        "entryId": "efe790af-88d4-4c9b-8831-a270e825c9c5",
+        "kind": "song_variant",
+        "primaryWorkId": "997a1642-474e-5979-aac6-ae7fc61d80a8",
+        "title": "月曜日戦争",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.qobuz.com/us-en/album/candy-live-3/cqk62apqeis2a",
+      "sourceId": "S-191",
+      "credits": {
+        "lyricist": [
+          "吉澤嘉代子"
+        ],
+        "composer": [
+          "吉澤嘉代子"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch4-9781526f-4afe-49c5-9dac-b4572c1e8590",
+      "status": "active",
+      "checkedOn": "2026-10-25",
+      "entry": {
+        "entryId": "9781526f-4afe-49c5-9dac-b4572c1e8590",
+        "kind": "song_variant",
+        "primaryWorkId": "cbb90a16-db94-521f-889b-0ea23e253f94",
+        "title": "芝居の終焉",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.qobuz.com/us-en/album/candy-live-3/cqk62apqeis2a",
+      "sourceId": "S-191",
+      "credits": {
+        "lyricist": [
+          "Dios"
+        ],
+        "composer": [
+          "Dios"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch4-d701067f-bc2d-482a-82f3-7c776158f44c",
+      "status": "active",
+      "checkedOn": "2026-10-25",
+      "entry": {
+        "entryId": "d701067f-bc2d-482a-82f3-7c776158f44c",
+        "kind": "song_variant",
+        "primaryWorkId": "db1bbee3-41e3-56f0-9ffc-c3d0588311b0",
+        "title": "深海のリトルクライ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.qobuz.com/us-en/album/candy-live-3/cqk62apqeis2a",
+      "sourceId": "S-191",
+      "credits": {
+        "lyricist": [
+          "sasakure.UK"
+        ],
+        "composer": [
+          "sasakure.UK"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch4-da0b1984-46c8-4697-8b15-326367582a11",
+      "status": "active",
+      "checkedOn": "2026-10-25",
+      "entry": {
+        "entryId": "da0b1984-46c8-4697-8b15-326367582a11",
+        "kind": "song_variant",
+        "primaryWorkId": "f521342e-fdef-5a83-b661-b3d77661a0aa",
+        "title": "奏",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.qobuz.com/us-en/album/candy-live-3/cqk62apqeis2a",
+      "sourceId": "S-191",
+      "credits": {
+        "lyricist": [
+          "大橋卓弥",
+          "常田真太郎"
+        ],
+        "composer": [
+          "大橋卓弥",
+          "常田真太郎"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
+    },
+    {
+      "key": "basic-catalog-batch4-03259a46-68e2-4c76-a47a-de934f661695",
+      "status": "active",
+      "checkedOn": "2026-10-25",
+      "entry": {
+        "entryId": "03259a46-68e2-4c76-a47a-de934f661695",
+        "kind": "song_variant",
+        "primaryWorkId": "751e6219-458d-52dc-afa0-080cdc2fc4d5",
+        "title": "僕は依存症",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.qobuz.com/us-en/album/candy-live-3/cqk62apqeis2a",
+      "sourceId": "S-191",
+      "credits": {
+        "lyricist": [
+          "みきとP"
+        ],
+        "composer": [
+          "みきとP"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
     }
   ],
   "mediaCredits": [

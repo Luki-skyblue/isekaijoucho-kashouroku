@@ -43,6 +43,7 @@ export default async function Search({searchParams}:{searchParams:Promise<LiveQu
   </form>;
  }
  return <article className="search-detail-page"><Breadcrumb parts={[{label:'詳細検索'}]}/><Heading title="詳細検索"/>
+  <p className="search-development-note">詳細検索は整備中です。登録情報の不足により、結果に漏れがある場合があります。</p>
   <nav className="search-targets" aria-label="検索する対象">{SEARCH_TARGETS.map(t=><Link key={t.id} href={searchTargetHref(t.id,term)} aria-current={target===t.id?'page':undefined}>{t.label}</Link>)}</nav>
   {fields}
  </article>;

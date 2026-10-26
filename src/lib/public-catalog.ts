@@ -6,6 +6,7 @@ import type {PrivateModel,LiveListFilters} from './private-read-model.mjs';
 import type {CatalogListFilters} from './catalog-entry-api';
 import type {JsonObject} from './core';
 import {songDetailFromModel} from './song-detail-data.mjs';
+import {catalogSongWorkFromModel} from './catalog-song-work.mjs';
 import {liveDisplayContextFromModel} from './live-detail-data.mjs';
 import {releaseDisplayContextFromModel,releaseListArtworkFromModel,releaseDetailFromModel,type ReleaseDetailQuery} from './release-detail-data.mjs';
 import {releaseListFromModel,type ReleaseListQuery} from './release-list-data.mjs';
@@ -33,6 +34,7 @@ export function publicLiveFilterOptions(){return {...eventFilterOptions(load()),
 export function publicCatalogRpc(name:string,params:JsonObject){const model=load(),result=snapshotRpc(model,name,params);return name==='kashouroku_v3_release_families'?releaseListArtworkFromModel(model,result):result;}
 export function publicCatalogInfo(){return {releaseId:String(load().manifest.exportId)};}
 export function publicSongDetail(entryId:string){return songDetailFromModel(load(),entryId);}
+export function publicSongWork(workId:string){return catalogSongWorkFromModel(load(),workId);}
 export function publicLiveDisplayContext(eventId:string){return liveDisplayContextFromModel(load(),eventId);}
 export function publicReleaseDisplayContext(familyId:string){return releaseDisplayContextFromModel(load(),familyId);}
 export function publicReleaseDetail(familyId:string,query:ReleaseDetailQuery){return releaseDetailFromModel(load(),familyId,query);}

@@ -7,10 +7,11 @@ import {CATALOG_SORTS,SINGERS,catalogHref,activeCatalogConditions,ParsedCatalogQ
 import {CatalogSearchInput} from '@/components/catalog-search-input';
 import {ListSort} from '@/components/list-sort';
 import {detailSearchHref} from '@/lib/search-navigation.mjs';
+import {catalogEntryHref} from '@/lib/catalog-navigation';
 
 const CATEGORY:Record<string,string>={original:'オリジナル',cover:'カバー',collaboration:'コラボ',variant:'その他'};
 export function CatalogIndex({items,total,query,limit,singerChoices=SINGERS}: {items:CatalogEntryCard[];total:number;query:ParsedCatalogQuery;limit:number;singerChoices?:ReadonlyArray<SingerChoice>}){
- const pages=Math.ceil(total/limit),conditions=activeCatalogConditions(query,singerChoices);
+ const pages=Math.ceil(total/limit),conditions=activeCatalogConditions(query,singerChoices),returnTo=catalogHref(query);
  return <><Breadcrumb parts={[{label:'楽曲一覧'}]}/><Heading title="楽曲一覧"/>
  <form className="search" action="/songs" method="get">
   <div className="search-line"><CatalogSearchInput query={query.q}/><button type="submit">検索</button><Link className="search-detail-link" href={detailSearchHref(catalogHref(query))}>詳細検索</Link></div>
@@ -28,7 +29,7 @@ export function CatalogIndex({items,total,query,limit,singerChoices=SINGERS}: {i
   {query.kinds.map(kind=><input key={kind} type="hidden" name="type" value={kind}/>)}
   <input type="hidden" name="view" value={query.view}/>
  </ListSort><nav className="view-switch" aria-label="一覧の表示形式"><span>VIEW</span><Link href={catalogHref(query,{view:'list'})} aria-current={query.view==='list'?'page':undefined}>リスト</Link><Link href={catalogHref(query,{view:'grid'})} aria-current={query.view==='grid'?'page':undefined}>グリッド</Link></nav></div></div>
- {items.length?<div className={`records records-${query.view}`}>{items.map(x=><Link className="record" href={`/songs/${encodeURIComponent(x.entryId)}`} key={x.entryId}>
+ {items.length?<div className={`records records-${query.view}`}>{items.map(x=><Link className="record" href={catalogEntryHref(x.entryId,returnTo)} key={x.entryId}>
  <RecordArtwork url={explicitThumbnail({...x})} urls={x.thumbnailUrls}/>
  <span className="record-copy"><span className="record-title">{x.title}</span>{x.displayCredit&&<span className="record-meta">{x.displayCredit}</span>}{query.sort.startsWith('first_')&&<span className="record-meta">初出：{x.firstAppearanceDate?displayDate(x.firstAppearanceDate):'準備中'}</span>}{x.kind==='medley'&&<span className="catalog-meta-kind">メドレー</span>}</span>
  <span className="record-arrow" aria-hidden="true">↗</span></Link>)}</div>:<Empty>条件に該当する楽曲はありません。</Empty>}
