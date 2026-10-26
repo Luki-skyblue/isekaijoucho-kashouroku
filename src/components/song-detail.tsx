@@ -24,7 +24,7 @@ export function CatalogSongWorkChoices({work,returnTo}:{work:CatalogSongWork;ret
 }
 export function CatalogSongDetail({song,initialTab='info',returnTo}:{song:SongDetailData;initialTab?:string;returnTo?:string|null}){
  const {detail:d,metadata:m}=song,review=asObject(m.fieldReview),title=str(d.title),entryId=str(d.entryId),siblings=asArray(d.relatedVariants),compare=asArray(song.comparison?.entries);
- const singers=str(d.displayCredit)||singerNames(d.singers),segments=asArray(d.medleySegments),medleys=asArray(d.containingMedleys),variations=asArray(d.variations).map(variation).filter(Boolean);
+ const singers=str(d.vocalDisplayCredit)||str(d.displayCredit)||singerNames(d.singers),segments=asArray(d.medleySegments),medleys=asArray(d.containingMedleys),variations=asArray(d.variations).map(variation).filter(Boolean);
  const titleCredit=songTitleCreditForEntry({detail:d},m);
  const firstReview=asObject(m.firstAppearanceReview),fullVisible=firstReview.coverage==='partial'&&firstReview.partialConfirmed===true;
  const originalAuthors=song.originalCredits.filter(c=>['lyricist','composer'].includes(c.role)&&!song.credits.some(row=>songCreditRole(d,row)==='original_'+c.role&&row.names.includes(c.name)));
@@ -32,7 +32,7 @@ export function CatalogSongDetail({song,initialTab='info',returnTo}:{song:SongDe
  const hero=song.artwork;
  const imageUrl=hero?.imageUrl??null,heroShape=hero&&(['mv','cover','live_mv','other_video'].includes(hero.kind)||(hero.kind==='manual'&&youtubeId(hero.sourceUrl)))?'video':'jacket';
  const info=<>
-  <dl className="song-detail-facts"><dt>歌唱</dt><dd>{singers?<SingerNames detail={d}/>:<Value value={singers}/>}</dd><dt>楽曲区分</dt><dd><Value value={d.kind==='medley'?'メドレー':CATEGORIES[str(d.legacySongType)]}/></dd>
+  <dl className="song-detail-facts"><dt>歌唱</dt><dd>{singers?<SingerNames detail={{...d,displayCredit:singers}}/>:<Value value={singers}/>}</dd><dt>楽曲区分</dt><dd><Value value={d.kind==='medley'?'メドレー':CATEGORIES[str(d.legacySongType)]}/></dd>
    <dt>初出</dt><dd><First value={m.firstAppearance} review={review.firstAppearance}/></dd>
    {fullVisible&&<><dt>初出（フル）</dt><dd><First value={m.firstFull} review={review.firstFull}/></dd></>}
    <dt>タイアップ</dt><dd><Value value={m.tieUp} review={review.tieUp}/></dd>

@@ -51,6 +51,13 @@ export function singersForEntry(entry,links=VOCAL_LINK_RECORDS,corrections=VOCAL
 }
 export function singerIdsForEntry(entry){const correction=vocalCorrectionFor(entry);return correction?[...correction.entityIds]:[...new Set([...arr(entry?.singerIds),...singersForEntry(entry).map(s=>s.entityId)])];}
 
+/** Expand only explicitly reviewed collective credits in the song's vocal
+ * field. The stored artist billing and all other song credits stay intact. */
+export function vocalDisplayCreditForEntry(entry){
+ if(!VOCAL_LINK_RECORDS.some(link=>link.showIndividualNames===true&&vocalLinkMatches(entry,link)))return null;
+ return singersForEntry(entry).map(s=>s.name).join('・')||null;
+}
+
 /** Membership supplies navigation only. It never adds singers to an entry. */
 export function membershipsForEntity(id,records=MEMBERSHIP_RECORDS){
  return arr(records).filter(r=>r.status==='active'&&r.relation==='member_of'&&['artist','character','voicebank'].includes(byId.get(r.memberId)?.type)&&byId.get(r.groupId)?.type==='group'&&(r.memberId===id||r.groupId===id));

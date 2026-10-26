@@ -18,5 +18,6 @@ export function vocalCorrectionMatches(entry:JsonObject,record:JsonObject):boole
 export function membershipsForEntity(id:string,records?:JsonObject[]):JsonObject[];
 export function personRelationsForEntity(id:string,records?:JsonObject[]):JsonObject[];
 export function singerIdsForEntry(entry:JsonObject):string[];
+export function vocalDisplayCreditForEntry(entry:JsonObject):string|null;
 export function billingPeopleForEntry(entry:JsonObject):CatalogEntity[];
 export function catalogSingerChoices(model:PrivateModel):SingerChoice[];

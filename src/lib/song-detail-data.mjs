@@ -6,7 +6,7 @@ import sourceRegistry from './catalog-song-sources.json' with {type:'json'};
 import {artworkEntryMatches,catalogArtworkCandidatesForEntry,eventArtworkForEvent,rankArtworkCandidates} from './catalog-artwork.mjs';
 import {ARTWORK_RECORDS,RELEASE_ARTWORK_RECORDS,EVENT_ARTWORK_RECORDS} from './catalog-artwork-data.mjs';
 import releaseEditions from './catalog-release-editions.json' with {type:'json'};
-import {singersForEntry,personKeyForCredit} from './catalog-people.mjs';
+import {singersForEntry,personKeyForCredit,vocalDisplayCreditForEntry} from './catalog-people.mjs';
 import {supplementalLivesForEntry} from './live-program-supplements.mjs';
 import {liveVocalRecordsForEntry} from './live-vocal-entries.mjs';
 import {resolveCreatorCredit} from './creator-credit-data.mjs';
@@ -287,7 +287,8 @@ export function buildSongDetail(entry,work={},options={}){
  if(!entry?.detail)return null;
  const d=entry.detail,metadata=songMetadataForEntry(entry,options.factRecords,work,options),creditData=songCreditsForEntry(entry,metadata,options.factRecords),videos=songVideosForEntry(entry,work,options.sourceRecords,options.sourceExclusions,options.mediaCreditRecords),releases=songReleasesForEntry(entry,work,options.releaseRecords,options.sourceRecords),allLives=songLivesForEntry(entry,options.eventRecords,options.additionalLives);
  const images=artworkCandidates(entry,videos,releases,allLives,options);
- return {detail:{...d,legacySongType:songTypeForEntry(entry,options.sourceRecords),singers:singersForEntry(entry)},metadata,credits:creditData.rows,originalCredits:creditData.originalCredits,originalArranger:creditData.originalArranger,...(creditData.originalArrangerCredit?{originalArrangerCredit:creditData.originalArrangerCredit}:{}),
+ const vocalCredit=vocalDisplayCreditForEntry(entry);
+ return {detail:{...d,...(vocalCredit?{vocalDisplayCredit:vocalCredit}:{}),legacySongType:songTypeForEntry(entry,options.sourceRecords),singers:singersForEntry(entry)},metadata,credits:creditData.rows,originalCredits:creditData.originalCredits,originalArranger:creditData.originalArranger,...(creditData.originalArrangerCredit?{originalArrangerCredit:creditData.originalArrangerCredit}:{}),
   artwork:images[0]??null,artworkCandidates:images,listenUrl:videos[0]?.url??releases.find(r=>r.externalUrl)?.externalUrl??null,videos,releases,lives:allLives,
   hasUncertainLives:allLives.some(x=>x.uncertain),comparison:entry.compare??null,
   versionLabel:d.entryId===SIRIUS_DUET&&d.primaryWorkId===SIRIUS_WORK?'デュエット':null};

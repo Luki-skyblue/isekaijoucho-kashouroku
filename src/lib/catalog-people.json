@@ -1253,6 +1253,465 @@
           "creators"
         ]
       }
+    },
+    {
+      "id": "6e5b279d-abc5-59d8-a11c-e0fc1fdaee5f",
+      "name": "天音かなた",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=gDfd2ICWezg"
+      ],
+      "pickerGroup": "その他の歌唱者",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "959a7514-3831-5e59-8f51-ec68877bf3d9",
+      "name": "犬山たまき",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=gDfd2ICWezg"
+      ],
+      "pickerGroup": "その他の歌唱者",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "84d33589-9211-5129-b4e7-c4a19f500f0f",
+      "name": "CHINO",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=gDfd2ICWezg"
+      ],
+      "pickerGroup": "その他の歌唱者",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "4590d330-b6cb-5eed-a7b3-8038f83b1cc7",
+      "name": "MYU",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=gDfd2ICWezg"
+      ],
+      "pickerGroup": "その他の歌唱者",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "53591385-804e-54be-9668-6cdb718c10b9",
+      "name": "NEFFY",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=gDfd2ICWezg"
+      ],
+      "pickerGroup": "その他の歌唱者",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "539408a1-cb78-5e80-9671-b819fb2ded92",
+      "name": "NINA",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=gDfd2ICWezg"
+      ],
+      "pickerGroup": "その他の歌唱者",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "549d6b51-06af-5d05-a995-189cfd31d757",
+      "name": "RARA",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=gDfd2ICWezg"
+      ],
+      "pickerGroup": "その他の歌唱者",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "4bdc0fde-da85-502e-b076-a43a9d173b3e",
+      "name": "VITTE",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=gDfd2ICWezg"
+      ],
+      "pickerGroup": "その他の歌唱者",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "b9f23268-e21c-5f39-8756-e19e7314bc28",
+      "name": "エーテル・クレスエンティア",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=gDfd2ICWezg"
+      ],
+      "pickerGroup": "その他の歌唱者",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "c751fe4e-a4c0-5928-ae7c-79f44150842c",
+      "name": "尾丸ポルカ",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=gDfd2ICWezg"
+      ],
+      "pickerGroup": "その他の歌唱者",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "15447e7a-c1d7-5b1a-8fd5-bd6bc292f2d1",
+      "name": "神楽めあ",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=gDfd2ICWezg"
+      ],
+      "pickerGroup": "その他の歌唱者",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "d1c7cebc-86f1-5381-8a5a-0255440f3cb7",
+      "name": "LIZ",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=gDfd2ICWezg"
+      ],
+      "pickerGroup": "その他の歌唱者",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "d2653eff-dbfe-5df6-8a14-b6b67d5caf67",
+      "name": "LITA",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=gDfd2ICWezg"
+      ],
+      "pickerGroup": "その他の歌唱者",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "2bd05e6d-6b1f-526d-a744-02e67969d48b",
+      "name": "ココロヤミ",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=gDfd2ICWezg"
+      ],
+      "pickerGroup": "その他の歌唱者",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "ff6f64df-1e2e-5ad6-ad45-80146ca0b2f1",
+      "name": "しぐれうい",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=gDfd2ICWezg"
+      ],
+      "pickerGroup": "その他の歌唱者",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "da4d441d-267f-5c22-a5ae-b726f8a1c574",
+      "name": "獅白ぼたん",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=gDfd2ICWezg"
+      ],
+      "pickerGroup": "その他の歌唱者",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "8877a574-3148-55d3-a248-e412ca7ae3fa",
+      "name": "不知火フレア",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=gDfd2ICWezg"
+      ],
+      "pickerGroup": "その他の歌唱者",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "db7ea241-768c-5b65-8340-cacdccdbaa42",
+      "name": "白雪みしろ",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=gDfd2ICWezg"
+      ],
+      "pickerGroup": "その他の歌唱者",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "55b2cf64-b0e0-50ae-b350-af2527e28089",
+      "name": "電脳少女シロ",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=gDfd2ICWezg"
+      ],
+      "pickerGroup": "その他の歌唱者",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "39ff38a9-75f0-5a46-a901-66699aff9236",
+      "name": "HACHI",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=gDfd2ICWezg"
+      ],
+      "pickerGroup": "その他の歌唱者",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "8b1f0523-0c9f-5e5a-818e-ce6860e668e5",
+      "name": "田中ヒメ",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=gDfd2ICWezg"
+      ],
+      "pickerGroup": "その他の歌唱者",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "ec327d5f-7297-547c-9571-cf0f131141de",
+      "name": "鈴木ヒナ",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=gDfd2ICWezg"
+      ],
+      "pickerGroup": "その他の歌唱者",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "7428b9ae-a885-50af-9e09-a51f585e11dc",
+      "name": "富士葵",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=gDfd2ICWezg"
+      ],
+      "pickerGroup": "その他の歌唱者",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "888aa66f-3fef-582e-b236-4385e7ca2358",
+      "name": "星街すいせい",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=gDfd2ICWezg"
+      ],
+      "pickerGroup": "その他の歌唱者",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "64d99b73-e00f-5e90-b7d6-0c2364aeb140",
+      "name": "桃鈴ねね",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=gDfd2ICWezg"
+      ],
+      "pickerGroup": "その他の歌唱者",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "971563ed-1cd6-5bdd-b698-2057dc38554c",
+      "name": "雪花ラミィ",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=gDfd2ICWezg"
+      ],
+      "pickerGroup": "その他の歌唱者",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "e827fa7d-2562-56c4-9984-742c9b2281f8",
+      "name": "夜乃くろむ",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=SySRldWdFs0"
+      ],
+      "pickerGroup": "その他の歌唱者",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
     }
   ],
   "vocalLinks": [
@@ -1855,6 +2314,88 @@
       ],
       "basis": "named_vocal_candidate_in_saved_billing_existing_database_alias",
       "sourceReleaseId": "81f014e7-ba94-4e21-a51d-a04a1596952b"
+    },
+    {
+      "key": "peace-day2-2022-named-vocals",
+      "status": "active",
+      "checkedOn": "2026-10-26",
+      "entry": {
+        "entryId": "819bf0ac-60ee-49a8-9528-d7ca054626d3",
+        "kind": "song_variant",
+        "primaryWorkId": "bb308c1b-812d-5532-ab15-5f9ebd84f229",
+        "title": "ピース！！",
+        "displayCredit": "*Luna",
+        "variations": [],
+        "singerIds": []
+      },
+      "entityIds": [
+        "6e5b279d-abc5-59d8-a11c-e0fc1fdaee5f",
+        "959a7514-3831-5e59-8f51-ec68877bf3d9",
+        "84d33589-9211-5129-b4e7-c4a19f500f0f",
+        "4590d330-b6cb-5eed-a7b3-8038f83b1cc7",
+        "53591385-804e-54be-9668-6cdb718c10b9",
+        "539408a1-cb78-5e80-9671-b819fb2ded92",
+        "549d6b51-06af-5d05-a995-189cfd31d757",
+        "4bdc0fde-da85-502e-b076-a43a9d173b3e",
+        "36129afb-1fe8-5255-958e-b090e17c7905",
+        "ae41fa12-3b09-52c0-bc08-1d9218492391",
+        "b8307e06-2046-5415-a1f7-0b892dd41041",
+        "81a01233-230e-50a8-a309-11275c794cd0",
+        "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+        "b9f23268-e21c-5f39-8756-e19e7314bc28",
+        "c751fe4e-a4c0-5928-ae7c-79f44150842c",
+        "15447e7a-c1d7-5b1a-8fd5-bd6bc292f2d1",
+        "d1c7cebc-86f1-5381-8a5a-0255440f3cb7",
+        "d2653eff-dbfe-5df6-8a14-b6b67d5caf67",
+        "2bd05e6d-6b1f-526d-a744-02e67969d48b",
+        "ff6f64df-1e2e-5ad6-ad45-80146ca0b2f1",
+        "da4d441d-267f-5c22-a5ae-b726f8a1c574",
+        "8877a574-3148-55d3-a248-e412ca7ae3fa",
+        "db7ea241-768c-5b65-8340-cacdccdbaa42",
+        "55b2cf64-b0e0-50ae-b350-af2527e28089",
+        "39ff38a9-75f0-5a46-a901-66699aff9236",
+        "8b1f0523-0c9f-5e5a-818e-ce6860e668e5",
+        "ec327d5f-7297-547c-9571-cf0f131141de",
+        "7428b9ae-a885-50af-9e09-a51f585e11dc",
+        "888aa66f-3fef-582e-b236-4385e7ca2358",
+        "64d99b73-e00f-5e90-b7d6-0c2364aeb140",
+        "971563ed-1cd6-5bdd-b698-2057dc38554c"
+      ],
+      "basis": "official_vocal_credits_named_individuals",
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=gDfd2ICWezg"
+      ],
+      "showIndividualNames": true
+    },
+    {
+      "key": "chromatic-seven-named-vocals",
+      "status": "active",
+      "checkedOn": "2026-10-26",
+      "entry": {
+        "entryId": "11c3167c-c93d-4d19-9458-e623c9742879",
+        "kind": "song_variant",
+        "primaryWorkId": "b9378f90-f7c3-5d27-9d81-0c10e37f1e5f",
+        "title": "クロマティック",
+        "displayCredit": "心世紀 × 罪十罰 feat. ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "entityIds": [
+        "a4f2c16a-1d22-5631-84a6-8fe3d4016653",
+        "51f08059-db8e-4ce2-838b-2798b44b1efe",
+        "ca6163f9-e9b4-415e-b614-b837ef2bbeef",
+        "deeff53f-d187-4edc-90ae-9c2e6a2a21c2",
+        "9d78227e-d558-4522-a7f8-78e637bc5f92",
+        "69297413-1483-40f4-ba8e-73f05d3a3621"
+      ],
+      "basis": "official_vocal_credits_named_individuals",
+      "sourceUrls": [
+        "https://kamitsubaki.jp/news/2025/12/24/9655/",
+        "https://prtimes.jp/main/html/rd/p/000000464.000106737.html"
+      ],
+      "showIndividualNames": true
     }
   ],
   "memberships": [

@@ -235,6 +235,36 @@
         "S-136",
         "S-140"
       ]
+    },
+    {
+      "status": "active",
+      "checkedOn": "2026-10-26",
+      "entry": {
+        "entryId": "f95216be-1833-4768-aa9b-be265c717c73",
+        "kind": "song_variant",
+        "primaryWorkId": "f661806b-5233-4426-8d72-5d69b5f22824",
+        "title": "ファタール",
+        "displayCredit": "ヰ世界情緒 × 夜乃くろむ",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "e827fa7d-2562-56c4-9984-742c9b2281f8"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=SySRldWdFs0",
+      "evidenceUrls": [
+        "https://x.com/isekaijoucho/status/2114295913053290568",
+        "https://x.com/kuromu_yano/status/2114296900182778317",
+        "https://www.youtube.com/post/Ugkx1APHHoKfxvVzl11bcqdm47MT-31QWcpo"
+      ],
+      "key": "fatal-yano-kuromu-cover",
+      "kind": "youtube",
+      "songType": "cover",
+      "mediaKind": "cover_video",
+      "title": "【歌ってみた】ファタール / covered by ヰ世界情緒 × 夜乃くろむ",
+      "publishedOn": "2026-10-25",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho"
     }
   ],
   "exclusions": [
@@ -4125,6 +4155,49 @@
         "lyricist": "original",
         "composer": "original"
       }
+    },
+    {
+      "status": "active",
+      "checkedOn": "2026-10-26",
+      "entry": {
+        "entryId": "f95216be-1833-4768-aa9b-be265c717c73",
+        "kind": "song_variant",
+        "primaryWorkId": "f661806b-5233-4426-8d72-5d69b5f22824",
+        "title": "ファタール",
+        "displayCredit": "ヰ世界情緒 × 夜乃くろむ",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "e827fa7d-2562-56c4-9984-742c9b2281f8"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=SySRldWdFs0",
+      "evidenceUrls": [
+        "https://x.com/isekaijoucho/status/2114295913053290568",
+        "https://x.com/kuromu_yano/status/2114296900182778317",
+        "https://www.youtube.com/post/Ugkx1APHHoKfxvVzl11bcqdm47MT-31QWcpo"
+      ],
+      "key": "fatal-original-writers-and-first-date",
+      "creditBasis": [],
+      "metadata": {
+        "firstAppearance": {
+          "date": "2026-10-25",
+          "label": "歌ってみた公開"
+        },
+        "originalArtist": "GEMN"
+      },
+      "credits": {
+        "lyricist": [
+          "キタニタツヤ"
+        ],
+        "composer": [
+          "キタニタツヤ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original",
+        "composer": "original"
+      }
     }
   ],
   "mediaCredits": [
@@ -4852,6 +4925,41 @@
         }
       ],
       "scopeNote": "Named production credits transcribed from the publisher or directing creator for this exact original MV. Preserve spelling, including source affiliation/typographical forms. No inference of Mix, full coverage, other videos or person identity."
+    },
+    {
+      "status": "active",
+      "checkedOn": "2026-10-26",
+      "entry": {
+        "entryId": "f95216be-1833-4768-aa9b-be265c717c73",
+        "kind": "song_variant",
+        "primaryWorkId": "f661806b-5233-4426-8d72-5d69b5f22824",
+        "title": "ファタール",
+        "displayCredit": "ヰ世界情緒 × 夜乃くろむ",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "e827fa7d-2562-56c4-9984-742c9b2281f8"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=SySRldWdFs0",
+      "evidenceUrls": [
+        "https://x.com/isekaijoucho/status/2114295913053290568",
+        "https://x.com/kuromu_yano/status/2114296900182778317",
+        "https://www.youtube.com/post/Ugkx1APHHoKfxvVzl11bcqdm47MT-31QWcpo"
+      ],
+      "key": "fatal-cover-video-credits",
+      "mediaId": "6d0e83b1-46be-4203-8642-6bd4165575d9",
+      "mediaUrl": "https://www.youtube.com/watch?v=SySRldWdFs0",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "𝘻𝘪𝘳𝘰_"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ]
     }
   ]
 }
