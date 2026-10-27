@@ -2,7 +2,7 @@
 .people-list-tabs a{display:flex;align-items:center;gap:8px;padding:12px 0;color:var(--quiet);text-decoration:none;border-bottom:2px solid transparent;font-size:14px;white-space:nowrap;flex-shrink:0}
 .people-list-tabs a[aria-current=page]{color:var(--ink);border-color:var(--accent)}
 .people-list-tabs small{font-size:11px;font-family:var(--mono);font-weight:400}
-.people-list-search .search-line{align-items:end}
+.people-list-search .search-line{align-items:end;flex-wrap:wrap}
 .people-list-search label.people-list-role{display:flex;align-items:center;gap:10px;margin:0;letter-spacing:0;white-space:nowrap;font-family:inherit;font-size:12px}
 .people-list-role select{max-width:210px;min-width:120px;background:var(--paper);border:1px solid var(--hair-strong);border-radius:0;color:var(--ink);padding:11px 24px 11px 12px;font:inherit}
 .people-list-search button{min-height:44px}

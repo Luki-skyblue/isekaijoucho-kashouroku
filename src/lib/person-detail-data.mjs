@@ -116,33 +116,46 @@ export function personDetailHref(key,{page=1,role='all',billing='all'}={}){
  const p=new URLSearchParams();if(billing&&billing!=='all')p.set('billing',billing);if(role&&role!=='all')p.set('role',role);if(page>1)p.set('page',String(page));return '/people/'+key+(p.size?'?'+p.toString():'');
 }
 
-export function peopleListFromModel(model,{category='artists',term='',role='all',page=1,limit=48}={}){
- category=['creators','groups'].includes(category)?category:'artists';term=text(term).trim().slice(0,100);
+// These are catalogue duties, not professions. Billing alone is not singing.
+const productionRoles=new Set(['mix','mixing','mastering','recording','recording engineer','sound engineer','illustration','illustrator','movie','video','animation','映像','イラスト','ミックス','マスタリング','録音']);
+function roleCategory(role){
+ if(typeof role!=='string')return null;
+ if(role==='vocal')return 'vocal';if(role==='artist')return null;
+ return role.startsWith('video:')||productionRoles.has(role.toLocaleLowerCase('en'))?'production':'music';
+}
+function directoryQuery({category='all',kind='all',role='all'}={}){
+ if(category==='groups'){category='all';kind='group';}
+ if(category==='artists')category='vocal';
+ if(category==='creators')category=role!=='all'&&roleCategory(role)==='production'?'production':'music';
+ return {category:['vocal','music','production'].includes(category)?category:'all',kind:kind==='group'?'group':'all'};
+}
+export function peopleListFromModel(model,{category='all',kind='all',term='',role='all',page=1,limit=48}={}){
+ ({category,kind}=directoryQuery({category,kind,role}));term=text(term).trim().slice(0,100);
  const people=[...indexFor(model).people.values()].filter(p=>p.listed);
- // The editorial placement is separate from song duties and broad DB types.
- // A named producer in billing is not automatically an artist or a singer.
- const belongs=(person,tab)=>arr(presentation(person)?.categories).includes(tab)||(tab==='creators'&&[...person.roles].some(r=>!['vocal','artist'].includes(r)));
- const categories=[{id:'artists',label:'アーティスト'},{id:'groups',label:'グループ'},{id:'creators',label:'クリエイター'}].map(c=>({...c,count:people.filter(p=>belongs(p,c.id)).length}));
- const creators=people.filter(p=>belongs(p,'creators'));
- const creatorRoles=orderedCreditRoles(creators.flatMap(p=>[...p.roles].filter(r=>!['vocal','artist'].includes(r))));
- const activeRole=category==='creators'&&creatorRoles.includes(role)?role:'all';
- const roleOptions=[{id:'all',label:'すべて'},...creatorRoles.map(r=>({id:r,label:creditRoleLabel(r)}))];
+ const inKind=person=>kind!=='group'||person.type==='group';
+ const dutyMatches=r=>category==='all'||roleCategory(r)===category;
+ const belongs=(person,tab)=>tab==='all'||[...person.roles].some(r=>roleCategory(r)===tab);
+ const categories=[{id:'all',label:'すべて'},{id:'vocal',label:'歌唱'},{id:'music',label:'楽曲制作'},{id:'production',label:'動画・音源制作'}].map(c=>({...c,count:people.filter(p=>inKind(p)&&belongs(p,c.id)).length}));
+ const duties=orderedCreditRoles(people.filter(p=>inKind(p)&&belongs(p,category)).flatMap(p=>[...p.roles].filter(r=>r!=='artist'&&dutyMatches(r))));
+ const activeRole=duties.includes(role)?role:'all';
+ const roleOptions=[{id:'all',label:'すべて'},...duties.map(r=>({id:r,label:creditRoleLabel(r)}))];
  // A full reviewed joint label can find its participants, but one member's
  // name must not become another member's identity alias or partial match.
  const matches=person=>catalogNameMatches(person,term)||[...person.jointLabels].some(label=>catalogNameMatches({name:label},term)&&catalogNameMatches({name:term},label));
- const creatorRole=role=>!['vocal','artist'].includes(role);
- const countSongs=person=>category==='creators'?[...person.songs.values()].filter(roles=>activeRole==='all'?[...roles].some(creatorRole):roles.has(activeRole)).length:person.songs.size;
- const filtered=people.filter(p=>belongs(p,category)&&(activeRole==='all'||p.roles.has(activeRole))&&matches(p)).sort((a,b)=>(category==='creators'?countSongs(b)-countSongs(a):0)||a.name.localeCompare(b.name,'ja')||compare(a.key,b.key));
- const suggestions=term&&filtered.length===0?people.filter(p=>!belongs(p,category)&&matches(p))
+ const visibleDuty=r=>dutyMatches(r)&&(activeRole==='all'||r===activeRole);
+ const countSongs=person=>[...person.songs.values()].filter(roles=>[...roles].some(visibleDuty)).length;
+ const filtered=people.filter(p=>inKind(p)&&belongs(p,category)&&(activeRole==='all'||p.roles.has(activeRole))&&matches(p)).sort((a,b)=>(category!=='vocal'?countSongs(b)-countSongs(a):0)||a.name.localeCompare(b.name,'ja')||compare(a.key,b.key));
+ const suggestions=term&&filtered.length===0?people.filter(p=>inKind(p)&&!belongs(p,category)&&matches(p))
   .sort((a,b)=>a.name.localeCompare(b.name,'ja')||compare(a.key,b.key)).slice(0,5).flatMap(person=>{
-   const other=categories.find(c=>c.id!==category&&belongs(person,c.id));
+   const other=categories.find(c=>c.id!=='all'&&c.id!==category&&belongs(person,c.id));
    return other?[{key:person.key,name:person.name,category:other.id,categoryLabel:other.label}]:[];
   }):[];
  limit=Number.isSafeInteger(limit)&&limit>0&&limit<=100?limit:48;
  const pages=Math.ceil(filtered.length/limit);page=Number.isSafeInteger(page)&&page>0?Math.min(page,Math.max(pages,1)):1;
- return {category,term,role:activeRole,roleOptions,page,pages,total:filtered.length,categories,suggestions,items:filtered.slice((page-1)*limit,page*limit).map(p=>({key:p.key,name:p.name,type:p.type,kindLabel:kindLabel(p),roles:roleLabels(category==='creators'?[...p.roles].filter(creatorRole):p.roles),songCount:countSongs(p)}))};
+ return {category,kind,term,role:activeRole,roleOptions,page,pages,total:filtered.length,categories,suggestions,items:filtered.slice((page-1)*limit,page*limit).map(p=>({key:p.key,name:p.name,type:p.type,kindLabel:kindLabel(p),roles:roleLabels([...p.roles].filter(visibleDuty)),songCount:countSongs(p)}))};
 }
 
-export function peopleListHref({category='artists',term='',role='all',page=1}={}){
- const p=new URLSearchParams();if(['creators','groups'].includes(category))p.set('category',category);if(term)p.set('q',term);if(category==='creators'&&role&&role!=='all')p.set('role',role);if(page>1)p.set('page',String(page));return '/people'+(p.size?'?'+p.toString():'');
+export function peopleListHref({category='all',kind='all',term='',role='all',page=1}={}){
+ ({category,kind}=directoryQuery({category,kind,role}));
+ const p=new URLSearchParams();if(category!=='all')p.set('category',category);if(kind==='group')p.set('kind',kind);if(term)p.set('q',term);if(role&&role!=='all'&&(category==='all'||roleCategory(role)===category))p.set('role',role);if(page>1)p.set('page',String(page));return '/people'+(p.size?'?'+p.toString():'');
 }
