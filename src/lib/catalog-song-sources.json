@@ -4198,6 +4198,3357 @@
         "lyricist": "original",
         "composer": "original"
       }
+    },
+    {
+      "key": "chat-research-dfd8571aa8a1639addae1144",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "a5a65ece-39ea-4eda-8ff5-a3a3d9795a74",
+        "kind": "song_variant",
+        "primaryWorkId": "b0e56aef-ab96-5119-9012-9436acaf3966",
+        "title": "言葉",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.youtube.com/watch?v=BRLeDCZSu5s",
+      "credits": {
+        "lyricist": [
+          "Guiano"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "work"
+      },
+      "sourceId": "S-203"
+    },
+    {
+      "key": "chat-research-d129acc6c0e490b0119e866f",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "a5a65ece-39ea-4eda-8ff5-a3a3d9795a74",
+        "kind": "song_variant",
+        "primaryWorkId": "b0e56aef-ab96-5119-9012-9436acaf3966",
+        "title": "言葉",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.youtube.com/watch?v=BRLeDCZSu5s",
+      "credits": {
+        "composer": [
+          "Guiano"
+        ]
+      },
+      "creditScopes": {
+        "composer": "work"
+      },
+      "sourceId": "S-203"
+    },
+    {
+      "key": "chat-research-c3c4b50200774425f6fba751",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "16e3656f-8f59-4a7d-8dd9-7001890f4998",
+        "kind": "song_variant",
+        "primaryWorkId": "86c34960-164a-5287-8b4e-7ae761044fa8",
+        "title": "命海",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.uta-net.com/song/386781/",
+      "credits": {
+        "lyricist": [
+          "biz",
+          "ZERA"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "work"
+      },
+      "sourceId": "S-204"
+    },
+    {
+      "key": "chat-research-d56ce843e6d623dd240ea0a1",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "16e3656f-8f59-4a7d-8dd9-7001890f4998",
+        "kind": "song_variant",
+        "primaryWorkId": "86c34960-164a-5287-8b4e-7ae761044fa8",
+        "title": "命海",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.uta-net.com/song/386781/",
+      "credits": {
+        "composer": [
+          "biz",
+          "ZERA"
+        ]
+      },
+      "creditScopes": {
+        "composer": "work"
+      },
+      "sourceId": "S-204"
+    },
+    {
+      "key": "chat-research-c5e7329c1643c627a20d4e1e",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "f02ef363-8a5e-4f1e-a2a1-1737bd76d316",
+        "kind": "song_variant",
+        "primaryWorkId": "61a025ad-22b1-525a-bbc3-58d1dff964f4",
+        "title": "本当の音",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.qobuz.com/us-en/album/candy-live-3/cqk62apqeis2a",
+      "credits": {
+        "lyricist": [
+          "KOKIA"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-191"
+    },
+    {
+      "key": "chat-research-855d34e96da5c1fea446dffb",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "f02ef363-8a5e-4f1e-a2a1-1737bd76d316",
+        "kind": "song_variant",
+        "primaryWorkId": "61a025ad-22b1-525a-bbc3-58d1dff964f4",
+        "title": "本当の音",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.qobuz.com/us-en/album/candy-live-3/cqk62apqeis2a",
+      "credits": {
+        "composer": [
+          "KOKIA"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-191"
+    },
+    {
+      "key": "chat-research-2803ca053a0023848555a3c5",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "cd639ffc-fc62-4903-9826-c58625c7ef10",
+        "kind": "song_variant",
+        "primaryWorkId": "5d61fe41-55fc-5c42-80ca-fd640df666ac",
+        "title": "点灯",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://utaten.com/artist/lyric/45052?sort=release_date_desc",
+      "credits": {
+        "lyricist": [
+          "水槽"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "work"
+      },
+      "sourceId": "S-205"
+    },
+    {
+      "key": "chat-research-f4bfe68c573d7bc3e8892813",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "cd639ffc-fc62-4903-9826-c58625c7ef10",
+        "kind": "song_variant",
+        "primaryWorkId": "5d61fe41-55fc-5c42-80ca-fd640df666ac",
+        "title": "点灯",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://utaten.com/artist/lyric/45052?sort=release_date_desc",
+      "credits": {
+        "composer": [
+          "水槽"
+        ]
+      },
+      "creditScopes": {
+        "composer": "work"
+      },
+      "sourceId": "S-205"
+    },
+    {
+      "key": "chat-research-6febe5f159774a8c0e89ea13",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "01b16754-7bb4-42c6-9e2e-cebcb149fc1d",
+        "kind": "song_variant",
+        "primaryWorkId": "67b57f0b-6631-56ac-bcb2-b78ce18332ae",
+        "title": "逆夢",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.youtube.com/watch?v=M6gcoDN9jBc",
+      "credits": {
+        "lyricist": [
+          "常田大希"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-206"
+    },
+    {
+      "key": "chat-research-4b04569bd7220c3dd1fcc6a0",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "01b16754-7bb4-42c6-9e2e-cebcb149fc1d",
+        "kind": "song_variant",
+        "primaryWorkId": "67b57f0b-6631-56ac-bcb2-b78ce18332ae",
+        "title": "逆夢",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.youtube.com/watch?v=M6gcoDN9jBc",
+      "credits": {
+        "composer": [
+          "常田大希"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-206"
+    },
+    {
+      "key": "chat-research-0b7ebfde863b3bc0bf9e404b",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "b37d24e1-46c1-4d7e-84e5-aecd55412bfa",
+        "kind": "song_variant",
+        "primaryWorkId": "c13a6987-6e9d-5a10-98a8-601af5c65af5",
+        "title": "聖少女領域",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.tbs.co.jp/rozen-maiden/part2/02stca/stca.html",
+      "credits": {
+        "lyricist": [
+          "宝野アリカ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-207"
+    },
+    {
+      "key": "chat-research-d8f7a56b2a7d98dc6d1c7d8f",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "b37d24e1-46c1-4d7e-84e5-aecd55412bfa",
+        "kind": "song_variant",
+        "primaryWorkId": "c13a6987-6e9d-5a10-98a8-601af5c65af5",
+        "title": "聖少女領域",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.tbs.co.jp/rozen-maiden/part2/02stca/stca.html",
+      "credits": {
+        "composer": [
+          "片倉三起也"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-207"
+    },
+    {
+      "key": "chat-research-f9d5aa851ec8e66e7ddc95e2",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "c2a78c29-d1e9-463e-875f-15c0c9428bad",
+        "kind": "song_variant",
+        "primaryWorkId": "7ad1f04b-9307-5f7d-a4cd-9856eae32590",
+        "title": "crossing field",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.aniplex.co.jp/news/detail/?id=14069",
+      "credits": {
+        "lyricist": [
+          "渡辺翔"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-208"
+    },
+    {
+      "key": "chat-research-9c7abb48f27068ff86d677e9",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "c2a78c29-d1e9-463e-875f-15c0c9428bad",
+        "kind": "song_variant",
+        "primaryWorkId": "7ad1f04b-9307-5f7d-a4cd-9856eae32590",
+        "title": "crossing field",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.aniplex.co.jp/news/detail/?id=14069",
+      "credits": {
+        "composer": [
+          "渡辺翔"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-208"
+    },
+    {
+      "key": "chat-research-f798238adf2e8e393ab18581",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "9cfdba95-1f8d-4089-b8d6-81af93e6ec97",
+        "kind": "song_variant",
+        "primaryWorkId": "7a230926-0895-5e42-9ccc-b97abeb7eec3",
+        "title": "I beg you",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://sp-m.mu-mo.net/lyric/5759854/",
+      "credits": {
+        "lyricist": [
+          "梶浦由記"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-209"
+    },
+    {
+      "key": "chat-research-b272a22b07a178d01e7416fb",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "9cfdba95-1f8d-4089-b8d6-81af93e6ec97",
+        "kind": "song_variant",
+        "primaryWorkId": "7a230926-0895-5e42-9ccc-b97abeb7eec3",
+        "title": "I beg you",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://sp-m.mu-mo.net/lyric/5759854/",
+      "credits": {
+        "composer": [
+          "梶浦由記"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-209"
+    },
+    {
+      "key": "chat-research-88ad1bf1b81910d2e7bb7fdd",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "ed3d54db-f9a8-4939-9047-a5cf158e6dd9",
+        "kind": "song_variant",
+        "primaryWorkId": "debd0147-f907-5ffb-87b6-5ee0eef7f1d2",
+        "title": "黒塗り世界宛て書簡",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://linkco.re/vRv7USCF?lang=ja",
+      "credits": {
+        "lyricist": [
+          "フロクロ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-210"
+    },
+    {
+      "key": "chat-research-335d73b78a3069b1a50e2152",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "ed3d54db-f9a8-4939-9047-a5cf158e6dd9",
+        "kind": "song_variant",
+        "primaryWorkId": "debd0147-f907-5ffb-87b6-5ee0eef7f1d2",
+        "title": "黒塗り世界宛て書簡",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://linkco.re/vRv7USCF?lang=ja",
+      "credits": {
+        "composer": [
+          "フロクロ"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-210"
+    },
+    {
+      "key": "chat-research-4e9a5422445e869690ef8635",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "60110e5b-1ca0-4e3d-b1db-ee19a356ceb8",
+        "kind": "song_variant",
+        "primaryWorkId": "716e1094-b3bd-5086-8476-7d83ea64da90",
+        "title": "ホントノ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://linkco.re/Zmfy97nP?lang=ja",
+      "credits": {
+        "lyricist": [
+          "原口沙輔"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-211"
+    },
+    {
+      "key": "chat-research-d4db2274958f9ddec3b326a4",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "60110e5b-1ca0-4e3d-b1db-ee19a356ceb8",
+        "kind": "song_variant",
+        "primaryWorkId": "716e1094-b3bd-5086-8476-7d83ea64da90",
+        "title": "ホントノ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://linkco.re/Zmfy97nP?lang=ja",
+      "credits": {
+        "composer": [
+          "原口沙輔"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-211"
+    },
+    {
+      "key": "chat-research-5470f697072cc51c93eff11a",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "d5757c94-fc43-4914-9117-92fc59f5ebb2",
+        "kind": "song_variant",
+        "primaryWorkId": "d9bdbfee-0889-5a15-9b4c-69c19f8cd65c",
+        "title": "はやく夜へ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.joysound.com/web/search/song/910723?searchType=4",
+      "credits": {
+        "lyricist": [
+          "水槽"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-212"
+    },
+    {
+      "key": "chat-research-889c7f0866f659b767976a15",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "d5757c94-fc43-4914-9117-92fc59f5ebb2",
+        "kind": "song_variant",
+        "primaryWorkId": "d9bdbfee-0889-5a15-9b4c-69c19f8cd65c",
+        "title": "はやく夜へ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.joysound.com/web/search/song/910723?searchType=4",
+      "credits": {
+        "composer": [
+          "水槽"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-212"
+    },
+    {
+      "key": "chat-research-9e4f3bee9bcca65b8e60a572",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "0a4375f7-f859-400b-ac7c-b10beb87f9e3",
+        "kind": "song_variant",
+        "primaryWorkId": "e325b4a3-87de-540a-b1a7-106bc0805d28",
+        "title": "The Decisive Hour",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.youtube.com/watch?v=CM3Op5bRC4s",
+      "credits": {
+        "lyricist": [
+          "香椎モイミ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-213"
+    },
+    {
+      "key": "chat-research-9bbe8018cc602948f281ccde",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "0a4375f7-f859-400b-ac7c-b10beb87f9e3",
+        "kind": "song_variant",
+        "primaryWorkId": "e325b4a3-87de-540a-b1a7-106bc0805d28",
+        "title": "The Decisive Hour",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.youtube.com/watch?v=CM3Op5bRC4s",
+      "credits": {
+        "composer": [
+          "香椎モイミ"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-213"
+    },
+    {
+      "key": "chat-research-91b8d5205b5649c6684363e5",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "e7ef7e46-12d2-434a-a8c2-cb72ab1322d0",
+        "kind": "song_variant",
+        "primaryWorkId": "5ab3b234-b19b-5ddb-8ed2-4a451a308783",
+        "title": "同盟",
+        "displayCredit": "花譜×ヰ世界情緒×幸祜",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kamitsubaki.jp/discography/v-w-p/3219/",
+      "credits": {
+        "lyricist": [
+          "Kanata Okajima",
+          "Hayato Yamamoto"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-214"
+    },
+    {
+      "key": "chat-research-a1b55e077c4a5a5a28df2592",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "e7ef7e46-12d2-434a-a8c2-cb72ab1322d0",
+        "kind": "song_variant",
+        "primaryWorkId": "5ab3b234-b19b-5ddb-8ed2-4a451a308783",
+        "title": "同盟",
+        "displayCredit": "花譜×ヰ世界情緒×幸祜",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kamitsubaki.jp/discography/v-w-p/3219/",
+      "credits": {
+        "composer": [
+          "Kanata Okajima",
+          "Hayato Yamamoto",
+          "MEG (MEGMETAL)"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-214"
+    },
+    {
+      "key": "chat-research-e735bad7202be85447148672",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "9ef78602-b930-461d-a25a-a7c44a50b635",
+        "kind": "song_variant",
+        "primaryWorkId": "25f5ebd4-f1b7-5d41-a1da-3e51ac225376",
+        "title": "チューイン・ディスコ",
+        "displayCredit": "花譜×ヰ世界情緒×幸祜",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kaf.kamitsubaki.jp/discography/20240821/831/",
+      "credits": {
+        "lyricist": [
+          "ツミキ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-215"
+    },
+    {
+      "key": "chat-research-5a44e625211c0795672eb701",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "9ef78602-b930-461d-a25a-a7c44a50b635",
+        "kind": "song_variant",
+        "primaryWorkId": "25f5ebd4-f1b7-5d41-a1da-3e51ac225376",
+        "title": "チューイン・ディスコ",
+        "displayCredit": "花譜×ヰ世界情緒×幸祜",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kaf.kamitsubaki.jp/discography/20240821/831/",
+      "credits": {
+        "composer": [
+          "ツミキ"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-215"
+    },
+    {
+      "key": "chat-research-0fa31478910321239d867e68",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "70687f60-a1d6-4a3a-9181-400a6e321333",
+        "kind": "song_variant",
+        "primaryWorkId": "730b6467-a9dd-507f-805e-c6d053efe6f8",
+        "title": "TIME",
+        "displayCredit": "花譜×ヰ世界情緒×幸祜",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kamitsubaki.jp/news/2025/02/15/6004/",
+      "credits": {
+        "lyricist": [
+          "大沼パセリ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-216"
+    },
+    {
+      "key": "chat-research-30901bba97c481a424f56ec0",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "70687f60-a1d6-4a3a-9181-400a6e321333",
+        "kind": "song_variant",
+        "primaryWorkId": "730b6467-a9dd-507f-805e-c6d053efe6f8",
+        "title": "TIME",
+        "displayCredit": "花譜×ヰ世界情緒×幸祜",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kamitsubaki.jp/news/2025/02/15/6004/",
+      "credits": {
+        "composer": [
+          "大沼パセリ"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-216"
+    },
+    {
+      "key": "chat-research-59a8536dee075fa1eae61ba1",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "4597b97e-7ec9-4b12-904e-fb8cc9b0a2ed",
+        "kind": "song_variant",
+        "primaryWorkId": "6a34dd69-a5cb-520c-86a1-bdf8291d6125",
+        "title": "愛憎",
+        "displayCredit": "幸祜 × ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.uta-net.com/song/370765/",
+      "credits": {
+        "lyricist": [
+          "HiFi-P"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "work"
+      },
+      "sourceId": "S-217"
+    },
+    {
+      "key": "chat-research-011784204776323d66e9e0ca",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "4597b97e-7ec9-4b12-904e-fb8cc9b0a2ed",
+        "kind": "song_variant",
+        "primaryWorkId": "6a34dd69-a5cb-520c-86a1-bdf8291d6125",
+        "title": "愛憎",
+        "displayCredit": "幸祜 × ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.uta-net.com/song/370765/",
+      "credits": {
+        "composer": [
+          "HiFi-P"
+        ]
+      },
+      "creditScopes": {
+        "composer": "work"
+      },
+      "sourceId": "S-217"
+    },
+    {
+      "key": "chat-research-361ec1251c079abbb36b2dcc",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "45118e1c-d0f8-4bac-866e-fa62faf166b1",
+        "kind": "song_variant",
+        "primaryWorkId": "5ab3b234-b19b-5ddb-8ed2-4a451a308783",
+        "title": "同盟",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kamitsubaki.jp/discography/v-w-p/3219/",
+      "credits": {
+        "lyricist": [
+          "Kanata Okajima",
+          "Hayato Yamamoto"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "work"
+      },
+      "sourceId": "S-214"
+    },
+    {
+      "key": "chat-research-ebe6bdbdc56342b432ae2099",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "45118e1c-d0f8-4bac-866e-fa62faf166b1",
+        "kind": "song_variant",
+        "primaryWorkId": "5ab3b234-b19b-5ddb-8ed2-4a451a308783",
+        "title": "同盟",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kamitsubaki.jp/discography/v-w-p/3219/",
+      "credits": {
+        "composer": [
+          "Kanata Okajima",
+          "Hayato Yamamoto",
+          "MEG (MEGMETAL)"
+        ]
+      },
+      "creditScopes": {
+        "composer": "work"
+      },
+      "sourceId": "S-214"
+    },
+    {
+      "key": "chat-research-b7d5eaa1abb8c2677d188576",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "9f77db76-944a-4cdf-8747-59859c647b82",
+        "kind": "song_variant",
+        "primaryWorkId": "cdcbc51a-7400-5ce6-a382-9c42cea0caa6",
+        "title": "蜘蛛糸モノポリー",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.joysound.com/web/search/song/253993",
+      "credits": {
+        "lyricist": [
+          "sasakure.UK"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-218"
+    },
+    {
+      "key": "chat-research-5a6869ad9347613442a58398",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "9f77db76-944a-4cdf-8747-59859c647b82",
+        "kind": "song_variant",
+        "primaryWorkId": "cdcbc51a-7400-5ce6-a382-9c42cea0caa6",
+        "title": "蜘蛛糸モノポリー",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.joysound.com/web/search/song/253993",
+      "credits": {
+        "composer": [
+          "sasakure.UK"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-218"
+    },
+    {
+      "key": "chat-research-9b9a6cda8dde4fe2b8dd2471",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "351dfec3-b8a9-4104-9cb5-bde727a4e506",
+        "kind": "song_variant",
+        "primaryWorkId": "8eff97a4-1642-5ec9-b49c-62ec78c37475",
+        "title": "禁じられた遊び",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.uta-net.com/song/45876/",
+      "credits": {
+        "lyricist": [
+          "宝野アリカ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-219"
+    },
+    {
+      "key": "chat-research-ef8fcb121acd66c3259348e0",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "351dfec3-b8a9-4104-9cb5-bde727a4e506",
+        "kind": "song_variant",
+        "primaryWorkId": "8eff97a4-1642-5ec9-b49c-62ec78c37475",
+        "title": "禁じられた遊び",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.uta-net.com/song/45876/",
+      "credits": {
+        "composer": [
+          "片倉三起也"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-219"
+    },
+    {
+      "key": "chat-research-60e9022ae6be3eb7535b909e",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "87198935-b519-4662-94cf-84fd6d084bac",
+        "kind": "song_variant",
+        "primaryWorkId": "278a36d8-5925-536a-974f-b66a6e697cc7",
+        "title": "愛して愛して愛して",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.joysound.com/web/search/song/536812",
+      "credits": {
+        "lyricist": [
+          "きくお"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-220"
+    },
+    {
+      "key": "chat-research-a34fad7a0d08d578bb7bf451",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "87198935-b519-4662-94cf-84fd6d084bac",
+        "kind": "song_variant",
+        "primaryWorkId": "278a36d8-5925-536a-974f-b66a6e697cc7",
+        "title": "愛して愛して愛して",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.joysound.com/web/search/song/536812",
+      "credits": {
+        "composer": [
+          "きくお"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-220"
+    },
+    {
+      "key": "chat-research-67bf53a8f0b63763b0ba1013",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "a048035f-5a9f-41c6-955d-d8faeeb2181d",
+        "kind": "song_variant",
+        "primaryWorkId": "cf80a494-cd3a-550d-9a2d-d13d84069331",
+        "title": "ラヴィ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://news.ponycanyon.co.jp/2025/02/109159",
+      "credits": {
+        "lyricist": [
+          "すりぃ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-221"
+    },
+    {
+      "key": "chat-research-3a78bf7bbaed5f96f95e491b",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "a048035f-5a9f-41c6-955d-d8faeeb2181d",
+        "kind": "song_variant",
+        "primaryWorkId": "cf80a494-cd3a-550d-9a2d-d13d84069331",
+        "title": "ラヴィ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://news.ponycanyon.co.jp/2025/02/109159",
+      "credits": {
+        "composer": [
+          "すりぃ"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-221"
+    },
+    {
+      "key": "chat-research-fb72e36ab23507dd6c870f9d",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "577f3062-0bbe-4387-bbc4-8fc6779bff01",
+        "kind": "song_variant",
+        "primaryWorkId": "bedd30c1-13e6-575f-ad1b-d3097f2731fc",
+        "title": "ハッピーホロウと神様倶楽部",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.joysound.com/web/search/song/654746",
+      "credits": {
+        "lyricist": [
+          "ナノウ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-222"
+    },
+    {
+      "key": "chat-research-839ea9ae9064506718979ecc",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "577f3062-0bbe-4387-bbc4-8fc6779bff01",
+        "kind": "song_variant",
+        "primaryWorkId": "bedd30c1-13e6-575f-ad1b-d3097f2731fc",
+        "title": "ハッピーホロウと神様倶楽部",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.joysound.com/web/search/song/654746",
+      "credits": {
+        "composer": [
+          "ナノウ"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-222"
+    },
+    {
+      "key": "chat-research-469209324fc2907f70bb1bb3",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "4a16dd69-4669-4153-ada3-69022daa452b",
+        "kind": "song_variant",
+        "primaryWorkId": "98af1dd6-03cf-5a2c-8c19-1ad95e604e4a",
+        "title": "Paradisus-Paradoxm",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://bang-dream.bushimo.jp/music/",
+      "credits": {
+        "lyricist": [
+          "MYTH & ROID"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-223"
+    },
+    {
+      "key": "chat-research-7b3b2d04a53ec132e903f6ad",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "4a16dd69-4669-4153-ada3-69022daa452b",
+        "kind": "song_variant",
+        "primaryWorkId": "98af1dd6-03cf-5a2c-8c19-1ad95e604e4a",
+        "title": "Paradisus-Paradoxm",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://bang-dream.bushimo.jp/music/",
+      "credits": {
+        "composer": [
+          "MYTH & ROID"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-223"
+    },
+    {
+      "key": "chat-research-e1e23caadd3ac68375ab567d",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "4af006c5-0036-4c4e-997e-5fab1cd2024e",
+        "kind": "song_variant",
+        "primaryWorkId": "3839b7b3-db0f-5a8a-b72d-e6bf242f215d",
+        "title": "みかんハート",
+        "displayCredit": "理芽 feat. ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.youtube.com/watch?v=KPJw7-QHoEM",
+      "credits": {
+        "lyricist": [
+          "CLIEVY"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-224"
+    },
+    {
+      "key": "chat-research-5c356b957de7c6601d4c11ab",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "4af006c5-0036-4c4e-997e-5fab1cd2024e",
+        "kind": "song_variant",
+        "primaryWorkId": "3839b7b3-db0f-5a8a-b72d-e6bf242f215d",
+        "title": "みかんハート",
+        "displayCredit": "理芽 feat. ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.youtube.com/watch?v=KPJw7-QHoEM",
+      "credits": {
+        "composer": [
+          "CLIEVY",
+          "栗本修"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-224"
+    },
+    {
+      "key": "chat-research-d622a1b82e64c338951729b5",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "5de4b8c2-b07e-4446-a012-006c40d48a53",
+        "kind": "song_variant",
+        "primaryWorkId": "7a1feee3-d9b3-53ae-b57d-c875cdfa53f2",
+        "title": "魔女",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kamitsubaki.jp/discography/v-w-p/2006/",
+      "credits": {
+        "composer": [
+          "カンザキイオリ"
+        ]
+      },
+      "creditScopes": {
+        "composer": "work"
+      },
+      "sourceId": "S-225"
+    },
+    {
+      "key": "chat-research-248a5c0eb4ec635c795c373b",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "7b2861ed-fd31-4572-adf9-991e91eacdd2",
+        "kind": "song_variant",
+        "primaryWorkId": "eb537253-b0f0-53a0-85ec-bf130d863711",
+        "title": "残響ヴァンデラー",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.youtube.com/watch?v=naEcoX-UStg",
+      "credits": {
+        "lyricist": [
+          "かいりきベア"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-226"
+    },
+    {
+      "key": "chat-research-af393940c524e5ec57c5d3da",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "7b2861ed-fd31-4572-adf9-991e91eacdd2",
+        "kind": "song_variant",
+        "primaryWorkId": "eb537253-b0f0-53a0-85ec-bf130d863711",
+        "title": "残響ヴァンデラー",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.youtube.com/watch?v=naEcoX-UStg",
+      "credits": {
+        "composer": [
+          "かいりきベア"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-226"
+    },
+    {
+      "key": "chat-research-3db2375f23e5530e04f2efe5",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "fc91f9f0-6116-4e7f-84fc-d0e7b30af89c",
+        "kind": "song_variant",
+        "primaryWorkId": "091ba5ce-8b22-5e86-8419-c8aae059db59",
+        "title": "ワールドイズマイン",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.joysound.com/web/search/song/134538",
+      "credits": {
+        "lyricist": [
+          "ryo"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-227"
+    },
+    {
+      "key": "chat-research-d1fe9742c76949ef38bd6bff",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "fc91f9f0-6116-4e7f-84fc-d0e7b30af89c",
+        "kind": "song_variant",
+        "primaryWorkId": "091ba5ce-8b22-5e86-8419-c8aae059db59",
+        "title": "ワールドイズマイン",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.joysound.com/web/search/song/134538",
+      "credits": {
+        "composer": [
+          "ryo"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-227"
+    },
+    {
+      "key": "chat-research-225b9c4079579c91cb132b30",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "165407d9-7c40-41d2-950a-73f7cbea1112",
+        "kind": "song_variant",
+        "primaryWorkId": "7b8327a5-3f2c-5f59-a2bd-7f00dfcf3f38",
+        "title": "フューチャー・イヴ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://magicalmirai.com/10th/",
+      "credits": {
+        "lyricist": [
+          "sasakure.UK"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-228"
+    },
+    {
+      "key": "chat-research-83ea9ce4b3a10a6a074d180c",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "165407d9-7c40-41d2-950a-73f7cbea1112",
+        "kind": "song_variant",
+        "primaryWorkId": "7b8327a5-3f2c-5f59-a2bd-7f00dfcf3f38",
+        "title": "フューチャー・イヴ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://magicalmirai.com/10th/",
+      "credits": {
+        "composer": [
+          "sasakure.UK"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-228"
+    },
+    {
+      "key": "chat-research-14433908a87a41da32f35ca8",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "f93ec4c1-6745-4988-a7e7-ff739871126c",
+        "kind": "song_variant",
+        "primaryWorkId": "12347cbd-fbe8-5789-9ffd-b99365b5e7b4",
+        "title": "フォニイ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.joysound.com/web/search/song/884125",
+      "credits": {
+        "lyricist": [
+          "ツミキ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-229"
+    },
+    {
+      "key": "chat-research-25b8039bb5d4fdd5f5eb5bbb",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "f93ec4c1-6745-4988-a7e7-ff739871126c",
+        "kind": "song_variant",
+        "primaryWorkId": "12347cbd-fbe8-5789-9ffd-b99365b5e7b4",
+        "title": "フォニイ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.joysound.com/web/search/song/884125",
+      "credits": {
+        "composer": [
+          "ツミキ"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-229"
+    },
+    {
+      "key": "chat-research-60ddf38aaf15bedc777d9e79",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "ef38f771-fca5-45b5-a56b-f5a07dc9f7a5",
+        "kind": "song_variant",
+        "primaryWorkId": "f6eb7c64-b63e-5a98-b7e9-925dd7a34f21",
+        "title": "うまぴょい伝説",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://umamusume.jp/goods/detail?id=hfchd5varsj",
+      "credits": {
+        "lyricist": [
+          "Cygames (本田晃弘)"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-230"
+    },
+    {
+      "key": "chat-research-ddcf72b2d76c103d5a7086cc",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "ef38f771-fca5-45b5-a56b-f5a07dc9f7a5",
+        "kind": "song_variant",
+        "primaryWorkId": "f6eb7c64-b63e-5a98-b7e9-925dd7a34f21",
+        "title": "うまぴょい伝説",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://umamusume.jp/goods/detail?id=hfchd5varsj",
+      "credits": {
+        "composer": [
+          "Cygames (本田晃弘)"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-230"
+    },
+    {
+      "key": "chat-research-8ced19015f871281430fe176",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "aab078dd-a420-42b6-8a16-f229e1befcb8",
+        "kind": "song_variant",
+        "primaryWorkId": "f5360f25-66dd-5ab4-9e32-8a372222d140",
+        "title": "Snow halation",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.lantis.jp/release-item/LACM-4774.html",
+      "credits": {
+        "lyricist": [
+          "畑亜貴"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-231"
+    },
+    {
+      "key": "chat-research-0cc40b23d4026bbbab808ef5",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "aab078dd-a420-42b6-8a16-f229e1befcb8",
+        "kind": "song_variant",
+        "primaryWorkId": "f5360f25-66dd-5ab4-9e32-8a372222d140",
+        "title": "Snow halation",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.lantis.jp/release-item/LACM-4774.html",
+      "credits": {
+        "composer": [
+          "山田高弘"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-231"
+    },
+    {
+      "key": "chat-research-e9b12093b74f777680fa1327",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "332c644c-de68-46fe-be26-2b2b4b2a6198",
+        "kind": "song_variant",
+        "primaryWorkId": "0ecc0ed2-2a23-5dc7-bc5c-b524c4837350",
+        "title": "Packaged",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.joysound.com/web/search/song/259470",
+      "credits": {
+        "lyricist": [
+          "kz"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-232"
+    },
+    {
+      "key": "chat-research-1a6e62b3cb688d10dd4eaa97",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "332c644c-de68-46fe-be26-2b2b4b2a6198",
+        "kind": "song_variant",
+        "primaryWorkId": "0ecc0ed2-2a23-5dc7-bc5c-b524c4837350",
+        "title": "Packaged",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.joysound.com/web/search/song/259470",
+      "credits": {
+        "composer": [
+          "kz"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-232"
+    },
+    {
+      "key": "chat-research-f50d60f4406b7bf2725f0839",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "5bd3f6de-fad4-42fe-9c50-da13e8906af2",
+        "kind": "song_variant",
+        "primaryWorkId": "5b72f7bf-481f-513b-8143-ce18769278d6",
+        "title": "MAD TIME LOVE",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.sgasakura.com/pphmtl",
+      "credits": {
+        "lyricist": [
+          "佐々木喫茶",
+          "ピンキーポップヘップバーン"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-233"
+    },
+    {
+      "key": "chat-research-3aa791a31d965ae7d26b0cd6",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "5bd3f6de-fad4-42fe-9c50-da13e8906af2",
+        "kind": "song_variant",
+        "primaryWorkId": "5b72f7bf-481f-513b-8143-ce18769278d6",
+        "title": "MAD TIME LOVE",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.sgasakura.com/pphmtl",
+      "credits": {
+        "composer": [
+          "佐々木喫茶"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-233"
+    },
+    {
+      "key": "chat-research-3ef6c974c177b8276f322dc7",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "29acf040-4d16-4395-bf04-bfce56a010b9",
+        "kind": "song_variant",
+        "primaryWorkId": "b3422471-1382-5889-8c30-9edb4cbc528a",
+        "title": "ガーネットの涙",
+        "displayCredit": "ヰ世界情緒×跳亜",
+        "singerIds": [
+          "11990299-8a34-52cb-bed8-00eba4d75aec",
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.youtube.com/watch?v=q9q-3jJgKpU",
+      "credits": {
+        "lyricist": [
+          "香椎モイミ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-234"
+    },
+    {
+      "key": "chat-research-482ffbdeea54a1d66aa518df",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "29acf040-4d16-4395-bf04-bfce56a010b9",
+        "kind": "song_variant",
+        "primaryWorkId": "b3422471-1382-5889-8c30-9edb4cbc528a",
+        "title": "ガーネットの涙",
+        "displayCredit": "ヰ世界情緒×跳亜",
+        "singerIds": [
+          "11990299-8a34-52cb-bed8-00eba4d75aec",
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.youtube.com/watch?v=q9q-3jJgKpU",
+      "credits": {
+        "composer": [
+          "香椎モイミ"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-234"
+    },
+    {
+      "key": "chat-research-97fba0941ae86e5669c812e1",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "31071260-2ff0-48ee-b87d-a813af6aef85",
+        "kind": "song_variant",
+        "primaryWorkId": "c6508720-f812-5fb0-89b5-7909f260fa21",
+        "title": "雪の華",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.kinokuniya.co.jp/f/dsg-10-4547403003505",
+      "credits": {
+        "lyricist": [
+          "Satomi"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-235"
+    },
+    {
+      "key": "chat-research-e09c68932b943a12cebc4c06",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "31071260-2ff0-48ee-b87d-a813af6aef85",
+        "kind": "song_variant",
+        "primaryWorkId": "c6508720-f812-5fb0-89b5-7909f260fa21",
+        "title": "雪の華",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.kinokuniya.co.jp/f/dsg-10-4547403003505",
+      "credits": {
+        "composer": [
+          "松本良喜"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-235"
+    },
+    {
+      "key": "chat-research-d9f7b43ac992c3b714a6c36d",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "719f6e37-2cc3-4291-bd2b-11422f3de8de",
+        "kind": "song_variant",
+        "primaryWorkId": "157f0deb-aa89-51d9-8fa1-890a2c77868d",
+        "title": "遠心力",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://utaten.com/lyric/mi22051125/",
+      "credits": {
+        "lyricist": [
+          "ナナホシ管弦楽団"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-236"
+    },
+    {
+      "key": "chat-research-84fb48d44e489e0f6f457fdb",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "719f6e37-2cc3-4291-bd2b-11422f3de8de",
+        "kind": "song_variant",
+        "primaryWorkId": "157f0deb-aa89-51d9-8fa1-890a2c77868d",
+        "title": "遠心力",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://utaten.com/lyric/mi22051125/",
+      "credits": {
+        "composer": [
+          "ナナホシ管弦楽団"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-236"
+    },
+    {
+      "key": "chat-research-3a54d1a257d9417660279256",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "1c587cea-29bc-4dff-a49d-f1313a8d4f02",
+        "kind": "song_variant",
+        "primaryWorkId": "95ef10ab-d7b4-59ca-8ae8-30bfc61ec2ed",
+        "title": "桜の子",
+        "displayCredit": "ヰ世界情緒 feat. 花譜",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.uta-net.com/song/306188/",
+      "credits": {
+        "lyricist": [
+          "カンザキイオリ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-237"
+    },
+    {
+      "key": "chat-research-0747c259b12370d47dfb3998",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "1c587cea-29bc-4dff-a49d-f1313a8d4f02",
+        "kind": "song_variant",
+        "primaryWorkId": "95ef10ab-d7b4-59ca-8ae8-30bfc61ec2ed",
+        "title": "桜の子",
+        "displayCredit": "ヰ世界情緒 feat. 花譜",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.uta-net.com/song/306188/",
+      "credits": {
+        "composer": [
+          "カンザキイオリ"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-237"
+    },
+    {
+      "key": "chat-research-19b181b1e3b2dfe0a72a93f6",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "f24836b6-d11c-477a-8eb9-8a0411c50408",
+        "kind": "song_variant",
+        "primaryWorkId": "7c2cb170-06df-5b97-8203-8a4e5e0ffe08",
+        "title": "月",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://utaten.com/lyric/mi22112515/",
+      "credits": {
+        "lyricist": [
+          "Guiano"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-238"
+    },
+    {
+      "key": "chat-research-4ec31c54b43f94b48d4b0dd1",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "f24836b6-d11c-477a-8eb9-8a0411c50408",
+        "kind": "song_variant",
+        "primaryWorkId": "7c2cb170-06df-5b97-8203-8a4e5e0ffe08",
+        "title": "月",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://utaten.com/lyric/mi22112515/",
+      "credits": {
+        "composer": [
+          "Guiano"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-238"
+    },
+    {
+      "key": "chat-research-113232ffb3d8ccc4c8d0238c",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "fbc253d6-3595-4b66-8d24-9e06133d8d06",
+        "kind": "song_variant",
+        "primaryWorkId": "b42bd6c8-7b39-5104-b39b-fb732fa2bab2",
+        "title": "悪魔の踊り方",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://linkco.re/BYacMRAg?lang=ja",
+      "credits": {
+        "lyricist": [
+          "キタニタツヤ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-239"
+    },
+    {
+      "key": "chat-research-a18ae41c9ca8641701f0f3be",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "fbc253d6-3595-4b66-8d24-9e06133d8d06",
+        "kind": "song_variant",
+        "primaryWorkId": "b42bd6c8-7b39-5104-b39b-fb732fa2bab2",
+        "title": "悪魔の踊り方",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://linkco.re/BYacMRAg?lang=ja",
+      "credits": {
+        "composer": [
+          "キタニタツヤ"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-239"
+    },
+    {
+      "key": "chat-research-93f5a67045b7ecec10cec2c7",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "f573c3ef-6f8e-481d-8fa0-bbd61333c773",
+        "kind": "song_variant",
+        "primaryWorkId": "291ebdd2-155b-55d1-bd48-4275898dc63e",
+        "title": "古いSF映画",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.joysound.com/web/search/song/421468",
+      "credits": {
+        "lyricist": [
+          "秋田ひろむ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-240"
+    },
+    {
+      "key": "chat-research-43246fcc5497287ca4a38fb3",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "f573c3ef-6f8e-481d-8fa0-bbd61333c773",
+        "kind": "song_variant",
+        "primaryWorkId": "291ebdd2-155b-55d1-bd48-4275898dc63e",
+        "title": "古いSF映画",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.joysound.com/web/search/song/421468",
+      "credits": {
+        "composer": [
+          "秋田ひろむ"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-240"
+    },
+    {
+      "key": "chat-research-b88096ffb110b0f896286d33",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "240b03a8-de8f-4ffd-9432-6a69bec09563",
+        "kind": "song_variant",
+        "primaryWorkId": "194a8ff2-dfe2-570a-b90d-3dc9b89656e3",
+        "title": "ラブカ?",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://linkco.re/yyxyedUA?lang=ja",
+      "credits": {
+        "lyricist": [
+          "柊キライ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-241"
+    },
+    {
+      "key": "chat-research-43d479421437b2e0fe59cc71",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "240b03a8-de8f-4ffd-9432-6a69bec09563",
+        "kind": "song_variant",
+        "primaryWorkId": "194a8ff2-dfe2-570a-b90d-3dc9b89656e3",
+        "title": "ラブカ?",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://linkco.re/yyxyedUA?lang=ja",
+      "credits": {
+        "composer": [
+          "柊キライ"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-241"
+    },
+    {
+      "key": "chat-research-ace0cfae217c68685229d12d",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "85b4a132-5eca-4eed-8fa8-7a7e28986747",
+        "kind": "song_variant",
+        "primaryWorkId": "f9a168fc-25d3-5da7-b8f3-8d6fb3f8f3c9",
+        "title": "ラビリンス",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.qobuz.com/jp-ja/album/candy-live-2/qb9l54hjmkqta",
+      "credits": {
+        "lyricist": [
+          "谷中敦"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-242"
+    },
+    {
+      "key": "chat-research-2861243c233e845c23813665",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "85b4a132-5eca-4eed-8fa8-7a7e28986747",
+        "kind": "song_variant",
+        "primaryWorkId": "f9a168fc-25d3-5da7-b8f3-8d6fb3f8f3c9",
+        "title": "ラビリンス",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.qobuz.com/jp-ja/album/candy-live-2/qb9l54hjmkqta",
+      "credits": {
+        "composer": [
+          "大沢伸一"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-242"
+    },
+    {
+      "key": "chat-research-176618c152010b168b302686",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "00c2df2b-2535-4794-a326-ac896d42157d",
+        "kind": "song_variant",
+        "primaryWorkId": "c848efca-ba82-5ecf-88a9-0e70b67b4525",
+        "title": "ラグトレイン",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.joysound.com/web/search/song/849126",
+      "credits": {
+        "lyricist": [
+          "稲葉曇"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-243"
+    },
+    {
+      "key": "chat-research-1a4aa02f821d4660ee0af78c",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "00c2df2b-2535-4794-a326-ac896d42157d",
+        "kind": "song_variant",
+        "primaryWorkId": "c848efca-ba82-5ecf-88a9-0e70b67b4525",
+        "title": "ラグトレイン",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.joysound.com/web/search/song/849126",
+      "credits": {
+        "composer": [
+          "稲葉曇"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-243"
+    },
+    {
+      "key": "chat-research-c34171f1194ba8f062ea61ce",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "eabfc5cf-431d-40c8-9c6b-8558e0d491e8",
+        "kind": "song_variant",
+        "primaryWorkId": "bd1f0ecc-f022-5c36-936b-61fcdab28608",
+        "title": "ミューズ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://tower.jp/item/4706941",
+      "credits": {
+        "lyricist": [
+          "吉澤嘉代子"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-244"
+    },
+    {
+      "key": "chat-research-37d22c0c0572b832192b9693",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "eabfc5cf-431d-40c8-9c6b-8558e0d491e8",
+        "kind": "song_variant",
+        "primaryWorkId": "bd1f0ecc-f022-5c36-936b-61fcdab28608",
+        "title": "ミューズ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://tower.jp/item/4706941",
+      "credits": {
+        "composer": [
+          "吉澤嘉代子"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-244"
+    },
+    {
+      "key": "chat-research-d791e0e295121af65192433d",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "ffe1f7d4-b31e-4bf6-9811-60df2c5db2eb",
+        "kind": "song_variant",
+        "primaryWorkId": "8574032f-ca71-5676-b87b-5ffb846f4701",
+        "title": "マトリョシカ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.qobuz.com/jp-ja/album/candy-live-2/qb9l54hjmkqta",
+      "credits": {
+        "lyricist": [
+          "ハチ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-242"
+    },
+    {
+      "key": "chat-research-261212a562486ab3442f37fb",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "ffe1f7d4-b31e-4bf6-9811-60df2c5db2eb",
+        "kind": "song_variant",
+        "primaryWorkId": "8574032f-ca71-5676-b87b-5ffb846f4701",
+        "title": "マトリョシカ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.qobuz.com/jp-ja/album/candy-live-2/qb9l54hjmkqta",
+      "credits": {
+        "composer": [
+          "ハチ"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-242"
+    },
+    {
+      "key": "chat-research-e3e594ba31d6fd74ddcd5b2f",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "e136b461-fb36-437a-8544-3868e14d5a0e",
+        "kind": "song_variant",
+        "primaryWorkId": "3a7626d4-d29d-5db6-9692-7fbdcc3f10bf",
+        "title": "ココロ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.joysound.com/web/search/song/121128",
+      "credits": {
+        "lyricist": [
+          "トラボルタ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-245"
+    },
+    {
+      "key": "chat-research-70e79684930c67902fc0b812",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "e136b461-fb36-437a-8544-3868e14d5a0e",
+        "kind": "song_variant",
+        "primaryWorkId": "3a7626d4-d29d-5db6-9692-7fbdcc3f10bf",
+        "title": "ココロ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.joysound.com/web/search/song/121128",
+      "credits": {
+        "composer": [
+          "トラボルタ"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-245"
+    },
+    {
+      "key": "chat-research-b198a6106b1eb13fd2ed472a",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "0de1d011-8d05-4bf5-8d4b-1c488426a7c7",
+        "kind": "song_variant",
+        "primaryWorkId": "df4415b3-a9d0-5fdd-8fde-ddcdb5034103",
+        "title": "グレートフィルター",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.qobuz.com/jp-ja/album/candy-live-2/qb9l54hjmkqta",
+      "credits": {
+        "lyricist": [
+          "伊根"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-242"
+    },
+    {
+      "key": "chat-research-ea4d7cb007fe53f10a8a92be",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "0de1d011-8d05-4bf5-8d4b-1c488426a7c7",
+        "kind": "song_variant",
+        "primaryWorkId": "df4415b3-a9d0-5fdd-8fde-ddcdb5034103",
+        "title": "グレートフィルター",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.qobuz.com/jp-ja/album/candy-live-2/qb9l54hjmkqta",
+      "credits": {
+        "composer": [
+          "伊根"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-242"
+    },
+    {
+      "key": "chat-research-1e169c3577b05348b691c696",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "9ea88a54-750a-4f0e-bb61-5b71e0d240c0",
+        "kind": "song_variant",
+        "primaryWorkId": "0ca31bde-677e-5d65-8f74-5bc9dd207703",
+        "title": "Hello,Worker",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.uta-net.com/song/141860/",
+      "credits": {
+        "lyricist": [
+          "ハヤシケイ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-246"
+    },
+    {
+      "key": "chat-research-30942c2d0013288b6ff187b7",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "9ea88a54-750a-4f0e-bb61-5b71e0d240c0",
+        "kind": "song_variant",
+        "primaryWorkId": "0ca31bde-677e-5d65-8f74-5bc9dd207703",
+        "title": "Hello,Worker",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.uta-net.com/song/141860/",
+      "credits": {
+        "composer": [
+          "ハヤシケイ"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-246"
+    },
+    {
+      "key": "chat-research-a96a9e4eff8b639fa4b2f41b",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "d9e60f11-6bf6-4cc9-8614-9e0682c37f0a",
+        "kind": "song_variant",
+        "primaryWorkId": "40a70f06-354f-5b15-8f08-350dd82f0c5c",
+        "title": "CH4NGE",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.youtube.com/watch?v=LbO4pg_LHUI",
+      "credits": {
+        "lyricist": [
+          "q*Left"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-247"
+    },
+    {
+      "key": "chat-research-82c34f379873db8772572882",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "d9e60f11-6bf6-4cc9-8614-9e0682c37f0a",
+        "kind": "song_variant",
+        "primaryWorkId": "40a70f06-354f-5b15-8f08-350dd82f0c5c",
+        "title": "CH4NGE",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.youtube.com/watch?v=LbO4pg_LHUI",
+      "credits": {
+        "composer": [
+          "Giga"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-247"
+    },
+    {
+      "key": "chat-research-9f35ff38447c875d3ef8b7db",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "33b80519-b6b2-47aa-8fd5-4fe015fb809f",
+        "kind": "song_variant",
+        "primaryWorkId": "0c056a3e-f347-5cf7-8f28-5482a408b2eb",
+        "title": "トンデモワンダーズ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://linkco.re/XcpRU7Bm?lang=ja",
+      "credits": {
+        "lyricist": [
+          "sasakure.UK"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-248"
+    },
+    {
+      "key": "chat-research-679175bf7122e89ac5314269",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "33b80519-b6b2-47aa-8fd5-4fe015fb809f",
+        "kind": "song_variant",
+        "primaryWorkId": "0c056a3e-f347-5cf7-8f28-5482a408b2eb",
+        "title": "トンデモワンダーズ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://linkco.re/XcpRU7Bm?lang=ja",
+      "credits": {
+        "composer": [
+          "sasakure.UK"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-248"
+    },
+    {
+      "key": "chat-research-3481a3731bb5d45a3030a678",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "a0909e0e-ff71-4b9c-ab3d-ef0382895080",
+        "kind": "song_variant",
+        "primaryWorkId": "3d91a11f-8f7f-5725-8f06-d28e48778d21",
+        "title": "女の子になりたい",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://uni-mafumafu.jp/discography/242/",
+      "credits": {
+        "lyricist": [
+          "まふまふ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-249"
+    },
+    {
+      "key": "chat-research-420809f43f584f084d901051",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "a0909e0e-ff71-4b9c-ab3d-ef0382895080",
+        "kind": "song_variant",
+        "primaryWorkId": "3d91a11f-8f7f-5725-8f06-d28e48778d21",
+        "title": "女の子になりたい",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://uni-mafumafu.jp/discography/242/",
+      "credits": {
+        "composer": [
+          "まふまふ",
+          "田中秀和（MONACA）"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-249"
+    },
+    {
+      "key": "chat-research-8c5283e0897427abb8672f2f",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "6392ed2f-b9ca-4b9e-8e17-b2dad6d7fe33",
+        "kind": "song_variant",
+        "primaryWorkId": "14b14c36-dc71-5a86-8b00-e128c5877bdb",
+        "title": "鏡面の波 (あられライブ ver.)",
+        "displayCredit": "幸祜 feat. ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.yu-ri-ka.com/news/20171120/",
+      "credits": {
+        "lyricist": [
+          "照井順政"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-250"
+    },
+    {
+      "key": "chat-research-a8c65e48b9e7f5e259fd1758",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "6392ed2f-b9ca-4b9e-8e17-b2dad6d7fe33",
+        "kind": "song_variant",
+        "primaryWorkId": "14b14c36-dc71-5a86-8b00-e128c5877bdb",
+        "title": "鏡面の波 (あられライブ ver.)",
+        "displayCredit": "幸祜 feat. ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.yu-ri-ka.com/news/20171120/",
+      "credits": {
+        "composer": [
+          "照井順政"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-250"
+    },
+    {
+      "key": "chat-research-9429252ec76d47cc69d021cb",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "5e54a83f-30a8-47bf-aa38-bb2c6a7571e2",
+        "kind": "song_variant",
+        "primaryWorkId": "c848efca-ba82-5ecf-88a9-0e70b67b4525",
+        "title": "ラグトレイン (Twitter cover)",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": [
+          {
+            "kind": "key",
+            "semitoneOffset": null,
+            "value": "Historical note reports a key change; magnitude unknown"
+          }
+        ]
+      },
+      "creditBasis": [],
+      "url": "https://www.joysound.com/web/search/song/849126",
+      "credits": {
+        "lyricist": [
+          "稲葉曇"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-243"
+    },
+    {
+      "key": "chat-research-929ecfd80db7ff33846e9308",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "5e54a83f-30a8-47bf-aa38-bb2c6a7571e2",
+        "kind": "song_variant",
+        "primaryWorkId": "c848efca-ba82-5ecf-88a9-0e70b67b4525",
+        "title": "ラグトレイン (Twitter cover)",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": [
+          {
+            "kind": "key",
+            "semitoneOffset": null,
+            "value": "Historical note reports a key change; magnitude unknown"
+          }
+        ]
+      },
+      "creditBasis": [],
+      "url": "https://www.joysound.com/web/search/song/849126",
+      "credits": {
+        "composer": [
+          "稲葉曇"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-243"
+    },
+    {
+      "key": "chat-research-28a69594b2beba1f53bc4bb6",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "33c54cbb-3a5f-4f70-b7a6-4057736c2042",
+        "kind": "song_variant",
+        "primaryWorkId": "a619e8a2-5f1d-5a8d-9990-a840cf9ad422",
+        "title": "気まぐれメルシィ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.youtube.com/watch?v=MRNgJrDe9tE",
+      "credits": {
+        "lyricist": [
+          "八王子P",
+          "q*Left"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-251"
+    },
+    {
+      "key": "chat-research-926ba659496b25bfb970b2c6",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "33c54cbb-3a5f-4f70-b7a6-4057736c2042",
+        "kind": "song_variant",
+        "primaryWorkId": "a619e8a2-5f1d-5a8d-9990-a840cf9ad422",
+        "title": "気まぐれメルシィ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.youtube.com/watch?v=MRNgJrDe9tE",
+      "credits": {
+        "composer": [
+          "八王子P"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-251"
+    },
+    {
+      "key": "chat-research-bc72f37f3ee8b52eda2b3128",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "528bb3e2-ca61-4ba7-a2ea-a2491bf32b4e",
+        "kind": "song_variant",
+        "primaryWorkId": "3e3bbf9b-5699-57bd-94f3-7979926dbba6",
+        "title": "私論理",
+        "displayCredit": "春猿火 & ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.joysound.com/web/search/song/813396",
+      "credits": {
+        "lyricist": [
+          "カンザキイオリ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-252"
+    },
+    {
+      "key": "chat-research-cb2932cfe254162001245f89",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "528bb3e2-ca61-4ba7-a2ea-a2491bf32b4e",
+        "kind": "song_variant",
+        "primaryWorkId": "3e3bbf9b-5699-57bd-94f3-7979926dbba6",
+        "title": "私論理",
+        "displayCredit": "春猿火 & ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.joysound.com/web/search/song/813396",
+      "credits": {
+        "composer": [
+          "カンザキイオリ"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-252"
+    },
+    {
+      "key": "chat-research-d7dd06dc763cef0a93b90cd9",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "22186bb7-0b24-4fdc-80d5-9de7eddafa10",
+        "kind": "song_variant",
+        "primaryWorkId": "2a6bc2a9-d971-5bd1-96d8-f59bd564d924",
+        "title": "彗星になれたなら",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.oricon.co.jp/prof/697124/lyrics/48162/",
+      "credits": {
+        "lyricist": [
+          "はるまきごはん"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-253"
+    },
+    {
+      "key": "chat-research-521f0d72551bcfc427aac425",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "22186bb7-0b24-4fdc-80d5-9de7eddafa10",
+        "kind": "song_variant",
+        "primaryWorkId": "2a6bc2a9-d971-5bd1-96d8-f59bd564d924",
+        "title": "彗星になれたなら",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.oricon.co.jp/prof/697124/lyrics/48162/",
+      "credits": {
+        "composer": [
+          "はるまきごはん"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-253"
+    },
+    {
+      "key": "chat-research-545c5e74db6e8a5e0fdf244f",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "d729d341-f9cf-4a03-a307-43334ba124d6",
+        "kind": "song_variant",
+        "primaryWorkId": "ff05ef8b-354c-5367-a7ff-d7054ac2fd9b",
+        "title": "回らないトゥシューズ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.majiko.net/discography/?category_id=2&id=5",
+      "credits": {
+        "lyricist": [
+          "椿"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-254"
+    },
+    {
+      "key": "chat-research-85777ac30100a43e10022bda",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "d729d341-f9cf-4a03-a307-43334ba124d6",
+        "kind": "song_variant",
+        "primaryWorkId": "ff05ef8b-354c-5367-a7ff-d7054ac2fd9b",
+        "title": "回らないトゥシューズ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.majiko.net/discography/?category_id=2&id=5",
+      "credits": {
+        "composer": [
+          "透"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-254"
+    },
+    {
+      "key": "chat-research-03cd9bdee8d08ad913d7572c",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "5037bf5b-3af2-4d5e-a111-50c749e62a73",
+        "kind": "song_variant",
+        "primaryWorkId": "ecd18592-7e5b-5911-840b-db536f1c5387",
+        "title": "ヴィーナスとジーザス",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://linkco.re/xFCaP39f?lang=ja",
+      "credits": {
+        "lyricist": [
+          "ティカ・α"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-255"
+    },
+    {
+      "key": "chat-research-3fe378220b586ed09b1aaaf4",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "5037bf5b-3af2-4d5e-a111-50c749e62a73",
+        "kind": "song_variant",
+        "primaryWorkId": "ecd18592-7e5b-5911-840b-db536f1c5387",
+        "title": "ヴィーナスとジーザス",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://linkco.re/xFCaP39f?lang=ja",
+      "credits": {
+        "composer": [
+          "ティカ・α"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-255"
+    },
+    {
+      "key": "chat-research-5339fd14e8ea67cd2b75c950",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "6e24fda4-369d-4912-bb13-45088b31b254",
+        "kind": "song_variant",
+        "primaryWorkId": "d0ac5561-0044-5e2f-8c75-6d0216de26e8",
+        "title": "あなただけ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.uta-net.com/song/277307/",
+      "credits": {
+        "lyricist": [
+          "長谷川白紙"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-256"
+    },
+    {
+      "key": "chat-research-ee76db93ef545045232d2223",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "6e24fda4-369d-4912-bb13-45088b31b254",
+        "kind": "song_variant",
+        "primaryWorkId": "d0ac5561-0044-5e2f-8c75-6d0216de26e8",
+        "title": "あなただけ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.uta-net.com/song/277307/",
+      "credits": {
+        "composer": [
+          "長谷川白紙"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-256"
+    },
+    {
+      "key": "chat-research-df6a0e139c4252bb7421efa8",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "826a33e4-04f1-4ec1-afb1-cec670846fde",
+        "kind": "song_variant",
+        "primaryWorkId": "54b7d1b9-b481-5642-bff4-455f98746993",
+        "title": "VALON-1",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://tower.jp/item/1100712",
+      "credits": {
+        "lyricist": [
+          "小林武史"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-257"
+    },
+    {
+      "key": "chat-research-ca5229bc459e55c483583fcf",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "826a33e4-04f1-4ec1-afb1-cec670846fde",
+        "kind": "song_variant",
+        "primaryWorkId": "54b7d1b9-b481-5642-bff4-455f98746993",
+        "title": "VALON-1",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://tower.jp/item/1100712",
+      "credits": {
+        "composer": [
+          "小林武史"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-257"
+    },
+    {
+      "key": "chat-research-4562bb82b15ef32cbf3f6976",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "9d82e280-c76f-4e69-885e-6c9d350b91b3",
+        "kind": "song_variant",
+        "primaryWorkId": "c46feefc-d31d-5347-8e98-67815339e073",
+        "title": "Starduster",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.joysound.com/web/search/song/229441",
+      "credits": {
+        "lyricist": [
+          "ジミーサムP"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      },
+      "sourceId": "S-258"
+    },
+    {
+      "key": "chat-research-434ba0464aedfc91e7799dab",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "9d82e280-c76f-4e69-885e-6c9d350b91b3",
+        "kind": "song_variant",
+        "primaryWorkId": "c46feefc-d31d-5347-8e98-67815339e073",
+        "title": "Starduster",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.joysound.com/web/search/song/229441",
+      "credits": {
+        "composer": [
+          "ジミーサムP"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      },
+      "sourceId": "S-258"
     }
   ],
   "mediaCredits": [

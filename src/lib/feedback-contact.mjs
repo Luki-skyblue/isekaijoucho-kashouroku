@@ -1,5 +1,7 @@
 // Owner approved this fallback address on 2026-10-20. No automatic mail sending.
 export const APPROVED_FEEDBACK_EMAIL='lukiluki0118@gmail.com';
+// Owner supplied this responder URL; opened signed out on 2026-10-28.
+export const APPROVED_FEEDBACK_FORM_URL='https://docs.google.com/forms/d/e/1FAIpQLSf__uiKF6mvFKQ0dZVMHUzt7Eolugu8mMd1s_ptZCwbevFshQ/viewform';
 export function feedbackFormUrl(value){
  if(typeof value!=='string'||value.length>2048||/[\s\\]/.test(value))return null;
  try{const u=new URL(value);if(u.protocol!=='https:'||u.username||u.password||u.port||u.hash)return null;
@@ -10,7 +12,7 @@ export function feedbackFormUrl(value){
 export function feedbackContact(env={}){
  const raw=env.KASHOUROKU_VERIFIED_FEEDBACK_EMAIL??APPROVED_FEEDBACK_EMAIL;
  const email=typeof raw==='string'&&raw.length<=254&&/^[^\s@<>,:;]+@[^\s@<>,:;]+\.[A-Za-z]{2,}$/.test(raw)?raw:null;
- return {email,formUrl:feedbackFormUrl(env.KASHOUROKU_FEEDBACK_FORM_URL)};
+ return {email,formUrl:feedbackFormUrl(env.KASHOUROKU_FEEDBACK_FORM_URL??APPROVED_FEEDBACK_FORM_URL)};
 }
 export function configuredFeedbackContact(){return feedbackContact({
  KASHOUROKU_VERIFIED_FEEDBACK_EMAIL:process.env.KASHOUROKU_VERIFIED_FEEDBACK_EMAIL,
