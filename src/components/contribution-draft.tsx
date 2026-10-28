@@ -12,7 +12,7 @@ function isDraft(x:unknown):x is Draft {
   return CATEGORIES.includes(d.category as typeof CATEGORIES[number]) && typeof d.target==='string' && d.target.length<=160 && typeof d.detail==='string' && d.detail.length<=3000 && typeof d.references==='string' && d.references.length<=1500;
 }
 export function composeContribution(d:Draft):string {
- return ['【ヰ世界情緒 歌唱録：情報提供】',`種別：${d.category}`,`対象：${d.target.trim()}`,'','内容：',d.detail.trim(),'','出典・参考URL：',d.references.trim()||'（未記入）'].join('\n');
+ return ['【ヰ世界情緒 歌唱録：情報提供】',`種別：${d.category}`,`対象：${d.target.trim()}`,'','内容：',d.detail.trim(),'','出典・手がかり：',d.references.trim()||'（未記入）'].join('\n');
 }
 export function ContributionDraft({recipient}:{recipient:string|null}) {
  const [draft,setDraft]=useState<Draft>(EMPTY);
@@ -41,8 +41,8 @@ export function ContributionDraft({recipient}:{recipient:string|null}) {
    <input id="contribution-target" required maxLength={160} value={draft.target} onChange={e=>patch('target',e.target.value)} placeholder="例：楽曲名、LIVE名など" />
    <label htmlFor="contribution-detail">提供内容・訂正案 <span aria-hidden="true">*</span></label>
    <textarea id="contribution-detail" required maxLength={3000} rows={6} value={draft.detail} onChange={e=>patch('detail',e.target.value)} placeholder="どの情報について、何を確認・訂正できるか" />
-   <label htmlFor="contribution-reference">出典・参考URL（任意）</label>
-   <textarea id="contribution-reference" maxLength={1500} rows={3} value={draft.references} onChange={e=>patch('references',e.target.value)} placeholder="公式サイト、動画、商品情報などのURLと該当箇所" />
+   <label htmlFor="contribution-reference">出典・手がかり（任意）</label>
+   <textarea id="contribution-reference" maxLength={1500} rows={3} value={draft.references} onChange={e=>patch('references',e.target.value)} placeholder="例：動画のURL、○月ごろの配信、アルバムの歌詞カードなど" />
   </div>
   <p className="muted tiny">入力内容はこのブラウザに下書き保存されます。共有端末では利用後に「下書きを削除」してください。</p>
   <div className="contribution-actions">
