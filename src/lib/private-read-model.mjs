@@ -4,6 +4,7 @@ import {createHash} from 'node:crypto';
 import {gzipSync} from 'node:zlib';
 import {performance} from 'node:perf_hooks';
 import {songArtworkCandidatesForEntry,songTypeForEntry,songMetadataForEntry,songTitleCreditForEntry} from './song-detail-data.mjs';
+import {supplementalReleasesForEntry} from './release-content-data.mjs';
 import {singerIdsForEntry} from './catalog-people.mjs';
 import {eventArtworkForEvent} from './catalog-artwork.mjs';
 import {supplementalLivesForEntry} from './live-program-supplements.mjs';
@@ -247,7 +248,7 @@ export function queryEntries(model, filters = {}) {
   });
   return {items:rows.slice(offset,offset+limit).map(({rank,sortTitle,...x}) => {
     const entry=model.entries.get(x.entryId);
-    const images=songArtworkCandidatesForEntry(entry,model.works.get(entry.detail.primaryWorkId),{additionalLives:supplementalLivesForEntry(model,x.entryId)});
+    const images=songArtworkCandidatesForEntry(entry,model.works.get(entry.detail.primaryWorkId),{additionalLives:supplementalLivesForEntry(model,x.entryId),additionalReleases:supplementalReleasesForEntry(model,x.entryId)});
     return {...x,thumbnailUrl:images[0]?.imageUrl??null,thumbnailUrls:images.map(image=>image.imageUrl)};
   }),total:rows.length,limit,offset};
 }

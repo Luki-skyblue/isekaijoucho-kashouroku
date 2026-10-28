@@ -265,6 +265,64 @@
       "publishedOn": "2026-10-25",
       "authorName": "ヰ世界情緒 -Isekaijoucho-",
       "authorUrl": "https://www.youtube.com/@isekaijoucho"
+    },
+    {
+      "key": "chromatic-single-20251224",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "11c3167c-c93d-4d19-9458-e623c9742879",
+        "kind": "song_variant",
+        "primaryWorkId": "b9378f90-f7c3-5d27-9d81-0c10e37f1e5f",
+        "title": "クロマティック",
+        "displayCredit": "心世紀 × 罪十罰 feat. ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "kind": "digital_single",
+      "url": "https://zula.lnk.to/7UAxGEZL",
+      "title": "クロマティック feat.ヰ世界情緒",
+      "releaseDate": "2025-12-24",
+      "trackNumber": 1,
+      "imageUrl": "/artwork/chromatic-single-20251224.webp",
+      "imageSourceUrl": "https://girlsrevolutionproject.jp/wp/wp-content/uploads/2025/12/Chromatik_JKT-scaled.png",
+      "evidenceUrls": [
+        "https://girlsrevolutionproject.jp/discography/623/"
+      ],
+      "sourceIds": [
+        "S-260"
+      ]
+    },
+    {
+      "key": "wind-name-official-mv-20261011",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "5ea0b6b3-53e4-446a-b7f3-0bcfd829889a",
+        "kind": "song_variant",
+        "primaryWorkId": "d106e67d-72e0-4b5e-b382-77e9fce47507",
+        "title": "風の名前",
+        "displayCredit": null,
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=R0b-kJSwUxY",
+      "title": "風の名前 / MIMI feat.ヰ世界情緒",
+      "titleBasis": "editorial",
+      "mediaKind": "music_video",
+      "publishedOn": "2026-10-11",
+      "evidenceUrls": [
+        "https://isekaijoucho.kamitsubaki.jp/contents/1118087?tag=all"
+      ],
+      "sourceIds": [
+        "S-161"
+      ],
+      "scopeNote": "B011 N019 links the existing official MV. Fill unknown title/kind/date only; preserve known canonical fields, singer set, actual first appearance and existing writing credits."
     }
   ],
   "exclusions": [
@@ -7549,6 +7607,92 @@
         "composer": "original"
       },
       "sourceId": "S-258"
+    },
+    {
+      "key": "chat-research-16d5dfa9071c979efe58565a",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "11c3167c-c93d-4d19-9458-e623c9742879",
+        "kind": "song_variant",
+        "primaryWorkId": "b9378f90-f7c3-5d27-9d81-0c10e37f1e5f",
+        "title": "クロマティック",
+        "displayCredit": "心世紀 × 罪十罰 feat. ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "矢野達也"
+        ],
+        [
+          "work",
+          "composer",
+          "矢野達也"
+        ],
+        [
+          "work",
+          "lyricist",
+          "矢野達也"
+        ]
+      ],
+      "url": "https://girlsrevolutionproject.jp/discography/623/",
+      "credits": {
+        "arranger": [
+          "矢野達也"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      },
+      "sourceId": "S-260"
+    },
+    {
+      "key": "chat-research-e49e966ee01ddc5c99bd2310",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "entry": {
+        "entryId": "435b5ac2-a7c4-4293-b7cf-2f599280de3a",
+        "kind": "song_variant",
+        "primaryWorkId": "23cf4f22-6163-54b5-a731-58b424e7b9a5",
+        "title": "変わらないもの",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "佐藤準"
+        ],
+        [
+          "work",
+          "composer",
+          "奥華子"
+        ],
+        [
+          "work",
+          "lyricist",
+          "奥華子"
+        ]
+      ],
+      "url": "https://www.youtube.com/watch?v=Xj3Frg6BpEA",
+      "credits": {
+        "arranger": [
+          "Shuhei Ito"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      },
+      "sourceId": "S-261"
     }
   ],
   "mediaCredits": [

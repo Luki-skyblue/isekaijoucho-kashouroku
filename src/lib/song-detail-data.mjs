@@ -9,6 +9,7 @@ import releaseEditions from './catalog-release-editions.json' with {type:'json'}
 import {singersForEntry,personKeyForCredit,vocalDisplayCreditForEntry} from './catalog-people.mjs';
 import {supplementalLivesForEntry} from './live-program-supplements.mjs';
 import {liveVocalRecordsForEntry} from './live-vocal-entries.mjs';
+import {supplementalReleasesForEntry} from './release-content-data.mjs';
 import {resolveCreatorCredit} from './creator-credit-data.mjs';
 
 const arr=x=>Array.isArray(x)?x:[],str=x=>typeof x==='string'?x:'',object=x=>x!==null&&typeof x==='object'&&!Array.isArray(x);
@@ -229,7 +230,7 @@ function songVideosForEntry(entry,work,sourceRecords,sourceExclusions,mediaCredi
  const excluded=excludedSourceKeys(entry,sourceExclusions);
  return videos.filter(v=>!excluded.has(sourceKey(v.url))).map(video=>({...video,credits:mediaCreditsForVideo(entry,video,work,mediaCreditRecords)}));
 }
-export function songReleasesForEntry(entry,work={},releaseRecords=RELEASE_ARTWORK_RECORDS,sourceRecords){
+export function songReleasesForEntry(entry,work={},releaseRecords=RELEASE_ARTWORK_RECORDS,sourceRecords,additionalReleases=[]){
  const records=legacyRecords(entry),solo=exactSiriusSolo(entry);
  const sources=registeredSongSourcesForEntry(entry,sourceRecords).filter(r=>r.kind==='digital_single');
  const rawReleases=arr(work.releases),releases=[];
@@ -250,7 +251,7 @@ export function songReleasesForEntry(entry,work={},releaseRecords=RELEASE_ARTWOR
   releaseItemId:'registered:'+source.key,family:{title:source.title,releaseKind:'single'},
   edition:{editionKind:'digital',releaseDate:source.releaseDate??null,catalogNumber:source.catalogNumber??null},
   trackNumber:source.trackNumber??null,editionLabel:'配信',externalUrl:source.url,imageUrl:source.imageUrl??null,imageSourceUrl:source.url});
- return releases;
+ return [...releases,...arr(additionalReleases).filter(r=>!releases.some(existing=>existing.releaseItemId===r.releaseItemId))];
 }
 function songLivesForEntry(entry,eventRecords=EVENT_ARTWORK_RECORDS,additionalLives=[]){
  const lives=new Map();
@@ -280,12 +281,12 @@ function artworkCandidates(entry,videos,releases,lives,{entryRecords=ARTWORK_REC
 /** All display surfaces and failure fallbacks share the same ordered candidates. */
 export function songArtworkCandidatesForEntry(entry,work={},options={}){
  if(!entry?.detail)return [];
- return artworkCandidates(entry,songVideosForEntry(entry,work,options.sourceRecords,options.sourceExclusions,options.mediaCreditRecords),songReleasesForEntry(entry,work,options.releaseRecords,options.sourceRecords),songLivesForEntry(entry,options.eventRecords,options.additionalLives),options);
+ return artworkCandidates(entry,songVideosForEntry(entry,work,options.sourceRecords,options.sourceExclusions,options.mediaCreditRecords),songReleasesForEntry(entry,work,options.releaseRecords,options.sourceRecords,options.additionalReleases),songLivesForEntry(entry,options.eventRecords,options.additionalLives),options);
 }
 export function songArtworkForEntry(entry,work={}){return songArtworkCandidatesForEntry(entry,work)[0]??null;}
 export function buildSongDetail(entry,work={},options={}){
  if(!entry?.detail)return null;
- const d=entry.detail,metadata=songMetadataForEntry(entry,options.factRecords,work,options),creditData=songCreditsForEntry(entry,metadata,options.factRecords),videos=songVideosForEntry(entry,work,options.sourceRecords,options.sourceExclusions,options.mediaCreditRecords),releases=songReleasesForEntry(entry,work,options.releaseRecords,options.sourceRecords),allLives=songLivesForEntry(entry,options.eventRecords,options.additionalLives);
+ const d=entry.detail,metadata=songMetadataForEntry(entry,options.factRecords,work,options),creditData=songCreditsForEntry(entry,metadata,options.factRecords),videos=songVideosForEntry(entry,work,options.sourceRecords,options.sourceExclusions,options.mediaCreditRecords),releases=songReleasesForEntry(entry,work,options.releaseRecords,options.sourceRecords,options.additionalReleases),allLives=songLivesForEntry(entry,options.eventRecords,options.additionalLives);
  const images=artworkCandidates(entry,videos,releases,allLives,options);
  const vocalCredit=vocalDisplayCreditForEntry(entry);
  return {detail:{...d,...(vocalCredit?{vocalDisplayCredit:vocalCredit}:{}),legacySongType:songTypeForEntry(entry,options.sourceRecords),singers:singersForEntry(entry)},metadata,credits:creditData.rows,originalCredits:creditData.originalCredits,originalArranger:creditData.originalArranger,...(creditData.originalArrangerCredit?{originalArrangerCredit:creditData.originalArrangerCredit}:{}),
@@ -295,5 +296,5 @@ export function buildSongDetail(entry,work={},options={}){
 }
 export function songDetailFromModel(model,entryId){
  const entry=model.entries.get(entryId);if(!entry)return null;
- return buildSongDetail(entry,model.works.get(entry.detail.primaryWorkId)??{},{additionalLives:supplementalLivesForEntry(model,entryId)});
+ return buildSongDetail(entry,model.works.get(entry.detail.primaryWorkId)??{},{additionalLives:supplementalLivesForEntry(model,entryId),additionalReleases:supplementalReleasesForEntry(model,entryId)});
 }

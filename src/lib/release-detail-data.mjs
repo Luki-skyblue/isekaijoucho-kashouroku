@@ -3,6 +3,7 @@
 import {songReleasesForEntry,safeSongUrl,SHARED_RELEASE_TRACKLISTS} from './song-detail-data.mjs';
 import {rankArtworkCandidates} from './catalog-artwork.mjs';
 import {RELEASE_ARTWORK_RECORDS} from './catalog-artwork-data.mjs';
+import {releaseContentFromModel} from './release-content-data.mjs';
 
 const arr=x=>Array.isArray(x)?x:[],text=x=>typeof x==='string'?x.trim():'';
 const kinds={single:'シングル',album:'アルバム',ep:'EP',compilation:'コンピレーション',cover_live_album:'カバーライブアルバム',live_package:'LIVE映像・音源',video_release:'映像作品',cd:'CD'};
@@ -85,7 +86,8 @@ export function releaseDisplayContextFromModel(model,familyId,options={}){
    }
   }
  }
- const itemLinks=Object.fromEntries([...targets].filter(([,ids])=>ids.size===1).map(([id,ids])=>[id,{entryId:[...ids][0]}]));
+ const sourced=releaseContentFromModel(model,familyId,options.contentRecords);
+ const itemLinks={...Object.fromEntries([...targets].filter(([,ids])=>ids.size===1).map(([id,ids])=>[id,{entryId:[...ids][0]}])),...sourced.itemLinks};
  const artwork=rankArtworkCandidates(candidates);
  const shared=SHARED_RELEASE_TRACKLISTS.find(x=>x.familyId===familyId&&x.title===detail.title&&x.editionIds.length===editionIds.size&&x.editionIds.every(id=>editionIds.has(id)));
  return {artwork,editionArtwork:Object.fromEntries([...byEdition].map(([id,images])=>[id,rankArtworkCandidates(images)])),itemLinks,sharedTracklistLabel:shared?.label??null};
@@ -107,7 +109,14 @@ export function releaseDetailFromModel(model,familyId,{editionId=null,page=1,lim
  const shared=SHARED_RELEASE_TRACKLISTS.find(r=>r.familyId===familyId&&r.title===release.title&&r.editionIds.length===ids.length&&r.editionIds.every(id=>ids.includes(id))&&r.editions.every(e=>rawEditions.some(x=>x.editionId===e.editionId&&x.name===e.name)));
  const editions=rawEditions.map(e=>{const info=shared?.editions.find(x=>x.editionId===e.editionId);return {...e,catalogNumber:e.catalogNumber||info?.catalogNumber||null,mediaLabel:info?.mediaLabel??null,inclusionLabels:arr(e.inclusions).length?arr(e.inclusions).map(i=>text(i.rawName)).filter(Boolean):info?.inclusionLabels??[]};});
  const selectedEdition=editions.find(e=>e.editionId===editionId)??null;
- let groups=groupReleaseItems(release,saved.items);
+ const sourced=releaseContentFromModel(model,familyId);
+ const displayRelease={...release,components:arr(release.components).map(c=>({...c,rawLabel:sourced.componentLabels[c.componentId]??c.rawLabel}))};
+ let groups=groupReleaseItems(displayRelease,[...saved.items,...sourced.items]);
+ if(sourced.items.length){
+  const present=new Set(groups.map(g=>g.key));
+  groups.push(...groupReleaseItems(displayRelease,[]).filter(g=>!present.has(g.key)));
+  groups=groups.map(g=>({...g,editionName:g.editionName?releaseEditionName(rawEditions.find(e=>e.editionId===g.editionId)):null}));
+ }
  const common=shared?.tracks.map(expected=>saved.items.find(item=>['itemId','editionId','componentId','rawTitle','rawPosition','sequenceNo'].every(k=>item[k]===expected[k])));
  if(common?.length&&common.every(Boolean)){
   const commonIds=new Set(common.map(i=>i.itemId));
@@ -117,7 +126,7 @@ export function releaseDetailFromModel(model,familyId,{editionId=null,page=1,lim
  const total=groups.reduce((count,g)=>count+g.items.length,0),size=Number.isSafeInteger(limit)&&limit>0?Math.min(limit,100):100;
  const pages=Math.max(1,Math.ceil(total/size)),current=Math.min(Number.isSafeInteger(page)&&page>0?page:1,pages);
  const visible=new Set(groups.flatMap(g=>g.items).slice((current-1)*size,current*size).map(i=>i.itemId));
- groups=groups.map(g=>({...g,items:g.items.filter(i=>visible.has(i.itemId))})).filter(g=>g.items.length||total===0);
+ groups=groups.filter(g=>g.items.some(i=>visible.has(i.itemId))||g.items.length===0&&(total===0||sourced.items.length>0&&current===1)).map(g=>({...g,items:g.items.filter(i=>visible.has(i.itemId))}));
  const components=arr(release.components).filter(c=>!selectedEdition||c.editionId===selectedEdition.editionId);
  return {release,context,editions,selectedEdition,components,groups,total,page:current,pages,
   artwork:selectedEdition?context.editionArtwork[selectedEdition.editionId]??[]:context.artwork,

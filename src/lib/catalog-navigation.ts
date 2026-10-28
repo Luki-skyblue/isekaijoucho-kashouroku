@@ -2,11 +2,12 @@
  * The return context is navigation state, never a database filter or redirect target.
  * Non-catalog paths, fragments, unexpected parameters and overly long inputs fail closed.
  */
-type ListPath = '/songs' | '/lives' | '/releases';
+type ListPath = '/songs' | '/lives' | '/releases' | '/people';
 const RETURN_KEYS:Record<ListPath,Set<string>> = {
  '/songs':new Set(['q','page','view','singer','singerMatch','type','sort']),
  '/lives':new Set(['q','page','view','artist','artistScope','artistMatch','type','sort']),
  '/releases':new Set(['q','page','view','category']),
+ '/people':new Set(['q','page','category','kind','role']),
 };
 
 export function safeListReturnTo(value: unknown, path:ListPath): string | null {
