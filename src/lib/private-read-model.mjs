@@ -9,6 +9,8 @@ import {singerIdsForEntry} from './catalog-people.mjs';
 import {eventArtworkForEvent} from './catalog-artwork.mjs';
 import {supplementalLivesForEntry} from './live-program-supplements.mjs';
 import {isAbsolute} from 'node:path';
+import {catalogNameMatches} from './catalog-name-search.mjs';
+import {workSearchTitles,releaseTitleMatches,eventTitleMatches} from './catalog-title-search.mjs';
 
 export const PURPOSE = 'PRIVATE_G0_READ_MODEL_EXPERIMENT_NOT_FOR_PUBLICATION';
 export const PUBLIC_PURPOSE = 'KASHOUROKU_PUBLIC_RELEASE_V1';
@@ -195,7 +197,7 @@ function closed(e) {
     !(e.flags ?? []).some(x => ['group_without_membership','role_or_identity_review_voicebank'].includes(x));
 }
 const cmp = (a,b) => Buffer.compare(Buffer.from(a,'utf8'),Buffer.from(b,'utf8'));
-const matches = (a,b) => typeof a === 'string' && a.toLowerCase().includes(b.toLowerCase());
+const matches = (a,b) => typeof a === 'string' && catalogNameMatches({name:a},b);
 
 /** Reads persisted candidates and reviewed named-vocal links. Supplemental IDs
  * do not change the raw set or its completeness/verification state. */
@@ -221,12 +223,11 @@ export function queryEntries(model, filters = {}) {
       if (singerMatch === 'subset' && !(exhaustive && [...actual].every(x => chosen.has(x)))) continue;
     }
     if (selectedKinds.length && !selectedKinds.includes(d.kind === 'medley' ? 'medley' : songType)) continue;
-    const workTitles = id => {
-      const w = model.works.get(id)?.detail;
-      return w ? [w.title,...w.localizedTitles.map(x => x.title)] : [];
-    };
+    const workTitles = id => workSearchTitles(model.works.get(id)?.detail);
     let rank = 0;
-    if (q && ![d.title,...workTitles(d.primaryWorkId)].some(t => matches(t,q)) && !(d.kind === 'medley' && q === 'メドレー')) {
+    if (q && ![...workSearchTitles(d),...workTitles(d.primaryWorkId)].some(t => matches(t,q)) &&
+        !matches(songMetadataForEntry(e,undefined,model.works.get(d.primaryWorkId)).titleKana,q) &&
+        !(d.kind === 'medley' && matches('メドレー',q) && matches(q,'メドレー'))) {
       if (d.kind !== 'medley' || !d.medleySegments.some(s => [s.rawLabel,s.workTitle,...workTitles(s.workId)].some(t => matches(t,q)))) continue;
       rank = 1;
     }
@@ -370,7 +371,7 @@ export function queryEvents(model, filters = {}) {
     integer(limit) && limit >= 1 && limit <= 100 && integer(offset) && offset <= 100000, 'Invalid event pagination/sort');
   const q = search.trim().slice(0,100);
   const rows = model.directories.event.filter(item => {
-    if (q && !matches(item.title,q)) return false;
+    if (q && !eventTitleMatches(model,item.eventId,item.title,q)) return false;
     if (eventKinds.length && !eventKinds.includes(item.eventKind)) return false;
     const event = model.events.get(item.eventId);
     if (formats.length && !formats.includes(eventFormat(item,event))) return false;
@@ -435,8 +436,10 @@ export function snapshotRpc(model, name, p = {}) {
   const directories={kashouroku_v3_works:'work',kashouroku_v3_events:'event',kashouroku_v3_release_families:'release'};
   if (Object.hasOwn(directories,name)) {
     noExtras(['p_search','p_limit','p_offset']); const kind=directories[name],q=term();
-    const items=model.directories[kind].filter(x => !q || matches(x.title,q) ||
-      (kind === 'work' && model.works.get(x.id)?.detail.localizedTitles.some(t => matches(t.title,q))));
+    const items=model.directories[kind].filter(x => !q || (kind==='work'
+      ? [x.title,...workSearchTitles(model.works.get(x.id)?.detail)].some(title=>matches(title,q))
+      : kind==='release' ? releaseTitleMatches(model,model.releases.get(x.familyId)?.detail??x,q)
+      : eventTitleMatches(model,x.eventId,x.title,q)));
     return page(items,{search:q || null},50);
   }
   if (['kashouroku_v3_catalog_entries','kashouroku_v3_catalog_entries_v2'].includes(name)) {

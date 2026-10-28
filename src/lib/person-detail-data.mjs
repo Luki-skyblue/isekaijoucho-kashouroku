@@ -135,13 +135,16 @@ export function peopleListFromModel(model,{category='all',kind='all',term='',rol
  const inKind=person=>kind!=='group'||person.type==='group';
  const dutyMatches=r=>category==='all'||roleCategory(r)===category;
  const belongs=(person,tab)=>tab==='all'||[...person.roles].some(r=>roleCategory(r)===tab);
- const categories=[{id:'all',label:'すべて'},{id:'vocal',label:'歌唱'},{id:'music',label:'楽曲制作'},{id:'production',label:'動画・音源制作'}].map(c=>({...c,count:people.filter(p=>inKind(p)&&belongs(p,c.id)).length}));
  const duties=orderedCreditRoles(people.filter(p=>inKind(p)&&belongs(p,category)).flatMap(p=>[...p.roles].filter(r=>r!=='artist'&&dutyMatches(r))));
  const activeRole=duties.includes(role)?role:'all';
  const roleOptions=[{id:'all',label:'すべて'},...duties.map(r=>({id:r,label:creditRoleLabel(r)}))];
  // A full reviewed joint label can find its participants, but one member's
  // name must not become another member's identity alias or partial match.
  const matches=person=>catalogNameMatches(person,term)||[...person.jointLabels].some(label=>catalogNameMatches({name:label},term)&&catalogNameMatches({name:term},label));
+ // Tab links keep name/kind and clear the duty filter, including the active tab.
+ // Count exactly that destination rather than the unfiltered directory.
+ const named=people.filter(p=>inKind(p)&&matches(p));
+ const categories=[{id:'all',label:'すべて'},{id:'vocal',label:'歌唱'},{id:'music',label:'楽曲制作'},{id:'production',label:'動画・音源制作'}].map(c=>({...c,count:named.filter(p=>belongs(p,c.id)).length}));
  const visibleDuty=r=>dutyMatches(r)&&(activeRole==='all'||r===activeRole);
  const countSongs=person=>[...person.songs.values()].filter(roles=>[...roles].some(visibleDuty)).length;
  const filtered=people.filter(p=>inKind(p)&&belongs(p,category)&&(activeRole==='all'||p.roles.has(activeRole))&&matches(p)).sort((a,b)=>(category!=='vocal'?countSongs(b)-countSongs(a):0)||a.name.localeCompare(b.name,'ja')||compare(a.key,b.key));

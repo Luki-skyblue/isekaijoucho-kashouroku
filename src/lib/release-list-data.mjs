@@ -3,6 +3,8 @@
 import {isLiveRelease,releaseKindLabel,releaseMediaLabel,releaseListArtworkFromModel} from './release-detail-data.mjs';
 import {registeredSongSourcesForEntry,songReleasesForEntry} from './song-detail-data.mjs';
 import {rankArtworkCandidates} from './catalog-artwork.mjs';
+import {catalogNameMatches} from './catalog-name-search.mjs';
+import {releaseTitleMatches} from './catalog-title-search.mjs';
 
 const arr=x=>Array.isArray(x)?x:[],text=x=>typeof x==='string'?x.trim():'';
 const compare=(a,b)=>a<b?-1:a>b?1:0;
@@ -40,7 +42,7 @@ function rowsFromModel(model,options){
 }
 export function releaseListFromModel(model,query={},options={}){
  const category=query.category==='live'?'live':'music',term=text(query.term).slice(0,100),limit=24;
- const matches=rowsFromModel(model,options).filter(row=>!term||row.title.toLowerCase().includes(term.toLowerCase()));
+ const matches=rowsFromModel(model,options).filter(row=>!term||(row.external?catalogNameMatches({name:row.title},term):releaseTitleMatches(model,model.releases.get(row.familyId)?.detail??row,term)));
  const selected=matches.filter(row=>row.category===category),pages=Math.max(1,Math.ceil(selected.length/limit));
  const requested=Number.isSafeInteger(query.page)&&query.page>0?query.page:1,page=Math.min(requested,pages);
  const items=selected.slice((page-1)*limit,page*limit).map(row=>row.external?row:releaseListArtworkFromModel(model,{items:[row]}).items[0]);
