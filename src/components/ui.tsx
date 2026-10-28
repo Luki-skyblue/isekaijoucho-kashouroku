@@ -4,6 +4,7 @@ import {JsonObject,displayDate,num,str,textOr,numberOfPages,explicitThumbnail,Vi
 import {liveCardLabel} from '@/lib/live-list-params';
 import {eventArtworkForEvent} from '@/lib/catalog-artwork.mjs';
 import {detailSearchHref} from '@/lib/search-navigation.mjs';
+import {listDetailHref} from '@/lib/catalog-navigation';
 
 export function Heading({eyebrow,title,description}:{eyebrow?:string;title:string;description?:string}){
  return <header className="page-heading">{eyebrow&&<p className="eyebrow">{eyebrow}</p>}<h1>{title}</h1>{description&&<p className="muted">{description}</p>}</header>;
@@ -40,9 +41,9 @@ export function PageLinks({path,term='',page,total,limit=24,view='list'}:{path:s
 function RecordThumbnail({x,kind}:{x:JsonObject;kind:'work'|'release'|'event'}){
  return <RecordArtwork url={kind==='event'?eventArtworkForEvent(x)?.imageUrl??explicitThumbnail(x):explicitThumbnail(x)} urls={Array.isArray(x.thumbnailUrls)?x.thumbnailUrls.filter((u):u is string=>typeof u==='string'&&(u.startsWith('https://')||u.startsWith('/artwork/')&&!u.includes('..'))):[]}/>;
 }
-export function SimpleList({items,kind,view='list'}:{items:JsonObject[];kind:'work'|'release'|'event';view?:ViewMode}){
+export function SimpleList({items,kind,view='list',returnTo}:{items:JsonObject[];kind:'work'|'release'|'event';view?:ViewMode;returnTo?:string|null}){
  const id=(x:JsonObject)=>str(kind==='work'?x.id:kind==='event'?x.eventId:x.familyId);
- const href=(x:JsonObject)=>`${kind==='work'?'/songs':kind==='event'?'/lives':'/releases'}/${encodeURIComponent(id(x))}`;
+ const href=(x:JsonObject)=>listDetailHref(kind==='work'?'/songs':kind==='event'?'/lives':'/releases',id(x),returnTo);
  return <div className={`records records-${view}`}>
  {items.map(x=><Link className="record" key={id(x)} href={href(x)}>
    <RecordThumbnail x={x} kind={kind}/>
@@ -61,6 +62,6 @@ export function ListPage({heading,items,total,kind,term,page,limit=24,view='list
   <p className="toolbar-hint">{total}件</p>
   <nav className="view-switch" aria-label="一覧の表示形式"><span>VIEW</span><Link href={listHref(path,term,page,'list')} aria-current={view==='list'?'page':undefined}>リスト</Link><Link href={listHref(path,term,page,'grid')} aria-current={view==='grid'?'page':undefined}>グリッド</Link></nav>
  </div>
- {items.length?<SimpleList items={items} kind={kind} view={view}/>:<Empty>該当する項目がありません。</Empty>}
+ {items.length?<SimpleList items={items} kind={kind} view={view} returnTo={listHref(path,term,page,view)}/>:<Empty>該当する項目がありません。</Empty>}
  <PageLinks path={path} term={term} page={page} total={total} limit={limit} view={view}/></>;
 }

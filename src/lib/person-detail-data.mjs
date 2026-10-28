@@ -147,8 +147,10 @@ export function peopleListFromModel(model,{category='all',kind='all',term='',rol
  const filtered=people.filter(p=>inKind(p)&&belongs(p,category)&&(activeRole==='all'||p.roles.has(activeRole))&&matches(p)).sort((a,b)=>(category!=='vocal'?countSongs(b)-countSongs(a):0)||a.name.localeCompare(b.name,'ja')||compare(a.key,b.key));
  const suggestions=term&&filtered.length===0?people.filter(p=>inKind(p)&&!belongs(p,category)&&matches(p))
   .sort((a,b)=>a.name.localeCompare(b.name,'ja')||compare(a.key,b.key)).slice(0,5).flatMap(person=>{
-   const other=categories.find(c=>c.id!=='all'&&c.id!==category&&belongs(person,c.id));
-   return other?[{key:person.key,name:person.name,category:other.id,categoryLabel:other.label}]:[];
+   // A billing-only name may have no reviewed duty category yet. Keep a
+   // route to its existing page without inventing a singing/production role.
+   const other=categories.find(c=>c.id!=='all'&&c.id!==category&&belongs(person,c.id))??categories.find(c=>c.id==='all');
+   return other?[{key:person.key,name:person.name,category:other.id,categoryLabel:other.id==='all'?kindLabel(person):other.label}]:[];
   }):[];
  limit=Number.isSafeInteger(limit)&&limit>0&&limit<=100?limit:48;
  const pages=Math.ceil(filtered.length/limit);page=Number.isSafeInteger(page)&&page>0?Math.min(page,Math.max(pages,1)):1;

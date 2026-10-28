@@ -8,6 +8,7 @@ import {homeToday} from '@/lib/home-recent-data.mjs';
 import {Breadcrumb,Heading,ListPage} from '@/components/ui';
 import {RecordArtwork} from '@/components/record-artwork';
 import {detailSearchHref} from '@/lib/search-navigation.mjs';
+import {withListReturnTo} from '@/lib/catalog-navigation';
 import './releases.css';
 
 export const metadata: Metadata = {title:'収録作品',description:'ヰ世界情緒に関連するリリースとLIVE音源・映像。'};
@@ -33,7 +34,7 @@ export default async function Releases({searchParams}:{searchParams:Promise<{q?:
   </div>
   {data.items.length?<div className={'records records-'+view}>{data.items.map(item=>{
    const content=<><RecordArtwork url={item.thumbnailUrl} urls={item.thumbnailUrls}/><span className="record-copy"><span className="record-title">{item.title}</span><span className="record-meta">{[item.kindLabel,item.date?displayDate(item.date):'発売日未確認',item.date&&item.date>today?'発売予定':null,item.external?'配信先':null].filter(Boolean).join(' · ')}</span></span><span className="record-arrow" aria-hidden="true">↗</span></>;
-   return item.external?<a className="record" key={item.key} href={item.href} target="_blank" rel="noopener noreferrer">{content}</a>:<Link className="record" key={item.key} href={item.href}>{content}</Link>;
+   return item.external?<a className="record" key={item.key} href={item.href} target="_blank" rel="noopener noreferrer">{content}</a>:<Link className="record" key={item.key} href={withListReturnTo(item.href,'/releases',href())}>{content}</Link>;
   })}</div>:<p className="empty">該当する作品がありません。</p>}
   {data.pages>1&&<nav className="pages" aria-label="ページ送り">{data.page>1&&<Link href={href({page:data.page-1})}>← 前のページ</Link>}<span>{data.page} / {data.pages} ページ</span>{data.page<data.pages&&<Link href={href({page:data.page+1})}>次のページ →</Link>}</nav>}
  </article>;

@@ -9,6 +9,18 @@ import {publicCatalogEnabled,publicLegacySongTarget} from '@/lib/public-catalog'
 import {rpc} from '@/lib/api';
 import {asArray,asObject,confirmedSongFullFromProgram,displayDate,evidenceLabel,exactSingers,mediaGroups,num,pageNumber,safeExternalUrl,recordingDate,relatedRenditionParticipants,str,textOr,validId,JsonObject} from '@/lib/core';
 import {Breadcrumb,Chip,Empty,Heading,Panel} from '@/components/ui';
+import type {Metadata} from 'next';
+
+export async function generateMetadata({params}:{params:Promise<{workId:string}>}):Promise<Metadata>{
+ let {workId}=await params;
+ if(publicCatalogEnabled()&&/^[1-9]\d{0,8}$/.test(workId))workId=publicLegacySongTarget(Number(workId))??workId;
+ if(!validId(workId))return {};
+ if(useCatalogEntryIndex()){
+  const song=await getCatalogSongDetail(workId);if(song)return {title:str(song.detail.title)||'楽曲'};
+  const work=await getCatalogSongWork(workId);return work?{title:work.title}:{};
+ }
+ const work=await rpc('kashouroku_v3_work',{p_work_id:workId});return work?{title:str(work.title)||'楽曲'}:{};
+}
 
 export default async function SongDetail({params,searchParams}:{params:Promise<{workId:string}>;searchParams:Promise<{historyPage?:string;tab?:string;from?:string}>}){
  const query=await searchParams,returnTo=safeCatalogReturnTo(query.from),historyPage=pageNumber(query.historyPage),initialTab=['info','videos','history','releases','versions'].includes(query.tab??'')?query.tab:historyPage>1?'history':'info';
