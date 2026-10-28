@@ -22,6 +22,7 @@ export default async function Releases({searchParams}:{searchParams:Promise<{q?:
  }
  const today=homeToday();
  const href=(overrides:{category?:string;page?:number;view?:'list'|'grid'}={})=>releaseListHref({category:data.category,term,page:data.page,view,...overrides});
+ const alternateCategory=data.term&&data.total===0?data.categories.find(category=>category.id!==data.category&&category.count>0):undefined;
  return <article className="release-list-page">
   <Breadcrumb parts={[{label:'収録作品'}]}/><Heading title="収録作品"/>
   <nav className="release-list-categories" aria-label="収録作品の分類">{data.categories.map(category=><Link key={category.id} href={href({category:category.id,page:1})} aria-current={category.id===data.category?'page':undefined}>{category.label}<small>{category.count}</small></Link>)}</nav>
@@ -35,7 +36,7 @@ export default async function Releases({searchParams}:{searchParams:Promise<{q?:
   {data.items.length?<div className={'records records-'+view}>{data.items.map(item=>{
    const content=<><RecordArtwork url={item.thumbnailUrl} urls={item.thumbnailUrls}/><span className="record-copy"><span className="record-title">{item.title}</span><span className="record-meta">{[item.kindLabel,item.date?displayDate(item.date):'発売日未確認',item.date&&item.date>today?'発売予定':null,item.external?'配信先':null].filter(Boolean).join(' · ')}</span></span><span className="record-arrow" aria-hidden="true">↗</span></>;
    return item.external?<a className="record" key={item.key} href={item.href} target="_blank" rel="noopener noreferrer">{content}</a>:<Link className="record" key={item.key} href={withListReturnTo(item.href,'/releases',href())}>{content}</Link>;
-  })}</div>:<p className="empty">該当する作品がありません。</p>}
+  })}</div>:<p className="empty">{alternateCategory?<Link href={href({category:alternateCategory.id,page:1})}>{alternateCategory.label}に{alternateCategory.count}件あります<span aria-hidden="true"> →</span></Link>:'該当する作品がありません。'}</p>}
   {data.pages>1&&<nav className="pages" aria-label="ページ送り">{data.page>1&&<Link href={href({page:data.page-1})}>← 前のページ</Link>}<span>{data.page} / {data.pages} ページ</span>{data.page<data.pages&&<Link href={href({page:data.page+1})}>次のページ →</Link>}</nav>}
  </article>;
 }
