@@ -5,7 +5,7 @@ import {artworkEntryMatches,rankArtworkCandidates} from './catalog-artwork.mjs';
 import {RELEASE_ARTWORK_RECORDS} from './catalog-artwork-data.mjs';
 export const RELEASE_CONTENT_RECORDS=registry.records;
 const arr=x=>Array.isArray(x)?x:[],str=x=>typeof x==='string'?x:'';
-const labels={bd_main:'Blu-ray（本編）',bd_fixed:'Blu-ray（定点映像）',bd_main_day1:'Blu-ray DAY-1',bd_main_day2:'Blu-ray DAY-2',bd_fixed_day1:'Blu-ray DAY-1（定点映像）',bd_fixed_day2:'Blu-ray DAY-2（定点映像）'};
+const labels={bd_main:'Blu-ray（本編）',bd_fixed:'Blu-ray（定点映像）',bd_main_day1:'Blu-ray DAY-1',bd_main_day2:'Blu-ray DAY-2',bd_fixed_day1:'Blu-ray DAY-1（定点映像）',bd_fixed_day2:'Blu-ray DAY-2（定点映像）',cd_spoken:'CD（放課後音声編）',cd_live:'CD（LIVE音源）',bd_live:'Blu-ray（LIVE・アフタートーク）',playback_card_1:'Playback Card #1'};
 const same=(value,expected)=>expected&&Object.entries(expected).every(([key,want])=>value?.[key]===want);
 const itemId=(record,row)=>`source:${record.key}:${row.sequenceNo}`;
 function usableRecord(model,record){
@@ -15,7 +15,10 @@ function usableRecord(model,record){
  const saved=model.releases?.get(record.family?.familyId),detail=saved?.detail;
  if(!detail||!same(detail,record.family))return false;
  if(!arr(detail.editions).some(e=>same(e,record.edition))||!arr(detail.components).some(c=>same(c,record.component)))return false;
- if(!arr(detail.resources).some(r=>r.url===record.url&&r.officiality==='official'&&(r.targetScope!=='edition'||r.targetEditionId===record.edition.editionId)))return false;
+ // Some saved products retain only their artist-discography URL. Keep that
+ // exact catalog anchor separate from the reviewed publisher tracklist URL.
+ const catalogUrl=record.catalogUrl??record.url;
+ if(!arr(detail.resources).some(r=>r.url===catalogUrl&&r.officiality==='official'&&(r.targetScope!=='edition'||r.targetEditionId===record.edition.editionId)))return false;
  // Canonical content wins per disc, even if only part of it has been entered.
  if(arr(saved.items).some(i=>i.componentId===record.component.componentId))return false;
  return arr(record.items).length>0&&record.items.every((row,index)=>row.sequenceNo===index+1&&str(row.rawPosition)&&str(row.rawTitle));

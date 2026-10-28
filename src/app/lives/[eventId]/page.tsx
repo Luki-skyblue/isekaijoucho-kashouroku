@@ -53,6 +53,7 @@ export default async function EventDetail({params,searchParams}:{params:Promise<
    <div><dt>開催日</dt><dd>{dates.length?dates.map(d=>displayDate(d)).join('・'):<Missing/>}</dd></div>
    <div><dt>会場</dt><dd>{venues.length?venues.join('・'):<Missing/>}</dd></div>
    <div><dt>出演</dt><dd>{cast.length?cast.map((c,i)=><span key={str(c.entityId)||i}>{i>0?'・':''}{context&&str(c.personKey)?<Link className="person-name" href={'/people/'+str(c.personKey)}>{str(c.name)}</Link>:str(c.name)}</span>):<Missing/>}</dd></div>
+   {!!context?.recordings.length&&<div><dt>収録作品</dt><dd><ul className="live-detail-recordings">{context.recordings.map(recording=><li key={recording.href}><Link href={recording.href}>{recording.title}</Link></li>)}</ul></dd></div>}
   </dl>
   <section className="live-detail-section" id="event-occurrences" aria-labelledby="live-setlist-heading">
    <div className="live-detail-section-title"><h2 id="live-setlist-heading">セットリスト</h2>{total>0&&<span className="live-detail-count" aria-label={`${total}演目`}>{total}</span>}</div>

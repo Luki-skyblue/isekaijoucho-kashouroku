@@ -3,6 +3,7 @@
 import {songReleasesForEntry,safeSongUrl,SHARED_RELEASE_TRACKLISTS} from './song-detail-data.mjs';
 import {rankArtworkCandidates} from './catalog-artwork.mjs';
 import {RELEASE_ARTWORK_RECORDS} from './catalog-artwork-data.mjs';
+import {recordedEventsForRelease} from './live-release-links.mjs';
 import {releaseContentFromModel} from './release-content-data.mjs';
 
 const arr=x=>Array.isArray(x)?x:[],text=x=>typeof x==='string'?x.trim():'';
@@ -129,6 +130,7 @@ export function releaseDetailFromModel(model,familyId,{editionId=null,page=1,lim
  groups=groups.filter(g=>g.items.some(i=>visible.has(i.itemId))||g.items.length===0&&(total===0||sourced.items.length>0&&current===1)).map(g=>({...g,items:g.items.filter(i=>visible.has(i.itemId))}));
  const components=arr(release.components).filter(c=>!selectedEdition||c.editionId===selectedEdition.editionId);
  return {release,context,editions,selectedEdition,components,groups,total,page:current,pages,
+  recordedEvents:recordedEventsForRelease(model,familyId,{editionId:selectedEdition?.editionId??null}),
   artwork:selectedEdition?context.editionArtwork[selectedEdition.editionId]??[]:context.artwork,
   links:releaseLinks(release,selectedEdition?.editionId??null)};
 }

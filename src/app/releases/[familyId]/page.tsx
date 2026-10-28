@@ -42,6 +42,7 @@ export default async function ReleaseDetail({params,searchParams}:{params:Promis
    <div><dt>形態</dt><dd>{formats.length?formats.join('・'):<Missing/>}</dd></div>
    {catalog.length>0&&<div><dt>品番</dt><dd>{catalog.map((e,i)=><span className="release-detail-fact-value" key={str(e.editionId)||i}>{!selectedEdition&&editions.length>1&&releaseEditionName(e)+' · '}{str(e.catalogNumber)}</span>)}</dd></div>}
    {inclusions.length>0&&<div><dt>付属品</dt><dd><ul className="release-detail-inclusions">{inclusions.map((label,i)=><li key={i}>{label}</li>)}</ul></dd></div>}
+   {view.recordedEvents.length>0&&<div><dt>収録公演</dt><dd><ul className="release-detail-events">{view.recordedEvents.map(event=><li key={event.href}><Link href={event.href}>{event.title}</Link></li>)}</ul></dd></div>}
   </dl>
   {links.length>0&&<nav className="release-detail-links" aria-label="関連ページ">{links.map(link=><a key={link.url+link.label} href={link.url} target="_blank" rel="noopener noreferrer nofollow">{link.label} ↗</a>)}</nav>}
   <section className="release-detail-section" id="release-tracks" aria-labelledby="release-content-heading">

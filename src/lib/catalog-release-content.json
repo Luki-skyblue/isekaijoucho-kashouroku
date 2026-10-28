@@ -2092,6 +2092,4398 @@
           }
         }
       ]
+    },
+    {
+      "key": "candy1-disc1",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "family": {
+        "familyId": "8a409146-e0f7-5d01-8d20-9b3e3377391d",
+        "title": "CANDY LIVE",
+        "releaseKind": "cover_live_album"
+      },
+      "edition": {
+        "editionId": "5cbf8cdf-dddf-5c2b-9c27-e80cfc039e32",
+        "kind": "physical"
+      },
+      "component": {
+        "componentId": "9027d2ff-ae43-527f-bb1e-2fe77d85cb49",
+        "componentKind": "cd",
+        "componentNo": 1,
+        "editionId": "5cbf8cdf-dddf-5c2b-9c27-e80cfc039e32",
+        "parentComponentId": "957d93b2-07ac-53fa-98e8-38cee21e6d44",
+        "rawLabel": "DISC 1"
+      },
+      "label": "DISC 1",
+      "sourceId": "S-263",
+      "url": "https://findmestore.thinkr.jp/products/ktr-000-0024",
+      "items": [
+        {
+          "sequenceNo": 1,
+          "rawPosition": "1",
+          "rawTitle": "MC1",
+          "sourceContentKind": "mc"
+        },
+        {
+          "sequenceNo": 2,
+          "rawPosition": "2",
+          "rawTitle": "蜜月アン・ドゥ・トロワ",
+          "entry": {
+            "entryId": "920b8613-d487-4ced-bce9-51dc4439c0fd",
+            "kind": "song_variant",
+            "primaryWorkId": "c6a57933-7e59-54f1-abcc-5dd11c23d8ab",
+            "title": "蜜月アン・ドゥ・トロワ",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "d96600d8-95d6-5fe6-b4e2-20108b159dfd",
+            "occurrenceId": "dc33ee2d-0c56-52b4-a04f-49c31fdef09a",
+            "programItemId": "006a00b5-9754-5061-b6da-470863e3d337",
+            "eventSequenceNo": 1,
+            "eventRawLabel": "蜜月アン・ドゥ・トロワ",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 3,
+          "rawPosition": "3",
+          "rawTitle": "マカロン",
+          "entry": {
+            "entryId": "087420eb-044d-48fa-a081-b6e51a82ddeb",
+            "kind": "song_variant",
+            "primaryWorkId": "9d67a9f1-7b09-5e28-97c7-7b82d81faa13",
+            "title": "MACARON",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "d96600d8-95d6-5fe6-b4e2-20108b159dfd",
+            "occurrenceId": "dc33ee2d-0c56-52b4-a04f-49c31fdef09a",
+            "programItemId": "c6f67b31-191b-5328-b56d-786087e97090",
+            "eventSequenceNo": 2,
+            "eventRawLabel": "マカロン",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 4,
+          "rawPosition": "4",
+          "rawTitle": "MC2",
+          "sourceContentKind": "mc"
+        },
+        {
+          "sequenceNo": 5,
+          "rawPosition": "5",
+          "rawTitle": "共感覚おばけ",
+          "entry": {
+            "entryId": "01676a7e-55c8-4051-b80e-57fe6861969e",
+            "kind": "song_variant",
+            "primaryWorkId": "1d255201-cf6d-5f93-9992-3fcff4032f6d",
+            "title": "共感覚おばけ",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "d96600d8-95d6-5fe6-b4e2-20108b159dfd",
+            "occurrenceId": "dc33ee2d-0c56-52b4-a04f-49c31fdef09a",
+            "programItemId": "dece868e-675f-57f4-b6dd-87732245831e",
+            "eventSequenceNo": 3,
+            "eventRawLabel": "共感覚おばけ",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 6,
+          "rawPosition": "6",
+          "rawTitle": "Chaining Intentoin",
+          "entry": {
+            "entryId": "1cbb7636-ec81-4aa1-be3b-1f1e7a8832d1",
+            "kind": "song_variant",
+            "primaryWorkId": "f109ab86-8a8c-5c8b-8c10-f698233f0b25",
+            "title": "Chaining Intention",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "d96600d8-95d6-5fe6-b4e2-20108b159dfd",
+            "occurrenceId": "dc33ee2d-0c56-52b4-a04f-49c31fdef09a",
+            "programItemId": "724984d2-b367-5525-a21e-054f20ca7e76",
+            "eventSequenceNo": 4,
+            "eventRawLabel": "Chaining Intentoin",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 7,
+          "rawPosition": "7",
+          "rawTitle": "MC3",
+          "sourceContentKind": "mc"
+        },
+        {
+          "sequenceNo": 8,
+          "rawPosition": "8",
+          "rawTitle": "レプリカ",
+          "entry": {
+            "entryId": "2ee2ce5c-a696-4cac-b2c3-0b0447859e69",
+            "kind": "song_variant",
+            "primaryWorkId": "12927422-6051-5ce8-ba0b-ced44c140581",
+            "title": "レプリカ",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "d96600d8-95d6-5fe6-b4e2-20108b159dfd",
+            "occurrenceId": "dc33ee2d-0c56-52b4-a04f-49c31fdef09a",
+            "programItemId": "f44c9777-2b3e-5233-8b07-da7a8c8c24ce",
+            "eventSequenceNo": 5,
+            "eventRawLabel": "レプリカ",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 9,
+          "rawPosition": "9",
+          "rawTitle": "垂直落下",
+          "entry": {
+            "entryId": "23d94ff4-c9d3-4fff-a3ac-be473cb855f9",
+            "kind": "song_variant",
+            "primaryWorkId": "756267a9-5b49-53ca-9bf9-32dd0b941c1b",
+            "title": "垂直落下",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "d96600d8-95d6-5fe6-b4e2-20108b159dfd",
+            "occurrenceId": "dc33ee2d-0c56-52b4-a04f-49c31fdef09a",
+            "programItemId": "b6ed94c0-7f73-5e28-8c97-3e73a642fd60",
+            "eventSequenceNo": 6,
+            "eventRawLabel": "垂直落下",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 10,
+          "rawPosition": "10",
+          "rawTitle": "MC4",
+          "sourceContentKind": "mc"
+        },
+        {
+          "sequenceNo": 11,
+          "rawPosition": "11",
+          "rawTitle": "flos",
+          "entry": {
+            "entryId": "f99b0fbc-9ce8-4f3b-bd4c-0d73cc15f3b7",
+            "kind": "song_variant",
+            "primaryWorkId": "f159c070-b03f-54f1-808b-e8a1e06409e6",
+            "title": "flos",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "d96600d8-95d6-5fe6-b4e2-20108b159dfd",
+            "occurrenceId": "dc33ee2d-0c56-52b4-a04f-49c31fdef09a",
+            "programItemId": "5484abee-31dd-5a5b-a16e-cd6bf4b65ba5",
+            "eventSequenceNo": 7,
+            "eventRawLabel": "flos",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 12,
+          "rawPosition": "12",
+          "rawTitle": "白い春",
+          "entry": {
+            "entryId": "ce0e072c-2026-490a-929b-ec47629673ee",
+            "kind": "song_variant",
+            "primaryWorkId": "80fb2c40-a2d7-5de0-8e3b-b714a53dc556",
+            "title": "白い春",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "d96600d8-95d6-5fe6-b4e2-20108b159dfd",
+            "occurrenceId": "dc33ee2d-0c56-52b4-a04f-49c31fdef09a",
+            "programItemId": "864c6375-f49f-5c1c-aa28-a90484f4e9f4",
+            "eventSequenceNo": 8,
+            "eventRawLabel": "白い春",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 13,
+          "rawPosition": "13",
+          "rawTitle": "彗星になれたなら",
+          "entry": {
+            "entryId": "22186bb7-0b24-4fdc-80d5-9de7eddafa10",
+            "kind": "song_variant",
+            "primaryWorkId": "2a6bc2a9-d971-5bd1-96d8-f59bd564d924",
+            "title": "彗星になれたなら",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "d96600d8-95d6-5fe6-b4e2-20108b159dfd",
+            "occurrenceId": "dc33ee2d-0c56-52b4-a04f-49c31fdef09a",
+            "programItemId": "f9876f88-5316-539d-b200-1c5fc1a6e9f3",
+            "eventSequenceNo": 9,
+            "eventRawLabel": "彗星になれたなら",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 14,
+          "rawPosition": "14",
+          "rawTitle": "MC5",
+          "sourceContentKind": "mc"
+        }
+      ]
+    },
+    {
+      "key": "candy1-disc2",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "family": {
+        "familyId": "8a409146-e0f7-5d01-8d20-9b3e3377391d",
+        "title": "CANDY LIVE",
+        "releaseKind": "cover_live_album"
+      },
+      "edition": {
+        "editionId": "5cbf8cdf-dddf-5c2b-9c27-e80cfc039e32",
+        "kind": "physical"
+      },
+      "component": {
+        "componentId": "ca67c978-5a8e-57fc-8615-43a8060ebab0",
+        "componentKind": "cd",
+        "componentNo": 2,
+        "editionId": "5cbf8cdf-dddf-5c2b-9c27-e80cfc039e32",
+        "parentComponentId": "957d93b2-07ac-53fa-98e8-38cee21e6d44",
+        "rawLabel": "DISC 2"
+      },
+      "label": "DISC 2",
+      "sourceId": "S-263",
+      "url": "https://findmestore.thinkr.jp/products/ktr-000-0024",
+      "items": [
+        {
+          "sequenceNo": 1,
+          "rawPosition": "15",
+          "rawTitle": "MC6",
+          "sourceContentKind": "mc"
+        },
+        {
+          "sequenceNo": 2,
+          "rawPosition": "16",
+          "rawTitle": "回らないトゥシューズ",
+          "entry": {
+            "entryId": "d729d341-f9cf-4a03-a307-43334ba124d6",
+            "kind": "song_variant",
+            "primaryWorkId": "ff05ef8b-354c-5367-a7ff-d7054ac2fd9b",
+            "title": "回らないトゥシューズ",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "d96600d8-95d6-5fe6-b4e2-20108b159dfd",
+            "occurrenceId": "dc33ee2d-0c56-52b4-a04f-49c31fdef09a",
+            "programItemId": "a506c70c-a01f-5fd9-aa31-759b31362b87",
+            "eventSequenceNo": 10,
+            "eventRawLabel": "回らないトゥシューズ",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 3,
+          "rawPosition": "17",
+          "rawTitle": "Starduster",
+          "entry": {
+            "entryId": "9d82e280-c76f-4e69-885e-6c9d350b91b3",
+            "kind": "song_variant",
+            "primaryWorkId": "c46feefc-d31d-5347-8e98-67815339e073",
+            "title": "Starduster",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "d96600d8-95d6-5fe6-b4e2-20108b159dfd",
+            "occurrenceId": "dc33ee2d-0c56-52b4-a04f-49c31fdef09a",
+            "programItemId": "951f83ac-b0d9-565f-9aff-d53705ef53fe",
+            "eventSequenceNo": 11,
+            "eventRawLabel": "Starduster",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 4,
+          "rawPosition": "18",
+          "rawTitle": "MC7",
+          "sourceContentKind": "mc"
+        },
+        {
+          "sequenceNo": 5,
+          "rawPosition": "19",
+          "rawTitle": "FREELY TOMORROW",
+          "entry": {
+            "entryId": "145a1282-983e-41de-9935-dd63d4207f60",
+            "kind": "song_variant",
+            "primaryWorkId": "92c2c0f2-baa3-5d69-b54e-b9613f7b25ac",
+            "title": "FREELY TOMORROW",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "d96600d8-95d6-5fe6-b4e2-20108b159dfd",
+            "occurrenceId": "dc33ee2d-0c56-52b4-a04f-49c31fdef09a",
+            "programItemId": "7c25fb01-6203-5e15-bd25-b0e205163a63",
+            "eventSequenceNo": 12,
+            "eventRawLabel": "FREELY TOMORROW",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 6,
+          "rawPosition": "20",
+          "rawTitle": "VALON-1",
+          "entry": {
+            "entryId": "826a33e4-04f1-4ec1-afb1-cec670846fde",
+            "kind": "song_variant",
+            "primaryWorkId": "54b7d1b9-b481-5642-bff4-455f98746993",
+            "title": "VALON-1",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "d96600d8-95d6-5fe6-b4e2-20108b159dfd",
+            "occurrenceId": "dc33ee2d-0c56-52b4-a04f-49c31fdef09a",
+            "programItemId": "714693f4-02c2-537e-bcd9-4545e1668eb8",
+            "eventSequenceNo": 13,
+            "eventRawLabel": "VALON-1",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 7,
+          "rawPosition": "21",
+          "rawTitle": "MC8",
+          "sourceContentKind": "mc"
+        },
+        {
+          "sequenceNo": 8,
+          "rawPosition": "22",
+          "rawTitle": "あなただけ",
+          "entry": {
+            "entryId": "6e24fda4-369d-4912-bb13-45088b31b254",
+            "kind": "song_variant",
+            "primaryWorkId": "d0ac5561-0044-5e2f-8c75-6d0216de26e8",
+            "title": "あなただけ",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "d96600d8-95d6-5fe6-b4e2-20108b159dfd",
+            "occurrenceId": "dc33ee2d-0c56-52b4-a04f-49c31fdef09a",
+            "programItemId": "befcb48c-5888-5577-a8b2-987cc1aa49a2",
+            "eventSequenceNo": 14,
+            "eventRawLabel": "あなただけ",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 9,
+          "rawPosition": "23",
+          "rawTitle": "ヴィーナスとジーザス",
+          "entry": {
+            "entryId": "5037bf5b-3af2-4d5e-a111-50c749e62a73",
+            "kind": "song_variant",
+            "primaryWorkId": "ecd18592-7e5b-5911-840b-db536f1c5387",
+            "title": "ヴィーナスとジーザス",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "d96600d8-95d6-5fe6-b4e2-20108b159dfd",
+            "occurrenceId": "dc33ee2d-0c56-52b4-a04f-49c31fdef09a",
+            "programItemId": "54668bab-44d9-5db6-9223-53d1fd0d3133",
+            "eventSequenceNo": 15,
+            "eventRawLabel": "ヴィーナスとジーザス",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 10,
+          "rawPosition": "24",
+          "rawTitle": "MC9",
+          "sourceContentKind": "mc"
+        },
+        {
+          "sequenceNo": 11,
+          "rawPosition": "25",
+          "rawTitle": "HEART STATION",
+          "entry": {
+            "entryId": "a72021f9-5b9f-4113-9b2c-1cec802d7e5f",
+            "kind": "song_variant",
+            "primaryWorkId": "92874734-aecb-5288-969d-b22c7923437e",
+            "title": "HEART STATION",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "d96600d8-95d6-5fe6-b4e2-20108b159dfd",
+            "occurrenceId": "dc33ee2d-0c56-52b4-a04f-49c31fdef09a",
+            "programItemId": "653571fb-c5e5-5da6-93ce-21c23202110b",
+            "eventSequenceNo": 16,
+            "eventRawLabel": "HEART STATION",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 12,
+          "rawPosition": "26",
+          "rawTitle": "MC10",
+          "sourceContentKind": "mc"
+        },
+        {
+          "sequenceNo": 13,
+          "rawPosition": "27",
+          "rawTitle": "シリウスの心臓",
+          "entry": {
+            "entryId": "912cf6d0-0f06-4112-9bba-0b1333895122",
+            "kind": "song_variant",
+            "primaryWorkId": "5dd5d31d-4b77-5259-b5b9-d4828d4c1098",
+            "title": "シリウスの心臓",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "d96600d8-95d6-5fe6-b4e2-20108b159dfd",
+            "occurrenceId": "dc33ee2d-0c56-52b4-a04f-49c31fdef09a",
+            "programItemId": "82bd4422-2566-53d1-b3d6-e5b02b7edb5f",
+            "eventSequenceNo": 17,
+            "eventRawLabel": "シリウスの心臓",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 14,
+          "rawPosition": "28",
+          "rawTitle": "MC11",
+          "sourceContentKind": "mc"
+        },
+        {
+          "sequenceNo": 15,
+          "rawPosition": "29",
+          "rawTitle": "ワールド・コーリング feat.春猿火",
+          "entry": {
+            "entryId": "b4cecad7-134e-41a3-8831-ae100c822843",
+            "kind": "song_variant",
+            "primaryWorkId": "29565691-dad8-5370-aacf-57c190c58023",
+            "title": "ワールド・コーリング",
+            "displayCredit": "ヰ世界情緒 & 春猿火",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0",
+              "b8307e06-2046-5415-a1f7-0b892dd41041"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "d96600d8-95d6-5fe6-b4e2-20108b159dfd",
+            "occurrenceId": "dc33ee2d-0c56-52b4-a04f-49c31fdef09a",
+            "programItemId": "037eaf9c-7a5a-5808-b42b-bb2ef7f1137f",
+            "eventSequenceNo": 18,
+            "eventRawLabel": "ワールド・コーリング",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 16,
+          "rawPosition": "30",
+          "rawTitle": "MC12",
+          "sourceContentKind": "mc"
+        },
+        {
+          "sequenceNo": 17,
+          "rawPosition": "31",
+          "rawTitle": "鳥の詩",
+          "entry": {
+            "entryId": "6af4ab86-e37a-44fb-8db7-3a71ab9e0f30",
+            "kind": "song_variant",
+            "primaryWorkId": "3e8eacef-c344-50ff-85ed-3305b37100ac",
+            "title": "鳥の詩",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "d96600d8-95d6-5fe6-b4e2-20108b159dfd",
+            "occurrenceId": "dc33ee2d-0c56-52b4-a04f-49c31fdef09a",
+            "programItemId": "9fd8c719-fcde-5949-936f-3b3ec2326db5",
+            "eventSequenceNo": 19,
+            "eventRawLabel": "鳥の詩",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        }
+      ]
+    },
+    {
+      "key": "candy2-disc1",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "family": {
+        "familyId": "b7843f4d-41a3-55b1-841a-91f7b35f32ba",
+        "title": "CANDY LIVE 2",
+        "releaseKind": "cover_live_album"
+      },
+      "edition": {
+        "editionId": "793eb987-7ad9-588f-aa06-6f51249906c9",
+        "kind": "physical"
+      },
+      "component": {
+        "componentId": "433ee58e-b0e6-5de2-b764-8d9fcda1e3aa",
+        "componentKind": "cd",
+        "componentNo": 1,
+        "editionId": "793eb987-7ad9-588f-aa06-6f51249906c9",
+        "parentComponentId": "e4f3390e-3e2d-5286-b44a-470dc4566922",
+        "rawLabel": "DISC 1"
+      },
+      "label": "DISC 1",
+      "sourceId": "S-264",
+      "url": "https://findmestore.thinkr.jp/products/ktr-000-0093",
+      "items": [
+        {
+          "sequenceNo": 1,
+          "rawPosition": "1",
+          "rawTitle": "夜顔の告白",
+          "entry": {
+            "entryId": "e9a33f47-7445-4b44-9387-e29f425b8d38",
+            "kind": "song_variant",
+            "primaryWorkId": "3cd7d9ae-1b0a-5deb-8fa9-87095b63f373",
+            "title": "夜顔の告白",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "deef722f-00d2-5da9-86c7-0f64d702d158",
+            "occurrenceId": "1c4fb259-1868-5479-b5da-262dece6db44",
+            "programItemId": "f1d17fb2-ab77-564b-b8c3-7451b612d729",
+            "eventSequenceNo": 1,
+            "eventRawLabel": "夜顔の告白",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 2,
+          "rawPosition": "2",
+          "rawTitle": "アンノウン・マザーグース",
+          "entry": {
+            "entryId": "412803d2-f825-43bc-a86d-ccd23f7c38ca",
+            "kind": "song_variant",
+            "primaryWorkId": "2c9a2e17-5bf6-5308-91c6-1cc1dd85ff91",
+            "title": "アンノウン・マザーグース",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "deef722f-00d2-5da9-86c7-0f64d702d158",
+            "occurrenceId": "1c4fb259-1868-5479-b5da-262dece6db44",
+            "programItemId": "5fe8b927-6c3f-55c1-81a4-38ed04bb4e75",
+            "eventSequenceNo": 2,
+            "eventRawLabel": "アンノウン・マザーグース",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 3,
+          "rawPosition": "3",
+          "rawTitle": "ラグトレイン",
+          "entry": {
+            "entryId": "00c2df2b-2535-4794-a326-ac896d42157d",
+            "kind": "song_variant",
+            "primaryWorkId": "c848efca-ba82-5ecf-88a9-0e70b67b4525",
+            "title": "ラグトレイン",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "deef722f-00d2-5da9-86c7-0f64d702d158",
+            "occurrenceId": "1c4fb259-1868-5479-b5da-262dece6db44",
+            "programItemId": "8b8db527-aac9-561b-8b2f-3543df5fe4f0",
+            "eventSequenceNo": 3,
+            "eventRawLabel": "ラグトレイン",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 4,
+          "rawPosition": "4",
+          "rawTitle": "悪魔の踊り方",
+          "entry": {
+            "entryId": "fbc253d6-3595-4b66-8d24-9e06133d8d06",
+            "kind": "song_variant",
+            "primaryWorkId": "b42bd6c8-7b39-5104-b39b-fb732fa2bab2",
+            "title": "悪魔の踊り方",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "deef722f-00d2-5da9-86c7-0f64d702d158",
+            "occurrenceId": "1c4fb259-1868-5479-b5da-262dece6db44",
+            "programItemId": "c62ed360-6372-5791-8762-f0dd7b66abf6",
+            "eventSequenceNo": 4,
+            "eventRawLabel": "悪魔の踊り方",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 5,
+          "rawPosition": "5",
+          "rawTitle": "ラブカ？",
+          "entry": {
+            "entryId": "240b03a8-de8f-4ffd-9432-6a69bec09563",
+            "kind": "song_variant",
+            "primaryWorkId": "194a8ff2-dfe2-570a-b90d-3dc9b89656e3",
+            "title": "ラブカ?",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "deef722f-00d2-5da9-86c7-0f64d702d158",
+            "occurrenceId": "1c4fb259-1868-5479-b5da-262dece6db44",
+            "programItemId": "a00a1384-b2aa-5ea9-8dd7-705925e8f033",
+            "eventSequenceNo": 5,
+            "eventRawLabel": "ラブカ？",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 6,
+          "rawPosition": "6",
+          "rawTitle": "マトリョシカ",
+          "entry": {
+            "entryId": "ffe1f7d4-b31e-4bf6-9811-60df2c5db2eb",
+            "kind": "song_variant",
+            "primaryWorkId": "8574032f-ca71-5676-b87b-5ffb846f4701",
+            "title": "マトリョシカ",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "deef722f-00d2-5da9-86c7-0f64d702d158",
+            "occurrenceId": "1c4fb259-1868-5479-b5da-262dece6db44",
+            "programItemId": "ac9b4e79-4976-58a3-b80f-331bd012c7a6",
+            "eventSequenceNo": 6,
+            "eventRawLabel": "マトリョシカ",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 7,
+          "rawPosition": "7",
+          "rawTitle": "CH4NGE",
+          "entry": {
+            "entryId": "d9e60f11-6bf6-4cc9-8614-9e0682c37f0a",
+            "kind": "song_variant",
+            "primaryWorkId": "40a70f06-354f-5b15-8f08-350dd82f0c5c",
+            "title": "CH4NGE",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "deef722f-00d2-5da9-86c7-0f64d702d158",
+            "occurrenceId": "1c4fb259-1868-5479-b5da-262dece6db44",
+            "programItemId": "adb3e46d-f571-5cef-a83e-6ff647e580d8",
+            "eventSequenceNo": 7,
+            "eventRawLabel": "CH4NGE",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 8,
+          "rawPosition": "8",
+          "rawTitle": "Hello, Worker",
+          "entry": {
+            "entryId": "9ea88a54-750a-4f0e-bb61-5b71e0d240c0",
+            "kind": "song_variant",
+            "primaryWorkId": "0ca31bde-677e-5d65-8f74-5bc9dd207703",
+            "title": "Hello,Worker",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "deef722f-00d2-5da9-86c7-0f64d702d158",
+            "occurrenceId": "1c4fb259-1868-5479-b5da-262dece6db44",
+            "programItemId": "f22b833f-e034-5745-8d5b-751aa9a206ac",
+            "eventSequenceNo": 8,
+            "eventRawLabel": "Hello, Worker",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 9,
+          "rawPosition": "9",
+          "rawTitle": "quiz",
+          "entry": {
+            "entryId": "0710632e-b2da-474a-a4ec-89e738a6ddb9",
+            "kind": "song_variant",
+            "primaryWorkId": "b945e6c1-c265-5787-bf17-d378827ca6cc",
+            "title": "quiz",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "deef722f-00d2-5da9-86c7-0f64d702d158",
+            "occurrenceId": "1c4fb259-1868-5479-b5da-262dece6db44",
+            "programItemId": "9c5a4efb-0e49-5268-96c6-dabb8b743d16",
+            "eventSequenceNo": 9,
+            "eventRawLabel": "quiz",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 10,
+          "rawPosition": "10",
+          "rawTitle": "from Y to Y",
+          "entry": {
+            "entryId": "63c0bf39-655d-4cfc-a55f-065d4a6b946c",
+            "kind": "song_variant",
+            "primaryWorkId": "c6533ca1-4c72-5a3c-ba0f-3c92090215ed",
+            "title": "from Y to Y",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "deef722f-00d2-5da9-86c7-0f64d702d158",
+            "occurrenceId": "1c4fb259-1868-5479-b5da-262dece6db44",
+            "programItemId": "a22d3535-39e4-5516-9531-7e551a9bca18",
+            "eventSequenceNo": 10,
+            "eventRawLabel": "from Y to Y",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 11,
+          "rawPosition": "11",
+          "rawTitle": "ココロ",
+          "entry": {
+            "entryId": "e136b461-fb36-437a-8544-3868e14d5a0e",
+            "kind": "song_variant",
+            "primaryWorkId": "3a7626d4-d29d-5db6-9692-7fbdcc3f10bf",
+            "title": "ココロ",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "deef722f-00d2-5da9-86c7-0f64d702d158",
+            "occurrenceId": "1c4fb259-1868-5479-b5da-262dece6db44",
+            "programItemId": "e13a9ef9-c474-535a-b4b7-eaa3055c7b5b",
+            "eventSequenceNo": 11,
+            "eventRawLabel": "ココロ",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 12,
+          "rawPosition": "12",
+          "rawTitle": "桜の子 feat.花譜",
+          "entry": {
+            "entryId": "1c587cea-29bc-4dff-a49d-f1313a8d4f02",
+            "kind": "song_variant",
+            "primaryWorkId": "95ef10ab-d7b4-59ca-8ae8-30bfc61ec2ed",
+            "title": "桜の子",
+            "displayCredit": "ヰ世界情緒 feat. 花譜",
+            "singerIds": [
+              "36129afb-1fe8-5255-958e-b090e17c7905",
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "deef722f-00d2-5da9-86c7-0f64d702d158",
+            "occurrenceId": "1c4fb259-1868-5479-b5da-262dece6db44",
+            "programItemId": "bfae7ef3-f0c1-5eb3-aee5-0e4d35bc2e4f",
+            "eventSequenceNo": 12,
+            "eventRawLabel": "桜の子",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        }
+      ]
+    },
+    {
+      "key": "candy2-disc2",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "family": {
+        "familyId": "b7843f4d-41a3-55b1-841a-91f7b35f32ba",
+        "title": "CANDY LIVE 2",
+        "releaseKind": "cover_live_album"
+      },
+      "edition": {
+        "editionId": "793eb987-7ad9-588f-aa06-6f51249906c9",
+        "kind": "physical"
+      },
+      "component": {
+        "componentId": "2378055a-fbb2-5716-a3e3-e4a70b576745",
+        "componentKind": "cd",
+        "componentNo": 2,
+        "editionId": "793eb987-7ad9-588f-aa06-6f51249906c9",
+        "parentComponentId": "e4f3390e-3e2d-5286-b44a-470dc4566922",
+        "rawLabel": "DISC 2"
+      },
+      "label": "DISC 2",
+      "sourceId": "S-264",
+      "url": "https://findmestore.thinkr.jp/products/ktr-000-0093",
+      "items": [
+        {
+          "sequenceNo": 1,
+          "rawPosition": "13",
+          "rawTitle": "グレートフィルター",
+          "entry": {
+            "entryId": "0de1d011-8d05-4bf5-8d4b-1c488426a7c7",
+            "kind": "song_variant",
+            "primaryWorkId": "df4415b3-a9d0-5fdd-8fde-ddcdb5034103",
+            "title": "グレートフィルター",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "deef722f-00d2-5da9-86c7-0f64d702d158",
+            "occurrenceId": "1c4fb259-1868-5479-b5da-262dece6db44",
+            "programItemId": "260459ab-7bc1-5277-955b-a339783a8db0",
+            "eventSequenceNo": 13,
+            "eventRawLabel": "グレートフィルター",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 2,
+          "rawPosition": "14",
+          "rawTitle": "遠心力",
+          "entry": {
+            "entryId": "719f6e37-2cc3-4291-bd2b-11422f3de8de",
+            "kind": "song_variant",
+            "primaryWorkId": "157f0deb-aa89-51d9-8fa1-890a2c77868d",
+            "title": "遠心力",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "deef722f-00d2-5da9-86c7-0f64d702d158",
+            "occurrenceId": "1c4fb259-1868-5479-b5da-262dece6db44",
+            "programItemId": "c5059da5-f583-549b-a21b-d7e382306c71",
+            "eventSequenceNo": 14,
+            "eventRawLabel": "遠心力",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 3,
+          "rawPosition": "15",
+          "rawTitle": "月",
+          "entry": {
+            "entryId": "f24836b6-d11c-477a-8eb9-8a0411c50408",
+            "kind": "song_variant",
+            "primaryWorkId": "7c2cb170-06df-5b97-8203-8a4e5e0ffe08",
+            "title": "月",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "deef722f-00d2-5da9-86c7-0f64d702d158",
+            "occurrenceId": "1c4fb259-1868-5479-b5da-262dece6db44",
+            "programItemId": "c4abfb77-c311-53fe-88ba-ca81ae24e938",
+            "eventSequenceNo": 15,
+            "eventRawLabel": "月",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 4,
+          "rawPosition": "16",
+          "rawTitle": "ラビリンス",
+          "entry": {
+            "entryId": "85b4a132-5eca-4eed-8fa8-7a7e28986747",
+            "kind": "song_variant",
+            "primaryWorkId": "f9a168fc-25d3-5da7-b8f3-8d6fb3f8f3c9",
+            "title": "ラビリンス",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "deef722f-00d2-5da9-86c7-0f64d702d158",
+            "occurrenceId": "1c4fb259-1868-5479-b5da-262dece6db44",
+            "programItemId": "62fad12c-59e0-5800-9939-d145fa7450e7",
+            "eventSequenceNo": 16,
+            "eventRawLabel": "ラビリンス",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 5,
+          "rawPosition": "17",
+          "rawTitle": "ミューズ",
+          "entry": {
+            "entryId": "eabfc5cf-431d-40c8-9c6b-8558e0d491e8",
+            "kind": "song_variant",
+            "primaryWorkId": "bd1f0ecc-f022-5c36-936b-61fcdab28608",
+            "title": "ミューズ",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "deef722f-00d2-5da9-86c7-0f64d702d158",
+            "occurrenceId": "1c4fb259-1868-5479-b5da-262dece6db44",
+            "programItemId": "65595bc6-4a99-5da3-968b-5cf63a3d5c4a",
+            "eventSequenceNo": 17,
+            "eventRawLabel": "ミューズ",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 6,
+          "rawPosition": "18",
+          "rawTitle": "古いSF映画",
+          "entry": {
+            "entryId": "f573c3ef-6f8e-481d-8fa0-bbd61333c773",
+            "kind": "song_variant",
+            "primaryWorkId": "291ebdd2-155b-55d1-bd48-4275898dc63e",
+            "title": "古いSF映画",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "deef722f-00d2-5da9-86c7-0f64d702d158",
+            "occurrenceId": "1c4fb259-1868-5479-b5da-262dece6db44",
+            "programItemId": "b44100cd-d612-5b8f-8bc5-f9de3deda557",
+            "eventSequenceNo": 18,
+            "eventRawLabel": "古いSF映画",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 7,
+          "rawPosition": "19",
+          "rawTitle": "雪の華",
+          "entry": {
+            "entryId": "31071260-2ff0-48ee-b87d-a813af6aef85",
+            "kind": "song_variant",
+            "primaryWorkId": "c6508720-f812-5fb0-89b5-7909f260fa21",
+            "title": "雪の華",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "deef722f-00d2-5da9-86c7-0f64d702d158",
+            "occurrenceId": "1c4fb259-1868-5479-b5da-262dece6db44",
+            "programItemId": "9e53ef3d-04e8-5f6f-9f4f-97817dab336f",
+            "eventSequenceNo": 19,
+            "eventRawLabel": "雪の華",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 8,
+          "rawPosition": "20",
+          "rawTitle": "変わらないもの",
+          "entry": {
+            "entryId": "435b5ac2-a7c4-4293-b7cf-2f599280de3a",
+            "kind": "song_variant",
+            "primaryWorkId": "23cf4f22-6163-54b5-a731-58b424e7b9a5",
+            "title": "変わらないもの",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "deef722f-00d2-5da9-86c7-0f64d702d158",
+            "occurrenceId": "1c4fb259-1868-5479-b5da-262dece6db44",
+            "programItemId": "87ff331f-87b7-50fe-83d0-d1db18fd1345",
+            "eventSequenceNo": 20,
+            "eventRawLabel": "変わらないもの",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        }
+      ]
+    },
+    {
+      "key": "anima1-bd",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "family": {
+        "familyId": "85d7140f-4542-536f-950f-0ad0a43067d1",
+        "title": "ヰ世界情緒 1st ONE-MAN LIVE Blu-ray 「Anima」",
+        "releaseKind": "live_package"
+      },
+      "edition": {
+        "editionId": "5f0d1ea5-1419-5216-af3e-56af4a22f562",
+        "kind": "physical"
+      },
+      "component": {
+        "componentId": "e96c6f38-45f3-5eeb-8d42-fbd18717dbab",
+        "componentKind": "blu_ray",
+        "componentNo": null,
+        "editionId": "5f0d1ea5-1419-5216-af3e-56af4a22f562",
+        "parentComponentId": null,
+        "rawLabel": "Blu-ray"
+      },
+      "label": "Blu-ray",
+      "sourceId": "S-265",
+      "url": "https://findmestore.thinkr.jp/products/isekaijoucho220513",
+      "catalogUrl": "https://isekaijoucho.kamitsubaki.jp/musics/21249",
+      "items": [
+        {
+          "sequenceNo": 1,
+          "rawPosition": "1",
+          "rawTitle": "-Liminal Space-",
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "6f4ea759-cada-5cd3-afa8-2cb682fddfe9",
+            "eventSequenceNo": 1,
+            "eventRawLabel": "-Liminal Space-",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 2,
+          "rawPosition": "2",
+          "rawTitle": "物語りのワルツ",
+          "entry": {
+            "entryId": "a4ca0573-48d6-49d0-a3d2-d8b4d4352227",
+            "kind": "song_variant",
+            "primaryWorkId": "f6d7d3c1-33e9-5649-be74-f4f18f3244e0",
+            "title": "物語りのワルツ",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "f039d74b-b3d4-5329-8118-595c75aece0f",
+            "eventSequenceNo": 2,
+            "eventRawLabel": "物語りのワルツ",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 3,
+          "rawPosition": "3",
+          "rawTitle": "ジオラマドラマ",
+          "entry": {
+            "entryId": "9ad985af-702d-4a46-b4d5-d00e3e28f2df",
+            "kind": "song_variant",
+            "primaryWorkId": "193ca6a9-3327-5482-875d-746a70365c79",
+            "title": "ジオラマドラマ",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "4d1ce7fe-c5f1-5f1e-9874-12cf95271a0c",
+            "eventSequenceNo": 3,
+            "eventRawLabel": "ジオラマドラマ",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 4,
+          "rawPosition": "4",
+          "rawTitle": "ハイドレンジア",
+          "entry": {
+            "entryId": "ffe9cbc0-27b8-48c2-8631-7ad4562f9a47",
+            "kind": "song_variant",
+            "primaryWorkId": "078d4b75-9ac7-5f5a-8701-a50ef78a70d0",
+            "title": "ハイドレンジア",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "9c440d83-50a9-54f7-8700-988a305e0ea5",
+            "eventSequenceNo": 4,
+            "eventRawLabel": "ハイドレンジア",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 5,
+          "rawPosition": "5",
+          "rawTitle": "いろはに咲きて",
+          "entry": {
+            "entryId": "ec467200-b1d9-4a89-9612-6ebe94228004",
+            "kind": "song_variant",
+            "primaryWorkId": "90eb3cce-a1d4-505d-9d37-586577ec1d74",
+            "title": "いろはに咲きて",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "905e4c9c-882f-536a-bb87-f47ce2ea18ae",
+            "eventSequenceNo": 5,
+            "eventRawLabel": "いろはに咲きて",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 6,
+          "rawPosition": "6",
+          "rawTitle": "ディメンション",
+          "entry": {
+            "entryId": "e71238fd-48bd-4dd9-8e76-50d0b191acf6",
+            "kind": "song_variant",
+            "primaryWorkId": "c5992ad9-6d50-5abc-801d-d2232a296b15",
+            "title": "ディメンション",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "91695daf-6b32-53db-8f04-0a319960f900",
+            "eventSequenceNo": 6,
+            "eventRawLabel": "ディメンション",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 7,
+          "rawPosition": "7",
+          "rawTitle": "斯く美しき造花",
+          "entry": {
+            "entryId": "df11fb8c-32af-4caa-879d-736c6331f8d4",
+            "kind": "song_variant",
+            "primaryWorkId": "64cf8656-1302-527e-94e1-0b31d0595354",
+            "title": "斯く美しき造花",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "d8660593-fa14-55c5-8dc5-78ebabe81556",
+            "eventSequenceNo": 7,
+            "eventRawLabel": "斯く美しき造花",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 8,
+          "rawPosition": "8",
+          "rawTitle": "やさしいせかい",
+          "entry": {
+            "entryId": "6fe2a3e0-77c9-4ab3-b009-106476646947",
+            "kind": "song_variant",
+            "primaryWorkId": "61cf5088-af8f-58cb-8bba-9e20c56565b0",
+            "title": "やさしいせかい",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "a639b8cf-1280-5cf7-96e7-7d0fd5f22acd",
+            "eventSequenceNo": 8,
+            "eventRawLabel": "やさしいせかい",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 9,
+          "rawPosition": "9",
+          "rawTitle": "マボロシのまち",
+          "entry": {
+            "entryId": "acfcbd0b-e7b2-4878-aa12-c1d5fef9d2e4",
+            "kind": "song_variant",
+            "primaryWorkId": "058b33ac-517a-5e13-8f26-6c727ac3325e",
+            "title": "マボロシのまち",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "d8c20ea1-9849-5392-9c67-b062c19af834",
+            "eventSequenceNo": 9,
+            "eventRawLabel": "マボロシのまち",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 10,
+          "rawPosition": "10",
+          "rawTitle": "ヰ世界の宝石譚",
+          "entry": {
+            "entryId": "cb31bd97-6d1f-4afc-893c-982b9161b17e",
+            "kind": "song_variant",
+            "primaryWorkId": "cb07bc61-fb0d-577f-9174-94c486d35e00",
+            "title": "ヰ世界の宝石譚",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "30d631c4-7067-54f7-b2b9-ee8e17e85d06",
+            "eventSequenceNo": 10,
+            "eventRawLabel": "ヰ世界の宝石譚",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 11,
+          "rawPosition": "11",
+          "rawTitle": "霞がついてくる",
+          "entry": {
+            "entryId": "053c8f07-bd79-4eec-8a22-3321c79f5765",
+            "kind": "song_variant",
+            "primaryWorkId": "920dfba2-a65d-5cc9-b986-a7cfef19f697",
+            "title": "霞がついてくる",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "07a4273c-463f-5d4f-9fbf-387693fd905c",
+            "eventSequenceNo": 11,
+            "eventRawLabel": "霞がついてくる",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 12,
+          "rawPosition": "12",
+          "rawTitle": "創生",
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "51856e1e-d76e-5f77-8e65-5be268973032",
+            "eventSequenceNo": 12,
+            "eventRawLabel": "創生",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 13,
+          "rawPosition": "13",
+          "rawTitle": "牢獄 with 春猿火",
+          "entry": {
+            "entryId": "5c887df7-99f5-4dec-b1d6-ba1a17b37261",
+            "kind": "song_variant",
+            "primaryWorkId": "2dfd1998-7afd-5e8b-b725-c077dbd9b0e1",
+            "title": "牢獄",
+            "displayCredit": "春猿火 × ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0",
+              "b8307e06-2046-5415-a1f7-0b892dd41041"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "809fc22d-e33d-5a0b-a922-8051d9bcf3f4",
+            "eventSequenceNo": 13,
+            "eventRawLabel": "牢獄",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 14,
+          "rawPosition": "14",
+          "rawTitle": "暗闇 with 花譜",
+          "entry": {
+            "entryId": "762da09b-f9f5-4425-84df-0f0dfb6bf3c3",
+            "kind": "song_variant",
+            "primaryWorkId": "795da49b-f612-53a3-93ec-3d40b7c9ff7f",
+            "title": "暗闇",
+            "displayCredit": "花譜 × ヰ世界情緒",
+            "singerIds": [
+              "36129afb-1fe8-5255-958e-b090e17c7905",
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "9f33f81b-efb8-5a86-ba80-43b6154d1c91",
+            "eventSequenceNo": 14,
+            "eventRawLabel": "暗闇",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 15,
+          "rawPosition": "15",
+          "rawTitle": "泡沫 feat.理芽",
+          "entry": {
+            "entryId": "75406f0c-c018-47b6-bdbe-66a856311b9e",
+            "kind": "song_variant",
+            "primaryWorkId": "93e0a7ba-9dca-5c87-bd57-af2f473d5fdc",
+            "title": "泡沫",
+            "displayCredit": "ヰ世界情緒 × 理芽",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0",
+              "ae41fa12-3b09-52c0-bc08-1d9218492391"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "99ec9845-0b63-5868-81b5-d83478bd1870",
+            "eventSequenceNo": 15,
+            "eventRawLabel": "泡沫",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 16,
+          "rawPosition": "16",
+          "rawTitle": "刻印 feat.幸祜",
+          "entry": {
+            "entryId": "53255e4f-7f53-4f69-9f33-cdf631607a65",
+            "kind": "song_variant",
+            "primaryWorkId": "8543894f-5763-525d-93e3-7ec707d575ca",
+            "title": "刻印",
+            "displayCredit": "ヰ世界情緒 × 幸祜",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0",
+              "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "48d08be1-afee-515d-894b-cd77cac90e52",
+            "eventSequenceNo": 16,
+            "eventRawLabel": "刻印",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 17,
+          "rawPosition": "17",
+          "rawTitle": "変身（V.W.P）",
+          "entry": {
+            "entryId": "2a05f8bd-4353-49fe-87da-d69b1a35d2e9",
+            "kind": "song_variant",
+            "primaryWorkId": "aaf251d0-c51b-5167-8401-7214d93d8051",
+            "title": "変身",
+            "displayCredit": "V.W.P",
+            "singerIds": [
+              "36129afb-1fe8-5255-958e-b090e17c7905",
+              "81a01233-230e-50a8-a309-11275c794cd0",
+              "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+              "ae41fa12-3b09-52c0-bc08-1d9218492391",
+              "b8307e06-2046-5415-a1f7-0b892dd41041"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "333a1cd7-9065-51cf-ae88-e90c1a374509",
+            "eventSequenceNo": 17,
+            "eventRawLabel": "変身",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 18,
+          "rawPosition": "18",
+          "rawTitle": "-変異体「Heliotrope」-",
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "7c779779-2b76-5e00-904a-c4ac1010d20e",
+            "eventSequenceNo": 18,
+            "eventRawLabel": "-変異体「Heliotrope」-",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 19,
+          "rawPosition": "19",
+          "rawTitle": "とめどなき白情",
+          "entry": {
+            "entryId": "28e3b945-e49b-4e12-94ca-12f0a8718021",
+            "kind": "song_variant",
+            "primaryWorkId": "9101f61f-ceff-5335-a1ed-1f7d4de78d98",
+            "title": "とめどなき白情",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "122e2474-7187-559a-a986-758ec3696bb3",
+            "eventSequenceNo": 19,
+            "eventRawLabel": "とめどなき白情",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 20,
+          "rawPosition": "20",
+          "rawTitle": "誰もいない絵で",
+          "entry": {
+            "entryId": "2c130953-3c9c-4d02-a1e8-a8f237eb6b56",
+            "kind": "song_variant",
+            "primaryWorkId": "40aa4d65-a4a1-5928-8cdb-61f4c4ab4b6c",
+            "title": "誰もいない絵で",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "42ded227-6ddc-5b27-9498-7ada22459318",
+            "eventSequenceNo": 20,
+            "eventRawLabel": "誰もいない絵で",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 21,
+          "rawPosition": "21",
+          "rawTitle": "シリウスの心臓",
+          "entry": {
+            "entryId": "912cf6d0-0f06-4112-9bba-0b1333895122",
+            "kind": "song_variant",
+            "primaryWorkId": "5dd5d31d-4b77-5259-b5b9-d4828d4c1098",
+            "title": "シリウスの心臓",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "e1581ad9-03c3-5ed4-9b09-4301532f60f0",
+            "eventSequenceNo": 21,
+            "eventRawLabel": "シリウスの心臓",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 22,
+          "rawPosition": "22",
+          "rawTitle": "ARCADIA",
+          "entry": {
+            "entryId": "8d278884-8e97-4b8d-a1c6-7225863c25b9",
+            "kind": "song_variant",
+            "primaryWorkId": "acbd3faf-005c-5e7d-8c96-ee56a814a265",
+            "title": "ARCADIA",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "ea285a64-0df4-5f2f-be1e-a57e074b4867",
+            "eventSequenceNo": 22,
+            "eventRawLabel": "ARCADIA",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 23,
+          "rawPosition": "EX1",
+          "rawTitle": "深淵（solo ver.）",
+          "entry": {
+            "entryId": "b6d349cf-cd7a-48b2-97d3-9a8c4ab8ffa1",
+            "kind": "song_variant",
+            "primaryWorkId": "3a2b49dc-921f-5ad3-aa09-fed3b9373444",
+            "title": "深淵 (solo ver.)",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "df12a21a-33c9-506f-b6ad-f165e2b80c9e",
+            "programItemId": "8734a447-cc0d-5a5b-8244-6a29e982b0a9",
+            "eventSequenceNo": 1,
+            "eventRawLabel": "深淵(アーカイブ限定)",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 24,
+          "rawPosition": "EX2",
+          "rawTitle": "ANEMONE",
+          "entry": {
+            "entryId": "fa71fcf1-553d-4622-b304-8f8e95662b08",
+            "kind": "song_variant",
+            "primaryWorkId": "b1243ee9-1cb2-5f8c-80d3-8db588896dde",
+            "title": "ANEMONE",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "df12a21a-33c9-506f-b6ad-f165e2b80c9e",
+            "programItemId": "2292f8c3-0a78-52d0-9d23-44f2bf6561c7",
+            "eventSequenceNo": 2,
+            "eventRawLabel": "ANEMONE(アーカイブ限定)",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 25,
+          "rawPosition": "EX3",
+          "rawTitle": "輪廻（solo ver.）",
+          "entry": {
+            "entryId": "8552a6b9-d7ff-4aed-877b-e9f902f5b5b6",
+            "kind": "song_variant",
+            "primaryWorkId": "8e16feeb-3e73-5b56-b0bb-69c14baf53d4",
+            "title": "輪廻 (solo ver.)",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "df12a21a-33c9-506f-b6ad-f165e2b80c9e",
+            "programItemId": "ef459963-b100-5cfa-9d3b-eb2261924d91",
+            "eventSequenceNo": 3,
+            "eventRawLabel": "輪廻(アーカイブ限定)",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        }
+      ]
+    },
+    {
+      "key": "anima1-disc1",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "family": {
+        "familyId": "85d7140f-4542-536f-950f-0ad0a43067d1",
+        "title": "ヰ世界情緒 1st ONE-MAN LIVE Blu-ray 「Anima」",
+        "releaseKind": "live_package"
+      },
+      "edition": {
+        "editionId": "5f0d1ea5-1419-5216-af3e-56af4a22f562",
+        "kind": "physical"
+      },
+      "component": {
+        "componentId": "8cc48648-5b99-589b-9ecf-e9a3d6b3c2d3",
+        "componentKind": "cd",
+        "componentNo": 1,
+        "editionId": "5f0d1ea5-1419-5216-af3e-56af4a22f562",
+        "parentComponentId": "9105b5c3-552b-5f01-9107-e2f029a56e73",
+        "rawLabel": "DISC 1"
+      },
+      "label": "DISC 1",
+      "sourceId": "S-265",
+      "url": "https://findmestore.thinkr.jp/products/isekaijoucho220513",
+      "catalogUrl": "https://isekaijoucho.kamitsubaki.jp/musics/21249",
+      "items": [
+        {
+          "sequenceNo": 1,
+          "rawPosition": "1",
+          "rawTitle": "-Liminal Space-",
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "6f4ea759-cada-5cd3-afa8-2cb682fddfe9",
+            "eventSequenceNo": 1,
+            "eventRawLabel": "-Liminal Space-",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 2,
+          "rawPosition": "2",
+          "rawTitle": "物語りのワルツ",
+          "entry": {
+            "entryId": "a4ca0573-48d6-49d0-a3d2-d8b4d4352227",
+            "kind": "song_variant",
+            "primaryWorkId": "f6d7d3c1-33e9-5649-be74-f4f18f3244e0",
+            "title": "物語りのワルツ",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "f039d74b-b3d4-5329-8118-595c75aece0f",
+            "eventSequenceNo": 2,
+            "eventRawLabel": "物語りのワルツ",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 3,
+          "rawPosition": "3",
+          "rawTitle": "ジオラマドラマ",
+          "entry": {
+            "entryId": "9ad985af-702d-4a46-b4d5-d00e3e28f2df",
+            "kind": "song_variant",
+            "primaryWorkId": "193ca6a9-3327-5482-875d-746a70365c79",
+            "title": "ジオラマドラマ",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "4d1ce7fe-c5f1-5f1e-9874-12cf95271a0c",
+            "eventSequenceNo": 3,
+            "eventRawLabel": "ジオラマドラマ",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 4,
+          "rawPosition": "4",
+          "rawTitle": "ハイドレンジア",
+          "entry": {
+            "entryId": "ffe9cbc0-27b8-48c2-8631-7ad4562f9a47",
+            "kind": "song_variant",
+            "primaryWorkId": "078d4b75-9ac7-5f5a-8701-a50ef78a70d0",
+            "title": "ハイドレンジア",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "9c440d83-50a9-54f7-8700-988a305e0ea5",
+            "eventSequenceNo": 4,
+            "eventRawLabel": "ハイドレンジア",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 5,
+          "rawPosition": "5",
+          "rawTitle": "いろはに咲きて",
+          "entry": {
+            "entryId": "ec467200-b1d9-4a89-9612-6ebe94228004",
+            "kind": "song_variant",
+            "primaryWorkId": "90eb3cce-a1d4-505d-9d37-586577ec1d74",
+            "title": "いろはに咲きて",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "905e4c9c-882f-536a-bb87-f47ce2ea18ae",
+            "eventSequenceNo": 5,
+            "eventRawLabel": "いろはに咲きて",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 6,
+          "rawPosition": "6",
+          "rawTitle": "ディメンション",
+          "entry": {
+            "entryId": "e71238fd-48bd-4dd9-8e76-50d0b191acf6",
+            "kind": "song_variant",
+            "primaryWorkId": "c5992ad9-6d50-5abc-801d-d2232a296b15",
+            "title": "ディメンション",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "91695daf-6b32-53db-8f04-0a319960f900",
+            "eventSequenceNo": 6,
+            "eventRawLabel": "ディメンション",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 7,
+          "rawPosition": "7",
+          "rawTitle": "斯く美しき造花",
+          "entry": {
+            "entryId": "df11fb8c-32af-4caa-879d-736c6331f8d4",
+            "kind": "song_variant",
+            "primaryWorkId": "64cf8656-1302-527e-94e1-0b31d0595354",
+            "title": "斯く美しき造花",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "d8660593-fa14-55c5-8dc5-78ebabe81556",
+            "eventSequenceNo": 7,
+            "eventRawLabel": "斯く美しき造花",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 8,
+          "rawPosition": "8",
+          "rawTitle": "やさしいせかい",
+          "entry": {
+            "entryId": "6fe2a3e0-77c9-4ab3-b009-106476646947",
+            "kind": "song_variant",
+            "primaryWorkId": "61cf5088-af8f-58cb-8bba-9e20c56565b0",
+            "title": "やさしいせかい",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "a639b8cf-1280-5cf7-96e7-7d0fd5f22acd",
+            "eventSequenceNo": 8,
+            "eventRawLabel": "やさしいせかい",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 9,
+          "rawPosition": "9",
+          "rawTitle": "マボロシのまち",
+          "entry": {
+            "entryId": "acfcbd0b-e7b2-4878-aa12-c1d5fef9d2e4",
+            "kind": "song_variant",
+            "primaryWorkId": "058b33ac-517a-5e13-8f26-6c727ac3325e",
+            "title": "マボロシのまち",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "d8c20ea1-9849-5392-9c67-b062c19af834",
+            "eventSequenceNo": 9,
+            "eventRawLabel": "マボロシのまち",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 10,
+          "rawPosition": "10",
+          "rawTitle": "ヰ世界の宝石譚",
+          "entry": {
+            "entryId": "cb31bd97-6d1f-4afc-893c-982b9161b17e",
+            "kind": "song_variant",
+            "primaryWorkId": "cb07bc61-fb0d-577f-9174-94c486d35e00",
+            "title": "ヰ世界の宝石譚",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "30d631c4-7067-54f7-b2b9-ee8e17e85d06",
+            "eventSequenceNo": 10,
+            "eventRawLabel": "ヰ世界の宝石譚",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 11,
+          "rawPosition": "11",
+          "rawTitle": "霞がついてくる",
+          "entry": {
+            "entryId": "053c8f07-bd79-4eec-8a22-3321c79f5765",
+            "kind": "song_variant",
+            "primaryWorkId": "920dfba2-a65d-5cc9-b986-a7cfef19f697",
+            "title": "霞がついてくる",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "07a4273c-463f-5d4f-9fbf-387693fd905c",
+            "eventSequenceNo": 11,
+            "eventRawLabel": "霞がついてくる",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        }
+      ]
+    },
+    {
+      "key": "anima1-disc2",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "family": {
+        "familyId": "85d7140f-4542-536f-950f-0ad0a43067d1",
+        "title": "ヰ世界情緒 1st ONE-MAN LIVE Blu-ray 「Anima」",
+        "releaseKind": "live_package"
+      },
+      "edition": {
+        "editionId": "5f0d1ea5-1419-5216-af3e-56af4a22f562",
+        "kind": "physical"
+      },
+      "component": {
+        "componentId": "a8b7248d-f82e-5e3a-9e7d-d8ea06b9a862",
+        "componentKind": "cd",
+        "componentNo": 2,
+        "editionId": "5f0d1ea5-1419-5216-af3e-56af4a22f562",
+        "parentComponentId": "9105b5c3-552b-5f01-9107-e2f029a56e73",
+        "rawLabel": "DISC 2"
+      },
+      "label": "DISC 2",
+      "sourceId": "S-265",
+      "url": "https://findmestore.thinkr.jp/products/isekaijoucho220513",
+      "catalogUrl": "https://isekaijoucho.kamitsubaki.jp/musics/21249",
+      "items": [
+        {
+          "sequenceNo": 1,
+          "rawPosition": "12",
+          "rawTitle": "創生",
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "51856e1e-d76e-5f77-8e65-5be268973032",
+            "eventSequenceNo": 12,
+            "eventRawLabel": "創生",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 2,
+          "rawPosition": "13",
+          "rawTitle": "牢獄 with 春猿火",
+          "entry": {
+            "entryId": "5c887df7-99f5-4dec-b1d6-ba1a17b37261",
+            "kind": "song_variant",
+            "primaryWorkId": "2dfd1998-7afd-5e8b-b725-c077dbd9b0e1",
+            "title": "牢獄",
+            "displayCredit": "春猿火 × ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0",
+              "b8307e06-2046-5415-a1f7-0b892dd41041"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "809fc22d-e33d-5a0b-a922-8051d9bcf3f4",
+            "eventSequenceNo": 13,
+            "eventRawLabel": "牢獄",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 3,
+          "rawPosition": "14",
+          "rawTitle": "暗闇 with 花譜",
+          "entry": {
+            "entryId": "762da09b-f9f5-4425-84df-0f0dfb6bf3c3",
+            "kind": "song_variant",
+            "primaryWorkId": "795da49b-f612-53a3-93ec-3d40b7c9ff7f",
+            "title": "暗闇",
+            "displayCredit": "花譜 × ヰ世界情緒",
+            "singerIds": [
+              "36129afb-1fe8-5255-958e-b090e17c7905",
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "9f33f81b-efb8-5a86-ba80-43b6154d1c91",
+            "eventSequenceNo": 14,
+            "eventRawLabel": "暗闇",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 4,
+          "rawPosition": "15",
+          "rawTitle": "泡沫 feat.理芽",
+          "entry": {
+            "entryId": "75406f0c-c018-47b6-bdbe-66a856311b9e",
+            "kind": "song_variant",
+            "primaryWorkId": "93e0a7ba-9dca-5c87-bd57-af2f473d5fdc",
+            "title": "泡沫",
+            "displayCredit": "ヰ世界情緒 × 理芽",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0",
+              "ae41fa12-3b09-52c0-bc08-1d9218492391"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "99ec9845-0b63-5868-81b5-d83478bd1870",
+            "eventSequenceNo": 15,
+            "eventRawLabel": "泡沫",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 5,
+          "rawPosition": "16",
+          "rawTitle": "刻印 feat.幸祜",
+          "entry": {
+            "entryId": "53255e4f-7f53-4f69-9f33-cdf631607a65",
+            "kind": "song_variant",
+            "primaryWorkId": "8543894f-5763-525d-93e3-7ec707d575ca",
+            "title": "刻印",
+            "displayCredit": "ヰ世界情緒 × 幸祜",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0",
+              "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "48d08be1-afee-515d-894b-cd77cac90e52",
+            "eventSequenceNo": 16,
+            "eventRawLabel": "刻印",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 6,
+          "rawPosition": "17",
+          "rawTitle": "変身（V.W.P）",
+          "entry": {
+            "entryId": "2a05f8bd-4353-49fe-87da-d69b1a35d2e9",
+            "kind": "song_variant",
+            "primaryWorkId": "aaf251d0-c51b-5167-8401-7214d93d8051",
+            "title": "変身",
+            "displayCredit": "V.W.P",
+            "singerIds": [
+              "36129afb-1fe8-5255-958e-b090e17c7905",
+              "81a01233-230e-50a8-a309-11275c794cd0",
+              "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+              "ae41fa12-3b09-52c0-bc08-1d9218492391",
+              "b8307e06-2046-5415-a1f7-0b892dd41041"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "333a1cd7-9065-51cf-ae88-e90c1a374509",
+            "eventSequenceNo": 17,
+            "eventRawLabel": "変身",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 7,
+          "rawPosition": "18",
+          "rawTitle": "-変異体「Heliotrope」-",
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "7c779779-2b76-5e00-904a-c4ac1010d20e",
+            "eventSequenceNo": 18,
+            "eventRawLabel": "-変異体「Heliotrope」-",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 8,
+          "rawPosition": "19",
+          "rawTitle": "とめどなき白情",
+          "entry": {
+            "entryId": "28e3b945-e49b-4e12-94ca-12f0a8718021",
+            "kind": "song_variant",
+            "primaryWorkId": "9101f61f-ceff-5335-a1ed-1f7d4de78d98",
+            "title": "とめどなき白情",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "122e2474-7187-559a-a986-758ec3696bb3",
+            "eventSequenceNo": 19,
+            "eventRawLabel": "とめどなき白情",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 9,
+          "rawPosition": "20",
+          "rawTitle": "誰もいない絵で",
+          "entry": {
+            "entryId": "2c130953-3c9c-4d02-a1e8-a8f237eb6b56",
+            "kind": "song_variant",
+            "primaryWorkId": "40aa4d65-a4a1-5928-8cdb-61f4c4ab4b6c",
+            "title": "誰もいない絵で",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "42ded227-6ddc-5b27-9498-7ada22459318",
+            "eventSequenceNo": 20,
+            "eventRawLabel": "誰もいない絵で",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 10,
+          "rawPosition": "21",
+          "rawTitle": "シリウスの心臓",
+          "entry": {
+            "entryId": "912cf6d0-0f06-4112-9bba-0b1333895122",
+            "kind": "song_variant",
+            "primaryWorkId": "5dd5d31d-4b77-5259-b5b9-d4828d4c1098",
+            "title": "シリウスの心臓",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "e1581ad9-03c3-5ed4-9b09-4301532f60f0",
+            "eventSequenceNo": 21,
+            "eventRawLabel": "シリウスの心臓",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 11,
+          "rawPosition": "22",
+          "rawTitle": "ARCADIA",
+          "entry": {
+            "entryId": "8d278884-8e97-4b8d-a1c6-7225863c25b9",
+            "kind": "song_variant",
+            "primaryWorkId": "acbd3faf-005c-5e7d-8c96-ee56a814a265",
+            "title": "ARCADIA",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "5dab3203-c436-599d-8f80-8c28b409c9cf",
+            "programItemId": "ea285a64-0df4-5f2f-be1e-a57e074b4867",
+            "eventSequenceNo": 22,
+            "eventRawLabel": "ARCADIA",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 12,
+          "rawPosition": "EX1",
+          "rawTitle": "深淵（solo ver.）",
+          "entry": {
+            "entryId": "b6d349cf-cd7a-48b2-97d3-9a8c4ab8ffa1",
+            "kind": "song_variant",
+            "primaryWorkId": "3a2b49dc-921f-5ad3-aa09-fed3b9373444",
+            "title": "深淵 (solo ver.)",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "df12a21a-33c9-506f-b6ad-f165e2b80c9e",
+            "programItemId": "8734a447-cc0d-5a5b-8244-6a29e982b0a9",
+            "eventSequenceNo": 1,
+            "eventRawLabel": "深淵(アーカイブ限定)",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 13,
+          "rawPosition": "EX2",
+          "rawTitle": "ANEMONE",
+          "entry": {
+            "entryId": "fa71fcf1-553d-4622-b304-8f8e95662b08",
+            "kind": "song_variant",
+            "primaryWorkId": "b1243ee9-1cb2-5f8c-80d3-8db588896dde",
+            "title": "ANEMONE",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "df12a21a-33c9-506f-b6ad-f165e2b80c9e",
+            "programItemId": "2292f8c3-0a78-52d0-9d23-44f2bf6561c7",
+            "eventSequenceNo": 2,
+            "eventRawLabel": "ANEMONE(アーカイブ限定)",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 14,
+          "rawPosition": "EX3",
+          "rawTitle": "輪廻（solo ver.）",
+          "entry": {
+            "entryId": "8552a6b9-d7ff-4aed-877b-e9f902f5b5b6",
+            "kind": "song_variant",
+            "primaryWorkId": "8e16feeb-3e73-5b56-b0bb-69c14baf53d4",
+            "title": "輪廻 (solo ver.)",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "46baac7f-6805-5b22-99d9-ffc30722c20c",
+            "occurrenceId": "df12a21a-33c9-506f-b6ad-f165e2b80c9e",
+            "programItemId": "ef459963-b100-5cfa-9d3b-eb2261924d91",
+            "eventSequenceNo": 3,
+            "eventRawLabel": "輪廻(アーカイブ限定)",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        }
+      ]
+    },
+    {
+      "key": "anima2-bd",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "family": {
+        "familyId": "bdcfb740-890a-5ad7-bf1d-e1e249c60ca4",
+        "title": "SINKA LIVE SERIES EP.Ⅰ ヰ世界情緒 2nd ONE-MAN LIVE「Anima Ⅱ -神椿市参番街-」",
+        "releaseKind": "live_package"
+      },
+      "edition": {
+        "editionId": "0fceff30-c8c6-5b25-bc0d-bb477bf19d5b",
+        "kind": "physical"
+      },
+      "component": {
+        "componentId": "e7255c3a-18a6-5cd9-aa88-846b033e87bf",
+        "componentKind": "blu_ray",
+        "componentNo": null,
+        "editionId": "0fceff30-c8c6-5b25-bc0d-bb477bf19d5b",
+        "parentComponentId": null,
+        "rawLabel": "bd_main"
+      },
+      "label": "Blu-ray（本編）",
+      "sourceId": "S-266",
+      "url": "https://findmestore.thinkr.jp/products/ktr-100-0168",
+      "items": [
+        {
+          "sequenceNo": 1,
+          "rawPosition": "01",
+          "rawTitle": "そして白に還る",
+          "entry": {
+            "entryId": "0c4b689c-3fc3-4d82-8d3d-1af7490887a0",
+            "kind": "song_variant",
+            "primaryWorkId": "a355c405-a4ac-58b6-9a6a-32c46c129acd",
+            "title": "そして白に還る",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "f8160fea-7cdd-5fca-b8d5-8f8435c1ce47",
+            "occurrenceId": "bf579cfc-eb8a-595f-86f1-df4dabf1cd66",
+            "programItemId": "27119fcc-0ea4-521e-9960-e941bd0966b7",
+            "eventSequenceNo": 1,
+            "eventRawLabel": "そして白に還る",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 2,
+          "rawPosition": "02",
+          "rawTitle": "ディメンション",
+          "entry": {
+            "entryId": "e71238fd-48bd-4dd9-8e76-50d0b191acf6",
+            "kind": "song_variant",
+            "primaryWorkId": "c5992ad9-6d50-5abc-801d-d2232a296b15",
+            "title": "ディメンション",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "f8160fea-7cdd-5fca-b8d5-8f8435c1ce47",
+            "occurrenceId": "bf579cfc-eb8a-595f-86f1-df4dabf1cd66",
+            "programItemId": "4cb35189-0569-52f4-8571-05513014a663",
+            "eventSequenceNo": 2,
+            "eventRawLabel": "ディメンション",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 3,
+          "rawPosition": "03",
+          "rawTitle": "暮れなずむ約束",
+          "entry": {
+            "entryId": "f27f9134-825c-4a0b-9dab-dc57c8e9c966",
+            "kind": "song_variant",
+            "primaryWorkId": "8e8e2788-72b4-50d5-8384-92d9b6ee4553",
+            "title": "暮れなずむ約束",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "f8160fea-7cdd-5fca-b8d5-8f8435c1ce47",
+            "occurrenceId": "bf579cfc-eb8a-595f-86f1-df4dabf1cd66",
+            "programItemId": "3ba60714-f1a4-504c-acd9-1a7a5b7a3d26",
+            "eventSequenceNo": 3,
+            "eventRawLabel": "暮れなずむ約束",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 4,
+          "rawPosition": "04",
+          "rawTitle": "パンドラコール",
+          "entry": {
+            "entryId": "4839e979-470a-4b21-b16d-3652da7cb695",
+            "kind": "song_variant",
+            "primaryWorkId": "44be232d-ef64-5051-97b0-0e7677d02410",
+            "title": "パンドラコール",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "f8160fea-7cdd-5fca-b8d5-8f8435c1ce47",
+            "occurrenceId": "bf579cfc-eb8a-595f-86f1-df4dabf1cd66",
+            "programItemId": "6977836b-e836-5dfe-a233-3bfc9d3a5803",
+            "eventSequenceNo": 4,
+            "eventRawLabel": "パンドラコール",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 5,
+          "rawPosition": "05",
+          "rawTitle": "物語りのワルツ",
+          "entry": {
+            "entryId": "a4ca0573-48d6-49d0-a3d2-d8b4d4352227",
+            "kind": "song_variant",
+            "primaryWorkId": "f6d7d3c1-33e9-5649-be74-f4f18f3244e0",
+            "title": "物語りのワルツ",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "f8160fea-7cdd-5fca-b8d5-8f8435c1ce47",
+            "occurrenceId": "bf579cfc-eb8a-595f-86f1-df4dabf1cd66",
+            "programItemId": "5d12adb0-c88d-5669-8982-0886aab20bd3",
+            "eventSequenceNo": 5,
+            "eventRawLabel": "物語りのワルツ",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 6,
+          "rawPosition": "06",
+          "rawTitle": "とめどなき白情",
+          "entry": {
+            "entryId": "28e3b945-e49b-4e12-94ca-12f0a8718021",
+            "kind": "song_variant",
+            "primaryWorkId": "9101f61f-ceff-5335-a1ed-1f7d4de78d98",
+            "title": "とめどなき白情",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "f8160fea-7cdd-5fca-b8d5-8f8435c1ce47",
+            "occurrenceId": "bf579cfc-eb8a-595f-86f1-df4dabf1cd66",
+            "programItemId": "2a537556-20c8-526a-8a00-7d59820ce8ce",
+            "eventSequenceNo": 6,
+            "eventRawLabel": "とめどなき白情",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 7,
+          "rawPosition": "07",
+          "rawTitle": "ヰ世界の宝石譚",
+          "entry": {
+            "entryId": "cb31bd97-6d1f-4afc-893c-982b9161b17e",
+            "kind": "song_variant",
+            "primaryWorkId": "cb07bc61-fb0d-577f-9174-94c486d35e00",
+            "title": "ヰ世界の宝石譚",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "f8160fea-7cdd-5fca-b8d5-8f8435c1ce47",
+            "occurrenceId": "bf579cfc-eb8a-595f-86f1-df4dabf1cd66",
+            "programItemId": "ce2a1a2d-c353-5418-b389-f93045b29330",
+            "eventSequenceNo": 7,
+            "eventRawLabel": "ヰ世界の宝石譚",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 8,
+          "rawPosition": "08",
+          "rawTitle": "誰もいない絵で",
+          "entry": {
+            "entryId": "2c130953-3c9c-4d02-a1e8-a8f237eb6b56",
+            "kind": "song_variant",
+            "primaryWorkId": "40aa4d65-a4a1-5928-8cdb-61f4c4ab4b6c",
+            "title": "誰もいない絵で",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "f8160fea-7cdd-5fca-b8d5-8f8435c1ce47",
+            "occurrenceId": "bf579cfc-eb8a-595f-86f1-df4dabf1cd66",
+            "programItemId": "00ee2712-b41e-5c8f-ad6d-c8ebb13afa55",
+            "eventSequenceNo": 8,
+            "eventRawLabel": "誰もいない絵で",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 9,
+          "rawPosition": "09",
+          "rawTitle": "シリウスの心臓",
+          "entry": {
+            "entryId": "912cf6d0-0f06-4112-9bba-0b1333895122",
+            "kind": "song_variant",
+            "primaryWorkId": "5dd5d31d-4b77-5259-b5b9-d4828d4c1098",
+            "title": "シリウスの心臓",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "f8160fea-7cdd-5fca-b8d5-8f8435c1ce47",
+            "occurrenceId": "bf579cfc-eb8a-595f-86f1-df4dabf1cd66",
+            "programItemId": "dc6e4e9b-7937-520f-bac0-4abc7b8217a1",
+            "eventSequenceNo": 9,
+            "eventRawLabel": "シリウスの心臓",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 10,
+          "rawPosition": "10",
+          "rawTitle": "ISEKAIJOUCHO DISCOTHEQUE",
+          "correspondence": {
+            "eventId": "f8160fea-7cdd-5fca-b8d5-8f8435c1ce47",
+            "occurrenceId": "bf579cfc-eb8a-595f-86f1-df4dabf1cd66",
+            "programItemId": "2a41e355-0edc-5da3-b7a4-5327199872e3",
+            "eventSequenceNo": 10,
+            "eventRawLabel": "ISEKAIJOUCHO DISCOTHEQUE",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 11,
+          "rawPosition": "11",
+          "rawTitle": "生きていく光は",
+          "correspondence": {
+            "eventId": "f8160fea-7cdd-5fca-b8d5-8f8435c1ce47",
+            "occurrenceId": "bf579cfc-eb8a-595f-86f1-df4dabf1cd66",
+            "programItemId": "c1793877-570a-5a3a-8b7c-c33422d31f0a",
+            "eventSequenceNo": 11,
+            "eventRawLabel": "生きていく光は",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 12,
+          "rawPosition": "12",
+          "rawTitle": "あわく心模様",
+          "entry": {
+            "entryId": "11c1074b-967e-477b-8c40-37de1392d8ff",
+            "kind": "song_variant",
+            "primaryWorkId": "577f2ece-5691-5a2b-ae2d-a53b7df9b9fb",
+            "title": "あわく心模様 (solo ver.)",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "f8160fea-7cdd-5fca-b8d5-8f8435c1ce47",
+            "occurrenceId": "bf579cfc-eb8a-595f-86f1-df4dabf1cd66",
+            "programItemId": "3abca36d-833a-5404-8b5d-d3ea0f11f613",
+            "eventSequenceNo": 12,
+            "eventRawLabel": "あわく心模様",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 13,
+          "rawPosition": "13",
+          "rawTitle": "霞がついてくる with. CIEL",
+          "entry": {
+            "entryId": "82767121-3541-41fc-a806-a5b2dea9b680",
+            "kind": "song_variant",
+            "primaryWorkId": "920dfba2-a65d-5cc9-b986-a7cfef19f697",
+            "title": "霞がついてくる (Anima II -神椿市参番街- ver.)",
+            "displayCredit": "ヰ世界情緒 with CIEL",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0",
+              "b4a1c9cb-987f-5e92-863f-5bd1206dcbaa"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "f8160fea-7cdd-5fca-b8d5-8f8435c1ce47",
+            "occurrenceId": "bf579cfc-eb8a-595f-86f1-df4dabf1cd66",
+            "programItemId": "f09bed19-a759-5f2d-b79a-b9503d5793f1",
+            "eventSequenceNo": 13,
+            "eventRawLabel": "霞がついてくる",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 14,
+          "rawPosition": "14",
+          "rawTitle": "生存 with. 春猿火",
+          "entry": {
+            "entryId": "7a7dd78b-bf17-4b01-a33d-672f7ddce78c",
+            "kind": "song_variant",
+            "primaryWorkId": "c3dc4247-a522-5a11-8661-aa80140d07a7",
+            "title": "生存",
+            "displayCredit": "ヰ世界情緒 × 春猿火",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0",
+              "b8307e06-2046-5415-a1f7-0b892dd41041"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "f8160fea-7cdd-5fca-b8d5-8f8435c1ce47",
+            "occurrenceId": "bf579cfc-eb8a-595f-86f1-df4dabf1cd66",
+            "programItemId": "074d8af3-866c-561e-8704-da3a32b0b871",
+            "eventSequenceNo": 14,
+            "eventRawLabel": "生存",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 15,
+          "rawPosition": "15",
+          "rawTitle": "何億光年の孤独",
+          "entry": {
+            "entryId": "a7984370-6f9b-4109-a8f4-0213cd167247",
+            "kind": "song_variant",
+            "primaryWorkId": "3d37539d-ac86-5aeb-b140-0f4583db0789",
+            "title": "何億光年の孤独",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "f8160fea-7cdd-5fca-b8d5-8f8435c1ce47",
+            "occurrenceId": "bf579cfc-eb8a-595f-86f1-df4dabf1cd66",
+            "programItemId": "f32691d3-b2c5-5da5-9b28-51855ef99841",
+            "eventSequenceNo": 15,
+            "eventRawLabel": "何億光年の孤独",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 16,
+          "rawPosition": "16",
+          "rawTitle": "この夢に弔いを",
+          "entry": {
+            "entryId": "1f15847e-171d-489d-a22d-3a4d06a0cd21",
+            "kind": "song_variant",
+            "primaryWorkId": "d78197a3-282f-555c-a0cd-a20f97d8fb29",
+            "title": "この夢に弔いを",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "f8160fea-7cdd-5fca-b8d5-8f8435c1ce47",
+            "occurrenceId": "bf579cfc-eb8a-595f-86f1-df4dabf1cd66",
+            "programItemId": "cadd99b0-3b49-5edc-bc7c-e8c450fedbfe",
+            "eventSequenceNo": 16,
+            "eventRawLabel": "この夢に弔いを",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 17,
+          "rawPosition": "17",
+          "rawTitle": "ARCADIA",
+          "entry": {
+            "entryId": "8d278884-8e97-4b8d-a1c6-7225863c25b9",
+            "kind": "song_variant",
+            "primaryWorkId": "acbd3faf-005c-5e7d-8c96-ee56a814a265",
+            "title": "ARCADIA",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "f8160fea-7cdd-5fca-b8d5-8f8435c1ce47",
+            "occurrenceId": "bf579cfc-eb8a-595f-86f1-df4dabf1cd66",
+            "programItemId": "0c41a51d-1c33-521d-9d40-7f488257c479",
+            "eventSequenceNo": 17,
+            "eventRawLabel": "ARCADIA",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 18,
+          "rawPosition": "18",
+          "rawTitle": "エリカの憂い with. 星界",
+          "entry": {
+            "entryId": "e6b6b0c0-14b8-4b7d-9e76-8ca247b6109b",
+            "kind": "song_variant",
+            "primaryWorkId": "60f3078a-0020-5d40-9595-1dd512a5e0af",
+            "title": "エリカの憂い",
+            "displayCredit": "ヰ世界情緒 feat.星界",
+            "singerIds": [
+              "1867981b-c3c0-551b-9337-a8df05385348",
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "f8160fea-7cdd-5fca-b8d5-8f8435c1ce47",
+            "occurrenceId": "bf579cfc-eb8a-595f-86f1-df4dabf1cd66",
+            "programItemId": "2cf62ccb-6855-5bb3-926e-279083f05e5d",
+            "eventSequenceNo": 18,
+            "eventRawLabel": "エリカの憂い",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 19,
+          "rawPosition": "19",
+          "rawTitle": "カレンの清掃 with. 星界",
+          "entry": {
+            "entryId": "daf522e7-d7e2-4bdf-8498-94654845efb6",
+            "kind": "song_variant",
+            "primaryWorkId": "07eacab5-da2a-5964-a50e-4ca1d9a36354",
+            "title": "カレンの清掃",
+            "displayCredit": "ヰ世界情緒 with 星界",
+            "singerIds": [
+              "1867981b-c3c0-551b-9337-a8df05385348",
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "f8160fea-7cdd-5fca-b8d5-8f8435c1ce47",
+            "occurrenceId": "bf579cfc-eb8a-595f-86f1-df4dabf1cd66",
+            "programItemId": "a8b5daba-8098-56d0-bf50-94c9f4dee77d",
+            "eventSequenceNo": 19,
+            "eventRawLabel": "カレンの清掃",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 20,
+          "rawPosition": "20",
+          "rawTitle": "ラピスのお人形",
+          "entry": {
+            "entryId": "e3d9c3a1-8c3d-49e6-947b-d0e200e8b6d4",
+            "kind": "song_variant",
+            "primaryWorkId": "b966dc71-8a4c-561e-86eb-c6321ea93b61",
+            "title": "ラピスのお人形",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "f8160fea-7cdd-5fca-b8d5-8f8435c1ce47",
+            "occurrenceId": "bf579cfc-eb8a-595f-86f1-df4dabf1cd66",
+            "programItemId": "acbcf4b0-b61b-56d2-acd7-fc66212cc32e",
+            "eventSequenceNo": 20,
+            "eventRawLabel": "ラピスのお人形",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 21,
+          "rawPosition": "21",
+          "rawTitle": "キミ消失セカイ",
+          "entry": {
+            "entryId": "ed6e982f-31fc-4d7a-9c7b-76896b868fdd",
+            "kind": "song_variant",
+            "primaryWorkId": "24ea10b6-6aa0-5e9c-b2b1-c9cf882d1709",
+            "title": "キミ消失セカイ",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "f8160fea-7cdd-5fca-b8d5-8f8435c1ce47",
+            "occurrenceId": "bf579cfc-eb8a-595f-86f1-df4dabf1cd66",
+            "programItemId": "4c56858f-af7b-5e22-aaf1-93d271e7b913",
+            "eventSequenceNo": 21,
+            "eventRawLabel": "キミ消失セカイ",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 22,
+          "rawPosition": "22",
+          "rawTitle": "描き続けた君へ",
+          "entry": {
+            "entryId": "57664785-b4a1-4615-9868-38acc614320f",
+            "kind": "song_variant",
+            "primaryWorkId": "678c2d1f-b445-53e0-a852-ee8f564e7bb4",
+            "title": "描き続けた君へ",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "f8160fea-7cdd-5fca-b8d5-8f8435c1ce47",
+            "occurrenceId": "bf579cfc-eb8a-595f-86f1-df4dabf1cd66",
+            "programItemId": "66e45137-d831-5365-b6af-8e613491b5fc",
+            "eventSequenceNo": 22,
+            "eventRawLabel": "描き続けた君へ",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 23,
+          "rawPosition": "23",
+          "rawTitle": "かたちなきもの",
+          "entry": {
+            "entryId": "7f3d424f-1ae1-45b6-88b1-9abd5498c514",
+            "kind": "song_variant",
+            "primaryWorkId": "afc3bd45-9f8b-5a67-abda-f0e07ffdd24b",
+            "title": "かたちなきもの",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "f8160fea-7cdd-5fca-b8d5-8f8435c1ce47",
+            "occurrenceId": "bf579cfc-eb8a-595f-86f1-df4dabf1cd66",
+            "programItemId": "f53e6a8a-3efa-5c0a-97cb-331552a4303d",
+            "eventSequenceNo": 23,
+            "eventRawLabel": "かたちなきもの",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        }
+      ]
+    },
+    {
+      "key": "singularity1-bd",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "family": {
+        "familyId": "a95b94ef-228d-5544-974c-07a8deac9cd0",
+        "title": "理芽×ヰ世界情緒 TWO-MAN LIVE「Singularity Live」Blu-ray",
+        "releaseKind": "live_package"
+      },
+      "edition": {
+        "editionId": "cd905981-d399-5f0e-b485-4c277c79b24a",
+        "kind": "physical"
+      },
+      "component": {
+        "componentId": "b492c4e6-b763-57b7-8d62-c6b61fb40348",
+        "componentKind": "blu_ray",
+        "componentNo": null,
+        "editionId": "cd905981-d399-5f0e-b485-4c277c79b24a",
+        "parentComponentId": null,
+        "rawLabel": "Blu-ray"
+      },
+      "label": "Blu-ray",
+      "sourceId": "S-267",
+      "url": "https://findmestore.thinkr.jp/products/rim_isekaijyocho_bd_singularity",
+      "catalogUrl": "https://isekaijoucho.kamitsubaki.jp/musics/21223",
+      "items": [
+        {
+          "sequenceNo": 1,
+          "rawPosition": "1",
+          "rawTitle": "君の望み、君の願い",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "2051000f-47a0-5def-a9bc-3cb5841bca8a",
+            "eventSequenceNo": 1,
+            "eventRawLabel": "君の望み、君の願い",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 2,
+          "rawPosition": "2",
+          "rawTitle": "少年漫画",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "cea4cdbc-1836-5a77-b3f3-4943bd588330",
+            "eventSequenceNo": 2,
+            "eventRawLabel": "少年漫画",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 3,
+          "rawPosition": "3",
+          "rawTitle": "霞がついてくる",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "623a612c-f3bb-59d2-ab6e-0c6864085a79",
+            "eventSequenceNo": 3,
+            "eventRawLabel": "霞がついてくる",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 4,
+          "rawPosition": "4",
+          "rawTitle": "ディメンション",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "1e0d8606-8a70-5ad4-802c-b21cecdf0a6b",
+            "eventSequenceNo": 4,
+            "eventRawLabel": "ディメンション",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 5,
+          "rawPosition": "5",
+          "rawTitle": "マボロシのまち",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "75973e1d-904f-511b-bab0-1db223c1cf51",
+            "eventSequenceNo": 5,
+            "eventRawLabel": "マボロシのまち",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 6,
+          "rawPosition": "6",
+          "rawTitle": "生きていく光は",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "c26d4b8b-3975-5409-bb22-dbf9efa3eb01",
+            "eventSequenceNo": 6,
+            "eventRawLabel": "生きていく光は",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 7,
+          "rawPosition": "7",
+          "rawTitle": "異星にいこうね feat. 星界",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "d180403a-7a12-532a-bc2e-5edb5d4ef13f",
+            "eventSequenceNo": 7,
+            "eventRawLabel": "異星にいこうね",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 8,
+          "rawPosition": "8",
+          "rawTitle": "パンドラコール",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "6017e285-4cbd-525b-a0a8-97ec58c2d82f",
+            "eventSequenceNo": 8,
+            "eventRawLabel": "パンドラコール",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 9,
+          "rawPosition": "9",
+          "rawTitle": "ヰ世界の宝石譚",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "ea770f7d-80dd-5c4c-bd6a-a55a61cf3342",
+            "eventSequenceNo": 9,
+            "eventRawLabel": "ヰ世界の宝石譚",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 10,
+          "rawPosition": "10",
+          "rawTitle": "シリウスの心臓",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "aaff7edd-9d46-5ef8-b9a8-dbb3756b1a31",
+            "eventSequenceNo": 10,
+            "eventRawLabel": "シリウスの心臓",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 11,
+          "rawPosition": "11",
+          "rawTitle": "ARCADIA",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "e19bfb7d-c558-515a-bc19-7345304095fa",
+            "eventSequenceNo": 11,
+            "eventRawLabel": "ARCADIA",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 12,
+          "rawPosition": "12",
+          "rawTitle": "ジュブナイル",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "04ae8d40-6a00-5dd9-8999-091610b2a9da",
+            "eventSequenceNo": 12,
+            "eventRawLabel": "ジュブナイル",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 13,
+          "rawPosition": "13",
+          "rawTitle": "甘美な無法",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "a8a0c837-fa75-5b41-adf7-0808adf87cc7",
+            "eventSequenceNo": 13,
+            "eventRawLabel": "甘美な無法",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 14,
+          "rawPosition": "14",
+          "rawTitle": "生きているより楽しそう",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "4e08f246-d40f-5290-93b5-982ae3393c13",
+            "eventSequenceNo": 14,
+            "eventRawLabel": "生きているより楽しそう",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 15,
+          "rawPosition": "15",
+          "rawTitle": "デイネイ",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "9fff50e3-0d55-5ac7-b8ef-361429c71fe1",
+            "eventSequenceNo": 15,
+            "eventRawLabel": "デイネイ",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 16,
+          "rawPosition": "16",
+          "rawTitle": "NEUROMANCE feat.裏命",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "11757e48-5ebb-512b-8daa-64ccc691b1e0",
+            "eventSequenceNo": 16,
+            "eventRawLabel": "NEUROMANCE",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 17,
+          "rawPosition": "17",
+          "rawTitle": "どくどく",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "32f451a1-2177-517b-b75c-26415aef5806",
+            "eventSequenceNo": 17,
+            "eventRawLabel": "どくどく",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 18,
+          "rawPosition": "18",
+          "rawTitle": "食虫植物",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "d5d528a5-d711-5a05-a440-03b6bdfa7185",
+            "eventSequenceNo": 18,
+            "eventRawLabel": "食虫植物",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 19,
+          "rawPosition": "19",
+          "rawTitle": "舞",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "0e2f66aa-a25d-525a-b4e3-e5aba3054231",
+            "eventSequenceNo": 19,
+            "eventRawLabel": "舞",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 20,
+          "rawPosition": "20",
+          "rawTitle": "ファンファーレ",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "937482ca-a711-56b7-97dc-cc2d047a05b6",
+            "eventSequenceNo": 20,
+            "eventRawLabel": "ファンファーレ",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 21,
+          "rawPosition": "21",
+          "rawTitle": "ピルグリム",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "6a31efb8-38bc-5a48-88a0-9d105f52a2cb",
+            "eventSequenceNo": 21,
+            "eventRawLabel": "ピルグリム",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 22,
+          "rawPosition": "22",
+          "rawTitle": "泡沫",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "36d840a1-d758-5cc4-ba66-5189e1a3438a",
+            "eventSequenceNo": 22,
+            "eventRawLabel": "泡沫",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 23,
+          "rawPosition": "23",
+          "rawTitle": "不的",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "306b94eb-8503-55ee-b412-32c6ae0b7d54",
+            "eventSequenceNo": 23,
+            "eventRawLabel": "不的",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 24,
+          "rawPosition": "EX1",
+          "rawTitle": "変身",
+          "entry": {
+            "entryId": "35259c88-82ab-430c-b9da-135a50c0f375",
+            "kind": "song_variant",
+            "primaryWorkId": "aaf251d0-c51b-5167-8401-7214d93d8051",
+            "title": "変身 (Singularity Live vol.1 ver.)",
+            "displayCredit": "理芽×ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0",
+              "ae41fa12-3b09-52c0-bc08-1d9218492391"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "96476c52-7523-5447-a275-c17dae967984",
+            "programItemId": "bf2fcfd1-e122-5a83-bd09-2e1f7f310564",
+            "eventSequenceNo": 1,
+            "eventRawLabel": "変身(アーカイブ限定)",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 25,
+          "rawPosition": "EX2",
+          "rawTitle": "玩具",
+          "entry": {
+            "entryId": "3e0f2fe4-4cb4-45e7-8bc6-c8fca6a0d2ec",
+            "kind": "song_variant",
+            "primaryWorkId": "9d3fb83d-e0b3-5b96-b347-75711308d94d",
+            "title": "玩具 (Singularity Live vol.1 ver.)",
+            "displayCredit": "理芽×ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0",
+              "ae41fa12-3b09-52c0-bc08-1d9218492391"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "96476c52-7523-5447-a275-c17dae967984",
+            "programItemId": "5c1b11a2-473e-58cb-9f40-be487ba1a55b",
+            "eventSequenceNo": 2,
+            "eventRawLabel": "玩具(アーカイブ限定)",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        }
+      ]
+    },
+    {
+      "key": "singularity1-disc1",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "family": {
+        "familyId": "a95b94ef-228d-5544-974c-07a8deac9cd0",
+        "title": "理芽×ヰ世界情緒 TWO-MAN LIVE「Singularity Live」Blu-ray",
+        "releaseKind": "live_package"
+      },
+      "edition": {
+        "editionId": "cd905981-d399-5f0e-b485-4c277c79b24a",
+        "kind": "physical"
+      },
+      "component": {
+        "componentId": "c3555116-51b2-59be-8343-3e2057e22805",
+        "componentKind": "cd",
+        "componentNo": 1,
+        "editionId": "cd905981-d399-5f0e-b485-4c277c79b24a",
+        "parentComponentId": "10656086-2a1d-5e9c-8cc3-0319c68fca9a",
+        "rawLabel": "DISC 1"
+      },
+      "label": "DISC 1",
+      "sourceId": "S-267",
+      "url": "https://findmestore.thinkr.jp/products/rim_isekaijyocho_bd_singularity",
+      "catalogUrl": "https://isekaijoucho.kamitsubaki.jp/musics/21223",
+      "items": [
+        {
+          "sequenceNo": 1,
+          "rawPosition": "1",
+          "rawTitle": "君の望み、君の願い",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "2051000f-47a0-5def-a9bc-3cb5841bca8a",
+            "eventSequenceNo": 1,
+            "eventRawLabel": "君の望み、君の願い",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 2,
+          "rawPosition": "2",
+          "rawTitle": "少年漫画",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "cea4cdbc-1836-5a77-b3f3-4943bd588330",
+            "eventSequenceNo": 2,
+            "eventRawLabel": "少年漫画",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 3,
+          "rawPosition": "3",
+          "rawTitle": "霞がついてくる",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "623a612c-f3bb-59d2-ab6e-0c6864085a79",
+            "eventSequenceNo": 3,
+            "eventRawLabel": "霞がついてくる",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 4,
+          "rawPosition": "4",
+          "rawTitle": "ディメンション",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "1e0d8606-8a70-5ad4-802c-b21cecdf0a6b",
+            "eventSequenceNo": 4,
+            "eventRawLabel": "ディメンション",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 5,
+          "rawPosition": "5",
+          "rawTitle": "マボロシのまち",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "75973e1d-904f-511b-bab0-1db223c1cf51",
+            "eventSequenceNo": 5,
+            "eventRawLabel": "マボロシのまち",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 6,
+          "rawPosition": "6",
+          "rawTitle": "生きていく光は",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "c26d4b8b-3975-5409-bb22-dbf9efa3eb01",
+            "eventSequenceNo": 6,
+            "eventRawLabel": "生きていく光は",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 7,
+          "rawPosition": "7",
+          "rawTitle": "異星にいこうね feat. 星界",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "d180403a-7a12-532a-bc2e-5edb5d4ef13f",
+            "eventSequenceNo": 7,
+            "eventRawLabel": "異星にいこうね",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 8,
+          "rawPosition": "8",
+          "rawTitle": "パンドラコール",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "6017e285-4cbd-525b-a0a8-97ec58c2d82f",
+            "eventSequenceNo": 8,
+            "eventRawLabel": "パンドラコール",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 9,
+          "rawPosition": "9",
+          "rawTitle": "ヰ世界の宝石譚",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "ea770f7d-80dd-5c4c-bd6a-a55a61cf3342",
+            "eventSequenceNo": 9,
+            "eventRawLabel": "ヰ世界の宝石譚",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 10,
+          "rawPosition": "10",
+          "rawTitle": "シリウスの心臓",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "aaff7edd-9d46-5ef8-b9a8-dbb3756b1a31",
+            "eventSequenceNo": 10,
+            "eventRawLabel": "シリウスの心臓",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 11,
+          "rawPosition": "11",
+          "rawTitle": "ARCADIA",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "e19bfb7d-c558-515a-bc19-7345304095fa",
+            "eventSequenceNo": 11,
+            "eventRawLabel": "ARCADIA",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        }
+      ]
+    },
+    {
+      "key": "singularity1-disc2",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "family": {
+        "familyId": "a95b94ef-228d-5544-974c-07a8deac9cd0",
+        "title": "理芽×ヰ世界情緒 TWO-MAN LIVE「Singularity Live」Blu-ray",
+        "releaseKind": "live_package"
+      },
+      "edition": {
+        "editionId": "cd905981-d399-5f0e-b485-4c277c79b24a",
+        "kind": "physical"
+      },
+      "component": {
+        "componentId": "e3ffa41e-9add-52dd-84f1-668acbf1310a",
+        "componentKind": "cd",
+        "componentNo": 2,
+        "editionId": "cd905981-d399-5f0e-b485-4c277c79b24a",
+        "parentComponentId": "10656086-2a1d-5e9c-8cc3-0319c68fca9a",
+        "rawLabel": "DISC 2"
+      },
+      "label": "DISC 2",
+      "sourceId": "S-267",
+      "url": "https://findmestore.thinkr.jp/products/rim_isekaijyocho_bd_singularity",
+      "catalogUrl": "https://isekaijoucho.kamitsubaki.jp/musics/21223",
+      "items": [
+        {
+          "sequenceNo": 1,
+          "rawPosition": "12",
+          "rawTitle": "ジュブナイル",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "04ae8d40-6a00-5dd9-8999-091610b2a9da",
+            "eventSequenceNo": 12,
+            "eventRawLabel": "ジュブナイル",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 2,
+          "rawPosition": "13",
+          "rawTitle": "甘美な無法",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "a8a0c837-fa75-5b41-adf7-0808adf87cc7",
+            "eventSequenceNo": 13,
+            "eventRawLabel": "甘美な無法",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 3,
+          "rawPosition": "14",
+          "rawTitle": "生きているより楽しそう",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "4e08f246-d40f-5290-93b5-982ae3393c13",
+            "eventSequenceNo": 14,
+            "eventRawLabel": "生きているより楽しそう",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 4,
+          "rawPosition": "15",
+          "rawTitle": "デイネイ",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "9fff50e3-0d55-5ac7-b8ef-361429c71fe1",
+            "eventSequenceNo": 15,
+            "eventRawLabel": "デイネイ",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 5,
+          "rawPosition": "16",
+          "rawTitle": "NEUROMANCE feat.裏命",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "11757e48-5ebb-512b-8daa-64ccc691b1e0",
+            "eventSequenceNo": 16,
+            "eventRawLabel": "NEUROMANCE",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 6,
+          "rawPosition": "17",
+          "rawTitle": "どくどく",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "32f451a1-2177-517b-b75c-26415aef5806",
+            "eventSequenceNo": 17,
+            "eventRawLabel": "どくどく",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 7,
+          "rawPosition": "18",
+          "rawTitle": "食虫植物",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "d5d528a5-d711-5a05-a440-03b6bdfa7185",
+            "eventSequenceNo": 18,
+            "eventRawLabel": "食虫植物",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 8,
+          "rawPosition": "19",
+          "rawTitle": "舞",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "0e2f66aa-a25d-525a-b4e3-e5aba3054231",
+            "eventSequenceNo": 19,
+            "eventRawLabel": "舞",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 9,
+          "rawPosition": "20",
+          "rawTitle": "ファンファーレ",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "937482ca-a711-56b7-97dc-cc2d047a05b6",
+            "eventSequenceNo": 20,
+            "eventRawLabel": "ファンファーレ",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 10,
+          "rawPosition": "21",
+          "rawTitle": "ピルグリム",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "6a31efb8-38bc-5a48-88a0-9d105f52a2cb",
+            "eventSequenceNo": 21,
+            "eventRawLabel": "ピルグリム",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 11,
+          "rawPosition": "22",
+          "rawTitle": "泡沫",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "36d840a1-d758-5cc4-ba66-5189e1a3438a",
+            "eventSequenceNo": 22,
+            "eventRawLabel": "泡沫",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 12,
+          "rawPosition": "23",
+          "rawTitle": "不的",
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "3aacf821-e251-5251-93df-9dc85d669c8a",
+            "programItemId": "306b94eb-8503-55ee-b412-32c6ae0b7d54",
+            "eventSequenceNo": 23,
+            "eventRawLabel": "不的",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 13,
+          "rawPosition": "EX1",
+          "rawTitle": "変身",
+          "entry": {
+            "entryId": "35259c88-82ab-430c-b9da-135a50c0f375",
+            "kind": "song_variant",
+            "primaryWorkId": "aaf251d0-c51b-5167-8401-7214d93d8051",
+            "title": "変身 (Singularity Live vol.1 ver.)",
+            "displayCredit": "理芽×ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0",
+              "ae41fa12-3b09-52c0-bc08-1d9218492391"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "96476c52-7523-5447-a275-c17dae967984",
+            "programItemId": "bf2fcfd1-e122-5a83-bd09-2e1f7f310564",
+            "eventSequenceNo": 1,
+            "eventRawLabel": "変身(アーカイブ限定)",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 14,
+          "rawPosition": "EX2",
+          "rawTitle": "玩具",
+          "entry": {
+            "entryId": "3e0f2fe4-4cb4-45e7-8bc6-c8fca6a0d2ec",
+            "kind": "song_variant",
+            "primaryWorkId": "9d3fb83d-e0b3-5b96-b347-75711308d94d",
+            "title": "玩具 (Singularity Live vol.1 ver.)",
+            "displayCredit": "理芽×ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0",
+              "ae41fa12-3b09-52c0-bc08-1d9218492391"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "1a07e996-9531-528a-a736-14134451f2f5",
+            "occurrenceId": "96476c52-7523-5447-a275-c17dae967984",
+            "programItemId": "5c1b11a2-473e-58cb-9f40-be487ba1a55b",
+            "eventSequenceNo": 2,
+            "eventRawLabel": "玩具(アーカイブ限定)",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        }
+      ]
+    },
+    {
+      "key": "pleasure-bd",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "family": {
+        "familyId": "7c72d5f0-17dc-50f2-b6c0-b0ecd366026c",
+        "title": "春猿火×ヰ世界情緒「神椿報奏部 Pleasure Box」",
+        "releaseKind": "live_package"
+      },
+      "edition": {
+        "editionId": "fdcb438f-d2f9-5353-b2eb-5c858cdc5aad",
+        "kind": "physical"
+      },
+      "component": {
+        "componentId": "a5946e43-5269-5091-a77e-03b68b82f950",
+        "componentKind": "blu_ray",
+        "componentNo": null,
+        "editionId": "fdcb438f-d2f9-5353-b2eb-5c858cdc5aad",
+        "parentComponentId": null,
+        "rawLabel": "bd_live"
+      },
+      "label": "Blu-ray（LIVE・アフタートーク）",
+      "sourceId": "S-268",
+      "url": "https://findmestore.thinkr.jp/products/ktr-100-0199",
+      "items": [
+        {
+          "sequenceNo": 1,
+          "rawPosition": "01",
+          "rawTitle": "friction",
+          "correspondence": {
+            "eventId": "780a3a09-991d-5f4e-87c1-92c450582d47",
+            "occurrenceId": "1f39955c-e362-5ab8-b0ed-6af7cea17a64",
+            "programItemId": "dfd0373b-f3b9-5331-8691-84fe23680c62",
+            "eventSequenceNo": 1,
+            "eventRawLabel": "friction",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 2,
+          "rawPosition": "02",
+          "rawTitle": "ディストーション",
+          "correspondence": {
+            "eventId": "780a3a09-991d-5f4e-87c1-92c450582d47",
+            "occurrenceId": "1f39955c-e362-5ab8-b0ed-6af7cea17a64",
+            "programItemId": "a559391f-e16a-5d8f-b1d8-9db25ff2b58b",
+            "eventSequenceNo": 2,
+            "eventRawLabel": "ディストーション",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 3,
+          "rawPosition": "03",
+          "rawTitle": "此処に棘と死を",
+          "correspondence": {
+            "eventId": "780a3a09-991d-5f4e-87c1-92c450582d47",
+            "occurrenceId": "1f39955c-e362-5ab8-b0ed-6af7cea17a64",
+            "programItemId": "b3bc950c-1650-56de-8aba-491e3ad627cc",
+            "eventSequenceNo": 3,
+            "eventRawLabel": "此処に棘と死を",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 4,
+          "rawPosition": "04",
+          "rawTitle": "Wind walker",
+          "correspondence": {
+            "eventId": "780a3a09-991d-5f4e-87c1-92c450582d47",
+            "occurrenceId": "1f39955c-e362-5ab8-b0ed-6af7cea17a64",
+            "programItemId": "b53bace2-d6b0-584a-a95b-a6f1c7c2a07a",
+            "eventSequenceNo": 4,
+            "eventRawLabel": "Wind walker",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 5,
+          "rawPosition": "05",
+          "rawTitle": "ヴァーミリオン",
+          "correspondence": {
+            "eventId": "780a3a09-991d-5f4e-87c1-92c450582d47",
+            "occurrenceId": "1f39955c-e362-5ab8-b0ed-6af7cea17a64",
+            "programItemId": "d941dc79-e6db-5196-9e6d-1132f6ca1f5d",
+            "eventSequenceNo": 5,
+            "eventRawLabel": "ヴァーミリオン",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 6,
+          "rawPosition": "06",
+          "rawTitle": "アンビバレント",
+          "correspondence": {
+            "eventId": "780a3a09-991d-5f4e-87c1-92c450582d47",
+            "occurrenceId": "1f39955c-e362-5ab8-b0ed-6af7cea17a64",
+            "programItemId": "23186784-6d6f-5437-b90b-98aec1b503cd",
+            "eventSequenceNo": 6,
+            "eventRawLabel": "アンビバレント",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 7,
+          "rawPosition": "07",
+          "rawTitle": "フリーフォール",
+          "correspondence": {
+            "eventId": "780a3a09-991d-5f4e-87c1-92c450582d47",
+            "occurrenceId": "1f39955c-e362-5ab8-b0ed-6af7cea17a64",
+            "programItemId": "dd7bcadc-bdd7-563e-a6ee-1aa68c3b4a83",
+            "eventSequenceNo": 7,
+            "eventRawLabel": "フリーフォール",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 8,
+          "rawPosition": "08",
+          "rawTitle": "ネリネの内緒事",
+          "correspondence": {
+            "eventId": "780a3a09-991d-5f4e-87c1-92c450582d47",
+            "occurrenceId": "1f39955c-e362-5ab8-b0ed-6af7cea17a64",
+            "programItemId": "f059dcfa-b66d-5150-8441-b3ee05112104",
+            "eventSequenceNo": 8,
+            "eventRawLabel": "ネリネの内緒事",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 9,
+          "rawPosition": "09",
+          "rawTitle": "あの娘の言葉",
+          "correspondence": {
+            "eventId": "780a3a09-991d-5f4e-87c1-92c450582d47",
+            "occurrenceId": "1f39955c-e362-5ab8-b0ed-6af7cea17a64",
+            "programItemId": "96469f0f-c1ae-59ed-b34d-451c32e7c159",
+            "eventSequenceNo": 9,
+            "eventRawLabel": "あの娘の言葉",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 10,
+          "rawPosition": "10",
+          "rawTitle": "愛厭奇縁",
+          "correspondence": {
+            "eventId": "780a3a09-991d-5f4e-87c1-92c450582d47",
+            "occurrenceId": "1f39955c-e362-5ab8-b0ed-6af7cea17a64",
+            "programItemId": "ca0aeba4-a910-50a4-8754-faf4c13478ce",
+            "eventSequenceNo": 10,
+            "eventRawLabel": "愛厭奇縁",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 11,
+          "rawPosition": "11",
+          "rawTitle": "牢獄",
+          "correspondence": {
+            "eventId": "780a3a09-991d-5f4e-87c1-92c450582d47",
+            "occurrenceId": "1f39955c-e362-5ab8-b0ed-6af7cea17a64",
+            "programItemId": "63c077f7-e0f6-583b-b4a8-3557b6d5865c",
+            "eventSequenceNo": 11,
+            "eventRawLabel": "牢獄",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 12,
+          "rawPosition": "12",
+          "rawTitle": "CALL",
+          "correspondence": {
+            "eventId": "780a3a09-991d-5f4e-87c1-92c450582d47",
+            "occurrenceId": "1f39955c-e362-5ab8-b0ed-6af7cea17a64",
+            "programItemId": "c7f956b5-3ac4-534a-9d56-1fa0db41dd78",
+            "eventSequenceNo": 12,
+            "eventRawLabel": "CALL",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 13,
+          "rawPosition": "—",
+          "rawTitle": "アフタートーク",
+          "sourceContentKind": "after_talk"
+        }
+      ]
+    },
+    {
+      "key": "pleasure-cd",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "family": {
+        "familyId": "7c72d5f0-17dc-50f2-b6c0-b0ecd366026c",
+        "title": "春猿火×ヰ世界情緒「神椿報奏部 Pleasure Box」",
+        "releaseKind": "live_package"
+      },
+      "edition": {
+        "editionId": "fdcb438f-d2f9-5353-b2eb-5c858cdc5aad",
+        "kind": "physical"
+      },
+      "component": {
+        "componentId": "89a0cf8e-1316-5132-a083-d82be8ef4147",
+        "componentKind": "cd",
+        "componentNo": null,
+        "editionId": "fdcb438f-d2f9-5353-b2eb-5c858cdc5aad",
+        "parentComponentId": null,
+        "rawLabel": "cd_live"
+      },
+      "label": "CD（LIVE音源）",
+      "sourceId": "S-268",
+      "url": "https://findmestore.thinkr.jp/products/ktr-100-0199",
+      "items": [
+        {
+          "sequenceNo": 1,
+          "rawPosition": "01",
+          "rawTitle": "friction",
+          "correspondence": {
+            "eventId": "780a3a09-991d-5f4e-87c1-92c450582d47",
+            "occurrenceId": "1f39955c-e362-5ab8-b0ed-6af7cea17a64",
+            "programItemId": "dfd0373b-f3b9-5331-8691-84fe23680c62",
+            "eventSequenceNo": 1,
+            "eventRawLabel": "friction",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 2,
+          "rawPosition": "02",
+          "rawTitle": "ディストーション",
+          "correspondence": {
+            "eventId": "780a3a09-991d-5f4e-87c1-92c450582d47",
+            "occurrenceId": "1f39955c-e362-5ab8-b0ed-6af7cea17a64",
+            "programItemId": "a559391f-e16a-5d8f-b1d8-9db25ff2b58b",
+            "eventSequenceNo": 2,
+            "eventRawLabel": "ディストーション",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 3,
+          "rawPosition": "03",
+          "rawTitle": "此処に棘と死を",
+          "correspondence": {
+            "eventId": "780a3a09-991d-5f4e-87c1-92c450582d47",
+            "occurrenceId": "1f39955c-e362-5ab8-b0ed-6af7cea17a64",
+            "programItemId": "b3bc950c-1650-56de-8aba-491e3ad627cc",
+            "eventSequenceNo": 3,
+            "eventRawLabel": "此処に棘と死を",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 4,
+          "rawPosition": "04",
+          "rawTitle": "Wind walker",
+          "correspondence": {
+            "eventId": "780a3a09-991d-5f4e-87c1-92c450582d47",
+            "occurrenceId": "1f39955c-e362-5ab8-b0ed-6af7cea17a64",
+            "programItemId": "b53bace2-d6b0-584a-a95b-a6f1c7c2a07a",
+            "eventSequenceNo": 4,
+            "eventRawLabel": "Wind walker",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 5,
+          "rawPosition": "05",
+          "rawTitle": "ヴァーミリオン",
+          "correspondence": {
+            "eventId": "780a3a09-991d-5f4e-87c1-92c450582d47",
+            "occurrenceId": "1f39955c-e362-5ab8-b0ed-6af7cea17a64",
+            "programItemId": "d941dc79-e6db-5196-9e6d-1132f6ca1f5d",
+            "eventSequenceNo": 5,
+            "eventRawLabel": "ヴァーミリオン",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 6,
+          "rawPosition": "06",
+          "rawTitle": "アンビバレント",
+          "correspondence": {
+            "eventId": "780a3a09-991d-5f4e-87c1-92c450582d47",
+            "occurrenceId": "1f39955c-e362-5ab8-b0ed-6af7cea17a64",
+            "programItemId": "23186784-6d6f-5437-b90b-98aec1b503cd",
+            "eventSequenceNo": 6,
+            "eventRawLabel": "アンビバレント",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 7,
+          "rawPosition": "07",
+          "rawTitle": "フリーフォール",
+          "correspondence": {
+            "eventId": "780a3a09-991d-5f4e-87c1-92c450582d47",
+            "occurrenceId": "1f39955c-e362-5ab8-b0ed-6af7cea17a64",
+            "programItemId": "dd7bcadc-bdd7-563e-a6ee-1aa68c3b4a83",
+            "eventSequenceNo": 7,
+            "eventRawLabel": "フリーフォール",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 8,
+          "rawPosition": "08",
+          "rawTitle": "ネリネの内緒事",
+          "correspondence": {
+            "eventId": "780a3a09-991d-5f4e-87c1-92c450582d47",
+            "occurrenceId": "1f39955c-e362-5ab8-b0ed-6af7cea17a64",
+            "programItemId": "f059dcfa-b66d-5150-8441-b3ee05112104",
+            "eventSequenceNo": 8,
+            "eventRawLabel": "ネリネの内緒事",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 9,
+          "rawPosition": "09",
+          "rawTitle": "あの娘の言葉",
+          "correspondence": {
+            "eventId": "780a3a09-991d-5f4e-87c1-92c450582d47",
+            "occurrenceId": "1f39955c-e362-5ab8-b0ed-6af7cea17a64",
+            "programItemId": "96469f0f-c1ae-59ed-b34d-451c32e7c159",
+            "eventSequenceNo": 9,
+            "eventRawLabel": "あの娘の言葉",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 10,
+          "rawPosition": "10",
+          "rawTitle": "愛厭奇縁",
+          "correspondence": {
+            "eventId": "780a3a09-991d-5f4e-87c1-92c450582d47",
+            "occurrenceId": "1f39955c-e362-5ab8-b0ed-6af7cea17a64",
+            "programItemId": "ca0aeba4-a910-50a4-8754-faf4c13478ce",
+            "eventSequenceNo": 10,
+            "eventRawLabel": "愛厭奇縁",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 11,
+          "rawPosition": "11",
+          "rawTitle": "牢獄",
+          "correspondence": {
+            "eventId": "780a3a09-991d-5f4e-87c1-92c450582d47",
+            "occurrenceId": "1f39955c-e362-5ab8-b0ed-6af7cea17a64",
+            "programItemId": "63c077f7-e0f6-583b-b4a8-3557b6d5865c",
+            "eventSequenceNo": 11,
+            "eventRawLabel": "牢獄",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 12,
+          "rawPosition": "12",
+          "rawTitle": "CALL",
+          "correspondence": {
+            "eventId": "780a3a09-991d-5f4e-87c1-92c450582d47",
+            "occurrenceId": "1f39955c-e362-5ab8-b0ed-6af7cea17a64",
+            "programItemId": "c7f956b5-3ac4-534a-9d56-1fa0db41dd78",
+            "eventSequenceNo": 12,
+            "eventRawLabel": "CALL",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        }
+      ]
+    },
+    {
+      "key": "singularity4-bd",
+      "status": "active",
+      "checkedOn": "2026-10-28",
+      "family": {
+        "familyId": "d36ccdfb-891b-56ba-9e9b-795ced896e95",
+        "title": "春猿火×ヰ世界情緒 TWO-MAN LIVE「Singularity Live Vol.4」Blu-ray",
+        "releaseKind": "live_package"
+      },
+      "edition": {
+        "editionId": "28961576-0bf7-553b-b8bb-29e60c3ba76d",
+        "kind": "physical"
+      },
+      "component": {
+        "componentId": "3e42d183-4c9b-5231-8f78-ba5fd0c9a2f8",
+        "componentKind": "blu_ray",
+        "componentNo": null,
+        "editionId": "28961576-0bf7-553b-b8bb-29e60c3ba76d",
+        "parentComponentId": null,
+        "rawLabel": "bd_main"
+      },
+      "label": "Blu-ray（本編）",
+      "sourceId": "S-269",
+      "url": "https://findmestore.thinkr.jp/products/ktr-100-0224",
+      "items": [
+        {
+          "sequenceNo": 1,
+          "rawPosition": "01",
+          "rawTitle": "CALL",
+          "correspondence": {
+            "eventId": "a802e69d-ebac-5898-8316-ed03504314e8",
+            "occurrenceId": "3f291aef-f55c-5d51-983a-5e1d90eb5c82",
+            "programItemId": "8158e6eb-8e6e-5822-a16e-b803b6473938",
+            "eventSequenceNo": 1,
+            "eventRawLabel": "CALL",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 2,
+          "rawPosition": "02",
+          "rawTitle": "愛縁奇縁",
+          "correspondence": {
+            "eventId": "a802e69d-ebac-5898-8316-ed03504314e8",
+            "occurrenceId": "3f291aef-f55c-5d51-983a-5e1d90eb5c82",
+            "programItemId": "4df49510-e992-5ba5-a3b4-d3a4367d0503",
+            "eventSequenceNo": 2,
+            "eventRawLabel": "愛厭奇縁",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 3,
+          "rawPosition": "03",
+          "rawTitle": "Deep Invite",
+          "correspondence": {
+            "eventId": "a802e69d-ebac-5898-8316-ed03504314e8",
+            "occurrenceId": "3f291aef-f55c-5d51-983a-5e1d90eb5c82",
+            "programItemId": "bcee83f2-1eef-5c90-9e45-5fada182865f",
+            "eventSequenceNo": 3,
+            "eventRawLabel": "Deep Invite",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 4,
+          "rawPosition": "04",
+          "rawTitle": "SWIPE!",
+          "correspondence": {
+            "eventId": "a802e69d-ebac-5898-8316-ed03504314e8",
+            "occurrenceId": "3f291aef-f55c-5d51-983a-5e1d90eb5c82",
+            "programItemId": "15fbd00f-4383-54a6-bd07-566e2eb90755",
+            "eventSequenceNo": 4,
+            "eventRawLabel": "SWIPE!",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 5,
+          "rawPosition": "05",
+          "rawTitle": "META",
+          "correspondence": {
+            "eventId": "a802e69d-ebac-5898-8316-ed03504314e8",
+            "occurrenceId": "3f291aef-f55c-5d51-983a-5e1d90eb5c82",
+            "programItemId": "fafbf8ad-4449-5ae5-9907-40e899ac6214",
+            "eventSequenceNo": 5,
+            "eventRawLabel": "META",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 6,
+          "rawPosition": "06",
+          "rawTitle": "回向 -echo-",
+          "correspondence": {
+            "eventId": "a802e69d-ebac-5898-8316-ed03504314e8",
+            "occurrenceId": "3f291aef-f55c-5d51-983a-5e1d90eb5c82",
+            "programItemId": "5b6852a5-6c87-5460-bc4e-aecfdcab12b0",
+            "eventSequenceNo": 6,
+            "eventRawLabel": "回向 -echo-",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 7,
+          "rawPosition": "07",
+          "rawTitle": "（A）letheia",
+          "correspondence": {
+            "eventId": "a802e69d-ebac-5898-8316-ed03504314e8",
+            "occurrenceId": "3f291aef-f55c-5d51-983a-5e1d90eb5c82",
+            "programItemId": "3dc96f3c-7e9d-585e-b36a-cb1c7d05a3ca",
+            "eventSequenceNo": 7,
+            "eventRawLabel": "(A)letheia",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 8,
+          "rawPosition": "08",
+          "rawTitle": "恋は戦争 Guest：羽累",
+          "correspondence": {
+            "eventId": "a802e69d-ebac-5898-8316-ed03504314e8",
+            "occurrenceId": "3f291aef-f55c-5d51-983a-5e1d90eb5c82",
+            "programItemId": "a1be9fde-ac90-5b72-9f9a-1b60cbd41674",
+            "eventSequenceNo": 8,
+            "eventRawLabel": "恋は戦争",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 9,
+          "rawPosition": "09",
+          "rawTitle": "アンビバレント",
+          "correspondence": {
+            "eventId": "a802e69d-ebac-5898-8316-ed03504314e8",
+            "occurrenceId": "3f291aef-f55c-5d51-983a-5e1d90eb5c82",
+            "programItemId": "1a00aa76-2e5e-5560-a5ef-9c108e28796d",
+            "eventSequenceNo": 9,
+            "eventRawLabel": "アンビバレント",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 10,
+          "rawPosition": "10",
+          "rawTitle": "ハイドレンジア",
+          "correspondence": {
+            "eventId": "a802e69d-ebac-5898-8316-ed03504314e8",
+            "occurrenceId": "3f291aef-f55c-5d51-983a-5e1d90eb5c82",
+            "programItemId": "afd795b8-cfe5-57fa-96ce-edbca985cfcf",
+            "eventSequenceNo": 10,
+            "eventRawLabel": "ハイドレンジア",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 11,
+          "rawPosition": "11",
+          "rawTitle": "ラケナリアの夢",
+          "correspondence": {
+            "eventId": "a802e69d-ebac-5898-8316-ed03504314e8",
+            "occurrenceId": "3f291aef-f55c-5d51-983a-5e1d90eb5c82",
+            "programItemId": "44f996f8-d1ce-5a79-8290-ff57faa0ad24",
+            "eventSequenceNo": 11,
+            "eventRawLabel": "ラケナリアの夢",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 12,
+          "rawPosition": "12",
+          "rawTitle": "ノンブレス・オブリージュ Guest：星界",
+          "correspondence": {
+            "eventId": "a802e69d-ebac-5898-8316-ed03504314e8",
+            "occurrenceId": "3f291aef-f55c-5d51-983a-5e1d90eb5c82",
+            "programItemId": "fe94977d-d4ee-5298-8322-2d4ba6e7a9e1",
+            "eventSequenceNo": 12,
+            "eventRawLabel": "ノンブレス・オブリージュ",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 13,
+          "rawPosition": "13",
+          "rawTitle": "ヰ世界の宝石譚",
+          "correspondence": {
+            "eventId": "a802e69d-ebac-5898-8316-ed03504314e8",
+            "occurrenceId": "3f291aef-f55c-5d51-983a-5e1d90eb5c82",
+            "programItemId": "dee07603-b817-5f9a-8736-95be126485dc",
+            "eventSequenceNo": 13,
+            "eventRawLabel": "ヰ世界の宝石譚",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 14,
+          "rawPosition": "14",
+          "rawTitle": "ETERNAL",
+          "correspondence": {
+            "eventId": "a802e69d-ebac-5898-8316-ed03504314e8",
+            "occurrenceId": "3f291aef-f55c-5d51-983a-5e1d90eb5c82",
+            "programItemId": "de1510a0-27c5-565b-91c8-4316cc77d953",
+            "eventSequenceNo": 14,
+            "eventRawLabel": "ETERNAL",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 15,
+          "rawPosition": "15",
+          "rawTitle": "生存",
+          "correspondence": {
+            "eventId": "a802e69d-ebac-5898-8316-ed03504314e8",
+            "occurrenceId": "3f291aef-f55c-5d51-983a-5e1d90eb5c82",
+            "programItemId": "1579b0e4-37d8-56e7-806f-c6e9a829a120",
+            "eventSequenceNo": 15,
+            "eventRawLabel": "生存",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 16,
+          "rawPosition": "16",
+          "rawTitle": "マーシャル・マキシマイザー",
+          "correspondence": {
+            "eventId": "a802e69d-ebac-5898-8316-ed03504314e8",
+            "occurrenceId": "3f291aef-f55c-5d51-983a-5e1d90eb5c82",
+            "programItemId": "834a3b8e-6b88-5061-bfaa-9b32c624ea37",
+            "eventSequenceNo": 16,
+            "eventRawLabel": "マーシャル・マキシマイザー",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 17,
+          "rawPosition": "17",
+          "rawTitle": "キュートなカノジョ",
+          "correspondence": {
+            "eventId": "a802e69d-ebac-5898-8316-ed03504314e8",
+            "occurrenceId": "3f291aef-f55c-5d51-983a-5e1d90eb5c82",
+            "programItemId": "b8534afd-7482-5fa5-b6b9-7c58cf5a9eae",
+            "eventSequenceNo": 17,
+            "eventRawLabel": "キュートなカノジョ",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 18,
+          "rawPosition": "18",
+          "rawTitle": "III",
+          "correspondence": {
+            "eventId": "a802e69d-ebac-5898-8316-ed03504314e8",
+            "occurrenceId": "3f291aef-f55c-5d51-983a-5e1d90eb5c82",
+            "programItemId": "50b85e4f-c5ac-5c1c-939d-0d46c32bb59b",
+            "eventSequenceNo": 18,
+            "eventRawLabel": "III",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 19,
+          "rawPosition": "19",
+          "rawTitle": "魔女",
+          "entry": {
+            "entryId": "0d1c8cc3-1b44-4898-9a46-3b42d9c140c1",
+            "kind": "song_variant",
+            "primaryWorkId": "7a1feee3-d9b3-53ae-b57d-c875cdfa53f2",
+            "title": "魔女 (シンギュラリティライブ4 ver.)",
+            "displayCredit": "春猿火 × ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0",
+              "b8307e06-2046-5415-a1f7-0b892dd41041"
+            ],
+            "variations": []
+          },
+          "correspondence": {
+            "eventId": "a802e69d-ebac-5898-8316-ed03504314e8",
+            "occurrenceId": "3f291aef-f55c-5d51-983a-5e1d90eb5c82",
+            "programItemId": "31ccf90b-2320-5097-a059-1e21b47564c1",
+            "eventSequenceNo": 19,
+            "eventRawLabel": "魔女",
+            "basis": "official_product_row_and_previously_reviewed_scoped_live_entry"
+          }
+        },
+        {
+          "sequenceNo": 20,
+          "rawPosition": "20",
+          "rawTitle": "牢獄",
+          "correspondence": {
+            "eventId": "a802e69d-ebac-5898-8316-ed03504314e8",
+            "occurrenceId": "3f291aef-f55c-5d51-983a-5e1d90eb5c82",
+            "programItemId": "c3f6aadd-0fe7-5021-be80-0efb338c4247",
+            "eventSequenceNo": 20,
+            "eventRawLabel": "牢獄",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 21,
+          "rawPosition": "21",
+          "rawTitle": "LOVEぃ",
+          "correspondence": {
+            "eventId": "a802e69d-ebac-5898-8316-ed03504314e8",
+            "occurrenceId": "3f291aef-f55c-5d51-983a-5e1d90eb5c82",
+            "programItemId": "5ef09b1c-8fef-5104-9974-c0730083ec77",
+            "eventSequenceNo": 21,
+            "eventRawLabel": "LOVEぃ",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        },
+        {
+          "sequenceNo": 22,
+          "rawPosition": "22",
+          "rawTitle": "CALL",
+          "correspondence": {
+            "eventId": "a802e69d-ebac-5898-8316-ed03504314e8",
+            "occurrenceId": "3f291aef-f55c-5d51-983a-5e1d90eb5c82",
+            "programItemId": "cc807170-618a-56d6-932a-93a292bd9228",
+            "eventSequenceNo": 22,
+            "eventRawLabel": "CALL",
+            "basis": "official_product_row_only_no_new_song_correspondence"
+          }
+        }
+      ]
     }
   ]
 }

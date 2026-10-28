@@ -13,5 +13,5 @@ export async function getReleaseDetail(familyId:string,query:ReleaseDetailQuery)
  const limit=100,page=query.page??1;
  const release=await rpc('kashouroku_v3_release_family',{p_family_id:familyId,p_limit:limit,p_offset:(page-1)*limit});
  if(!release)return null;
- return {release,context:null,editions:asArray(release.editions),selectedEdition:null,components:asArray(release.components),groups:groupReleaseItems(release,asArray(release.items)),total:num(release.totalItems),page,pages:numberOfPages(num(release.totalItems),limit),artwork:[],links:releaseLinks(release)};
+ return {release,recordedEvents:[],context:null,editions:asArray(release.editions),selectedEdition:null,components:asArray(release.components),groups:groupReleaseItems(release,asArray(release.items)),total:num(release.totalItems),page,pages:numberOfPages(num(release.totalItems),limit),artwork:[],links:releaseLinks(release)};
 }

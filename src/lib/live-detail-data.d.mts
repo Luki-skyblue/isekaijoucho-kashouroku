@@ -1,8 +1,9 @@
 import type {JsonObject} from './core';
 import type {PrivateModel} from './private-read-model.mjs';
+import type {EventRecordingLink} from './live-release-links.mjs';
 import type {LiveProgramSupplement} from './live-program-supplements.mjs';
 export type LiveProgramVocals={displayCredit:string;people:Array<{entityId:string|null;name:string}>;targetVocal:'present'|'absent'|'unknown'};
-export type LiveDisplayContext={billingLabel:string|null;dates:string[];performers:Array<{entityId:string;name:string;personKey:string|null}>;programLinks:Record<string,{entryId:string;title:string}>;programVocals:Record<string,LiveProgramVocals>;programSupplements:Record<string,LiveProgramSupplement>};
+export type LiveDisplayContext={recordings:EventRecordingLink[];billingLabel:string|null;dates:string[];performers:Array<{entityId:string;name:string;personKey:string|null}>;programLinks:Record<string,{entryId:string;title:string}>;programVocals:Record<string,LiveProgramVocals>;programSupplements:Record<string,LiveProgramSupplement>};
 export const LIVE_PROGRAM_RECORDS:JsonObject[];
 export const LIVE_PROGRAM_VOCAL_RECORDS:JsonObject[];
 export function isLiveSupplement(occurrence:JsonObject):boolean;

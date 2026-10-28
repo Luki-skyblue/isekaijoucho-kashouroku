@@ -1,10 +1,11 @@
 import type {JsonObject} from './core';
 import type {PrivateModel} from './private-read-model.mjs';
+import type {RecordedEventLink} from './live-release-links.mjs';
 import type {SongArtwork} from './song-detail-data.mjs';
 export type ReleaseDisplayContext={artwork:SongArtwork[];editionArtwork:Record<string,SongArtwork[]>;itemLinks:Record<string,{entryId:string}>;sharedTracklistLabel:string|null};
 export type ReleaseItemGroup={key:string;editionId:string|null;editionName:string|null;label:string|null;componentKind:string|null;items:JsonObject[]};
 export type ReleaseDetailQuery={editionId?:string|null;page?:number;limit?:number};
-export type ReleaseDetailView={release:JsonObject;context:ReleaseDisplayContext|null;editions:JsonObject[];selectedEdition:JsonObject|null;components:JsonObject[];groups:ReleaseItemGroup[];total:number;page:number;pages:number;artwork:SongArtwork[];links:Array<{url:string;label:string}>};
+export type ReleaseDetailView={recordedEvents:RecordedEventLink[];release:JsonObject;context:ReleaseDisplayContext|null;editions:JsonObject[];selectedEdition:JsonObject|null;components:JsonObject[];groups:ReleaseItemGroup[];total:number;page:number;pages:number;artwork:SongArtwork[];links:Array<{url:string;label:string}>};
 export function releaseKindLabel(kind:unknown):string|null;
 export function releaseMediaLabel(kind:unknown):string|null;
 export function isLiveRelease(release:JsonObject):boolean;
