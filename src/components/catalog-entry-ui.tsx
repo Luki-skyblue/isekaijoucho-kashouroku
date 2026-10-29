@@ -3,7 +3,7 @@ import {RecordArtwork} from './record-artwork';
 import type {CatalogEntryCard} from '@/lib/catalog-entry-api';
 import {asArray,asObject,displayDate,explicitThumbnail,num,str,textOr,validId,JsonObject} from '@/lib/core';
 import {Breadcrumb,Heading,Panel,Empty} from '@/components/ui';
-import {CATALOG_SORTS,SINGERS,catalogHref,activeCatalogConditions,ParsedCatalogQuery,type SingerChoice} from '@/lib/catalog-list-params';
+import {CATALOG_SORTS,DEFAULT_CATALOG_SORT,SINGERS,catalogHref,activeCatalogConditions,ParsedCatalogQuery,type SingerChoice} from '@/lib/catalog-list-params';
 import {CatalogSearchInput} from '@/components/catalog-search-input';
 import {ListSort} from '@/components/list-sort';
 import {detailSearchHref} from '@/lib/search-navigation.mjs';
@@ -18,7 +18,7 @@ export function CatalogIndex({items,total,query,limit,singerChoices=SINGERS}: {i
   {query.singerIds.map(id=><input key={id} type="hidden" name="singer" value={id}/>)}
   {query.singerIds.length>0&&<input type="hidden" name="singerMatch" value={query.singerMatch}/>}
   {query.kinds.map(kind=><input key={kind} type="hidden" name="type" value={kind}/>)}
-  {query.sort!=='title_asc'&&<input type="hidden" name="sort" value={query.sort}/>}
+  {query.sort!==DEFAULT_CATALOG_SORT&&<input type="hidden" name="sort" value={query.sort}/>}
   {query.view==='grid'&&<input type="hidden" name="view" value="grid"/>}
  </form>
  {conditions.length>0&&<div className="catalog-applied" aria-label="適用中の条件"><span className="catalog-applied-heading">適用中</span><div className="catalog-applied-tags">{conditions.map(c=><Link key={c.key} href={c.href} className="catalog-applied-tag" aria-label={`${c.label}を解除`}>{c.label}<span aria-hidden="true">×</span></Link>)}<Link className="catalog-applied-reset" href={catalogHref({...query,q:'',singerIds:[],singerMatch:'any',kinds:[],page:1})}>すべて解除</Link></div></div>}

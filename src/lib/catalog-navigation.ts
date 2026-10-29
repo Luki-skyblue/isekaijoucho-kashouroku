@@ -6,7 +6,7 @@ type ListPath = '/songs' | '/lives' | '/releases' | '/people';
 const RETURN_KEYS:Record<ListPath,Set<string>> = {
  '/songs':new Set(['q','page','view','singer','singerMatch','type','sort']),
  '/lives':new Set(['q','page','view','artist','artistScope','artistMatch','type','sort']),
- '/releases':new Set(['q','page','view','category']),
+ '/releases':new Set(['q','page','view','category','sort']),
  '/people':new Set(['q','page','category','kind','role']),
 };
 

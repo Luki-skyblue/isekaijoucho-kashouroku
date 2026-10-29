@@ -9,7 +9,7 @@ export type ListSortOption={value:string;label:string;href:string};
  * results; a pending selection is shown as pending until navigation commits.
  */
 export function ListSort({id,action,value,options,children}:{
- id:string;action:'/songs'|'/lives';value:string;options:ListSortOption[];children?:ReactNode;
+ id:string;action:'/songs'|'/lives'|'/releases';value:string;options:ListSortOption[];children?:ReactNode;
 }) {
  const router=useRouter(),[target,setTarget]=useState(value),[pending,startTransition]=useTransition();
  const applied=options.find(o=>o.value===value);

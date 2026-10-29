@@ -3,7 +3,7 @@ import {readFileSync, statSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {gzipSync} from 'node:zlib';
 import {performance} from 'node:perf_hooks';
-import {songArtworkCandidatesForEntry,songTypeForEntry,songMetadataForEntry,songTitleCreditForEntry} from './song-detail-data.mjs';
+import {songArtworkCandidatesForEntry,songTypeForEntry,songMetadataForEntry,songTitleCaptionForEntry} from './song-detail-data.mjs';
 import {supplementalReleasesForEntry} from './release-content-data.mjs';
 import {singerIdsForEntry} from './catalog-people.mjs';
 import {eventArtworkForEvent} from './catalog-artwork.mjs';
@@ -203,7 +203,7 @@ const matches = (a,b) => typeof a === 'string' && catalogNameMatches({name:a},b)
  * do not change the raw set or its completeness/verification state. */
 export function queryEntries(model, filters = {}) {
   check(readable(model), 'A validated catalog model is required');
-  const {search = '',singerIds = [],singerMatch = 'contains',selectedKinds = [],sort = 'title_asc',limit = 24,offset = 0} = filters;
+  const {search = '',singerIds = [],singerMatch = 'contains',selectedKinds = [],sort = 'first_desc',limit = 24,offset = 0} = filters;
   check(typeof search === 'string' && Array.isArray(singerIds) && singerIds.length <= 20 && singerIds.every(x => typeof x === 'string' && uuid.test(x)), 'Invalid query');
   check(['contains','only','any','subset'].includes(singerMatch), 'Invalid singer mode');
   check(Array.isArray(selectedKinds) && new Set(selectedKinds).size === selectedKinds.length && selectedKinds.every(x => ['original','cover','collaboration','variant','medley'].includes(x)), 'Invalid categories');
@@ -236,14 +236,14 @@ export function queryEntries(model, filters = {}) {
       const value=songMetadataForEntry(e,undefined,model.works.get(d.primaryWorkId)).firstAppearance?.date;
       if(typeof value==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(value)&&Number.isFinite(Date.parse(value+'T00:00:00Z'))&&new Date(value+'T00:00:00Z').toISOString().slice(0,10)===value)firstAppearanceDate=value;
     }
-    rows.push({entryId,title:d.title,kind:d.kind,displayCredit:songTitleCreditForEntry(e),legacySongType:songType,
+    rows.push({entryId,title:d.title,kind:d.kind,displayCredit:songTitleCaptionForEntry(e),legacySongType:songType,
       matchKind:rank ? 'component' : 'title',rank,sortTitle:e.sortTitle ?? d.title,...(chronological?{firstAppearanceDate}:{})});
   }
   rows.sort((a,b) => {
     if(chronological){
       if(!a.firstAppearanceDate||!b.firstAppearanceDate){if(a.firstAppearanceDate!==b.firstAppearanceDate)return a.firstAppearanceDate?-1:1;}
       else if(a.firstAppearanceDate!==b.firstAppearanceDate)return (sort==='first_desc'?-1:1)*cmp(a.firstAppearanceDate,b.firstAppearanceDate);
-      return cmp(a.sortTitle,b.sortTitle)||cmp(a.entryId,b.entryId);
+      return a.rank-b.rank||cmp(a.sortTitle,b.sortTitle)||cmp(a.entryId,b.entryId);
     }
     return a.rank-b.rank || (sort === 'title_desc' ? -1 : 1)*cmp(a.sortTitle,b.sortTitle) || cmp(a.entryId,b.entryId);
   });

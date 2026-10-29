@@ -38,11 +38,12 @@ export const CATEGORIES:ReadonlyArray<{id:CatalogCategory;label:string}> = [
 ];
 const ALL_NON_MEDLEY:LegacySongType[]=['original','cover','collaboration','variant'];
 const ALLOWED=new Set<string>(CATEGORIES.map(x=>x.id));
+export const DEFAULT_CATALOG_SORT:CatalogSort='first_desc';
 export const CATALOG_SORTS:ReadonlyArray<{id:CatalogSort;label:string}> = [
- {id:'title_asc',label:'曲名：昇順'},
- {id:'title_desc',label:'曲名：降順'},
  {id:'first_desc',label:'初出：新しい順'},
  {id:'first_asc',label:'初出：古い順'},
+ {id:'title_asc',label:'曲名：昇順'},
+ {id:'title_desc',label:'曲名：降順'},
 ];
 export type CatalogQuery={q?:string;page?:string;view?:string;singer?:string|string[];
  singerMatch?:string;type?:string|string[];medleys?:string;sort?:string;};
@@ -62,7 +63,7 @@ export function readCatalogQuery(raw:CatalogQuery,choices:ReadonlyArray<SingerCh
   ?(nonMedleyRequested.length?nonMedleyRequested:ALL_NON_MEDLEY)
   :normalTypes;
  const kinds:CatalogCategory[]=CATEGORIES.filter(x=>resolved.includes(x.id)).map(x=>x.id);
- const sort:CatalogSort=CATALOG_SORTS.find(s=>s.id===raw.sort)?.id??'title_asc';
+ const sort:CatalogSort=CATALOG_SORTS.find(s=>s.id===raw.sort)?.id??DEFAULT_CATALOG_SORT;
  return {q,page,view,singerIds,singerMatch,kinds,sort};
 }
 export type ParsedCatalogQuery=ReturnType<typeof readCatalogQuery>;
@@ -72,7 +73,7 @@ export function catalogHref(v:ParsedCatalogQuery,overrides:Partial<ParsedCatalog
  for(const id of state.singerIds){if(validId(id))p.append('singer',id);}
  if(state.singerIds.length&&state.singerMatch!=='contains')p.set('singerMatch',state.singerMatch);
  for(const kind of state.kinds){if(ALLOWED.has(kind))p.append('type',kind);}
- if(state.sort!=='title_asc'&&CATALOG_SORTS.some(s=>s.id===state.sort))p.set('sort',state.sort);
+ if(state.sort!==DEFAULT_CATALOG_SORT&&CATALOG_SORTS.some(s=>s.id===state.sort))p.set('sort',state.sort);
  if(state.view==='grid')p.set('view','grid');
  if(state.page>1)p.set('page',String(state.page));
  return `/songs${p.size?'?'+p.toString():''}`;

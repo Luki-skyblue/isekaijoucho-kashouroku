@@ -2,7 +2,7 @@
 
 import {useMemo,useState} from 'react';
 import {CatalogHelp} from '@/components/catalog-help';
-import {MAIN_SINGERS,SINGERS,CATEGORIES,type ParsedCatalogQuery,type SingerChoice} from '@/lib/catalog-list-params';
+import {MAIN_SINGERS,SINGERS,CATEGORIES,DEFAULT_CATALOG_SORT,type ParsedCatalogQuery,type SingerChoice} from '@/lib/catalog-list-params';
 import {catalogNameMatches} from '@/lib/catalog-name-search.mjs';
 import type {SingerMatch,CatalogCategory} from '@/lib/catalog-entry-api';
 
@@ -28,7 +28,7 @@ export function CatalogFilterFields({query,choices=SINGERS,titleSearch=false}:{q
  return <form method="get" action="/songs" className="catalog-filter-fields">
   {titleSearch?<label className="search-detail-title">楽曲名<input type="search" name="q" defaultValue={query.q} maxLength={100} placeholder="楽曲名・メドレーの構成曲名"/></label>:query.q&&<input type="hidden" name="q" value={query.q}/>}
   <input type="hidden" name="view" value={query.view}/>
-  {query.sort!=='title_asc'&&<input type="hidden" name="sort" value={query.sort}/>}
+  {query.sort!==DEFAULT_CATALOG_SORT&&<input type="hidden" name="sort" value={query.sort}/>}
   {chosen.map(id=><input key={id} type="hidden" name="singer" value={id}/>)}
   <input type="hidden" name="singerMatch" value={match}/>
   {kinds.map(id=><input key={id} type="hidden" name="type" value={id}/>)}

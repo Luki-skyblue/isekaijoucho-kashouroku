@@ -25,6 +25,7 @@ export function registeredSongFactsForEntry(entry:JsonObject,records?:JsonObject
 export function registeredSongSourcesForEntry(entry:JsonObject,records?:JsonObject[]):JsonObject[];
 export function songTypeForEntry(entry:JsonObject,records?:JsonObject[]):string|null;
 export function songTitleCreditForEntry(entry:JsonObject,metadata?:JsonObject,factRecords?:JsonObject[]):string;
+export function songTitleCaptionForEntry(entry:JsonObject,metadata?:JsonObject,factRecords?:JsonObject[]):string;
 export function missingSongText(review:unknown):string;
 export function songMetadataForEntry(entry:JsonObject,factRecords?:JsonObject[],work?:Partial<PrivateWork>,options?:{sourceRecords?:JsonObject[];sourceExclusions?:JsonObject[]}):JsonObject;
 export function songCreditsForEntry(entry:JsonObject,metadata?:JsonObject,factRecords?:JsonObject[]):{rows:SongDetailData['credits'];originalCredits:SongDetailData['originalCredits'];originalArranger:string|null;originalArrangerCredit?:ResolvedCreditName};

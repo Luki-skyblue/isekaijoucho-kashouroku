@@ -138,6 +138,13 @@ export function songTitleCreditForEntry(entry,metadata=entry?.detail?.songMetada
  const named=arr(entry?.detail?.singers).map(s=>str(s.name)).filter(Boolean);if(named.length)return named.join('・');
  return singersForEntry(entry).map(s=>str(s.name)).filter(Boolean).join('・');
 }
+/** Display only. Keep billing, named singers and original-artist metadata intact.
+ * A mixed medley or an unclassified entry is not inferred to be a cover. */
+export function songTitleCaptionForEntry(entry,metadata=entry?.detail?.songMetadata??{},factRecords=SONG_FACT_RECORDS){
+ const credit=songTitleCreditForEntry(entry,metadata,factRecords);
+ return credit&&entry?.detail?.kind!=='medley'&&songTypeForEntry(entry)==='cover'&&!/^covered\s+by\b/i.test(credit.trim())
+  ?'Covered by '+credit:credit;
+}
 /** Canonical fields retain precedence, including explicit nulls, except that
  * first appearance incorporates an earlier known publication (D-084). */
 export function songMetadataForEntry(entry,factRecords=SONG_FACT_RECORDS,work={},options={}){
