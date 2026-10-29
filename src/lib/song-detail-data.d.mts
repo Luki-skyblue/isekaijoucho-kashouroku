@@ -1,6 +1,7 @@
 import type {ResolvedCreditName,CreditPart,CreditParticipant} from './creator-credit-data.mjs';
 import type {JsonObject} from './core';
 import type {PrivateModel,PrivateWork} from './private-read-model.mjs';
+import type {SongClassification} from './catalog-song-classification.mjs';
 export type SongDetailData={
  detail:JsonObject;metadata:JsonObject;
  credits:Array<{role:string;scope:string;names:string[];people:ResolvedCreditName[];value:string|null;review:JsonObject|null}>;
@@ -23,7 +24,8 @@ export const SONG_MEDIA_CREDIT_RECORDS:JsonObject[];
 export function registeredMediaCreditsForVideo(entry:JsonObject,video:{mediaId:string;url:string},records?:JsonObject[]):JsonObject[];
 export function registeredSongFactsForEntry(entry:JsonObject,records?:JsonObject[]):JsonObject[];
 export function registeredSongSourcesForEntry(entry:JsonObject,records?:JsonObject[]):JsonObject[];
-export function songTypeForEntry(entry:JsonObject,records?:JsonObject[]):string|null;
+export function songTypeForEntry(entry:JsonObject,records?:JsonObject[],factRecords?:JsonObject[]):string|null;
+export function songClassificationForEntry(entry:JsonObject,records?:JsonObject[],factRecords?:JsonObject[]):SongClassification;
 export function songTitleCreditForEntry(entry:JsonObject,metadata?:JsonObject,factRecords?:JsonObject[]):string;
 export function songTitleCaptionForEntry(entry:JsonObject,metadata?:JsonObject,factRecords?:JsonObject[]):string;
 export function missingSongText(review:unknown):string;

@@ -9,7 +9,7 @@ import {publicCatalogEnabled,publicCatalogList} from './public-catalog';
 // G7 read adapter. Not enabled on /songs until publication/migration reviews pass.
 export type CatalogSort = 'title_asc'|'title_desc'|'first_desc'|'first_asc';
 export type SingerMatch = 'contains'|'only'|'any'|'subset';
-export type LegacySongType = 'original'|'cover'|'collaboration'|'variant';
+export type LegacySongType = 'original'|'cover'|'collaboration'|'member_cover'|'solo'|'collaboration_cover'|'variant';
 export type CatalogCategory=LegacySongType|'medley';
 export type CatalogListFilters = {
   search?: string;

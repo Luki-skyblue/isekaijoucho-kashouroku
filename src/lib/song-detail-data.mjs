@@ -6,7 +6,8 @@ import sourceRegistry from './catalog-song-sources.json' with {type:'json'};
 import {artworkEntryMatches,catalogArtworkCandidatesForEntry,eventArtworkForEvent,rankArtworkCandidates} from './catalog-artwork.mjs';
 import {ARTWORK_RECORDS,RELEASE_ARTWORK_RECORDS,EVENT_ARTWORK_RECORDS} from './catalog-artwork-data.mjs';
 import releaseEditions from './catalog-release-editions.json' with {type:'json'};
-import {singersForEntry,personKeyForCredit,vocalDisplayCreditForEntry} from './catalog-people.mjs';
+import {singersForEntry,singerIdsForEntry,entityForId,personKeyForCredit,vocalDisplayCreditForEntry} from './catalog-people.mjs';
+import {resolveSongClassification,isCoverSongType,formatSongTitleCredit} from './catalog-song-classification.mjs';
 import {supplementalLivesForEntry} from './live-program-supplements.mjs';
 import {liveVocalRecordsForEntry} from './live-vocal-entries.mjs';
 import {supplementalReleasesForEntry} from './release-content-data.mjs';
@@ -52,10 +53,25 @@ export function registeredSongSourcesForEntry(entry,records=SONG_SOURCE_RECORDS)
 }
 // New owner drafts have no legacy classification. A sourced classification is
 // a display fallback for the exact entry, never a change to its DB review state.
-export function songTypeForEntry(entry,records=SONG_SOURCE_RECORDS){
- if(entry?.detail?.legacySongType)return entry.detail.legacySongType;
- return known([...registeredSongSourcesForEntry(entry,records),...liveVocalRecordsForEntry(entry),...registeredSongFactsForEntry(entry)].map(r=>r.songType).filter(t=>['original','cover','collaboration','variant'].includes(t)));
+function classificationMetadataForEntry(entry,metadata,factRecords){
+ let out=metadata;
+ const sources=[...registeredSongFactsForEntry(entry,factRecords),...liveVocalRecordsForEntry(entry)];
+ for(const key of ['originalSingerSet','songClassification'])if(!Object.hasOwn(metadata,key)){
+  const value=known(sources.map(r=>r.metadata?.[key]));if(value!==null)out={...out,[key]:value};
+ }
+ return out;
 }
+export function songClassificationForEntry(entry,records=SONG_SOURCE_RECORDS,factRecords=SONG_FACT_RECORDS){
+ if(entry?.detail?.kind==='medley')return resolveSongClassification();
+ const metadata=classificationMetadataForEntry(entry,object(entry?.detail?.songMetadata)?entry.detail.songMetadata:{},factRecords),original=metadata.originalSingerSet,
+  actual=singerIdsForEntry(entry),complete=entry?.candidateSetExhaustive===true&&arr(entry.unresolvedTokens).length===0&&
+   !arr(entry.flags).some(flag=>['group_without_membership','role_or_identity_review_voicebank'].includes(flag))&&actual.length===new Set(arr(entry.singerIds)).size&&
+   !actual.some(id=>entityForId(id)?.type==='group');
+ return resolveSongClassification({setting:metadata.songClassification,legacyType:entry?.detail?.legacySongType,
+  sourcedTypes:[...registeredSongSourcesForEntry(entry,records),...liveVocalRecordsForEntry(entry),...registeredSongFactsForEntry(entry,factRecords)].map(r=>r.songType),
+  originalSingerIds:original?.singerIds,originalSetComplete:original?.complete===true&&!arr(original?.singerIds).some(id=>entityForId(id)?.type==='group'),singerIds:actual,singerSetComplete:complete});
+}
+export function songTypeForEntry(entry,records=SONG_SOURCE_RECORDS,factRecords=SONG_FACT_RECORDS){return songClassificationForEntry(entry,records,factRecords).category;}
 function sourceReleaseMatches(source,release){
  return source.kind==='digital_single'&&str(source.catalogNumber)!==''&&source.catalogNumber===release.edition?.catalogNumber&&
   source.trackNumber===release.trackNumber;
@@ -100,6 +116,7 @@ function reviewedMetadataForEntry(entry,metadata,factRecords){
 }
 function earliestKnownAppearance(entry,metadata,work,options,factRecords){
  metadata=reviewedMetadataForEntry(entry,metadata,factRecords);
+ metadata=classificationMetadataForEntry(entry,metadata,factRecords);
  // Artist billing does not establish a singer set or replace vocal credits.
  // An explicit canonical value, including null, retains precedence.
  if(!Object.hasOwn(metadata,'artistCredit')){
@@ -143,8 +160,7 @@ export function songTitleCreditForEntry(entry,metadata=entry?.detail?.songMetada
  * A mixed medley or an unclassified entry is not inferred to be a cover. */
 export function songTitleCaptionForEntry(entry,metadata=entry?.detail?.songMetadata??{},factRecords=SONG_FACT_RECORDS){
  const credit=songTitleCreditForEntry(entry,metadata,factRecords);
- return credit&&entry?.detail?.kind!=='medley'&&songTypeForEntry(entry)==='cover'&&!/^covered\s+by\b/i.test(credit.trim())
-  ?'Covered by '+credit:credit;
+ return formatSongTitleCredit(credit,songTypeForEntry(entry,undefined,factRecords),entry?.detail?.kind);
 }
 /** Canonical fields retain precedence, including explicit nulls, except that
  * first appearance incorporates an earlier known publication (D-084). */
@@ -180,7 +196,7 @@ export function songCreditsForEntry(entry,metadata=songMetadataForEntry(entry),f
   // Explicit original solo MV credit, retained from the user-supplied description.
   if(!values.length&&role==='arranger'&&exactSiriusSolo(entry))values=['傘村トータ'];
   if(!['not_found','not_applicable'].includes(metadata.fieldReview?.credits?.[role]?.outcome)){
-   const candidates=records=>unique(records.filter(r=>Array.isArray(r.credits?.[role])&&r.credits[role].length&&r.credits[role].every(n=>typeof n==='string'&&n.trim())).map(r=>({names:r.credits[role],scope:r.creditScopes?.[role]??(songTypeForEntry(entry)==='cover'&&['lyricist','composer'].includes(role)?'original':'version')})).filter(c=>['version','work','original'].includes(c.scope)&&(role!=='arranger'||c.scope==='version')));
+   const candidates=records=>unique(records.filter(r=>Array.isArray(r.credits?.[role])&&r.credits[role].length&&r.credits[role].every(n=>typeof n==='string'&&n.trim())).map(r=>({names:r.credits[role],scope:r.creditScopes?.[role]??(isCoverSongType(songTypeForEntry(entry,undefined,factRecords))&&['lyricist','composer'].includes(role)?'original':'version')})).filter(c=>['version','work','original'].includes(c.scope)&&(role!=='arranger'||c.scope==='version')));
    // A reviewed correction is opt-in and tied to the entire frozen raw credit
    // basis above. Any subsequent DB correction invalidates that old basis.
    const replacement=candidates(facts.filter(r=>arr(r.replaceExistingCredits).includes(role)));
@@ -323,7 +339,7 @@ export function buildSongDetail(entry,work={},options={}){
  const d=entry.detail,metadata=songMetadataForEntry(entry,options.factRecords,work,options),creditData=songCreditsForEntry(entry,metadata,options.factRecords),videos=songVideosForEntry(entry,work,options.sourceRecords,options.sourceExclusions,options.mediaCreditRecords),releases=songReleasesForEntry(entry,work,options.releaseRecords,options.sourceRecords,options.additionalReleases),allLives=songLivesForEntry(entry,options.eventRecords,options.additionalLives);
  const images=artworkCandidates(entry,videos,releases,allLives,options);
  const vocalCredit=vocalDisplayCreditForEntry(entry);
- return {detail:{...d,...(vocalCredit?{vocalDisplayCredit:vocalCredit}:{}),legacySongType:songTypeForEntry(entry,options.sourceRecords),singers:singersForEntry(entry)},metadata,credits:creditData.rows,originalCredits:creditData.originalCredits,originalArranger:creditData.originalArranger,...(creditData.originalArrangerCredit?{originalArrangerCredit:creditData.originalArrangerCredit}:{}),
+ return {detail:{...d,...(vocalCredit?{vocalDisplayCredit:vocalCredit}:{}),legacySongType:songTypeForEntry(entry,options.sourceRecords,options.factRecords),singers:singersForEntry(entry)},metadata,credits:creditData.rows,originalCredits:creditData.originalCredits,originalArranger:creditData.originalArranger,...(creditData.originalArrangerCredit?{originalArrangerCredit:creditData.originalArrangerCredit}:{}),
   artwork:images[0]??null,artworkCandidates:images,listenUrl:videos[0]?.url??releases.find(r=>r.externalUrl)?.externalUrl??null,videos,releases,lives:allLives,
   hasUncertainLives:allLives.some(x=>x.uncertain),comparison:entry.compare??null,
   versionLabel:d.entryId===SIRIUS_DUET&&d.primaryWorkId===SIRIUS_WORK?'デュエット':null};

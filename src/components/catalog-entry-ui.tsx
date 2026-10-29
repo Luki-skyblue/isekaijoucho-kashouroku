@@ -8,8 +8,8 @@ import {CatalogSearchInput} from '@/components/catalog-search-input';
 import {ListSort} from '@/components/list-sort';
 import {detailSearchHref} from '@/lib/search-navigation.mjs';
 import {catalogEntryHref} from '@/lib/catalog-navigation';
+import {songTypeLabel} from '@/lib/catalog-song-classification.mjs';
 
-const CATEGORY:Record<string,string>={original:'オリジナル',cover:'カバー',collaboration:'コラボ',variant:'その他'};
 export function CatalogIndex({items,total,query,limit,singerChoices=SINGERS}: {items:CatalogEntryCard[];total:number;query:ParsedCatalogQuery;limit:number;singerChoices?:ReadonlyArray<SingerChoice>}){
  const pages=Math.ceil(total/limit),conditions=activeCatalogConditions(query,singerChoices),returnTo=catalogHref(query);
  return <><Breadcrumb parts={[{label:'楽曲一覧'}]}/><Heading title="楽曲一覧"/>
@@ -51,7 +51,7 @@ export function CatalogEntryDetail({detail,comparison,history,historyPage=1}:{de
  {str(detail.displayCredit)&&<p className="catalog-primary-credit">{str(detail.displayCredit)}</p>}
  {kind==='medley'&&<p className="catalog-muted-small">メドレー</p>}
  {(detail.legacySongType || singers.length>0 || variations.length>0)&&<Panel title="基本情報"><dl className="catalog-fact-list">
-  {str(detail.legacySongType) !== '' && <><dt>楽曲区分</dt><dd>{CATEGORY[str(detail.legacySongType)]||str(detail.legacySongType)}</dd></>}
+  {str(detail.legacySongType) !== '' && <><dt>楽曲区分</dt><dd>{songTypeLabel(detail.legacySongType)||str(detail.legacySongType)}</dd></>}
   {singers.length>0&&<><dt>歌唱者候補</dt><dd>{singers.map(s=>textOr(s.name)).join('・')}</dd></>}
   {str(detail.editorialOriginLabel)&&<><dt>識別用表記</dt><dd>{str(detail.editorialOriginLabel)}<small className="catalog-origin-caveat">旧目録由来の識別名です。公式バージョン名や公演との個別対応を確定したものではありません。</small></dd></>}
   {variations.length>0&&<><dt>バリエーション</dt><dd>{variations.map(variationText).join(' / ')}</dd></>}

@@ -33,10 +33,13 @@ export const CATEGORIES:ReadonlyArray<{id:CatalogCategory;label:string}> = [
  {id:'original',label:'オリジナル'},
  {id:'cover',label:'カバー'},
  {id:'collaboration',label:'コラボ'},
+ {id:'member_cover',label:'メンバーカバー'},
+ {id:'solo',label:'ソロ'},
+ {id:'collaboration_cover',label:'コラボカバー'},
  {id:'variant',label:'その他'},
  {id:'medley',label:'メドレー'},
 ];
-const ALL_NON_MEDLEY:LegacySongType[]=['original','cover','collaboration','variant'];
+const ALL_NON_MEDLEY:LegacySongType[]=['original','cover','collaboration','member_cover','solo','collaboration_cover','variant'];
 const ALLOWED=new Set<string>(CATEGORIES.map(x=>x.id));
 export const DEFAULT_CATALOG_SORT:CatalogSort='first_desc';
 export const CATALOG_SORTS:ReadonlyArray<{id:CatalogSort;label:string}> = [

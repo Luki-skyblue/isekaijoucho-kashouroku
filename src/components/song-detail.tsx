@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import {asArray,asObject,displayDate,str,validId,type JsonObject} from '@/lib/core';
-import {missingSongText,safeSongUrl,songListenLabel,songTitleCreditForEntry,songTitleCaptionForEntry,youtubeId,type SongDetailData} from '@/lib/song-detail-data.mjs';
+import {missingSongText,safeSongUrl,songListenLabel,songTitleCreditForEntry,youtubeId,type SongDetailData} from '@/lib/song-detail-data.mjs';
+import {songTypeLabel,isCoverSongType,formatSongTitleCredit} from '@/lib/catalog-song-classification.mjs';
 import {SongDetailTabs} from './song-detail-tabs';
 import {SongDetailArtwork} from './song-detail-artwork';
 import {CreditName,SingerNames} from './person-name';
@@ -10,7 +11,6 @@ import type {CatalogSongWork} from '@/lib/catalog-song-work.mjs';
 import {songReleaseGroups} from '@/lib/song-release-groups.mjs';
 import './song-detail.css';
 
-const CATEGORIES:Record<string,string>={original:'オリジナル',cover:'カバー',collaboration:'コラボ',variant:'その他'};
 function Value({value,review}:{value:unknown;review?:unknown}){return typeof value==='string'&&value.trim()?<>{value}</>:<span className="song-detail-state">{missingSongText(review)}</span>;}
 function Empty({review}:{review?:unknown}){return <p className="song-detail-empty song-detail-state">{missingSongText(review)}</p>;}
 function First({value,review}:{value:unknown;review:unknown}){const first=asObject(value),text=[str(first.date)?displayDate(first.date,str(first.date)):'',str(first.label)].filter(Boolean).join(' · ');return <Value value={text} review={review}/>;}
@@ -27,14 +27,14 @@ export function CatalogSongDetail({song,initialTab='info',returnTo}:{song:SongDe
  const {detail:d,metadata:m}=song,review=asObject(m.fieldReview),title=str(d.title),entryId=str(d.entryId),siblings=asArray(d.relatedVariants),compare=asArray(song.comparison?.entries);
  const singers=str(d.vocalDisplayCredit)||str(d.displayCredit)||singerNames(d.singers),segments=asArray(d.medleySegments),medleys=asArray(d.containingMedleys),variations=asArray(d.variations).map(variation).filter(Boolean);
  const titleCredit=songTitleCreditForEntry({detail:d},m);
- const titlePrefix=songTitleCaptionForEntry({detail:d},m)!==titleCredit?'Covered by ':'';
+ const titlePrefix=formatSongTitleCredit(titleCredit,d.legacySongType,d.kind)!==titleCredit?'Covered by ':'';
  const firstReview=asObject(m.firstAppearanceReview),fullVisible=firstReview.coverage==='partial'&&firstReview.partialConfirmed===true;
  const originalAuthors=song.originalCredits.filter(c=>['lyricist','composer'].includes(c.role)&&!song.credits.some(row=>songCreditRole(d,row)==='original_'+c.role&&row.names.includes(c.name)));
- const originalInfo=d.legacySongType==='cover'&&(str(m.originalArtist)||str(m.originalVocal)||song.originalArranger||originalAuthors.length>0);
+ const originalInfo=isCoverSongType(d.legacySongType)&&(str(m.originalArtist)||str(m.originalVocal)||song.originalArranger||originalAuthors.length>0);
  const hero=song.artwork;
  const imageUrl=hero?.imageUrl??null,heroShape=hero&&(['mv','cover','live_mv','other_video'].includes(hero.kind)||(hero.kind==='manual'&&youtubeId(hero.sourceUrl)))?'video':'jacket';
  const info=<>
-  <dl className="song-detail-facts"><dt>歌唱</dt><dd>{singers?<SingerNames detail={{...d,displayCredit:singers}}/>:<Value value={singers}/>}</dd><dt>楽曲区分</dt><dd><Value value={d.kind==='medley'?'メドレー':CATEGORIES[str(d.legacySongType)]}/></dd>
+  <dl className="song-detail-facts"><dt>歌唱</dt><dd>{singers?<SingerNames detail={{...d,displayCredit:singers}}/>:<Value value={singers}/>}</dd><dt>楽曲区分</dt><dd><Value value={d.kind==='medley'?'メドレー':songTypeLabel(d.legacySongType)}/></dd>
    <dt>初出</dt><dd><First value={m.firstAppearance} review={review.firstAppearance}/></dd>
    {fullVisible&&<><dt>初出（フル）</dt><dd><First value={m.firstFull} review={review.firstFull}/></dd></>}
    <dt>タイアップ</dt><dd><Value value={m.tieUp} review={review.tieUp}/></dd>

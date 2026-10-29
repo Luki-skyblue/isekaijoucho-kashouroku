@@ -4,6 +4,7 @@ import {createHash} from 'node:crypto';
 import {gzipSync} from 'node:zlib';
 import {performance} from 'node:perf_hooks';
 import {songArtworkCandidatesForEntry,songTypeForEntry,songMetadataForEntry,songTitleCaptionForEntry} from './song-detail-data.mjs';
+import {SONG_CATEGORIES,SONG_TYPES,songTypeMatchesCategory} from './catalog-song-classification.mjs';
 import {supplementalReleasesForEntry} from './release-content-data.mjs';
 import {singerIdsForEntry} from './catalog-people.mjs';
 import {eventArtworkForEvent} from './catalog-artwork.mjs';
@@ -206,7 +207,7 @@ export function queryEntries(model, filters = {}) {
   const {search = '',singerIds = [],singerMatch = 'contains',selectedKinds = [],sort = 'first_desc',limit = 24,offset = 0} = filters;
   check(typeof search === 'string' && Array.isArray(singerIds) && singerIds.length <= 20 && singerIds.every(x => typeof x === 'string' && uuid.test(x)), 'Invalid query');
   check(['contains','only','any','subset'].includes(singerMatch), 'Invalid singer mode');
-  check(Array.isArray(selectedKinds) && new Set(selectedKinds).size === selectedKinds.length && selectedKinds.every(x => ['original','cover','collaboration','variant','medley'].includes(x)), 'Invalid categories');
+  check(Array.isArray(selectedKinds) && new Set(selectedKinds).size === selectedKinds.length && selectedKinds.every(x => SONG_CATEGORIES.includes(x)), 'Invalid categories');
   check(['title_asc','title_desc','first_asc','first_desc'].includes(sort) && integer(limit) && limit >= 1 && limit <= 100 && integer(offset) && offset <= 100000, 'Invalid pagination/sort');
   const chronological=sort==='first_asc'||sort==='first_desc';
   const q = search.trim().slice(0,100), chosen = new Set(singerIds);
@@ -222,7 +223,7 @@ export function queryEntries(model, filters = {}) {
       if (singerMatch === 'only' && !(exhaustive && actual.size === chosen.size && [...chosen].every(x => actual.has(x)))) continue;
       if (singerMatch === 'subset' && !(exhaustive && [...actual].every(x => chosen.has(x)))) continue;
     }
-    if (selectedKinds.length && !selectedKinds.includes(d.kind === 'medley' ? 'medley' : songType)) continue;
+    if (selectedKinds.length && !selectedKinds.some(kind=>songTypeMatchesCategory(d.kind === 'medley' ? 'medley' : songType,kind))) continue;
     const workTitles = id => workSearchTitles(model.works.get(id)?.detail);
     let rank = 0;
     if (q && ![...workSearchTitles(d),...workTitles(d.primaryWorkId)].some(t => matches(t,q)) &&
@@ -452,7 +453,7 @@ export function snapshotRpc(model, name, p = {}) {
     let kinds=p.p_legacy_song_types ?? [];
     if (!v2) {
       check(p.p_include_medleys === undefined || typeof p.p_include_medleys === 'boolean', 'Invalid medley flag');
-      kinds=p.p_legacy_song_type ? [p.p_legacy_song_type] : p.p_include_medleys === false ? ['original','cover','collaboration','variant'] : [];
+      kinds=p.p_legacy_song_type ? [p.p_legacy_song_type] : p.p_include_medleys === false ? [...SONG_TYPES] : [];
     }
     return queryEntries(model,{search:term(),singerIds:p.p_singer_ids ?? [],singerMatch:modes[mode],selectedKinds:kinds,
       sort:p.p_sort ?? 'title_asc',limit:p.p_limit === undefined ? 24:p.p_limit,offset:p.p_offset === undefined ? 0:p.p_offset});

@@ -82,6 +82,7 @@ export function CatalogFilterFields({query,choices=SINGERS,titleSearch=false}:{q
    <CatalogHelp label="楽曲区分の説明" href="/guide#categories">
     <strong>区分の組み合わせ</strong>
     <p>複数チェックすると、いずれかに当てはまる曲を表示します（OR）。歌唱者や曲名とはさらに絞り込みます（AND）。</p>
+    <p>メンバーカバーには「ソロ」も含みます。</p>
    </CatalogHelp>
    <div className="catalog-category-options">{CATEGORIES.filter(x=>x.id!=='medley').map(x=><label key={x.id}>
     <input type="checkbox" checked={kinds.includes(x.id)} onChange={e=>toggleKind(x.id,e.target.checked)}/>{x.label}

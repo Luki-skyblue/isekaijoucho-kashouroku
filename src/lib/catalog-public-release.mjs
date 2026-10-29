@@ -2,7 +2,7 @@
 import {randomUUID,createHash} from 'node:crypto';
 import {readFileSync,statSync} from 'node:fs';
 import {validateExport,PURPOSE,PUBLIC_PURPOSE,liveCandidatesApplicable,applyLiveFilterCandidates} from './private-read-model.mjs';
-import {songMetadataForEntry,songTypeForEntry} from './song-detail-data.mjs';
+import {songMetadataForEntry,songClassificationForEntry} from './song-detail-data.mjs';
 
 const scalar=Symbol('scalar'),url=Symbol('url'),absentUrl=Symbol('absent-url');
 const obj=(names='',children={})=>({...Object.fromEntries(names.split(' ').filter(Boolean).map(k=>[k,scalar])),...children});
@@ -29,6 +29,8 @@ const page=(item,names='')=>obj('workId entryId limit offset total '+names,{item
 const historyItem=obj('completeness matchBasis multiWork occurredOn partLabel partVocalRows renditionId renditionKind renditionLabel renditionPartId sequenceNo singerSetConfirmedForEntry versionId workId',{relatedEvents:list(obj('eventId title'))});
 const factReview=obj('outcome');
 const songMetadata=obj('titleKana tieUp originalArtist originalVocal',{
+ originalSingerSet:obj('complete referenceEntryId',{singerIds:list(scalar)}),
+ songClassification:obj('mode type subtype'),
  firstAppearance:obj('date label'),firstFull:obj('date label'),originalCredits:list(obj('role name')),
  lyricsUrl:url,firstAppearanceReview:obj('coverage partialConfirmed'),
  fieldReview:obj('',{firstAppearance:factReview,firstFull:factReview,tieUp:factReview,media:factReview,releases:factReview,history:factReview,versions:factReview,
@@ -110,7 +112,10 @@ export function createPublicRelease(input,{releaseId=randomUUID(),createdAt=new 
   const p=project(spec,payload(r));p._exportId=releaseId;
   if(r.record_type==='entry'){
    const e=base.entries.get(r.record_id);p.visibility='listed';
-   p.detail.legacySongType=songTypeForEntry(e);
+   const classification=songClassificationForEntry(e);
+   // Keep the inputs for a fresh calculation; never freeze an inferred type
+   // into the legacy field where it would later masquerade as a manual value.
+   p.detail.legacySongType=classification.source==='automatic'?(e.detail.legacySongType??null):classification.category;
    p.detail.songMetadata=project(songMetadata,songMetadataForEntry(e,undefined,base.works.get(e.detail.primaryWorkId)));
    p.candidateSetExhaustive=e.candidateSetExhaustive===true&&(e.unresolvedTokens??[]).length===0&&e.singerIds.length>0&&
     !(e.flags??[]).some(x=>['group_without_membership','role_or_identity_review_voicebank'].includes(x));

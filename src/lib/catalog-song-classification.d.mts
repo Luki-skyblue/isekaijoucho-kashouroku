@@ -1,0 +1,12 @@
+export type SongType='original'|'cover'|'collaboration'|'member_cover'|'solo'|'collaboration_cover'|'variant';
+export type SongClassification={type:Exclude<SongType,'solo'>|null;subtype:'solo'|null;category:SongType|null;source:string;ruleVersion:string;relation:string|null;automaticCandidate:SongType|null;reason:string|null;basis:{originalSingerIds:string[];singerIds:string[]}|null};
+export const SONG_CLASSIFICATION_RULE:string;
+export const SONG_TYPE_LABELS:Readonly<Record<SongType,string>>;
+export const SONG_TYPES:ReadonlyArray<SongType>;
+export const SONG_CATEGORIES:ReadonlyArray<SongType|'medley'>;
+export function songTypeLabel(type:unknown):string;
+export function isCoverSongType(type:unknown):boolean;
+export function formatSongTitleCredit(credit:string,type:unknown,kind?:unknown):string;
+export function songTypeMatchesCategory(type:unknown,category:unknown):boolean;
+export function inferSongClassification(input?:{originalSingerIds?:unknown;singerIds?:unknown;originalSetComplete?:unknown;singerSetComplete?:unknown}):{type:Exclude<SongType,'solo'>;subtype:'solo'|null;category:SongType;relation:string;ruleVersion:string;originalSingerIds:string[];singerIds:string[]}|null;
+export function resolveSongClassification(input?:{setting?:{mode?:unknown;type?:unknown;subtype?:unknown}|null;legacyType?:unknown;sourcedTypes?:unknown[];originalSingerIds?:unknown;singerIds?:unknown;originalSetComplete?:unknown;singerSetComplete?:unknown}):SongClassification;
