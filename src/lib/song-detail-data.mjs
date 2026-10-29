@@ -54,7 +54,7 @@ export function registeredSongSourcesForEntry(entry,records=SONG_SOURCE_RECORDS)
 // a display fallback for the exact entry, never a change to its DB review state.
 export function songTypeForEntry(entry,records=SONG_SOURCE_RECORDS){
  if(entry?.detail?.legacySongType)return entry.detail.legacySongType;
- return known([...registeredSongSourcesForEntry(entry,records),...liveVocalRecordsForEntry(entry)].map(r=>r.songType).filter(t=>['original','cover','collaboration','variant'].includes(t)));
+ return known([...registeredSongSourcesForEntry(entry,records),...liveVocalRecordsForEntry(entry),...registeredSongFactsForEntry(entry)].map(r=>r.songType).filter(t=>['original','cover','collaboration','variant'].includes(t)));
 }
 function sourceReleaseMatches(source,release){
  return source.kind==='digital_single'&&str(source.catalogNumber)!==''&&source.catalogNumber===release.edition?.catalogNumber&&
@@ -76,7 +76,30 @@ function legacyRecords(entry){
   Array.isArray(entry.singerIds)&&t.singerIds.length===entry.singerIds.length&&t.singerIds.every(id=>entry.singerIds.includes(id))));
 }
 const dated=value=>typeof value==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(value)&&Number.isFinite(Date.parse(value+'T00:00:00Z'))&&new Date(value+'T00:00:00Z').toISOString().slice(0,10)===value;
+// Explicit, reviewed metadata changes carry the old value as well as the exact
+// entry/credit basis. An ordinary fallback never replaces a canonical null.
+function reviewedMetadataForEntry(entry,metadata,factRecords){
+ const facts=registeredSongFactsForEntry(entry,factRecords);
+ let result=metadata;
+ for(const key of ['lyricsUrl','tieUp','firstAppearance','originalCredits']){
+  if(['not_found','not_applicable'].includes(metadata.fieldReview?.[key]?.outcome))continue;
+  const values=facts.filter(r=>Object.hasOwn(r.metadataBasis??{},key)&&Object.hasOwn(r.metadata??{},key)&&
+   JSON.stringify(r.metadataBasis[key])===JSON.stringify(metadata[key])).map(r=>r.metadata[key]).filter(value=>{
+    if(key==='lyricsUrl')return typeof value==='string'&&!!safeSongUrl(value);
+    if(key==='tieUp')return typeof value==='string'&&!!value.trim();
+    if(key==='originalCredits')return Array.isArray(value)&&value.every(c=>str(c.role).trim()&&str(c.name).trim())&&
+     [...new Set([...arr(metadata.originalCredits),...value].map(c=>c.role))].every(role=>
+      !['not_found','not_applicable'].includes(metadata.fieldReview?.credits?.[role]?.outcome)||
+      JSON.stringify(value.filter(c=>c.role===role))===JSON.stringify(arr(metadata.originalCredits).filter(c=>c.role===role)));
+    return dated(value?.date)&&typeof value.label==='string'&&value.label.trim()&&(!dated(metadata.firstAppearance?.date)||value.date<=metadata.firstAppearance.date);
+   });
+  const value=known(values);
+  if(value!==null&&JSON.stringify(value)!==JSON.stringify(metadata[key]))result={...result,[key]:value};
+ }
+ return result;
+}
 function earliestKnownAppearance(entry,metadata,work,options,factRecords){
+ metadata=reviewedMetadataForEntry(entry,metadata,factRecords);
  // Artist billing does not establish a singer set or replace vocal credits.
  // An explicit canonical value, including null, retains precedence.
  if(!Object.hasOwn(metadata,'artistCredit')){
@@ -129,7 +152,7 @@ export function songMetadataForEntry(entry,factRecords=SONG_FACT_RECORDS,work={}
   out.titleKana??='しりうすのしんぞう';out.lyricsUrl??='https://piapro.jp/t/S1w7';
  }
  const facts=registeredSongFactsForEntry(entry,factRecords);
- for(const key of ['tieUp','lyricsUrl'])if(!out[key]){
+ for(const key of ['titleKana','tieUp','lyricsUrl'])if(!out[key]){
   const value=known(facts.map(r=>r.metadata?.[key]));if(value&&(key!=='lyricsUrl'||safeSongUrl(value)))out[key]=value;
  }
  return earliestKnownAppearance(entry,out,work,options,factRecords);
@@ -233,12 +256,15 @@ function songVideosForEntry(entry,work,sourceRecords,sourceExclusions,mediaCredi
 export function songReleasesForEntry(entry,work={},releaseRecords=RELEASE_ARTWORK_RECORDS,sourceRecords,additionalReleases=[]){
  const records=legacyRecords(entry),solo=exactSiriusSolo(entry);
  const sources=registeredSongSourcesForEntry(entry,sourceRecords).filter(r=>r.kind==='digital_single');
+ const targets=registeredSongFactsForEntry(entry).flatMap(f=>arr(f.releaseItems));
  const rawReleases=arr(work.releases),releases=[];
  for(const r of rawReleases){
   const candidates=releaseCandidates(r,records);
   const unambiguous=candidates.some(old=>rawReleases.filter(other=>releaseCandidates(other,[{releases:[old]}]).length).length===1);
   const registered=releaseRecords.filter(x=>x.familyId===r.family?.familyId&&x.editionId===r.edition?.editionId);
-  const explicit=registered.some(x=>arr(x.entries).some(target=>artworkEntryMatches(entry,target)));
+  const explicit=registered.some(x=>arr(x.entries).some(target=>artworkEntryMatches(entry,target)))||targets.some(t=>
+   t.releaseItemId===r.releaseItemId&&t.familyId===r.family?.familyId&&t.editionId===r.edition?.editionId&&t.componentId===r.component?.componentId&&
+   t.rawTrackTitle===r.rawTrackTitle&&t.trackNumber===r.trackNumber&&arr(r.associations).some(a=>a.identityScope==='version'&&a.relationType==='contains_version'&&a.targetVersionId===t.versionId));
   const source=sources.find(s=>sourceReleaseMatches(s,r)&&rawReleases.filter(x=>sourceReleaseMatches(s,x)).length===1);
   if(!unambiguous&&!explicit&&!source&&!(solo&&SIRIUS_SOLO_RELEASES.includes(r.releaseItemId)))continue;
   const cover=known(candidates.map(x=>safeSongUrl(x.imageUrl))),shared=SHARED_RELEASE_TRACKLISTS.some(x=>x.familyId===r.family?.familyId&&x.title===r.family?.title);

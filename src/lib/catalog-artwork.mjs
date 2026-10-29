@@ -21,10 +21,11 @@ export function rankArtworkCandidates(candidates){
  const seen=new Set();return sorted.filter(x=>{if(seen.has(x.imageUrl))return false;seen.add(x.imageUrl);return true;});
 }
 /** A recording association belongs to this exact catalogue vocal form. */
+const variationKey=rows=>JSON.stringify((rows??[]).map(row=>Object.fromEntries(Object.entries(row).sort(([a],[b])=>a.localeCompare(b,'en')))));
 export function artworkEntryMatches(entry,r){
  const d=entry?.detail;if(!d||!r)return false;
  return r.entryId===d.entryId&&(r.kind??'song_variant')===d.kind&&r.primaryWorkId===d.primaryWorkId&&r.title===d.title&&
-  JSON.stringify(r.variations??[])===JSON.stringify(d.variations??[])&&
+  variationKey(r.variations)===variationKey(d.variations)&&
   Array.isArray(entry.singerIds)&&Array.isArray(r.singerIds)&&r.singerIds.length===entry.singerIds.length&&
   r.singerIds.every(id=>entry.singerIds.includes(id));
 }

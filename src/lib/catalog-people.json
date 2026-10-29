@@ -1712,6 +1712,62 @@
           "artists"
         ]
       }
+    },
+    {
+      "id": "a73b6cce-8350-523b-adfc-9616ef44b445",
+      "name": "クノン",
+      "type": "character",
+      "origin": "catalog",
+      "aliases": [],
+      "pickerGroup": "キャラクター",
+      "presentation": {
+        "kind": "character",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "af2ab27a-cf65-5202-92ba-227f83a2c90c",
+      "name": "カヤちゃん",
+      "type": "character",
+      "origin": "catalog",
+      "aliases": [],
+      "pickerGroup": "キャラクター",
+      "presentation": {
+        "kind": "character",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "8e87ab29-f1e8-568c-809a-03a5901b9129",
+      "name": "早見沙織",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "pickerGroup": "その他の歌唱者",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
+    },
+    {
+      "id": "476a1079-f137-5261-b500-4eb840931ae7",
+      "name": "橘杏咲",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "pickerGroup": "その他の歌唱者",
+      "presentation": {
+        "kind": "artist",
+        "categories": [
+          "artists"
+        ]
+      }
     }
   ],
   "vocalLinks": [
@@ -3395,6 +3451,34 @@
       ],
       "sourceUrls": [
         "https://kamitsubaki.jp/news/2025/03/22/6491/"
+      ]
+    },
+    {
+      "key": "genshiroku-cdbd513a-21f1-55e9-a5a7-362ae8d8ffd5",
+      "status": "active",
+      "relation": "character_voice",
+      "fromId": "a73b6cce-8350-523b-adfc-9616ef44b445",
+      "toId": "8e87ab29-f1e8-568c-809a-03a5901b9129",
+      "checkedOn": "2026-10-29",
+      "sourceIds": [
+        "S-372"
+      ],
+      "sourceUrls": [
+        "https://news.ponycanyon.co.jp/2025/12/116984"
+      ]
+    },
+    {
+      "key": "genshiroku-ad7a5292-218c-5299-9597-ff5087e39d66",
+      "status": "active",
+      "relation": "character_voice",
+      "fromId": "af2ab27a-cf65-5202-92ba-227f83a2c90c",
+      "toId": "476a1079-f137-5261-b500-4eb840931ae7",
+      "checkedOn": "2026-10-29",
+      "sourceIds": [
+        "S-372"
+      ],
+      "sourceUrls": [
+        "https://news.ponycanyon.co.jp/2025/12/116984"
       ]
     }
   ]

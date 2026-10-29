@@ -215,6 +215,13 @@
       "imageUrl": "/artwork/releases/anima3-bd.webp",
       "sourceUrl": "https://isekaijoucho.kamitsubaki.jp/musics/21252",
       "entries": []
+    },
+    {
+      "familyId": "f5315a63-836f-50f8-b1ec-f4880f6e1bf4",
+      "editionId": "6151967c-cde4-52c9-b68e-61f804b26074",
+      "imageUrl": "/artwork/releases/genshiroku.jpeg",
+      "sourceUrl": "https://kamitsubaki.jp/discography/isekaijoucho/10122/",
+      "entries": []
     }
   ],
   "events": [
@@ -471,6 +478,34 @@
       "officialDate": "2026-05-30",
       "imageUrl": "/artwork/lives/kaf-hongkong.webp",
       "sourceUrl": "https://kaf.kamitsubaki.jp/schedule/20260318/1194/"
+    },
+    {
+      "eventId": "c7c34943-3baa-5010-956f-0df6bb47c2dc",
+      "title": "MUSIC VERSE LIVE #9",
+      "officialDate": "2024-01-06",
+      "imageUrl": "/artwork/lives/music-verse-live9.jpg",
+      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000057.000100939.html"
+    },
+    {
+      "eventId": "65d5ebe2-27c0-5c45-ad98-d25a1b36ed86",
+      "title": "「xR ARTISTS SUPER FES 2022」",
+      "officialDate": "2022-07-02",
+      "imageUrl": "/artwork/lives/xr-artists-super-fes2022.jpg",
+      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000002.000100702.html"
+    },
+    {
+      "eventId": "9a335a4f-1c6a-5d98-95f1-dc02e04f7a8b",
+      "title": "Virtual Music Award 2020",
+      "officialDate": "2020-12-28",
+      "imageUrl": "/artwork/lives/virtual-music-award2020.png",
+      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000641.000004237.html"
+    },
+    {
+      "eventId": "c962291d-d45a-5340-a1a8-5803c2da857d",
+      "title": "Virtual Music Award 2021 SUMMER",
+      "officialDate": "2021-07-03",
+      "imageUrl": "/artwork/lives/virtual-music-award2021.png",
+      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000778.000004237.html"
     }
   ]
 }

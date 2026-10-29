@@ -31,7 +31,7 @@
       ]
     },
     {
-      "checkedOn": "2026-10-22",
+      "checkedOn": "2026-10-29",
       "status": "active",
       "key": "nemesis-orihime-cover",
       "entry": {
@@ -49,7 +49,7 @@
       "url": "https://www.youtube.com/watch?v=5B9jvRK8Zes",
       "title": "【歌ってみた】亡国のネメシス / ひとしずく×やま△ covered by 御莉姫 × ヰ世界情緒【神椿】",
       "mediaKind": "cover_video",
-      "publishedOn": null,
+      "publishedOn": "2026-08-06",
       "authorName": "御莉姫 -ORIHIME- / 心世紀 from 少女革命計画",
       "authorUrl": "https://www.youtube.com/@orihime_grp",
       "evidenceUrls": [
@@ -323,6 +323,27 @@
         "S-161"
       ],
       "scopeNote": "B011 N019 links the existing official MV. Fill unknown title/kind/date only; preserve known canonical fields, singer set, actual first appearance and existing writing credits."
+    },
+    {
+      "key": "chat-b029-es-title",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "af958c2d-dd0f-4d85-b365-608428ac2ff6",
+        "kind": "song_variant",
+        "primaryWorkId": "b79432d6-696f-5891-820a-623f284a4677",
+        "title": "エス",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=7ex4EeZ5jvs",
+      "title": "【歌ってみた】エス / covered by ヰ世界情緒",
+      "mediaKind": "cover_video",
+      "publishedOn": null
     }
   ],
   "exclusions": [
@@ -1783,7 +1804,7 @@
     },
     {
       "status": "active",
-      "checkedOn": "2026-10-23",
+      "checkedOn": "2026-10-29",
       "key": "video-credit-batch2-8c365218-6725-49d2-9273-a467cb804a85",
       "entry": {
         "entryId": "8c365218-6725-49d2-9273-a467cb804a85",
@@ -1805,15 +1826,19 @@
         "composer": [
           "古田 喜昭"
         ],
-        "REMIX": [
+        "arranger": [
           "P.U.O"
         ]
       },
       "creditScopes": {
         "lyricist": "original",
         "composer": "original",
-        "REMIX": "version"
-      }
+        "arranger": "version"
+      },
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=cs2uXyID0NI"
+      ],
+      "sourceId": "S-293"
     },
     {
       "status": "active",
@@ -7693,6 +7718,3800 @@
         "arranger": "version"
       },
       "sourceId": "S-261"
+    },
+    {
+      "key": "chat-b028-C03-arranger-1df278d0-1f33-4de6-9fdd-1e832f4f1d5b",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "1df278d0-1f33-4de6-9fdd-1e832f4f1d5b",
+        "kind": "song_variant",
+        "primaryWorkId": "ec539cb5-292e-50da-9ae8-fd528e74fe2d",
+        "title": "海の幽霊",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "米津玄師"
+        ],
+        [
+          "work",
+          "composer",
+          "米津玄師"
+        ],
+        [
+          "work",
+          "lyricist",
+          "米津玄師"
+        ]
+      ],
+      "url": "https://www.youtube.com/watch?v=pE70G28UIGc",
+      "sourceId": "S-270",
+      "credits": {
+        "arranger": [
+          "Yuichiro Takahashi",
+          "Sosuke Oikawa"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      }
+    },
+    {
+      "key": "chat-b028-C04-arranger-d09fe612-d747-4875-a1ff-070d9d7a86ba",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "d09fe612-d747-4875-a1ff-070d9d7a86ba",
+        "kind": "song_variant",
+        "primaryWorkId": "d1caa3e7-4b04-54a6-bb7e-734504c820f1",
+        "title": "春はゆく",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "梶浦由記"
+        ],
+        [
+          "work",
+          "composer",
+          "梶浦由記"
+        ],
+        [
+          "work",
+          "lyricist",
+          "梶浦由記"
+        ]
+      ],
+      "url": "https://www.youtube.com/watch?v=XE6C3GfyrQQ",
+      "sourceId": "S-271",
+      "credits": {
+        "arranger": [
+          "Yuichiro Takahashi",
+          "Sosuke Oikawa"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      }
+    },
+    {
+      "key": "chat-b028-C05-arranger-0695e401-81d1-4376-a11e-ab1c2ebdd0c7",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "0695e401-81d1-4376-a11e-ab1c2ebdd0c7",
+        "kind": "song_variant",
+        "primaryWorkId": "70e89b04-4e47-5685-9b44-0a360cfc8caa",
+        "title": "桜流し",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "宇多田ヒカル・Paul Carter"
+        ],
+        [
+          "work",
+          "composer",
+          "宇多田ヒカル・Paul Carter"
+        ],
+        [
+          "work",
+          "lyricist",
+          "宇多田ヒカル"
+        ]
+      ],
+      "url": "https://www.youtube.com/watch?v=j4sUsfale88",
+      "sourceId": "S-272",
+      "credits": {
+        "arranger": [
+          "Kevin",
+          "Sosuke Oikawa"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      }
+    },
+    {
+      "key": "chat-b029-C01-arranger-de92ef4f-4b59-49c1-9791-12e2d9bb02ff",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "de92ef4f-4b59-49c1-9791-12e2d9bb02ff",
+        "kind": "song_variant",
+        "primaryWorkId": "e8e33858-753f-5b07-8822-879633783522",
+        "title": "魔女(真) sinka ver.",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.youtube.com/watch?v=ofTllighKyE",
+      "sourceId": "S-273",
+      "credits": {
+        "arranger": [
+          "朝比奈健人"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      }
+    },
+    {
+      "key": "chat-b029-C02-arranger-fe381726-71bc-4074-a2ac-e209a9c54e4d",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "fe381726-71bc-4074-a2ac-e209a9c54e4d",
+        "kind": "song_variant",
+        "primaryWorkId": "ad4d19c0-1b4d-5744-92ef-cab362ce1ec9",
+        "title": "電脳 sinka ver.",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "カンザキイオリ"
+        ],
+        [
+          "work",
+          "composer",
+          "カンザキイオリ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "カンザキイオリ"
+        ]
+      ],
+      "url": "https://www.qobuz.com/jp-ja/album/tv/vhuqplqxk4nwb",
+      "sourceId": "S-274",
+      "credits": {
+        "arranger": [
+          "及川創介"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      }
+    },
+    {
+      "key": "chat-b029-C03-lyricist-10e48881-d9e4-44d7-a2f3-f726d743dbc2",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "10e48881-d9e4-44d7-a2f3-f726d743dbc2",
+        "kind": "song_variant",
+        "primaryWorkId": "5ab3b234-b19b-5ddb-8ed2-4a451a308783",
+        "title": "同盟 sinka ver.",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kamitsubaki.jp/discography/v-w-p/3219/",
+      "sourceId": "S-275",
+      "credits": {
+        "lyricist": [
+          "Kanata Okajima",
+          "Hayato Yamamoto"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      }
+    },
+    {
+      "key": "chat-b029-C03-composer-10e48881-d9e4-44d7-a2f3-f726d743dbc2",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "10e48881-d9e4-44d7-a2f3-f726d743dbc2",
+        "kind": "song_variant",
+        "primaryWorkId": "5ab3b234-b19b-5ddb-8ed2-4a451a308783",
+        "title": "同盟 sinka ver.",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kamitsubaki.jp/discography/v-w-p/3219/",
+      "sourceId": "S-275",
+      "credits": {
+        "composer": [
+          "Kanata Okajima",
+          "Hayato Yamamoto",
+          "MEG (MEGMETAL)"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      }
+    },
+    {
+      "key": "chat-b029-C04-lyricist-3cc6b37b-7492-43b7-8b6b-003dc72d74e2",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "3cc6b37b-7492-43b7-8b6b-003dc72d74e2",
+        "kind": "song_variant",
+        "primaryWorkId": "15810889-4c93-5e78-95f0-4c738a04342d",
+        "title": "言霊 multilingual ver.",
+        "displayCredit": "V.W.P feat. V.I.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kamitsubaki.jp/discography/v-w-p/1097/",
+      "sourceId": "S-168",
+      "credits": {
+        "lyricist": [
+          "カンザキイオリ"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      }
+    },
+    {
+      "key": "chat-b029-C04-composer-3cc6b37b-7492-43b7-8b6b-003dc72d74e2",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "3cc6b37b-7492-43b7-8b6b-003dc72d74e2",
+        "kind": "song_variant",
+        "primaryWorkId": "15810889-4c93-5e78-95f0-4c738a04342d",
+        "title": "言霊 multilingual ver.",
+        "displayCredit": "V.W.P feat. V.I.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kamitsubaki.jp/discography/v-w-p/1097/",
+      "sourceId": "S-168",
+      "credits": {
+        "composer": [
+          "カンザキイオリ"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      }
+    },
+    {
+      "key": "chat-b029-C05-lyricist-e701dbcf-a918-4bd0-908a-367cfc4f9906",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "e701dbcf-a918-4bd0-908a-367cfc4f9906",
+        "kind": "song_variant",
+        "primaryWorkId": "43ed57a0-1cea-56fa-b282-d7a6b6115e93",
+        "title": "わたしレプリカ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.youtube.com/watch?v=fi-5aSGR024",
+      "sourceId": "S-276",
+      "credits": {
+        "lyricist": [
+          "笹川真生"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "original"
+      }
+    },
+    {
+      "key": "chat-b029-C05-composer-e701dbcf-a918-4bd0-908a-367cfc4f9906",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "e701dbcf-a918-4bd0-908a-367cfc4f9906",
+        "kind": "song_variant",
+        "primaryWorkId": "43ed57a0-1cea-56fa-b282-d7a6b6115e93",
+        "title": "わたしレプリカ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.youtube.com/watch?v=fi-5aSGR024",
+      "sourceId": "S-276",
+      "credits": {
+        "composer": [
+          "笹川真生"
+        ]
+      },
+      "creditScopes": {
+        "composer": "original"
+      }
+    },
+    {
+      "key": "chat-b030-C01-lyricist-d31f230e-a923-4039-a367-21d41fe8a4a5",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "d31f230e-a923-4039-a367-21d41fe8a4a5",
+        "kind": "song_variant",
+        "primaryWorkId": "5146205a-de6d-5a1a-a57e-99e42c83f935",
+        "title": "天天天国地獄国",
+        "displayCredit": "ヰ世界情緒 × 花譜",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "Aiobahn"
+        ],
+        [
+          "work",
+          "composer",
+          "Aiobahn"
+        ],
+        [
+          "work",
+          "lyricist",
+          "Aiobahn"
+        ]
+      ],
+      "url": "https://www.youtube.com/watch?v=eTplxWaAD8o",
+      "sourceId": "S-277",
+      "credits": {
+        "lyricist": [
+          "夕野ヨシミ (IOSYS)"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "work"
+      },
+      "replaceExistingCredits": [
+        "lyricist"
+      ],
+      "metadataBasis": {
+        "originalCredits": [
+          {
+            "role": "lyricist",
+            "name": "Aiobahn"
+          },
+          {
+            "role": "composer",
+            "name": "Aiobahn"
+          },
+          {
+            "role": "arranger",
+            "name": "Aiobahn"
+          }
+        ]
+      },
+      "metadata": {
+        "originalCredits": [
+          {
+            "role": "composer",
+            "name": "Aiobahn"
+          },
+          {
+            "role": "arranger",
+            "name": "Aiobahn"
+          },
+          {
+            "role": "lyricist",
+            "name": "夕野ヨシミ (IOSYS)"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-b030-C02-arranger-5580aab6-3c80-469d-bfef-ba4bf40c7fe4",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "5580aab6-3c80-469d-bfef-ba4bf40c7fe4",
+        "kind": "song_variant",
+        "primaryWorkId": "71bd2577-ffa3-5c40-8f86-0b1e8f1e759c",
+        "title": "幻界",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "みきとP, Sosaku Sasaki, 駄菓子O型"
+        ],
+        [
+          "work",
+          "composer",
+          "みきとP"
+        ],
+        [
+          "work",
+          "lyricist",
+          "みきとP"
+        ]
+      ],
+      "url": "https://www.youtube.com/watch?v=77GH0qHEsyU",
+      "sourceId": "S-278",
+      "credits": {
+        "arranger": [
+          "みきとP",
+          "Sosaku Sasaki",
+          "駄菓子O型"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      }
+    },
+    {
+      "key": "chat-b030-C03-arranger-545b1065-2273-43b2-9828-4e6832c36ba1",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "545b1065-2273-43b2-9828-4e6832c36ba1",
+        "kind": "song_variant",
+        "primaryWorkId": "3264c8ed-5d57-5db4-8b4a-f832e1c21356",
+        "title": "歌姫",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "笹川真生"
+        ],
+        [
+          "work",
+          "composer",
+          "笹川真生"
+        ],
+        [
+          "work",
+          "lyricist",
+          "笹川真生"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/news/2025/07/04/7838/",
+      "sourceId": "S-279",
+      "credits": {
+        "arranger": [
+          "笹川真生"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      }
+    },
+    {
+      "key": "chat-b030-C04-arranger-61f76611-e10f-4199-9e90-5aafdac30fcd",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "61f76611-e10f-4199-9e90-5aafdac30fcd",
+        "kind": "song_variant",
+        "primaryWorkId": "ae3ee5cc-1023-5e9d-bd5d-354273234806",
+        "title": "酸欠",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.maosasagawa.jp/blogs/works/260114lovelivetribute",
+      "sourceId": "S-280",
+      "credits": {
+        "arranger": [
+          "笹川真生"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      }
+    },
+    {
+      "key": "chat-b030-C05-arranger-c51969a9-b045-464e-aade-78203958bc81",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "c51969a9-b045-464e-aade-78203958bc81",
+        "kind": "song_variant",
+        "primaryWorkId": "4e90e056-8ed7-5300-a22e-086a151a278b",
+        "title": "終点",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "笹川真生"
+        ],
+        [
+          "work",
+          "composer",
+          "笹川真生"
+        ],
+        [
+          "work",
+          "lyricist",
+          "笹川真生"
+        ]
+      ],
+      "url": "https://srd.kamitsubaki.jp/game/newspaper/",
+      "sourceId": "S-281",
+      "credits": {
+        "arranger": [
+          "笹川真生"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      }
+    },
+    {
+      "key": "chat-b030-C06-arranger-a5a65ece-39ea-4eda-8ff5-a3a3d9795a74",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "a5a65ece-39ea-4eda-8ff5-a3a3d9795a74",
+        "kind": "song_variant",
+        "primaryWorkId": "b0e56aef-ab96-5119-9012-9436acaf3966",
+        "title": "言葉",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://piapro.jp/t/ZOUc",
+      "sourceId": "S-282",
+      "credits": {
+        "arranger": [
+          "Guiano"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      }
+    },
+    {
+      "key": "chat-b031-C01-arranger-365e2542-8c2b-4584-a6e1-f0ee22bc7f9a",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "365e2542-8c2b-4584-a6e1-f0ee22bc7f9a",
+        "kind": "song_variant",
+        "primaryWorkId": "6411bc07-b8fb-5800-9719-ff1e75acc8d7",
+        "title": "真偽",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "朝比奈健人"
+        ],
+        [
+          "work",
+          "composer",
+          "他人事"
+        ],
+        [
+          "work",
+          "lyricist",
+          "他人事"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/news/2025/04/11/6858/",
+      "sourceId": "S-283",
+      "credits": {
+        "arranger": [
+          "朝比奈健人"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      }
+    },
+    {
+      "key": "chat-b031-C02-arranger-1409f114-f06a-4bb3-b0b5-c33817cc7d18",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "1409f114-f06a-4bb3-b0b5-c33817cc7d18",
+        "kind": "song_variant",
+        "primaryWorkId": "da6d633f-f9e7-5e2c-a26f-4e3c2e231cc9",
+        "title": "流転",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "朝比奈健人"
+        ],
+        [
+          "work",
+          "composer",
+          "tokiwa"
+        ],
+        [
+          "work",
+          "lyricist",
+          "tokiwa"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/news/2025/04/11/6858/",
+      "sourceId": "S-283",
+      "credits": {
+        "arranger": [
+          "朝比奈健人"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      }
+    },
+    {
+      "key": "chat-b031-C03-arranger-bd7ed234-63cc-449c-a3c2-8bc6365513f2",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "bd7ed234-63cc-449c-a3c2-8bc6365513f2",
+        "kind": "song_variant",
+        "primaryWorkId": "48d35e8a-60bc-5fcc-851d-254b916ec6b0",
+        "title": "決意",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "朝比奈健人"
+        ],
+        [
+          "work",
+          "composer",
+          "廉"
+        ],
+        [
+          "work",
+          "lyricist",
+          "廉"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/news/2025/04/11/6858/",
+      "sourceId": "S-283",
+      "credits": {
+        "arranger": [
+          "朝比奈健人"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      }
+    },
+    {
+      "key": "chat-b031-C04-arranger-00cc52ea-0a3f-4e20-bf5d-8064269ee5f9",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "00cc52ea-0a3f-4e20-bf5d-8064269ee5f9",
+        "kind": "song_variant",
+        "primaryWorkId": "4e6da57e-bcaa-5029-84f6-7daface15857",
+        "title": "反逆",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "composer",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "香椎モイミ"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/news/2025/04/11/6858/",
+      "sourceId": "S-283",
+      "credits": {
+        "arranger": [
+          "香椎モイミ"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      }
+    },
+    {
+      "key": "chat-b031-C05-arranger-f78ca0d9-9ac3-4b35-bad1-cf0a01948422",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "f78ca0d9-9ac3-4b35-bad1-cf0a01948422",
+        "kind": "song_variant",
+        "primaryWorkId": "8c6506c7-289d-5a15-9bdb-213ea18698ce",
+        "title": "追憶",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "Itamar Lapidot, Shao Hao, Nay Shalom"
+        ],
+        [
+          "work",
+          "composer",
+          "岡嶋かな多, Shao Hao, Nay Shalom"
+        ],
+        [
+          "work",
+          "lyricist",
+          "岡嶋かな多, Shao Hao, Nay Shalom"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/news/2025/07/09/7844/",
+      "sourceId": "S-284",
+      "credits": {
+        "arranger": [
+          "Itamar Lapidot",
+          "Shao Hao",
+          "Nay Shalom"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      }
+    },
+    {
+      "key": "chat-b031-C06-arranger-37239193-01d3-4c23-96bd-b2ddc3b05126",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "37239193-01d3-4c23-96bd-b2ddc3b05126",
+        "kind": "song_variant",
+        "primaryWorkId": "26be3d79-fab6-5343-a685-f19bba773dd0",
+        "title": "愛詩",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "竹田祐介 (Elements Garden)"
+        ],
+        [
+          "work",
+          "composer",
+          "上松範康 (Elements Garden)"
+        ],
+        [
+          "work",
+          "lyricist",
+          "Hibiki"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/news/2025/01/21/5773/",
+      "sourceId": "S-285",
+      "credits": {
+        "arranger": [
+          "竹田祐介 (Elements Garden)"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      }
+    },
+    {
+      "key": "chat-b031-C07-arranger-241a1092-03c7-4b6e-882c-c8e2ea042947",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "241a1092-03c7-4b6e-882c-c8e2ea042947",
+        "kind": "song_variant",
+        "primaryWorkId": "f4f40200-a117-51e0-ba3a-4e5f324e7821",
+        "title": "切札",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "朝比奈健人"
+        ],
+        [
+          "work",
+          "composer",
+          "廉"
+        ],
+        [
+          "work",
+          "lyricist",
+          "廉"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/news/2024/01/13/2984/",
+      "sourceId": "S-286",
+      "credits": {
+        "arranger": [
+          "朝比奈健人"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      }
+    },
+    {
+      "key": "chat-b031-C08-arranger-e3100b5a-16b6-4fbd-90be-affa739b3b54",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "e3100b5a-16b6-4fbd-90be-affa739b3b54",
+        "kind": "song_variant",
+        "primaryWorkId": "ae523f99-6cb2-5e15-9046-78650a231ac9",
+        "title": "暁光",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "朝比奈健人"
+        ],
+        [
+          "work",
+          "composer",
+          "廉"
+        ],
+        [
+          "work",
+          "lyricist",
+          "廉"
+        ]
+      ],
+      "url": "https://note.com/kent_asahina/n/nd29e08834552",
+      "sourceId": "S-287",
+      "credits": {
+        "arranger": [
+          "朝比奈健人"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      }
+    },
+    {
+      "key": "chat-b031-C09-arranger-cf96b9f2-bd90-477a-b300-4a2d454db61d",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "cf96b9f2-bd90-477a-b300-4a2d454db61d",
+        "kind": "song_variant",
+        "primaryWorkId": "851c6e81-0155-5bba-ba03-4441ce163eae",
+        "title": "感情",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "朝比奈健人"
+        ],
+        [
+          "work",
+          "composer",
+          "松田純一, MILKEY"
+        ],
+        [
+          "work",
+          "lyricist",
+          "AMAMOGU"
+        ]
+      ],
+      "url": "https://note.com/kent_asahina/n/nd29e08834552",
+      "sourceId": "S-287",
+      "credits": {
+        "arranger": [
+          "朝比奈健人"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      }
+    },
+    {
+      "key": "chat-b031-C10-arranger-d6bab2e9-69b1-43e2-8f40-58caf02526e0",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "d6bab2e9-69b1-43e2-8f40-58caf02526e0",
+        "kind": "song_variant",
+        "primaryWorkId": "a5a1c82f-d82b-55b1-af7a-a3bf21d47db2",
+        "title": "明日",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "朝比奈健人"
+        ],
+        [
+          "work",
+          "composer",
+          "MIMI"
+        ],
+        [
+          "work",
+          "lyricist",
+          "MIMI"
+        ]
+      ],
+      "url": "https://note.com/kent_asahina/n/nd29e08834552",
+      "sourceId": "S-287",
+      "credits": {
+        "arranger": [
+          "朝比奈健人"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      }
+    },
+    {
+      "key": "chat-b031-C11-arranger-b4756f01-96e8-4d73-9b25-1b79afce0848",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "b4756f01-96e8-4d73-9b25-1b79afce0848",
+        "kind": "song_variant",
+        "primaryWorkId": "3ec1386b-ee7e-545d-9615-bbf6bc820396",
+        "title": "花束",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "composer",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "香椎モイミ"
+        ]
+      ],
+      "url": "https://www.youtube.com/watch?v=3cJzGD9xkzg",
+      "sourceId": "S-288",
+      "credits": {
+        "arranger": [
+          "香椎モイミ"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      }
+    },
+    {
+      "key": "chat-b031-C12-arranger-3212a1f3-1f6b-40c2-acdf-be2c722994c8",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "3212a1f3-1f6b-40c2-acdf-be2c722994c8",
+        "kind": "song_variant",
+        "primaryWorkId": "368d691c-4524-527b-87db-5b7d04662381",
+        "title": "キレイナヒカリ",
+        "displayCredit": "夜河世界",
+        "singerIds": [],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "朝比奈健人"
+        ],
+        [
+          "work",
+          "composer",
+          "大川茂伸"
+        ],
+        [
+          "work",
+          "lyricist",
+          "小原琉生"
+        ]
+      ],
+      "url": "https://note.com/kent_asahina/n/nd29e08834552",
+      "sourceId": "S-287",
+      "credits": {
+        "arranger": [
+          "朝比奈健人"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      }
+    },
+    {
+      "key": "chat-b032-C01-composer-3682a7f5-67af-4318-a792-eb535d7d0ea1",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "3682a7f5-67af-4318-a792-eb535d7d0ea1",
+        "kind": "song_variant",
+        "primaryWorkId": "e9bedf47-964e-5c7b-bb59-2db7520c970c",
+        "title": "リレイ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "伊根"
+        ],
+        [
+          "work",
+          "composer",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "伊根"
+        ]
+      ],
+      "url": "https://www.youtube.com/watch?v=oIKBmf6ldZg",
+      "sourceId": "S-289",
+      "credits": {
+        "composer": [
+          "伊根"
+        ]
+      },
+      "creditScopes": {
+        "composer": "work"
+      },
+      "replaceExistingCredits": [
+        "composer"
+      ],
+      "metadataBasis": {
+        "originalCredits": [
+          {
+            "role": "lyricist",
+            "name": "伊根"
+          },
+          {
+            "role": "composer",
+            "name": "香椎モイミ"
+          },
+          {
+            "role": "arranger",
+            "name": "伊根"
+          }
+        ]
+      },
+      "metadata": {
+        "originalCredits": [
+          {
+            "role": "lyricist",
+            "name": "伊根"
+          },
+          {
+            "role": "arranger",
+            "name": "伊根"
+          },
+          {
+            "role": "composer",
+            "name": "伊根"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-b032-C03-arranger-73e3ba75-8a7e-467c-8e63-169327d72ea7",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "73e3ba75-8a7e-467c-8e63-169327d72ea7",
+        "kind": "song_variant",
+        "primaryWorkId": "0182ba96-4a34-5dc1-97ee-d81e3be37aaa",
+        "title": "連れ出してトロイメライ",
+        "displayCredit": "MAISONdes feat. ヰ世界情緒, 弌誠",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "100回嘔吐"
+        ],
+        [
+          "work",
+          "composer",
+          "弌誠"
+        ],
+        [
+          "work",
+          "lyricist",
+          "弌誠"
+        ]
+      ],
+      "url": "https://www.maisondes-6half.com/room/717/",
+      "sourceId": "S-290",
+      "credits": {
+        "arranger": [
+          "100回嘔吐"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      }
+    },
+    {
+      "key": "chat-b036-C01-arranger-1bdd1ece-22cd-493a-b17b-856edfe96e2c",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "1bdd1ece-22cd-493a-b17b-856edfe96e2c",
+        "kind": "song_variant",
+        "primaryWorkId": "09c71502-e652-54bb-88d0-144bb9c78620",
+        "title": "双生コンフリクト",
+        "displayCredit": "LOLUET feat. ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "composer",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "香椎モイミ"
+        ]
+      ],
+      "url": "https://alltstudio.jp/discography/278/",
+      "sourceId": "S-34",
+      "credits": {
+        "arranger": [
+          "香椎モイミ"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      }
+    },
+    {
+      "key": "chat-b032-C02-composer-3d5a4d43-04cb-4504-9caa-149342158a70",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "3d5a4d43-04cb-4504-9caa-149342158a70",
+        "kind": "song_variant",
+        "primaryWorkId": "2093970c-65f5-56df-86a2-fa037272c143",
+        "title": "you are my curse",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "nyamura"
+        ],
+        [
+          "work",
+          "composer",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "nyamura"
+        ]
+      ],
+      "url": "https://linkco.re/DgDA4xZs?lang=ja",
+      "sourceId": "S-291",
+      "credits": {
+        "composer": [
+          "Haruhi"
+        ]
+      },
+      "creditScopes": {
+        "composer": "work"
+      },
+      "replaceExistingCredits": [
+        "composer"
+      ],
+      "metadataBasis": {
+        "originalCredits": [
+          {
+            "role": "lyricist",
+            "name": "nyamura"
+          },
+          {
+            "role": "composer",
+            "name": "香椎モイミ"
+          },
+          {
+            "role": "arranger",
+            "name": "nyamura"
+          }
+        ]
+      },
+      "metadata": {
+        "originalCredits": [
+          {
+            "role": "lyricist",
+            "name": "nyamura"
+          },
+          {
+            "role": "arranger",
+            "name": "nyamura"
+          },
+          {
+            "role": "composer",
+            "name": "Haruhi"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-b032-AIRA-lyricist-2beb11f5-eb4b-44cb-84b1-7e935b298d68",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "2beb11f5-eb4b-44cb-84b1-7e935b298d68",
+        "kind": "song_variant",
+        "primaryWorkId": "93701476-9d22-5905-9081-d5d867dcb12c",
+        "title": "まぼろしの行方",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "version",
+          "arranger",
+          "Aira(Dream Monster)"
+        ],
+        [
+          "work",
+          "arranger",
+          "Aira（Dream Monster）"
+        ],
+        [
+          "work",
+          "composer",
+          "Aira(Dream Monster)"
+        ],
+        [
+          "work",
+          "composer",
+          "Aira（Dream Monster）"
+        ],
+        [
+          "work",
+          "lyricist",
+          "Aira(Dream Monster)"
+        ],
+        [
+          "work",
+          "lyricist",
+          "Aira（Dream Monster）"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/10118/",
+      "sourceId": "S-292",
+      "credits": {
+        "lyricist": [
+          "Aira(Dream Monster)"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "work"
+      },
+      "replaceExistingCredits": [
+        "lyricist"
+      ]
+    },
+    {
+      "key": "chat-b032-AIRA-composer-2beb11f5-eb4b-44cb-84b1-7e935b298d68",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "2beb11f5-eb4b-44cb-84b1-7e935b298d68",
+        "kind": "song_variant",
+        "primaryWorkId": "93701476-9d22-5905-9081-d5d867dcb12c",
+        "title": "まぼろしの行方",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "version",
+          "arranger",
+          "Aira(Dream Monster)"
+        ],
+        [
+          "work",
+          "arranger",
+          "Aira（Dream Monster）"
+        ],
+        [
+          "work",
+          "composer",
+          "Aira(Dream Monster)"
+        ],
+        [
+          "work",
+          "composer",
+          "Aira（Dream Monster）"
+        ],
+        [
+          "work",
+          "lyricist",
+          "Aira(Dream Monster)"
+        ],
+        [
+          "work",
+          "lyricist",
+          "Aira（Dream Monster）"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/10118/",
+      "sourceId": "S-292",
+      "credits": {
+        "composer": [
+          "Aira(Dream Monster)"
+        ]
+      },
+      "creditScopes": {
+        "composer": "work"
+      },
+      "replaceExistingCredits": [
+        "composer"
+      ]
+    },
+    {
+      "key": "chat-b026-lyrics-98b38ff9-de4b-4db7-887f-b5c1059f56ed",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "98b38ff9-de4b-4db7-887f-b5c1059f56ed",
+        "kind": "song_variant",
+        "primaryWorkId": "16997dee-ebcd-57ae-a936-2cabe89ec33c",
+        "title": "深海のフレイム",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "version",
+          "arranger",
+          "朝比奈健人"
+        ],
+        [
+          "version",
+          "arranger",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "arranger",
+          "香椎モイミ・朝比奈健人"
+        ],
+        [
+          "work",
+          "composer",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "香椎モイミ"
+        ]
+      ],
+      "url": "https://piapro.jp/t/cz9f",
+      "sourceId": "S-342",
+      "metadataBasis": {
+        "lyricsUrl": null
+      },
+      "metadata": {
+        "lyricsUrl": "https://piapro.jp/t/cz9f"
+      }
+    },
+    {
+      "key": "chat-b026-lyrics-4a9953be-e317-44c4-bc3d-337d5dedda9d",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "4a9953be-e317-44c4-bc3d-337d5dedda9d",
+        "kind": "song_variant",
+        "primaryWorkId": "b26bcd19-ddbd-544e-b926-08c91b111de9",
+        "title": "永久に枯れぬ花",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "version",
+          "arranger",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "arranger",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "composer",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "香椎モイミ"
+        ]
+      ],
+      "url": "https://piapro.jp/t/DaG4",
+      "sourceId": "S-343",
+      "metadataBasis": {
+        "lyricsUrl": null
+      },
+      "metadata": {
+        "lyricsUrl": "https://piapro.jp/t/DaG4"
+      }
+    },
+    {
+      "key": "chat-b026-lyrics-ccb53089-bcad-4ad4-b157-7a77b267aa60",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "ccb53089-bcad-4ad4-b157-7a77b267aa60",
+        "kind": "song_variant",
+        "primaryWorkId": "60635e39-1165-5fac-b000-551140ad215c",
+        "title": "FARAWAY",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "version",
+          "arranger",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "arranger",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "composer",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "香椎モイミ"
+        ]
+      ],
+      "url": "https://piapro.jp/t/7zgH",
+      "sourceId": "S-344",
+      "metadataBasis": {
+        "lyricsUrl": null
+      },
+      "metadata": {
+        "lyricsUrl": "https://piapro.jp/t/7zgH"
+      }
+    },
+    {
+      "key": "chat-b026-lyrics-cbf5f682-886e-49f8-93ae-e25ae31c6493",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "cbf5f682-886e-49f8-93ae-e25ae31c6493",
+        "kind": "song_variant",
+        "primaryWorkId": "9faddd4f-8ba5-53b5-8ad5-cb9b11dc180d",
+        "title": "モシモノセカイ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "version",
+          "arranger",
+          "Junky"
+        ],
+        [
+          "work",
+          "arranger",
+          "Junky"
+        ],
+        [
+          "work",
+          "composer",
+          "Junky"
+        ],
+        [
+          "work",
+          "lyricist",
+          "Junky"
+        ]
+      ],
+      "url": "https://piapro.jp/t/lsLH",
+      "sourceId": "S-345",
+      "metadataBasis": {
+        "lyricsUrl": null
+      },
+      "metadata": {
+        "lyricsUrl": "https://piapro.jp/t/lsLH"
+      }
+    },
+    {
+      "key": "chat-b026-lyrics-2beb11f5-eb4b-44cb-84b1-7e935b298d68",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "2beb11f5-eb4b-44cb-84b1-7e935b298d68",
+        "kind": "song_variant",
+        "primaryWorkId": "93701476-9d22-5905-9081-d5d867dcb12c",
+        "title": "まぼろしの行方",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "version",
+          "arranger",
+          "Aira(Dream Monster)"
+        ],
+        [
+          "work",
+          "arranger",
+          "Aira（Dream Monster）"
+        ],
+        [
+          "work",
+          "composer",
+          "Aira(Dream Monster)"
+        ],
+        [
+          "work",
+          "composer",
+          "Aira（Dream Monster）"
+        ],
+        [
+          "work",
+          "lyricist",
+          "Aira(Dream Monster)"
+        ],
+        [
+          "work",
+          "lyricist",
+          "Aira（Dream Monster）"
+        ]
+      ],
+      "url": "https://piapro.jp/t/pdHW",
+      "sourceId": "S-346",
+      "metadataBasis": {
+        "lyricsUrl": null
+      },
+      "metadata": {
+        "lyricsUrl": "https://piapro.jp/t/pdHW"
+      }
+    },
+    {
+      "key": "chat-b026-lyrics-9b0ebdd2-7a38-4692-ba73-af836a535858",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "9b0ebdd2-7a38-4692-ba73-af836a535858",
+        "kind": "song_variant",
+        "primaryWorkId": "6ed4a21c-cf3d-5dda-b974-018ee899e588",
+        "title": "ラケナリアの夢",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "version",
+          "arranger",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "arranger",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "composer",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "香椎モイミ"
+        ]
+      ],
+      "url": "https://piapro.jp/t/dWTd",
+      "sourceId": "S-347",
+      "metadataBasis": {
+        "lyricsUrl": null
+      },
+      "metadata": {
+        "lyricsUrl": "https://piapro.jp/t/dWTd"
+      }
+    },
+    {
+      "key": "chat-b026-lyrics-f704c9bc-ec90-48be-afc6-f392b75e2f64",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "f704c9bc-ec90-48be-afc6-f392b75e2f64",
+        "kind": "song_variant",
+        "primaryWorkId": "1de7888f-d8d9-5b3d-ba2f-56e6fe2d27cd",
+        "title": "LOVEぃ",
+        "displayCredit": "春猿火 × ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "version",
+          "arranger",
+          "大沼パセリ"
+        ],
+        [
+          "work",
+          "arranger",
+          "大沼パセリ"
+        ],
+        [
+          "work",
+          "composer",
+          "大沼パセリ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "大沼パセリ"
+        ]
+      ],
+      "url": "https://piapro.jp/t/eIzE",
+      "sourceId": "S-348",
+      "metadataBasis": {
+        "lyricsUrl": null
+      },
+      "metadata": {
+        "lyricsUrl": "https://piapro.jp/t/eIzE"
+      }
+    },
+    {
+      "key": "chat-b026-lyrics-be24b3d7-cc9f-4601-b7a5-da9f6e267288",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "be24b3d7-cc9f-4601-b7a5-da9f6e267288",
+        "kind": "song_variant",
+        "primaryWorkId": "d11b98f1-aa7c-5ff0-a2f1-bc8d63cccb93",
+        "title": "BREATHE",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "version",
+          "arranger",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "composer",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "香椎モイミ"
+        ]
+      ],
+      "url": "https://piapro.jp/t/bmeD",
+      "sourceId": "S-349",
+      "metadataBasis": {
+        "lyricsUrl": null
+      },
+      "metadata": {
+        "lyricsUrl": "https://piapro.jp/t/bmeD"
+      }
+    },
+    {
+      "key": "chat-b026-lyrics-386c21cf-c706-4fe3-8d39-b1b59a9ec336",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "386c21cf-c706-4fe3-8d39-b1b59a9ec336",
+        "kind": "song_variant",
+        "primaryWorkId": "79154cb8-2990-5070-a15d-3d106cefe675",
+        "title": "みらいのかたち",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "version",
+          "arranger",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "arranger",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "composer",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "ヰ世界情緒"
+        ]
+      ],
+      "url": "https://piapro.jp/t/XwRC",
+      "sourceId": "S-350",
+      "metadataBasis": {
+        "lyricsUrl": null
+      },
+      "metadata": {
+        "lyricsUrl": "https://piapro.jp/t/XwRC"
+      }
+    },
+    {
+      "key": "chat-b026-lyrics-8e455052-c9e4-492e-923c-644f8287ccf2",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "8e455052-c9e4-492e-923c-644f8287ccf2",
+        "kind": "song_variant",
+        "primaryWorkId": "73c47810-c809-5e51-b340-0351146786e5",
+        "title": "アンビバレント",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "笹川真生"
+        ],
+        [
+          "work",
+          "composer",
+          "笹川真生"
+        ],
+        [
+          "work",
+          "lyricist",
+          "笹川真生"
+        ]
+      ],
+      "url": "https://piapro.jp/t/Yapr",
+      "sourceId": "S-351",
+      "metadataBasis": {
+        "lyricsUrl": null
+      },
+      "metadata": {
+        "lyricsUrl": "https://piapro.jp/t/Yapr"
+      }
+    },
+    {
+      "key": "chat-b026-lyrics-364df801-b656-4862-910e-87953d9bd670",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "364df801-b656-4862-910e-87953d9bd670",
+        "kind": "song_variant",
+        "primaryWorkId": "f85e4b9b-abf0-5fa3-ba62-86854320635e",
+        "title": "眠りゆく芽吹き",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "mopi・下村陽子"
+        ],
+        [
+          "work",
+          "composer",
+          "mopi・下村陽子"
+        ],
+        [
+          "work",
+          "lyricist",
+          "mopi"
+        ]
+      ],
+      "url": "https://piapro.jp/t/C7HQ",
+      "sourceId": "S-352",
+      "metadataBasis": {
+        "lyricsUrl": null
+      },
+      "metadata": {
+        "lyricsUrl": "https://piapro.jp/t/C7HQ"
+      }
+    },
+    {
+      "key": "chat-b026-lyrics-a4e71ff7-1c06-4d92-9213-c88c52720c82",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "a4e71ff7-1c06-4d92-9213-c88c52720c82",
+        "kind": "song_variant",
+        "primaryWorkId": "256052cc-45b4-53c5-9517-56f270b6bfe7",
+        "title": "システムズコア",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "version",
+          "arranger",
+          "廉"
+        ],
+        [
+          "work",
+          "arranger",
+          "廉"
+        ],
+        [
+          "work",
+          "composer",
+          "廉"
+        ],
+        [
+          "work",
+          "lyricist",
+          "廉"
+        ]
+      ],
+      "url": "https://piapro.jp/t/kR4Z",
+      "sourceId": "S-353",
+      "metadataBasis": {
+        "lyricsUrl": null
+      },
+      "metadata": {
+        "lyricsUrl": "https://piapro.jp/t/kR4Z"
+      }
+    },
+    {
+      "key": "chat-b026-lyrics-c99af613-812d-4245-ae37-0f52eae925ea",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "c99af613-812d-4245-ae37-0f52eae925ea",
+        "kind": "song_variant",
+        "primaryWorkId": "bfe8c938-b25e-5def-93f6-455f8e2d2603",
+        "title": "ANGELIC",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "composer",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "香椎モイミ"
+        ]
+      ],
+      "url": "https://piapro.jp/t/g8x9",
+      "sourceId": "S-354",
+      "metadataBasis": {
+        "lyricsUrl": null
+      },
+      "metadata": {
+        "lyricsUrl": "https://piapro.jp/t/g8x9"
+      }
+    },
+    {
+      "key": "chat-b026-lyrics-0c4b689c-3fc3-4d82-8d3d-1af7490887a0",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "0c4b689c-3fc3-4d82-8d3d-1af7490887a0",
+        "kind": "song_variant",
+        "primaryWorkId": "a355c405-a4ac-58b6-9a6a-32c46c129acd",
+        "title": "そして白に還る",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "composer",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "香椎モイミ"
+        ]
+      ],
+      "url": "https://piapro.jp/t/yJ2e",
+      "sourceId": "S-355",
+      "metadataBasis": {
+        "lyricsUrl": null
+      },
+      "metadata": {
+        "lyricsUrl": "https://piapro.jp/t/yJ2e"
+      }
+    },
+    {
+      "key": "chat-b026-lyrics-7a7dd78b-bf17-4b01-a33d-672f7ddce78c",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "7a7dd78b-bf17-4b01-a33d-672f7ddce78c",
+        "kind": "song_variant",
+        "primaryWorkId": "c3dc4247-a522-5a11-8661-aa80140d07a7",
+        "title": "生存",
+        "displayCredit": "ヰ世界情緒 × 春猿火",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "安宅秀紀"
+        ],
+        [
+          "work",
+          "composer",
+          "大沼パセリ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "大沼パセリ"
+        ]
+      ],
+      "url": "https://piapro.jp/t/g1l9",
+      "sourceId": "S-356",
+      "metadataBasis": {
+        "lyricsUrl": null
+      },
+      "metadata": {
+        "lyricsUrl": "https://piapro.jp/t/g1l9"
+      }
+    },
+    {
+      "key": "chat-b026-lyrics-f27f9134-825c-4a0b-9dab-dc57c8e9c966",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "f27f9134-825c-4a0b-9dab-dc57c8e9c966",
+        "kind": "song_variant",
+        "primaryWorkId": "8e8e2788-72b4-50d5-8384-92d9b6ee4553",
+        "title": "暮れなずむ約束",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "composer",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "香椎モイミ"
+        ]
+      ],
+      "url": "https://piapro.jp/t/cUV9",
+      "sourceId": "S-357",
+      "metadataBasis": {
+        "lyricsUrl": null
+      },
+      "metadata": {
+        "lyricsUrl": "https://piapro.jp/t/cUV9"
+      }
+    },
+    {
+      "key": "chat-b026-lyrics-7f3d424f-1ae1-45b6-88b1-9abd5498c514",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "7f3d424f-1ae1-45b6-88b1-9abd5498c514",
+        "kind": "song_variant",
+        "primaryWorkId": "afc3bd45-9f8b-5a67-abda-f0e07ffdd24b",
+        "title": "かたちなきもの",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "composer",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "ヰ世界情緒・香椎モイミ"
+        ]
+      ],
+      "url": "https://piapro.jp/t/G8D0",
+      "sourceId": "S-358",
+      "metadataBasis": {
+        "lyricsUrl": null
+      },
+      "metadata": {
+        "lyricsUrl": "https://piapro.jp/t/G8D0"
+      }
+    },
+    {
+      "key": "chat-b026-lyrics-75406f0c-c018-47b6-bdbe-66a856311b9e",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "75406f0c-c018-47b6-bdbe-66a856311b9e",
+        "kind": "song_variant",
+        "primaryWorkId": "93e0a7ba-9dca-5c87-bd57-af2f473d5fdc",
+        "title": "泡沫",
+        "displayCredit": "ヰ世界情緒 × 理芽",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "廉"
+        ],
+        [
+          "work",
+          "composer",
+          "廉"
+        ],
+        [
+          "work",
+          "lyricist",
+          "廉"
+        ]
+      ],
+      "url": "https://piapro.jp/t/Qh9F",
+      "sourceId": "S-359",
+      "metadataBasis": {
+        "lyricsUrl": null
+      },
+      "metadata": {
+        "lyricsUrl": "https://piapro.jp/t/Qh9F"
+      }
+    },
+    {
+      "key": "chat-b026-lyrics-53255e4f-7f53-4f69-9f33-cdf631607a65",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "53255e4f-7f53-4f69-9f33-cdf631607a65",
+        "kind": "song_variant",
+        "primaryWorkId": "8543894f-5763-525d-93e3-7ec707d575ca",
+        "title": "刻印",
+        "displayCredit": "ヰ世界情緒 × 幸祜",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "original",
+          "arranger",
+          "柊マグネタイト"
+        ],
+        [
+          "original",
+          "composer",
+          "柊マグネタイト"
+        ],
+        [
+          "original",
+          "lyricist",
+          "柊マグネタイト"
+        ],
+        [
+          "version",
+          "arranger",
+          "柊マグネタイト"
+        ],
+        [
+          "version",
+          "composer",
+          "柊マグネタイト"
+        ],
+        [
+          "version",
+          "lyricist",
+          "柊マグネタイト"
+        ],
+        [
+          "work",
+          "arranger",
+          "柊マグネタイト"
+        ],
+        [
+          "work",
+          "composer",
+          "柊マグネタイト"
+        ],
+        [
+          "work",
+          "lyricist",
+          "柊マグネタイト"
+        ]
+      ],
+      "url": "https://piapro.jp/t/mFFg",
+      "sourceId": "S-360",
+      "metadataBasis": {
+        "lyricsUrl": null
+      },
+      "metadata": {
+        "lyricsUrl": "https://piapro.jp/t/mFFg"
+      }
+    },
+    {
+      "key": "chat-b026-lyrics-8d278884-8e97-4b8d-a1c6-7225863c25b9",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "8d278884-8e97-4b8d-a1c6-7225863c25b9",
+        "kind": "song_variant",
+        "primaryWorkId": "acbd3faf-005c-5e7d-8c96-ee56a814a265",
+        "title": "ARCADIA",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "composer",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "香椎モイミ"
+        ]
+      ],
+      "url": "https://piapro.jp/t/GAj2",
+      "sourceId": "S-361",
+      "metadataBasis": {
+        "lyricsUrl": null
+      },
+      "metadata": {
+        "lyricsUrl": "https://piapro.jp/t/GAj2"
+      }
+    },
+    {
+      "key": "chat-b040-R001-firstAppearance-03813dec-7c93-4b52-b1b2-745bb162b9c0",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "03813dec-7c93-4b52-b1b2-745bb162b9c0",
+        "kind": "song_variant",
+        "primaryWorkId": "c6f3ca5f-8ad5-542a-92ee-98ebbc0e2216",
+        "title": "ネリネの内緒事",
+        "displayCredit": "ヰ世界情緒×佳鏡院",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "a4f2c16a-1d22-5631-84a6-8fe3d4016653"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "composer",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "香椎モイミ"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/news/2025/04/14/6873/",
+      "sourceId": "S-362",
+      "metadataBasis": {
+        "firstAppearance": {
+          "date": "2025-06-13",
+          "label": null
+        }
+      },
+      "metadata": {
+        "firstAppearance": {
+          "date": "2025-06-13",
+          "label": "KAMITSUBAKI XPERIENCE DAY1"
+        }
+      }
+    },
+    {
+      "key": "chat-b040-R002-firstAppearance-3866cc10-5984-452c-aba2-9a4fe6fa8304",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "3866cc10-5984-452c-aba2-9a4fe6fa8304",
+        "kind": "song_variant",
+        "primaryWorkId": "44be232d-ef64-5051-97b0-0e7677d02410",
+        "title": "パンドラコール",
+        "displayCredit": "花譜×ヰ世界情緒×幸祜",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "廉"
+        ],
+        [
+          "work",
+          "composer",
+          "廉"
+        ],
+        [
+          "work",
+          "lyricist",
+          "廉"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/news/2025/04/14/6873/",
+      "sourceId": "S-362",
+      "metadataBasis": {
+        "firstAppearance": {
+          "date": "2025-06-13",
+          "label": null
+        }
+      },
+      "metadata": {
+        "firstAppearance": {
+          "date": "2025-06-13",
+          "label": "KAMITSUBAKI XPERIENCE DAY1"
+        }
+      }
+    },
+    {
+      "key": "chat-b040-R003-firstAppearance-70687f60-a1d6-4a3a-9181-400a6e321333",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "70687f60-a1d6-4a3a-9181-400a6e321333",
+        "kind": "song_variant",
+        "primaryWorkId": "730b6467-a9dd-507f-805e-c6d053efe6f8",
+        "title": "TIME",
+        "displayCredit": "花譜×ヰ世界情緒×幸祜",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kamitsubaki.jp/news/2025/04/14/6873/",
+      "sourceId": "S-362",
+      "metadataBasis": {
+        "firstAppearance": {
+          "date": "2025-06-13",
+          "label": null
+        }
+      },
+      "metadata": {
+        "firstAppearance": {
+          "date": "2025-06-13",
+          "label": "KAMITSUBAKI XPERIENCE DAY1"
+        }
+      }
+    },
+    {
+      "key": "chat-b040-R004-firstAppearance-9ef78602-b930-461d-a25a-a7c44a50b635",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "9ef78602-b930-461d-a25a-a7c44a50b635",
+        "kind": "song_variant",
+        "primaryWorkId": "25f5ebd4-f1b7-5d41-a1da-3e51ac225376",
+        "title": "チューイン・ディスコ",
+        "displayCredit": "花譜×ヰ世界情緒×幸祜",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kamitsubaki.jp/news/2025/04/14/6873/",
+      "sourceId": "S-362",
+      "metadataBasis": {
+        "firstAppearance": {
+          "date": "2025-06-13",
+          "label": null
+        }
+      },
+      "metadata": {
+        "firstAppearance": {
+          "date": "2025-06-13",
+          "label": "KAMITSUBAKI XPERIENCE DAY1"
+        }
+      }
+    },
+    {
+      "key": "chat-b040-R005-firstAppearance-e7ef7e46-12d2-434a-a8c2-cb72ab1322d0",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "e7ef7e46-12d2-434a-a8c2-cb72ab1322d0",
+        "kind": "song_variant",
+        "primaryWorkId": "5ab3b234-b19b-5ddb-8ed2-4a451a308783",
+        "title": "同盟",
+        "displayCredit": "花譜×ヰ世界情緒×幸祜",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kamitsubaki.jp/news/2025/04/14/6873/",
+      "sourceId": "S-362",
+      "metadataBasis": {
+        "firstAppearance": {
+          "date": "2025-06-13",
+          "label": null
+        }
+      },
+      "metadata": {
+        "firstAppearance": {
+          "date": "2025-06-13",
+          "label": "KAMITSUBAKI XPERIENCE DAY1"
+        }
+      }
+    },
+    {
+      "key": "chat-b040-R006-firstAppearance-53d0fc69-102f-4707-820a-4be40ef5aea1",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "53d0fc69-102f-4707-820a-4be40ef5aea1",
+        "kind": "song_variant",
+        "primaryWorkId": "917bf995-b8a3-54d9-9466-048d0628de78",
+        "title": "遊戯",
+        "displayCredit": "花譜×ヰ世界情緒×幸祜",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "Goat"
+        ],
+        [
+          "work",
+          "composer",
+          "Goat"
+        ],
+        [
+          "work",
+          "lyricist",
+          "Goat"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/news/2025/04/14/6873/",
+      "sourceId": "S-362",
+      "metadataBasis": {
+        "firstAppearance": {
+          "date": "2025-06-13",
+          "label": null
+        }
+      },
+      "metadata": {
+        "firstAppearance": {
+          "date": "2025-06-13",
+          "label": "KAMITSUBAKI XPERIENCE DAY1"
+        }
+      }
+    },
+    {
+      "key": "chat-b040-R007-firstAppearance-b3ad9ce6-441f-488e-ac95-c4981c12ab61",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "b3ad9ce6-441f-488e-ac95-c4981c12ab61",
+        "kind": "song_variant",
+        "primaryWorkId": "38e778f1-f037-56ee-b421-f3900328db8b",
+        "title": "再会",
+        "displayCredit": "花譜×ヰ世界情緒×幸祜",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "及川創介"
+        ],
+        [
+          "work",
+          "composer",
+          "カンザキイオリ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "カンザキイオリ"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/news/2025/04/14/6873/",
+      "sourceId": "S-362",
+      "metadataBasis": {
+        "firstAppearance": {
+          "date": "2025-06-13",
+          "label": null
+        }
+      },
+      "metadata": {
+        "firstAppearance": {
+          "date": "2025-06-13",
+          "label": "KAMITSUBAKI XPERIENCE DAY1"
+        }
+      }
+    },
+    {
+      "key": "chat-b040-R008-firstAppearance-3c97ed9f-9e12-4685-b8bc-a87b37219549",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "3c97ed9f-9e12-4685-b8bc-a87b37219549",
+        "kind": "song_variant",
+        "primaryWorkId": "673f5a05-fece-5d1a-8537-e4f1885ff7de",
+        "title": "反逆者の僕ら",
+        "displayCredit": "理芽×情緒×CIEL",
+        "singerIds": [
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b4a1c9cb-987f-5e92-863f-5bd1206dcbaa"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kamitsubaki.jp/event/2025/11/02/7988/",
+      "sourceId": "S-363",
+      "metadataBasis": {
+        "firstAppearance": {
+          "date": "2025-11-02",
+          "label": null
+        }
+      },
+      "metadata": {
+        "firstAppearance": {
+          "date": "2025-11-02",
+          "label": "KAMITSUBAKI FES '25 OUR ONE-DAY WAR"
+        }
+      }
+    },
+    {
+      "key": "chat-b040-R009-firstAppearance-02bd9ef2-87bc-4433-aa50-c0bdcbc03727",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "02bd9ef2-87bc-4433-aa50-c0bdcbc03727",
+        "kind": "song_variant",
+        "primaryWorkId": "38e778f1-f037-56ee-b421-f3900328db8b",
+        "title": "再会",
+        "displayCredit": "花譜 feat. ヰ世界情緒",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "及川創介"
+        ],
+        [
+          "work",
+          "composer",
+          "カンザキイオリ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "カンザキイオリ"
+        ]
+      ],
+      "url": "https://kaf.kamitsubaki.jp/schedule/20260318/1194/",
+      "sourceId": "S-364",
+      "metadataBasis": {
+        "firstAppearance": {
+          "date": "2026-05-30",
+          "label": null
+        }
+      },
+      "metadata": {
+        "firstAppearance": {
+          "date": "2026-05-30",
+          "label": "花譜 ONE-MAN LIVE「宿聲」 in Hong Kong"
+        }
+      }
+    },
+    {
+      "key": "chat-b041-R001-firstAppearance-3b2a9203-5927-465e-9bee-ff0cbc6d3980",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "3b2a9203-5927-465e-9bee-ff0cbc6d3980",
+        "kind": "song_variant",
+        "primaryWorkId": "cb07bc61-fb0d-577f-9174-94c486d35e00",
+        "title": "ヰ世界の宝石譚",
+        "displayCredit": "ヰ世界情緒 & 星界",
+        "singerIds": [
+          "1867981b-c3c0-551b-9337-a8df05385348",
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "sasakure.UK"
+        ],
+        [
+          "work",
+          "composer",
+          "sasakure.UK"
+        ],
+        [
+          "work",
+          "lyricist",
+          "sasakure.UK"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/news/2022/12/23/1768/",
+      "sourceId": "S-365",
+      "metadataBasis": {
+        "firstAppearance": {
+          "date": "2023-03-30",
+          "label": null
+        }
+      },
+      "metadata": {
+        "firstAppearance": {
+          "date": "2023-03-30",
+          "label": "KAMITSUBAKI FES '23 ＜DAY1-シンギュラリティーのひ＞"
+        }
+      }
+    },
+    {
+      "key": "chat-b041-R002-firstAppearance-b917906f-3323-41e6-acaf-2b1f50b2c89f",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "b917906f-3323-41e6-acaf-2b1f50b2c89f",
+        "kind": "song_variant",
+        "primaryWorkId": "9d3fb83d-e0b3-5b96-b347-75711308d94d",
+        "title": "玩具",
+        "displayCredit": "V.W.P & 裏命",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "カンザキイオリ"
+        ],
+        [
+          "work",
+          "composer",
+          "カンザキイオリ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "カンザキイオリ"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/news/2022/12/23/1768/",
+      "sourceId": "S-365",
+      "metadataBasis": {
+        "firstAppearance": {
+          "date": "2023-03-30",
+          "label": null
+        }
+      },
+      "metadata": {
+        "firstAppearance": {
+          "date": "2023-03-30",
+          "label": "KAMITSUBAKI FES '23 ＜DAY1-シンギュラリティーのひ＞"
+        }
+      }
+    },
+    {
+      "key": "chat-b041-R003-firstAppearance-4f5012fd-a539-4396-bb98-11419b1502e3",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "4f5012fd-a539-4396-bb98-11419b1502e3",
+        "kind": "song_variant",
+        "primaryWorkId": "05f1b5bb-7da9-51b2-bdbb-6c2b0a98dd34",
+        "title": "秘密",
+        "displayCredit": "V.W.P & 裏命",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "宅見将典"
+        ],
+        [
+          "work",
+          "composer",
+          "カンザキイオリ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "カンザキイオリ"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/news/2022/12/23/1768/",
+      "sourceId": "S-365",
+      "metadataBasis": {
+        "firstAppearance": {
+          "date": "2023-03-30",
+          "label": null
+        }
+      },
+      "metadata": {
+        "firstAppearance": {
+          "date": "2023-03-30",
+          "label": "KAMITSUBAKI FES '23 ＜DAY1-シンギュラリティーのひ＞"
+        }
+      }
+    },
+    {
+      "key": "chat-b041-R004-firstAppearance-48432623-3315-49c5-8f86-461c6e771ab0",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "48432623-3315-49c5-8f86-461c6e771ab0",
+        "kind": "song_variant",
+        "primaryWorkId": "aaf251d0-c51b-5167-8401-7214d93d8051",
+        "title": "変身",
+        "displayCredit": "V.W.P & 裏命",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "安宅秀紀"
+        ],
+        [
+          "work",
+          "composer",
+          "カンザキイオリ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "カンザキイオリ"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/news/2022/12/23/1768/",
+      "sourceId": "S-365",
+      "metadataBasis": {
+        "firstAppearance": {
+          "date": "2023-03-30",
+          "label": null
+        }
+      },
+      "metadata": {
+        "firstAppearance": {
+          "date": "2023-03-30",
+          "label": "KAMITSUBAKI FES '23 ＜DAY1-シンギュラリティーのひ＞"
+        }
+      }
+    },
+    {
+      "key": "chat-b041-R005-firstAppearance-b814bf14-9662-4280-879c-81c41069d335",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "b814bf14-9662-4280-879c-81c41069d335",
+        "kind": "song_variant",
+        "primaryWorkId": "ad4d19c0-1b4d-5744-92ef-cab362ce1ec9",
+        "title": "電脳",
+        "displayCredit": "V.W.P & V.I.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "カンザキイオリ"
+        ],
+        [
+          "work",
+          "composer",
+          "カンザキイオリ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "カンザキイオリ"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/news/2022/12/23/1768/",
+      "sourceId": "S-365",
+      "metadataBasis": {
+        "firstAppearance": {
+          "date": "2023-03-30",
+          "label": null
+        }
+      },
+      "metadata": {
+        "firstAppearance": {
+          "date": "2023-03-30",
+          "label": "KAMITSUBAKI FES '23 ＜DAY1-シンギュラリティーのひ＞"
+        }
+      }
+    },
+    {
+      "key": "chat-b041-R006-firstAppearance-dd11417c-ef0f-4639-b9e1-fb213ecfb453",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "dd11417c-ef0f-4639-b9e1-fb213ecfb453",
+        "kind": "song_variant",
+        "primaryWorkId": "0d8f0274-e167-5ae2-b432-98e57623c360",
+        "title": "定命",
+        "displayCredit": "V.W.P & V.I.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "宅見将典"
+        ],
+        [
+          "work",
+          "composer",
+          "カンザキイオリ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "カンザキイオリ"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/news/2022/12/23/1768/",
+      "sourceId": "S-365",
+      "metadataBasis": {
+        "firstAppearance": {
+          "date": "2023-03-30",
+          "label": null
+        }
+      },
+      "metadata": {
+        "firstAppearance": {
+          "date": "2023-03-30",
+          "label": "KAMITSUBAKI FES '23 ＜DAY1-シンギュラリティーのひ＞"
+        }
+      }
+    },
+    {
+      "key": "chat-b041-R007-firstAppearance-29acf040-4d16-4395-bf04-bfce56a010b9",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "29acf040-4d16-4395-bf04-bfce56a010b9",
+        "kind": "song_variant",
+        "primaryWorkId": "b3422471-1382-5889-8c30-9edb4cbc528a",
+        "title": "ガーネットの涙",
+        "displayCredit": "ヰ世界情緒×跳亜",
+        "singerIds": [
+          "11990299-8a34-52cb-bed8-00eba4d75aec",
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kamitsubaki.jp/news/2022/12/23/1768/",
+      "sourceId": "S-365",
+      "metadataBasis": {
+        "firstAppearance": {
+          "date": "2023-03-31",
+          "label": null
+        }
+      },
+      "metadata": {
+        "firstAppearance": {
+          "date": "2023-03-31",
+          "label": "KAMITSUBAKI FES '23 ＜DAY2-カオスのひ-＞"
+        }
+      }
+    },
+    {
+      "key": "chat-b041-R008-firstAppearance-0dd053d3-bb52-4283-b053-439d9fac3ca2",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "0dd053d3-bb52-4283-b053-439d9fac3ca2",
+        "kind": "song_variant",
+        "primaryWorkId": "ae2bbe13-3978-541d-8abb-552222c16300",
+        "title": "祭壇",
+        "displayCredit": "V.W.P & 裏命",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kamitsubaki.jp/news/2022/12/23/1768/",
+      "sourceId": "S-365",
+      "metadataBasis": {
+        "firstAppearance": {
+          "date": "2023-03-31",
+          "label": null
+        }
+      },
+      "metadata": {
+        "firstAppearance": {
+          "date": "2023-03-31",
+          "label": "KAMITSUBAKI FES '23 ＜DAY2-カオスのひ-＞"
+        }
+      }
+    },
+    {
+      "key": "chat-b041-R009-firstAppearance-59645b1c-adff-46ef-9860-d10d5ace70cb",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "59645b1c-adff-46ef-9860-d10d5ace70cb",
+        "kind": "song_variant",
+        "primaryWorkId": "24ea10b6-6aa0-5e9c-b2b1-c9cf882d1709",
+        "title": "キミ消失セカイ",
+        "displayCredit": "幸祜×ヰ世界情緒×夕凪機",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "a5a70c55-101c-5a56-a279-96d6b1513950"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "廉"
+        ],
+        [
+          "work",
+          "composer",
+          "廉"
+        ],
+        [
+          "work",
+          "lyricist",
+          "廉"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/event/2024/08/07/3340/",
+      "sourceId": "S-38",
+      "metadataBasis": {
+        "firstAppearance": {
+          "date": "2024-08-08",
+          "label": null
+        }
+      },
+      "metadata": {
+        "firstAppearance": {
+          "date": "2024-08-08",
+          "label": "KAMITSUBAKI FES '24 THE DAY THE EARTH STOOD STILL"
+        }
+      }
+    },
+    {
+      "key": "chat-b041-R010-firstAppearance-0d843407-54e4-4dbe-bda3-26a738256c27",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "0d843407-54e4-4dbe-bda3-26a738256c27",
+        "kind": "song_variant",
+        "primaryWorkId": "ad4d19c0-1b4d-5744-92ef-cab362ce1ec9",
+        "title": "電脳 -THE DAY THE EARTH STOOD STILL-",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "カンザキイオリ"
+        ],
+        [
+          "work",
+          "composer",
+          "カンザキイオリ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "カンザキイオリ"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/event/2024/08/07/3340/",
+      "sourceId": "S-38",
+      "metadataBasis": {
+        "firstAppearance": {
+          "date": "2024-08-08",
+          "label": null
+        }
+      },
+      "metadata": {
+        "firstAppearance": {
+          "date": "2024-08-08",
+          "label": "KAMITSUBAKI FES '24 THE DAY THE EARTH STOOD STILL"
+        }
+      }
+    },
+    {
+      "key": "chat-b037-label-firstAppearance-528bb3e2-ca61-4ba7-a2ea-a2491bf32b4e",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "528bb3e2-ca61-4ba7-a2ea-a2491bf32b4e",
+        "kind": "song_variant",
+        "primaryWorkId": "3e3bbf9b-5699-57bd-94f3-7979926dbba6",
+        "title": "私論理",
+        "displayCredit": "春猿火 & ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kamitsubaki.jp/news/2020/12/01/285/",
+      "sourceId": "S-366",
+      "metadataBasis": {
+        "firstAppearance": {
+          "date": "2020-12-28",
+          "label": null
+        }
+      },
+      "metadata": {
+        "firstAppearance": {
+          "date": "2020-12-28",
+          "label": "Virtual Music Award 2020"
+        }
+      }
+    },
+    {
+      "key": "chat-b038-label-firstAppearance-adcac7ec-b932-4a89-a0ac-dd5d3e5445aa",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "adcac7ec-b932-4a89-a0ac-dd5d3e5445aa",
+        "kind": "song_variant",
+        "primaryWorkId": "5dd5d31d-4b77-5259-b5b9-d4828d4c1098",
+        "title": "シリウスの心臓",
+        "displayCredit": "ヰ世界情緒 & 春猿火",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "傘村トータ"
+        ],
+        [
+          "work",
+          "composer",
+          "傘村トータ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "傘村トータ"
+        ]
+      ],
+      "url": "https://prtimes.jp/main/html/rd/p/000000778.000004237.html",
+      "sourceId": "S-367",
+      "metadataBasis": {
+        "firstAppearance": {
+          "date": "2021-07-03",
+          "label": null
+        }
+      },
+      "metadata": {
+        "firstAppearance": {
+          "date": "2021-07-03",
+          "label": "Virtual Music Award 2021 SUMMER"
+        }
+      }
+    },
+    {
+      "key": "chat-b034-label-firstAppearance-24b8a37e-feaf-4f08-8841-e6a1eba711d8",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "24b8a37e-feaf-4f08-8841-e6a1eba711d8",
+        "kind": "song_variant",
+        "primaryWorkId": "38e778f1-f037-56ee-b421-f3900328db8b",
+        "title": "再会",
+        "displayCredit": "ヰ世界情緒×理芽",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "及川創介"
+        ],
+        [
+          "work",
+          "composer",
+          "カンザキイオリ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "カンザキイオリ"
+        ]
+      ],
+      "url": "https://prtimes.jp/main/html/rd/p/000000057.000100939.html",
+      "sourceId": "S-368",
+      "metadataBasis": {
+        "firstAppearance": {
+          "date": "2024-01-06",
+          "label": null
+        }
+      },
+      "metadata": {
+        "firstAppearance": {
+          "date": "2024-01-06",
+          "label": "MUSIC VERSE LIVE #9"
+        }
+      }
+    },
+    {
+      "key": "chat-b034-label-firstAppearance-89278c42-3d58-4f54-94b7-2ed584f61ecf",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "89278c42-3d58-4f54-94b7-2ed584f61ecf",
+        "kind": "song_variant",
+        "primaryWorkId": "0d8f0274-e167-5ae2-b432-98e57623c360",
+        "title": "定命",
+        "displayCredit": "春猿火×ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "宅見将典"
+        ],
+        [
+          "work",
+          "composer",
+          "カンザキイオリ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "カンザキイオリ"
+        ]
+      ],
+      "url": "https://prtimes.jp/main/html/rd/p/000000057.000100939.html",
+      "sourceId": "S-368",
+      "metadataBasis": {
+        "firstAppearance": {
+          "date": "2024-01-06",
+          "label": null
+        }
+      },
+      "metadata": {
+        "firstAppearance": {
+          "date": "2024-01-06",
+          "label": "MUSIC VERSE LIVE #9"
+        }
+      }
+    },
+    {
+      "key": "chat-b045-B045-T001-tieUp-7e9b5fd4-e604-4afe-b78e-3ba13c1eb719",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "7e9b5fd4-e604-4afe-b78e-3ba13c1eb719",
+        "kind": "song_variant",
+        "primaryWorkId": "2c134fe6-2016-5e6b-ba79-1e951ea09164",
+        "title": "コンパスローズ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "version",
+          "arranger",
+          "矢野達也"
+        ],
+        [
+          "work",
+          "composer",
+          "矢野達也"
+        ],
+        [
+          "work",
+          "lyricist",
+          "矢野達也"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/11204/",
+      "sourceId": "S-369",
+      "metadataBasis": {
+        "tieUp": null
+      },
+      "metadata": {
+        "tieUp": "ゲーム「Virtual Ties ～ヰ世界情緒夢想曲～」オープニングテーマ"
+      }
+    },
+    {
+      "key": "chat-b045-B045-T002-tieUp-b30b5cde-b57c-471c-bb4f-b4f9f92a318c",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "b30b5cde-b57c-471c-bb4f-b4f9f92a318c",
+        "kind": "song_variant",
+        "primaryWorkId": "f10a4983-97a8-5a15-8b63-5c33460fda6e",
+        "title": "また、ここから",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "version",
+          "arranger",
+          "矢野達也"
+        ],
+        [
+          "work",
+          "composer",
+          "矢野達也"
+        ],
+        [
+          "work",
+          "lyricist",
+          "矢野達也"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/11204/",
+      "sourceId": "S-369",
+      "metadataBasis": {
+        "tieUp": null
+      },
+      "metadata": {
+        "tieUp": "ゲーム「Virtual Ties ～ヰ世界情緒夢想曲～」エンディングテーマ"
+      }
+    },
+    {
+      "key": "chat-b045-first-7e9b5fd4-e604-4afe-b78e-3ba13c1eb719",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "7e9b5fd4-e604-4afe-b78e-3ba13c1eb719",
+        "kind": "song_variant",
+        "primaryWorkId": "2c134fe6-2016-5e6b-ba79-1e951ea09164",
+        "title": "コンパスローズ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "version",
+          "arranger",
+          "矢野達也"
+        ],
+        [
+          "work",
+          "composer",
+          "矢野達也"
+        ],
+        [
+          "work",
+          "lyricist",
+          "矢野達也"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/news/2025/11/03/8949/",
+      "sourceId": "S-370",
+      "metadataBasis": {
+        "firstAppearance": {
+          "date": "2026-03-19",
+          "label": "Virtual Ties ~ヰ世界情緒夢想曲~"
+        }
+      },
+      "metadata": {
+        "firstAppearance": {
+          "date": "2025-11-03",
+          "label": "Virtual Ties アナウンストレーラー"
+        }
+      }
+    },
+    {
+      "key": "genshiroku-acoustic-lachenalia",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "a6edf155-7624-5243-9f7d-af492f036c6d",
+        "kind": "song_variant",
+        "primaryWorkId": "6ed4a21c-cf3d-5dda-b974-018ee899e588",
+        "title": "ラケナリアの夢",
+        "displayCredit": "ヰ世界情緒・クノン",
+        "variations": [
+          {
+            "kind": "arrangement",
+            "value": "Aco.ver.",
+            "semitoneOffset": null
+          }
+        ],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "a73b6cce-8350-523b-adfc-9616ef44b445"
+        ]
+      },
+      "creditBasis": [
+        [
+          "work",
+          "composer",
+          "香椎モイミ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "香椎モイミ"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/10122/",
+      "sourceId": "S-371",
+      "songType": "variant",
+      "metadata": {
+        "titleKana": "らけなりあのゆめ",
+        "firstAppearance": {
+          "date": "2026-02-25",
+          "label": "幻視録"
+        }
+      },
+      "credits": {
+        "arranger": [
+          "半田彬倫"
+        ]
+      },
+      "releaseItems": [
+        {
+          "releaseItemId": "ac5e1a22-be25-580f-804b-eb9f94c360cb",
+          "versionId": "19cf0122-ae86-584a-bea6-9a3d4948c326",
+          "familyId": "f5315a63-836f-50f8-b1ec-f4880f6e1bf4",
+          "editionId": "6151967c-cde4-52c9-b68e-61f804b26074",
+          "componentId": "9b076b2a-6461-5d27-a537-e5ab2a2bc459",
+          "rawTrackTitle": "ラケナリアの夢(Aco. ver.)",
+          "trackNumber": 3
+        }
+      ],
+      "creditSourceUrl": "https://tower.jp/item/7931835",
+      "creditScopes": {
+        "arranger": "version"
+      },
+      "creditSourceId": "S-373"
+    },
+    {
+      "key": "genshiroku-acoustic-maboroshi",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "e5afe4cb-f3ee-51a1-9bf3-b6630aa176f2",
+        "kind": "song_variant",
+        "primaryWorkId": "93701476-9d22-5905-9081-d5d867dcb12c",
+        "title": "まぼろしの行方",
+        "displayCredit": "ヰ世界情緒・カヤちゃん",
+        "variations": [
+          {
+            "kind": "arrangement",
+            "value": "Aco.ver.",
+            "semitoneOffset": null
+          }
+        ],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "af2ab27a-cf65-5202-92ba-227f83a2c90c"
+        ]
+      },
+      "creditBasis": [
+        [
+          "work",
+          "composer",
+          "Aira(Dream Monster)"
+        ],
+        [
+          "work",
+          "lyricist",
+          "Aira(Dream Monster)"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/isekaijoucho/10122/",
+      "sourceId": "S-371",
+      "songType": "variant",
+      "metadata": {
+        "titleKana": "まぼろしのゆくえ",
+        "firstAppearance": {
+          "date": "2026-02-25",
+          "label": "幻視録"
+        }
+      },
+      "credits": {
+        "arranger": [
+          "平畑徹也"
+        ]
+      },
+      "releaseItems": [
+        {
+          "releaseItemId": "9878f695-937c-50eb-8bf8-04d60aacfb3d",
+          "versionId": "b2397e05-a162-5957-9eee-b87d16d9c911",
+          "familyId": "f5315a63-836f-50f8-b1ec-f4880f6e1bf4",
+          "editionId": "6151967c-cde4-52c9-b68e-61f804b26074",
+          "componentId": "9b076b2a-6461-5d27-a537-e5ab2a2bc459",
+          "rawTrackTitle": "まぼろしの行方(Aco. ver.)",
+          "trackNumber": 4
+        }
+      ],
+      "creditSourceUrl": "https://tower.jp/item/7931835",
+      "creditScopes": {
+        "arranger": "version"
+      },
+      "creditSourceId": "S-373"
     }
   ],
   "mediaCredits": [
@@ -8455,6 +12274,1837 @@
           "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
         }
       ]
+    },
+    {
+      "key": "chat-b028-C02-c71a24e0-633a-4a03-b1f3-246db3154b20",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "c71a24e0-633a-4a03-b1f3-246db3154b20",
+        "kind": "song_variant",
+        "primaryWorkId": "068f81cc-2da3-52e7-9542-44dc41a7bb4c",
+        "title": "亡国のネメシス",
+        "displayCredit": "御莉姫 × ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=5B9jvRK8Zes",
+      "mediaId": "registered:nemesis-orihime-cover",
+      "mediaUrl": "https://www.youtube.com/watch?v=5B9jvRK8Zes",
+      "credits": [
+        {
+          "role": "Illust",
+          "name": "さわららど"
+        },
+        {
+          "role": "Movie",
+          "name": "ここあぱんだ"
+        }
+      ],
+      "sourceId": "S-294"
+    },
+    {
+      "key": "chat-b028-C03-1df278d0-1f33-4de6-9fdd-1e832f4f1d5b",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "1df278d0-1f33-4de6-9fdd-1e832f4f1d5b",
+        "kind": "song_variant",
+        "primaryWorkId": "ec539cb5-292e-50da-9ae8-fd528e74fe2d",
+        "title": "海の幽霊",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=pE70G28UIGc",
+      "mediaId": "46034574-9b83-5893-b75d-3f3d4885c304",
+      "mediaUrl": "https://www.youtube.com/watch?v=pE70G28UIGc",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "後藤史春"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-270"
+    },
+    {
+      "key": "chat-b028-C04-d09fe612-d747-4875-a1ff-070d9d7a86ba",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "d09fe612-d747-4875-a1ff-070d9d7a86ba",
+        "kind": "song_variant",
+        "primaryWorkId": "d1caa3e7-4b04-54a6-bb7e-734504c820f1",
+        "title": "春はゆく",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=XE6C3GfyrQQ",
+      "mediaId": "a35daa72-c2bd-5efc-8742-18f76a99c409",
+      "mediaUrl": "https://www.youtube.com/watch?v=XE6C3GfyrQQ",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "ろ樹"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-271"
+    },
+    {
+      "key": "chat-b028-C05-0695e401-81d1-4376-a11e-ab1c2ebdd0c7",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "0695e401-81d1-4376-a11e-ab1c2ebdd0c7",
+        "kind": "song_variant",
+        "primaryWorkId": "70e89b04-4e47-5685-9b44-0a360cfc8caa",
+        "title": "桜流し",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=j4sUsfale88",
+      "mediaId": "063c7ecf-c1f5-5d37-a625-51eece087b5a",
+      "mediaUrl": "https://www.youtube.com/watch?v=j4sUsfale88",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "がわこ"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-272"
+    },
+    {
+      "key": "chat-b028-C08-4331657f-ccdd-414a-951c-c08f5d3eedd8",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "4331657f-ccdd-414a-951c-c08f5d3eedd8",
+        "kind": "song_variant",
+        "primaryWorkId": "38d51e8b-c2ed-55d6-bceb-f2115799152d",
+        "title": "ころしちゃった!",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=tSzv_eQH5RU",
+      "mediaId": "22f94a0b-95c0-514f-9bf5-58914774d0af",
+      "mediaUrl": "https://www.youtube.com/watch?v=tSzv_eQH5RU",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "si"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-295"
+    },
+    {
+      "key": "chat-b028-C11-40752ed3-c748-4e90-b5ae-cb20c9691c59",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "40752ed3-c748-4e90-b5ae-cb20c9691c59",
+        "kind": "song_variant",
+        "primaryWorkId": "ecfd5c4d-95fe-5804-ba65-f9fb805f08e2",
+        "title": "モエチャッカファイア",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=GTxO_EKxU7A",
+      "mediaId": "2c4bf13b-32b0-5479-8408-d6cba0d091b0",
+      "mediaUrl": "https://www.youtube.com/watch?v=GTxO_EKxU7A",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "ほたてんし"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-296"
+    },
+    {
+      "key": "chat-b029-C06-af958c2d-dd0f-4d85-b365-608428ac2ff6",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "af958c2d-dd0f-4d85-b365-608428ac2ff6",
+        "kind": "song_variant",
+        "primaryWorkId": "b79432d6-696f-5891-820a-623f284a4677",
+        "title": "エス",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=7ex4EeZ5jvs",
+      "mediaId": "89c904e2-0dee-5272-b984-2cfe5ce72370",
+      "mediaUrl": "https://www.youtube.com/watch?v=7ex4EeZ5jvs",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "適当緑"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-297"
+    },
+    {
+      "key": "chat-b029-C08-bf53af3a-b74d-4a73-aec0-1d6503859ace",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "bf53af3a-b74d-4a73-aec0-1d6503859ace",
+        "kind": "song_variant",
+        "primaryWorkId": "0bb41d29-6991-57b6-af85-4828b4e8e306",
+        "title": "isomers",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=u_KG4Iz6c5g",
+      "mediaId": "ee42dcda-1f63-5d9d-a92d-ac4aff6f06a5",
+      "mediaUrl": "https://www.youtube.com/watch?v=u_KG4Iz6c5g",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "鱈雲"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-298"
+    },
+    {
+      "key": "chat-b030-C02-5580aab6-3c80-469d-bfef-ba4bf40c7fe4",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "5580aab6-3c80-469d-bfef-ba4bf40c7fe4",
+        "kind": "song_variant",
+        "primaryWorkId": "71bd2577-ffa3-5c40-8f86-0b1e8f1e759c",
+        "title": "幻界",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=77GH0qHEsyU",
+      "mediaId": "aba910fa-e747-5346-b4ea-c6079646beaf",
+      "mediaUrl": "https://www.youtube.com/watch?v=77GH0qHEsyU",
+      "credits": [
+        {
+          "role": "Movie & Animation Studio",
+          "name": "STEREOTYPE Inc."
+        },
+        {
+          "role": "Director",
+          "name": "Yusaku Kumagai"
+        },
+        {
+          "role": "Composite Director",
+          "name": "Yusaku Iwami"
+        },
+        {
+          "role": "3DCG Director",
+          "name": "Taisho Miyoshi"
+        }
+      ],
+      "sourceId": "S-278"
+    },
+    {
+      "key": "chat-b030-C08-11a2a22f-6049-4af8-a9c6-2591cd15507f",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "11a2a22f-6049-4af8-a9c6-2591cd15507f",
+        "kind": "song_variant",
+        "primaryWorkId": "d367774d-c3b7-50a7-89d8-6c3cf4dcee13",
+        "title": "いますぐ輪廻",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=aW6fAdLMbRg",
+      "mediaId": "ff1f9873-4ec0-5e2e-b383-c20d389abbc5",
+      "mediaUrl": "https://www.youtube.com/watch?v=aW6fAdLMbRg",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "ヰ世界情緒"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-299"
+    },
+    {
+      "key": "chat-b030-C09-df636795-d398-43f4-89c5-0dd4961bb990",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "df636795-d398-43f4-89c5-0dd4961bb990",
+        "kind": "song_variant",
+        "primaryWorkId": "9b456db3-38d1-58ce-b140-e5f2cc5ce960",
+        "title": "IRIS OUT",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=x_WPUrOKCtY",
+      "mediaId": "eedb0bc2-bea5-5581-be90-39b4c48f742c",
+      "mediaUrl": "https://www.youtube.com/watch?v=x_WPUrOKCtY",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "𝘻𝘪𝘳𝘰_"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-300"
+    },
+    {
+      "key": "chat-b030-C10-c88c2b28-3f04-40f6-ad06-9cc3e7cb560a",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "c88c2b28-3f04-40f6-ad06-9cc3e7cb560a",
+        "kind": "song_variant",
+        "primaryWorkId": "b979a25e-9538-5318-ace1-33f0fa0dcec4",
+        "title": "革命道中",
+        "displayCredit": "ヰ世界情緒 × 梓川",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=A5zQ9a4qWvo",
+      "mediaId": "1bba95c3-1f93-525d-b9bc-75e016e6bb26",
+      "mediaUrl": "https://www.youtube.com/watch?v=A5zQ9a4qWvo",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "あらへなす"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-36"
+    },
+    {
+      "key": "chat-b030-C11-4200807b-656f-4f5f-82ad-72335aaf5897",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "4200807b-656f-4f5f-82ad-72335aaf5897",
+        "kind": "song_variant",
+        "primaryWorkId": "4778da09-e2b5-530f-b50a-320620e17bba",
+        "title": "Duvet",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=U0FfKVrVuOs",
+      "mediaId": "665cbb85-f2e0-5070-95d1-ead6df60f592",
+      "mediaUrl": "https://www.youtube.com/watch?v=U0FfKVrVuOs",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "しおん"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-301"
+    },
+    {
+      "key": "chat-b030-C13-2703c2be-4681-4c6b-96b3-7f6fe72ed4c5",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "2703c2be-4681-4c6b-96b3-7f6fe72ed4c5",
+        "kind": "song_variant",
+        "primaryWorkId": "26f1420c-b6d8-5915-be67-55cc120b5035",
+        "title": "モニタリング (Best Friend Remix)",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=4maZBCx6ZpA",
+      "mediaId": "da608643-0f47-503c-9f15-a6d0390c022e",
+      "mediaUrl": "https://www.youtube.com/watch?v=4maZBCx6ZpA",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "B L O O M"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-302"
+    },
+    {
+      "key": "chat-b030-C14-2f05c1b3-97ba-41ad-8acc-fd3b95869031",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "2f05c1b3-97ba-41ad-8acc-fd3b95869031",
+        "kind": "song_variant",
+        "primaryWorkId": "dd2ab614-faf0-5f0c-b556-a5777f5bdaad",
+        "title": "Last Night, Good Night",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=a0qwyucTsL8",
+      "mediaId": "147b6761-323e-5bbe-97a3-41bbba5e1162",
+      "mediaUrl": "https://www.youtube.com/watch?v=a0qwyucTsL8",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "yuzu"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-303"
+    },
+    {
+      "key": "chat-b030-C15-33406b3d-9472-45b5-ba8c-2ebd411da1bc",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "33406b3d-9472-45b5-ba8c-2ebd411da1bc",
+        "kind": "song_variant",
+        "primaryWorkId": "8cb3043d-e813-5a9d-9f17-183c0429ad19",
+        "title": "愛×愛ホイッスル",
+        "displayCredit": "花譜 × ヰ世界情緒",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=iH7gMzUTHoo",
+      "mediaId": "ef375bad-c296-5980-a8b5-a64e6a9cd283",
+      "mediaUrl": "https://www.youtube.com/watch?v=iH7gMzUTHoo",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "こもり"
+        }
+      ],
+      "sourceId": "S-304"
+    },
+    {
+      "key": "chat-b032-C01-3682a7f5-67af-4318-a792-eb535d7d0ea1",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "3682a7f5-67af-4318-a792-eb535d7d0ea1",
+        "kind": "song_variant",
+        "primaryWorkId": "e9bedf47-964e-5c7b-bb59-2db7520c970c",
+        "title": "リレイ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=oIKBmf6ldZg",
+      "mediaId": "d866f8b8-3011-599b-b52f-28e9547b9a90",
+      "mediaUrl": "https://www.youtube.com/watch?v=oIKBmf6ldZg",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "あらへなす"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-289"
+    },
+    {
+      "key": "chat-b032-C02-3d5a4d43-04cb-4504-9caa-149342158a70",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "3d5a4d43-04cb-4504-9caa-149342158a70",
+        "kind": "song_variant",
+        "primaryWorkId": "2093970c-65f5-56df-86a2-fa037272c143",
+        "title": "you are my curse",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=ZPixrbc-_Jc",
+      "mediaId": "fab142bb-300f-552e-8a24-9472a4901c84",
+      "mediaUrl": "https://www.youtube.com/watch?v=ZPixrbc-_Jc",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "ｼﾞｭﾝﾛ"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-305"
+    },
+    {
+      "key": "chat-b032-C04-9b0ebdd2-7a38-4692-ba73-af836a535858",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "9b0ebdd2-7a38-4692-ba73-af836a535858",
+        "kind": "song_variant",
+        "primaryWorkId": "6ed4a21c-cf3d-5dda-b974-018ee899e588",
+        "title": "ラケナリアの夢",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=cQfaxJevAJE",
+      "mediaId": "b296703a-fea4-51b1-a245-7836c18f005c",
+      "mediaUrl": "https://www.youtube.com/watch?v=cQfaxJevAJE",
+      "credits": [
+        {
+          "role": "Movie & Animation Studio",
+          "name": "STEREOTYPE Inc."
+        },
+        {
+          "role": "Director",
+          "name": "Yusaku Kumagai"
+        },
+        {
+          "role": "Composite Director",
+          "name": "Yusaku Iwami"
+        },
+        {
+          "role": "3DCG Director",
+          "name": "Taisho Miyoshi"
+        },
+        {
+          "role": "3DCG Designer",
+          "name": "Arisa Sakajiri"
+        },
+        {
+          "role": "Title Design",
+          "name": "Shota Watanabe"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kenichi Kodama"
+        },
+        {
+          "role": "Motion Edit",
+          "name": "Go Akagi（THINKR）"
+        }
+      ],
+      "sourceId": "S-306"
+    },
+    {
+      "key": "chat-b032-C05-2beb11f5-eb4b-44cb-84b1-7e935b298d68",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "2beb11f5-eb4b-44cb-84b1-7e935b298d68",
+        "kind": "song_variant",
+        "primaryWorkId": "93701476-9d22-5905-9081-d5d867dcb12c",
+        "title": "まぼろしの行方",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=egZZpZPaJmo",
+      "mediaId": "2391486f-b6ad-5f6b-a8ab-795b7d316656",
+      "mediaUrl": "https://www.youtube.com/watch?v=egZZpZPaJmo",
+      "credits": [
+        {
+          "role": "Director",
+          "name": "MONA(VeAble)"
+        },
+        {
+          "role": "3DCG Artist",
+          "name": "Yu Takahashi"
+        },
+        {
+          "role": "3DCG Artist",
+          "name": "Kotarou Nogami"
+        },
+        {
+          "role": "3DCG Artist",
+          "name": "Keigo Doi"
+        },
+        {
+          "role": "3DCG Artist",
+          "name": "Ray Wakui(VeAble)"
+        },
+        {
+          "role": "3DCG Artist",
+          "name": "Kentaro Kanaya(VeAble)"
+        },
+        {
+          "role": "Compositor",
+          "name": "Sho Watanabe"
+        },
+        {
+          "role": "Colorist",
+          "name": "SHUNRI(VeAble)"
+        },
+        {
+          "role": "Motion Edit",
+          "name": "Go Akagi(THINKR)"
+        },
+        {
+          "role": "Character Animation",
+          "name": "Hiroyuki Nakatomi"
+        },
+        {
+          "role": "Title & Lylics Design",
+          "name": "Tomotaka Iwasa"
+        }
+      ],
+      "sourceId": "S-307"
+    },
+    {
+      "key": "chat-b032-C06-4a9953be-e317-44c4-bc3d-337d5dedda9d",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "4a9953be-e317-44c4-bc3d-337d5dedda9d",
+        "kind": "song_variant",
+        "primaryWorkId": "b26bcd19-ddbd-544e-b926-08c91b111de9",
+        "title": "永久に枯れぬ花",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=25h5UW0vVck",
+      "mediaId": "f8e08c39-fd6b-5de8-8615-16d6599ae09e",
+      "mediaUrl": "https://www.youtube.com/watch?v=25h5UW0vVck",
+      "credits": [
+        {
+          "role": "Movie & Animation Studio",
+          "name": "STEREOTYPE Inc."
+        },
+        {
+          "role": "Director",
+          "name": "Yusaku Kumagai"
+        },
+        {
+          "role": "Composite Director",
+          "name": "Yusaku Iwami"
+        },
+        {
+          "role": "Composite Designer",
+          "name": "Shuya Sasaki"
+        },
+        {
+          "role": "3DCG Director",
+          "name": "Taisho Miyoshi"
+        },
+        {
+          "role": "3DCG Designer",
+          "name": "Arisa Sakajiri"
+        },
+        {
+          "role": "Title / 2D Design",
+          "name": "Shota Watanabe"
+        },
+        {
+          "role": "2D Design Assistant",
+          "name": "Haruki Yonezawa"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kenichi Kodama"
+        },
+        {
+          "role": "Motion Edit",
+          "name": "Go Akagi(THINKR)"
+        }
+      ],
+      "sourceId": "S-308"
+    },
+    {
+      "key": "chat-b032-C07-be24b3d7-cc9f-4601-b7a5-da9f6e267288",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "be24b3d7-cc9f-4601-b7a5-da9f6e267288",
+        "kind": "song_variant",
+        "primaryWorkId": "d11b98f1-aa7c-5ff0-a2f1-bc8d63cccb93",
+        "title": "BREATHE",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=2ErDR6ku6UY",
+      "mediaId": "bd47eaae-6022-557f-a5f1-48fffccbaeed",
+      "mediaUrl": "https://www.youtube.com/watch?v=2ErDR6ku6UY",
+      "credits": [
+        {
+          "role": "Director",
+          "name": "NNNuventus"
+        },
+        {
+          "role": "Creative Director",
+          "name": "Satoru Ohno"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi(THINKR)"
+        },
+        {
+          "role": "Producer",
+          "name": "Kentaro Iwaki(THINKR)"
+        }
+      ],
+      "sourceId": "S-309"
+    },
+    {
+      "key": "chat-b032-C08-2031ec28-eed6-4259-9cd8-795cb6d0e342",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "2031ec28-eed6-4259-9cd8-795cb6d0e342",
+        "kind": "song_variant",
+        "primaryWorkId": "d11b98f1-aa7c-5ff0-a2f1-bc8d63cccb93",
+        "title": "BREATHE(Rearranged ver.)",
+        "displayCredit": "ヰ世界情緒 × 春猿火",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=2QCSQPC829g",
+      "mediaId": "8e70cf15-f859-53b8-9fb8-b71ae01163f3",
+      "mediaUrl": "https://www.youtube.com/watch?v=2QCSQPC829g",
+      "credits": [
+        {
+          "role": "Director",
+          "name": "Takahiro Shirasuna"
+        },
+        {
+          "role": "Title & Lyric Design",
+          "name": "Kentaro Sugiyama"
+        },
+        {
+          "role": "Creative Director",
+          "name": "Satoru Ohno"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi(THINKR)"
+        },
+        {
+          "role": "Producer",
+          "name": "Kentaro Iwaki(THINKR)"
+        }
+      ],
+      "sourceId": "S-310"
+    },
+    {
+      "key": "chat-b032-C09-7ee73dca-b6a4-4852-ac3e-62a623644051",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "7ee73dca-b6a4-4852-ac3e-62a623644051",
+        "kind": "song_variant",
+        "primaryWorkId": "049f66c4-7c48-51bf-928c-ed1a592bf344",
+        "title": "新次元の禁じ手",
+        "displayCredit": "ヰ世界情緒 × 跳亜",
+        "singerIds": [
+          "11990299-8a34-52cb-bed8-00eba4d75aec",
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=fubYcZv8Qkk",
+      "mediaId": "8bf29331-f9c9-56cf-9d5b-568991d7a76a",
+      "mediaUrl": "https://www.youtube.com/watch?v=fubYcZv8Qkk",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "アサヮ"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-311"
+    },
+    {
+      "key": "chat-b032-C10-dad54418-962f-4e0d-845c-1264b477c907",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "dad54418-962f-4e0d-845c-1264b477c907",
+        "kind": "song_variant",
+        "primaryWorkId": "7cf5b686-e537-5b88-b35a-7f8b0c5b3494",
+        "title": "終着",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=ePOfhajx_nA",
+      "mediaId": "b083c7eb-fc5a-53c1-ba3a-069510cfe98f",
+      "mediaUrl": "https://www.youtube.com/watch?v=ePOfhajx_nA",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "KonYa666"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-312"
+    },
+    {
+      "key": "chat-b032-C11-78a4cd18-87fd-4e28-a25c-f0d01042d68f",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "78a4cd18-87fd-4e28-a25c-f0d01042d68f",
+        "kind": "song_variant",
+        "primaryWorkId": "6c9b9ae3-8cb3-57f4-a2c9-819b81323342",
+        "title": "Fighting My Way",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=yGrf1I9HwVI",
+      "mediaId": "8eefa5d0-0021-5b5e-93db-10621f4cb1ee",
+      "mediaUrl": "https://www.youtube.com/watch?v=yGrf1I9HwVI",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "bmtol"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-313"
+    },
+    {
+      "key": "chat-b032-C12-91816b3f-5ac8-4de5-a93a-e946138cfd71",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "91816b3f-5ac8-4de5-a93a-e946138cfd71",
+        "kind": "song_variant",
+        "primaryWorkId": "33e13d1a-cb0f-56ac-9ce5-c4611c324142",
+        "title": "かなしばりに遭ったら",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=u68VdWuxC7A",
+      "mediaId": "94d295fa-baf8-5ebb-8584-8a015c87e234",
+      "mediaUrl": "https://www.youtube.com/watch?v=u68VdWuxC7A",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "052"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-314"
+    },
+    {
+      "key": "chat-b033-C02-898b3ae5-9621-4be6-ac33-30d4304422d6",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "898b3ae5-9621-4be6-ac33-30d4304422d6",
+        "kind": "song_variant",
+        "primaryWorkId": "06f27a9c-34c2-58f0-bcbf-5f91423925e1",
+        "title": "ライオン",
+        "displayCredit": "幸祜 & ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=_lo1zf54VS4",
+      "mediaId": "720c36c7-529c-5eb1-afe5-8d4146c31d1a",
+      "mediaUrl": "https://www.youtube.com/watch?v=_lo1zf54VS4",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "堀愛里"
+        },
+        {
+          "role": "Movie",
+          "name": "LAKU"
+        },
+        {
+          "role": "Mix",
+          "name": "ヨコハタトクヤ"
+        }
+      ],
+      "sourceId": "S-315"
+    },
+    {
+      "key": "chat-b033-C03-b058f9f5-0e16-4be4-8fb7-315b1fde286b",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "b058f9f5-0e16-4be4-8fb7-315b1fde286b",
+        "kind": "song_variant",
+        "primaryWorkId": "69915bc0-8078-5fb2-a3b3-8904bc59616c",
+        "title": "革命デュアリズム",
+        "displayCredit": "ヰ世界情緒 × 幸祜",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=OtScULVjd3o",
+      "mediaId": "9d36d83c-c846-50a6-b8b6-dc2b47ea8a38",
+      "mediaUrl": "https://www.youtube.com/watch?v=OtScULVjd3o",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "あらへなす"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-316"
+    },
+    {
+      "key": "chat-b033-C04-6cc15677-81aa-4025-8684-850fd84d2cc7",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "6cc15677-81aa-4025-8684-850fd84d2cc7",
+        "kind": "song_variant",
+        "primaryWorkId": "33a700f2-774d-5000-911f-6fbaef299687",
+        "title": "ULTRA C",
+        "displayCredit": "ヰ世界情緒 × LOLUET",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=DXHq2TNXzbk",
+      "mediaId": "d5c63aa6-4b51-5735-b88d-107832f983fd",
+      "mediaUrl": "https://www.youtube.com/watch?v=DXHq2TNXzbk",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "ph."
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-35"
+    },
+    {
+      "key": "chat-b033-C05-a4c60c7b-a59c-4f95-9dd3-2ed7f71cd63c",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "a4c60c7b-a59c-4f95-9dd3-2ed7f71cd63c",
+        "kind": "song_variant",
+        "primaryWorkId": "f6b11beb-fe91-5f48-a038-99662ca196a7",
+        "title": "甘き心中はプールサイドで",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=5tOcptxoIJ4",
+      "mediaId": "051e6f2c-5a7b-53ad-8f53-93509d1c4a36",
+      "mediaUrl": "https://www.youtube.com/watch?v=5tOcptxoIJ4",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "ヰ世界情緒"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-317"
+    },
+    {
+      "key": "chat-b033-C06-8e55bed3-e0eb-41dd-a819-1bdf02f0a941",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "8e55bed3-e0eb-41dd-a819-1bdf02f0a941",
+        "kind": "song_variant",
+        "primaryWorkId": "1ad50130-f3d2-5fba-9511-e8950f0b3f5c",
+        "title": "メズマライザー",
+        "displayCredit": "ヰ世界情緒 × 春猿火",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=uIOUaIKeRR0",
+      "mediaId": "7ef5f510-3af2-5b26-ae95-60e3735f083d",
+      "mediaUrl": "https://www.youtube.com/watch?v=uIOUaIKeRR0",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "適当緑"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-318"
+    },
+    {
+      "key": "chat-b033-C07-aa0cd2e4-f203-4f7e-a28e-300653ed8b99",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "aa0cd2e4-f203-4f7e-a28e-300653ed8b99",
+        "kind": "song_variant",
+        "primaryWorkId": "92a9fed0-3dc2-576f-9941-6e096fa83de7",
+        "title": "エンパープル",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=SVvYL0Oe2EY",
+      "mediaId": "efdb6ddb-8afb-5167-9ff6-03fbd0191f7a",
+      "mediaUrl": "https://www.youtube.com/watch?v=SVvYL0Oe2EY",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "ヨ剤"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-319"
+    },
+    {
+      "key": "chat-b033-C08-c6972d8d-1bbe-4fec-ab9a-0a9edc9e40e3",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "c6972d8d-1bbe-4fec-ab9a-0a9edc9e40e3",
+        "kind": "song_variant",
+        "primaryWorkId": "378892de-fade-590f-b309-d22428b47ac4",
+        "title": "死ぬのがいいわ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=VjjKPXgQquQ",
+      "mediaId": "c12cbdf0-4cf0-59e4-8ddc-eb9b2d152471",
+      "mediaUrl": "https://www.youtube.com/watch?v=VjjKPXgQquQ",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "都"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-320"
+    },
+    {
+      "key": "chat-b033-C09-cd3ea366-9c12-4b55-9df2-f7769a9ddfa5",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "cd3ea366-9c12-4b55-9df2-f7769a9ddfa5",
+        "kind": "song_variant",
+        "primaryWorkId": "7de07d5e-7e63-5521-929c-e6e5b614c971",
+        "title": "君の知らない物語",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=FggMtVBLric",
+      "mediaId": "635c0f62-3d50-5a3a-8704-23f58af5086b",
+      "mediaUrl": "https://www.youtube.com/watch?v=FggMtVBLric",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "夜の羊雲"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-321"
+    },
+    {
+      "key": "chat-b033-C10-711ba91f-3642-43f0-9495-1e0c287865cc",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "711ba91f-3642-43f0-9495-1e0c287865cc",
+        "kind": "song_variant",
+        "primaryWorkId": "2cc580e3-3e2c-55e3-ac57-3541c8db447e",
+        "title": "LEMON MELON COOKIE",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=p0yGF2JrPUU",
+      "mediaId": "74f84736-119b-5f89-ba41-f7cc04313406",
+      "mediaUrl": "https://www.youtube.com/watch?v=p0yGF2JrPUU",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "組長"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-322"
+    },
+    {
+      "key": "chat-b033-C11-4b33c13b-13d0-41e2-b177-c2dc1b32c2a0",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "4b33c13b-13d0-41e2-b177-c2dc1b32c2a0",
+        "kind": "song_variant",
+        "primaryWorkId": "ec2c4653-1c4c-5191-9521-cc0d8d05bcf2",
+        "title": "全部夢だった！",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=AVCFqzYJNMs",
+      "mediaId": "b9c9509c-33cf-5dc5-9e1e-477e3320621f",
+      "mediaUrl": "https://www.youtube.com/watch?v=AVCFqzYJNMs",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "ぽぺぽぽ"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-323"
+    },
+    {
+      "key": "chat-b033-C12-2312d218-c3d8-4317-98e0-28e0c69199f2",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "2312d218-c3d8-4317-98e0-28e0c69199f2",
+        "kind": "song_variant",
+        "primaryWorkId": "fd1494ee-c99a-5e81-aa1e-5429c0c11578",
+        "title": "プロポーズ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=XOKP8CMqilM",
+      "mediaId": "0bd0b85a-5061-52b5-bf61-f263db3180cd",
+      "mediaUrl": "https://www.youtube.com/watch?v=XOKP8CMqilM",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "さん"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-324"
+    },
+    {
+      "key": "chat-b035-C01-0c98806f-e69e-4d25-90f4-f43f6ef08554",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "0c98806f-e69e-4d25-90f4-f43f6ef08554",
+        "kind": "song_variant",
+        "primaryWorkId": "5d281209-d456-5336-8cda-d71804f26c80",
+        "title": "ずうっといっしょ！",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=ZYYOp0CHyDI",
+      "mediaId": "0c3aa141-e47b-5773-9093-4e0699df7979",
+      "mediaUrl": "https://www.youtube.com/watch?v=ZYYOp0CHyDI",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "船橋花"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-325"
+    },
+    {
+      "key": "chat-b035-C02-206a0d61-f0ae-4a36-a156-7f4d33c28a6e",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "206a0d61-f0ae-4a36-a156-7f4d33c28a6e",
+        "kind": "song_variant",
+        "primaryWorkId": "424f7ebc-995e-5686-8714-70d8029a9cc4",
+        "title": "きゅびずむ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=qjV82EmEKUA",
+      "mediaId": "2eaa28d9-b227-5e67-83e7-d59760488454",
+      "mediaUrl": "https://www.youtube.com/watch?v=qjV82EmEKUA",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "なるめ"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-326"
+    },
+    {
+      "key": "chat-b035-C03-5f3ef3a0-1d4a-4f8c-b841-4222a931afd5",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "5f3ef3a0-1d4a-4f8c-b841-4222a931afd5",
+        "kind": "song_variant",
+        "primaryWorkId": "e0b915e7-4e24-542d-ad80-9784c47649e6",
+        "title": "Platform 5",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=Wb4VrH5qF0I",
+      "mediaId": "379dc0d4-2df3-5de2-b060-2c51ee8c0d61",
+      "mediaUrl": "https://www.youtube.com/watch?v=Wb4VrH5qF0I",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "ヰ世界情緒"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-327"
+    },
+    {
+      "key": "chat-b035-C04-82b0d523-d05a-45d1-94f9-56c8566df264",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "82b0d523-d05a-45d1-94f9-56c8566df264",
+        "kind": "song_variant",
+        "primaryWorkId": "13fea77d-00d5-5a75-b53a-94c2da2d5b45",
+        "title": "magnet",
+        "displayCredit": "春猿火 × ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=eNXG3xnMTto",
+      "mediaId": "4fb677d4-7dbe-5beb-b134-074f57f0c06b",
+      "mediaUrl": "https://www.youtube.com/watch?v=eNXG3xnMTto",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "竹中"
+        },
+        {
+          "role": "Title logo",
+          "name": "今菜津美(MyShelf)"
+        },
+        {
+          "role": "Mix",
+          "name": "神作"
+        }
+      ],
+      "sourceId": "S-328"
+    },
+    {
+      "key": "chat-b035-C05-0c98d951-f423-4d32-88f1-a1618a7267e4",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "0c98d951-f423-4d32-88f1-a1618a7267e4",
+        "kind": "song_variant",
+        "primaryWorkId": "1b6e5340-1c4c-58f0-8f63-8203e52a7b0a",
+        "title": "Simple And Clean",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=d7AQAoCtAn0",
+      "mediaId": "b683e298-7803-5173-8d68-f4d2f6551968",
+      "mediaUrl": "https://www.youtube.com/watch?v=d7AQAoCtAn0",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "𝙩𝙢𝙩"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-329"
+    },
+    {
+      "key": "chat-b035-C06-abc8d44e-0b5a-4123-aa02-7a7f49f4d32c",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "abc8d44e-0b5a-4123-aa02-7a7f49f4d32c",
+        "kind": "song_variant",
+        "primaryWorkId": "ef2a46a1-5a60-56ec-bb08-c8eaa4c2a4a6",
+        "title": "Magia",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=8KEd7iUPs6c",
+      "mediaId": "69309833-f66f-5738-9ad3-5aef07d8bd93",
+      "mediaUrl": "https://www.youtube.com/watch?v=8KEd7iUPs6c",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "yuzu"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-330"
+    },
+    {
+      "key": "chat-b035-C07-30488b08-ce25-482b-aecc-b03faa2d20a6",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "30488b08-ce25-482b-aecc-b03faa2d20a6",
+        "kind": "song_variant",
+        "primaryWorkId": "62cd1690-26d1-5088-8f68-e9083ed6e71c",
+        "title": "あなたしか見えないの",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=2r8srgpUlTM",
+      "mediaId": "16ea115e-431b-5738-b80f-0042bc6d993f",
+      "mediaUrl": "https://www.youtube.com/watch?v=2r8srgpUlTM",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "アサヮ"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-331"
+    },
+    {
+      "key": "chat-b035-C08-8824d0ae-77de-4799-9082-d778dd28745a",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "8824d0ae-77de-4799-9082-d778dd28745a",
+        "kind": "song_variant",
+        "primaryWorkId": "5d4298ab-c786-5b8c-ab08-3be100bafac1",
+        "title": "ももいろの鍵",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=6Bqw51Vsl78",
+      "mediaId": "7618e729-7f9c-5c04-93ec-c36085fd5c3d",
+      "mediaUrl": "https://www.youtube.com/watch?v=6Bqw51Vsl78",
+      "credits": [
+        {
+          "role": "Character animation",
+          "name": "ヰ世界情緒"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-332"
+    },
+    {
+      "key": "chat-b036-C01-1bdd1ece-22cd-493a-b17b-856edfe96e2c",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "1bdd1ece-22cd-493a-b17b-856edfe96e2c",
+        "kind": "song_variant",
+        "primaryWorkId": "09c71502-e652-54bb-88d0-144bb9c78620",
+        "title": "双生コンフリクト",
+        "displayCredit": "LOLUET feat. ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=8x9J2ECTO9Q",
+      "mediaId": "ddd9a815-2166-5e77-b234-c8c8dfaa5355",
+      "mediaUrl": "https://www.youtube.com/watch?v=8x9J2ECTO9Q",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "zoë"
+        },
+        {
+          "role": "Movie",
+          "name": "ZnnZ"
+        }
+      ],
+      "sourceId": "S-333"
+    },
+    {
+      "key": "chat-b036-C02-0752e1ae-7724-4b97-aa7f-dfa4fa6dcb3a",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "0752e1ae-7724-4b97-aa7f-dfa4fa6dcb3a",
+        "kind": "song_variant",
+        "primaryWorkId": "a6a01c60-0944-5ccb-a15f-ae5504537ba0",
+        "title": "果てなきソラへ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=6xIeChog1jc",
+      "mediaId": "1de0f2c0-3a72-56a7-abb8-562eb95c0b67",
+      "mediaUrl": "https://www.youtube.com/watch?v=6xIeChog1jc",
+      "credits": [
+        {
+          "role": "Director",
+          "name": "MONA (VeAble)"
+        },
+        {
+          "role": "3DCG Supervisor",
+          "name": "Ray Wakui (VeAble)"
+        },
+        {
+          "role": "3DCG Animator",
+          "name": "Hiroyuki Nakatomi"
+        },
+        {
+          "role": "3DCG Artist",
+          "name": "Kentaro Kanaya (KASSEN)"
+        },
+        {
+          "role": "3DCG Artist",
+          "name": "Yu Takahashi (VILT)"
+        },
+        {
+          "role": "3DCG Artist",
+          "name": "Kou Nakamura (UNDEFINED)"
+        },
+        {
+          "role": "Compositor",
+          "name": "Sho Watanabe (UNDEFINED)"
+        },
+        {
+          "role": "Colorist",
+          "name": "SHUNRI (VeAble)"
+        },
+        {
+          "role": "3DCG Production Assistant",
+          "name": "Miu Sawada (VeAble)"
+        },
+        {
+          "role": "Title Design",
+          "name": "mizuma enu"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kentaro Iwaki（THINKR）"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi（THINKR）"
+        },
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        }
+      ],
+      "sourceId": "S-334"
+    },
+    {
+      "key": "chat-b036-C03-f704c9bc-ec90-48be-afc6-f392b75e2f64",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "f704c9bc-ec90-48be-afc6-f392b75e2f64",
+        "kind": "song_variant",
+        "primaryWorkId": "1de7888f-d8d9-5b3d-ba2f-56e6fe2d27cd",
+        "title": "LOVEぃ",
+        "displayCredit": "春猿火 × ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=9UOZfI-WbVM",
+      "mediaId": "c501f543-bf7a-588f-9c32-8bc74f9ce2be",
+      "mediaUrl": "https://www.youtube.com/watch?v=9UOZfI-WbVM",
+      "credits": [
+        {
+          "role": "Director",
+          "name": "Rayleigh（PHASE STUDIO）"
+        },
+        {
+          "role": "Title & Lyrics Design",
+          "name": "strobo（PHASE STUDIO）"
+        },
+        {
+          "role": "Illustration",
+          "name": "一色"
+        }
+      ],
+      "sourceId": "S-335"
+    },
+    {
+      "key": "chat-b036-C04-8fc18ab0-0e44-41ba-9081-d00068e290e6",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "8fc18ab0-0e44-41ba-9081-d00068e290e6",
+        "kind": "song_variant",
+        "primaryWorkId": "439aac47-c6e1-5682-ba02-2343fddd7752",
+        "title": "対象a",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=QQztBtYyyQQ",
+      "mediaId": "9c614ac5-1a0e-5e72-8327-ebf5a9d85f69",
+      "mediaUrl": "https://www.youtube.com/watch?v=QQztBtYyyQQ",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "きう"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-336"
+    },
+    {
+      "key": "chat-b036-C05-9f9b0369-6dfd-4c8f-aa74-7e27c673152c",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "9f9b0369-6dfd-4c8f-aa74-7e27c673152c",
+        "kind": "song_variant",
+        "primaryWorkId": "c1d71cbc-83b1-565c-86cc-21dae92b0ddc",
+        "title": "僕らの記憶を掠わないで",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=4W8I-GWoXh8",
+      "mediaId": "a7367977-87b0-54f5-842a-e2df5255e103",
+      "mediaUrl": "https://www.youtube.com/watch?v=4W8I-GWoXh8",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "船橋花"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-337"
+    },
+    {
+      "key": "chat-b036-C06-2e1e5b35-d387-4961-8d7c-b7e6d960c46b",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "2e1e5b35-d387-4961-8d7c-b7e6d960c46b",
+        "kind": "song_variant",
+        "primaryWorkId": "2cdb0712-02b4-5351-8286-f0df33957e14",
+        "title": "Contrast",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=8xUzExYvVW4",
+      "mediaId": "ae9ff132-86c2-5507-81c3-451242f3079d",
+      "mediaUrl": "https://www.youtube.com/watch?v=8xUzExYvVW4",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "夜の羊雲"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-338"
+    },
+    {
+      "key": "chat-b036-C07-19e78530-6558-41d2-b0af-f1616f9d03fd",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "19e78530-6558-41d2-b0af-f1616f9d03fd",
+        "kind": "song_variant",
+        "primaryWorkId": "857364f8-f861-569e-add0-492be8a62be9",
+        "title": "すきなことだけでいいです",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=1rv9GZiJTnQ",
+      "mediaId": "b0cd2be5-d08f-5a73-b3f5-eb864cff3c63",
+      "mediaUrl": "https://www.youtube.com/watch?v=1rv9GZiJTnQ",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "bmtol"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-339"
+    },
+    {
+      "key": "chat-b036-C08-177c530f-f23a-4e13-b0f7-3d85f34328c3",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "177c530f-f23a-4e13-b0f7-3d85f34328c3",
+        "kind": "song_variant",
+        "primaryWorkId": "5ee49274-b2fb-5748-b7bb-85225c2151d7",
+        "title": "アリス",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=SAGRWjZzKT8",
+      "mediaId": "a79a8115-7a7d-5830-ae77-ecd6e3f438b9",
+      "mediaUrl": "https://www.youtube.com/watch?v=SAGRWjZzKT8",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "ᴋᴜʀᴇʜᴀ"
+        },
+        {
+          "role": "Mix",
+          "name": "ナシおいC"
+        }
+      ],
+      "sourceId": "S-340"
+    },
+    {
+      "key": "chat-b036-C09-22ea04f0-61bb-4fbe-87ef-896777da650b",
+      "status": "active",
+      "checkedOn": "2026-10-29",
+      "entry": {
+        "entryId": "22ea04f0-61bb-4fbe-87ef-896777da650b",
+        "kind": "song_variant",
+        "primaryWorkId": "8d8da3f0-0a69-5042-88a5-02cc25c3ce48",
+        "title": "墨流し",
+        "displayCredit": "花譜 & ヰ世界情緒",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=gKwjWPyNodY",
+      "mediaId": "473ab7c1-de8d-5740-8c7e-5d6ef85ac0a9",
+      "mediaUrl": "https://www.youtube.com/watch?v=gKwjWPyNodY",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "champ"
+        }
+      ],
+      "sourceId": "S-341"
     }
   ]
 }
