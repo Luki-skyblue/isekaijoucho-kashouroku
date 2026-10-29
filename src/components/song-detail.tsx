@@ -63,7 +63,7 @@ export function CatalogSongDetail({song,initialTab='info',returnTo}:{song:SongDe
   return <Link className="song-detail-release" key={group.key} href={external??'/releases/'+str(family.familyId)} target={external?'_blank':undefined} rel={external?'noopener noreferrer':undefined}>
    <SongDetailArtwork url={str(release.imageUrl)||null} urls={group.items.map(item=>str(item.imageUrl)).filter(Boolean)} className="song-detail-release-art"/>
    <span className="song-detail-release-copy"><strong>{str(family.title)}</strong><span className="song-detail-release-meta">{[({single:'シングル',album:'アルバム',compilation:'コンピレーション'} as Record<string,string>)[str(family.releaseKind)],group.releaseDate?displayDate(group.releaseDate):null].filter(Boolean).join(' · ')}</span>
-    {group.items.map((item,index)=>{const date=str(asObject(item.edition).releaseDate);return <span className="song-detail-release-track" key={index}>{[!group.releaseDate&&date?displayDate(date):null,str(item.editionLabel),typeof item.trackNumber==='number'?`${item.trackNumber}曲目`:null].filter(Boolean).join(' · ')}</span>;})}
+    {group.items.map((item,index)=>{const date=str(asObject(item.edition).releaseDate);return <span className="song-detail-release-track" key={index}>{[!group.releaseDate&&date?displayDate(date):null,str(item.editionLabel),str(item.trackPositionLabel)||(typeof item.trackNumber==='number'?`${item.trackNumber}曲目`:null)].filter(Boolean).join(' · ')}</span>;})}
    </span><span className="song-detail-arrow" aria-hidden="true">↗</span>
   </Link>;
  })}</div>:<Empty review={review.releases}/>;

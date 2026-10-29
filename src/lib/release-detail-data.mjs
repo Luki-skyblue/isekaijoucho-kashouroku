@@ -87,7 +87,7 @@ export function releaseDisplayContextFromModel(model,familyId,options={}){
    }
   }
  }
- const sourced=releaseContentFromModel(model,familyId,options.contentRecords);
+ const sourced=releaseContentFromModel(model,familyId,options.contentRecords,undefined,records);
  const itemLinks={...Object.fromEntries([...targets].filter(([,ids])=>ids.size===1).map(([id,ids])=>[id,{entryId:[...ids][0]}])),...sourced.itemLinks};
  const artwork=rankArtworkCandidates(candidates);
  const shared=SHARED_RELEASE_TRACKLISTS.find(x=>x.familyId===familyId&&x.title===detail.title&&x.editionIds.length===editionIds.size&&x.editionIds.every(id=>editionIds.has(id)));

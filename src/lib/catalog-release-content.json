@@ -5068,7 +5068,22 @@
             "programItemId": "623a612c-f3bb-59d2-ab6e-0c6864085a79",
             "eventSequenceNo": 3,
             "eventRawLabel": "霞がついてくる",
-            "basis": "official_product_row_only_no_new_song_correspondence"
+            "basis": "official_product_track_and_performer_block",
+            "sourceBatch": "B043",
+            "candidateId": "RL010",
+            "doesNotAssertIdenticalRecording": true,
+            "previousBasis": "official_product_row_only_no_new_song_correspondence"
+          },
+          "entry": {
+            "entryId": "053c8f07-bd79-4eec-8a22-3321c79f5765",
+            "kind": "song_variant",
+            "primaryWorkId": "920dfba2-a65d-5cc9-b986-a7cfef19f697",
+            "title": "霞がついてくる",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
           }
         },
         {
@@ -5081,7 +5096,22 @@
             "programItemId": "1e0d8606-8a70-5ad4-802c-b21cecdf0a6b",
             "eventSequenceNo": 4,
             "eventRawLabel": "ディメンション",
-            "basis": "official_product_row_only_no_new_song_correspondence"
+            "basis": "official_product_track_and_performer_block",
+            "sourceBatch": "B043",
+            "candidateId": "RL011",
+            "doesNotAssertIdenticalRecording": true,
+            "previousBasis": "official_product_row_only_no_new_song_correspondence"
+          },
+          "entry": {
+            "entryId": "e71238fd-48bd-4dd9-8e76-50d0b191acf6",
+            "kind": "song_variant",
+            "primaryWorkId": "c5992ad9-6d50-5abc-801d-d2232a296b15",
+            "title": "ディメンション",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
           }
         },
         {
@@ -5094,7 +5124,22 @@
             "programItemId": "75973e1d-904f-511b-bab0-1db223c1cf51",
             "eventSequenceNo": 5,
             "eventRawLabel": "マボロシのまち",
-            "basis": "official_product_row_only_no_new_song_correspondence"
+            "basis": "official_product_track_and_performer_block",
+            "sourceBatch": "B043",
+            "candidateId": "RL012",
+            "doesNotAssertIdenticalRecording": true,
+            "previousBasis": "official_product_row_only_no_new_song_correspondence"
+          },
+          "entry": {
+            "entryId": "acfcbd0b-e7b2-4878-aa12-c1d5fef9d2e4",
+            "kind": "song_variant",
+            "primaryWorkId": "058b33ac-517a-5e13-8f26-6c727ac3325e",
+            "title": "マボロシのまち",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
           }
         },
         {
@@ -5120,7 +5165,23 @@
             "programItemId": "d180403a-7a12-532a-bc2e-5edb5d4ef13f",
             "eventSequenceNo": 7,
             "eventRawLabel": "異星にいこうね",
-            "basis": "official_product_row_only_no_new_song_correspondence"
+            "basis": "official_product_track_and_performer_block",
+            "sourceBatch": "B043",
+            "candidateId": "RL014",
+            "doesNotAssertIdenticalRecording": true,
+            "previousBasis": "official_product_row_only_no_new_song_correspondence"
+          },
+          "entry": {
+            "entryId": "3ed74400-9d3e-47e0-9931-75107c732ce5",
+            "kind": "song_variant",
+            "primaryWorkId": "f6296247-e3e5-5e44-9f9e-96a65e09922f",
+            "title": "異星にいこうね",
+            "displayCredit": "ヰ世界情緒×星界",
+            "singerIds": [
+              "1867981b-c3c0-551b-9337-a8df05385348",
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
           }
         },
         {
@@ -5133,7 +5194,22 @@
             "programItemId": "6017e285-4cbd-525b-a0a8-97ec58c2d82f",
             "eventSequenceNo": 8,
             "eventRawLabel": "パンドラコール",
-            "basis": "official_product_row_only_no_new_song_correspondence"
+            "basis": "official_product_track_and_performer_block",
+            "sourceBatch": "B043",
+            "candidateId": "RL015",
+            "doesNotAssertIdenticalRecording": true,
+            "previousBasis": "official_product_row_only_no_new_song_correspondence"
+          },
+          "entry": {
+            "entryId": "4839e979-470a-4b21-b16d-3652da7cb695",
+            "kind": "song_variant",
+            "primaryWorkId": "44be232d-ef64-5051-97b0-0e7677d02410",
+            "title": "パンドラコール",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
           }
         },
         {
@@ -5146,7 +5222,22 @@
             "programItemId": "ea770f7d-80dd-5c4c-bd6a-a55a61cf3342",
             "eventSequenceNo": 9,
             "eventRawLabel": "ヰ世界の宝石譚",
-            "basis": "official_product_row_only_no_new_song_correspondence"
+            "basis": "official_product_track_and_performer_block",
+            "sourceBatch": "B043",
+            "candidateId": "RL016",
+            "doesNotAssertIdenticalRecording": true,
+            "previousBasis": "official_product_row_only_no_new_song_correspondence"
+          },
+          "entry": {
+            "entryId": "cb31bd97-6d1f-4afc-893c-982b9161b17e",
+            "kind": "song_variant",
+            "primaryWorkId": "cb07bc61-fb0d-577f-9174-94c486d35e00",
+            "title": "ヰ世界の宝石譚",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
           }
         },
         {
@@ -5159,7 +5250,22 @@
             "programItemId": "aaff7edd-9d46-5ef8-b9a8-dbb3756b1a31",
             "eventSequenceNo": 10,
             "eventRawLabel": "シリウスの心臓",
-            "basis": "official_product_row_only_no_new_song_correspondence"
+            "basis": "official_product_track_and_performer_block",
+            "sourceBatch": "B043",
+            "candidateId": "RL017",
+            "doesNotAssertIdenticalRecording": true,
+            "previousBasis": "official_product_row_only_no_new_song_correspondence"
+          },
+          "entry": {
+            "entryId": "912cf6d0-0f06-4112-9bba-0b1333895122",
+            "kind": "song_variant",
+            "primaryWorkId": "5dd5d31d-4b77-5259-b5b9-d4828d4c1098",
+            "title": "シリウスの心臓",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
           }
         },
         {
@@ -5172,7 +5278,22 @@
             "programItemId": "e19bfb7d-c558-515a-bc19-7345304095fa",
             "eventSequenceNo": 11,
             "eventRawLabel": "ARCADIA",
-            "basis": "official_product_row_only_no_new_song_correspondence"
+            "basis": "official_product_track_and_performer_block",
+            "sourceBatch": "B043",
+            "candidateId": "RL018",
+            "doesNotAssertIdenticalRecording": true,
+            "previousBasis": "official_product_row_only_no_new_song_correspondence"
+          },
+          "entry": {
+            "entryId": "8d278884-8e97-4b8d-a1c6-7225863c25b9",
+            "kind": "song_variant",
+            "primaryWorkId": "acbd3faf-005c-5e7d-8c96-ee56a814a265",
+            "title": "ARCADIA",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
           }
         },
         {
@@ -5315,7 +5436,23 @@
             "programItemId": "36d840a1-d758-5cc4-ba66-5189e1a3438a",
             "eventSequenceNo": 22,
             "eventRawLabel": "泡沫",
-            "basis": "official_product_row_only_no_new_song_correspondence"
+            "basis": "official_product_track_and_performer_block",
+            "sourceBatch": "B043",
+            "candidateId": "RL019",
+            "doesNotAssertIdenticalRecording": true,
+            "previousBasis": "official_product_row_only_no_new_song_correspondence"
+          },
+          "entry": {
+            "entryId": "75406f0c-c018-47b6-bdbe-66a856311b9e",
+            "kind": "song_variant",
+            "primaryWorkId": "93e0a7ba-9dca-5c87-bd57-af2f473d5fdc",
+            "title": "泡沫",
+            "displayCredit": "ヰ世界情緒 × 理芽",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0",
+              "ae41fa12-3b09-52c0-bc08-1d9218492391"
+            ],
+            "variations": []
           }
         },
         {
@@ -5328,7 +5465,23 @@
             "programItemId": "306b94eb-8503-55ee-b412-32c6ae0b7d54",
             "eventSequenceNo": 23,
             "eventRawLabel": "不的",
-            "basis": "official_product_row_only_no_new_song_correspondence"
+            "basis": "official_product_track_and_performer_block",
+            "sourceBatch": "B043",
+            "candidateId": "RL020",
+            "doesNotAssertIdenticalRecording": true,
+            "previousBasis": "official_product_row_only_no_new_song_correspondence"
+          },
+          "entry": {
+            "entryId": "14242993-9789-4def-8c02-3dbf6ac90b67",
+            "kind": "song_variant",
+            "primaryWorkId": "1f3cc792-3e04-5d60-8ebd-166eb8d1bc93",
+            "title": "不的",
+            "displayCredit": "理芽 × ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0",
+              "ae41fa12-3b09-52c0-bc08-1d9218492391"
+            ],
+            "variations": []
           }
         },
         {
@@ -5445,7 +5598,22 @@
             "programItemId": "623a612c-f3bb-59d2-ab6e-0c6864085a79",
             "eventSequenceNo": 3,
             "eventRawLabel": "霞がついてくる",
-            "basis": "official_product_row_only_no_new_song_correspondence"
+            "basis": "official_product_track_and_performer_block",
+            "sourceBatch": "B043",
+            "candidateId": "RL010",
+            "doesNotAssertIdenticalRecording": true,
+            "previousBasis": "official_product_row_only_no_new_song_correspondence"
+          },
+          "entry": {
+            "entryId": "053c8f07-bd79-4eec-8a22-3321c79f5765",
+            "kind": "song_variant",
+            "primaryWorkId": "920dfba2-a65d-5cc9-b986-a7cfef19f697",
+            "title": "霞がついてくる",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
           }
         },
         {
@@ -5458,7 +5626,22 @@
             "programItemId": "1e0d8606-8a70-5ad4-802c-b21cecdf0a6b",
             "eventSequenceNo": 4,
             "eventRawLabel": "ディメンション",
-            "basis": "official_product_row_only_no_new_song_correspondence"
+            "basis": "official_product_track_and_performer_block",
+            "sourceBatch": "B043",
+            "candidateId": "RL011",
+            "doesNotAssertIdenticalRecording": true,
+            "previousBasis": "official_product_row_only_no_new_song_correspondence"
+          },
+          "entry": {
+            "entryId": "e71238fd-48bd-4dd9-8e76-50d0b191acf6",
+            "kind": "song_variant",
+            "primaryWorkId": "c5992ad9-6d50-5abc-801d-d2232a296b15",
+            "title": "ディメンション",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
           }
         },
         {
@@ -5471,7 +5654,22 @@
             "programItemId": "75973e1d-904f-511b-bab0-1db223c1cf51",
             "eventSequenceNo": 5,
             "eventRawLabel": "マボロシのまち",
-            "basis": "official_product_row_only_no_new_song_correspondence"
+            "basis": "official_product_track_and_performer_block",
+            "sourceBatch": "B043",
+            "candidateId": "RL012",
+            "doesNotAssertIdenticalRecording": true,
+            "previousBasis": "official_product_row_only_no_new_song_correspondence"
+          },
+          "entry": {
+            "entryId": "acfcbd0b-e7b2-4878-aa12-c1d5fef9d2e4",
+            "kind": "song_variant",
+            "primaryWorkId": "058b33ac-517a-5e13-8f26-6c727ac3325e",
+            "title": "マボロシのまち",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
           }
         },
         {
@@ -5497,7 +5695,23 @@
             "programItemId": "d180403a-7a12-532a-bc2e-5edb5d4ef13f",
             "eventSequenceNo": 7,
             "eventRawLabel": "異星にいこうね",
-            "basis": "official_product_row_only_no_new_song_correspondence"
+            "basis": "official_product_track_and_performer_block",
+            "sourceBatch": "B043",
+            "candidateId": "RL014",
+            "doesNotAssertIdenticalRecording": true,
+            "previousBasis": "official_product_row_only_no_new_song_correspondence"
+          },
+          "entry": {
+            "entryId": "3ed74400-9d3e-47e0-9931-75107c732ce5",
+            "kind": "song_variant",
+            "primaryWorkId": "f6296247-e3e5-5e44-9f9e-96a65e09922f",
+            "title": "異星にいこうね",
+            "displayCredit": "ヰ世界情緒×星界",
+            "singerIds": [
+              "1867981b-c3c0-551b-9337-a8df05385348",
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
           }
         },
         {
@@ -5510,7 +5724,22 @@
             "programItemId": "6017e285-4cbd-525b-a0a8-97ec58c2d82f",
             "eventSequenceNo": 8,
             "eventRawLabel": "パンドラコール",
-            "basis": "official_product_row_only_no_new_song_correspondence"
+            "basis": "official_product_track_and_performer_block",
+            "sourceBatch": "B043",
+            "candidateId": "RL015",
+            "doesNotAssertIdenticalRecording": true,
+            "previousBasis": "official_product_row_only_no_new_song_correspondence"
+          },
+          "entry": {
+            "entryId": "4839e979-470a-4b21-b16d-3652da7cb695",
+            "kind": "song_variant",
+            "primaryWorkId": "44be232d-ef64-5051-97b0-0e7677d02410",
+            "title": "パンドラコール",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
           }
         },
         {
@@ -5523,7 +5752,22 @@
             "programItemId": "ea770f7d-80dd-5c4c-bd6a-a55a61cf3342",
             "eventSequenceNo": 9,
             "eventRawLabel": "ヰ世界の宝石譚",
-            "basis": "official_product_row_only_no_new_song_correspondence"
+            "basis": "official_product_track_and_performer_block",
+            "sourceBatch": "B043",
+            "candidateId": "RL016",
+            "doesNotAssertIdenticalRecording": true,
+            "previousBasis": "official_product_row_only_no_new_song_correspondence"
+          },
+          "entry": {
+            "entryId": "cb31bd97-6d1f-4afc-893c-982b9161b17e",
+            "kind": "song_variant",
+            "primaryWorkId": "cb07bc61-fb0d-577f-9174-94c486d35e00",
+            "title": "ヰ世界の宝石譚",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
           }
         },
         {
@@ -5536,7 +5780,22 @@
             "programItemId": "aaff7edd-9d46-5ef8-b9a8-dbb3756b1a31",
             "eventSequenceNo": 10,
             "eventRawLabel": "シリウスの心臓",
-            "basis": "official_product_row_only_no_new_song_correspondence"
+            "basis": "official_product_track_and_performer_block",
+            "sourceBatch": "B043",
+            "candidateId": "RL017",
+            "doesNotAssertIdenticalRecording": true,
+            "previousBasis": "official_product_row_only_no_new_song_correspondence"
+          },
+          "entry": {
+            "entryId": "912cf6d0-0f06-4112-9bba-0b1333895122",
+            "kind": "song_variant",
+            "primaryWorkId": "5dd5d31d-4b77-5259-b5b9-d4828d4c1098",
+            "title": "シリウスの心臓",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
           }
         },
         {
@@ -5549,7 +5808,22 @@
             "programItemId": "e19bfb7d-c558-515a-bc19-7345304095fa",
             "eventSequenceNo": 11,
             "eventRawLabel": "ARCADIA",
-            "basis": "official_product_row_only_no_new_song_correspondence"
+            "basis": "official_product_track_and_performer_block",
+            "sourceBatch": "B043",
+            "candidateId": "RL018",
+            "doesNotAssertIdenticalRecording": true,
+            "previousBasis": "official_product_row_only_no_new_song_correspondence"
+          },
+          "entry": {
+            "entryId": "8d278884-8e97-4b8d-a1c6-7225863c25b9",
+            "kind": "song_variant",
+            "primaryWorkId": "acbd3faf-005c-5e7d-8c96-ee56a814a265",
+            "title": "ARCADIA",
+            "displayCredit": "ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0"
+            ],
+            "variations": []
           }
         }
       ]
@@ -5720,7 +5994,23 @@
             "programItemId": "36d840a1-d758-5cc4-ba66-5189e1a3438a",
             "eventSequenceNo": 22,
             "eventRawLabel": "泡沫",
-            "basis": "official_product_row_only_no_new_song_correspondence"
+            "basis": "official_product_track_and_performer_block",
+            "sourceBatch": "B043",
+            "candidateId": "RL019",
+            "doesNotAssertIdenticalRecording": true,
+            "previousBasis": "official_product_row_only_no_new_song_correspondence"
+          },
+          "entry": {
+            "entryId": "75406f0c-c018-47b6-bdbe-66a856311b9e",
+            "kind": "song_variant",
+            "primaryWorkId": "93e0a7ba-9dca-5c87-bd57-af2f473d5fdc",
+            "title": "泡沫",
+            "displayCredit": "ヰ世界情緒 × 理芽",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0",
+              "ae41fa12-3b09-52c0-bc08-1d9218492391"
+            ],
+            "variations": []
           }
         },
         {
@@ -5733,7 +6023,23 @@
             "programItemId": "306b94eb-8503-55ee-b412-32c6ae0b7d54",
             "eventSequenceNo": 23,
             "eventRawLabel": "不的",
-            "basis": "official_product_row_only_no_new_song_correspondence"
+            "basis": "official_product_track_and_performer_block",
+            "sourceBatch": "B043",
+            "candidateId": "RL020",
+            "doesNotAssertIdenticalRecording": true,
+            "previousBasis": "official_product_row_only_no_new_song_correspondence"
+          },
+          "entry": {
+            "entryId": "14242993-9789-4def-8c02-3dbf6ac90b67",
+            "kind": "song_variant",
+            "primaryWorkId": "1f3cc792-3e04-5d60-8ebd-166eb8d1bc93",
+            "title": "不的",
+            "displayCredit": "理芽 × ヰ世界情緒",
+            "singerIds": [
+              "81a01233-230e-50a8-a309-11275c794cd0",
+              "ae41fa12-3b09-52c0-bc08-1d9218492391"
+            ],
+            "variations": []
           }
         },
         {
@@ -6484,6 +6790,750 @@
           }
         }
       ]
+    }
+  ],
+  "entryLinks": [
+    {
+      "key": "D144-code-chord-vol2-09",
+      "status": "active",
+      "checkedOn": "2026-10-30",
+      "family": {
+        "familyId": "148f49f2-82e0-5e64-9928-86110f42a5c6",
+        "title": "KOKO Virtual mini live「code／chord」vol.1・2 Blu-ray",
+        "releaseKind": "video_release"
+      },
+      "edition": {
+        "editionId": "d27d0e20-f0fd-5d0f-8cb4-55890e6b124a",
+        "kind": "physical",
+        "catalogNumber": "KTR-100-0235"
+      },
+      "component": {
+        "componentId": "5affef2d-1ab2-58ed-b0ac-34f7b7f7e0ed",
+        "editionId": "d27d0e20-f0fd-5d0f-8cb4-55890e6b124a",
+        "componentKind": "blu_ray",
+        "componentNo": 1,
+        "rawLabel": "Blu-ray"
+      },
+      "catalogUrl": "https://findmestore.thinkr.jp/products/ktr-100-0235",
+      "url": "https://findmestore.thinkr.jp/products/ktr-100-0235",
+      "item": {
+        "itemId": "87a246d0-fb2a-5b58-9a8a-0b80bac7b574",
+        "editionId": "d27d0e20-f0fd-5d0f-8cb4-55890e6b124a",
+        "componentId": "5affef2d-1ab2-58ed-b0ac-34f7b7f7e0ed",
+        "itemKind": "video_chapter",
+        "sequenceNo": 21,
+        "rawPosition": "vol.2-09",
+        "rawTitle": "電脳 feat.理芽,ヰ世界情緒"
+      },
+      "associationBasis": [
+        [
+          "1801cecc-8b93-558f-9bfe-c66ef32e4fcf",
+          "captures_program_item",
+          "program_item",
+          null,
+          null,
+          null,
+          "8947c184-f734-5c24-a360-80221b88e3fc",
+          null,
+          "item",
+          null,
+          "full",
+          false
+        ]
+      ],
+      "creditBasis": [],
+      "entry": {
+        "entryId": "3cb90db7-150d-4908-bafd-7c293b2ab73e",
+        "kind": "song_variant",
+        "primaryWorkId": "ad4d19c0-1b4d-5744-92ef-cab362ce1ec9",
+        "title": "電脳 ([ code / chord ] vol.2 ver.)",
+        "displayCredit": "幸祜 with 理芽・ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391"
+        ],
+        "variations": []
+      },
+      "evidence": {
+        "batch": "B034",
+        "record": "REL01",
+        "basis": "official_vol2_track_and_explicit_feat_singers"
+      }
+    },
+    {
+      "key": "D144-gensho2-4633dd82-c259-5cdb-b812-6d03a635c79c",
+      "status": "active",
+      "checkedOn": "2026-10-30",
+      "family": {
+        "familyId": "1ff99019-82da-5cc3-9a50-2fccd9c48662",
+        "title": "V.W.P「現象II」Blu-ray / LIVE CD",
+        "releaseKind": "live_package"
+      },
+      "edition": {
+        "editionId": "140539ac-56a8-5a64-b979-8d963aba2d09",
+        "kind": "physical",
+        "catalogNumber": "KTR-100-0184"
+      },
+      "component": {
+        "componentId": "f6f576c1-b05b-5494-8a62-8a8003eb621a",
+        "editionId": "140539ac-56a8-5a64-b979-8d963aba2d09",
+        "componentKind": "blu_ray",
+        "componentNo": 1,
+        "rawLabel": "Blu-ray"
+      },
+      "catalogUrl": "https://findmestore.thinkr.jp/products/ktr-100-0184",
+      "url": "https://findmestore.thinkr.jp/products/ktr-100-0184",
+      "item": {
+        "itemId": "4633dd82-c259-5cdb-b812-6d03a635c79c",
+        "editionId": "140539ac-56a8-5a64-b979-8d963aba2d09",
+        "componentId": "f6f576c1-b05b-5494-8a62-8a8003eb621a",
+        "itemKind": "video_chapter",
+        "sequenceNo": 27,
+        "rawPosition": "27",
+        "rawTitle": "祭霊"
+      },
+      "associationBasis": [
+        [
+          "93e7b6f7-dc8e-5a4d-9e19-d97be3aa68fa",
+          "captures_program_item",
+          "program_item",
+          null,
+          null,
+          null,
+          "21fa9799-8b2a-5083-9bef-4b431b4cd0e8",
+          null,
+          "item",
+          null,
+          "full",
+          false
+        ]
+      ],
+      "creditBasis": [
+        [
+          null,
+          "V.W.P",
+          "track_artist_display",
+          null
+        ]
+      ],
+      "entry": {
+        "entryId": "bdd5995d-b11b-40c7-ad30-07b4197a343e",
+        "kind": "medley",
+        "primaryWorkId": null,
+        "title": "祭霊",
+        "displayCredit": null,
+        "singerIds": [],
+        "variations": []
+      },
+      "evidence": {
+        "batch": "B037",
+        "record": "M03",
+        "basis": "official_aggregate_track_and_saved_same_programme_capture",
+        "doesNotSplitMedley": true
+      }
+    },
+    {
+      "key": "D144-gensho2-96cfeaef-51d2-5530-9114-18d07aaa3063",
+      "status": "active",
+      "checkedOn": "2026-10-30",
+      "family": {
+        "familyId": "1ff99019-82da-5cc3-9a50-2fccd9c48662",
+        "title": "V.W.P「現象II」Blu-ray / LIVE CD",
+        "releaseKind": "live_package"
+      },
+      "edition": {
+        "editionId": "140539ac-56a8-5a64-b979-8d963aba2d09",
+        "kind": "physical",
+        "catalogNumber": "KTR-100-0184"
+      },
+      "component": {
+        "componentId": "c4d32e29-7128-5d58-9bc1-21435e2bbd80",
+        "editionId": "140539ac-56a8-5a64-b979-8d963aba2d09",
+        "componentKind": "cd",
+        "componentNo": 2,
+        "rawLabel": "LIVE CD DISC2"
+      },
+      "catalogUrl": "https://findmestore.thinkr.jp/products/ktr-100-0184",
+      "url": "https://findmestore.thinkr.jp/products/ktr-100-0184",
+      "item": {
+        "itemId": "96cfeaef-51d2-5530-9114-18d07aaa3063",
+        "editionId": "140539ac-56a8-5a64-b979-8d963aba2d09",
+        "componentId": "c4d32e29-7128-5d58-9bc1-21435e2bbd80",
+        "itemKind": "audio_track",
+        "sequenceNo": 10,
+        "rawPosition": "M27",
+        "rawTitle": "祭霊"
+      },
+      "associationBasis": [
+        [
+          "7fe7add7-9f82-554a-9208-0691730b9c1f",
+          "captures_program_item",
+          "program_item",
+          null,
+          null,
+          null,
+          "21fa9799-8b2a-5083-9bef-4b431b4cd0e8",
+          null,
+          "item",
+          null,
+          "full",
+          false
+        ]
+      ],
+      "creditBasis": [],
+      "entry": {
+        "entryId": "bdd5995d-b11b-40c7-ad30-07b4197a343e",
+        "kind": "medley",
+        "primaryWorkId": null,
+        "title": "祭霊",
+        "displayCredit": null,
+        "singerIds": [],
+        "variations": []
+      },
+      "evidence": {
+        "batch": "B037",
+        "record": "M03",
+        "basis": "official_aggregate_track_and_saved_same_programme_capture",
+        "doesNotSplitMedley": true
+      }
+    },
+    {
+      "key": "D144-sampler-S101",
+      "status": "active",
+      "checkedOn": "2026-10-30",
+      "family": {
+        "familyId": "9f7fedf5-2c80-5d02-8323-93c3fed9297f",
+        "title": "KAMITSUBAKI LABEL SAMPLER Vol. 1",
+        "releaseKind": "compilation"
+      },
+      "edition": {
+        "editionId": "5321b228-0053-5d5c-9b27-162f9a1d04cb",
+        "kind": "physical",
+        "catalogNumber": "KTR-000-0126"
+      },
+      "component": {
+        "componentId": "ed60418e-988c-5151-9086-9cfc11bbf640",
+        "editionId": "5321b228-0053-5d5c-9b27-162f9a1d04cb",
+        "componentKind": "cd",
+        "componentNo": 1,
+        "rawLabel": "DISC1"
+      },
+      "catalogUrl": "https://kamitsubaki.jp/news/2023/12/26/2794/",
+      "url": "https://findmestore.thinkr.jp/products/ktr-000-0126",
+      "item": {
+        "itemId": "dc4efd18-4a14-51eb-9111-aa7c75f945a2",
+        "editionId": "5321b228-0053-5d5c-9b27-162f9a1d04cb",
+        "componentId": "ed60418e-988c-5151-9086-9cfc11bbf640",
+        "itemKind": "audio_track",
+        "sequenceNo": 15,
+        "rawPosition": "15",
+        "rawTitle": "ラピスのお人形"
+      },
+      "associationBasis": [
+        [
+          "9cb92e15-e675-5172-9878-4c97f3599bdf",
+          "uses_work",
+          "work",
+          "b966dc71-8a4c-561e-86eb-c6321ea93b61",
+          null,
+          null,
+          null,
+          null,
+          "item",
+          null,
+          "full",
+          false
+        ]
+      ],
+      "creditBasis": [
+        [
+          null,
+          "ヰ世界情緒",
+          "track_artist_display",
+          null
+        ]
+      ],
+      "entry": {
+        "entryId": "e3d9c3a1-8c3d-49e6-947b-d0e200e8b6d4",
+        "kind": "song_variant",
+        "primaryWorkId": "b966dc71-8a4c-561e-86eb-c6321ea93b61",
+        "title": "ラピスのお人形",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "evidence": {
+        "batch": "B039",
+        "record": "S101",
+        "basis": "official_exact_track_and_artist",
+        "printedArtist": "ヰ世界情緒",
+        "doesNotAssertIdenticalRecording": true
+      }
+    },
+    {
+      "key": "D144-sampler-S102",
+      "status": "active",
+      "checkedOn": "2026-10-30",
+      "family": {
+        "familyId": "9f7fedf5-2c80-5d02-8323-93c3fed9297f",
+        "title": "KAMITSUBAKI LABEL SAMPLER Vol. 1",
+        "releaseKind": "compilation"
+      },
+      "edition": {
+        "editionId": "5321b228-0053-5d5c-9b27-162f9a1d04cb",
+        "kind": "physical",
+        "catalogNumber": "KTR-000-0126"
+      },
+      "component": {
+        "componentId": "ed60418e-988c-5151-9086-9cfc11bbf640",
+        "editionId": "5321b228-0053-5d5c-9b27-162f9a1d04cb",
+        "componentKind": "cd",
+        "componentNo": 1,
+        "rawLabel": "DISC1"
+      },
+      "catalogUrl": "https://kamitsubaki.jp/news/2023/12/26/2794/",
+      "url": "https://findmestore.thinkr.jp/products/ktr-000-0126",
+      "item": {
+        "itemId": "be4bd08f-8276-5c5a-b1a7-5d1261979bca",
+        "editionId": "5321b228-0053-5d5c-9b27-162f9a1d04cb",
+        "componentId": "ed60418e-988c-5151-9086-9cfc11bbf640",
+        "itemKind": "audio_track",
+        "sequenceNo": 18,
+        "rawPosition": "18",
+        "rawTitle": "祭壇"
+      },
+      "associationBasis": [
+        [
+          "34a10f38-1673-5d31-95f7-1d498a857559",
+          "uses_work",
+          "work",
+          "ae2bbe13-3978-541d-8abb-552222c16300",
+          null,
+          null,
+          null,
+          null,
+          "item",
+          null,
+          "full",
+          false
+        ]
+      ],
+      "creditBasis": [
+        [
+          null,
+          "V.W.P",
+          "track_artist_display",
+          null
+        ]
+      ],
+      "entry": {
+        "entryId": "81b5e1fa-6117-4406-878c-4f8ba7f23627",
+        "kind": "song_variant",
+        "primaryWorkId": "ae2bbe13-3978-541d-8abb-552222c16300",
+        "title": "祭壇",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "evidence": {
+        "batch": "B039",
+        "record": "S102",
+        "basis": "official_exact_track_and_artist",
+        "printedArtist": "V.W.P",
+        "doesNotAssertIdenticalRecording": true
+      }
+    },
+    {
+      "key": "D144-sampler-S201",
+      "status": "active",
+      "checkedOn": "2026-10-30",
+      "family": {
+        "familyId": "4d063111-2e71-5969-86d2-5f08102c01b1",
+        "title": "KAMITSUBAKI LABEL SAMPLER Vol. 2",
+        "releaseKind": "compilation"
+      },
+      "edition": {
+        "editionId": "279b661e-c320-54b0-8e41-37161c982fd7",
+        "kind": "physical",
+        "catalogNumber": "KTR-000-0174"
+      },
+      "component": {
+        "componentId": "b9a6b1a8-3d11-5207-8010-77f8b1204aff",
+        "editionId": "279b661e-c320-54b0-8e41-37161c982fd7",
+        "componentKind": "cd",
+        "componentNo": 1,
+        "rawLabel": "DISC1"
+      },
+      "catalogUrl": "https://findmestore.thinkr.jp/products/ktr-000-0174",
+      "url": "https://findmestore.thinkr.jp/collections/kamitsubaki-studio/products/ktr-000-0174",
+      "item": {
+        "itemId": "5475503e-1a37-538e-b4df-37231cc3bc0c",
+        "editionId": "279b661e-c320-54b0-8e41-37161c982fd7",
+        "componentId": "b9a6b1a8-3d11-5207-8010-77f8b1204aff",
+        "itemKind": "audio_track",
+        "sequenceNo": 4,
+        "rawPosition": "04",
+        "rawTitle": "描き続けた君へ"
+      },
+      "associationBasis": [
+        [
+          "684a37f4-95d8-5476-b734-c3ecccd9d6e5",
+          "uses_work",
+          "work",
+          "678c2d1f-b445-53e0-a852-ee8f564e7bb4",
+          null,
+          null,
+          null,
+          null,
+          "item",
+          null,
+          "full",
+          false
+        ]
+      ],
+      "creditBasis": [
+        [
+          null,
+          "ヰ世界情緒",
+          "track_artist_display",
+          null
+        ]
+      ],
+      "entry": {
+        "entryId": "57664785-b4a1-4615-9868-38acc614320f",
+        "kind": "song_variant",
+        "primaryWorkId": "678c2d1f-b445-53e0-a852-ee8f564e7bb4",
+        "title": "描き続けた君へ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "evidence": {
+        "batch": "B039",
+        "record": "S201",
+        "basis": "official_exact_track_and_artist",
+        "printedArtist": "ヰ世界情緒",
+        "doesNotAssertIdenticalRecording": true
+      }
+    },
+    {
+      "key": "D144-sampler-S202",
+      "status": "active",
+      "checkedOn": "2026-10-30",
+      "family": {
+        "familyId": "4d063111-2e71-5969-86d2-5f08102c01b1",
+        "title": "KAMITSUBAKI LABEL SAMPLER Vol. 2",
+        "releaseKind": "compilation"
+      },
+      "edition": {
+        "editionId": "279b661e-c320-54b0-8e41-37161c982fd7",
+        "kind": "physical",
+        "catalogNumber": "KTR-000-0174"
+      },
+      "component": {
+        "componentId": "b9a6b1a8-3d11-5207-8010-77f8b1204aff",
+        "editionId": "279b661e-c320-54b0-8e41-37161c982fd7",
+        "componentKind": "cd",
+        "componentNo": 1,
+        "rawLabel": "DISC1"
+      },
+      "catalogUrl": "https://findmestore.thinkr.jp/products/ktr-000-0174",
+      "url": "https://findmestore.thinkr.jp/collections/kamitsubaki-studio/products/ktr-000-0174",
+      "item": {
+        "itemId": "467e3fcc-b927-515d-8f7d-1dfc55636fd6",
+        "editionId": "279b661e-c320-54b0-8e41-37161c982fd7",
+        "componentId": "b9a6b1a8-3d11-5207-8010-77f8b1204aff",
+        "itemKind": "audio_track",
+        "sequenceNo": 12,
+        "rawPosition": "12",
+        "rawTitle": "同盟"
+      },
+      "associationBasis": [
+        [
+          "ad4c7af8-488f-502e-bad9-949824e47143",
+          "uses_work",
+          "work",
+          "5ab3b234-b19b-5ddb-8ed2-4a451a308783",
+          null,
+          null,
+          null,
+          null,
+          "item",
+          null,
+          "full",
+          false
+        ]
+      ],
+      "creditBasis": [
+        [
+          null,
+          "V.W.P",
+          "track_artist_display",
+          null
+        ]
+      ],
+      "entry": {
+        "entryId": "45118e1c-d0f8-4bac-866e-fa62faf166b1",
+        "kind": "song_variant",
+        "primaryWorkId": "5ab3b234-b19b-5ddb-8ed2-4a451a308783",
+        "title": "同盟",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "evidence": {
+        "batch": "B039",
+        "record": "S202",
+        "basis": "official_exact_track_and_artist",
+        "printedArtist": "V.W.P",
+        "doesNotAssertIdenticalRecording": true
+      }
+    },
+    {
+      "key": "D144-sampler-S204",
+      "status": "active",
+      "checkedOn": "2026-10-30",
+      "family": {
+        "familyId": "4d063111-2e71-5969-86d2-5f08102c01b1",
+        "title": "KAMITSUBAKI LABEL SAMPLER Vol. 2",
+        "releaseKind": "compilation"
+      },
+      "edition": {
+        "editionId": "279b661e-c320-54b0-8e41-37161c982fd7",
+        "kind": "physical",
+        "catalogNumber": "KTR-000-0174"
+      },
+      "component": {
+        "componentId": "a30c7603-9c60-5970-aed8-c9c0946c8911",
+        "editionId": "279b661e-c320-54b0-8e41-37161c982fd7",
+        "componentKind": "cd",
+        "componentNo": 2,
+        "rawLabel": "DISC2"
+      },
+      "catalogUrl": "https://findmestore.thinkr.jp/products/ktr-000-0174",
+      "url": "https://findmestore.thinkr.jp/collections/kamitsubaki-studio/products/ktr-000-0174",
+      "item": {
+        "itemId": "0d10084e-32a5-589c-a3d7-35ee2415c9ae",
+        "editionId": "279b661e-c320-54b0-8e41-37161c982fd7",
+        "componentId": "a30c7603-9c60-5970-aed8-c9c0946c8911",
+        "itemKind": "audio_track",
+        "sequenceNo": 11,
+        "rawPosition": "11",
+        "rawTitle": "セカイの箱庭 feat.ヰ世界情緒"
+      },
+      "associationBasis": [
+        [
+          "3f120446-b43a-5eb8-bc55-317d4e60b20f",
+          "uses_work",
+          "work",
+          "d3fe614a-13c2-5797-9a7c-234173b524ef",
+          null,
+          null,
+          null,
+          null,
+          "item",
+          null,
+          "full",
+          false
+        ]
+      ],
+      "creditBasis": [
+        [
+          null,
+          "廉",
+          "track_artist_display",
+          null
+        ]
+      ],
+      "entry": {
+        "entryId": "9e78c5b3-c754-4ad8-9f00-99bca0c0f467",
+        "kind": "song_variant",
+        "primaryWorkId": "d3fe614a-13c2-5797-9a7c-234173b524ef",
+        "title": "セカイの箱庭",
+        "displayCredit": "廉 feat. ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "evidence": {
+        "batch": "B039",
+        "record": "S204",
+        "basis": "official_exact_track_and_artist",
+        "printedArtist": "廉",
+        "doesNotAssertIdenticalRecording": true
+      }
+    },
+    {
+      "key": "D144-sampler-S301",
+      "status": "active",
+      "checkedOn": "2026-10-30",
+      "family": {
+        "familyId": "bab8f14d-f329-58e2-b563-eed65f91821e",
+        "title": "KAMITSUBAKI LABEL SAMPLER Vol. 3",
+        "releaseKind": "compilation"
+      },
+      "edition": {
+        "editionId": "bd14f41e-eefd-5ccd-bbbf-a6dacbec9304",
+        "kind": "physical",
+        "catalogNumber": "KTR-000-0226"
+      },
+      "component": {
+        "componentId": "d40d6673-c944-5a69-8819-cfabbe370086",
+        "editionId": "bd14f41e-eefd-5ccd-bbbf-a6dacbec9304",
+        "componentKind": "cd",
+        "componentNo": 1,
+        "rawLabel": "DISC1"
+      },
+      "catalogUrl": "https://findmestore.thinkr.jp/products/ktr-000-0226",
+      "url": "https://findmestore.thinkr.jp/products/ktr-000-0226",
+      "item": {
+        "itemId": "a1937461-05f0-5801-a7b0-a7bdd4784a93",
+        "editionId": "bd14f41e-eefd-5ccd-bbbf-a6dacbec9304",
+        "componentId": "d40d6673-c944-5a69-8819-cfabbe370086",
+        "itemKind": "audio_track",
+        "sequenceNo": 4,
+        "rawPosition": "04",
+        "rawTitle": "みらいのかたち"
+      },
+      "associationBasis": [
+        [
+          "3984fa90-9af7-58a0-a2f1-9f1e5ad1974d",
+          "uses_work",
+          "work",
+          "79154cb8-2990-5070-a15d-3d106cefe675",
+          null,
+          null,
+          null,
+          null,
+          "item",
+          null,
+          "full",
+          false
+        ]
+      ],
+      "creditBasis": [
+        [
+          null,
+          "ヰ世界情緒",
+          "track_artist_display",
+          null
+        ]
+      ],
+      "entry": {
+        "entryId": "386c21cf-c706-4fe3-8d39-b1b59a9ec336",
+        "kind": "song_variant",
+        "primaryWorkId": "79154cb8-2990-5070-a15d-3d106cefe675",
+        "title": "みらいのかたち",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "evidence": {
+        "batch": "B039",
+        "record": "S301",
+        "basis": "official_exact_track_and_artist",
+        "printedArtist": "ヰ世界情緒",
+        "doesNotAssertIdenticalRecording": true
+      }
+    },
+    {
+      "key": "D144-sampler-S302",
+      "status": "active",
+      "checkedOn": "2026-10-30",
+      "family": {
+        "familyId": "bab8f14d-f329-58e2-b563-eed65f91821e",
+        "title": "KAMITSUBAKI LABEL SAMPLER Vol. 3",
+        "releaseKind": "compilation"
+      },
+      "edition": {
+        "editionId": "bd14f41e-eefd-5ccd-bbbf-a6dacbec9304",
+        "kind": "physical",
+        "catalogNumber": "KTR-000-0226"
+      },
+      "component": {
+        "componentId": "d40d6673-c944-5a69-8819-cfabbe370086",
+        "editionId": "bd14f41e-eefd-5ccd-bbbf-a6dacbec9304",
+        "componentKind": "cd",
+        "componentNo": 1,
+        "rawLabel": "DISC1"
+      },
+      "catalogUrl": "https://findmestore.thinkr.jp/products/ktr-000-0226",
+      "url": "https://findmestore.thinkr.jp/products/ktr-000-0226",
+      "item": {
+        "itemId": "34dc8029-0953-5a1c-96bb-424148c58927",
+        "editionId": "bd14f41e-eefd-5ccd-bbbf-a6dacbec9304",
+        "componentId": "d40d6673-c944-5a69-8819-cfabbe370086",
+        "itemKind": "audio_track",
+        "sequenceNo": 6,
+        "rawPosition": "06",
+        "rawTitle": "歌姫"
+      },
+      "associationBasis": [
+        [
+          "97414912-6c4f-58be-8ab9-614822512baf",
+          "uses_work",
+          "work",
+          "3264c8ed-5d57-5db4-8b4a-f832e1c21356",
+          null,
+          null,
+          null,
+          null,
+          "item",
+          null,
+          "full",
+          false
+        ]
+      ],
+      "creditBasis": [
+        [
+          null,
+          "V.W.P",
+          "track_artist_display",
+          null
+        ]
+      ],
+      "entry": {
+        "entryId": "545b1065-2273-43b2-9828-4e6832c36ba1",
+        "kind": "song_variant",
+        "primaryWorkId": "3264c8ed-5d57-5db4-8b4a-f832e1c21356",
+        "title": "歌姫",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "evidence": {
+        "batch": "B039",
+        "record": "S302",
+        "basis": "official_exact_track_and_artist",
+        "printedArtist": "V.W.P",
+        "doesNotAssertIdenticalRecording": true
+      }
     }
   ]
 }
