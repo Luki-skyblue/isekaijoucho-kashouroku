@@ -128,7 +128,8 @@ function earliestKnownAppearance(entry,metadata,work,options,factRecords){
 }
 function artistCreditForEntry(entry,metadata,factRecords){
  if(Object.hasOwn(metadata??{},'artistCredit'))return str(metadata.artistCredit).trim()?metadata.artistCredit:null;
- return known(registeredSongFactsForEntry(entry,factRecords).map(r=>r.metadata?.artistCredit).filter(v=>typeof v==='string'&&v.trim()));
+ return known([...registeredSongFactsForEntry(entry,factRecords),...liveVocalRecordsForEntry(entry)]
+  .map(r=>r.metadata?.artistCredit).filter(v=>typeof v==='string'&&v.trim()));
 }
 /** One title caption across home, lists and detail. Official billing is not a
  * singer set and must not change singer filters, roles or verification. */
