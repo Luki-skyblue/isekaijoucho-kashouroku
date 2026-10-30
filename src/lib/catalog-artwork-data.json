@@ -222,6 +222,27 @@
       "imageUrl": "/artwork/releases/genshiroku.jpeg",
       "sourceUrl": "https://kamitsubaki.jp/discography/isekaijoucho/10122/",
       "entries": []
+    },
+    {
+      "familyId": "af8fde07-463a-5dc5-9b3a-ecbeabb12a44",
+      "editionId": "cace54d5-280c-5d4d-8aa7-51737969b774",
+      "imageUrl": "/artwork/releases/getty-remix-single.png",
+      "sourceUrl": "https://kamitsubaki.jp/news/2025/03/19/6552/",
+      "entries": []
+    },
+    {
+      "familyId": "91ef0479-7b0b-5b4c-a76a-d1137b9d532a",
+      "editionId": "75f1d62a-7822-5725-a230-f9652d34fc4e",
+      "imageUrl": "/artwork/releases/getty-remix-ghosthvck.jpg",
+      "sourceUrl": "https://getty8getty.bandcamp.com/album/ghosthvck",
+      "entries": []
+    },
+    {
+      "familyId": "91ef0479-7b0b-5b4c-a76a-d1137b9d532a",
+      "editionId": "e3e834f3-2dd1-5c21-a2ad-2cc90a5771e8",
+      "imageUrl": "/artwork/releases/getty-remix-ghosthvck.jpg",
+      "sourceUrl": "https://getty8getty.bandcamp.com/album/ghosthvck",
+      "entries": []
     }
   ],
   "events": [

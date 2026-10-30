@@ -3481,5 +3481,436 @@
         "https://news.ponycanyon.co.jp/2025/12/116984"
       ]
     }
+  ],
+  "medleyPerformances": [
+    {
+      "key": "b037-m01-medley-20261030",
+      "status": "active",
+      "entry": {
+        "entryId": "291e4210-6f75-42ee-a4b5-0a857d753e49",
+        "kind": "medley",
+        "primaryWorkId": null,
+        "title": "共鳴／定命／輪廻（メドレー）",
+        "displayCredit": null,
+        "variations": [],
+        "singerIds": []
+      },
+      "displayCredit": "V.W.P",
+      "entityIds": [
+        "36129afb-1fe8-5255-958e-b090e17c7905",
+        "ae41fa12-3b09-52c0-bc08-1d9218492391",
+        "b8307e06-2046-5415-a1f7-0b892dd41041",
+        "81a01233-230e-50a8-a309-11275c794cd0",
+        "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+      ],
+      "billingEntityIds": [
+        "ad4bc5e2-01f4-574a-91a0-69ad7ed0dfe0"
+      ],
+      "showIndividualNames": true,
+      "singerSetComplete": false,
+      "segments": [
+        {
+          "rawLabel": "共鳴",
+          "sequence": 1,
+          "workId": "b1a67792-0781-56af-b2e7-9f73e9ff9577",
+          "workTitle": "共鳴"
+        },
+        {
+          "rawLabel": "定命",
+          "sequence": 2,
+          "workId": "0d8f0274-e167-5ae2-b432-98e57623c360",
+          "workTitle": "定命"
+        },
+        {
+          "rawLabel": "輪廻",
+          "sequence": 3,
+          "workId": "8e16feeb-3e73-5b56-b0bb-69c14baf53d4",
+          "workTitle": "輪廻"
+        }
+      ],
+      "history": [
+        {
+          "renditionId": "d6718f4d-e154-566b-ba6d-98501ae86864",
+          "renditionPartId": "9e4b0719-e460-5ad3-8906-bedf062967d7",
+          "workId": "b1a67792-0781-56af-b2e7-9f73e9ff9577",
+          "versionId": "691d9079-e105-55ec-a1e9-aac2c45e0d99",
+          "occurredOn": "2022-07-02",
+          "eventIds": [
+            "65d5ebe2-27c0-5c45-ad98-d25a1b36ed86"
+          ]
+        },
+        {
+          "renditionId": "d6718f4d-e154-566b-ba6d-98501ae86864",
+          "renditionPartId": "ed32b822-8c67-5564-98a8-caf07f3ac5f3",
+          "workId": "0d8f0274-e167-5ae2-b432-98e57623c360",
+          "versionId": "b9a923b2-89f9-5a10-82f7-05f649ed5157",
+          "occurredOn": "2022-07-02",
+          "eventIds": [
+            "65d5ebe2-27c0-5c45-ad98-d25a1b36ed86"
+          ]
+        },
+        {
+          "renditionId": "d6718f4d-e154-566b-ba6d-98501ae86864",
+          "renditionPartId": "bf2768f6-5af6-55d7-9ec0-62566dcb0c97",
+          "workId": "8e16feeb-3e73-5b56-b0bb-69c14baf53d4",
+          "versionId": "3870c610-e500-5c0b-972e-b4f43b126e67",
+          "occurredOn": "2022-07-02",
+          "eventIds": [
+            "65d5ebe2-27c0-5c45-ad98-d25a1b36ed86"
+          ]
+        }
+      ],
+      "program": {
+        "eventId": "65d5ebe2-27c0-5c45-ad98-d25a1b36ed86",
+        "title": "「xR ARTISTS SUPER FES 2022」",
+        "occurrenceId": "2380777d-fc10-5d62-889f-93b7b1dd3ca5",
+        "officialDate": "2022-07-02",
+        "programId": "8ec98d42-08f7-548f-9cdc-8ac89afc2291",
+        "programItemId": "00d3d61c-c7bf-5e1a-9167-db18af191ea2",
+        "rawLabel": "共鳴 / 定命 / 輪廻",
+        "linkId": "f1e36905-4c14-5c3b-99d3-fd2140ba01d4",
+        "renditionId": "d6718f4d-e154-566b-ba6d-98501ae86864",
+        "parts": [
+          {
+            "partId": "9e4b0719-e460-5ad3-8906-bedf062967d7",
+            "workId": "b1a67792-0781-56af-b2e7-9f73e9ff9577",
+            "versionId": "691d9079-e105-55ec-a1e9-aac2c45e0d99"
+          },
+          {
+            "partId": "ed32b822-8c67-5564-98a8-caf07f3ac5f3",
+            "workId": "0d8f0274-e167-5ae2-b432-98e57623c360",
+            "versionId": "b9a923b2-89f9-5a10-82f7-05f649ed5157"
+          },
+          {
+            "partId": "bf2768f6-5af6-55d7-9ec0-62566dcb0c97",
+            "workId": "8e16feeb-3e73-5b56-b0bb-69c14baf53d4",
+            "versionId": "3870c610-e500-5c0b-972e-b4f43b126e67"
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "url": "https://prtimes.jp/main/html/rd/p/000000002.000100702.html",
+          "publisher": "xR ARTISTS SUPER FES 2022 製作委員会",
+          "tier": "primary_organizer_announcement",
+          "read": "開催日2022-07-02/03、V.W.P5名のメンバー、公式ビジュアル。曲順・セットリスト自体の印字なし"
+        },
+        {
+          "url": "https://spice.eplus.jp/articles/304952/amp",
+          "publisher": "SPICE（制作委員会提供の公式レポート転載）",
+          "tier": "organizer_provided_official_report_republished",
+          "read": "DAY1 2022-07-02、共鳴・定命・輪廻のメドレー、V.W.P (花譜・理芽・春猿火・ヰ世界情緒・幸祜) と明示"
+        }
+      ],
+      "researchBatch": "B037 r001",
+      "researchItem": "M01",
+      "scope": "aggregate medley programme only; no individual component, work, version or recording claim",
+      "note": "Named participants from the stored performance report; raw singer closure and verification remain unchanged."
+    },
+    {
+      "key": "b037-m02-medley-20261030",
+      "status": "active",
+      "entry": {
+        "entryId": "95cc572d-b1f9-41c9-9d8f-4a916c7bb846",
+        "kind": "medley",
+        "primaryWorkId": null,
+        "title": "異世界転調リクヱスト／ぼくらの逃避行",
+        "displayCredit": null,
+        "variations": [],
+        "singerIds": []
+      },
+      "displayCredit": "ヰ世界情緒 with VALIS",
+      "entityIds": [
+        "81a01233-230e-50a8-a309-11275c794cd0"
+      ],
+      "billingEntityIds": [
+        "81a01233-230e-50a8-a309-11275c794cd0",
+        "0c52b490-a483-57aa-a266-3f5922cae6ab"
+      ],
+      "showIndividualNames": false,
+      "singerSetComplete": false,
+      "segments": [
+        {
+          "rawLabel": "異世界転調リクヱスト",
+          "sequence": 1,
+          "workId": "7b588446-4753-571a-a0c8-35c6f4618d70",
+          "workTitle": "異世界転生リクヱスト"
+        },
+        {
+          "rawLabel": "ぼくらの逃避行",
+          "sequence": 2,
+          "workId": "0bebca13-443c-5b62-911b-2759fb0248f2",
+          "workTitle": "ぼくらの逃避行"
+        }
+      ],
+      "history": [
+        {
+          "renditionId": "55058ab7-c728-5e8e-935c-983dfb537dbf",
+          "renditionPartId": "9fb370f8-3d04-530a-86b1-dd85301e6e6b",
+          "workId": "7b588446-4753-571a-a0c8-35c6f4618d70",
+          "versionId": "ac605bf7-66b4-5420-981a-fbaa2e4f5b58",
+          "occurredOn": "2024-08-07",
+          "eventIds": [
+            "42fc7c7e-5831-574c-824c-4be2a36d7003"
+          ]
+        },
+        {
+          "renditionId": "55058ab7-c728-5e8e-935c-983dfb537dbf",
+          "renditionPartId": "4155c064-d4d0-5ff0-8da3-e6be5f89dd9c",
+          "workId": "0bebca13-443c-5b62-911b-2759fb0248f2",
+          "versionId": "c7c9e83b-9e89-5f92-9308-3c5c0ba73f88",
+          "occurredOn": "2024-08-07",
+          "eventIds": [
+            "42fc7c7e-5831-574c-824c-4be2a36d7003"
+          ]
+        }
+      ],
+      "program": {
+        "eventId": "42fc7c7e-5831-574c-824c-4be2a36d7003",
+        "title": "Anima III",
+        "occurrenceId": "cb3f5734-d6df-5e92-abd4-cdb7c54fdf67",
+        "officialDate": "2024-08-07",
+        "programId": "f61f9425-265c-51ef-a08a-c491ea4334ef",
+        "programItemId": "1721f1c4-2d21-5df0-a2d3-b4dfc12a7b47",
+        "rawLabel": "異世界転調リクヱスト / ぼくらの逃避行 with. VALIS",
+        "linkId": "196aac80-e281-5f2b-ad3c-642d2f1bbda9",
+        "renditionId": "55058ab7-c728-5e8e-935c-983dfb537dbf",
+        "parts": [
+          {
+            "partId": "9fb370f8-3d04-530a-86b1-dd85301e6e6b",
+            "workId": "7b588446-4753-571a-a0c8-35c6f4618d70",
+            "versionId": "ac605bf7-66b4-5420-981a-fbaa2e4f5b58"
+          },
+          {
+            "partId": "4155c064-d4d0-5ff0-8da3-e6be5f89dd9c",
+            "workId": "0bebca13-443c-5b62-911b-2759fb0248f2",
+            "versionId": "c7c9e83b-9e89-5f92-9308-3c5c0ba73f88"
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "url": "https://kamitsubaki.jp/news/2024/12/09/5397/",
+          "publisher": "KAMITSUBAKI STUDIO",
+          "tier": "primary_label_release_announcement",
+          "read": "AnimaⅢ Blu-ray (KTR-0175), 2025-03-19発売、Blu-rayトラック13「異世界転調リクヱスト / ぼくらの逃避行 with. VALIS」、CD LIVE音源2枚は全22曲だが個別CD区切りなし"
+        }
+      ],
+      "researchBatch": "B037 r001",
+      "researchItem": "M02",
+      "scope": "aggregate medley programme only; no individual component, work, version or recording claim",
+      "note": "Jouchou is explicitly named; VALIS remains collective billing without inferred individual members."
+    },
+    {
+      "key": "b037-m03-medley-20261030",
+      "status": "active",
+      "entry": {
+        "entryId": "bdd5995d-b11b-40c7-ad30-07b4197a343e",
+        "kind": "medley",
+        "primaryWorkId": null,
+        "title": "祭霊",
+        "displayCredit": null,
+        "variations": [],
+        "singerIds": []
+      },
+      "displayCredit": "V.W.P",
+      "entityIds": [],
+      "billingEntityIds": [
+        "ad4bc5e2-01f4-574a-91a0-69ad7ed0dfe0"
+      ],
+      "showIndividualNames": false,
+      "singerSetComplete": false,
+      "segments": [
+        {
+          "rawLabel": "祭壇",
+          "sequence": 1,
+          "workId": "ae2bbe13-3978-541d-8abb-552222c16300",
+          "workTitle": "祭壇"
+        },
+        {
+          "rawLabel": "言霊",
+          "sequence": 2,
+          "workId": "15810889-4c93-5e78-95f0-4c738a04342d",
+          "workTitle": "言霊"
+        }
+      ],
+      "history": [
+        {
+          "renditionId": "72cadd2a-6997-5380-8618-fc17baecad32",
+          "renditionPartId": "e93f88f6-08aa-5300-ad35-3640876116c1",
+          "workId": "ae2bbe13-3978-541d-8abb-552222c16300",
+          "versionId": "cb86712f-116d-587e-972a-7f3bee3d1b44",
+          "occurredOn": "2024-01-13",
+          "eventIds": [
+            "e19c28f8-2f6b-509e-8005-4861c513a3c6"
+          ]
+        },
+        {
+          "renditionId": "72cadd2a-6997-5380-8618-fc17baecad32",
+          "renditionPartId": "9b694899-b31f-5bf4-8909-2f69d7b2082a",
+          "workId": "15810889-4c93-5e78-95f0-4c738a04342d",
+          "versionId": "a35d0066-05c7-52c6-8b95-75c58f1a658f",
+          "occurredOn": "2024-01-13",
+          "eventIds": [
+            "e19c28f8-2f6b-509e-8005-4861c513a3c6"
+          ]
+        }
+      ],
+      "program": {
+        "eventId": "e19c28f8-2f6b-509e-8005-4861c513a3c6",
+        "title": "現象II -魔女拡成-",
+        "occurrenceId": "f327949c-918a-5d90-9a13-60ce00d0caeb",
+        "officialDate": "2024-01-13",
+        "programId": "c6d46768-b40d-5349-84ee-3c9cbdd9b410",
+        "programItemId": "21fa9799-8b2a-5083-9bef-4b431b4cd0e8",
+        "rawLabel": "祭霊（祭壇＋言霊）",
+        "linkId": "f9dd3d0d-87b7-5d2b-bf48-6af7e9ab8211",
+        "renditionId": "72cadd2a-6997-5380-8618-fc17baecad32",
+        "parts": [
+          {
+            "partId": "e93f88f6-08aa-5300-ad35-3640876116c1",
+            "workId": "ae2bbe13-3978-541d-8abb-552222c16300",
+            "versionId": "cb86712f-116d-587e-972a-7f3bee3d1b44"
+          },
+          {
+            "partId": "9b694899-b31f-5bf4-8909-2f69d7b2082a",
+            "workId": "15810889-4c93-5e78-95f0-4c738a04342d",
+            "versionId": "a35d0066-05c7-52c6-8b95-75c58f1a658f"
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "url": "https://findmestore.thinkr.jp/products/ktr-100-0184",
+          "publisher": "FINDME STORE by THINKR",
+          "tier": "primary_retailer_tracklist",
+          "read": "現象II Blu-ray, 2024-01-13公演、27「祭霊／V.W.P」、CD2枚にM1-M17/M18-M32の収録範囲を明記"
+        }
+      ],
+      "researchBatch": "B037 r001",
+      "researchItem": "M03",
+      "scope": "aggregate medley programme only; no individual component, work, version or recording claim",
+      "note": "Only the printed V.W.P billing is adopted; its members are not inferred as individual singers."
+    },
+    {
+      "key": "b037-m04-medley-20261030",
+      "status": "active",
+      "entry": {
+        "entryId": "ed83b2e0-b5ec-4cf8-9624-f7e320994a6a",
+        "kind": "medley",
+        "primaryWorkId": null,
+        "title": "ARCADIA／ANGELIC／ETERNAL（メドレー）",
+        "displayCredit": null,
+        "variations": [],
+        "singerIds": []
+      },
+      "displayCredit": "ヰ世界情緒",
+      "entityIds": [
+        "81a01233-230e-50a8-a309-11275c794cd0"
+      ],
+      "billingEntityIds": [
+        "81a01233-230e-50a8-a309-11275c794cd0"
+      ],
+      "showIndividualNames": true,
+      "singerSetComplete": false,
+      "segments": [
+        {
+          "rawLabel": "ARCADIA",
+          "sequence": 1,
+          "workId": "acbd3faf-005c-5e7d-8c96-ee56a814a265",
+          "workTitle": "ARCADIA"
+        },
+        {
+          "rawLabel": "ANGELIC",
+          "sequence": 2,
+          "workId": "bfe8c938-b25e-5def-93f6-455f8e2d2603",
+          "workTitle": "ANGELIC"
+        },
+        {
+          "rawLabel": "ETERNAL",
+          "sequence": 3,
+          "workId": "b9dc6a58-5c53-5b1e-96f4-f9f5d7e7094a",
+          "workTitle": "ETERNAL"
+        }
+      ],
+      "history": [
+        {
+          "renditionId": "803515d1-706a-51d1-a3a3-2107ec61f9cc",
+          "renditionPartId": "cad9746a-011d-5bfb-9d6b-f142117ba683",
+          "workId": "acbd3faf-005c-5e7d-8c96-ee56a814a265",
+          "versionId": "f43bc117-0a5a-5cce-bd79-e0035288911e",
+          "occurredOn": "2026-05-01",
+          "eventIds": [
+            "f2a2a2a5-9d19-5452-acb4-94a6b50fb096"
+          ]
+        },
+        {
+          "renditionId": "803515d1-706a-51d1-a3a3-2107ec61f9cc",
+          "renditionPartId": "695ea457-d705-544e-81c4-a4b34a4d9233",
+          "workId": "bfe8c938-b25e-5def-93f6-455f8e2d2603",
+          "versionId": "31f20f1e-6ecc-5e67-bb96-acb03301d788",
+          "occurredOn": "2026-05-01",
+          "eventIds": [
+            "f2a2a2a5-9d19-5452-acb4-94a6b50fb096"
+          ]
+        },
+        {
+          "renditionId": "803515d1-706a-51d1-a3a3-2107ec61f9cc",
+          "renditionPartId": "724c982b-3f16-5ff5-85f8-375ab75ea435",
+          "workId": "b9dc6a58-5c53-5b1e-96f4-f9f5d7e7094a",
+          "versionId": "3948591d-a5d9-5be1-9655-2d3970c59dd5",
+          "occurredOn": "2026-05-01",
+          "eventIds": [
+            "f2a2a2a5-9d19-5452-acb4-94a6b50fb096"
+          ]
+        }
+      ],
+      "program": {
+        "eventId": "f2a2a2a5-9d19-5452-acb4-94a6b50fb096",
+        "title": "Flower Closet",
+        "occurrenceId": "00984658-571a-557a-b965-603bc0e24c1f",
+        "officialDate": "2026-05-01",
+        "programId": "33dbda98-227c-5549-aadd-ab8e66c2a967",
+        "programItemId": "6eb8527b-6668-5912-b9bc-0badf1bc70f2",
+        "rawLabel": "ARCADIA～ANGELIC～ETERNAL",
+        "linkId": "52e97f3a-d160-5492-9081-037c067df337",
+        "renditionId": "803515d1-706a-51d1-a3a3-2107ec61f9cc",
+        "parts": [
+          {
+            "partId": "cad9746a-011d-5bfb-9d6b-f142117ba683",
+            "workId": "acbd3faf-005c-5e7d-8c96-ee56a814a265",
+            "versionId": "f43bc117-0a5a-5cce-bd79-e0035288911e"
+          },
+          {
+            "partId": "695ea457-d705-544e-81c4-a4b34a4d9233",
+            "workId": "bfe8c938-b25e-5def-93f6-455f8e2d2603",
+            "versionId": "31f20f1e-6ecc-5e67-bb96-acb03301d788"
+          },
+          {
+            "partId": "724c982b-3f16-5ff5-85f8-375ab75ea435",
+            "workId": "b9dc6a58-5c53-5b1e-96f4-f9f5d7e7094a",
+            "versionId": "3948591d-a5d9-5be1-9655-2d3970c59dd5"
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "url": "https://findmestore.thinkr.jp/products/ktr-100-0246",
+          "publisher": "FINDME STORE by THINKR",
+          "tier": "primary_retailer_tracklist",
+          "read": "DAY-1「Flower Closet」 Blu-ray 09「ARCADIA～ANGELIC～ETERNAL」。Blu-rayは各21枠、Special BoxのCD 4枚は各DAY21曲とだけ明記、同一のトラック境目は別途Work要照合"
+        },
+        {
+          "url": "https://panora.tokyo/archives/141026",
+          "publisher": "PANORA",
+          "tier": "editorial_firsthand_live_report",
+          "read": "ヰ世界情緒のソロステージでARCADIA→ANGELIC→ETERNAL→ARCADIA終わりへ戻る構成を具体的に記載"
+        }
+      ],
+      "researchBatch": "B037 r001",
+      "researchItem": "M04",
+      "scope": "aggregate medley programme only; no individual component, work, version or recording claim",
+      "note": "Named participants from the stored performance report; raw singer closure and verification remain unchanged."
+    }
   ]
 }

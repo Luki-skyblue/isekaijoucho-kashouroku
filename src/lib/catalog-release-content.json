@@ -7535,5 +7535,39 @@
         "doesNotAssertIdenticalRecording": true
       }
     }
+  ],
+  "partialEditions": [
+    {
+      "familyId": "91ef0479-7b0b-5b4c-a76a-d1137b9d532a",
+      "title": "GHOSTHVCK",
+      "editionId": "75f1d62a-7822-5725-a230-f9652d34fc4e",
+      "url": "https://getty8getty.bandcamp.com/album/ghosthvck",
+      "items": [
+        {
+          "itemId": "b6964cbe-b72e-5076-9018-3e5c13066c2e",
+          "componentId": "6216bcdc-ee16-511e-9998-09790672c693",
+          "rawTitle": "ヰ世界情緒 - とめどなき白情 (Getty Remix Extended)",
+          "rawPosition": "15",
+          "sequenceNo": 15
+        }
+      ],
+      "scope": "Only the Jouchou participation track is catalogued, not a complete album tracklist."
+    },
+    {
+      "familyId": "91ef0479-7b0b-5b4c-a76a-d1137b9d532a",
+      "title": "GHOSTHVCK",
+      "editionId": "e3e834f3-2dd1-5c21-a2ad-2cc90a5771e8",
+      "url": "https://linkco.re/AxmFqbvA?lang=en",
+      "items": [
+        {
+          "itemId": "2b1befc4-139a-5c16-814f-4f75253e2c56",
+          "componentId": "ac89c926-46ec-56b8-8d10-26cb134a6037",
+          "rawTitle": "とめどなき白情 (Getty Remix Extended)",
+          "rawPosition": "15",
+          "sequenceNo": 15
+        }
+      ],
+      "scope": "Only the Jouchou participation track is catalogued, not a complete album tracklist."
+    }
   ]
 }

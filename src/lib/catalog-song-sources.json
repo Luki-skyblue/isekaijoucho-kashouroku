@@ -344,6 +344,30 @@
       "title": "【歌ってみた】エス / covered by ヰ世界情緒",
       "mediaKind": "cover_video",
       "publishedOn": null
+    },
+    {
+      "key": "getty-remix-20261030-extended-audio",
+      "status": "active",
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=Oz9Cv_H388E",
+      "title": "ヰ世界情緒 - とめどなき白情 (Getty Remix Extended)",
+      "publishedOn": "2026-04-29",
+      "mediaKind": "official_audio",
+      "authorName": "Getty",
+      "authorUrl": "https://www.youtube.com/c/GettyOfficial_JP",
+      "entry": {
+        "entryId": "d18e5737-a2bb-560a-bdb0-83f165bef8d2",
+        "kind": "song_variant",
+        "primaryWorkId": "9101f61f-ceff-5335-a1ed-1f7d4de78d98",
+        "title": "とめどなき白情 (Getty Remix Extended)",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "sourceBatch": "B016 N071 / B044 r001",
+      "scope": "Exact Extended version only; track title used as display label; not a newly discovered video or vocal recording."
     }
   ],
   "exclusions": [
@@ -11512,6 +11536,177 @@
         "arranger": "version"
       },
       "creditSourceId": "S-373"
+    },
+    {
+      "key": "getty-remix-20261030-remix",
+      "status": "active",
+      "checkedOn": "2026-10-30",
+      "entry": {
+        "entryId": "22df2a45-dc49-5f9a-9955-e688d0d3fa1a",
+        "kind": "song_variant",
+        "primaryWorkId": "9101f61f-ceff-5335-a1ed-1f7d4de78d98",
+        "title": "とめどなき白情 (Getty Remix)",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "はるまきごはん"
+        ],
+        [
+          "work",
+          "composer",
+          "はるまきごはん"
+        ],
+        [
+          "work",
+          "lyricist",
+          "はるまきごはん"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/news/2024/12/26/5604/",
+      "sourceBatch": "B044 r001 + D146 scope review",
+      "metadata": {
+        "titleKana": "とめどなきはくじょう",
+        "firstAppearance": {
+          "date": "2024-12-26",
+          "label": "神椿市協奏中。"
+        },
+        "artistCredit": "ヰ世界情緒",
+        "originalSingerSet": {
+          "singerIds": [
+            "81a01233-230e-50a8-a309-11275c794cd0"
+          ],
+          "complete": true,
+          "referenceEntryId": "28e3b945-e49b-4e12-94ca-12f0a8718021"
+        },
+        "songClassification": {
+          "mode": "automatic"
+        },
+        "tieUp": "神椿市協奏中。"
+      },
+      "credits": {
+        "remixer": [
+          "Getty"
+        ]
+      },
+      "creditScopes": {
+        "remixer": "version"
+      },
+      "fieldReview": {
+        "credits": {
+          "arranger": {
+            "outcome": "not_found"
+          }
+        }
+      },
+      "reviewScope": "Main label remix credits and artist album credits reviewed; no arranger role printed. Remixer is not silently relabelled arranger.",
+      "listenUrl": "https://kamitsubaki-studio.lnk.to/Tomedonaki-Hakujou-Getty-Remix",
+      "releaseItems": [
+        {
+          "releaseItemId": "cd835af6-fbf3-5cb9-8f0e-c5abbc36e6b3",
+          "versionId": "1476913f-79ce-5ea0-bb2b-b3705862aa71",
+          "familyId": "af8fde07-463a-5dc5-9b3a-ecbeabb12a44",
+          "editionId": "cace54d5-280c-5d4d-8aa7-51737969b774",
+          "componentId": "feb2d8f5-a8eb-5a28-b3ce-c435dbff6f2a",
+          "rawTrackTitle": "とめどなき白情 (Getty Remix)",
+          "trackNumber": 1
+        }
+      ]
+    },
+    {
+      "key": "getty-remix-20261030-extended",
+      "status": "active",
+      "checkedOn": "2026-10-30",
+      "entry": {
+        "entryId": "d18e5737-a2bb-560a-bdb0-83f165bef8d2",
+        "kind": "song_variant",
+        "primaryWorkId": "9101f61f-ceff-5335-a1ed-1f7d4de78d98",
+        "title": "とめどなき白情 (Getty Remix Extended)",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "はるまきごはん"
+        ],
+        [
+          "work",
+          "composer",
+          "はるまきごはん"
+        ],
+        [
+          "work",
+          "lyricist",
+          "はるまきごはん"
+        ]
+      ],
+      "url": "https://getty8getty.bandcamp.com/album/ghosthvck",
+      "sourceBatch": "B044 r001 + D146 scope review",
+      "metadata": {
+        "titleKana": "とめどなきはくじょう",
+        "firstAppearance": {
+          "date": "2026-04-26",
+          "label": "GHOSTHVCK"
+        },
+        "artistCredit": "ヰ世界情緒",
+        "originalSingerSet": {
+          "singerIds": [
+            "81a01233-230e-50a8-a309-11275c794cd0"
+          ],
+          "complete": true,
+          "referenceEntryId": "28e3b945-e49b-4e12-94ca-12f0a8718021"
+        },
+        "songClassification": {
+          "mode": "automatic"
+        }
+      },
+      "credits": {
+        "remixer": [
+          "Getty"
+        ]
+      },
+      "creditScopes": {
+        "remixer": "version"
+      },
+      "fieldReview": {
+        "credits": {
+          "arranger": {
+            "outcome": "not_found"
+          }
+        }
+      },
+      "reviewScope": "Main label remix credits and artist album credits reviewed; no arranger role printed. Remixer is not silently relabelled arranger.",
+      "releaseItems": [
+        {
+          "releaseItemId": "b6964cbe-b72e-5076-9018-3e5c13066c2e",
+          "versionId": "292f51de-120f-5deb-979b-8ccc909d4737",
+          "familyId": "91ef0479-7b0b-5b4c-a76a-d1137b9d532a",
+          "editionId": "75f1d62a-7822-5725-a230-f9652d34fc4e",
+          "componentId": "6216bcdc-ee16-511e-9998-09790672c693",
+          "rawTrackTitle": "ヰ世界情緒 - とめどなき白情 (Getty Remix Extended)",
+          "trackNumber": 15
+        },
+        {
+          "releaseItemId": "2b1befc4-139a-5c16-814f-4f75253e2c56",
+          "versionId": "292f51de-120f-5deb-979b-8ccc909d4737",
+          "familyId": "91ef0479-7b0b-5b4c-a76a-d1137b9d532a",
+          "editionId": "e3e834f3-2dd1-5c21-a2ad-2cc90a5771e8",
+          "componentId": "ac89c926-46ec-56b8-8d10-26cb134a6037",
+          "rawTrackTitle": "とめどなき白情 (Getty Remix Extended)",
+          "trackNumber": 15
+        }
+      ]
     }
   ],
   "mediaCredits": [

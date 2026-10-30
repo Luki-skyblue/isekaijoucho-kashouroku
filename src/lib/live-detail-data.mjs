@@ -3,7 +3,7 @@
 import registry from './catalog-live-program-links.json' with {type:'json'};
 import creditsRegistry from './catalog-live-program-credits.json' with {type:'json'};
 import {artworkEntryMatches} from './catalog-artwork.mjs';
-import {entityForId,MAIN_SINGER_IDS} from './catalog-people.mjs';
+import {entityForId,MAIN_SINGER_IDS,MEDLEY_PERFORMANCE_RECORDS,medleyPerformanceForEntry} from './catalog-people.mjs';
 import {personDetailFromModel} from './person-detail-data.mjs';
 import {safeSongUrl} from './song-detail-data.mjs';
 import {recordingsForEvent} from './live-release-links.mjs';
@@ -71,6 +71,21 @@ function registeredProgramVocals(event,program,item,records){
  }
  const unique=[...new Map(matches.map(r=>[JSON.stringify(r),r])).values()];return unique.length===1?unique[0]:null;
 }
+function reviewedMedleyVocals(model,event,program,item){
+ const matches=[];
+ for(const record of MEDLEY_PERFORMANCE_RECORDS){
+  const entry=model.entries.get(record.entry.entryId),basis=record.program;
+  if(medleyPerformanceForEntry(entry)!==record||!basis||event.detail.eventId!==basis.eventId||event.detail.title!==basis.title||program.occurrenceId!==basis.occurrenceId||program.pages?.[0]?.programId!==basis.programId||item.programItemId!==basis.programItemId||item.rawLabel!==basis.rawLabel)continue;
+  const occurrence=arr(event.occurrences).find(o=>o.occurrenceId===program.occurrenceId),associations=arr(item.associations),a=associations[0];
+  if(!occurrence||occurrence.officialDate!==basis.officialDate||occurrence.programId!==basis.programId||associations.length!==1||a.targetKind!=='rendition'||a.renditionId!==basis.renditionId||a.linkId!==basis.linkId)continue;
+  const parts=rows=>JSON.stringify(arr(rows).map(p=>[p.partId,p.workId,p.versionId]).sort((a,b)=>JSON.stringify(a).localeCompare(JSON.stringify(b))));
+  if(parts(a.renditionParts)!==parts(basis.parts))continue;
+  // Group billing stays a group; only explicit individual IDs count as vocals.
+  const ids=record.entityIds.length?record.entityIds:record.billingEntityIds;
+  matches.push({displayCredit:record.displayCredit,people:ids.map(id=>({entityId:id,name:entityForId(id).name})),singerSetComplete:false});
+ }
+ return matches.length===1?matches[0]:null;
+}
 export function liveDisplayContextFromModel(model,eventId,options={}){
  const event=model.events.get(eventId);if(!event)return null;
  const f=event.filterMetadata??{},names=[...new Set(arr(f.billingArtists).map(x=>x.name).filter(Boolean))];
@@ -82,7 +97,7 @@ export function liveDisplayContextFromModel(model,eventId,options={}){
  const programLinks={},programVocals={};
  for(const program of arr(event.programs))for(const item of arr(program.items)){
   if(item.itemKind!=='rendition')continue;
-  const vocals=exactProgramVocals(model,item)??registeredProgramVocals(event,program,item,options.vocalRecords??LIVE_PROGRAM_VOCAL_RECORDS);
+  const vocals=exactProgramVocals(model,item)??registeredProgramVocals(event,program,item,options.vocalRecords??LIVE_PROGRAM_VOCAL_RECORDS)??reviewedMedleyVocals(model,event,program,item);
   if(vocals){
    const present=vocals.people.some(p=>p.entityId===MAIN_SINGER_IDS[0]);
    const completeIndividuals=vocals.singerSetComplete&&vocals.people.every(p=>['artist','voicebank'].includes(entityForId(p.entityId)?.type));

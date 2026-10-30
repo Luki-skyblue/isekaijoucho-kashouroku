@@ -47,6 +47,7 @@ export default async function ReleaseDetail({params,searchParams}:{params:Promis
   {links.length>0&&<nav className="release-detail-links" aria-label="関連ページ">{links.map(link=><a key={link.url+link.label} href={link.url} target="_blank" rel="noopener noreferrer nofollow">{link.label} ↗</a>)}</nav>}
   <section className="release-detail-section" id="release-tracks" aria-labelledby="release-content-heading">
    <div className="release-detail-section-title"><h2 id="release-content-heading">収録内容</h2>{total>0&&<span className="release-detail-count" aria-label={total+'件'}>{total}</span>}</div>
+   {view.contentNote&&<p className="release-detail-missing">{view.contentNote}</p>}
    {groups.length?groups.map(group=>{
     const label=[group.key==='shared'||!selectedEdition?group.editionName:null,groups.length>1?group.label:null].filter(Boolean).join(' · ');
     return <section className="release-detail-disc" key={group.key}>{label&&<h3>{label}</h3>}{group.items.length?<ol className="release-detail-tracks">{group.items.map((item,i)=><Track key={str(item.itemId)||i} item={item} context={context}/>)}</ol>:<Missing/>}</section>;

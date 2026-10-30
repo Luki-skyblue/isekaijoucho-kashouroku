@@ -4,7 +4,7 @@ import {songReleasesForEntry,safeSongUrl,SHARED_RELEASE_TRACKLISTS} from './song
 import {rankArtworkCandidates} from './catalog-artwork.mjs';
 import {RELEASE_ARTWORK_RECORDS} from './catalog-artwork-data.mjs';
 import {recordedEventsForRelease} from './live-release-links.mjs';
-import {releaseContentFromModel} from './release-content-data.mjs';
+import {releaseContentFromModel,releaseContentNoteFromModel} from './release-content-data.mjs';
 
 const arr=x=>Array.isArray(x)?x:[],text=x=>typeof x==='string'?x.trim():'';
 const kinds={single:'シングル',album:'アルバム',ep:'EP',compilation:'コンピレーション',cover_live_album:'カバーライブアルバム',live_package:'LIVE映像・音源',video_release:'映像作品',cd:'CD'};
@@ -129,7 +129,7 @@ export function releaseDetailFromModel(model,familyId,{editionId=null,page=1,lim
  const visible=new Set(groups.flatMap(g=>g.items).slice((current-1)*size,current*size).map(i=>i.itemId));
  groups=groups.filter(g=>g.items.some(i=>visible.has(i.itemId))||g.items.length===0&&(total===0||sourced.items.length>0&&current===1)).map(g=>({...g,items:g.items.filter(i=>visible.has(i.itemId))}));
  const components=arr(release.components).filter(c=>!selectedEdition||c.editionId===selectedEdition.editionId);
- return {release,context,editions,selectedEdition,components,groups,total,page:current,pages,
+ return {release,context,editions,selectedEdition,components,groups,total,page:current,pages,contentNote:releaseContentNoteFromModel(model,familyId,selectedEdition?.editionId??null),
   recordedEvents:recordedEventsForRelease(model,familyId,{editionId:selectedEdition?.editionId??null}),
   artwork:selectedEdition?context.editionArtwork[selectedEdition.editionId]??[]:context.artwork,
   links:releaseLinks(release,selectedEdition?.editionId??null)};

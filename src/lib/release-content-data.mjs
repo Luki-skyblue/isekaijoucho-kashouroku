@@ -6,6 +6,15 @@ import {RELEASE_ARTWORK_RECORDS} from './catalog-artwork-data.mjs';
 import {songReleasesForEntry} from './song-detail-data.mjs';
 export const RELEASE_CONTENT_RECORDS=registry.records;
 export const RELEASE_ENTRY_LINK_RECORDS=registry.entryLinks??[];
+/** A scoped participation-only album list is not a complete tracklist. Stop
+ * this hint automatically when canonical rows or edition identities change. */
+export function releaseContentNoteFromModel(model,familyId,editionId=null){
+ const saved=model.releases.get(familyId);if(!saved)return null;
+ const partial=(registry.partialEditions??[]).some(r=>r.familyId===familyId&&r.title===saved.detail.title&&(!editionId||r.editionId===editionId)&&
+  saved.detail.editions.some(e=>e.editionId===r.editionId)&&saved.detail.resources.some(s=>s.url===r.url&&s.officiality==='official'&&s.targetEditionId===r.editionId)&&
+  saved.items.filter(i=>i.editionId===r.editionId).length===r.items.length&&r.items.every(expected=>saved.items.some(i=>i.editionId===r.editionId&&Object.entries(expected).every(([k,v])=>i[k]===v))));
+ return partial?'ヰ世界情緒の参加曲を掲載しています。':null;
+}
 const arr=x=>Array.isArray(x)?x:[],str=x=>typeof x==='string'?x:'';
 const labels={bd_main:'Blu-ray（本編）',bd_fixed:'Blu-ray（定点映像）',bd_main_day1:'Blu-ray DAY-1',bd_main_day2:'Blu-ray DAY-2',bd_fixed_day1:'Blu-ray DAY-1（定点映像）',bd_fixed_day2:'Blu-ray DAY-2（定点映像）',cd_spoken:'CD（放課後音声編）',cd_live:'CD（LIVE音源）',bd_live:'Blu-ray（LIVE・アフタートーク）',playback_card_1:'Playback Card #1'};
 const same=(value,expected)=>expected&&Object.entries(expected).every(([key,want])=>value?.[key]===want);

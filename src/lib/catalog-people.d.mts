@@ -7,6 +7,7 @@ export const VOCAL_LINK_RECORDS:JsonObject[];
 export const MEMBERSHIP_RECORDS:JsonObject[];
 export const VOCAL_CORRECTION_RECORDS:JsonObject[];
 export const PERSON_RELATION_RECORDS:JsonObject[];
+export const MEDLEY_PERFORMANCE_RECORDS:JsonObject[];
 export const MAIN_SINGER_IDS:string[];
 export function entityForName(name:string):CatalogEntity|null;
 export function entityForId(id:string):CatalogEntity|null;
@@ -15,6 +16,7 @@ export function personKeyForCredit(name:string,credits?:JsonObject[]):string|nul
 export function vocalLinkMatches(entry:JsonObject,link:JsonObject):boolean;
 export function singersForEntry(entry:JsonObject,links?:JsonObject[],corrections?:JsonObject[]):JsonObject[];
 export function vocalCorrectionMatches(entry:JsonObject,record:JsonObject):boolean;
+export function medleyPerformanceForEntry(entry:JsonObject,records?:JsonObject[]):JsonObject|null;
 export function membershipsForEntity(id:string,records?:JsonObject[]):JsonObject[];
 export function personRelationsForEntity(id:string,records?:JsonObject[]):JsonObject[];
 export function singerIdsForEntry(entry:JsonObject):string[];

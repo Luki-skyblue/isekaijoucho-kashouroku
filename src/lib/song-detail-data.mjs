@@ -6,7 +6,7 @@ import sourceRegistry from './catalog-song-sources.json' with {type:'json'};
 import {artworkEntryMatches,catalogArtworkCandidatesForEntry,eventArtworkForEvent,rankArtworkCandidates} from './catalog-artwork.mjs';
 import {ARTWORK_RECORDS,RELEASE_ARTWORK_RECORDS,EVENT_ARTWORK_RECORDS} from './catalog-artwork-data.mjs';
 import releaseEditions from './catalog-release-editions.json' with {type:'json'};
-import {singersForEntry,singerIdsForEntry,entityForId,personKeyForCredit,vocalDisplayCreditForEntry} from './catalog-people.mjs';
+import {singersForEntry,singerIdsForEntry,entityForId,personKeyForCredit,vocalDisplayCreditForEntry,medleyPerformanceForEntry} from './catalog-people.mjs';
 import {resolveSongClassification,isCoverSongType,formatSongTitleCredit} from './catalog-song-classification.mjs';
 import {supplementalLivesForEntry} from './live-program-supplements.mjs';
 import {liveVocalRecordsForEntry} from './live-vocal-entries.mjs';
@@ -116,6 +116,12 @@ function reviewedMetadataForEntry(entry,metadata,factRecords){
 }
 function earliestKnownAppearance(entry,metadata,work,options,factRecords){
  metadata=reviewedMetadataForEntry(entry,metadata,factRecords);
+ // A scoped source review is a fallback, never a replacement for a later
+ // canonical outcome or a named version credit. No placeholder becomes data.
+ for(const role of ['lyricist','composer','arranger'])if(!Object.hasOwn(metadata.fieldReview?.credits??{},role)&&!arr(entry?.credits?.credits).some(c=>c.scope==='version'&&c.role===role)){
+  const outcome=known(registeredSongFactsForEntry(entry,factRecords).map(r=>r.fieldReview?.credits?.[role]?.outcome));
+  if(['not_found','not_applicable'].includes(outcome))metadata={...metadata,fieldReview:{...metadata.fieldReview,credits:{...metadata.fieldReview?.credits,[role]:{outcome}}}};
+ }
  metadata=classificationMetadataForEntry(entry,metadata,factRecords);
  // Artist billing does not establish a singer set or replace vocal credits.
  // An explicit canonical value, including null, retains precedence.
@@ -146,7 +152,7 @@ function earliestKnownAppearance(entry,metadata,work,options,factRecords){
 function artistCreditForEntry(entry,metadata,factRecords){
  if(Object.hasOwn(metadata??{},'artistCredit'))return str(metadata.artistCredit).trim()?metadata.artistCredit:null;
  return known([...registeredSongFactsForEntry(entry,factRecords),...liveVocalRecordsForEntry(entry)]
-  .map(r=>r.metadata?.artistCredit).filter(v=>typeof v==='string'&&v.trim()));
+  .map(r=>r.metadata?.artistCredit).filter(v=>typeof v==='string'&&v.trim()))??medleyPerformanceForEntry(entry)?.displayCredit??null;
 }
 /** One title caption across home, lists and detail. Official billing is not a
  * singer set and must not change singer filters, roles or verification. */
@@ -314,7 +320,7 @@ function songLivesForEntry(entry,eventRecords=EVENT_ARTWORK_RECORDS,additionalLi
 }
 function artworkCandidates(entry,videos,releases,lives,{entryRecords=ARTWORK_RECORDS,releaseRecords=RELEASE_ARTWORK_RECORDS,eventRecords=EVENT_ARTWORK_RECORDS,sourceExclusions}={}){
  const candidates=catalogArtworkCandidatesForEntry(entry,entryRecords).map(c=>({...c,date:c.date??videos.find(v=>youtubeId(v.url)&&youtubeId(v.url)===youtubeId(c.sourceUrl))?.publishedOn??null}));
- const kinds={music_video:'mv',cover_video:'cover',cover_duet_video:'cover',live_video:'live_mv',opening_video:'other_video'};
+ const kinds={music_video:'mv',cover_video:'cover',cover_duet_video:'cover',live_video:'live_mv',opening_video:'other_video',official_audio:'other_video'};
  for(const video of videos)if(kinds[video.kind]&&video.imageUrl)candidates.push({kind:kinds[video.kind],imageUrl:video.imageUrl,sourceUrl:video.url,date:video.publishedOn});
  for(const release of releases){
   const registered=releaseRecords.filter(x=>x.familyId===release.family?.familyId&&x.editionId===release.edition?.editionId);
@@ -340,7 +346,7 @@ export function buildSongDetail(entry,work={},options={}){
  const images=artworkCandidates(entry,videos,releases,allLives,options);
  const vocalCredit=vocalDisplayCreditForEntry(entry);
  return {detail:{...d,...(vocalCredit?{vocalDisplayCredit:vocalCredit}:{}),legacySongType:songTypeForEntry(entry,options.sourceRecords,options.factRecords),singers:singersForEntry(entry)},metadata,credits:creditData.rows,originalCredits:creditData.originalCredits,originalArranger:creditData.originalArranger,...(creditData.originalArrangerCredit?{originalArrangerCredit:creditData.originalArrangerCredit}:{}),
-  artwork:images[0]??null,artworkCandidates:images,listenUrl:videos[0]?.url??releases.find(r=>r.externalUrl)?.externalUrl??null,videos,releases,lives:allLives,
+  artwork:images[0]??null,artworkCandidates:images,listenUrl:videos[0]?.url??known(registeredSongFactsForEntry(entry,options.factRecords).map(r=>safeSongUrl(r.listenUrl)))??releases.find(r=>r.externalUrl)?.externalUrl??null,videos,releases,lives:allLives,
   hasUncertainLives:allLives.some(x=>x.uncertain),comparison:entry.compare??null,
   versionLabel:d.entryId===SIRIUS_DUET&&d.primaryWorkId===SIRIUS_WORK?'デュエット':null};
 }

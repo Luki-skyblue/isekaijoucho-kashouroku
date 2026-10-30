@@ -10,6 +10,7 @@ export const VOCAL_LINK_RECORDS=registry.vocalLinks;
 export const MEMBERSHIP_RECORDS=registry.memberships??[];
 export const VOCAL_CORRECTION_RECORDS=registry.vocalCorrections??[];
 export const PERSON_RELATION_RECORDS=registry.personRelations??[];
+export const MEDLEY_PERFORMANCE_RECORDS=registry.medleyPerformances??[];
 const uuid=/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const byId=new Map(ENTITY_RECORDS.map(e=>[e.id,e]));
 const byName=new Map();
@@ -40,6 +41,21 @@ export function vocalCorrectionMatches(entry,record){
 function vocalCorrectionFor(entry,records=VOCAL_CORRECTION_RECORDS){
  const matches=arr(records).filter(r=>vocalCorrectionMatches(entry,r));return matches.length===1?matches[0]:null;
 }
+const medleyHistoryKey=rows=>JSON.stringify(arr(rows).map(h=>[h.renditionId,h.renditionPartId,h.workId,h.versionId,h.occurredOn,arr(h.eventIds??h.relatedEvents?.map(e=>e.eventId)).slice().sort()]).sort((a,b)=>JSON.stringify(a).localeCompare(JSON.stringify(b))));
+const medleySegmentsKey=rows=>JSON.stringify(arr(rows).map(s=>[s.sequence,s.workId,s.rawLabel,s.workTitle]));
+/** A reviewed aggregate performance is neither a new work nor an expansion of
+ * group membership. Later canonical billing, singers or programme corrections
+ * retire the old display supplement. Incomplete lineups remain incomplete. */
+export function medleyPerformanceForEntry(entry,records=MEDLEY_PERFORMANCE_RECORDS){
+ if(entry?.detail?.kind!=='medley'||entry.detail.primaryWorkId!==null||Object.hasOwn(entry.detail.songMetadata??{},'artistCredit'))return null;
+ const matches=arr(records).filter(r=>vocalLinkMatches(entry,r)&&str(r.displayCredit).trim()&&
+  medleyHistoryKey(entry.history)===medleyHistoryKey(r.history)&&
+  medleySegmentsKey(entry.detail.medleySegments)===medleySegmentsKey(r.segments)&&
+  arr(r.evidence).some(e=>typeof e.url==='string'&&e.url.startsWith('https://'))&&
+  Array.isArray(r.entityIds)&&new Set(r.entityIds).size===r.entityIds.length&&r.entityIds.every(id=>['artist','character','voicebank'].includes(byId.get(id)?.type))&&
+  arr(r.billingEntityIds).length>0&&new Set(r.billingEntityIds).size===r.billingEntityIds.length&&r.billingEntityIds.every(id=>byId.has(id)));
+ return matches.length===1?matches[0]:null;
+}
 export function singersForEntry(entry,links=VOCAL_LINK_RECORDS,corrections=VOCAL_CORRECTION_RECORDS){
  const corrected=vocalCorrectionFor(entry,corrections);
  if(corrected)return corrected.entityIds.map(id=>({entityId:id,name:byId.get(id).name,role:'vocal'}));
@@ -47,6 +63,7 @@ export function singersForEntry(entry,links=VOCAL_LINK_RECORDS,corrections=VOCAL
  for(const link of arr(links))if(vocalLinkMatches(entry,link))for(const id of arr(link.entityIds)){
   const entity=byId.get(id);if(entity&&['artist','character','voicebank'].includes(entity.type)&&!singers.has(id))singers.set(id,{entityId:id,name:entity.name,role:'vocal'});
  }
+ for(const id of medleyPerformanceForEntry(entry)?.entityIds??[]){const entity=byId.get(id);if(!singers.has(id))singers.set(id,{entityId:id,name:entity.name,role:'vocal'});}
  return [...singers.values()];
 }
 export function singerIdsForEntry(entry){const correction=vocalCorrectionFor(entry);return correction?[...correction.entityIds]:[...new Set([...arr(entry?.singerIds),...singersForEntry(entry).map(s=>s.entityId)])];}
@@ -54,6 +71,8 @@ export function singerIdsForEntry(entry){const correction=vocalCorrectionFor(ent
 /** Expand only explicitly reviewed collective credits in the song's vocal
  * field. The stored artist billing and all other song credits stay intact. */
 export function vocalDisplayCreditForEntry(entry){
+ const medley=medleyPerformanceForEntry(entry);
+ if(medley)return medley.showIndividualNames===true?singersForEntry(entry).map(s=>s.name).join('・'):medley.displayCredit;
  if(!VOCAL_LINK_RECORDS.some(link=>link.showIndividualNames===true&&vocalLinkMatches(entry,link)))return null;
  return singersForEntry(entry).map(s=>s.name).join('・')||null;
 }
@@ -77,7 +96,7 @@ const boundary=c=>c===undefined||/[\s・･·×✕✖&＆+＋/／,，、（）()
 /** Billing identities are separate from vocals. A group never expands to its
  * members, nor does a producer featured in billing become a singer. */
 export function billingPeopleForEntry(entry){
- const value=str(entry?.detail?.displayCredit),found=[];
+ const value=str(entry?.detail?.displayCredit)||str(medleyPerformanceForEntry(entry)?.displayCredit),found=[];
  for(const entity of ENTITY_RECORDS)if([entity.name,...arr(entity.aliases)].some(name=>{
   let from=0,at;while((at=value.indexOf(name,from))!==-1){if(boundary(value[at-1])&&boundary(value[at+name.length]))return true;from=at+name.length;}return false;
  }))found.push(entity);
