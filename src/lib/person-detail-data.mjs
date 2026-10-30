@@ -76,6 +76,19 @@ const roleLabels=values=>orderedCreditRoles(values).map(creditRoleLabel);
 const presentation=person=>entityForId(person.key)?.presentation;
 const kindLabels={artist:'アーティスト',creator:'クリエイター',group:'グループ',character:'キャラクター',voicebank:'音声ライブラリ',musical_isotope:'音楽的同位体'};
 const kindLabel=person=>person.jointParticipants.size?'連名':kindLabels[presentation(person)?.kind]??(person.key.startsWith('credit-')?'クリエイター':'関係者');
+// Count works only after the relevant duties/billing have been selected. Keep
+// every entry for links and paging; a matching title is never an identity key.
+// Medleys and entries without a usable work ID remain separate catalogue items.
+function relatedSongCounts(model,songs){
+ const keys=new Set();let variantCount=0;
+ for(const [entryId]of songs){
+  const detail=model.entries.get(entryId)?.detail,workId=detail?.primaryWorkId;
+  const key=detail?.kind==='song_variant'&&uuid.test(text(workId))?'work:'+workId.toLowerCase():'entry:'+entryId;
+  keys.add(key);variantCount++;
+ }
+ return {songCount:keys.size,variantCount};
+}
+const relatedSongTabCounts=(model,songs)=>{const {songCount,variantCount}=relatedSongCounts(model,songs);return {count:songCount,variantCount};};
 export function personDetailFromModel(model,key,{page=1,limit=24,role='all',billing='all'}={}){
  if(!validPersonKey(key))return null;
  const index=indexFor(model),targets=index.aliases.get(key);
@@ -83,13 +96,15 @@ export function personDetailFromModel(model,key,{page=1,limit=24,role='all',bill
  const relations=membershipsForEntity(person.key),groups=relations.filter(r=>r.memberId===person.key).map(r=>entityForId(r.groupId));
  const members=person.type==='group'?relations.filter(r=>r.groupId===person.key).map(r=>entityForId(r.memberId)).map(e=>({key:e.id,name:e.name,href:index.people.has(e.id)?personDetailHref(e.id,{billing:person.key}):null})):null;
  const groupIdsFor=(entryId,entryRoles)=>['vocal','artist'].some(r=>entryRoles.has(r))?groups.filter(g=>index.billedGroups.get(entryId)?.has(g.id)).map(g=>g.id):[];
- const groupCounts=new Map(groups.map(g=>[g.id,[...person.songs].filter(([id,rs])=>groupIdsFor(id,rs).includes(g.id)).length]));
- const billingTabs=[...groupCounts.values()].some(n=>n>0)?[{id:'all',label:'すべて',count:person.songs.size},{id:'self',label:person.name,count:[...person.songs].filter(([id,rs])=>groupIdsFor(id,rs).length===0).length},...groups.filter(g=>groupCounts.get(g.id)>0).map(g=>({id:g.id,label:g.name,count:groupCounts.get(g.id)}))]:[];
+ const groupCounts=new Map(groups.map(g=>[g.id,relatedSongTabCounts(model,[...person.songs].filter(([id,rs])=>groupIdsFor(id,rs).includes(g.id)))]));
+ const billingTabs=[...groupCounts.values()].some(n=>n.count>0)?[{id:'all',label:'すべて',...relatedSongTabCounts(model,person.songs)},{id:'self',label:person.name,...relatedSongTabCounts(model,[...person.songs].filter(([id,rs])=>groupIdsFor(id,rs).length===0))},...groups.filter(g=>groupCounts.get(g.id).count>0).map(g=>({id:g.id,label:g.name,...groupCounts.get(g.id)}))]:[];
  const activeBilling=billingTabs.some(t=>t.id===billing)?billing:'all';
  const billedSongs=[...person.songs].filter(([id,rs])=>activeBilling==='all'||(activeBilling==='self'?groupIdsFor(id,rs).length===0:groupIdsFor(id,rs).includes(activeBilling)));
  const availableRoles=new Set(billedSongs.flatMap(([,rs])=>[...rs])),activeRole=typeof role==='string'&&availableRoles.has(role)?role:'all';
- const roleTabs=[{id:'all',label:'すべて',count:billedSongs.length},...orderedCreditRoles(availableRoles).map(r=>({id:r,label:creditRoleLabel(r),count:billedSongs.filter(([,rs])=>rs.has(r)).length}))];
- const songs=billedSongs.filter(([,entryRoles])=>activeRole==='all'||entryRoles.has(activeRole)).map(([entryId,entryRoles])=>{
+ const roleTabs=[{id:'all',label:'すべて',...relatedSongTabCounts(model,billedSongs)},...orderedCreditRoles(availableRoles).map(r=>({id:r,label:creditRoleLabel(r),...relatedSongTabCounts(model,billedSongs.filter(([,rs])=>rs.has(r)))}))];
+ const selectedSongs=billedSongs.filter(([,entryRoles])=>activeRole==='all'||entryRoles.has(activeRole));
+ const counts=relatedSongCounts(model,selectedSongs);
+ const songs=selectedSongs.map(([entryId,entryRoles])=>{
   const entry=model.entries.get(entryId),d=entry.detail;
   const videoOnly=[...entryRoles].every(r=>r.startsWith('video:'));
   return {entryId,href:'/songs/'+entryId+(activeRole.startsWith('video:')||videoOnly?'?tab=videos':''),title:d.title,displayCredit:songTitleCaptionForEntry(entry),roles:roleLabels(entryRoles)};
@@ -109,7 +124,7 @@ export function personDetailFromModel(model,key,{page=1,limit=24,role='all',bill
  const isotopes=related.filter(r=>r.relation==='musical_isotope'&&r.fromId===person.key).map(r=>link(r.toId)),voiceOrigins=related.filter(r=>r.relation==='musical_isotope'&&r.toId===person.key).map(r=>link(r.fromId));
  const groupLinks=groups.map(g=>link(g.id));
  const relationGroups=[['alternate-names','別名義',alternateNames],['characters','担当キャラクター',characters],['groups','所属グループ',groupLinks],['isotopes','音楽的同位体',isotopes],['voice-actors','CV',voiceActors],['voice-origins','歌声のオリジン',voiceOrigins],['members','メンバー',members],['credit-participants','連名の参加者',creditParticipants]].filter(([id,,items])=>items?.length||(id==='members'&&items!==null)).map(([id,label,items])=>({id,label,items}));
- return {key:person.key,name:person.name,kindLabel:kindLabel(person),groups:groupLinks,members,...(creditParticipants.length?{creditParticipants}:{}),...(alternateNames.length?{alternateNames}:{}),...(characters.length?{characters}:{}),...(voiceActors.length?{voiceActors}:{}),relationGroups,billing:activeBilling,billingTabs,roles:roleLabels(person.roles),role:activeRole,roleTabs,total:songs.length,page,pages,items};
+ return {key:person.key,name:person.name,kindLabel:kindLabel(person),groups:groupLinks,members,...(creditParticipants.length?{creditParticipants}:{}),...(alternateNames.length?{alternateNames}:{}),...(characters.length?{characters}:{}),...(voiceActors.length?{voiceActors}:{}),relationGroups,billing:activeBilling,billingTabs,roles:roleLabels(person.roles),role:activeRole,roleTabs,...counts,total:songs.length,page,pages,items};
 }
 
 export function personDetailHref(key,{page=1,role='all',billing='all'}={}){
@@ -150,7 +165,8 @@ export function peopleListFromModel(model,{category='all',kind='all',term='',rol
  const named=people.filter(p=>inKind(p)&&matches(p));
  const categories=[{id:'all',label:'すべて'},{id:'vocal',label:'歌唱'},{id:'music',label:'楽曲制作'},{id:'cover_source',label:'カバー原曲'},{id:'production',label:'動画・音源制作'}].map(c=>({...c,count:named.filter(p=>belongs(p,c.id)).length}));
  const visibleDuty=r=>dutyMatches(r)&&(activeRole==='all'||r===activeRole);
- const countSongs=person=>[...person.songs.values()].filter(roles=>[...roles].some(visibleDuty)).length;
+ const songCounts=new Map(people.map(person=>[person.key,relatedSongCounts(model,[...person.songs].filter(([,roles])=>[...roles].some(visibleDuty)))]));
+ const countSongs=person=>songCounts.get(person.key).songCount;
  const filtered=people.filter(p=>inKind(p)&&belongs(p,category)&&(activeRole==='all'||p.roles.has(activeRole))&&matches(p)).sort((a,b)=>(category!=='vocal'?countSongs(b)-countSongs(a):0)||a.name.localeCompare(b.name,'ja')||compare(a.key,b.key));
  const suggestions=term&&filtered.length===0?people.filter(p=>inKind(p)&&!belongs(p,category)&&matches(p))
   .sort((a,b)=>a.name.localeCompare(b.name,'ja')||compare(a.key,b.key)).slice(0,5).flatMap(person=>{
@@ -161,7 +177,7 @@ export function peopleListFromModel(model,{category='all',kind='all',term='',rol
   }):[];
  limit=Number.isSafeInteger(limit)&&limit>0&&limit<=100?limit:48;
  const pages=Math.ceil(filtered.length/limit);page=Number.isSafeInteger(page)&&page>0?Math.min(page,Math.max(pages,1)):1;
- return {category,kind,term,role:activeRole,roleOptions,page,pages,total:filtered.length,categories,suggestions,items:filtered.slice((page-1)*limit,page*limit).map(p=>({key:p.key,name:p.name,type:p.type,kindLabel:kindLabel(p),roles:roleLabels([...p.roles].filter(visibleDuty)),songCount:countSongs(p)}))};
+ return {category,kind,term,role:activeRole,roleOptions,page,pages,total:filtered.length,categories,suggestions,items:filtered.slice((page-1)*limit,page*limit).map(p=>({key:p.key,name:p.name,type:p.type,kindLabel:kindLabel(p),roles:roleLabels([...p.roles].filter(visibleDuty)),...songCounts.get(p.key)}))};
 }
 
 export function peopleListHref({category='all',kind='all',term='',role='all',page=1}={}){

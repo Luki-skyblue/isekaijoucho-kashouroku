@@ -1,12 +1,13 @@
 import type {JsonObject} from './core';
 import type {PrivateModel} from './private-read-model.mjs';
 type PersonLink={key:string;name:string;href:string|null;context?:string};
-export type PersonDetailData={key:string;name:string;kindLabel:string;groups:PersonLink[];members:PersonLink[]|null;creditParticipants?:PersonLink[];alternateNames?:PersonLink[];characters?:PersonLink[];voiceActors?:PersonLink[];relationGroups:Array<{id:string;label:string;items:PersonLink[]}>;billing:string;billingTabs:Array<{id:string;label:string;count:number}>;roles:string[];role:string;roleTabs:Array<{id:string;label:string;count:number}>;total:number;page:number;pages:number;items:Array<{entryId:string;href:string;title:string;displayCredit:string;roles:string[];thumbnailUrl:string|null;thumbnailUrls:string[]}>};
+type RelatedSongTab={id:string;label:string;count:number;variantCount:number};
+export type PersonDetailData={key:string;name:string;kindLabel:string;groups:PersonLink[];members:PersonLink[]|null;creditParticipants?:PersonLink[];alternateNames?:PersonLink[];characters?:PersonLink[];voiceActors?:PersonLink[];relationGroups:Array<{id:string;label:string;items:PersonLink[]}>;billing:string;billingTabs:RelatedSongTab[];roles:string[];role:string;roleTabs:RelatedSongTab[];songCount:number;variantCount:number;total:number;page:number;pages:number;items:Array<{entryId:string;href:string;title:string;displayCredit:string;roles:string[];thumbnailUrl:string|null;thumbnailUrls:string[]}>};
 export function creditNameKey(name:unknown):string|null;
 export function validPersonKey(key:unknown):boolean;
 export function singerCreditParts(detail:JsonObject):Array<{text:string;personKey:string|null}>;
 export function personDetailFromModel(model:PrivateModel,key:string,options?:{page?:number;limit?:number;role?:string;billing?:string}):PersonDetailData|null;
 export function personDetailHref(key:string,options?:{page?:number;role?:string;billing?:string}):string;
 export type PeopleListQuery={category?:string;kind?:string;term?:string;role?:string;page?:number;limit?:number};
-export function peopleListFromModel(model:PrivateModel,query?:PeopleListQuery):{category:string;kind:string;term:string;role:string;roleOptions:Array<{id:string;label:string}>;page:number;pages:number;total:number;categories:Array<{id:string;label:string;count:number}>;suggestions:Array<{key:string;name:string;category:string;categoryLabel:string}>;items:Array<{key:string;name:string;type:string;kindLabel:string;roles:string[];songCount:number}>};
+export function peopleListFromModel(model:PrivateModel,query?:PeopleListQuery):{category:string;kind:string;term:string;role:string;roleOptions:Array<{id:string;label:string}>;page:number;pages:number;total:number;categories:Array<{id:string;label:string;count:number}>;suggestions:Array<{key:string;name:string;category:string;categoryLabel:string}>;items:Array<{key:string;name:string;type:string;kindLabel:string;roles:string[];songCount:number;variantCount:number}>};
 export function peopleListHref(query?:PeopleListQuery):string;
