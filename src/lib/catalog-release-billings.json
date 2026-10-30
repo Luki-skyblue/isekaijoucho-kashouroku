@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "purpose": "REVIEWED_PRODUCT_BILLING_NOT_A_GUEST_TRACK_SINGER_LIST",
+  "records": [
+    {
+      "key": "ghosthvck-getty",
+      "status": "active",
+      "family": {"familyId": "91ef0479-7b0b-5b4c-a76a-d1137b9d532a", "title": "GHOSTHVCK", "releaseKind": "album"},
+      "displayCredit": "Getty",
+      "catalogUrls": ["https://getty8getty.bandcamp.com/album/ghosthvck", "https://linkco.re/AxmFqbvA?lang=en"],
+      "sourceUrls": ["https://getty8getty.bandcamp.com/album/ghosthvck"],
+      "basis": "Artist album billing by Getty, directly read in D146/D148; not the singer of track15."
+    },
+    {
+      "key": "virtual-ties-ep-joucho",
+      "status": "active",
+      "family": {"familyId": "7f9565a8-19a4-55c1-89c6-6ef0388ec2af", "title": "Virtual Ties 〜ヰ世界情緒夢想曲〜 Theme Songs", "releaseKind": "ep"},
+      "displayCredit": "ヰ世界情緒",
+      "catalogUrls": ["https://kamitsubaki.jp/news/2026/03/19/10530/"],
+      "sourceUrls": ["https://kamitsubaki.jp/discography/isekaijoucho/11204/"],
+      "checkedOn": "2026-10-31",
+      "basis": "Publisher discography names the EP and its artist; directly fetched over HTTPS in D149."
+    }
+  ]
+}

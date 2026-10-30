@@ -1,12 +1,27 @@
 // First appearance is the earliest publication currently known for this vocal
 // form. Home and song detail share it; never use insertion order.
-import {songMetadataForEntry,songArtworkCandidatesForEntry,songTitleCaptionForEntry} from './song-detail-data.mjs';
-import {releaseListArtworkFromModel,releaseKindLabel,releaseMediaLabel,isLiveRelease} from './release-detail-data.mjs';
+import {songMetadataForEntry,songArtworkCandidatesForEntry,songTitleCaptionForEntry,songTitleCreditForEntry} from './song-detail-data.mjs';
+import {releaseListArtworkFromModel,releaseDisplayContextFromModel,releaseKindLabel,releaseMediaLabel,isLiveRelease} from './release-detail-data.mjs';
 import {supplementalLivesForEntry} from './live-program-supplements.mjs';
 import {liveDisplayContextFromModel} from './live-detail-data.mjs';
+import billings from './catalog-release-billings.json' with {type:'json'};
 
 const arr=x=>Array.isArray(x)?x:[],text=x=>typeof x==='string'?x.trim():'';
 const compare=(a,b)=>a<b?-1:a>b?1:0;
+export function homeReleaseCreditFromModel(model,familyId,records=billings.records){
+ const saved=model.releases.get(familyId),detail=saved?.detail;if(!detail)return '';
+ if(Object.hasOwn(detail,'artistCredit'))return text(detail.artistCredit);
+ const names=[...new Set(arr(records).filter(r=>r.status==='active'&&r.family?.familyId===familyId&&Object.entries(r.family).every(([k,v])=>detail[k]===v)&&arr(detail.resources).some(s=>s.officiality==='official'&&arr(r.catalogUrls).includes(s.url))).map(r=>text(r.displayCredit)).filter(Boolean))];
+ if(names.length)return names.length===1?names[0]:'';
+ // A single with one exact song can reuse that song's explicit billing.
+ // An album or EP needs product billing, regardless of its guest-track links.
+ if(detail.releaseKind!=='single'||!arr(saved.items).length)return '';
+ const links=releaseDisplayContextFromModel(model,familyId).itemLinks,targets=arr(saved.items).map(i=>links[i.itemId]?.entryId);
+ if(targets.some(id=>!id)||new Set(targets).size!==1)return '';
+ const entry=model.entries.get(targets[0]);if(!entry)return '';
+ const metadata=songMetadataForEntry(entry,undefined,model.works.get(entry.detail.primaryWorkId));
+ return text(metadata.artistCredit)||text(entry.detail.displayCredit)?songTitleCreditForEntry(entry,metadata):'';
+}
 function day(value,precision){
  if(precision&&precision!=='date'||typeof value!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(value))return null;
  const parsed=new Date(value+'T00:00:00Z');
@@ -67,5 +82,5 @@ export function homeRecentFromModel(model,{today=homeToday()}={}){
   releases.push({familyId:detail.familyId,title:detail.title,date,upcoming:date>today,kindLabel});
  }
  releases.sort((a,b)=>compare(b.date,a.date)||compare(a.familyId,b.familyId));
- return {songs:recentSongs,releases:releaseListArtworkFromModel(model,{items:releases.slice(0,5)}).items};
+ return {songs:recentSongs,releases:releaseListArtworkFromModel(model,{items:releases.slice(0,5).map(r=>({...r,displayCredit:homeReleaseCreditFromModel(model,r.familyId)}))}).items};
 }

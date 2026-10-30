@@ -31,7 +31,7 @@ export default async function Search({searchParams}:{searchParams:Promise<LiveQu
   <form className="search-detail-form" action="/people" method="get">
    <label>名前<input type="search" name="q" defaultValue={term} maxLength={100} placeholder="名前・別名で検索"/></label>
    <input type="hidden" name="category" value={data?.category??'artists'}/>
-   {data?.category==='creators'&&<label>担当<select name="role" defaultValue={data.role}>{data.roleOptions.map(r=><option key={r.id} value={r.id}>{r.label}</option>)}</select></label>}
+   {data&&['music','cover_source','production'].includes(data.category)&&<label>担当<select name="role" defaultValue={data.role}>{data.roleOptions.map(r=><option key={r.id} value={r.id}>{r.label}</option>)}</select></label>}
    <button type="submit">検索</button>
   </form></>;
  }else{

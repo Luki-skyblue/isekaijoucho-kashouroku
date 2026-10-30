@@ -118,16 +118,20 @@ export function personDetailHref(key,{page=1,role='all',billing='all'}={}){
 
 // These are catalogue duties, not professions. Billing alone is not singing.
 const productionRoles=new Set(['mix','mixing','mastering','recording','recording engineer','sound engineer','illustration','illustrator','movie','video','animation','映像','イラスト','ミックス','マスタリング','録音']);
+const coveredWorkRoles=new Set(['original_lyricist','original_composer','original_arranger']);
 function roleCategory(role){
  if(typeof role!=='string')return null;
  if(role==='vocal')return 'vocal';if(role==='artist')return null;
+ if(coveredWorkRoles.has(role))return 'cover_source';
  return role.startsWith('video:')||productionRoles.has(role.toLocaleLowerCase('en'))?'production':'music';
 }
 function directoryQuery({category='all',kind='all',role='all'}={}){
  if(category==='groups'){category='all';kind='group';}
  if(category==='artists')category='vocal';
- if(category==='creators')category=role!=='all'&&roleCategory(role)==='production'?'production':'music';
- return {category:['vocal','music','production'].includes(category)?category:'all',kind:kind==='group'?'group':'all'};
+ if(category==='creators')category=['production','cover_source'].includes(roleCategory(role))?roleCategory(role):'music';
+ // Old music URLs offered the covered-work roles in the same dropdown.
+ if(category==='music'&&roleCategory(role)==='cover_source')category='cover_source';
+ return {category:['vocal','music','cover_source','production'].includes(category)?category:'all',kind:kind==='group'?'group':'all'};
 }
 export function peopleListFromModel(model,{category='all',kind='all',term='',role='all',page=1,limit=48}={}){
  ({category,kind}=directoryQuery({category,kind,role}));term=text(term).trim().slice(0,100);
@@ -144,7 +148,7 @@ export function peopleListFromModel(model,{category='all',kind='all',term='',rol
  // Tab links keep name/kind and clear the duty filter, including the active tab.
  // Count exactly that destination rather than the unfiltered directory.
  const named=people.filter(p=>inKind(p)&&matches(p));
- const categories=[{id:'all',label:'すべて'},{id:'vocal',label:'歌唱'},{id:'music',label:'楽曲制作'},{id:'production',label:'動画・音源制作'}].map(c=>({...c,count:named.filter(p=>belongs(p,c.id)).length}));
+ const categories=[{id:'all',label:'すべて'},{id:'vocal',label:'歌唱'},{id:'music',label:'楽曲制作'},{id:'cover_source',label:'カバー原曲'},{id:'production',label:'動画・音源制作'}].map(c=>({...c,count:named.filter(p=>belongs(p,c.id)).length}));
  const visibleDuty=r=>dutyMatches(r)&&(activeRole==='all'||r===activeRole);
  const countSongs=person=>[...person.songs.values()].filter(roles=>[...roles].some(visibleDuty)).length;
  const filtered=people.filter(p=>inKind(p)&&belongs(p,category)&&(activeRole==='all'||p.roles.has(activeRole))&&matches(p)).sort((a,b)=>(category!=='vocal'?countSongs(b)-countSongs(a):0)||a.name.localeCompare(b.name,'ja')||compare(a.key,b.key));
