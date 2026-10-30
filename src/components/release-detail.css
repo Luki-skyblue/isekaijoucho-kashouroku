@@ -20,6 +20,7 @@
 .release-detail-disc{margin-top:22px}.release-detail-disc h3{font-family:var(--sans);font-size:12px;font-weight:500;color:var(--quiet);margin:0 0 8px;line-height:1.8}
 .release-detail-tracks{list-style:none;padding:0;margin:0}.release-detail-track{display:grid;grid-template-columns:38px minmax(0,1fr) auto;align-items:baseline;gap:14px;padding:14px 0;border-bottom:1px solid var(--hair);font-size:14px;line-height:1.8}
 .release-detail-position,.release-detail-duration{font-family:var(--mono);font-size:11px;color:var(--quiet);overflow-wrap:anywhere}.release-detail-track-copy{min-width:0;overflow-wrap:anywhere}.release-detail-track-title a{display:block;color:inherit;text-decoration:underline;text-decoration-color:var(--hair);text-underline-offset:4px}.release-detail-track-title a:hover{color:var(--accent-deep);text-decoration-color:currentColor}
+.release-detail-track-context .release-detail-track-title{color:var(--quiet)}
 .release-detail-parts{margin-top:6px;font-size:11px;color:var(--quiet)}.release-detail-parts summary{cursor:pointer;list-style-position:inside}.release-detail-parts ol{padding-left:1.6em;margin:8px 0 0}
 @media(max-width:650px){
  .release-detail-heading{align-items:flex-start;gap:18px;margin:24px 0}.release-detail-art .record-cover{width:108px;height:108px}.release-detail-kind{font-size:10px;margin-bottom:5px}.release-detail-heading h1{font-size:25px;line-height:1.5}

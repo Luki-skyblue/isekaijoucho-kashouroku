@@ -7569,5 +7569,227 @@
       ],
       "scope": "Only the Jouchou participation track is catalogued, not a complete album tracklist."
     }
+  ],
+  "contextTracklists": [
+    {
+      "key": "ghosthvck-bandcamp-complete",
+      "status": "active",
+      "checkedOn": "2026-10-31",
+      "url": "https://getty8getty.bandcamp.com/album/ghosthvck",
+      "family": {
+        "familyId": "91ef0479-7b0b-5b4c-a76a-d1137b9d532a",
+        "title": "GHOSTHVCK",
+        "releaseKind": "album"
+      },
+      "edition": {
+        "editionId": "75f1d62a-7822-5725-a230-f9652d34fc4e",
+        "kind": "digital",
+        "name": "Bandcamp",
+        "releaseDate": "2026-04-26"
+      },
+      "component": {
+        "componentId": "6216bcdc-ee16-511e-9998-09790672c693",
+        "editionId": "75f1d62a-7822-5725-a230-f9652d34fc4e",
+        "componentKind": "digital",
+        "componentNo": 1,
+        "rawLabel": "Bandcamp"
+      },
+      "anchor": {
+        "itemId": "b6964cbe-b72e-5076-9018-3e5c13066c2e",
+        "editionId": "75f1d62a-7822-5725-a230-f9652d34fc4e",
+        "componentId": "6216bcdc-ee16-511e-9998-09790672c693",
+        "sequenceNo": 15,
+        "rawPosition": "15",
+        "rawTitle": "ヰ世界情緒 - とめどなき白情 (Getty Remix Extended)"
+      },
+      "items": [
+        {
+          "sequenceNo": 1,
+          "rawPosition": "1",
+          "rawTitle": "GHOSTHVCK (Extended Mix)"
+        },
+        {
+          "sequenceNo": 2,
+          "rawPosition": "2",
+          "rawTitle": "FRACTAL"
+        },
+        {
+          "sequenceNo": 3,
+          "rawPosition": "3",
+          "rawTitle": "AXIS"
+        },
+        {
+          "sequenceNo": 4,
+          "rawPosition": "4",
+          "rawTitle": "VOID"
+        },
+        {
+          "sequenceNo": 5,
+          "rawPosition": "5",
+          "rawTitle": "PULSAR"
+        },
+        {
+          "sequenceNo": 6,
+          "rawPosition": "6",
+          "rawTitle": "SUPERGLIDE (Extended Mix)"
+        },
+        {
+          "sequenceNo": 7,
+          "rawPosition": "7",
+          "rawTitle": "BLOOM"
+        },
+        {
+          "sequenceNo": 8,
+          "rawPosition": "8",
+          "rawTitle": "NEMESIS"
+        },
+        {
+          "sequenceNo": 9,
+          "rawPosition": "9",
+          "rawTitle": "REVERSAL"
+        },
+        {
+          "sequenceNo": 10,
+          "rawPosition": "10",
+          "rawTitle": "HELIX"
+        },
+        {
+          "sequenceNo": 11,
+          "rawPosition": "11",
+          "rawTitle": "Bassline Crack (Extended Mix)"
+        },
+        {
+          "sequenceNo": 12,
+          "rawPosition": "12",
+          "rawTitle": "ORBIT"
+        },
+        {
+          "sequenceNo": 13,
+          "rawPosition": "13",
+          "rawTitle": "In Your Eyes"
+        },
+        {
+          "sequenceNo": 14,
+          "rawPosition": "14",
+          "rawTitle": "ユーフォリア feat. ナツメイツキ"
+        },
+        {
+          "sequenceNo": 15,
+          "rawPosition": "15",
+          "rawTitle": "ヰ世界情緒 - とめどなき白情 (Getty Remix Extended)"
+        }
+      ],
+      "scope": "Complete official product tracklist. Missing positions are display-only album context, with no song IDs, singers, works or recordings inferred. Existing canonical rows take priority per position."
+    },
+    {
+      "key": "ghosthvck-dsp-complete",
+      "status": "active",
+      "checkedOn": "2026-10-31",
+      "url": "https://linkco.re/AxmFqbvA?lang=en",
+      "family": {
+        "familyId": "91ef0479-7b0b-5b4c-a76a-d1137b9d532a",
+        "title": "GHOSTHVCK",
+        "releaseKind": "album"
+      },
+      "edition": {
+        "editionId": "e3e834f3-2dd1-5c21-a2ad-2cc90a5771e8",
+        "kind": "digital",
+        "name": "音楽配信",
+        "releaseDate": "2026-05-16"
+      },
+      "component": {
+        "componentId": "ac89c926-46ec-56b8-8d10-26cb134a6037",
+        "editionId": "e3e834f3-2dd1-5c21-a2ad-2cc90a5771e8",
+        "componentKind": "digital",
+        "componentNo": 1,
+        "rawLabel": "音楽配信"
+      },
+      "anchor": {
+        "itemId": "2b1befc4-139a-5c16-814f-4f75253e2c56",
+        "editionId": "e3e834f3-2dd1-5c21-a2ad-2cc90a5771e8",
+        "componentId": "ac89c926-46ec-56b8-8d10-26cb134a6037",
+        "sequenceNo": 15,
+        "rawPosition": "15",
+        "rawTitle": "とめどなき白情 (Getty Remix Extended)"
+      },
+      "items": [
+        {
+          "sequenceNo": 1,
+          "rawPosition": "1",
+          "rawTitle": "GHOSTHVCK (Extended Mix)"
+        },
+        {
+          "sequenceNo": 2,
+          "rawPosition": "2",
+          "rawTitle": "FRACTAL"
+        },
+        {
+          "sequenceNo": 3,
+          "rawPosition": "3",
+          "rawTitle": "AXIS"
+        },
+        {
+          "sequenceNo": 4,
+          "rawPosition": "4",
+          "rawTitle": "VOID"
+        },
+        {
+          "sequenceNo": 5,
+          "rawPosition": "5",
+          "rawTitle": "PULSAR"
+        },
+        {
+          "sequenceNo": 6,
+          "rawPosition": "6",
+          "rawTitle": "SUPERGLIDE (Extended Mix)"
+        },
+        {
+          "sequenceNo": 7,
+          "rawPosition": "7",
+          "rawTitle": "BLOOM"
+        },
+        {
+          "sequenceNo": 8,
+          "rawPosition": "8",
+          "rawTitle": "NEMESIS"
+        },
+        {
+          "sequenceNo": 9,
+          "rawPosition": "9",
+          "rawTitle": "REVERSAL"
+        },
+        {
+          "sequenceNo": 10,
+          "rawPosition": "10",
+          "rawTitle": "HELIX"
+        },
+        {
+          "sequenceNo": 11,
+          "rawPosition": "11",
+          "rawTitle": "Bassline Crack (Extended Mix)"
+        },
+        {
+          "sequenceNo": 12,
+          "rawPosition": "12",
+          "rawTitle": "ORBIT"
+        },
+        {
+          "sequenceNo": 13,
+          "rawPosition": "13",
+          "rawTitle": "In Your Eyes"
+        },
+        {
+          "sequenceNo": 14,
+          "rawPosition": "14",
+          "rawTitle": "ユーフォリア feat. ナツメイツキ"
+        },
+        {
+          "sequenceNo": 15,
+          "rawPosition": "15",
+          "rawTitle": "とめどなき白情 (Getty Remix Extended)"
+        }
+      ],
+      "scope": "Complete official product tracklist. Missing positions are display-only album context, with no song IDs, singers, works or recordings inferred. Existing canonical rows take priority per position."
+    }
   ]
 }

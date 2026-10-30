@@ -6,11 +6,13 @@ import {RELEASE_ARTWORK_RECORDS} from './catalog-artwork-data.mjs';
 import {songReleasesForEntry} from './song-detail-data.mjs';
 export const RELEASE_CONTENT_RECORDS=registry.records;
 export const RELEASE_ENTRY_LINK_RECORDS=registry.entryLinks??[];
+export const RELEASE_CONTEXT_TRACKLISTS=registry.contextTracklists??[];
 /** A scoped participation-only album list is not a complete tracklist. Stop
  * this hint automatically when canonical rows or edition identities change. */
 export function releaseContentNoteFromModel(model,familyId,editionId=null){
  const saved=model.releases.get(familyId);if(!saved)return null;
- const partial=(registry.partialEditions??[]).some(r=>r.familyId===familyId&&r.title===saved.detail.title&&(!editionId||r.editionId===editionId)&&
+ const completeEditions=new Set(contextTracklistsForModel(model,familyId).map(r=>r.edition.editionId));
+ const partial=(registry.partialEditions??[]).some(r=>!completeEditions.has(r.editionId)&&r.familyId===familyId&&r.title===saved.detail.title&&(!editionId||r.editionId===editionId)&&
   saved.detail.editions.some(e=>e.editionId===r.editionId)&&saved.detail.resources.some(s=>s.url===r.url&&s.officiality==='official'&&s.targetEditionId===r.editionId)&&
   saved.items.filter(i=>i.editionId===r.editionId).length===r.items.length&&r.items.every(expected=>saved.items.some(i=>i.editionId===r.editionId&&Object.entries(expected).every(([k,v])=>i[k]===v))));
  return partial?'ヰ世界情緒の参加曲を掲載しています。':null;
@@ -19,6 +21,19 @@ const arr=x=>Array.isArray(x)?x:[],str=x=>typeof x==='string'?x:'';
 const labels={bd_main:'Blu-ray（本編）',bd_fixed:'Blu-ray（定点映像）',bd_main_day1:'Blu-ray DAY-1',bd_main_day2:'Blu-ray DAY-2',bd_fixed_day1:'Blu-ray DAY-1（定点映像）',bd_fixed_day2:'Blu-ray DAY-2（定点映像）',cd_spoken:'CD（放課後音声編）',cd_live:'CD（LIVE音源）',bd_live:'Blu-ray（LIVE・アフタートーク）',playback_card_1:'Playback Card #1'};
 const same=(value,expected)=>expected&&Object.entries(expected).every(([key,want])=>value?.[key]===want);
 const itemId=(record,row)=>`source:${record.key}:${row.sequenceNo}`;
+// A complete publisher tracklist may surround already catalogued participation
+// tracks. These rows describe the product only; they create no song identities.
+function contextTracklistsForModel(model,familyId){
+ const saved=model.releases?.get(familyId);if(!saved)return [];
+ const eligible=RELEASE_CONTEXT_TRACKLISTS.filter(r=>{
+  if(r.status!=='active'||!str(r.key)||!same(saved.detail,r.family)||r.family?.familyId!==familyId)return false;
+  if(!arr(saved.detail.editions).some(e=>same(e,r.edition))||!arr(saved.detail.components).some(c=>same(c,r.component))||r.component?.editionId!==r.edition?.editionId)return false;
+  if(!arr(saved.detail.resources).some(s=>s.url===r.url&&s.officiality==='official'&&s.targetScope==='edition'&&s.targetEditionId===r.edition.editionId))return false;
+  if(!arr(saved.items).some(i=>same(i,r.anchor)))return false;
+  return arr(r.items).length>0&&r.items.every((row,index)=>row.sequenceNo===index+1&&str(row.rawPosition)&&str(row.rawTitle));
+ });
+ return eligible.filter(r=>eligible.filter(other=>other.component.componentId===r.component.componentId).length===1);
+}
 function usableRecord(model,record){
  if(record?.status!=='active'||!str(record.key)||!str(record.edition?.editionId)||!str(record.component?.componentId)||record.component.editionId!==record.edition.editionId||!['cd','blu_ray'].includes(record.component.componentKind))return false;
  let url;try{url=new URL(record.url);}catch{return false;}
@@ -76,6 +91,13 @@ export function releaseContentFromModel(model,familyId,records=RELEASE_CONTENT_R
    const id=itemId(record,row);
    items.push({itemId:id,editionId:record.edition.editionId,componentId:record.component.componentId,itemKind:record.component.componentKind==='cd'?'audio_track':'video_chapter',sequenceNo:row.sequenceNo,rawPosition:row.rawPosition,rawTitle:row.rawTitle,durationMs:null,associations:[],credits:[],subparts:[]});
    if(entryMatches(model,row))itemLinks[id]={entryId:row.entry.entryId};
+  }
+ }
+ for(const record of contextTracklistsForModel(model,familyId)){
+  const saved=model.releases.get(familyId),occupied=new Set(saved.items.filter(i=>i.componentId===record.component.componentId).map(i=>i.sequenceNo));
+  for(const row of record.items){
+   if(occupied.has(row.sequenceNo))continue;
+   items.push({itemId:itemId(record,row),editionId:record.edition.editionId,componentId:record.component.componentId,itemKind:'audio_track',sequenceNo:row.sequenceNo,rawPosition:row.rawPosition,rawTitle:row.rawTitle,durationMs:null,associations:[],credits:[],subparts:[],contextOnly:true});
   }
  }
  for(const record of eligibleEntryLinks(model,familyId,entryLinkRecords,artworkRecords))itemLinks[record.item.itemId]={entryId:record.entry.entryId};

@@ -59,7 +59,7 @@ export default async function ReleaseDetail({params,searchParams}:{params:Promis
 function Missing(){return <span className="release-detail-missing">準備中</span>;}
 function Track({item,context}:{item:JsonObject;context:ReleaseDisplayContext|null}){
  const target=context?.itemLinks[str(item.itemId)],title=str(item.rawTitle),duration=releaseDuration(item.durationMs),parts=asArray(item.subparts);
- return <li className="release-detail-track">
+ return <li className={'release-detail-track'+(item.contextOnly===true?' release-detail-track-context':'')}>
   <span className="release-detail-position">{releaseTrackPosition(item)}</span>
   <div className="release-detail-track-copy"><span className="release-detail-track-title">{title?target?<Link href={'/songs/'+target.entryId}>{title}</Link>:title:<Missing/>}</span>
    {parts.length>0&&<details className="release-detail-parts"><summary>内訳</summary><ol>{parts.map((p,i)=><li key={str(p.partId)||i}>{str(p.rawLabel)||<Missing/>}</li>)}</ol></details>}

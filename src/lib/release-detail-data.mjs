@@ -113,6 +113,9 @@ export function releaseDetailFromModel(model,familyId,{editionId=null,page=1,lim
  const sourced=releaseContentFromModel(model,familyId);
  const displayRelease={...release,components:arr(release.components).map(c=>({...c,rawLabel:sourced.componentLabels[c.componentId]??c.rawLabel}))};
  let groups=groupReleaseItems(displayRelease,[...saved.items,...sourced.items]);
+ // Only newly completed product tracklists need interleaving with saved rows.
+ // Other discs retain their original RPC/printed ordering, including MCs.
+ groups=groups.map(g=>g.items.some(i=>i.contextOnly)?{...g,items:[...g.items].sort((a,b)=>a.sequenceNo-b.sequenceNo)}:g);
  if(sourced.items.length){
   const present=new Set(groups.map(g=>g.key));
   groups.push(...groupReleaseItems(displayRelease,[]).filter(g=>!present.has(g.key)));
