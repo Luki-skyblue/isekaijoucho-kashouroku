@@ -1,4 +1,5 @@
 import {asArray,str,pageNumber,searchTerm,viewMode,validId,type JsonObject} from './core';
+import {liveHeading} from './live-heading.mjs';
 
 export const LIVE_FORMATS=[{id:'one_man',label:'ワンマン'},{id:'festival',label:'フェス'},{id:'unclassified',label:'未分類'}] as const;
 export const LIVE_SORTS=[{id:'date_desc',label:'開催日：新しい順'},{id:'date_asc',label:'開催日：古い順'},{id:'title_asc',label:'公演名：昇順'},{id:'title_desc',label:'公演名：降順'}] as const;
@@ -7,10 +8,7 @@ export type LiveSort=typeof LIVE_SORTS[number]['id'];
 export type LiveArtist={entityId:string;name:string};
 /** Billing describes whose show this is. Guests/counts/titles never fill it in. */
 export function liveCardLabel(item:JsonObject):string {
- const names=[...new Set(asArray(item.billingArtists).map(a=>str(a.name).trim()).filter(Boolean))];
- const format=str(item.liveFormat)||str(item.eventKind);
- const label=format==='one_man'?'ONE-MAN LIVE':format==='festival'?'フェス':'';
- return [names.join('・'),label].filter(Boolean).join(' ');
+ return liveHeading(item);
 }
 export type LiveQuery=Record<string,string|string[]|undefined>;
 export type ParsedLiveQuery={q:string;page:number;view:'list'|'grid';artistIds:string[];artistScope:'billing'|'appearance';artistMatch:'any'|'all';formats:LiveFormat[];sort:LiveSort};

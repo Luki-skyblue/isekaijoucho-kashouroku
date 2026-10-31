@@ -232,6 +232,9 @@ html, body {background:var(--paper);color:var(--ink)}
 .record-copy {min-width:0;display:flex;flex-direction:column;justify-content:center;gap:5px}
 .record-title {font-family:var(--serif);font-size:17px;letter-spacing:.035em;font-weight:400;line-height:1.5;overflow-wrap:anywhere}
 .record-meta {font-family:var(--mono);font-size:10px;letter-spacing:.02em;overflow-wrap:anywhere}
+.record-credit,.record-eyebrow {font-family:var(--sans);font-size:11px;line-height:1.5;color:var(--muted);overflow-wrap:anywhere}
+.record-release-meta {display:flex;flex-wrap:wrap;column-gap:10px;row-gap:2px;line-height:1.6}
+.records-grid .record-meta.record-release-meta {display:flex}
 .records-grid {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px 19px;margin-top:20px}
 .records-grid .record {display:flex;align-items:stretch;flex-direction:column;gap:12px;padding:0 0 14px;border-bottom:0;min-width:0;min-height:0}
 .records-grid .record-cover {width:100%;height:auto;aspect-ratio:1}

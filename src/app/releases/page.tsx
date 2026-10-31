@@ -1,14 +1,15 @@
-import {PAGE_LABELS,NAME_FIELDS,INFO_STATES,EMPTY_RESULTS} from '@/lib/ui-copy.mjs';
+import {PAGE_LABELS,NAME_FIELDS,EMPTY_RESULTS} from '@/lib/ui-copy.mjs';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import {rpc} from '@/lib/api';
-import {asArray,num,pageNumber,pageOffset,searchTerm,viewMode,displayDate} from '@/lib/core';
+import {asArray,num,pageNumber,pageOffset,searchTerm,viewMode} from '@/lib/core';
 import {getReleaseList} from '@/lib/release-list-api';
 import {releaseListHref,RELEASE_SORTS} from '@/lib/release-list-data.mjs';
 import {ListSort} from '@/components/list-sort';
 import {homeToday} from '@/lib/home-recent-data.mjs';
 import {Breadcrumb,Heading,ListPage} from '@/components/ui';
 import {RecordArtwork} from '@/components/record-artwork';
+import {ReleaseCardText} from '@/components/release-card-text';
 import {detailSearchHref} from '@/lib/search-navigation.mjs';
 import {withListReturnTo} from '@/lib/catalog-navigation';
 import './releases.css';
@@ -39,7 +40,7 @@ export default async function Releases({searchParams}:{searchParams:Promise<{q?:
    </ListSort><nav className="view-switch" aria-label="一覧の表示形式"><span>VIEW</span>{(['list','grid'] as const).map(mode=><Link key={mode} href={href({view:mode})} aria-current={view===mode?'page':undefined}>{mode==='list'?'リスト':'グリッド'}</Link>)}</nav></div>
   </div>
   {data.items.length?<div className={'records records-'+view}>{data.items.map(item=>{
-   const content=<><RecordArtwork url={item.thumbnailUrl} urls={item.thumbnailUrls}/><span className="record-copy"><span className="record-title">{item.title}</span><span className="record-meta">{[item.kindLabel,item.date?displayDate(item.date):'発売日：'+INFO_STATES.pending,item.date&&item.date>today?'発売予定':null,item.external?'配信先':null].filter(Boolean).join(' · ')}</span></span><span className="record-arrow" aria-hidden="true">↗</span></>;
+   const content=<><RecordArtwork url={item.thumbnailUrl} urls={item.thumbnailUrls}/><ReleaseCardText {...item} upcoming={!!item.date&&item.date>today}/><span className="record-arrow" aria-hidden="true">↗</span></>;
    return item.external?<a className="record" key={item.key} href={item.href} target="_blank" rel="noopener noreferrer">{content}</a>:<Link className="record" key={item.key} href={withListReturnTo(item.href,'/releases',href())}>{content}</Link>;
   })}</div>:<p className="empty">{alternateCategory?<Link href={href({category:alternateCategory.id,page:1})}>{alternateCategory.label}に{alternateCategory.count}件あります<span aria-hidden="true"> →</span></Link>:EMPTY_RESULTS.releases}</p>}
   {data.pages>1&&<nav className="pages" aria-label="ページ送り">{data.page>1&&<Link href={href({page:data.page-1})}>← 前のページ</Link>}<span>{data.page} / {data.pages} ページ</span>{data.page<data.pages&&<Link href={href({page:data.page+1})}>次のページ →</Link>}</nav>}

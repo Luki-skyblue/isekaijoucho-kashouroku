@@ -296,6 +296,7 @@ export function applyLiveFilterCandidates(model,candidates) {
     const directory = model.directories.event.find(x => x.eventId === r.eventId), event = events.get(r.eventId);
     check(directory && event && directory.title === r.expectedTitle && directory.firstOfficialDate === r.expectedFirstOfficialDate, 'LIVE candidate target mismatch');
     check(r.state === 'source_checked_draft' && (r.format === undefined || liveFormats.includes(r.format)), 'Invalid LIVE candidate state/format');
+    check(r.officialBillingLabel===undefined||r.officialBillingLabel===null||typeof r.officialBillingLabel==='string'&&r.officialBillingLabel.trim().length>0&&r.officialBillingLabel.length<=500&&!/[\x00-\x1f\x7f]/.test(r.officialBillingLabel),'Invalid LIVE official billing label');
     check(Array.isArray(r.sourceUrls) && r.sourceUrls.length > 0 && r.sourceUrls.every(x => {
       try {const u=new URL(x);return u.protocol === 'https:' && !u.username && !u.password;} catch {return false;}
     }), 'LIVE candidates need explicit sources');
@@ -303,6 +304,7 @@ export function applyLiveFilterCandidates(model,candidates) {
     const additions = r.castAdditions ?? [];
     check(Array.isArray(additions) && additions.every(x => actor(x) && x.castStatus === 'confirmed_present') && new Set(additions.map(x=>x.entityId.toLowerCase())).size === additions.length, 'Invalid LIVE cast additions');
     events.set(r.eventId,{...event,filterMetadata:{format:r.format,
+      ...(Object.hasOwn(r,'officialBillingLabel')?{officialBillingLabel:r.officialBillingLabel}:{}),
       billingArtists:r.billingArtists.map(x=>({entityId:x.entityId.toLowerCase(),name:x.name})),
       castAdditions:additions.map(x=>({entityId:x.entityId.toLowerCase(),name:x.name,scope:'event',role:'performer',castStatus:x.castStatus,provesParticipationInEverySong:false})),
       reviewId:candidates.reviewId}});
@@ -394,7 +396,7 @@ export function queryEvents(model, filters = {}) {
   });
   return {items:rows.slice(offset,offset+limit).map(x => {
     const event=model.events.get(x.eventId);
-    return {...x,thumbnailUrl:eventArtworkForEvent(x)?.imageUrl??null,liveFormat:eventFormat(x,event),billingArtists:billingArtists(event).map(({entityId,name})=>({entityId,name}))};
+    return {...x,thumbnailUrl:eventArtworkForEvent(x)?.imageUrl??null,liveFormat:eventFormat(x,event),billingArtists:billingArtists(event).map(({entityId,name})=>({entityId,name})),...(Object.hasOwn(event?.filterMetadata??{},'officialBillingLabel')?{officialBillingLabel:event.filterMetadata.officialBillingLabel}:{})};
   }),total:rows.length,limit,offset};
 }
 

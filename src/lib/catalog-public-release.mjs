@@ -54,7 +54,7 @@ const eventRelation=obj('relationId relationType eventId relatedEventId sourceEv
 const programPart=obj('completeness partId relationshipToProgram sequenceNo versionId workId workTitle');
 const programItem=obj('itemKind programItemId rawLabel rawPosition sequenceNo',{
  associations:list(obj('associationScope completeness linkId mediaObjectId provesPartSpecificSinger provesWholeSongFull relationType renditionId targetKind versionId workId',{renditionParts:list(programPart)}))});
-const filterMetadata=obj('format verificationStatus',{
+const filterMetadata=obj('format verificationStatus officialBillingLabel',{
  billingArtists:list(obj('entityId name')),castAdditions:list(cast)});
 const event=obj('_exportId',{
  pages:list(obj('eventId eventKind occurrencesLimit occurrencesOffset status title totalOccurrences',{

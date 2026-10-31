@@ -3,6 +3,7 @@ import Link from 'next/link';
 import {homePageData} from '@/lib/home-page-data';
 import {displayDate} from '@/lib/core';
 import {RecordArtwork} from '@/components/record-artwork';
+import {ReleaseCardText} from '@/components/release-card-text';
 import '@/components/home-page.css';
 
 export const dynamic='force-dynamic';
@@ -35,7 +36,7 @@ export default async function Home() {
     <div className="home-recent-heading"><h2 id="home-releases-title">最近のリリース</h2><Link href="/releases">{PAGE_LABELS.releases} <span aria-hidden="true">→</span></Link></div>
     {recent.releases.length?<div className="home-recent-list">{recent.releases.map(release=><Link className="home-recent-item home-recent-release" href={'/releases/'+release.familyId} key={release.familyId}>
      <RecordArtwork url={release.thumbnailUrl} urls={release.thumbnailUrls}/>
-     <span className="home-recent-copy"><strong className="home-recent-title">{release.title}</strong><span className="home-recent-credit">{release.displayCredit||'名義：'+INFO_STATES.pending}</span><span className="home-recent-meta"><time dateTime={release.date} aria-label={'発売日 '+displayDate(release.date)}>{displayDate(release.date)}</time>{release.kindLabel&&<span>{release.kindLabel}</span>}{release.upcoming&&<span>発売予定</span>}</span></span>
+     <ReleaseCardText {...release} home/>
     </Link>)}</div>:<p className="home-recent-empty">{INFO_STATES.pending}</p>}
    </section>
   </div>

@@ -1,6 +1,8 @@
-import {PAGE_LABELS,NAME_FIELDS,EMPTY_RESULTS} from '@/lib/ui-copy.mjs';
+import {PAGE_LABELS,NAME_FIELDS,INFO_STATES,EMPTY_RESULTS} from '@/lib/ui-copy.mjs';
 import Link from 'next/link';
 import {RecordArtwork} from './record-artwork';
+import {ReleaseCardText} from './release-card-text';
+import {releaseKindLabel} from '@/lib/release-detail-data.mjs';
 import {JsonObject,displayDate,num,str,textOr,numberOfPages,explicitThumbnail,ViewMode} from '@/lib/core';
 import {liveCardLabel} from '@/lib/live-list-params';
 import {eventArtworkForEvent} from '@/lib/catalog-artwork.mjs';
@@ -48,7 +50,7 @@ export function SimpleList({items,kind,view='list',returnTo}:{items:JsonObject[]
  return <div className={`records records-${view}`}>
  {items.map(x=><Link className="record" key={id(x)} href={href(x)}>
    <RecordThumbnail x={x} kind={kind}/>
-   <span className="record-copy"><span className="record-title">{textOr(x.title)}</span>{kind!=='work'&&<span className="record-meta">{kind==='event'?[liveCardLabel(x),displayDate(x.firstOfficialDate)].filter(Boolean).join(' · '):`${num(x.editionCount)}版`}</span>}</span>
+   <>{kind==='release'?<ReleaseCardText title={textOr(x.title)} displayCredit={Object.hasOwn(x,'artistCredit')?str(x.artistCredit):str(x.displayCredit)} date={str(x.earliestReleaseDate)||null} kindLabel={releaseKindLabel(str(x.releaseKind))}/>:<span className="record-copy">{kind==='event'&&liveCardLabel(x)&&<span className="record-eyebrow">{liveCardLabel(x)}</span>}<span className="record-title">{textOr(x.title)}</span>{kind==='event'&&<span className="record-meta">{str(x.firstOfficialDate)?<time dateTime={str(x.firstOfficialDate)}>{displayDate(x.firstOfficialDate)}</time>:'開催日：'+INFO_STATES.pending}</span>}</span>}</>
    <span className="record-arrow" aria-hidden="true">↗</span>
  </Link>)}
  </div>;

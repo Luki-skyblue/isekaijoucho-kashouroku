@@ -1,3 +1,4 @@
+import {liveHeading} from './live-heading.mjs';
 // Presentation only. A public programme/entry link is not a full-song or
 // singer-verification assertion. Keep the original rows and their scope intact.
 import registry from './catalog-live-program-links.json' with {type:'json'};
@@ -88,8 +89,7 @@ function reviewedMedleyVocals(model,event,program,item){
 }
 export function liveDisplayContextFromModel(model,eventId,options={}){
  const event=model.events.get(eventId);if(!event)return null;
- const f=event.filterMetadata??{},names=[...new Set(arr(f.billingArtists).map(x=>x.name).filter(Boolean))];
- const format=f.format??event.detail.eventKind,formatName=format==='one_man'?'ONE-MAN LIVE':format==='festival'?'フェス':'';
+ const f=event.filterMetadata??{};
  const eligible=(rows,scope)=>arr(rows).filter(c=>c.scope===scope&&c.role==='performer'&&c.castStatus==='confirmed_present'&&c.entityId&&c.name);
  const cast=[...eligible(event.detail.eventCast,'event'),...eligible(f.castAdditions,'event'),...arr(event.occurrences).flatMap(o=>eligible(o.occurrenceCast,'occurrence'))];
  const performers=[...new Map(cast.map(c=>[c.entityId,{entityId:c.entityId,name:c.name,personKey:personDetailFromModel(model,c.entityId)?c.entityId:null}])).values()];
@@ -124,5 +124,5 @@ export function liveDisplayContextFromModel(model,eventId,options={}){
    programLinks[item.programItemId]={entryId,title:e.detail.title};}
  }
  const programSupplements=Object.fromEntries(liveProgramSupplementsForEvent(model,eventId,options.supplementRecords).map(p=>[p.occurrenceId,p]));
- return {recordings:recordingsForEvent(model,eventId),billingLabel:[names.join('・'),formatName].filter(Boolean).join(' ')||null,dates,performers,programLinks,programVocals,programSupplements};
+ return {recordings:recordingsForEvent(model,eventId),billingLabel:liveHeading({officialBillingLabel:f.officialBillingLabel,billingArtists:f.billingArtists,liveFormat:f.format??event.detail.eventKind})||null,dates,performers,programLinks,programVocals,programSupplements};
 }

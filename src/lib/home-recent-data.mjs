@@ -8,6 +8,11 @@ import billings from './catalog-release-billings.json' with {type:'json'};
 
 const arr=x=>Array.isArray(x)?x:[],text=x=>typeof x==='string'?x.trim():'';
 const compare=(a,b)=>a<b?-1:a>b?1:0;
+export function singleReleaseCreditFromModel(model,entryId){
+ const entry=model.entries.get(entryId);if(!entry)return '';
+ const metadata=songMetadataForEntry(entry,undefined,model.works.get(entry.detail.primaryWorkId));
+ return text(metadata.artistCredit)||text(entry.detail.displayCredit)?songTitleCreditForEntry(entry,metadata):'';
+}
 export function homeReleaseCreditFromModel(model,familyId,records=billings.records){
  const saved=model.releases.get(familyId),detail=saved?.detail;if(!detail)return '';
  if(Object.hasOwn(detail,'artistCredit'))return text(detail.artistCredit);
@@ -18,9 +23,7 @@ export function homeReleaseCreditFromModel(model,familyId,records=billings.recor
  if(detail.releaseKind!=='single'||!arr(saved.items).length)return '';
  const links=releaseDisplayContextFromModel(model,familyId).itemLinks,targets=arr(saved.items).map(i=>links[i.itemId]?.entryId);
  if(targets.some(id=>!id)||new Set(targets).size!==1)return '';
- const entry=model.entries.get(targets[0]);if(!entry)return '';
- const metadata=songMetadataForEntry(entry,undefined,model.works.get(entry.detail.primaryWorkId));
- return text(metadata.artistCredit)||text(entry.detail.displayCredit)?songTitleCreditForEntry(entry,metadata):'';
+ return singleReleaseCreditFromModel(model,targets[0]);
 }
 function day(value,precision){
  if(precision&&precision!=='date'||typeof value!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(value))return null;
