@@ -1,14 +1,15 @@
+import {PAGE_LABELS} from '@/lib/ui-copy.mjs';
 import type {Metadata} from 'next';
 import {Breadcrumb,Heading} from '@/components/ui';
 import {ContributionDraft} from '@/components/contribution-draft';
 import {configuredFeedbackContact} from '@/lib/feedback-contact.mjs';
 import '@/components/info-pages.css';
 
-export const metadata:Metadata={title:'情報提供・訂正',description:'ヰ世界情緒 歌唱録への情報提供、訂正、感想・要望や不具合の連絡。',robots:{index:false,follow:true}};
+export const metadata:Metadata={title:PAGE_LABELS.contribute,description:'ヰ世界情緒 歌唱録への情報提供、訂正、感想・要望や不具合の連絡。',robots:{index:false,follow:true}};
 export default function Contribute(){
  const {email:recipient,formUrl}=configuredFeedbackContact();
  return <article className="info-page">
-  <Breadcrumb parts={[{label:'情報提供・訂正'}]}/><Heading title="情報提供・訂正"/>
+  <Breadcrumb parts={[{label:PAGE_LABELS.contribute}]}/><Heading title={PAGE_LABELS.contribute}/>
   <p className="info-intro">情報提供や訂正のほか、感想・要望・不具合などもお寄せください。</p>
   {formUrl&&<dl className="info-states" aria-label="フォームの入力項目">
    <div><dt>内容</dt><dd>必須</dd></div>

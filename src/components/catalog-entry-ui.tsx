@@ -1,3 +1,4 @@
+import {PAGE_LABELS,EMPTY_RESULTS} from '@/lib/ui-copy.mjs';
 import Link from 'next/link';
 import {RecordArtwork} from './record-artwork';
 import type {CatalogEntryCard} from '@/lib/catalog-entry-api';
@@ -12,9 +13,9 @@ import {songTypeLabel} from '@/lib/catalog-song-classification.mjs';
 
 export function CatalogIndex({items,total,query,limit,singerChoices=SINGERS}: {items:CatalogEntryCard[];total:number;query:ParsedCatalogQuery;limit:number;singerChoices?:ReadonlyArray<SingerChoice>}){
  const pages=Math.ceil(total/limit),conditions=activeCatalogConditions(query,singerChoices),returnTo=catalogHref(query);
- return <><Breadcrumb parts={[{label:'楽曲一覧'}]}/><Heading title="楽曲一覧"/>
+ return <><Breadcrumb parts={[{label:PAGE_LABELS.songs}]}/><Heading title={PAGE_LABELS.songs}/>
  <form className="search" action="/songs" method="get">
-  <div className="search-line"><CatalogSearchInput query={query.q}/><button type="submit">検索</button><Link className="search-detail-link" href={detailSearchHref(catalogHref(query))}>詳細検索</Link></div>
+  <div className="search-line"><CatalogSearchInput query={query.q}/><button type="submit">検索</button><Link className="search-detail-link" href={detailSearchHref(catalogHref(query))}>{PAGE_LABELS.search}</Link></div>
   {query.singerIds.map(id=><input key={id} type="hidden" name="singer" value={id}/>)}
   {query.singerIds.length>0&&<input type="hidden" name="singerMatch" value={query.singerMatch}/>}
   {query.kinds.map(kind=><input key={kind} type="hidden" name="type" value={kind}/>)}
@@ -32,7 +33,7 @@ export function CatalogIndex({items,total,query,limit,singerChoices=SINGERS}: {i
  {items.length?<div className={`records records-${query.view}`}>{items.map(x=><Link className="record" href={catalogEntryHref(x.entryId,returnTo)} key={x.entryId}>
  <RecordArtwork url={explicitThumbnail({...x})} urls={x.thumbnailUrls}/>
  <span className="record-copy"><span className="record-title">{x.title}</span>{x.displayCredit&&<span className="record-meta">{x.displayCredit}</span>}{query.sort.startsWith('first_')&&<span className="record-meta">初出：{x.firstAppearanceDate?displayDate(x.firstAppearanceDate):'準備中'}</span>}{x.kind==='medley'&&<span className="catalog-meta-kind">メドレー</span>}</span>
- <span className="record-arrow" aria-hidden="true">↗</span></Link>)}</div>:<Empty>条件に該当する楽曲はありません。</Empty>}
+ <span className="record-arrow" aria-hidden="true">↗</span></Link>)}</div>:<Empty>{EMPTY_RESULTS.songs}</Empty>}
  {pages>1&&<nav className="pages" aria-label="ページ送り">{query.page>1&&<Link href={catalogHref(query,{page:query.page-1})}>← 前のページ</Link>}<span>{query.page} / {pages} ページ</span>{query.page<pages&&<Link href={catalogHref(query,{page:query.page+1})}>次のページ →</Link>}</nav>}
  </>;
 }
@@ -47,7 +48,7 @@ export function CatalogEntryDetail({detail,comparison,history,historyPage=1}:{de
  const historyTotal=num(asObject(history).total),historyPages=Math.ceil(historyTotal/50);
  const historyHref=(page:number)=>`/songs/${encodeURIComponent(str(detail.entryId))}${page===1?'':`?historyPage=${page}`}#song-history`;
  const direct=matches.filter(p=>str(p.matchBasis)!=='same_version_only'),sameVersion=matches.filter(p=>str(p.matchBasis)==='same_version_only');
- return <><Breadcrumb parts={[{label:'楽曲一覧',href:'/songs'},{label:title}]}/><Heading title={title}/>
+ return <><Breadcrumb parts={[{label:PAGE_LABELS.songs,href:'/songs'},{label:title}]}/><Heading title={title}/>
  {str(detail.displayCredit)&&<p className="catalog-primary-credit">{str(detail.displayCredit)}</p>}
  {kind==='medley'&&<p className="catalog-muted-small">メドレー</p>}
  {(detail.legacySongType || singers.length>0 || variations.length>0)&&<Panel title="基本情報"><dl className="catalog-fact-list">

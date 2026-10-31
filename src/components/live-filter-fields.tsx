@@ -1,4 +1,5 @@
 'use client';
+import {NAME_FIELDS} from '@/lib/ui-copy.mjs';
 
 import {useState} from 'react';
 import {CatalogHelp} from '@/components/catalog-help';
@@ -15,7 +16,7 @@ export function LiveFilterFields({query,artists,titleSearch=false}:{query:Parsed
  const toggle=(id:string,checked:boolean)=>setChosen(old=>checked?[...new Set([...old,id])]:old.filter(x=>x!==id));
  const toggleFormat=(id:LiveFormat,checked:boolean)=>setFormats(old=>checked?[...new Set([...old,id])]:old.filter(x=>x!==id));
  return <form action="/lives" method="get" className="catalog-filter-fields">
-  {titleSearch?<label className="search-detail-title">公演名<input type="search" name="q" defaultValue={query.q} maxLength={100}/></label>:query.q&&<input type="hidden" name="q" value={query.q}/>}
+  {titleSearch?<label className="search-detail-title">{NAME_FIELDS.live}<input type="search" name="q" defaultValue={query.q} maxLength={100}/></label>:query.q&&<input type="hidden" name="q" value={query.q}/>}
   <input type="hidden" name="view" value={query.view}/><input type="hidden" name="sort" value={query.sort}/>
   <input type="hidden" name="artistScope" value={scope}/><input type="hidden" name="artistMatch" value={match}/>
   {chosen.map(id=><input key={id} type="hidden" name="artist" value={id}/>)}

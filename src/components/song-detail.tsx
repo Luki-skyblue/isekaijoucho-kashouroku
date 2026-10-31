@@ -1,6 +1,7 @@
+import {PAGE_LABELS,INFO_STATES} from '@/lib/ui-copy.mjs';
 import Link from 'next/link';
 import {asArray,asObject,displayDate,str,validId,type JsonObject} from '@/lib/core';
-import {missingSongText,safeSongUrl,songListenLabel,songTitleCreditForEntry,youtubeId,type SongDetailData} from '@/lib/song-detail-data.mjs';
+import {missingSongText,safeSongUrl,songListenLabel,songTitleCreditForEntry,youtubeId,type SongDetailData,type SongFirstSourceLink} from '@/lib/song-detail-data.mjs';
 import {songTypeLabel,isCoverSongType,formatSongTitleCredit} from '@/lib/catalog-song-classification.mjs';
 import {SongDetailTabs} from './song-detail-tabs';
 import {SongDetailArtwork} from './song-detail-artwork';
@@ -13,7 +14,11 @@ import './song-detail.css';
 
 function Value({value,review}:{value:unknown;review?:unknown}){return typeof value==='string'&&value.trim()?<>{value}</>:<span className="song-detail-state">{missingSongText(review)}</span>;}
 function Empty({review}:{review?:unknown}){return <p className="song-detail-empty song-detail-state">{missingSongText(review)}</p>;}
-function First({value,review}:{value:unknown;review:unknown}){const first=asObject(value),text=[str(first.date)?displayDate(first.date,str(first.date)):'',str(first.label)].filter(Boolean).join(' · ');return <Value value={text} review={review}/>;}
+function First({value,review,link}:{value:unknown;review:unknown;link?:SongFirstSourceLink|null}){
+ const first=asObject(value),date=str(first.date)?displayDate(first.date,str(first.date)):'',label=str(first.label);
+ if(!date&&!label)return <Value value={null} review={review}/>;
+ return <>{date}{date&&label?' · ':null}{label&&(link?link.external?<a className="song-detail-first-source" href={link.href} target="_blank" rel="noopener noreferrer">{label} ↗</a>:<Link className="song-detail-first-source" href={link.href}>{label}</Link>:label)}</>;
+}
 function singerNames(value:unknown){return Array.isArray(value)?value.map(s=>typeof s==='string'?s:str(asObject(s).name)).filter(Boolean).join('・'):'';}
 function variation(value:JsonObject){return str(value.value)||(typeof value.semitoneOffset==='number'?`${value.semitoneOffset>0?'+':''}${value.semitoneOffset}半音`:'');}
 
@@ -35,8 +40,8 @@ export function CatalogSongDetail({song,initialTab='info',returnTo}:{song:SongDe
  const imageUrl=hero?.imageUrl??null,heroShape=hero&&(['mv','cover','live_mv','other_video'].includes(hero.kind)||(hero.kind==='manual'&&youtubeId(hero.sourceUrl)))?'video':'jacket';
  const info=<>
   <dl className="song-detail-facts"><dt>歌唱</dt><dd>{singers?<SingerNames detail={{...d,displayCredit:singers}}/>:<Value value={singers}/>}</dd><dt>楽曲区分</dt><dd><Value value={d.kind==='medley'?'メドレー':songTypeLabel(d.legacySongType)}/></dd>
-   <dt>初出</dt><dd><First value={m.firstAppearance} review={review.firstAppearance}/></dd>
-   {fullVisible&&<><dt>初出（フル）</dt><dd><First value={m.firstFull} review={review.firstFull}/></dd></>}
+   <dt>初出</dt><dd><First value={m.firstAppearance} review={review.firstAppearance} link={song.firstAppearanceLink}/></dd>
+   {fullVisible&&<><dt>初出（フル）</dt><dd><First value={m.firstFull} review={review.firstFull} link={song.firstFullLink}/></dd></>}
    <dt>タイアップ</dt><dd><Value value={m.tieUp} review={review.tieUp}/></dd>
    {str(d.editorialOriginLabel)&&<><dt>バージョン名</dt><dd>{str(d.editorialOriginLabel)}</dd></>}
    {variations.length>0&&<><dt>バリエーション</dt><dd>{variations.join(' / ')}</dd></>}
@@ -51,8 +56,8 @@ export function CatalogSongDetail({song,initialTab='info',returnTo}:{song:SongDe
  </>;
  const videos=song.videos.length?<div className="song-detail-video-list">{song.videos.map(video=><article className="song-detail-video" key={video.mediaId+'|'+video.url}>
   <a className="song-detail-video-thumbnail" href={video.url} target="_blank" rel="noopener noreferrer" aria-label={(video.title||'動画')+'を開く'}><SongDetailArtwork url={video.imageUrl} className="song-detail-video-image"/><span className="song-detail-play" aria-hidden="true">▶</span></a>
-  <div className="song-detail-video-copy"><a href={video.url} className="song-detail-video-title" target="_blank" rel="noopener noreferrer"><strong className={video.title?undefined:'song-detail-state'}>{video.title||'タイトル未取得'}</strong></a>
-   <div className="song-detail-video-meta">{songListenLabel(video.url)==='Xで見る'&&<span>X</span>}<span className={video.kind&&video.kind!=='unknown'?undefined:'song-detail-state'}>{({music_video:'MV',cover_video:'歌ってみた',cover_duet_video:'歌ってみた',live_video:'LIVE映像',opening_video:'OP映像',official_audio:'音源'} as Record<string,string>)[video.kind??'']||'種別未取得'}</span>{video.publishedOn?<time dateTime={video.publishedOn}>投稿日 {displayDate(video.publishedOn,video.publishedOn)}</time>:<span className="song-detail-state">投稿日未取得</span>}</div>
+  <div className="song-detail-video-copy"><a href={video.url} className="song-detail-video-title" target="_blank" rel="noopener noreferrer"><strong className={video.title?undefined:'song-detail-state'}>{video.title||'タイトル：'+INFO_STATES.pending}</strong></a>
+   <div className="song-detail-video-meta">{songListenLabel(video.url)==='Xで見る'&&<span>X</span>}<span className={video.kind&&video.kind!=='unknown'?undefined:'song-detail-state'}>{({music_video:'MV',cover_video:'歌ってみた',cover_duet_video:'歌ってみた',live_video:'LIVE映像',opening_video:'OP映像',official_audio:'音源'} as Record<string,string>)[video.kind??'']||'種別：'+INFO_STATES.pending}</span>{video.publishedOn?<time dateTime={video.publishedOn}>投稿日 {displayDate(video.publishedOn,video.publishedOn)}</time>:<span className="song-detail-state">投稿日：{INFO_STATES.pending}</span>}</div>
    {video.credits.length>0&&<details className="song-detail-video-credits"><summary>クレジット</summary><dl className="song-detail-facts">{video.credits.map((c,i)=><div className="song-detail-fact-pair" key={c.role+'|'+c.name+'|'+i}><dt>{creditRoleLabel(c.role)}</dt><dd><CreditName name={c.name} personKey={c.entityId} parts={c.parts}/></dd></div>)}</dl></details>}
   </div>
  </article>)}</div>:<Empty review={review.media}/>;
@@ -68,12 +73,14 @@ export function CatalogSongDetail({song,initialTab='info',returnTo}:{song:SongDe
   </Link>;
  })}</div>:<Empty review={review.releases}/>;
  const differences=compare.some(v=>asArray(v.variations).some(x=>variation(x)));
+ const compareDates=compare.some(v=>str(v.firstAppearanceDate));
+ const compareSingers=new Set(compare.map(v=>str(v.displayCredit)||singerNames(v.singers))).size>1||(!compareDates&&!differences);
  const versions=<>{siblings.length?siblings.map(sibling=><Link className="song-detail-version" key={str(sibling.entryId)} href={catalogEntryHref(str(sibling.entryId),returnTo)}><span><strong>{str(sibling.title)}</strong><small><Value value={sibling.displayCredit}/></small></span><span className="song-detail-arrow" aria-hidden="true">↗</span></Link>):<Empty review={review.versions}/>}
-  {compare.length>1&&<details className="song-detail-comparison"><summary>比較表を見る</summary><div className="song-detail-comparison-scroll" tabIndex={0} aria-label="別バージョンの比較"><table><caption className="song-detail-sr-only">別バージョンの比較</caption><thead><tr><th scope="col">楽曲</th><th scope="col">歌唱</th>{differences&&<th scope="col">違い</th>}</tr></thead><tbody>{compare.map(v=><tr key={str(v.entryId)} data-current={str(v.entryId)===entryId}><th scope="row">{str(v.entryId)===entryId?str(v.title):<Link href={catalogEntryHref(str(v.entryId),returnTo)}>{str(v.title)}</Link>}</th><td><Value value={v.displayCredit||singerNames(v.singers)}/></td>{differences&&<td>{asArray(v.variations).map(variation).filter(Boolean).join(' / ')||'—'}</td>}</tr>)}</tbody></table></div></details>}
+  {compare.length>1&&<details className="song-detail-comparison"><summary>比較表を見る</summary><div className="song-detail-comparison-scroll" tabIndex={0} aria-label="別バージョンの比較"><table data-columns={1+Number(compareSingers)+Number(compareDates)+Number(differences)}><caption className="song-detail-sr-only">別バージョンの比較</caption><thead><tr><th scope="col">楽曲</th>{compareSingers&&<th scope="col">歌唱</th>}{compareDates&&<th scope="col">初出</th>}{differences&&<th scope="col">違い</th>}</tr></thead><tbody>{compare.map(v=><tr key={str(v.entryId)} data-current={str(v.entryId)===entryId}><th scope="row">{str(v.entryId)===entryId?str(v.title):<Link href={catalogEntryHref(str(v.entryId),returnTo)}>{str(v.title)}</Link>}</th>{compareSingers&&<td><Value value={v.displayCredit||singerNames(v.singers)}/></td>}{compareDates&&<td>{str(v.firstAppearanceDate)?<time dateTime={str(v.firstAppearanceDate)}>{displayDate(str(v.firstAppearanceDate),str(v.firstAppearanceDate))}</time>:<Value value={null}/>}</td>}{differences&&<td>{asArray(v.variations).map(variation).filter(Boolean).join(' / ')||'—'}</td>}</tr>)}</tbody></table></div></details>}
  </>;
  return <article className="song-detail-page" data-song-entry={entryId}>
   <SongBackLink returnTo={returnTo}/>
   <header className="song-detail-hero"><SongDetailArtwork url={imageUrl} urls={song.artworkCandidates.map(image=>image.imageUrl)} eager className={'song-detail-art song-detail-art-'+heroShape}/><div className="song-detail-heading">{str(m.titleKana)&&<p className="song-detail-kana">{str(m.titleKana)}</p>}<div className="song-detail-title-line"><h1>{title}</h1>{song.versionLabel&&<span className="song-detail-version-tag">{song.versionLabel}</span>}</div><p className="song-detail-singer">{titlePrefix}{titleCredit===singers&&singers?<SingerNames detail={{...d,displayCredit:titleCredit}}/>:<Value value={titleCredit}/>}</p>{song.listenUrl&&<a className="song-detail-primary" href={song.listenUrl} target="_blank" rel="noopener noreferrer">{song.videos.some(v=>v.url===song.listenUrl)?songListenLabel(song.listenUrl):'配信で聴く'} ↗</a>}</div></header>
-  <SongDetailTabs key={entryId+'|'+initialTab} initialTab={initialTab} tabs={[{id:'info',label:'楽曲情報',count:null,content:info},{id:'videos',label:'関連動画',count:song.videos.length,content:videos},{id:'history',label:'披露歴',count:song.lives.length,content:history},{id:'releases',label:'収録作品',count:releaseGroups.length,content:releases},{id:'versions',label:'別バージョン',count:siblings.length,content:versions}]}/>
+  <SongDetailTabs key={entryId+'|'+initialTab} initialTab={initialTab} tabs={[{id:'info',label:'楽曲情報',count:null,content:info},{id:'videos',label:'関連動画',count:song.videos.length,content:videos},{id:'history',label:'披露歴',count:song.lives.length,content:history},{id:'releases',label:PAGE_LABELS.releases,count:releaseGroups.length,content:releases},{id:'versions',label:'別バージョン',count:siblings.length,content:versions}]}/>
  </article>;
 }

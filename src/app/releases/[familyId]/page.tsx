@@ -1,3 +1,4 @@
+import {PAGE_LABELS,NAME_FIELDS,INFO_STATES} from '@/lib/ui-copy.mjs';
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
 import {asArray,displayDate,str,validId,JsonObject,rpcDetailPage} from '@/lib/core';
@@ -12,7 +13,7 @@ import '@/components/release-detail.css';
 const ITEMS_PER_PAGE=100;
 export async function generateMetadata({params}:{params:Promise<{familyId:string}>}):Promise<Metadata>{
  const {familyId}=await params;if(!validId(familyId))return {};
- const view=await getReleaseDetail(familyId,{});return view?{title:str(view.release.title)||'収録作品'}:{};
+ const view=await getReleaseDetail(familyId,{});return view?{title:str(view.release.title)||PAGE_LABELS.releases}:{};
 }
 export default async function ReleaseDetail({params,searchParams}:{params:Promise<{familyId:string}>;searchParams:Promise<{itemsPage?:string;edition?:string;from?:string}>}){
  const {familyId}=await params;if(!validId(familyId))notFound();
@@ -20,18 +21,18 @@ export default async function ReleaseDetail({params,searchParams}:{params:Promis
  const editionHref=(editionId?:string)=>withListReturnTo(releaseDetailHref(familyId,{editionId} ),'/releases',returnTo);
  const view=await getReleaseDetail(familyId,{editionId:typeof query.edition==='string'?query.edition:null,page:itemsPage});if(!view)notFound();
  const {release,context,editions,selectedEdition,components,groups,total,links}=view,activeEditions=selectedEdition?[selectedEdition]:editions;
- const title=str(release.title)||'作品名未登録',images=view.artwork.map(x=>x.imageUrl);
+ const title=str(release.title)||NAME_FIELDS.release+'：'+INFO_STATES.pending,images=view.artwork.map(x=>x.imageUrl);
  const dates=[...new Set(activeEditions.map(e=>str(e.releaseDate)).filter(Boolean))];
  const formats=[...new Set(components.map(c=>releaseMediaLabel(c.componentKind)).filter((x):x is string=>!!x))];
  const knownMedia=activeEditions.map(e=>str(e.mediaLabel)).filter(Boolean);if(knownMedia.length){formats.splice(0,formats.length,...new Set(knownMedia));}
  if(!formats.length&&activeEditions.some(e=>e.kind==='digital'))formats.push('配信');
  const catalog=activeEditions.filter(e=>str(e.catalogNumber)),inclusions=selectedEdition&&Array.isArray(selectedEdition.inclusionLabels)?selectedEdition.inclusionLabels.filter((x):x is string=>typeof x==='string'):[];
  return <article className="release-detail-page">
-  <Breadcrumb parts={[{label:returnTo?'検索結果に戻る':'収録作品',href:returnTo??'/releases'},{label:title}]}/>
+  <Breadcrumb parts={[{label:returnTo?'検索結果に戻る':PAGE_LABELS.releases,href:returnTo??'/releases'},{label:title}]}/>
   <header className="release-detail-heading">
    <div className="release-detail-art"><RecordArtwork key={str(selectedEdition?.editionId)||'all'} url={images[0]??null} urls={images}/></div>
    <div className="release-detail-copy">{releaseKindLabel(release.releaseKind)&&<p className="release-detail-kind">{releaseKindLabel(release.releaseKind)}</p>}<h1>{title}</h1>
-    {context&&editions.length>1&&<nav className="release-edition-tabs" aria-label="商品版の切替">
+    {context&&editions.length>1&&<nav className="release-edition-tabs" aria-label="収録作品の版の切り替え">
      <Link href={editionHref()} scroll={false} aria-current={!selectedEdition?'page':undefined}>すべて</Link>
      {editions.map(e=><Link key={str(e.editionId)} href={editionHref(str(e.editionId))} scroll={false} aria-current={selectedEdition?.editionId===e.editionId?'page':undefined}>{releaseEditionName(e)}</Link>)}
     </nav>}
@@ -49,14 +50,14 @@ export default async function ReleaseDetail({params,searchParams}:{params:Promis
    <div className="release-detail-section-title"><h2 id="release-content-heading">収録内容</h2>{total>0&&<span className="release-detail-count" aria-label={total+'件'}>{total}</span>}</div>
    {view.contentNote&&<p className="release-detail-missing">{view.contentNote}</p>}
    {groups.length?groups.map(group=>{
-    const label=[group.key==='shared'||!selectedEdition?group.editionName:null,groups.length>1?group.label:null].filter(Boolean).join(' · ');
+    const label=[...new Set([group.key==='shared'||!selectedEdition?group.editionName:null,groups.length>1?group.label:null].filter(Boolean))].join(' · ');
     return <section className="release-detail-disc" key={group.key}>{label&&<h3>{label}</h3>}{group.items.length?<ol className="release-detail-tracks">{group.items.map((item,i)=><Track key={str(item.itemId)||i} item={item} context={context}/>)}</ol>:<Missing/>}</section>;
    }):<Missing/>}
    <DetailPager familyId={familyId} editionId={str(selectedEdition?.editionId)||null} page={view.page} pages={view.pages} returnTo={returnTo}/>
   </section>
  </article>;
 }
-function Missing(){return <span className="release-detail-missing">準備中</span>;}
+function Missing(){return <span className="release-detail-missing">{INFO_STATES.pending}</span>;}
 function Track({item,context}:{item:JsonObject;context:ReleaseDisplayContext|null}){
  const target=context?.itemLinks[str(item.itemId)],title=str(item.rawTitle),duration=releaseDuration(item.durationMs),parts=asArray(item.subparts);
  return <li className={'release-detail-track'+(item.contextOnly===true?' release-detail-track-context':'')}>
@@ -72,7 +73,7 @@ function Track({item,context}:{item:JsonObject;context:ReleaseDisplayContext|nul
 function DetailPager({familyId,editionId,page,pages,returnTo}:{familyId:string;editionId:string|null;page:number;pages:number;returnTo:string|null}){
  if(pages<=1)return null;
  const link=(p:number)=>withListReturnTo(releaseDetailHref(familyId,{editionId,page:p}),'/releases',returnTo)+'#release-tracks';
- return <nav className="pages" aria-label="収録トラックのページ送り">
+ return <nav className="pages" aria-label="収録内容のページ送り">
   {page>1&&<Link href={link(page-1)}>← 前の100件</Link>}
   <span>{page} / {pages} ページ</span>
   {page<pages&&<Link href={link(page+1)}>次の100件 →</Link>}

@@ -4,6 +4,7 @@ import type {PrivateModel,PrivateWork} from './private-read-model.mjs';
 import type {SongClassification} from './catalog-song-classification.mjs';
 export type SongDetailData={
  detail:JsonObject;metadata:JsonObject;
+ firstAppearanceLink:SongFirstSourceLink|null;firstFullLink:SongFirstSourceLink|null;
  credits:Array<{role:string;scope:string;names:string[];people:ResolvedCreditName[];value:string|null;review:JsonObject|null}>;
  originalArranger:string|null;originalArrangerCredit?:ResolvedCreditName;
  originalCredits:Array<ResolvedCreditName&{role:string}>;
@@ -14,6 +15,8 @@ export type SongDetailData={
  hasUncertainLives:boolean;comparison:JsonObject|null;versionLabel:string|null;
 };
 export type SongArtwork={kind:string;imageUrl:string;sourceUrl:string;date?:string|null};
+export type SongFirstSourceLink={href:string;external:boolean};
+export function firstSourceLinkFromDetail(song:Pick<SongDetailData,'metadata'|'videos'|'lives'|'releases'>,model:Pick<PrivateModel,'events'|'releases'>,value?:unknown):SongFirstSourceLink|null;
 export function youtubeId(value:unknown):string|null;
 export function safeSongUrl(value:unknown):string|null;
 export function songListenLabel(url:unknown):string;

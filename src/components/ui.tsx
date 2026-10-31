@@ -1,3 +1,4 @@
+import {PAGE_LABELS,NAME_FIELDS,EMPTY_RESULTS} from '@/lib/ui-copy.mjs';
 import Link from 'next/link';
 import {RecordArtwork} from './record-artwork';
 import {JsonObject,displayDate,num,str,textOr,numberOfPages,explicitThumbnail,ViewMode} from '@/lib/core';
@@ -47,7 +48,7 @@ export function SimpleList({items,kind,view='list',returnTo}:{items:JsonObject[]
  return <div className={`records records-${view}`}>
  {items.map(x=><Link className="record" key={id(x)} href={href(x)}>
    <RecordThumbnail x={x} kind={kind}/>
-   <span className="record-copy"><span className="record-title">{textOr(x.title)}</span>{kind!=='work'&&<span className="record-meta">{kind==='event'?[liveCardLabel(x),displayDate(x.firstOfficialDate)].filter(Boolean).join(' · '):`edition ${num(x.editionCount)}件`}</span>}</span>
+   <span className="record-copy"><span className="record-title">{textOr(x.title)}</span>{kind!=='work'&&<span className="record-meta">{kind==='event'?[liveCardLabel(x),displayDate(x.firstOfficialDate)].filter(Boolean).join(' · '):`${num(x.editionCount)}版`}</span>}</span>
    <span className="record-arrow" aria-hidden="true">↗</span>
  </Link>)}
  </div>;
@@ -57,11 +58,11 @@ export function RowMeta({rows}:{rows:JsonObject[]}){return <dl className="meta-g
 export function ListPage({heading,items,total,kind,term,page,limit=24,view='list'}:{heading:string;items:JsonObject[];total:number;kind:'work'|'event'|'release';term:string;page:number;limit?:number;view?:ViewMode}){
  const path=kind==='work'?'/songs':kind==='event'?'/lives':'/releases';
  return <><Breadcrumb parts={[{label:heading}]}/><Heading title={heading}/>
- <form className="search" method="get" action={path}><div className="search-line"><input id="q" type="search" name="q" defaultValue={term} maxLength={100} aria-label={kind==='work'?'楽曲名を入力':kind==='event'?'公演名を入力':'商品名を入力'} placeholder={kind==='work'?'楽曲名を入力':kind==='event'?'公演名を入力':'商品名を入力'}/><button type="submit">検索</button><Link className="search-detail-link" href={detailSearchHref(listHref(path,term,1,view))}>詳細検索</Link></div><input name="view" type="hidden" value={view}/></form>
+ <form className="search" method="get" action={path}><div className="search-line"><input id="q" type="search" name="q" defaultValue={term} maxLength={100} aria-label={(kind==='work'?NAME_FIELDS.song:kind==='event'?NAME_FIELDS.live:NAME_FIELDS.release)+'を入力'} placeholder={(kind==='work'?NAME_FIELDS.song:kind==='event'?NAME_FIELDS.live:NAME_FIELDS.release)+'を入力'}/><button type="submit">検索</button><Link className="search-detail-link" href={detailSearchHref(listHref(path,term,1,view))}>{PAGE_LABELS.search}</Link></div><input name="view" type="hidden" value={view}/></form>
  <div className="list-toolbar">
   <p className="toolbar-hint">{total}件</p>
   <nav className="view-switch" aria-label="一覧の表示形式"><span>VIEW</span><Link href={listHref(path,term,page,'list')} aria-current={view==='list'?'page':undefined}>リスト</Link><Link href={listHref(path,term,page,'grid')} aria-current={view==='grid'?'page':undefined}>グリッド</Link></nav>
  </div>
- {items.length?<SimpleList items={items} kind={kind} view={view} returnTo={listHref(path,term,page,view)}/>:<Empty>該当する項目がありません。</Empty>}
+ {items.length?<SimpleList items={items} kind={kind} view={view} returnTo={listHref(path,term,page,view)}/>:<Empty>{EMPTY_RESULTS[kind==='work'?'songs':kind==='event'?'lives':'releases']}</Empty>}
  <PageLinks path={path} term={term} page={page} total={total} limit={limit} view={view}/></>;
 }

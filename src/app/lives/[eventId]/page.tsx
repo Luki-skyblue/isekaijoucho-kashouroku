@@ -1,3 +1,4 @@
+import {PAGE_LABELS,INFO_STATES} from '@/lib/ui-copy.mjs';
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
 import {rpc} from '@/lib/api';
@@ -47,7 +48,7 @@ export default async function EventDetail({params,searchParams}:{params:Promise<
  const artwork=eventArtworkForEvent(event),official=safeExternalUrl(artwork?.sourceUrl),title=str(event.title)||'公演名未登録';
  const total=main.reduce((count,x)=>count+num(x.program?.totalItems),0);
  return <article className="live-detail-page">
-  <Breadcrumb parts={[{label:returnTo?'検索結果に戻る':'LIVE一覧',href:returnTo??'/lives'},{label:title}]}/>
+  <Breadcrumb parts={[{label:returnTo?'検索結果に戻る':PAGE_LABELS.lives,href:returnTo??'/lives'},{label:title}]}/>
   <header className="live-detail-heading"><div className="live-detail-art"><RecordArtwork url={artwork?.imageUrl??null}/></div><div className="live-detail-copy"><p className="eyebrow">{context?.billingLabel??'LIVE / EVENT'}</p><h1>{title}</h1>{official&&<a className="live-detail-official" href={official} target="_blank" rel="noopener noreferrer">公式情報 ↗</a>}</div></header>
   <dl className="live-detail-facts">
    <div><dt>開催日</dt><dd>{dates.length?dates.map(d=>displayDate(d)).join('・'):<Missing/>}</dd></div>
@@ -64,7 +65,7 @@ export default async function EventDetail({params,searchParams}:{params:Promise<
   </section>
  </article>;
 }
-function Missing(){return <span className="live-detail-missing">準備中</span>;}
+function Missing(){return <span className="live-detail-missing">{INFO_STATES.pending}</span>;}
 function SessionView({occurrence,program,page,eventId,occurrencePage,context,showHeading,returnTo}:{occurrence:JsonObject;program:JsonObject|null;page:number;eventId:string;occurrencePage:number;context:LiveDisplayContext|null;showHeading:boolean;returnTo:string|null}){
  const items=asArray(program?.items),note=liveCoverageNote(occurrence.programCoverageScope),label=liveSessionLabel(occurrence),supplement=context?.programSupplements[str(occurrence.occurrenceId)];
  return <section className="live-detail-session" id={`occ-${str(occurrence.occurrenceId)}`}>

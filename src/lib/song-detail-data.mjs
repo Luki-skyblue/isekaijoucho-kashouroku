@@ -1,3 +1,4 @@
+import {INFO_STATES} from './ui-copy.mjs';
 // Public presentation adapter shared by the private snapshot and public file.
 // Empty reads are not negative findings. Work-scoped links never establish a
 // particular vocal configuration, and a work arranger is not a version arranger.
@@ -31,7 +32,7 @@ export function safeSongUrl(value){
  if(typeof value!=='string'||value.length>2048||/[\s\\]/.test(value))return null;
  try{const u=new URL(value);return ['https:','http:'].includes(u.protocol)&&!u.username&&!u.password&&!/^localhost$|^127\.|^10\.|^192\.168\.|^169\.254\.|\.local$/i.test(u.hostname)&&![...u.searchParams.keys()].some(k=>/token|secret|password|credential|auth|session|api.?key|signature/i.test(k))?u.toString():null;}catch{return null;}
 }
-export const missingSongText=review=>review?.outcome==='not_found'?'見つかっていません。':review?.outcome==='not_applicable'?'該当なし':'準備中';
+export const missingSongText=review=>review?.outcome==='not_found'?INFO_STATES.notFound:review?.outcome==='not_applicable'?INFO_STATES.notApplicable:INFO_STATES.pending;
 
 // Public, entry-scoped source additions. They supply destinations, never a
 // stored Discover category or positive full/free/current listening facts.
@@ -347,10 +348,42 @@ export function buildSongDetail(entry,work={},options={}){
  const vocalCredit=vocalDisplayCreditForEntry(entry);
  return {detail:{...d,...(vocalCredit?{vocalDisplayCredit:vocalCredit}:{}),legacySongType:songTypeForEntry(entry,options.sourceRecords,options.factRecords),singers:singersForEntry(entry)},metadata,credits:creditData.rows,originalCredits:creditData.originalCredits,originalArranger:creditData.originalArranger,...(creditData.originalArrangerCredit?{originalArrangerCredit:creditData.originalArrangerCredit}:{}),
   artwork:images[0]??null,artworkCandidates:images,listenUrl:videos[0]?.url??known(registeredSongFactsForEntry(entry,options.factRecords).map(r=>safeSongUrl(r.listenUrl)))??releases.find(r=>r.externalUrl)?.externalUrl??null,videos,releases,lives:allLives,
-  hasUncertainLives:allLives.some(x=>x.uncertain),comparison:entry.compare??null,
+  hasUncertainLives:allLives.some(x=>x.uncertain),comparison:entry.compare??null,firstAppearanceLink:null,firstFullLink:null,
   versionLabel:d.entryId===SIRIUS_DUET&&d.primaryWorkId===SIRIUS_WORK?'デュエット':null};
+}
+/** Reuse already entry-scoped sources. A matching date alone, a fuzzy title,
+ * or the preferred listening URL must never choose the debut destination. */
+export function firstSourceLinkFromDetail(song,model,value=song.metadata?.firstAppearance){
+ const date=str(value?.date),label=str(value?.label).trim(),precision=value?.datePrecision??value?.precision;
+ if(!/^\d{4}-\d{2}-\d{2}$/.test(date)||!label||(precision&&precision!=='date'))return null;
+ const day=new Date(date+'T00:00:00Z');if(!Number.isFinite(day.getTime())||day.toISOString().slice(0,10)!==date)return null;
+ const candidates=new Map(),id=/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+ for(const video of arr(song.videos)){
+  const url=safeSongUrl(video.url);if(!url||video.publishedOn!==date)continue;
+  const youtube=youtubeId(url),post=url.match(/^https:\/\/(?:www\.)?(?:x|twitter)\.com\/[^/]+\/status\/(\d+)(?:[/?#]|$)/);
+  if(label!==str(video.title).trim()&&!(label==='YouTube'&&youtube)&&!(label==='X'&&post))continue;
+  const key=youtube?'youtube:'+youtube:post?'x:'+post[1]:url;
+  if(!candidates.has(key))candidates.set(key,{href:url,external:true});
+ }
+ for(const live of arr(song.lives))if(live.date===date&&str(live.title).trim()===label&&id.test(str(live.eventId))&&model.events?.has(live.eventId))
+  candidates.set('event:'+live.eventId,{href:'/lives/'+live.eventId,external:false});
+ for(const release of arr(song.releases)){
+  if(release.edition?.releaseDate!==date||str(release.family?.title).trim()!==label||(release.edition?.datePrecision&&release.edition.datePrecision!=='date'))continue;
+  const familyId=release.family?.familyId;
+  if(id.test(str(familyId))&&model.releases?.has(familyId))candidates.set('release:'+familyId,{href:'/releases/'+familyId,external:false});
+  else{const url=safeSongUrl(release.externalUrl);if(url)candidates.set('release:'+url,{href:url,external:true});}
+ }
+ return candidates.size===1?[...candidates.values()][0]:null;
 }
 export function songDetailFromModel(model,entryId){
  const entry=model.entries.get(entryId);if(!entry)return null;
- return buildSongDetail(entry,model.works.get(entry.detail.primaryWorkId)??{},{additionalLives:supplementalLivesForEntry(model,entryId),additionalReleases:supplementalReleasesForEntry(model,entryId)});
+ const song=buildSongDetail(entry,model.works.get(entry.detail.primaryWorkId)??{},{additionalLives:supplementalLivesForEntry(model,entryId),additionalReleases:supplementalReleasesForEntry(model,entryId)});
+ // Compare the currently visible entries, not stale dates or other versions
+ // inherited from the work. Missing/foreign entries contribute no date.
+ const comparison=song.comparison?{...song.comparison,entries:arr(song.comparison.entries).map(row=>{
+  const sibling=model.entries.get(row.entryId),sameWork=entry.detail.kind==='song_variant'&&entry.detail.primaryWorkId&&sibling?.detail.kind==='song_variant'&&sibling.detail.primaryWorkId===entry.detail.primaryWorkId;
+  const metadata=sameWork?(row.entryId===entryId?song.metadata:songMetadataForEntry(sibling,undefined,model.works.get(sibling.detail.primaryWorkId))):null;
+  return {...row,firstAppearanceDate:str(metadata?.firstAppearance?.date)||null};
+ })}:null;
+ return {...song,comparison,firstAppearanceLink:firstSourceLinkFromDetail(song,model),firstFullLink:firstSourceLinkFromDetail(song,model,song.metadata.firstFull??null)};
 }

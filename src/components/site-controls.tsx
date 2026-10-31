@@ -1,4 +1,5 @@
 'use client';
+import {PAGE_LABELS} from '@/lib/ui-copy.mjs';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -14,16 +15,16 @@ type ThemeId = (typeof THEMES)[number]['id'];
 const THEME_STORAGE_KEY = 'kashouroku-design-theme-v1';
 
 const LINKS = [
-  { href: '/songs', label: '楽曲一覧', en: 'SONGS' },
-  { href: '/lives', label: 'LIVE一覧', en: 'LIVE' },
-  { href: '/releases', label: '収録作品', en: 'RELEASES' },
-  { href: '/people', label: '関係者検索', en: 'PEOPLE' },
-  { href: '/search', label: '詳細検索', en: 'SEARCH' },
+  { href: '/songs', label: PAGE_LABELS.songs, en: 'SONGS' },
+  { href: '/lives', label: PAGE_LABELS.lives, en: 'LIVE' },
+  { href: '/releases', label: PAGE_LABELS.releases, en: 'RELEASES' },
+  { href: '/people', label: PAGE_LABELS.people, en: 'PEOPLE' },
+  { href: '/search', label: PAGE_LABELS.search, en: 'SEARCH' },
 ] as const;
 const SUPPORT_LINKS = [
-  { href: '/guide', label: '使い方', en: 'GUIDE' },
-  { href: '/about', label: 'このサイトについて', en: 'ABOUT' },
-  { href: '/contribute', label: '情報提供・訂正', en: 'SUBMIT INFO' },
+  { href: '/guide', label: PAGE_LABELS.guide, en: 'GUIDE' },
+  { href: '/about', label: PAGE_LABELS.about, en: 'ABOUT' },
+  { href: '/contribute', label: PAGE_LABELS.contribute, en: 'SUBMIT INFO' },
 ] as const;
 
 function isTheme(value: string | null): value is ThemeId {

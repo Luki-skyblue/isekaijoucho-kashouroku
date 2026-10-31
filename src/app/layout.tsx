@@ -1,3 +1,4 @@
+import {PAGE_LABELS} from '@/lib/ui-copy.mjs';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Geist_Mono, Noto_Sans_JP, Noto_Serif_JP } from 'next/font/google';
@@ -28,7 +29,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <main className="shell main">{review&&<p className="catalog-review-warning" data-export-id={review.exportId}>開発用・実DBスナップショット：未公開候補を含む私有レビューです。一般公開していません。</p>}{children}</main>
     <footer className="site-footer"><div className="shell footer-grid">
       <p>非公式ファンサイト</p>
-      <nav className="footer-links" aria-label="サイトの案内"><Link href="/about">このサイトについて</Link><Link href="/guide">使い方</Link><Link href="/contribute">情報提供・訂正</Link></nav>
+      <nav className="footer-links" aria-label="サイトの案内"><Link href="/about">{PAGE_LABELS.about}</Link><Link href="/guide">{PAGE_LABELS.guide}</Link><Link href="/contribute">{PAGE_LABELS.contribute}</Link></nav>
     </div></footer>
   </body></html>;
 }
