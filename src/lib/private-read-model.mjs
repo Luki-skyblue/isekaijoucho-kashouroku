@@ -12,6 +12,10 @@ import {supplementalLivesForEntry} from './live-program-supplements.mjs';
 import {isAbsolute} from 'node:path';
 import {catalogNameMatches} from './catalog-name-search.mjs';
 import {workSearchTitles,releaseTitleMatches,eventTitleMatches} from './catalog-title-search.mjs';
+import {CATALOG_SOURCE_OPTIONS} from './catalog-source-options.mjs';
+import {sourceKindsForEntry} from './catalog-source-data.mjs';
+import {creditMatchingEntries} from './person-detail-data.mjs';
+import {validCreatorKey,validCreditRole,validFirstDate,readFirstRange} from './catalog-advanced-query.mjs';
 
 export const PURPOSE = 'PRIVATE_G0_READ_MODEL_EXPERIMENT_NOT_FOR_PUBLICATION';
 export const PUBLIC_PURPOSE = 'KASHOUROKU_PUBLIC_RELEASE_V1';
@@ -204,15 +208,20 @@ const matches = (a,b) => typeof a === 'string' && catalogNameMatches({name:a},b)
  * do not change the raw set or its completeness/verification state. */
 export function queryEntries(model, filters = {}) {
   check(readable(model), 'A validated catalog model is required');
-  const {search = '',singerIds = [],singerMatch = 'contains',selectedKinds = [],sort = 'first_desc',limit = 24,offset = 0} = filters;
+  const {search = '',singerIds = [],singerMatch = 'contains',selectedKinds = [],sourceKinds = [],creatorKey='',creditRole='',firstFrom='',firstTo='',sort = 'first_desc',limit = 24,offset = 0} = filters;
   check(typeof search === 'string' && Array.isArray(singerIds) && singerIds.length <= 20 && singerIds.every(x => typeof x === 'string' && uuid.test(x)), 'Invalid query');
   check(['contains','only','any','subset'].includes(singerMatch), 'Invalid singer mode');
   check(Array.isArray(selectedKinds) && new Set(selectedKinds).size === selectedKinds.length && selectedKinds.every(x => SONG_CATEGORIES.includes(x)), 'Invalid categories');
+  check(Array.isArray(sourceKinds) && new Set(sourceKinds).size===sourceKinds.length && sourceKinds.every(x=>CATALOG_SOURCE_OPTIONS.some(o=>o.id===x)), 'Invalid source filters');
+  check(typeof creatorKey==='string'&&typeof creditRole==='string'&&(!creatorKey||validCreatorKey(creatorKey))&&(!creditRole||validCreditRole(creditRole)), 'Invalid credit filters');
+  check(typeof firstFrom==='string'&&typeof firstTo==='string'&&(!firstFrom||validFirstDate(firstFrom))&&(!firstTo||validFirstDate(firstTo))&&!readFirstRange(firstFrom,firstTo).dateError, 'Invalid first appearance range');
   check(['title_asc','title_desc','first_asc','first_desc'].includes(sort) && integer(limit) && limit >= 1 && limit <= 100 && integer(offset) && offset <= 100000, 'Invalid pagination/sort');
   const chronological=sort==='first_asc'||sort==='first_desc';
+  const ranged=Boolean(firstFrom||firstTo),creditEntries=creditMatchingEntries(model,creatorKey,creditRole);
   const q = search.trim().slice(0,100), chosen = new Set(singerIds);
   const rows = [];
   for (const [entryId,e] of model.entries) {
+    if(creditEntries&&!creditEntries.has(entryId))continue;
     const d = e.detail, songType=songTypeForEntry(e), actual = new Set(singerIdsForEntry(e));
     // Supplementing a named candidate cannot close an old incomplete set.
     const exhaustive=closed(e)&&actual.size===new Set(e.singerIds).size;
@@ -232,11 +241,13 @@ export function queryEntries(model, filters = {}) {
       if (d.kind !== 'medley' || !d.medleySegments.some(s => [s.rawLabel,s.workTitle,...workTitles(s.workId)].some(t => matches(t,q)))) continue;
       rank = 1;
     }
+    if(sourceKinds.length&&!sourceKindsForEntry(model,entryId).some(kind=>sourceKinds.includes(kind)))continue;
     let firstAppearanceDate=null;
-    if(chronological){
+    if(chronological||ranged){
       const value=songMetadataForEntry(e,undefined,model.works.get(d.primaryWorkId)).firstAppearance?.date;
       if(typeof value==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(value)&&Number.isFinite(Date.parse(value+'T00:00:00Z'))&&new Date(value+'T00:00:00Z').toISOString().slice(0,10)===value)firstAppearanceDate=value;
     }
+    if(ranged&&(!firstAppearanceDate||(firstFrom&&firstAppearanceDate<firstFrom)||(firstTo&&firstAppearanceDate>firstTo)))continue;
     rows.push({entryId,title:d.title,kind:d.kind,displayCredit:songTitleCaptionForEntry(e),legacySongType:songType,
       matchKind:rank ? 'component' : 'title',rank,sortTitle:e.sortTitle ?? d.title,...(chronological?{firstAppearanceDate}:{})});
   }

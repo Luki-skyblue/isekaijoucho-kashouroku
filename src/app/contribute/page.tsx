@@ -1,11 +1,11 @@
+import {sitePageMetadata} from '@/lib/page-metadata';
 import {PAGE_LABELS} from '@/lib/ui-copy.mjs';
-import type {Metadata} from 'next';
 import {Breadcrumb,Heading} from '@/components/ui';
 import {ContributionDraft} from '@/components/contribution-draft';
 import {configuredFeedbackContact} from '@/lib/feedback-contact.mjs';
 import '@/components/info-pages.css';
 
-export const metadata:Metadata={title:PAGE_LABELS.contribute,description:'ヰ世界情緒 歌唱録への情報提供、訂正、感想・要望や不具合の連絡。',robots:{index:false,follow:true}};
+export function generateMetadata(){return sitePageMetadata('/contribute',PAGE_LABELS.contribute,{description:'ヰ世界情緒 歌唱録への情報提供、訂正、感想・要望や不具合の連絡。',index:false});}
 export default function Contribute(){
  const {email:recipient,formUrl}=configuredFeedbackContact();
  return <article className="info-page">

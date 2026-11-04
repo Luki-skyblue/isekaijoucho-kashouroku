@@ -6,26 +6,38 @@ import {CatalogHelp} from '@/components/catalog-help';
 import {MAIN_SINGERS,SINGERS,CATEGORIES,DEFAULT_CATALOG_SORT,type ParsedCatalogQuery,type SingerChoice} from '@/lib/catalog-list-params';
 import {catalogNameMatches} from '@/lib/catalog-name-search.mjs';
 import type {SingerMatch,CatalogCategory} from '@/lib/catalog-entry-api';
+import {CATALOG_SOURCE_OPTIONS,type CatalogSourceKind} from '@/lib/catalog-source-options.mjs';
+import {readFirstRange,validFirstDate} from '@/lib/catalog-advanced-query.mjs';
+import type {CreditFilterChoices} from '@/lib/person-detail-data.mjs';
 
 /** Draft filter state is local to this form. Only form submit changes the URL
  * and server-side results; applied tags remain sourced from the URL.
  */
-export function CatalogFilterFields({query,choices=SINGERS,titleSearch=false}:{query:ParsedCatalogQuery;choices?:ReadonlyArray<SingerChoice>;titleSearch?:boolean}){
+export function CatalogFilterFields({query,choices=SINGERS,titleSearch=false,sourceSearch=false,creditChoices}:{query:ParsedCatalogQuery;choices?:ReadonlyArray<SingerChoice>;titleSearch?:boolean;sourceSearch?:boolean;creditChoices?:CreditFilterChoices}){
  const [chosen,setChosen]=useState<string[]>(query.singerIds);
  const [match,setMatch]=useState<SingerMatch>(query.singerMatch);
  const [kinds,setKinds]=useState<CatalogCategory[]>(query.kinds);
+ const [sources,setSources]=useState<CatalogSourceKind[]>(query.sourceKinds??[]);
  const [lookup,setLookup]=useState('');
+ const [creator,setCreator]=useState(query.creatorKey??''),[creditRole,setCreditRole]=useState(query.creditRole??'');
+ const [firstFrom,setFirstFrom]=useState(query.firstFrom??''),[firstTo,setFirstTo]=useState(query.firstTo??'');
+ const [creatorLookup,setCreatorLookup]=useState('');
+ const selectedCreator=creditChoices?.people.find(p=>p.key===creator);
+ const creatorOptions=creditChoices?.people.filter(p=>p.key===creator||catalogNameMatches(p,creatorLookup)||p.jointLabels.some(label=>catalogNameMatches({name:label},creatorLookup)&&catalogNameMatches({name:creatorLookup},label)))??[];
+ const roleOptions=creditChoices?.roles.filter(r=>!selectedCreator||selectedCreator.roles.includes(r.id)||r.id===creditRole)??[];
+ const dateError=readFirstRange(firstFrom,firstTo).dateError;
  const mainIds=new Set<string>(MAIN_SINGERS.map(s=>s.id)),main=choices.filter(s=>mainIds.has(s.id));
  const otherChoices=choices.filter(s=>!mainIds.has(s.id)),others=otherChoices.filter(s=>chosen.includes(s.id));
  const groupNames=[...new Set(otherChoices.map(s=>s.group??'その他の歌唱者'))];
  const groups=groupNames.map(label=>({label,members:otherChoices.filter(s=>(s.group??'その他の歌唱者')===label&&catalogNameMatches(s,lookup))})).filter(g=>g.members.length);
  const dirty=useMemo(()=>{
   const same=(a:readonly string[],b:readonly string[])=>a.length===b.length&&a.every(x=>b.includes(x));
-  return !same(chosen,query.singerIds)||match!==query.singerMatch||!same(kinds,query.kinds);
- },[chosen,kinds,match,query.singerIds,query.kinds,query.singerMatch]);
+  return !same(chosen,query.singerIds)||match!==query.singerMatch||!same(kinds,query.kinds)||!same(sources,query.sourceKinds??[])||creator!==(query.creatorKey??'')||creditRole!==(query.creditRole??'')||firstFrom!==(query.firstFrom??'')||firstTo!==(query.firstTo??'');
+ },[chosen,kinds,sources,match,creator,creditRole,firstFrom,firstTo,query]);
  const toggleSinger=(id:string,checked:boolean)=>setChosen(old=>checked?old.includes(id)||old.length>=20?old:[...old,id]:old.filter(x=>x!==id));
  const toggleKind=(id:CatalogCategory,checked:boolean)=>setKinds(old=>checked?old.includes(id)?old:[...old,id]:old.filter(x=>x!==id));
- const clearSelection=()=>{setChosen([]);setKinds([]);setMatch('any');setLookup('');};
+ const toggleSource=(id:CatalogSourceKind,checked:boolean)=>setSources(old=>checked?old.includes(id)?old:[...old,id]:old.filter(x=>x!==id));
+ const clearSelection=()=>{setChosen([]);setKinds([]);setSources([]);setMatch('any');setLookup('');setCreator('');setCreditRole('');setFirstFrom('');setFirstTo('');setCreatorLookup('');};
  return <form method="get" action="/songs" className="catalog-filter-fields">
   {titleSearch?<label className="search-detail-title">{NAME_FIELDS.song}<input type="search" name="q" defaultValue={query.q} maxLength={100} placeholder="楽曲名・メドレーの構成曲名"/></label>:query.q&&<input type="hidden" name="q" value={query.q}/>}
   <input type="hidden" name="view" value={query.view}/>
@@ -33,6 +45,9 @@ export function CatalogFilterFields({query,choices=SINGERS,titleSearch=false}:{q
   {chosen.map(id=><input key={id} type="hidden" name="singer" value={id}/>)}
   <input type="hidden" name="singerMatch" value={match}/>
   {kinds.map(id=><input key={id} type="hidden" name="type" value={id}/>)}
+  {sources.map(id=><input key={id} type="hidden" name="source" value={id}/>)}
+  {creator&&<input type="hidden" name="creator" value={creator}/>}{creditRole&&<input type="hidden" name="creditRole" value={creditRole}/>}
+  {(!sourceSearch||!creditChoices)&&<>{firstFrom&&<input type="hidden" name="firstFrom" value={firstFrom}/>}{firstTo&&<input type="hidden" name="firstTo" value={firstTo}/>}</>}
   <fieldset className="catalog-filter-group catalog-singer-set">
    <legend>歌唱者</legend>
    <CatalogHelp label="歌唱者フィルターの説明" href="/guide#singer-filters">
@@ -90,8 +105,46 @@ export function CatalogFilterFields({query,choices=SINGERS,titleSearch=false}:{q
    </label>)}</div>
    <p className="catalog-filter-help">複数選択はOR検索。未選択なら全件表示。</p>
   </fieldset>
+  {sourceSearch&&<fieldset className="catalog-filter-group catalog-source-set">
+   <legend>公開・収録先</legend>
+   <CatalogHelp label="公開・収録先の説明" href="/guide#source-filters">
+    <strong>登録されている公開・収録先</strong>
+    <p>複数選択はいずれかに当てはまる曲。歌唱者・楽曲区分・曲名とは、さらに絞り込みます。</p>
+    <p>LIVE・配信は披露の記録です。動画や商品が残っていること、全編を聴けることとは別です。</p>
+   </CatalogHelp>
+   <div className="catalog-category-options">{CATALOG_SOURCE_OPTIONS.map(o=><label key={o.id}>
+    <input type="checkbox" checked={sources.includes(o.id)} onChange={e=>toggleSource(o.id,e.target.checked)}/>{o.label}
+   </label>)}</div>
+   <p className="catalog-filter-help">複数選択はOR検索。未選択なら全件表示。</p>
+  </fieldset>}
+  {sourceSearch&&creditChoices&&<>
+   <fieldset className="catalog-filter-group catalog-credit-set">
+    <legend>制作クレジット</legend>
+    <CatalogHelp label="制作クレジットの説明" href="/guide#credit-date-filters">
+     <strong>担当者と、その人の担当で絞り込む</strong>
+     <p>「作曲」と「原曲の作曲」は別の条件です。担当者だけ、担当だけでも検索できます。</p>
+    </CatalogHelp>
+    <div className="catalog-credit-controls">
+     <div className="catalog-credit-person"><label htmlFor="catalog-creator-lookup">担当者<input id="catalog-creator-lookup" type="search" value={creatorLookup} onChange={e=>setCreatorLookup(e.target.value)} placeholder="名前・別名で候補を絞る" autoComplete="off"/></label>
+      <label className="sr-only" htmlFor="catalog-creator-select">担当者を選ぶ</label><select id="catalog-creator-select" value={creator} required={!!creatorLookup&&!creator} onChange={e=>setCreator(e.target.value)}>
+       <option value="">指定なし</option>{creator&&!selectedCreator&&<option value={creator}>指定した名義（未登録）</option>}{creatorOptions.map(p=><option key={p.key} value={p.key}>{p.name}</option>)}
+      </select>
+      {creatorLookup&&!creator&&<p className="catalog-filter-help">候補から担当者を選択してください。</p>}
+     </div>
+     <label>担当<select value={creditRole} onChange={e=>setCreditRole(e.target.value)}>
+      <option value="">すべての担当</option>{creditRole&&!roleOptions.some(r=>r.id===creditRole)&&<option value={creditRole}>指定した担当（未登録）</option>}
+      {[{id:'music',label:'楽曲制作'},{id:'cover_source',label:'カバー原曲'},{id:'production',label:'動画・音源制作'}].map(group=>{const roles=roleOptions.filter(r=>r.category===group.id);return roles.length?<optgroup key={group.id} label={group.label}>{roles.map(r=><option key={r.id} value={r.id}>{r.label}</option>)}</optgroup>:null;})}
+     </select></label>
+    </div>
+   </fieldset>
+   <fieldset className="catalog-filter-group catalog-date-set">
+    <legend>初出</legend>
+    <div className="catalog-date-controls"><label>開始<input type="date" name="firstFrom" value={firstFrom} max={validFirstDate(firstTo)?firstTo:undefined} aria-invalid={!!dateError} onChange={e=>setFirstFrom(e.target.value)}/></label><label>終了<input type="date" name="firstTo" value={firstTo} min={validFirstDate(firstFrom)?firstFrom:undefined} aria-invalid={!!dateError} onChange={e=>setFirstTo(e.target.value)}/></label></div>
+    {dateError&&<p className="catalog-filter-error" role="alert">{dateError}</p>}
+   </fieldset>
+  </>}
   <div className="catalog-filter-actions">
-   <button type="submit">{titleSearch?'検索':'適用'}</button>
+   <button type="submit" disabled={!!dateError}>{titleSearch?'検索':'適用'}</button>
    <button type="button" className="catalog-filter-clear" onClick={clearSelection}>選択をクリア</button>
    {dirty&&<span className="catalog-filter-pending" role="status">未適用の変更あり<small>「{titleSearch?'検索':'適用'}」で結果に反映</small></span>}
   </div>

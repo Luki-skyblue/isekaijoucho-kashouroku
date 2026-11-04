@@ -5,6 +5,7 @@ import {asArray,asObject,num,str,validId,JsonObject} from './core';
 import {catalogV2Params} from './catalog-v2-params';
 import {privateSnapshotEnabled,privateCatalogList} from './private-snapshot';
 import {publicCatalogEnabled,publicCatalogList} from './public-catalog';
+import type {CatalogSourceKind} from './catalog-source-options.mjs';
 
 // G7 read adapter. Not enabled on /songs until publication/migration reviews pass.
 export type CatalogSort = 'title_asc'|'title_desc'|'first_desc'|'first_asc';
@@ -16,6 +17,11 @@ export type CatalogListFilters = {
   singerIds?: string[];
   singerMatch?: SingerMatch;
   selectedKinds?: CatalogCategory[];
+  sourceKinds?: CatalogSourceKind[];
+  creatorKey?:string;
+  creditRole?:string;
+  firstFrom?:string;
+  firstTo?:string;
   sort?: CatalogSort;
   limit?: number;
   offset?: number;
@@ -36,6 +42,7 @@ export async function listCatalogEntries(filters: CatalogListFilters = {}): Prom
   if (!ids.every(validId) || ids.length>20) throw new Error('Invalid singer IDs');
   if(privateSnapshotEnabled())return await privateCatalogList(filters);
   if(publicCatalogEnabled())return publicCatalogList(filters);
+if(filters.sourceKinds?.length||filters.creatorKey||filters.creditRole||filters.firstFrom||filters.firstTo)throw new Error('Advanced filters require the complete catalog snapshot reader');
 if(filters.sort==='first_asc'||filters.sort==='first_desc')throw new Error('First-appearance ordering requires the catalog snapshot reader');
 if(localCatalogReviewEnabled())return localCatalogList(filters);
 // Opt-in only after the additive G7v2 RPC has passed DB/HTTP security tests.

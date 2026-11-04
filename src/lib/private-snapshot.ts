@@ -15,6 +15,7 @@ import {personDetailFromModel,peopleListFromModel,type PeopleListQuery} from './
 import {catalogSingerChoices} from './catalog-people.mjs';
 import {discoveryFromModel} from './discovery-data.mjs';
 import discoveryChannels from './discovery-channel-data.json';
+import {creditFilterChoicesFromModel} from './person-detail-data.mjs';
 
 let cached:{file:string;sha256:string;model:PrivateModel}|null=null;
 export function privateSnapshotEnabled():boolean {return process.env.CATALOG_DATA_MODE!=='public_release'&&privateSnapshotConfig() !== null;}
@@ -39,6 +40,7 @@ export async function privateSongWork(workId:string){return catalogSongWorkFromM
 export async function privateHomeRecent(){return homeRecentFromModel(await load());}
 export async function privatePersonDetail(key:string,page=1,role='all',billing='all'){return personDetailFromModel(await load(),key,{page,role,billing});}
 export async function privateSingerChoices(){return catalogSingerChoices(await load());}
+export async function privateCreditChoices(){return creditFilterChoicesFromModel(await load());}
 export async function privatePeopleList(query:PeopleListQuery){return peopleListFromModel(await load(),query);}
 export async function privateDiscovery(query:{category?:string;page?:number}){return discoveryFromModel(await load(),query,discoveryChannels);}
 export async function privateReleaseDisplayContext(familyId:string){return releaseDisplayContextFromModel(await load(),familyId);}

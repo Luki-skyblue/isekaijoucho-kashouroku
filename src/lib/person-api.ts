@@ -3,12 +3,19 @@ import {publicCatalogEnabled,publicPersonDetail,publicSingerChoices,publicPeople
 import {privateSnapshotEnabled,privatePersonDetail,privateSingerChoices,privatePeopleList} from './private-snapshot';
 import {validPersonKey,type PeopleListQuery} from './person-detail-data.mjs';
 import {SINGERS} from './catalog-list-params';
+import {publicCreditChoices} from './public-catalog';
+import {privateCreditChoices} from './private-snapshot';
 
 export function personPagesEnabled(){return publicCatalogEnabled()||privateSnapshotEnabled();}
 export async function getCatalogSingerChoices(){
  if(publicCatalogEnabled())return publicSingerChoices();
  if(privateSnapshotEnabled())return privateSingerChoices();
  return SINGERS;
+}
+export async function getCreditFilterChoices(){
+ if(publicCatalogEnabled())return publicCreditChoices();
+ if(privateSnapshotEnabled())return privateCreditChoices();
+ return null;
 }
 export async function getPeopleList(query:PeopleListQuery){
  if(publicCatalogEnabled())return publicPeopleList(query);

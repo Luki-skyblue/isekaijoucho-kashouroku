@@ -1,7 +1,7 @@
+import {sitePageMetadata} from '@/lib/page-metadata';
 import {PAGE_LABELS,NAME_FIELDS,EMPTY_RESULTS} from '@/lib/ui-copy.mjs';
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
-import type {Metadata} from 'next';
 import {getPeopleList} from '@/lib/person-api';
 import {peopleListHref,personDetailHref} from '@/lib/person-detail-data.mjs';
 import {pageNumber,searchTerm} from '@/lib/core';
@@ -10,7 +10,7 @@ import {detailSearchHref} from '@/lib/search-navigation.mjs';
 import {withListReturnTo} from '@/lib/catalog-navigation';
 import './people.css';
 
-export const metadata:Metadata={title:PAGE_LABELS.people};
+export function generateMetadata(){return sitePageMetadata('/people',PAGE_LABELS.people,{description:'ヰ世界情緒の歌唱共演者、楽曲制作やカバー原曲の関係者を探す。'});}
 export default async function People({searchParams}:{searchParams:Promise<{category?:string;kind?:string;q?:string;role?:string;page?:string}>}){
  const query=await searchParams,data=await getPeopleList({category:query.category,kind:query.kind,term:searchTerm(query.q),role:query.role,page:pageNumber(query.page)});
  if(!data)notFound();

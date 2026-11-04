@@ -4,7 +4,7 @@
  */
 type ListPath = '/songs' | '/lives' | '/releases' | '/people';
 const RETURN_KEYS:Record<ListPath,Set<string>> = {
- '/songs':new Set(['q','page','view','singer','singerMatch','type','sort']),
+ '/songs':new Set(['q','page','view','singer','singerMatch','type','source','creator','creditRole','firstFrom','firstTo','sort']),
  '/lives':new Set(['q','page','view','artist','artistScope','artistMatch','type','sort']),
  '/releases':new Set(['q','page','view','category','sort']),
  '/people':new Set(['q','page','category','kind','role']),
@@ -17,7 +17,7 @@ export function safeListReturnTo(value: unknown, path:ListPath): string | null {
   const url = new URL(value, 'https://catalog.invalid');
   if (url.origin !== 'https://catalog.invalid' || url.pathname !== path || url.hash) return null;
   const entries = Array.from(url.searchParams.entries());
-  if (entries.length > (live?140:40) || entries.some(([key, v])=>!RETURN_KEYS[path].has(key) || v.length > 120)) return null;
+  if (entries.length > (live?140:path==='/songs'?44:40) || entries.some(([key, v])=>!RETURN_KEYS[path].has(key) || v.length > 120)) return null;
   // Preserve validated query parameters, including repeated singer/type values.
   const search = url.searchParams.toString();
   return path + (search ? '?' + search : '');

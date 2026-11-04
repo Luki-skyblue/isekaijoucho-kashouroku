@@ -1,10 +1,10 @@
+import {sitePageMetadata} from '@/lib/page-metadata';
 import {PAGE_LABELS} from '@/lib/ui-copy.mjs';
 import Link from 'next/link';
-import type {Metadata} from 'next';
 import {Breadcrumb,Heading} from '@/components/ui';
 import '@/components/info-pages.css';
 
-export const metadata:Metadata={title:PAGE_LABELS.about,description:'ヰ世界情緒 歌唱録の掲載内容と連絡先。'};
+export function generateMetadata(){return sitePageMetadata('/about',PAGE_LABELS.about,{description:'ヰ世界情緒 歌唱録の掲載内容と連絡先。'});}
 export default function About(){
  return <article className="info-page">
   <Breadcrumb parts={[{label:PAGE_LABELS.about}]}/>

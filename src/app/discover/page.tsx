@@ -1,6 +1,6 @@
+import {sitePageMetadata} from '@/lib/page-metadata';
 import {PAGE_LABELS,INFO_STATES} from '@/lib/ui-copy.mjs';
 import Link from 'next/link';
-import type {Metadata} from 'next';
 import {getDiscovery} from '@/lib/discovery-api';
 import {pageNumber} from '@/lib/core';
 import {Breadcrumb,Heading} from '@/components/ui';
@@ -8,7 +8,7 @@ import {RecordArtwork} from '@/components/record-artwork';
 import {DiscoveryTabs} from '@/components/discovery-tabs';
 import './discovery.css';
 
-export const metadata:Metadata={title:PAGE_LABELS.discover};
+export function generateMetadata(){return sitePageMetadata('/discover',PAGE_LABELS.discover,{description:'ヰ世界情緒の楽曲を公開・収録先から探す。'});}
 export default async function Discover({searchParams}:{searchParams:Promise<{category?:string;page?:string}>}){
  const query=await searchParams,data=await getDiscovery({category:query.category,page:pageNumber(query.page)});
  const href=(category:string,page=1)=>'/discover?'+new URLSearchParams({category,...(page>1?{page:String(page)}:{})});

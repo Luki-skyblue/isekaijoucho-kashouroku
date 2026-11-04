@@ -140,6 +140,27 @@ function roleCategory(role){
  if(coveredWorkRoles.has(role))return 'cover_source';
  return role.startsWith('video:')||productionRoles.has(role.toLocaleLowerCase('en'))?'production':'music';
 }
+const creatorRole=role=>typeof role==='string'&&!['vocal','artist'].includes(role);
+/** Reuse the exact duties/identities used by people pages, without expanding
+ * group membership, alternate names or a character's voice actor into credits.
+ */
+export function creditFilterChoicesFromModel(model){
+ const people=[...indexFor(model).people.values()].filter(p=>p.listed&&[...p.roles].some(creatorRole));
+ const roles=orderedCreditRoles(people.flatMap(p=>[...p.roles].filter(creatorRole)));
+ return {people:people.map(p=>({key:p.key,name:p.name,aliases:[...p.aliases],jointLabels:[...p.jointLabels],roles:orderedCreditRoles([...p.roles].filter(creatorRole))})).sort((a,b)=>a.name.localeCompare(b.name,'ja')||compare(a.key,b.key)),
+  roles:roles.map(id=>({id,label:creditRoleLabel(id),category:roleCategory(id)}))};
+}
+export function creditMatchingEntries(model,creatorKey='',role=''){
+ if(!creatorKey&&!role)return null;
+ const index=indexFor(model),targets=index.aliases.get(creatorKey);
+ const person=creatorKey?(index.people.get(creatorKey)??(targets?.size===1?index.people.get([...targets][0]):null)):null;
+ if(creatorKey&&!person)return new Set();
+ const found=new Set();
+ for(const p of person?[person]:index.people.values())for(const [entryId,duties]of p.songs){
+  if([...duties].some(r=>creatorRole(r)&&(!role||r===role)))found.add(entryId);
+ }
+ return found;
+}
 function directoryQuery({category='all',kind='all',role='all'}={}){
  if(category==='groups'){category='all';kind='group';}
  if(category==='artists')category='vocal';

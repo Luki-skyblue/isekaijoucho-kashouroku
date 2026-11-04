@@ -1,6 +1,6 @@
+import {sitePageMetadata} from '@/lib/page-metadata';
 import {PAGE_LABELS,NAME_FIELDS,EMPTY_RESULTS} from '@/lib/ui-copy.mjs';
 import Link from 'next/link';
-import type { Metadata } from 'next';
 import {rpc} from '@/lib/api';
 import {asArray,num,pageNumber,pageOffset,searchTerm,viewMode} from '@/lib/core';
 import {getReleaseList} from '@/lib/release-list-api';
@@ -14,7 +14,7 @@ import {detailSearchHref} from '@/lib/search-navigation.mjs';
 import {withListReturnTo} from '@/lib/catalog-navigation';
 import './releases.css';
 
-export const metadata: Metadata = {title:PAGE_LABELS.releases,description:'ヰ世界情緒に関連するリリースとLIVE音源・映像。'};
+export function generateMetadata(){return sitePageMetadata('/releases',PAGE_LABELS.releases,{description:'ヰ世界情緒に関連するリリースとLIVE音源・映像。'});}
 export default async function Releases({searchParams}:{searchParams:Promise<{q?:string;page?:string;view?:string;category?:string;sort?:string}>}){
  const query=await searchParams,page=pageNumber(query.page),term=searchTerm(query.q),view=viewMode(query.view),limit=24;
  const data=await getReleaseList({category:query.category,term,page,sort:query.sort});

@@ -7,13 +7,15 @@ import {RecordArtwork} from '@/components/record-artwork';
 import {releaseKindLabel,releaseMediaLabel,releaseTrackPosition,releaseDuration,releaseEditionName,releaseDetailHref,type ReleaseDisplayContext} from '@/lib/release-detail-data.mjs';
 import {getReleaseDetail} from '@/lib/release-detail-api';
 import type {Metadata} from 'next';
+import {sitePageMetadata,missingPageMetadata} from '@/lib/page-metadata';
 import {safeListReturnTo,withListReturnTo} from '@/lib/catalog-navigation';
 import '@/components/release-detail.css';
 
 const ITEMS_PER_PAGE=100;
 export async function generateMetadata({params}:{params:Promise<{familyId:string}>}):Promise<Metadata>{
- const {familyId}=await params;if(!validId(familyId))return {};
- const view=await getReleaseDetail(familyId,{});return view?{title:str(view.release.title)||PAGE_LABELS.releases}:{};
+ const {familyId}=await params;if(!validId(familyId))return missingPageMetadata();
+ const view=await getReleaseDetail(familyId,{}),title=str(view?.release.title)||PAGE_LABELS.releases;
+ return view?sitePageMetadata('/releases/'+familyId,title,{description:title+'の発売日・収録曲・商品情報。'}):missingPageMetadata();
 }
 export default async function ReleaseDetail({params,searchParams}:{params:Promise<{familyId:string}>;searchParams:Promise<{itemsPage?:string;edition?:string;from?:string}>}){
  const {familyId}=await params;if(!validId(familyId))notFound();

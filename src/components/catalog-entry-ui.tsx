@@ -10,24 +10,32 @@ import {ListSort} from '@/components/list-sort';
 import {detailSearchHref} from '@/lib/search-navigation.mjs';
 import {catalogEntryHref} from '@/lib/catalog-navigation';
 import {songTypeLabel} from '@/lib/catalog-song-classification.mjs';
+import type {CreditFilterChoices} from '@/lib/person-detail-data.mjs';
 
-export function CatalogIndex({items,total,query,limit,singerChoices=SINGERS}: {items:CatalogEntryCard[];total:number;query:ParsedCatalogQuery;limit:number;singerChoices?:ReadonlyArray<SingerChoice>}){
- const pages=Math.ceil(total/limit),conditions=activeCatalogConditions(query,singerChoices),returnTo=catalogHref(query);
+export function CatalogIndex({items,total,query,limit,singerChoices=SINGERS,creditChoices}: {items:CatalogEntryCard[];total:number;query:ParsedCatalogQuery;limit:number;singerChoices?:ReadonlyArray<SingerChoice>;creditChoices?:CreditFilterChoices}){
+ if(query.dateError)return <><Breadcrumb parts={[{label:PAGE_LABELS.songs}]}/><Heading title={PAGE_LABELS.songs}/><p role="alert">{query.dateError} <Link href={detailSearchHref(catalogHref(query))}>条件を修正する</Link></p></>;
+ const pages=Math.ceil(total/limit),conditions=activeCatalogConditions(query,singerChoices,creditChoices),returnTo=catalogHref(query);
  return <><Breadcrumb parts={[{label:PAGE_LABELS.songs}]}/><Heading title={PAGE_LABELS.songs}/>
  <form className="search" action="/songs" method="get">
   <div className="search-line"><CatalogSearchInput query={query.q}/><button type="submit">検索</button><Link className="search-detail-link" href={detailSearchHref(catalogHref(query))}>{PAGE_LABELS.search}</Link></div>
   {query.singerIds.map(id=><input key={id} type="hidden" name="singer" value={id}/>)}
   {query.singerIds.length>0&&<input type="hidden" name="singerMatch" value={query.singerMatch}/>}
   {query.kinds.map(kind=><input key={kind} type="hidden" name="type" value={kind}/>)}
+  {query.sourceKinds.map(source=><input key={source} type="hidden" name="source" value={source}/>)}
+  {query.creatorKey&&<input type="hidden" name="creator" value={query.creatorKey}/>}{query.creditRole&&<input type="hidden" name="creditRole" value={query.creditRole}/>}
+  {query.firstFrom&&<input type="hidden" name="firstFrom" value={query.firstFrom}/>}{query.firstTo&&<input type="hidden" name="firstTo" value={query.firstTo}/>}
   {query.sort!==DEFAULT_CATALOG_SORT&&<input type="hidden" name="sort" value={query.sort}/>}
   {query.view==='grid'&&<input type="hidden" name="view" value="grid"/>}
  </form>
- {conditions.length>0&&<div className="catalog-applied" aria-label="適用中の条件"><span className="catalog-applied-heading">適用中</span><div className="catalog-applied-tags">{conditions.map(c=><Link key={c.key} href={c.href} className="catalog-applied-tag" aria-label={`${c.label}を解除`}>{c.label}<span aria-hidden="true">×</span></Link>)}<Link className="catalog-applied-reset" href={catalogHref({...query,q:'',singerIds:[],singerMatch:'any',kinds:[],page:1})}>すべて解除</Link></div></div>}
+ {conditions.length>0&&<div className="catalog-applied" aria-label="適用中の条件"><span className="catalog-applied-heading">適用中</span><div className="catalog-applied-tags">{conditions.map(c=><Link key={c.key} href={c.href} className="catalog-applied-tag" aria-label={`${c.label}を解除`}>{c.label}<span aria-hidden="true">×</span></Link>)}<Link className="catalog-applied-reset" href={catalogHref({...query,q:'',singerIds:[],singerMatch:'any',kinds:[],sourceKinds:[],creatorKey:'',creditRole:'',firstFrom:'',firstTo:'',page:1})}>すべて解除</Link></div></div>}
  <div className="list-toolbar"><p className="toolbar-hint">{total}件</p><div className="catalog-toolbar-controls"><ListSort id="catalog-sort" action="/songs" value={query.sort} options={CATALOG_SORTS.map(s=>({value:s.id,label:s.label,href:catalogHref(query,{sort:s.id,page:1})}))}>
   {query.q&&<input type="hidden" name="q" value={query.q}/>}
   {query.singerIds.map(id=><input key={id} type="hidden" name="singer" value={id}/>)}
   {query.singerIds.length>0&&<input type="hidden" name="singerMatch" value={query.singerMatch}/>}
   {query.kinds.map(kind=><input key={kind} type="hidden" name="type" value={kind}/>)}
+  {query.sourceKinds.map(source=><input key={source} type="hidden" name="source" value={source}/>)}
+  {query.creatorKey&&<input type="hidden" name="creator" value={query.creatorKey}/>}{query.creditRole&&<input type="hidden" name="creditRole" value={query.creditRole}/>}
+  {query.firstFrom&&<input type="hidden" name="firstFrom" value={query.firstFrom}/>}{query.firstTo&&<input type="hidden" name="firstTo" value={query.firstTo}/>}
   <input type="hidden" name="view" value={query.view}/>
  </ListSort><nav className="view-switch" aria-label="一覧の表示形式"><span>VIEW</span><Link href={catalogHref(query,{view:'list'})} aria-current={query.view==='list'?'page':undefined}>リスト</Link><Link href={catalogHref(query,{view:'grid'})} aria-current={query.view==='grid'?'page':undefined}>グリッド</Link></nav></div></div>
  {items.length?<div className={`records records-${query.view}`}>{items.map(x=><Link className="record" href={catalogEntryHref(x.entryId,returnTo)} key={x.entryId}>

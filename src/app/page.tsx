@@ -5,8 +5,10 @@ import {displayDate} from '@/lib/core';
 import {RecordArtwork} from '@/components/record-artwork';
 import {ReleaseCardText} from '@/components/release-card-text';
 import '@/components/home-page.css';
+import {sitePageMetadata} from '@/lib/page-metadata';
 
 export const dynamic='force-dynamic';
+export function generateMetadata(){return sitePageMetadata('/');}
 
 export default async function Home() {
  const recent=await homePageData();

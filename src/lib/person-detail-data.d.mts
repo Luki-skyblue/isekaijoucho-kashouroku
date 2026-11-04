@@ -11,3 +11,6 @@ export function personDetailHref(key:string,options?:{page?:number;role?:string;
 export type PeopleListQuery={category?:string;kind?:string;term?:string;role?:string;page?:number;limit?:number};
 export function peopleListFromModel(model:PrivateModel,query?:PeopleListQuery):{category:string;kind:string;term:string;role:string;roleOptions:Array<{id:string;label:string}>;page:number;pages:number;total:number;categories:Array<{id:string;label:string;count:number}>;suggestions:Array<{key:string;name:string;category:string;categoryLabel:string}>;items:Array<{key:string;name:string;type:string;kindLabel:string;roles:string[];songCount:number;variantCount:number}>};
 export function peopleListHref(query?:PeopleListQuery):string;
+export type CreditFilterChoices={people:Array<{key:string;name:string;aliases:string[];jointLabels:string[];roles:string[]}>;roles:Array<{id:string;label:string;category:string|null}>};
+export function creditFilterChoicesFromModel(model:PrivateModel):CreditFilterChoices;
+export function creditMatchingEntries(model:PrivateModel,creatorKey?:string,role?:string):Set<string>|null;

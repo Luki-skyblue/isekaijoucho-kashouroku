@@ -1,13 +1,13 @@
+import {sitePageMetadata} from '@/lib/page-metadata';
 import {PAGE_LABELS,INFO_STATES} from '@/lib/ui-copy.mjs';
 import Link from 'next/link';
-import type {Metadata} from 'next';
 import {Breadcrumb,Heading} from '@/components/ui';
 import {useCatalogEntryIndex} from '@/lib/catalog-mode';
 import {privateSnapshotEnabled} from '@/lib/private-snapshot';
 import {publicCatalogEnabled} from '@/lib/public-catalog';
 import '@/components/info-pages.css';
 
-export const metadata:Metadata={title:PAGE_LABELS.guide,description:'楽曲・LIVE・収録作品の探し方と、表示の読み方。'};
+export function generateMetadata(){return sitePageMetadata('/guide',PAGE_LABELS.guide,{description:'楽曲・LIVE・収録作品の探し方と、表示の読み方。'});}
 export default function Guide(){
  const newCatalog=useCatalogEntryIndex(),liveFilters=privateSnapshotEnabled()||publicCatalogEnabled();
  return <article className="info-page">
@@ -32,6 +32,14 @@ export default function Guide(){
    </div>:<p className="info-state">歌唱者・楽曲区分による絞り込みは準備中です。</p>}
    <p>並べ替えとリスト・グリッド表示は、選ぶとすぐに反映されます。</p>
    <p id="variants">歌唱者などが異なる記録は、楽曲詳細の「別バージョン」で確認できます。</p>
+  </section>
+  <section id="source-filters" className="info-section">
+   <h2>公開・収録先で絞り込む</h2>
+   <p>詳細検索の楽曲で、YouTube・X・CDや配信・LIVE音源や映像・披露されたLIVEや配信を選べます。複数選択はいずれかに当てはまる曲を表示し、歌唱者や曲名の条件と組み合わせられます。</p>
+   <p>同じ歌唱に対応する登録情報を使います。LIVEや配信の披露記録は、現在聴ける動画や全編収録があることを示すものではありません。</p>
+  </section>
+  <section id="credit-date-filters" className="info-section"><h2>制作クレジット・初出で絞り込む</h2>
+   <p>詳細検索では、担当者とその人の担当を組み合わせられます。「作曲」「原曲の作曲」や動画の担当は区別します。初出の開始・終了は片方だけでも指定でき、境界の日付を含みます。</p>
   </section>
   <section id="live-filters" className="info-section"><h2>LIVEを探す</h2>
    <p><Link href="/lives">{PAGE_LABELS.lives}</Link>から、公演ごとのセットリストを確認できます。</p>

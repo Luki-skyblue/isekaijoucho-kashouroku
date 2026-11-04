@@ -1,26 +1,26 @@
+import {sitePageMetadata} from '@/lib/page-metadata';
 import {PAGE_LABELS,NAME_FIELDS} from '@/lib/ui-copy.mjs';
 import Link from 'next/link';
-import type {Metadata} from 'next';
 import {Breadcrumb,Heading} from '@/components/ui';
 import {CatalogFilterFields} from '@/components/catalog-filter-fields';
 import {LiveFilterFields} from '@/components/live-filter-fields';
 import {readCatalogQuery} from '@/lib/catalog-list-params';
 import {readLiveQuery,type LiveQuery} from '@/lib/live-list-params';
-import {getCatalogSingerChoices,getPeopleList} from '@/lib/person-api';
+import {getCatalogSingerChoices,getCreditFilterChoices,getPeopleList} from '@/lib/person-api';
 import {privateSnapshotEnabled,privateLiveFilterOptions} from '@/lib/private-snapshot';
 import {publicCatalogEnabled,publicLiveFilterOptions} from '@/lib/public-catalog';
 import {searchTerm} from '@/lib/core';
 import {SEARCH_TARGETS,searchTarget,searchTargetHref} from '@/lib/search-navigation.mjs';
 import './search.css';
 
-export const metadata:Metadata={title:PAGE_LABELS.search};
+export function generateMetadata(){return sitePageMetadata('/search',PAGE_LABELS.search,{description:'楽曲、LIVE、収録作品、関係者の詳細検索。',index:false});}
 const one=(value:string|string[]|undefined)=>Array.isArray(value)?value[0]:value;
 export default async function Search({searchParams}:{searchParams:Promise<LiveQuery>}){
  const raw=await searchParams,target=searchTarget(one(raw.target)),term=searchTerm(one(raw.q));
  let fields;
  if(target==='songs'){
-  const choices=await getCatalogSingerChoices(),query=readCatalogQuery({...raw,q:term,page:'1'},choices);
-  fields=<><CatalogFilterFields key={JSON.stringify(query)} query={query} choices={choices} titleSearch/>
+  const [choices,creditChoices]=await Promise.all([getCatalogSingerChoices(),getCreditFilterChoices()]),query=readCatalogQuery({...raw,q:term,page:'1'},choices);
+  fields=<><CatalogFilterFields key={JSON.stringify(query)} query={query} choices={choices} creditChoices={creditChoices??undefined} titleSearch sourceSearch={publicCatalogEnabled()||privateSnapshotEnabled()}/>
    <Link className="search-source-link" href="/discover">{PAGE_LABELS.discover} →</Link></>;
  }else if(target==='lives'){
   const query=readLiveQuery({...raw,q:term,page:'1'});

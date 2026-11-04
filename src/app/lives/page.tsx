@@ -1,5 +1,5 @@
+import {sitePageMetadata} from '@/lib/page-metadata';
 import {PAGE_LABELS} from '@/lib/ui-copy.mjs';
-import type { Metadata } from 'next';
 import {rpc} from '@/lib/api';
 import {asArray,num,pageNumber,pageOffset,searchTerm,viewMode} from '@/lib/core';
 import {ListPage} from '@/components/ui';
@@ -7,7 +7,7 @@ import {privateSnapshotEnabled,privateLiveList,privateLiveFilterOptions} from '@
 import {readLiveQuery,type LiveQuery} from '@/lib/live-list-params';
 import {LiveIndex} from '@/components/live-index';
 import {publicCatalogEnabled,publicLiveList,publicLiveFilterOptions} from '@/lib/public-catalog';
-export const metadata: Metadata = {title:PAGE_LABELS.lives,description:'ヰ世界情緒のLIVE情報とセットリスト。'};
+export function generateMetadata(){return sitePageMetadata('/lives',PAGE_LABELS.lives,{description:'ヰ世界情緒のLIVE情報とセットリスト。'});}
 export default async function Lives({searchParams}:{searchParams:Promise<LiveQuery>}){
  const query=await searchParams,limit=24;
  if(privateSnapshotEnabled()||publicCatalogEnabled()) {

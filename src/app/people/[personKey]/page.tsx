@@ -8,10 +8,11 @@ import {RecordArtwork} from '@/components/record-artwork';
 import {Breadcrumb} from '@/components/ui';
 import {safeListReturnTo,withListReturnTo} from '@/lib/catalog-navigation';
 import './person-detail.css';
+import {sitePageMetadata,missingPageMetadata} from '@/lib/page-metadata';
 
 export async function generateMetadata({params}:{params:Promise<{personKey:string}>}){
  const person=await getPersonDetail((await params).personKey);
- return {title:person?.name??'関係者'};
+ return person?sitePageMetadata('/people/'+encodeURIComponent(person.key),person.name,{description:person.name+'の関連名義・関連楽曲。'}):missingPageMetadata();
 }
 export default async function PersonDetail({params,searchParams}:{params:Promise<{personKey:string}>;searchParams:Promise<{page?:string;role?:string;billing?:string;from?:string}>}){
  const key=(await params).personKey,query=await searchParams,person=await getPersonDetail(key,pageNumber(query.page),query.role,query.billing);

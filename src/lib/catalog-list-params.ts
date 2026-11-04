@@ -1,6 +1,9 @@
 import {pageNumber,searchTerm,viewMode,validId} from './core';
 import type {CatalogSort,LegacySongType,SingerMatch,CatalogCategory} from './catalog-entry-api';
 import {VOICEBANK_SINGERS} from './catalog-vocal-identities';
+import {CATALOG_SOURCE_OPTIONS,readCatalogSources} from './catalog-source-options.mjs';
+import {readCreditQuery,readFirstRange,validCreatorKey,validCreditRole} from './catalog-advanced-query.mjs';
+import type {CreditFilterChoices} from './person-detail-data.mjs';
 
 /** Compatibility choices for the old RPC/fixture reader. Snapshot/public pages
  * supply catalogSingerChoices(model) to both parsing and the picker instead.
@@ -49,7 +52,8 @@ export const CATALOG_SORTS:ReadonlyArray<{id:CatalogSort;label:string}> = [
  {id:'title_desc',label:'曲名：降順'},
 ];
 export type CatalogQuery={q?:string;page?:string;view?:string;singer?:string|string[];
- singerMatch?:string;type?:string|string[];medleys?:string;sort?:string;};
+ singerMatch?:string;type?:string|string[];source?:string|string[];medleys?:string;sort?:string;
+ creator?:string|string[];creditRole?:string|string[];firstFrom?:string|string[];firstTo?:string|string[];};
 export function readCatalogQuery(raw:CatalogQuery,choices:ReadonlyArray<SingerChoice>=SINGERS){
  const q=searchTerm(raw.q),page=pageNumber(raw.page),view=viewMode(raw.view);
  const requested=Array.isArray(raw.singer)?raw.singer:raw.singer?[raw.singer]:[];
@@ -67,7 +71,7 @@ export function readCatalogQuery(raw:CatalogQuery,choices:ReadonlyArray<SingerCh
   :normalTypes;
  const kinds:CatalogCategory[]=CATEGORIES.filter(x=>resolved.includes(x.id)).map(x=>x.id);
  const sort:CatalogSort=CATALOG_SORTS.find(s=>s.id===raw.sort)?.id??DEFAULT_CATALOG_SORT;
- return {q,page,view,singerIds,singerMatch,kinds,sort};
+ return {q,page,view,singerIds,singerMatch,kinds,sourceKinds:readCatalogSources(raw.source),...readCreditQuery(raw.creator,raw.creditRole),...readFirstRange(raw.firstFrom,raw.firstTo),sort};
 }
 export type ParsedCatalogQuery=ReturnType<typeof readCatalogQuery>;
 export function catalogHref(v:ParsedCatalogQuery,overrides:Partial<ParsedCatalogQuery>={}):string{
@@ -76,17 +80,22 @@ export function catalogHref(v:ParsedCatalogQuery,overrides:Partial<ParsedCatalog
  for(const id of state.singerIds){if(validId(id))p.append('singer',id);}
  if(state.singerIds.length&&state.singerMatch!=='contains')p.set('singerMatch',state.singerMatch);
  for(const kind of state.kinds){if(ALLOWED.has(kind))p.append('type',kind);}
+ for(const source of readCatalogSources(state.sourceKinds))p.append('source',source);
+ if(validCreatorKey(state.creatorKey))p.set('creator',state.creatorKey);
+ if(validCreditRole(state.creditRole))p.set('creditRole',state.creditRole);
+ if(state.firstFrom)p.set('firstFrom',state.firstFrom);
+ if(state.firstTo)p.set('firstTo',state.firstTo);
  if(state.sort!==DEFAULT_CATALOG_SORT&&CATALOG_SORTS.some(s=>s.id===state.sort))p.set('sort',state.sort);
  if(state.view==='grid')p.set('view','grid');
  if(state.page>1)p.set('page',String(state.page));
  return `/songs${p.size?'?'+p.toString():''}`;
 }
 export function activeCatalogFilters(v:ParsedCatalogQuery):boolean{
- return Boolean(v.singerIds.length||v.kinds.length);
+ return Boolean(v.singerIds.length||v.kinds.length||v.sourceKinds?.length||v.creatorKey||v.creditRole||v.firstFrom||v.firstTo);
 }
 export type ActiveCatalogCondition={key:string;label:string;href:string};
 /** Conditions that were applied, rather than the unsubmitted checkbox state. */
-export function activeCatalogConditions(q:ParsedCatalogQuery,choices:ReadonlyArray<SingerChoice>=SINGERS):ActiveCatalogCondition[]{
+export function activeCatalogConditions(q:ParsedCatalogQuery,choices:ReadonlyArray<SingerChoice>=SINGERS,credits?:CreditFilterChoices):ActiveCatalogCondition[]{
  const tags:ActiveCatalogCondition[]=[];
  if(q.q)tags.push({key:'search',label:`検索：${q.q}`,href:catalogHref(q,{q:'',page:1})});
  if(q.singerIds.length){
@@ -98,5 +107,12 @@ export function activeCatalogConditions(q:ParsedCatalogQuery,choices:ReadonlyArr
   const label=CATEGORIES.find(x=>x.id===kind)?.label??kind;
   tags.push({key:`type-${kind}`,label:`楽曲区分：${label}`,href:catalogHref(q,{kinds:q.kinds.filter(x=>x!==kind),page:1})});
  }
+ for(const source of q.sourceKinds??[]){
+  const label=CATALOG_SOURCE_OPTIONS.find(o=>o.id===source)?.label??source;
+  tags.push({key:`source-${source}`,label:`公開・収録先：${label}`,href:catalogHref(q,{sourceKinds:q.sourceKinds.filter(x=>x!==source),page:1})});
+ }
+ if(q.creatorKey)tags.push({key:'creator',label:'担当者：'+(credits?.people.find(p=>p.key===q.creatorKey)?.name??'指定した名義'),href:catalogHref(q,{creatorKey:'',page:1})});
+ if(q.creditRole)tags.push({key:'credit-role',label:'担当：'+(credits?.roles.find(r=>r.id===q.creditRole)?.label??'指定した担当'),href:catalogHref(q,{creditRole:'',page:1})});
+ if(q.firstFrom||q.firstTo)tags.push({key:'first-range',label:'初出：'+(q.firstFrom||'').replaceAll('-','/')+'〜'+(q.firstTo||'').replaceAll('-','/'),href:catalogHref(q,{firstFrom:'',firstTo:'',page:1})});
  return tags;
 }

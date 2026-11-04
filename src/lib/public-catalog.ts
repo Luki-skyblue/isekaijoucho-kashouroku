@@ -15,6 +15,7 @@ import {personDetailFromModel,peopleListFromModel,type PeopleListQuery} from './
 import {catalogSingerChoices} from './catalog-people.mjs';
 import {discoveryFromModel} from './discovery-data.mjs';
 import discoveryChannels from './discovery-channel-data.json';
+import {creditFilterChoicesFromModel} from './person-detail-data.mjs';
 
 let cache:{file:string;model:PrivateModel}|null=null;
 export function publicCatalogEnabled(){return process.env.CATALOG_DATA_MODE==='public_release';}
@@ -28,6 +29,7 @@ function load():PrivateModel{
 }
 export function publicCatalogList(filters:CatalogListFilters){return queryEntries(load(),filters);}
 export function publicSingerChoices(){return catalogSingerChoices(load());}
+export function publicCreditChoices(){return creditFilterChoicesFromModel(load());}
 export function publicPeopleList(query:PeopleListQuery){return peopleListFromModel(load(),query);}
 export function publicLiveList(filters:LiveListFilters){return queryEvents(load(),filters);}
 export function publicLiveFilterOptions(){return {...eventFilterOptions(load()),review:{id:null,applied:false,publicRelease:true}};}

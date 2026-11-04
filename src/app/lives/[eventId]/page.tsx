@@ -10,13 +10,16 @@ import {isLiveSupplement,liveSessionLabel,liveCoverageNote,liveProgramPosition,t
 import {publicCatalogEnabled,publicLiveDisplayContext} from '@/lib/public-catalog';
 import {privateSnapshotEnabled,privateLiveDisplayContext} from '@/lib/private-snapshot';
 import type {Metadata} from 'next';
+import {sitePageMetadata,missingPageMetadata} from '@/lib/page-metadata';
 import {safeListReturnTo,withListReturnTo} from '@/lib/catalog-navigation';
 import '@/components/live-detail.css';
 const OCCURRENCES_PER_PAGE=50;
 const PROGRAM_ITEMS_PER_PAGE=100;
 export async function generateMetadata({params}:{params:Promise<{eventId:string}>}):Promise<Metadata>{
- const {eventId}=await params;if(!validId(eventId))return {};
- const event=await rpc('kashouroku_v3_event',{p_event_id:eventId,p_limit:OCCURRENCES_PER_PAGE,p_offset:0});return event?{title:str(event.title)||'公演'}:{};
+ const {eventId}=await params;if(!validId(eventId))return missingPageMetadata();
+ const event=await rpc('kashouroku_v3_event',{p_event_id:eventId,p_limit:OCCURRENCES_PER_PAGE,p_offset:0});
+ const title=str(event?.title)||'公演';
+ return event?sitePageMetadata('/lives/'+eventId,title,{description:title+'の公演情報・セットリスト・関連する収録作品。'}):missingPageMetadata();
 }
 export default async function EventDetail({params,searchParams}:{params:Promise<{eventId:string}>;searchParams:Promise<{occurrencePage?:string;programPage?:string;programOccurrence?:string;from?:string}>}){
  const {eventId}=await params;if(!validId(eventId))notFound();

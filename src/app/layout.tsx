@@ -6,15 +6,13 @@ import SiteControls from '@/components/site-controls';
 import {privateSnapshotEnabled,privateSnapshotInfo} from '@/lib/private-snapshot';
 import {publicCatalogEnabled,publicCatalogInfo} from '@/lib/public-catalog';
 import './globals.css';
+import {rootMetadata} from '@/lib/page-metadata';
 
 const notoSans = Noto_Sans_JP({ variable: '--font-noto-sans-jp', subsets: ['latin'], weight: ['400', '500', '600', '700'] });
 const notoSerif = Noto_Serif_JP({ variable: '--font-noto-serif-jp', subsets: ['latin'], weight: ['400', '500', '600', '700'] });
 const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] });
 
-export const metadata: Metadata = {
-  title: { default: 'ヰ世界情緒 歌唱録', template: '%s | ヰ世界情緒 歌唱録' },
-  description: 'ヰ世界情緒の楽曲、歌唱履歴、LIVE、動画、収録作品を辿る非公式データベース。',
-};
+export function generateMetadata():Metadata{return rootMetadata();}
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const review=privateSnapshotEnabled()?await privateSnapshotInfo():null;
