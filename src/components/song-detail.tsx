@@ -1,4 +1,4 @@
-import {PAGE_LABELS,INFO_STATES} from '@/lib/ui-copy.mjs';
+import {SECTION_LABELS,INFO_STATES} from '@/lib/ui-copy.mjs';
 import Link from 'next/link';
 import {asArray,asObject,displayDate,str,validId,type JsonObject} from '@/lib/core';
 import {missingSongText,safeSongUrl,songListenLabel,songTitleCreditForEntry,youtubeId,type SongDetailData,type SongFirstSourceLink} from '@/lib/song-detail-data.mjs';
@@ -81,6 +81,6 @@ export function CatalogSongDetail({song,initialTab='info',returnTo}:{song:SongDe
  return <article className="song-detail-page" data-song-entry={entryId}>
   <SongBackLink returnTo={returnTo}/>
   <header className="song-detail-hero"><SongDetailArtwork url={imageUrl} urls={song.artworkCandidates.map(image=>image.imageUrl)} eager className={'song-detail-art song-detail-art-'+heroShape}/><div className="song-detail-heading">{str(m.titleKana)&&<p className="song-detail-kana">{str(m.titleKana)}</p>}<div className="song-detail-title-line"><h1>{title}</h1>{song.versionLabel&&<span className="song-detail-version-tag">{song.versionLabel}</span>}</div><p className="song-detail-singer">{titlePrefix}{titleCredit===singers&&singers?<SingerNames detail={{...d,displayCredit:titleCredit}}/>:<Value value={titleCredit}/>}</p>{song.listenUrl&&<a className="song-detail-primary" href={song.listenUrl} target="_blank" rel="noopener noreferrer">{song.videos.some(v=>v.url===song.listenUrl)?songListenLabel(song.listenUrl):'配信で聴く'} ↗</a>}</div></header>
-  <SongDetailTabs key={entryId+'|'+initialTab} initialTab={initialTab} tabs={[{id:'info',label:'楽曲情報',count:null,content:info},{id:'videos',label:'関連動画',count:song.videos.length,content:videos},{id:'history',label:'披露歴',count:song.lives.length,content:history},{id:'releases',label:PAGE_LABELS.releases,count:releaseGroups.length,content:releases},{id:'versions',label:'別バージョン',count:siblings.length,content:versions}]}/>
+  <SongDetailTabs key={entryId+'|'+initialTab} initialTab={initialTab} tabs={[{id:'info',label:'楽曲情報',count:null,content:info},{id:'videos',label:'関連動画',count:song.videos.length,content:videos},{id:'history',label:'披露歴',count:song.lives.length,content:history},{id:'releases',label:SECTION_LABELS.releases,count:releaseGroups.length,content:releases},{id:'versions',label:'別バージョン',count:siblings.length,content:versions}]}/>
  </article>;
 }

@@ -188,7 +188,7 @@ export function peopleListFromModel(model,{category='all',kind='all',term='',rol
  const visibleDuty=r=>dutyMatches(r)&&(activeRole==='all'||r===activeRole);
  const songCounts=new Map(people.map(person=>[person.key,relatedSongCounts(model,[...person.songs].filter(([,roles])=>[...roles].some(visibleDuty)))]));
  const countSongs=person=>songCounts.get(person.key).songCount;
- const filtered=people.filter(p=>inKind(p)&&belongs(p,category)&&(activeRole==='all'||p.roles.has(activeRole))&&matches(p)).sort((a,b)=>(category!=='vocal'?countSongs(b)-countSongs(a):0)||a.name.localeCompare(b.name,'ja')||compare(a.key,b.key));
+ const filtered=people.filter(p=>inKind(p)&&belongs(p,category)&&(activeRole==='all'||p.roles.has(activeRole))&&matches(p)).sort((a,b)=>countSongs(b)-countSongs(a)||a.name.localeCompare(b.name,'ja')||compare(a.key,b.key));
  const suggestions=term&&filtered.length===0?people.filter(p=>inKind(p)&&!belongs(p,category)&&matches(p))
   .sort((a,b)=>a.name.localeCompare(b.name,'ja')||compare(a.key,b.key)).slice(0,5).flatMap(person=>{
    // A billing-only name may have no reviewed duty category yet. Keep a
