@@ -3,5 +3,5 @@ import {NAME_FIELDS} from '@/lib/ui-copy.mjs';
  * Do not navigate when an in-progress draft becomes empty.
  */
 export function CatalogSearchInput({query}:{query:string}){
- return <input key={query} name="q" type="text" aria-label={NAME_FIELDS.song+'を入力'} placeholder={NAME_FIELDS.song+'を入力'} maxLength={100} defaultValue={query}/>;
+ return <input name="q" type="text" aria-label={NAME_FIELDS.song+'を入力'} placeholder={NAME_FIELDS.song+'を入力'} maxLength={100} defaultValue={query}/>;
 }

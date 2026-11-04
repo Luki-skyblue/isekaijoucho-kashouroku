@@ -8,6 +8,7 @@ import {liveCardLabel} from '@/lib/live-list-params';
 import {eventArtworkForEvent} from '@/lib/catalog-artwork.mjs';
 import {detailSearchHref} from '@/lib/search-navigation.mjs';
 import {listDetailHref} from '@/lib/catalog-navigation';
+import {ListSearchForm} from '@/components/list-search-form';
 
 export function Heading({eyebrow,title,description}:{eyebrow?:string;title:string;description?:string}){
  return <header className="page-heading">{eyebrow&&<p className="eyebrow">{eyebrow}</p>}<h1>{title}</h1>{description&&<p className="muted">{description}</p>}</header>;
@@ -60,7 +61,7 @@ export function RowMeta({rows}:{rows:JsonObject[]}){return <dl className="meta-g
 export function ListPage({heading,items,total,kind,term,page,limit=24,view='list'}:{heading:string;items:JsonObject[];total:number;kind:'work'|'event'|'release';term:string;page:number;limit?:number;view?:ViewMode}){
  const path=kind==='work'?'/songs':kind==='event'?'/lives':'/releases';
  return <><Breadcrumb parts={[{label:heading}]}/><Heading title={heading}/>
- <form className="search" method="get" action={path}><div className="search-line"><input id="q" type="search" name="q" defaultValue={term} maxLength={100} aria-label={(kind==='work'?NAME_FIELDS.song:kind==='event'?NAME_FIELDS.live:NAME_FIELDS.release)+'を入力'} placeholder={(kind==='work'?NAME_FIELDS.song:kind==='event'?NAME_FIELDS.live:NAME_FIELDS.release)+'を入力'}/><button type="submit">検索</button><Link className="search-detail-link" href={detailSearchHref(listHref(path,term,1,view))}>{PAGE_LABELS.search}</Link></div><input name="view" type="hidden" value={view}/></form>
+ <ListSearchForm action={path} searchValue={term} resetKey={listHref(path,term,page,view)}><div className="search-line"><input id="q" type="search" name="q" defaultValue={term} maxLength={100} aria-label={(kind==='work'?NAME_FIELDS.song:kind==='event'?NAME_FIELDS.live:NAME_FIELDS.release)+'を入力'} placeholder={(kind==='work'?NAME_FIELDS.song:kind==='event'?NAME_FIELDS.live:NAME_FIELDS.release)+'を入力'}/><button type="submit">検索</button><Link className="search-detail-link" href={detailSearchHref(listHref(path,term,1,view))}>{PAGE_LABELS.search}</Link></div><input name="view" type="hidden" value={view}/></ListSearchForm>
  <div className="list-toolbar">
   <p className="toolbar-hint">{total}件</p>
   <nav className="view-switch" aria-label="一覧の表示形式"><span>VIEW</span><Link href={listHref(path,term,page,'list')} aria-current={view==='list'?'page':undefined}>リスト</Link><Link href={listHref(path,term,page,'grid')} aria-current={view==='grid'?'page':undefined}>グリッド</Link></nav>

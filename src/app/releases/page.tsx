@@ -6,6 +6,7 @@ import {asArray,num,pageNumber,pageOffset,searchTerm,viewMode} from '@/lib/core'
 import {getReleaseList} from '@/lib/release-list-api';
 import {releaseListHref,RELEASE_SORTS} from '@/lib/release-list-data.mjs';
 import {ListSort} from '@/components/list-sort';
+import {ListSearchForm} from '@/components/list-search-form';
 import {homeToday} from '@/lib/home-recent-data.mjs';
 import {Breadcrumb,Heading,ListPage} from '@/components/ui';
 import {RecordArtwork} from '@/components/record-artwork';
@@ -29,11 +30,11 @@ export default async function Releases({searchParams}:{searchParams:Promise<{q?:
  return <article className="release-list-page">
   <Breadcrumb parts={[{label:PAGE_LABELS.releases}]}/><Heading title={PAGE_LABELS.releases}/>
   <nav className="release-list-categories" aria-label="収録作品の分類">{data.categories.map(category=><Link key={category.id} href={href({category:category.id,page:1})} aria-current={category.id===data.category?'page':undefined}>{category.label}<small>{category.count}</small></Link>)}</nav>
-  <form className="search" method="get" action="/releases">
+  <ListSearchForm action="/releases" searchValue={term} resetKey={href()}>
    <div className="search-line"><input id="q" type="search" name="q" defaultValue={term} maxLength={100} aria-label={NAME_FIELDS.release+'を入力'} placeholder={NAME_FIELDS.release+'を入力'}/><button type="submit">検索</button><Link className="search-detail-link" href={detailSearchHref(href())}>{PAGE_LABELS.search}</Link></div>
    <input name="category" type="hidden" value={data.category}/><input name="view" type="hidden" value={view}/>
    {data.sort!=='date_desc'&&<input name="sort" type="hidden" value={data.sort}/>}
-  </form>
+  </ListSearchForm>
   <div className="list-toolbar"><p className="toolbar-hint">{data.total}件</p>
    <div className="catalog-toolbar-controls"><ListSort id="release-sort" action="/releases" value={data.sort} options={RELEASE_SORTS.map(s=>({value:s.id,label:s.label,href:href({sort:s.id,page:1})}))}>
     {term&&<input type="hidden" name="q" value={term}/>}<input type="hidden" name="category" value={data.category}/><input type="hidden" name="view" value={view}/>
