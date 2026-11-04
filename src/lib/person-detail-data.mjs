@@ -169,8 +169,16 @@ function directoryQuery({category='all',kind='all',role='all'}={}){
  if(category==='music'&&roleCategory(role)==='cover_source')category='cover_source';
  return {category:['vocal','music','cover_source','production'].includes(category)?category:'all',kind:kind==='group'?'group':'all'};
 }
-export function peopleListFromModel(model,{category='all',kind='all',term='',role='all',page=1,limit=48}={}){
+export const PEOPLE_SORTS=Object.freeze([
+ {id:'related_desc',label:'関連楽曲：多い順'},
+ {id:'related_asc',label:'関連楽曲：少ない順'},
+ {id:'name_asc',label:'名前：昇順'},
+ {id:'name_desc',label:'名前：降順'},
+]);
+const peopleSort=value=>PEOPLE_SORTS.some(s=>s.id===value)?value:'related_desc';
+export function peopleListFromModel(model,{category='all',kind='all',term='',role='all',page=1,limit=48,sort='related_desc',view='list'}={}){
  ({category,kind}=directoryQuery({category,kind,role}));term=text(term).trim().slice(0,100);
+ sort=peopleSort(sort);view=view==='grid'?'grid':'list';
  const people=[...indexFor(model).people.values()].filter(p=>p.listed);
  const inKind=person=>kind!=='group'||person.type==='group';
  const dutyMatches=r=>category==='all'||roleCategory(r)===category;
@@ -188,7 +196,9 @@ export function peopleListFromModel(model,{category='all',kind='all',term='',rol
  const visibleDuty=r=>dutyMatches(r)&&(activeRole==='all'||r===activeRole);
  const songCounts=new Map(people.map(person=>[person.key,relatedSongCounts(model,[...person.songs].filter(([,roles])=>[...roles].some(visibleDuty)))]));
  const countSongs=person=>songCounts.get(person.key).songCount;
- const filtered=people.filter(p=>inKind(p)&&belongs(p,category)&&(activeRole==='all'||p.roles.has(activeRole))&&matches(p)).sort((a,b)=>countSongs(b)-countSongs(a)||a.name.localeCompare(b.name,'ja')||compare(a.key,b.key));
+ const byName=(a,b)=>a.name.localeCompare(b.name,'ja');
+ const order=(a,b)=>sort==='name_asc'?byName(a,b):sort==='name_desc'?-byName(a,b):(sort==='related_asc'?countSongs(a)-countSongs(b):countSongs(b)-countSongs(a))||byName(a,b);
+ const filtered=people.filter(p=>inKind(p)&&belongs(p,category)&&(activeRole==='all'||p.roles.has(activeRole))&&matches(p)).sort((a,b)=>order(a,b)||compare(a.key,b.key));
  const suggestions=term&&filtered.length===0?people.filter(p=>inKind(p)&&!belongs(p,category)&&matches(p))
   .sort((a,b)=>a.name.localeCompare(b.name,'ja')||compare(a.key,b.key)).slice(0,5).flatMap(person=>{
    // A billing-only name may have no reviewed duty category yet. Keep a
@@ -198,10 +208,10 @@ export function peopleListFromModel(model,{category='all',kind='all',term='',rol
   }):[];
  limit=Number.isSafeInteger(limit)&&limit>0&&limit<=100?limit:48;
  const pages=Math.ceil(filtered.length/limit);page=Number.isSafeInteger(page)&&page>0?Math.min(page,Math.max(pages,1)):1;
- return {category,kind,term,role:activeRole,roleOptions,page,pages,total:filtered.length,categories,suggestions,items:filtered.slice((page-1)*limit,page*limit).map(p=>({key:p.key,name:p.name,type:p.type,kindLabel:kindLabel(p),roles:roleLabels([...p.roles].filter(visibleDuty)),...songCounts.get(p.key)}))};
+ return {category,kind,term,role:activeRole,roleOptions,sort,view,page,pages,total:filtered.length,categories,suggestions,items:filtered.slice((page-1)*limit,page*limit).map(p=>({key:p.key,name:p.name,type:p.type,kindLabel:kindLabel(p),roles:roleLabels([...p.roles].filter(visibleDuty)),...songCounts.get(p.key)}))};
 }
 
-export function peopleListHref({category='all',kind='all',term='',role='all',page=1}={}){
+export function peopleListHref({category='all',kind='all',term='',role='all',page=1,sort='related_desc',view='list'}={}){
  ({category,kind}=directoryQuery({category,kind,role}));
- const p=new URLSearchParams();if(category!=='all')p.set('category',category);if(kind==='group')p.set('kind',kind);if(term)p.set('q',term);if(role&&role!=='all'&&(category==='all'||roleCategory(role)===category))p.set('role',role);if(page>1)p.set('page',String(page));return '/people'+(p.size?'?'+p.toString():'');
+ const p=new URLSearchParams();if(category!=='all')p.set('category',category);if(kind==='group')p.set('kind',kind);if(term)p.set('q',term);if(role&&role!=='all'&&(category==='all'||roleCategory(role)===category))p.set('role',role);if(page>1)p.set('page',String(page));if(peopleSort(sort)!=='related_desc')p.set('sort',peopleSort(sort));if(view==='grid')p.set('view','grid');return '/people'+(p.size?'?'+p.toString():'');
 }

@@ -7,7 +7,7 @@ const RETURN_KEYS:Record<ListPath,Set<string>> = {
  '/songs':new Set(['q','page','view','singer','singerMatch','type','source','creator','creditRole','firstFrom','firstTo','sort']),
  '/lives':new Set(['q','page','view','artist','artistScope','artistMatch','type','sort']),
  '/releases':new Set(['q','page','view','category','sort']),
- '/people':new Set(['q','page','category','kind','role']),
+ '/people':new Set(['q','page','category','kind','role','sort','view']),
 };
 
 export function safeListReturnTo(value: unknown, path:ListPath): string | null {

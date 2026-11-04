@@ -10,7 +10,8 @@ import {getCatalogSingerChoices,getCreditFilterChoices,getPeopleList} from '@/li
 import {privateSnapshotEnabled,privateLiveFilterOptions} from '@/lib/private-snapshot';
 import {publicCatalogEnabled,publicLiveFilterOptions} from '@/lib/public-catalog';
 import {searchTerm} from '@/lib/core';
-import {SEARCH_TARGETS,searchTarget,searchTargetHref} from '@/lib/search-navigation.mjs';
+import {SEARCH_TARGETS,searchTarget,searchTargetHref,detailSearchHref} from '@/lib/search-navigation.mjs';
+import {peopleListHref} from '@/lib/person-detail-data.mjs';
 import './search.css';
 
 export function generateMetadata(){return sitePageMetadata('/search',PAGE_LABELS.search,{description:'楽曲、LIVE、収録作品、関係者の詳細検索。',index:false});}
@@ -27,12 +28,16 @@ export default async function Search({searchParams}:{searchParams:Promise<LiveQu
   const options=publicCatalogEnabled()?publicLiveFilterOptions():privateSnapshotEnabled()?await privateLiveFilterOptions():null;
   fields=options?<LiveFilterFields key={JSON.stringify(query)} query={query} artists={options.artists} titleSearch/>:<NameSearch target="lives" term={term} label={NAME_FIELDS.live}/>;
  }else if(target==='people'){
-  const data=await getPeopleList({category:one(raw.category),term,role:one(raw.role)});
-  fields=<><nav className="search-subcategories" aria-label="関係者の分類">{data?.categories.map(c=><Link key={c.id} href={'/search?'+new URLSearchParams({target:'people',category:c.id,...(term?{q:term}:{})})} aria-current={data.category===c.id?'page':undefined}>{c.label}</Link>)}</nav>
+  const data=await getPeopleList({category:one(raw.category),kind:one(raw.kind),term,role:one(raw.role),sort:one(raw.sort),view:one(raw.view)});
+  fields=<><nav className="search-subcategories" aria-label="関係者の分類">{data?.categories.map(c=><Link key={c.id} href={detailSearchHref(peopleListHref({category:c.id,kind:data.kind,term:data.term,sort:data.sort,view:data.view}))} aria-current={data.category===c.id?'page':undefined}>{c.label}</Link>)}</nav>
   <form className="search-detail-form" action="/people" method="get">
    <label>{NAME_FIELDS.person}<input type="search" name="q" defaultValue={term} maxLength={100} placeholder={NAME_FIELDS.person+'を入力'}/></label>
-   <input type="hidden" name="category" value={data?.category??'artists'}/>
+   <input type="hidden" name="category" value={data?.category??'all'}/>
+   {data?.kind==='group'&&<input type="hidden" name="kind" value="group"/>}
+   {data?.view==='grid'&&<input type="hidden" name="view" value="grid"/>}
+   {data&&data.sort!=='related_desc'&&<input type="hidden" name="sort" value={data.sort}/>}
    {data&&['music','cover_source','production'].includes(data.category)&&<label>担当<select name="role" defaultValue={data.role}>{data.roleOptions.map(r=><option key={r.id} value={r.id}>{r.label}</option>)}</select></label>}
+   {data&&!['music','cover_source','production'].includes(data.category)&&data.role!=='all'&&<input type="hidden" name="role" value={data.role}/>}
    <button type="submit">検索</button>
   </form></>;
  }else{
