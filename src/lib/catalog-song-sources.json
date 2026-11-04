@@ -12621,6 +12621,273 @@
       "sourceIds": [
         "S-454"
       ]
+    },
+    {
+      "key": "chat-b055---uUHn9GLUY-music",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "15308027-6e0b-4401-b6a3-6c29ad3c899b",
+        "kind": "song_variant",
+        "primaryWorkId": "5034109b-cff1-5e2c-881b-f636ae962230",
+        "title": "熱愛発覚中",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "椎名林檎"
+        ],
+        [
+          "work",
+          "composer",
+          "椎名林檎"
+        ],
+        [
+          "work",
+          "lyricist",
+          "椎名林檎"
+        ]
+      ],
+      "url": "https://www.youtube.com/watch?v=--uUHn9GLUY",
+      "sourceBatch": "B055 r001",
+      "credits": {
+        "arranger": [
+          "Yuichiro Takahashi",
+          "Sosuke Oikawa"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      },
+      "sourceIds": [
+        "S-465"
+      ]
+    },
+    {
+      "key": "chat-b055-JB_BwmbDpSs-music",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "cacd89e0-054a-44d4-8098-f7a065b8cee5",
+        "kind": "song_variant",
+        "primaryWorkId": "02bae2e2-22b8-56b4-b30a-5816a7935f8f",
+        "title": "Veil",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "常田大希"
+        ],
+        [
+          "work",
+          "composer",
+          "常田大希"
+        ],
+        [
+          "work",
+          "lyricist",
+          "ermhoi"
+        ]
+      ],
+      "url": "https://www.youtube.com/watch?v=JB_BwmbDpSs",
+      "sourceBatch": "B055 r001",
+      "credits": {
+        "arranger": [
+          "Kevin",
+          "Sosuke Oikawa"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      },
+      "sourceIds": [
+        "S-467"
+      ]
+    },
+    {
+      "key": "chat-b056-BnKZ6jNn4CI-music",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "d9caa815-9340-48eb-a582-400d60f66271",
+        "kind": "song_variant",
+        "primaryWorkId": "cfb0a8b6-16bc-581a-96b0-07f175813a8f",
+        "title": "ハート型の涙",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "original",
+          "composer",
+          "朝本浩文"
+        ],
+        [
+          "original",
+          "lyricist",
+          "藤井フミヤ"
+        ],
+        [
+          "work",
+          "arranger",
+          "朝本浩文"
+        ],
+        [
+          "work",
+          "composer",
+          "朝本浩文"
+        ],
+        [
+          "work",
+          "lyricist",
+          "藤井フミヤ"
+        ]
+      ],
+      "url": "https://www.youtube.com/watch?v=BnKZ6jNn4CI",
+      "sourceBatch": "B056 r001",
+      "credits": {
+        "arranger": [
+          "P.U.O"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      },
+      "sourceIds": [
+        "S-479"
+      ]
+    },
+    {
+      "key": "chat-b057-dLNEPT1LZAU-music",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "af62c2cc-bf22-448b-9cf5-5bac2e03dbf7",
+        "kind": "song_variant",
+        "primaryWorkId": "4889fd58-2d91-5f80-a64e-d757ec0b00f9",
+        "title": "meLIE",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "NoiR"
+        ],
+        [
+          "work",
+          "composer",
+          "NoiR"
+        ],
+        [
+          "work",
+          "lyricist",
+          "NoiR"
+        ]
+      ],
+      "url": "https://www.youtube.com/watch?v=dLNEPT1LZAU",
+      "sourceBatch": "B057 r001",
+      "metadata": {
+        "originalCredits": [
+          {
+            "role": "lyricist",
+            "name": "NoiR"
+          },
+          {
+            "role": "composer",
+            "name": "NoiR"
+          },
+          {
+            "role": "arranger",
+            "name": "やっすん"
+          }
+        ]
+      },
+      "metadataBasis": {
+        "originalCredits": [
+          {
+            "role": "lyricist",
+            "name": "NoiR"
+          },
+          {
+            "role": "composer",
+            "name": "NoiR"
+          },
+          {
+            "role": "arranger",
+            "name": "NoiR"
+          }
+        ]
+      },
+      "sourceIds": [
+        "S-485"
+      ]
+    },
+    {
+      "key": "chat-b059-hri--LJMCiA-music",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "17249e1d-37ff-4752-bb25-6cf11617864f",
+        "kind": "song_variant",
+        "primaryWorkId": "04fabdcb-b674-5e4a-92b0-9858fe2509bc",
+        "title": "メリクリ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "原一博"
+        ],
+        [
+          "work",
+          "composer",
+          "原一博"
+        ],
+        [
+          "work",
+          "lyricist",
+          "康珍化"
+        ]
+      ],
+      "url": "https://www.youtube.com/watch?v=hri--LJMCiA",
+      "sourceBatch": "B059 r001",
+      "credits": {
+        "arranger": [
+          "Yuichiro Takahashi",
+          "Sosuke Oikawa"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      },
+      "sourceIds": [
+        "S-506"
+      ]
     }
   ],
   "mediaCredits": [
@@ -20135,6 +20402,2173 @@
       "sourceId": "S-463",
       "sourceBatch": "B052 r001",
       "scopeNote": "Only the five-person original MV. No attribution to the fifteen-person festival performance."
+    },
+    {
+      "key": "chat-b055---uUHn9GLUY-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "15308027-6e0b-4401-b6a3-6c29ad3c899b",
+        "kind": "song_variant",
+        "primaryWorkId": "5034109b-cff1-5e2c-881b-f636ae962230",
+        "title": "熱愛発覚中",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=--uUHn9GLUY",
+      "mediaId": "5d319e08-b6e2-5ff8-a53c-1648e1180ac2",
+      "mediaUrl": "https://www.youtube.com/watch?v=--uUHn9GLUY",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "𝐓𝐕♡ƆHAͶY"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-465"
+      ],
+      "sourceBatch": "B055 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b055-Nhjq4gfuQak-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "b5fbb42f-b54b-4db2-8791-0a1a3f1ac982",
+        "kind": "song_variant",
+        "primaryWorkId": "f762c903-f2f6-57a9-8ae8-cf8182799be3",
+        "title": "ロスト・デリュージョン",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=Nhjq4gfuQak",
+      "mediaId": "e839e927-0546-5f1a-bf76-e46ff8060656",
+      "mediaUrl": "https://www.youtube.com/watch?v=Nhjq4gfuQak",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "なるめ"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-466"
+      ],
+      "sourceBatch": "B055 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b055-JB_BwmbDpSs-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "cacd89e0-054a-44d4-8098-f7a065b8cee5",
+        "kind": "song_variant",
+        "primaryWorkId": "02bae2e2-22b8-56b4-b30a-5816a7935f8f",
+        "title": "Veil",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=JB_BwmbDpSs",
+      "mediaId": "9d5d0c31-cd5e-53c3-823c-a1d8b47fce6f",
+      "mediaUrl": "https://www.youtube.com/watch?v=JB_BwmbDpSs",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "クロノイ"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-467"
+      ],
+      "sourceBatch": "B055 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b055-FlaDmgzCgYM-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "60157969-1592-49f7-af0d-a04477d2b6b8",
+        "kind": "song_variant",
+        "primaryWorkId": "c59917d6-973b-59c1-9394-29324ae0cdf1",
+        "title": "ヴァンパイア",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=FlaDmgzCgYM",
+      "mediaId": "dc88cfd5-2705-5509-8821-70ab77da7204",
+      "mediaUrl": "https://www.youtube.com/watch?v=FlaDmgzCgYM",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "適当緑"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-468"
+      ],
+      "sourceBatch": "B055 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b055-H1XHUA3PCLI-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "8592251e-c6eb-41c1-8451-9d05fd423d6b",
+        "kind": "song_variant",
+        "primaryWorkId": "01bbdb07-ad14-55c3-84bb-644a74ece44c",
+        "title": "QUEEN",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=H1XHUA3PCLI",
+      "mediaId": "06656ae8-f743-5cfb-b9ec-eb817186c673",
+      "mediaUrl": "https://www.youtube.com/watch?v=H1XHUA3PCLI",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "米室"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-469"
+      ],
+      "sourceBatch": "B055 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b055-xdGw7s4LyAo-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "e78132b9-ba0c-4842-827a-6f36fc488467",
+        "kind": "song_variant",
+        "primaryWorkId": "c1161248-8933-550f-9e37-4acee3567bf6",
+        "title": "1000年生きてる",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=xdGw7s4LyAo",
+      "mediaId": "e9b8fbea-8a22-587e-b93c-6c42f3e1e862",
+      "mediaUrl": "https://www.youtube.com/watch?v=xdGw7s4LyAo",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "木澄 玲生"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-470"
+      ],
+      "sourceBatch": "B055 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b055-DK1wCTd2b9U-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "552fd6bd-8ffc-4181-b07d-dd1914ea68d1",
+        "kind": "song_variant",
+        "primaryWorkId": "a228b478-88ca-55e8-8f4e-7074f6aaf1d2",
+        "title": "少女レイ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=DK1wCTd2b9U",
+      "mediaId": "03689b8f-93ed-52eb-b296-ad28cd2f4bc8",
+      "mediaUrl": "https://www.youtube.com/watch?v=DK1wCTd2b9U",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "がわこ"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-471"
+      ],
+      "sourceBatch": "B055 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b056-QpdYmV2unI0-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "c2e31eb6-e452-484f-8945-b915d971ba66",
+        "kind": "song_variant",
+        "primaryWorkId": "d76d97bb-3149-53b8-9888-f01e4b4aab3f",
+        "title": "JANE DOE",
+        "displayCredit": "梓川 × ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=QpdYmV2unI0",
+      "mediaId": "d6f0aa22-7543-56f8-8457-da2ed77c55da",
+      "mediaUrl": "https://www.youtube.com/watch?v=QpdYmV2unI0",
+      "credits": [
+        {
+          "role": "Inst",
+          "name": "梓川"
+        },
+        {
+          "role": "Mix",
+          "name": "梓川"
+        },
+        {
+          "role": "Mst",
+          "name": "梓川"
+        },
+        {
+          "role": "Illustration",
+          "name": "𝙍𝙀𝙈𝙐"
+        },
+        {
+          "role": "Movie",
+          "name": "ode"
+        }
+      ],
+      "sourceIds": [
+        "S-472"
+      ],
+      "sourceBatch": "B056 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b056-oeNebxZpbRM-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "d31f230e-a923-4039-a367-21d41fe8a4a5",
+        "kind": "song_variant",
+        "primaryWorkId": "5146205a-de6d-5a1a-a57e-99e42c83f935",
+        "title": "天天天国地獄国",
+        "displayCredit": "ヰ世界情緒 × 花譜",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=oeNebxZpbRM",
+      "mediaId": "1609b7dc-7541-587d-aa3c-77e4fb16f70a",
+      "mediaUrl": "https://www.youtube.com/watch?v=oeNebxZpbRM",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "bmtol"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-473"
+      ],
+      "sourceBatch": "B056 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b056-2chdROYPAGU-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "365e2542-8c2b-4584-a6e1-f0ee22bc7f9a",
+        "kind": "song_variant",
+        "primaryWorkId": "6411bc07-b8fb-5800-9719-ff1e75acc8d7",
+        "title": "真偽",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=2chdROYPAGU",
+      "mediaId": "9d7590d5-a410-5a66-8558-e92255587cb0",
+      "mediaUrl": "https://www.youtube.com/watch?v=2chdROYPAGU",
+      "credits": [
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceIds": [
+        "S-474"
+      ],
+      "sourceBatch": "B056 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b056-rUbH3LhtkiI-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "2b26a4e8-6e2b-4973-8aa5-ee5d66e23bd0",
+        "kind": "song_variant",
+        "primaryWorkId": "62e9c9d8-db67-5666-9db6-9add020afa98",
+        "title": "未遂",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=rUbH3LhtkiI",
+      "mediaId": "6e047bb3-9fed-51aa-b46a-2bef7d36f62b",
+      "mediaUrl": "https://www.youtube.com/watch?v=rUbH3LhtkiI",
+      "credits": [
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceIds": [
+        "S-475"
+      ],
+      "sourceBatch": "B056 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b056-i5RE93Exwcs-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "74072cf8-b29e-4b9e-91ee-5ca9cfb43c8d",
+        "kind": "song_variant",
+        "primaryWorkId": "06698864-577b-504f-b374-a0d4fb9a02aa",
+        "title": "いけないボーダーライン",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=i5RE93Exwcs",
+      "mediaId": "19f6d334-c430-5ca2-a525-b131da189d3e",
+      "mediaUrl": "https://www.youtube.com/watch?v=i5RE93Exwcs",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "前田麦"
+        }
+      ],
+      "sourceIds": [
+        "S-476"
+      ],
+      "sourceBatch": "B056 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b056-mVNUtjkwg7E-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "2dc4cf05-2434-4997-a6db-aeb94873cc42",
+        "kind": "song_variant",
+        "primaryWorkId": "41231055-2c9b-55bd-b899-825bbcafca71",
+        "title": "いのちの名前",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=mVNUtjkwg7E",
+      "mediaId": "630d0c00-9ab6-56a3-aefc-8b140a52939a",
+      "mediaUrl": "https://www.youtube.com/watch?v=mVNUtjkwg7E",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "房野"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-477"
+      ],
+      "sourceBatch": "B056 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b056-oj1H-HQrDUE-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "5ad983d6-ca88-4ebe-abd6-9be170e23ed3",
+        "kind": "song_variant",
+        "primaryWorkId": "305e3228-8f8c-5d04-b2a4-ec4c7aa18764",
+        "title": "旅の途中",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=oj1H-HQrDUE",
+      "mediaId": "4ff67689-adef-5ac7-8c93-6334d4f486ad",
+      "mediaUrl": "https://www.youtube.com/watch?v=oj1H-HQrDUE",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "ほたてんし"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-478"
+      ],
+      "sourceBatch": "B056 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b056-BnKZ6jNn4CI-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "d9caa815-9340-48eb-a582-400d60f66271",
+        "kind": "song_variant",
+        "primaryWorkId": "cfb0a8b6-16bc-581a-96b0-07f175813a8f",
+        "title": "ハート型の涙",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=BnKZ6jNn4CI",
+      "mediaId": "1817c6b0-ba01-5a23-9151-80d6ea97dce9",
+      "mediaUrl": "https://www.youtube.com/watch?v=BnKZ6jNn4CI",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "前田麦"
+        }
+      ],
+      "sourceIds": [
+        "S-479"
+      ],
+      "sourceBatch": "B056 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b056-St-XQkN7xkc-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "4ef4fe6d-51c8-4213-b285-e97b16b023a7",
+        "kind": "song_variant",
+        "primaryWorkId": "2d13791e-7502-566d-b475-1213822f7b25",
+        "title": "幸福の国",
+        "displayCredit": "幸祜 & ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=St-XQkN7xkc",
+      "mediaId": "e586ae28-6eea-5681-bae1-08bbad2ccbbd",
+      "mediaUrl": "https://www.youtube.com/watch?v=St-XQkN7xkc",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "mayth"
+        },
+        {
+          "role": "動画",
+          "name": "chaosgroove"
+        },
+        {
+          "role": "Mix",
+          "name": "イヨ"
+        }
+      ],
+      "sourceIds": [
+        "S-480"
+      ],
+      "sourceBatch": "B056 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b056-96hA1bWv4MQ-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "a50dc698-45c1-4a68-8128-aec131709456",
+        "kind": "song_variant",
+        "primaryWorkId": "3b7fc170-d2d3-5da6-85fd-1a56f3ecfa71",
+        "title": "プラチナ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=96hA1bWv4MQ",
+      "mediaId": "4f465af6-8eb8-5949-b541-3c66260ef5bd",
+      "mediaUrl": "https://www.youtube.com/watch?v=96hA1bWv4MQ",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "木澄 玲生"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-481"
+      ],
+      "sourceBatch": "B056 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b056-nzqS65lJuw4-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "020aed90-c012-4dca-a155-ac768df0f93c",
+        "kind": "song_variant",
+        "primaryWorkId": "f3eee429-930b-59b2-ab10-3086fb28f183",
+        "title": "Loveit?",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=nzqS65lJuw4",
+      "mediaId": "d3bd0728-0689-5d7e-a07b-b9f1328b71b8",
+      "mediaUrl": "https://www.youtube.com/watch?v=nzqS65lJuw4",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "適当緑"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-482"
+      ],
+      "sourceBatch": "B056 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b056-FHKoyz3ydYs-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "dd334b1f-85f9-4478-8797-5e5d406f9309",
+        "kind": "song_variant",
+        "primaryWorkId": "0602a4dd-77bb-5e6c-807c-5afd8613643c",
+        "title": "paranoia",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=FHKoyz3ydYs",
+      "mediaId": "5e373fa5-b2e1-5495-8c0c-58ea4769e9fd",
+      "mediaUrl": "https://www.youtube.com/watch?v=FHKoyz3ydYs",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "𝙍𝘼𝙄𝘿"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-483"
+      ],
+      "sourceBatch": "B056 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b057-q9jXzLseYeE-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "ad4ccfaf-6bee-448f-b1c3-d0b410746993",
+        "kind": "song_variant",
+        "primaryWorkId": "cf0b04c2-3c30-5135-a9b6-5c260728332b",
+        "title": "人マニア",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=q9jXzLseYeE",
+      "mediaId": "4a403fdb-07bb-5065-a97e-f6b5217fa53e",
+      "mediaUrl": "https://www.youtube.com/watch?v=q9jXzLseYeE",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "hover 052m"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-484"
+      ],
+      "sourceBatch": "B057 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b057-dLNEPT1LZAU-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "af62c2cc-bf22-448b-9cf5-5bac2e03dbf7",
+        "kind": "song_variant",
+        "primaryWorkId": "4889fd58-2d91-5f80-a64e-d757ec0b00f9",
+        "title": "meLIE",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=dLNEPT1LZAU",
+      "mediaId": "cd017b95-113e-5286-a6dc-a38988546d28",
+      "mediaUrl": "https://www.youtube.com/watch?v=dLNEPT1LZAU",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "でん"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-485"
+      ],
+      "sourceBatch": "B057 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b057-wthLnz9lPJU-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "7b10cdfd-c0fe-465b-aa61-047fbe9229c8",
+        "kind": "song_variant",
+        "primaryWorkId": "b0955886-1e88-5bad-b184-d9ced81fa95a",
+        "title": "スイートマジック",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=wthLnz9lPJU",
+      "mediaId": "30628cac-1f59-5f8d-b497-ebc286ee1df1",
+      "mediaUrl": "https://www.youtube.com/watch?v=wthLnz9lPJU",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "orie"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-486"
+      ],
+      "sourceBatch": "B057 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b057-vFcyGj-rG34-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "2f69ed17-a23b-4eb8-a1a6-007428e88c8d",
+        "kind": "song_variant",
+        "primaryWorkId": "9135d9e0-30df-50b8-9dbe-f31371ec1616",
+        "title": "Who?",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=vFcyGj-rG34",
+      "mediaId": "72d90d3e-34fe-570a-bcc6-b1a2475ac077",
+      "mediaUrl": "https://www.youtube.com/watch?v=vFcyGj-rG34",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "shirone"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-487"
+      ],
+      "sourceBatch": "B057 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b057-LkQIMiZrl6s-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "f08c3d7b-00a5-43fb-8a00-7451a1a8ace7",
+        "kind": "song_variant",
+        "primaryWorkId": "0872f32d-76d2-519c-a8b2-cc6c6730a2d8",
+        "title": "傀儡阿修羅",
+        "displayCredit": "ヰ世界情緒 feat. 星界",
+        "singerIds": [
+          "1867981b-c3c0-551b-9337-a8df05385348",
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=LkQIMiZrl6s",
+      "mediaId": "00b31780-0d2f-5b77-86c2-ecb465185ad4",
+      "mediaUrl": "https://www.youtube.com/watch?v=LkQIMiZrl6s",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "△○□×"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-488"
+      ],
+      "sourceBatch": "B057 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b057-F8qTDq9Uphk-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "bf0055d9-5487-4ab4-ba9f-f12fcf355e21",
+        "kind": "song_variant",
+        "primaryWorkId": "439e782e-8a77-5ec1-b451-607bf466d5ff",
+        "title": "しあわせ",
+        "displayCredit": "ヰ世界情緒 feat. 星界",
+        "singerIds": [
+          "1867981b-c3c0-551b-9337-a8df05385348",
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=F8qTDq9Uphk",
+      "mediaId": "a9fcba8c-91ff-5bae-81d4-d35d850beeaf",
+      "mediaUrl": "https://www.youtube.com/watch?v=F8qTDq9Uphk",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "△○□×"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-489"
+      ],
+      "sourceBatch": "B057 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b057-AUJA-4NxJJ4-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "14b8fd93-0a15-4fde-ad74-511b00223303",
+        "kind": "song_variant",
+        "primaryWorkId": "28d4127d-8265-5352-ab8c-d6304a534784",
+        "title": "お行儀よくね",
+        "displayCredit": "ヰ世界情緒 feat. 星界",
+        "singerIds": [
+          "1867981b-c3c0-551b-9337-a8df05385348",
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=AUJA-4NxJJ4",
+      "mediaId": "6244dd7e-52ef-5ed1-bb74-063461df6fb1",
+      "mediaUrl": "https://www.youtube.com/watch?v=AUJA-4NxJJ4",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "△○□×"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-490"
+      ],
+      "sourceBatch": "B057 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b057-pyKqA7VTalo-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "364df801-b656-4862-910e-87953d9bd670",
+        "kind": "song_variant",
+        "primaryWorkId": "f85e4b9b-abf0-5fa3-ba62-86854320635e",
+        "title": "眠りゆく芽吹き",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=pyKqA7VTalo",
+      "mediaId": "8652e469-f3fa-58fa-8bc7-e681f458288d",
+      "mediaUrl": "https://www.youtube.com/watch?v=pyKqA7VTalo",
+      "credits": [
+        {
+          "role": "Director",
+          "name": "koshi-kun"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kentaro Iwaki (THINKR)"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi (THINKR)"
+        },
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        },
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceIds": [
+        "S-491"
+      ],
+      "sourceBatch": "B057 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b058-jJM4CU0zR8k-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "3ed74400-9d3e-47e0-9931-75107c732ce5",
+        "kind": "song_variant",
+        "primaryWorkId": "f6296247-e3e5-5e44-9f9e-96a65e09922f",
+        "title": "異星にいこうね",
+        "displayCredit": "ヰ世界情緒×星界",
+        "singerIds": [
+          "1867981b-c3c0-551b-9337-a8df05385348",
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=jJM4CU0zR8k",
+      "mediaId": "6c88cb2e-9de6-5565-93d4-393903ad2070",
+      "mediaUrl": "https://www.youtube.com/watch?v=jJM4CU0zR8k",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "△○□×"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-492"
+      ],
+      "sourceBatch": "B058 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b058-U7hmAr1lkBY-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "7219aebf-21f6-4dea-9d6e-94087e53f367",
+        "kind": "song_variant",
+        "primaryWorkId": "a91ecf13-e111-5013-8e73-c4ac5a1a7064",
+        "title": "とこしずめ",
+        "displayCredit": "ヰ世界情緒 feat. 星界",
+        "singerIds": [
+          "1867981b-c3c0-551b-9337-a8df05385348",
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=U7hmAr1lkBY",
+      "mediaId": "57403050-a955-50e1-bde0-767e7e1ba7b9",
+      "mediaUrl": "https://www.youtube.com/watch?v=U7hmAr1lkBY",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "△○□×"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-493"
+      ],
+      "sourceBatch": "B058 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b058-kPEP_-hPiRE-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "eb13a819-598e-4eaa-b612-f45ebd44727e",
+        "kind": "song_variant",
+        "primaryWorkId": "ab6cd659-165e-5dd5-8c81-d0ca9cdc97cc",
+        "title": "回想",
+        "displayCredit": "ヰ世界情緒 feat. 星界",
+        "singerIds": [
+          "1867981b-c3c0-551b-9337-a8df05385348",
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=kPEP_-hPiRE",
+      "mediaId": "eaba5cd6-e056-525d-b31f-0f8c00010015",
+      "mediaUrl": "https://www.youtube.com/watch?v=kPEP_-hPiRE",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "△○□×"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-494"
+      ],
+      "sourceBatch": "B058 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b058-nSHH49_7bTw-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "72a6a25d-99b1-4119-8651-8dca449c2d0c",
+        "kind": "song_variant",
+        "primaryWorkId": "f52180ca-5419-51ef-8528-6fbfab7029ad",
+        "title": "撫でんな",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=nSHH49_7bTw",
+      "mediaId": "f284e201-7e75-5ad1-94b4-26f27f235df2",
+      "mediaUrl": "https://www.youtube.com/watch?v=nSHH49_7bTw",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "木澄 玲生"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-495"
+      ],
+      "sourceBatch": "B058 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b058-zp3eEe-H0w4-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "01299816-999f-47a8-b507-5b7b2c409758",
+        "kind": "song_variant",
+        "primaryWorkId": "f577e176-cee0-5579-8f55-f2d560b49fd5",
+        "title": "レイニーブーツ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=zp3eEe-H0w4",
+      "mediaId": "c0eb675f-a7bd-5b42-aeef-9b8ea39ed6f4",
+      "mediaUrl": "https://www.youtube.com/watch?v=zp3eEe-H0w4",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "つめたい"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-496"
+      ],
+      "sourceBatch": "B058 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b058-z1f5WiGj5OM-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "9bf8be6c-65c4-4c9e-a695-3656d72af00f",
+        "kind": "song_variant",
+        "primaryWorkId": "76f5ddf5-6648-575b-afd7-4aaff54051da",
+        "title": "甘美な無法",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=z1f5WiGj5OM",
+      "mediaId": "ac3f92ce-dc45-591b-a0ca-4bae96765531",
+      "mediaUrl": "https://www.youtube.com/watch?v=z1f5WiGj5OM",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "しまぐち ニケ"
+        },
+        {
+          "role": "Mix",
+          "name": "Kanpyomaki"
+        }
+      ],
+      "sourceIds": [
+        "S-497"
+      ],
+      "sourceBatch": "B058 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b058-Lfu-ilvERPI-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "d3b2d2b5-d23f-44f6-aab4-d582496b648c",
+        "kind": "song_variant",
+        "primaryWorkId": "a0b672af-dd9c-555b-842e-3ad196c19f02",
+        "title": "アイデンティティ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=Lfu-ilvERPI",
+      "mediaId": "545dc279-ef88-5537-8a45-32c3b4b0da89",
+      "mediaUrl": "https://www.youtube.com/watch?v=Lfu-ilvERPI",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "米室"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-498"
+      ],
+      "sourceBatch": "B058 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b058-4METyCWkrcU-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "2f0d508a-093c-4297-bc89-b2280090d037",
+        "kind": "song_variant",
+        "primaryWorkId": "bb76de01-a99c-5b4c-94ea-f77823a8e9c2",
+        "title": "運命",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=4METyCWkrcU",
+      "mediaId": "9fb54a62-1b47-5eb4-b74a-06038cf79f50",
+      "mediaUrl": "https://www.youtube.com/watch?v=4METyCWkrcU",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "トキキ"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-499"
+      ],
+      "sourceBatch": "B058 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b059-zeGvhJbTm-0-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "75406f0c-c018-47b6-bdbe-66a856311b9e",
+        "kind": "song_variant",
+        "primaryWorkId": "93e0a7ba-9dca-5c87-bd57-af2f473d5fdc",
+        "title": "泡沫",
+        "displayCredit": "ヰ世界情緒 × 理芽",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=zeGvhJbTm-0",
+      "mediaId": "5e4d1fe0-15f7-5051-881b-d4f5062e9d9c",
+      "mediaUrl": "https://www.youtube.com/watch?v=zeGvhJbTm-0",
+      "credits": [
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceIds": [
+        "S-500"
+      ],
+      "sourceBatch": "B059 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b059-SScu2SnH42w-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "412803d2-f825-43bc-a86d-ccd23f7c38ca",
+        "kind": "song_variant",
+        "primaryWorkId": "2c9a2e17-5bf6-5308-91c6-1cc1dd85ff91",
+        "title": "アンノウン・マザーグース",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=SScu2SnH42w",
+      "mediaId": "a7e067fc-594d-520f-8e76-91ed9f2a13c4",
+      "mediaUrl": "https://www.youtube.com/watch?v=SScu2SnH42w",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "ヰ世界情緒"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-501"
+      ],
+      "sourceBatch": "B059 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b059-39zwv0_Lreo-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "e6b6b0c0-14b8-4b7d-9e76-8ca247b6109b",
+        "kind": "song_variant",
+        "primaryWorkId": "60f3078a-0020-5d40-9595-1dd512a5e0af",
+        "title": "エリカの憂い",
+        "displayCredit": "ヰ世界情緒 feat.星界",
+        "singerIds": [
+          "1867981b-c3c0-551b-9337-a8df05385348",
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=39zwv0_Lreo",
+      "mediaId": "535a5811-0d30-56c1-9ea0-36ff095451ce",
+      "mediaUrl": "https://www.youtube.com/watch?v=39zwv0_Lreo",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "△○□×"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-502"
+      ],
+      "sourceBatch": "B059 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b059-ItZIZGALQVo-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "efc2f37a-3f30-4887-8de2-34b8dd030d93",
+        "kind": "song_variant",
+        "primaryWorkId": "3b115f13-12c3-5362-91aa-87f6be2e30d2",
+        "title": "Fairytale,",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=ItZIZGALQVo",
+      "mediaId": "3b2130e8-ec06-5ae8-9265-b15234a8f775",
+      "mediaUrl": "https://www.youtube.com/watch?v=ItZIZGALQVo",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "nonokuro"
+        },
+        {
+          "role": "Mix",
+          "name": "Kanpyomaki"
+        }
+      ],
+      "sourceIds": [
+        "S-503"
+      ],
+      "sourceBatch": "B059 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b059-eHYv234gPso-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "a0e2ab03-6204-40e6-9848-454a59aff6e3",
+        "kind": "song_variant",
+        "primaryWorkId": "58bc4777-25f7-5b6f-b0a9-934e6755d13c",
+        "title": "お呪い",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=eHYv234gPso",
+      "mediaId": "8cab9e2b-1307-55e0-b862-b65566d7cbe5",
+      "mediaUrl": "https://www.youtube.com/watch?v=eHYv234gPso",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "shirone"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-504"
+      ],
+      "sourceBatch": "B059 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b059-alIYUZ_JJYE-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "001c7a3a-4d72-4881-9396-9d06930ea486",
+        "kind": "song_variant",
+        "primaryWorkId": "58b73fbf-46ae-5a0f-805d-ccb4e700056b",
+        "title": "ブラック★ロックシューター",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=alIYUZ_JJYE",
+      "mediaId": "594b15a5-dd50-5697-b072-6c686e01cb69",
+      "mediaUrl": "https://www.youtube.com/watch?v=alIYUZ_JJYE",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "河底9"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-505"
+      ],
+      "sourceBatch": "B059 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b059-hri--LJMCiA-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "17249e1d-37ff-4752-bb25-6cf11617864f",
+        "kind": "song_variant",
+        "primaryWorkId": "04fabdcb-b674-5e4a-92b0-9858fe2509bc",
+        "title": "メリクリ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=hri--LJMCiA",
+      "mediaId": "ce808c53-a758-52c5-98e8-339850f5c773",
+      "mediaUrl": "https://www.youtube.com/watch?v=hri--LJMCiA",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "一色"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-506"
+      ],
+      "sourceBatch": "B059 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b060-kKd5Gi08H5s-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "a4e71ff7-1c06-4d92-9213-c88c52720c82",
+        "kind": "song_variant",
+        "primaryWorkId": "256052cc-45b4-53c5-9517-56f270b6bfe7",
+        "title": "システムズコア",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=kKd5Gi08H5s",
+      "mediaId": "9850154a-c18b-5369-b06e-c12d42d9ba5c",
+      "mediaUrl": "https://www.youtube.com/watch?v=kKd5Gi08H5s",
+      "credits": [
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        },
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceIds": [
+        "S-507"
+      ],
+      "sourceBatch": "B060 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b060-NWu9EozfR6M-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "386c21cf-c706-4fe3-8d39-b1b59a9ec336",
+        "kind": "song_variant",
+        "primaryWorkId": "79154cb8-2990-5070-a15d-3d106cefe675",
+        "title": "みらいのかたち",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=NWu9EozfR6M",
+      "mediaId": "e3c83d45-da7f-5ad1-9121-9047f97b48cf",
+      "mediaUrl": "https://www.youtube.com/watch?v=NWu9EozfR6M",
+      "credits": [
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        },
+        {
+          "role": "Costume Design",
+          "name": "ヰ世界情緒"
+        },
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceIds": [
+        "S-508"
+      ],
+      "sourceBatch": "B060 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b060-0xP_CywwW94-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "ca21fd15-34e8-4037-961e-706831816e9a",
+        "kind": "song_variant",
+        "primaryWorkId": "fcb27fc5-478d-55c2-a84e-614e7623141f",
+        "title": "神話",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.foriio.com/MARUICHI/wk_Ab3noedQ14kcKHXtuxrhMEiFIiqeZGKOuHX3BGnM2HTv3rzwnA",
+      "mediaId": "c2ce1b74-faf1-5b22-a494-85358657be0a",
+      "mediaUrl": "https://www.youtube.com/watch?v=0xP_CywwW94",
+      "credits": [
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceIds": [
+        "S-158"
+      ],
+      "sourceBatch": "B060 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b060-6rOruuCxY7k-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "8101be2c-47f4-4166-8778-a6428539521a",
+        "kind": "song_variant",
+        "primaryWorkId": "e8e33858-753f-5b07-8822-879633783522",
+        "title": "魔女(真)",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=6rOruuCxY7k",
+      "mediaId": "59f66562-1a92-51c6-90f7-90f59d813ef8",
+      "mediaUrl": "https://www.youtube.com/watch?v=6rOruuCxY7k",
+      "credits": [
+        {
+          "role": "Arranged",
+          "name": "rionos"
+        }
+      ],
+      "sourceIds": [
+        "S-509"
+      ],
+      "sourceBatch": "B060 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b061-gJnOOfMJyqk-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "98b38ff9-de4b-4db7-887f-b5c1059f56ed",
+        "kind": "song_variant",
+        "primaryWorkId": "16997dee-ebcd-57ae-a936-2cabe89ec33c",
+        "title": "深海のフレイム",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=gJnOOfMJyqk",
+      "mediaId": "4f5d96f0-8a52-5dcb-8ffa-eacfa9d5c508",
+      "mediaUrl": "https://www.youtube.com/watch?v=gJnOOfMJyqk",
+      "credits": [
+        {
+          "role": "Violin",
+          "name": "NATSUMI"
+        },
+        {
+          "role": "Bass",
+          "name": "垣下祐紀"
+        },
+        {
+          "role": "Guitar",
+          "name": "橘井健一"
+        },
+        {
+          "role": "Piano",
+          "name": "朝比奈健人"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        },
+        {
+          "role": "ディレクション",
+          "name": "みずみ(bees inc.)"
+        },
+        {
+          "role": "ディレクション",
+          "name": "よんさん(Karure)"
+        },
+        {
+          "role": "コンテ",
+          "name": "みずみ(bees inc.)"
+        },
+        {
+          "role": "イラスト",
+          "name": "猫山桜梨(bees inc.)"
+        },
+        {
+          "role": "イラスト",
+          "name": "8root5.mp4(bees inc.)"
+        },
+        {
+          "role": "イラスト",
+          "name": "鈴ki"
+        },
+        {
+          "role": "イラスト",
+          "name": "ひがしの(bees inc.)"
+        },
+        {
+          "role": "イラスト",
+          "name": "みずみ(bees inc.)"
+        },
+        {
+          "role": "美術",
+          "name": "シズノシズム"
+        },
+        {
+          "role": "CG",
+          "name": "よんさん(Karure)"
+        },
+        {
+          "role": "CG",
+          "name": "Sabiasagi(Karure)"
+        },
+        {
+          "role": "デザイン・モーション",
+          "name": "秋(Karure)"
+        },
+        {
+          "role": "デザイン・モーション",
+          "name": "H2O(Karure)"
+        },
+        {
+          "role": "コンポジット",
+          "name": "ゆうみ(Karure)"
+        },
+        {
+          "role": "コンポジット",
+          "name": "よんさん(Karure)"
+        },
+        {
+          "role": "プロダクションマネージャー",
+          "name": "YAMAAD(bees inc.)"
+        },
+        {
+          "role": "ロゴデザイン",
+          "name": "本忠学"
+        }
+      ],
+      "sourceIds": [
+        "S-510"
+      ],
+      "sourceBatch": "B061 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b061-210ewj_MOD8-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "ccb53089-bcad-4ad4-b157-7a77b267aa60",
+        "kind": "song_variant",
+        "primaryWorkId": "60635e39-1165-5fac-b000-551140ad215c",
+        "title": "FARAWAY",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=210ewj_MOD8",
+      "mediaId": "38974a12-4ce7-54d7-8d78-a6b2c7f3373b",
+      "mediaUrl": "https://www.youtube.com/watch?v=210ewj_MOD8",
+      "credits": [
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        },
+        {
+          "role": "アニメーション",
+          "name": "my0nruri（bees inc.）"
+        },
+        {
+          "role": "アニメーションアシスタント",
+          "name": "ネコウヤ（bees inc.）"
+        },
+        {
+          "role": "ロゴ",
+          "name": "SELDO"
+        },
+        {
+          "role": "映像",
+          "name": "八重幸（PHASE STUDIO）"
+        }
+      ],
+      "sourceIds": [
+        "S-511"
+      ],
+      "sourceBatch": "B061 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b061-Xj3Frg6BpEA-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "435b5ac2-a7c4-4293-b7cf-2f599280de3a",
+        "kind": "song_variant",
+        "primaryWorkId": "23cf4f22-6163-54b5-a731-58b424e7b9a5",
+        "title": "変わらないもの",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=Xj3Frg6BpEA",
+      "mediaId": "29af40c0-f32b-5658-a9c7-85ab2470be10",
+      "mediaUrl": "https://www.youtube.com/watch?v=Xj3Frg6BpEA",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "ヰ世界情緒"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-512"
+      ],
+      "sourceBatch": "B061 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b061-bsxlKiCi5XQ-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "7e56d092-2303-438b-9bbd-084ee022d578",
+        "kind": "song_variant",
+        "primaryWorkId": "54216864-1eba-550e-bfba-26d7a36a2e53",
+        "title": "猫の食卓",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=bsxlKiCi5XQ",
+      "mediaId": "ecee0e3f-029c-5571-a677-eae2b0f919db",
+      "mediaUrl": "https://www.youtube.com/watch?v=bsxlKiCi5XQ",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "telu"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-513"
+      ],
+      "sourceBatch": "B061 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b061-vQ0dxDthsbw-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "99dc72a8-fcdb-4cfb-845d-663360fa8230",
+        "kind": "song_variant",
+        "primaryWorkId": "d35ff772-2381-51a9-a40a-17c6b3ac1558",
+        "title": "パノプティコン",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=vQ0dxDthsbw",
+      "mediaId": "0a6eadd9-2ea1-523b-bb31-b1552aec41fe",
+      "mediaUrl": "https://www.youtube.com/watch?v=vQ0dxDthsbw",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "ヰ世界情緒"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-514"
+      ],
+      "sourceBatch": "B061 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b061-7i_j8T-ttKc-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "8101be2c-47f4-4166-8778-a6428539521a",
+        "kind": "song_variant",
+        "primaryWorkId": "e8e33858-753f-5b07-8822-879633783522",
+        "title": "魔女(真)",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=7i_j8T-ttKc",
+      "mediaId": "ccbebba9-4c19-56e9-bb82-532381539090",
+      "mediaUrl": "https://www.youtube.com/watch?v=7i_j8T-ttKc",
+      "credits": [
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceIds": [
+        "S-515"
+      ],
+      "sourceBatch": "B061 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b061-FKKMKbkceCA-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "8101be2c-47f4-4166-8778-a6428539521a",
+        "kind": "song_variant",
+        "primaryWorkId": "e8e33858-753f-5b07-8822-879633783522",
+        "title": "魔女(真)",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=FKKMKbkceCA",
+      "mediaId": "9f754a4e-e29b-5505-a783-451e24681d7f",
+      "mediaUrl": "https://www.youtube.com/watch?v=FKKMKbkceCA",
+      "credits": [
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceIds": [
+        "S-516"
+      ],
+      "sourceBatch": "B061 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b061-wvsRmdvhiVc-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "4ed201ff-7b5d-4c99-b429-a7ec515353bb",
+        "kind": "song_variant",
+        "primaryWorkId": "76f636da-5052-5fd6-a607-06564613e8fc",
+        "title": "欲望",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=wvsRmdvhiVc",
+      "mediaId": "7c93ceec-6f7f-50cd-86a6-977f790fc35c",
+      "mediaUrl": "https://www.youtube.com/watch?v=wvsRmdvhiVc",
+      "credits": [
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceIds": [
+        "S-517"
+      ],
+      "sourceBatch": "B061 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b063-9lxqrgViCXk-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "8e455052-c9e4-492e-923c-644f8287ccf2",
+        "kind": "song_variant",
+        "primaryWorkId": "73c47810-c809-5e51-b340-0351146786e5",
+        "title": "アンビバレント",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=9lxqrgViCXk",
+      "mediaId": "41d01a54-ab99-5109-88db-7dfbccdb744b",
+      "mediaUrl": "https://www.youtube.com/watch?v=9lxqrgViCXk",
+      "credits": [
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        },
+        {
+          "role": "Mastering",
+          "name": "山崎翼 (Flugel Mastering)"
+        }
+      ],
+      "sourceIds": [
+        "S-518",
+        "S-519"
+      ],
+      "sourceBatch": "B063 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b063-poIYfoFP3Ec-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "cbf5f682-886e-49f8-93ae-e25ae31c6493",
+        "kind": "song_variant",
+        "primaryWorkId": "9faddd4f-8ba5-53b5-8ad5-cb9b11dc180d",
+        "title": "モシモノセカイ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=poIYfoFP3Ec",
+      "mediaId": "6f89c839-aa83-5072-96ff-6184f6a1c53f",
+      "mediaUrl": "https://www.youtube.com/watch?v=poIYfoFP3Ec",
+      "credits": [
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        },
+        {
+          "role": "Choreography",
+          "name": "ARAKIYUKA inc."
+        },
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceIds": [
+        "S-520"
+      ],
+      "sourceBatch": "B063 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b063-m9WjPbKis0U-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "57664785-b4a1-4615-9868-38acc614320f",
+        "kind": "song_variant",
+        "primaryWorkId": "678c2d1f-b445-53e0-a852-ee8f564e7bb4",
+        "title": "描き続けた君へ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=m9WjPbKis0U",
+      "mediaId": "54bf5588-711e-5956-be90-7bb13ce58090",
+      "mediaUrl": "https://www.youtube.com/watch?v=m9WjPbKis0U",
+      "credits": [
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        },
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceIds": [
+        "S-521"
+      ],
+      "sourceBatch": "B063 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b063-X0BykQ-ljKE-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "b01f1865-7ea0-4502-8abd-c08e56e6a016",
+        "kind": "song_variant",
+        "primaryWorkId": "411de527-75ea-556e-bb15-ec13bc593c4e",
+        "title": "エンドロール",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=X0BykQ-ljKE",
+      "mediaId": "03a3337b-29da-56ca-b373-50bed440cd7b",
+      "mediaUrl": "https://www.youtube.com/watch?v=X0BykQ-ljKE",
+      "credits": [
+        {
+          "role": "CG制作協力",
+          "name": "ぬヴェントス"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-522"
+      ],
+      "sourceBatch": "B063 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b063-k0ByO3gNCew-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "6718b3f5-8392-45f3-8e98-ddc0245b252d",
+        "kind": "song_variant",
+        "primaryWorkId": "6661891b-63c2-5484-ab16-fddef1ff5889",
+        "title": "白昼夢",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=k0ByO3gNCew",
+      "mediaId": "90f3655c-838d-5721-9392-c17acae78654",
+      "mediaUrl": "https://www.youtube.com/watch?v=k0ByO3gNCew",
+      "credits": [
+        {
+          "role": "イラスト",
+          "name": "orie"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-523"
+      ],
+      "sourceBatch": "B063 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
+    },
+    {
+      "key": "chat-b063-wEgJjIPnbwg-staff",
+      "status": "active",
+      "checkedOn": "2026-11-05",
+      "entry": {
+        "entryId": "a4ec7871-43d8-48f1-92d9-0a2d9b2b777f",
+        "kind": "song_variant",
+        "primaryWorkId": "dca0eae6-bf49-51e5-8823-d027fab1748d",
+        "title": "morning haze",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=wEgJjIPnbwg",
+      "mediaId": "04e901c2-2da9-5171-a906-7880ee9fb406",
+      "mediaUrl": "https://www.youtube.com/watch?v=wEgJjIPnbwg",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "kera"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceIds": [
+        "S-524"
+      ],
+      "sourceBatch": "B063 r001",
+      "scopeNote": "Only the exact clip/MV and its explicitly attributed audio. Show-wide roster and anonymous contributor labels are kept separately in the intake, not copied to every song."
     }
   ]
 }
