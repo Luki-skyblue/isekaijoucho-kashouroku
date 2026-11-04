@@ -17,7 +17,9 @@ export const SECTION_LABELS=Object.freeze({releases:'収録作品'});
 
 export const NAME_FIELDS=Object.freeze({song:'楽曲名',live:'公演名',release:'作品名',person:'名前・別名'});
 
-export const INFO_STATES=Object.freeze({pending:'準備中',notFound:'見つかっていません。',notApplicable:'該当なし'});
+// Missing data has not yet been researched; an unavailable feature may still
+// say 準備中. Wording alone never marks research as completed.
+export const INFO_STATES=Object.freeze({pending:'未調査',notFound:'見つかっていません。',notApplicable:'該当なし'});
 
 // An empty search result is not a finding that research found no information.
 export const EMPTY_RESULTS=Object.freeze({

@@ -1,4 +1,4 @@
-import {PAGE_LABELS,EMPTY_RESULTS} from '@/lib/ui-copy.mjs';
+import {PAGE_LABELS,EMPTY_RESULTS,INFO_STATES} from '@/lib/ui-copy.mjs';
 import Link from 'next/link';
 import {RecordArtwork} from './record-artwork';
 import type {CatalogEntryCard} from '@/lib/catalog-entry-api';
@@ -41,7 +41,7 @@ export function CatalogIndex({items,total,query,limit,singerChoices=SINGERS,cred
  </ListSort><nav className="view-switch" aria-label="一覧の表示形式"><span>VIEW</span><Link href={catalogHref(query,{view:'list'})} aria-current={query.view==='list'?'page':undefined}>リスト</Link><Link href={catalogHref(query,{view:'grid'})} aria-current={query.view==='grid'?'page':undefined}>グリッド</Link></nav></div></div>
  {items.length?<div className={`records records-${query.view}`}>{items.map(x=><Link className="record" href={catalogEntryHref(x.entryId,returnTo)} key={x.entryId}>
  <RecordArtwork url={explicitThumbnail({...x})} urls={x.thumbnailUrls}/>
- <span className="record-copy"><span className="record-title">{x.title}</span>{x.displayCredit&&<span className="record-meta">{x.displayCredit}</span>}{query.sort.startsWith('first_')&&<span className="record-meta">初出：{x.firstAppearanceDate?displayDate(x.firstAppearanceDate):'準備中'}</span>}{x.kind==='medley'&&<span className="catalog-meta-kind">メドレー</span>}</span>
+ <span className="record-copy"><span className="record-title">{x.title}</span>{x.displayCredit&&<span className="record-meta">{x.displayCredit}</span>}{query.sort.startsWith('first_')&&<span className="record-meta">初出：{x.firstAppearanceDate?displayDate(x.firstAppearanceDate):INFO_STATES.pending}</span>}{x.kind==='medley'&&<span className="catalog-meta-kind">メドレー</span>}</span>
  <span className="record-arrow" aria-hidden="true">↗</span></Link>)}</div>:<Empty>{EMPTY_RESULTS.songs}</Empty>}
  {pages>1&&<nav className="pages" aria-label="ページ送り">{query.page>1&&<Link href={catalogHref(query,{page:query.page-1})}>← 前のページ</Link>}<span>{query.page} / {pages} ページ</span>{query.page<pages&&<Link href={catalogHref(query,{page:query.page+1})}>次のページ →</Link>}</nav>}
  </>;
