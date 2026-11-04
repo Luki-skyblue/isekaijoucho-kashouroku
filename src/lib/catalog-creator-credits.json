@@ -268,6 +268,52 @@
         "https://www.universal-music.co.jp/ado/news/2023-08-29/"
       ],
       "scopeNote": "Exact existing credit wording and roles retained; no verification-state or arrangement inheritance change."
+    },
+    {
+      "key": "chat-b053-aika-joint-lyricists",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "17c3218c-95c5-46ef-8fff-b4fa33452971",
+        "kind": "song_variant",
+        "primaryWorkId": "12662704-03c1-572f-a6fd-ce136ccea0f5",
+        "title": "あいかやまいか",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "rawName": "samayuzame×mayrock",
+      "contexts": [
+        {
+          "role": "lyricist",
+          "scopes": [
+            "work",
+            "original"
+          ]
+        }
+      ],
+      "parts": [
+        {
+          "text": "samayuzame",
+          "entityId": "57e1a5a3-d1e2-5c3f-ad73-22214792f369"
+        },
+        {
+          "text": "×"
+        },
+        {
+          "text": "mayrock",
+          "entityId": "6cad7a31-4f7c-52a5-b42a-ae08820f9fac"
+        }
+      ],
+      "sourceIds": [
+        "S-443"
+      ],
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=EeKxKt3sls4"
+      ],
+      "scopeNote": "Official description separately names both lyricists. Preserve the whole printed credit and expose its two existing/registered name identities; no inferred cover arrangement."
     }
   ]
 }

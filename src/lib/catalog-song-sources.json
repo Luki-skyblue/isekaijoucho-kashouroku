@@ -11707,6 +11707,920 @@
           "trackNumber": 15
         }
       ]
+    },
+    {
+      "key": "chat-b048-i9ApQA847dM-music",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "75406f0c-c018-47b6-bdbe-66a856311b9e",
+        "kind": "song_variant",
+        "primaryWorkId": "93e0a7ba-9dca-5c87-bd57-af2f473d5fdc",
+        "title": "泡沫",
+        "displayCredit": "ヰ世界情緒 × 理芽",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "廉"
+        ],
+        [
+          "work",
+          "composer",
+          "廉"
+        ],
+        [
+          "work",
+          "lyricist",
+          "廉"
+        ]
+      ],
+      "url": "https://www.youtube.com/watch?v=i9ApQA847dM",
+      "credits": {
+        "arranger": [
+          "廉"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      },
+      "sourceBatch": "B048 r002",
+      "sourceIds": [
+        "S-396"
+      ]
+    },
+    {
+      "key": "chat-b048-HpyoJ597oUU-music",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "762da09b-f9f5-4425-84df-0f0dfb6bf3c3",
+        "kind": "song_variant",
+        "primaryWorkId": "795da49b-f612-53a3-93ec-3d40b7c9ff7f",
+        "title": "暗闇",
+        "displayCredit": "花譜 × ヰ世界情緒",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "安宅秀紀"
+        ],
+        [
+          "work",
+          "composer",
+          "大沼パセリ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "大沼パセリ"
+        ]
+      ],
+      "url": "https://www.youtube.com/watch?v=HpyoJ597oUU",
+      "credits": {
+        "arranger": [
+          "安宅秀紀"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      },
+      "sourceBatch": "B048 r002",
+      "sourceIds": [
+        "S-398"
+      ]
+    },
+    {
+      "key": "chat-b048-sd6DTgsIbrs-music",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "14242993-9789-4def-8c02-3dbf6ac90b67",
+        "kind": "song_variant",
+        "primaryWorkId": "1f3cc792-3e04-5d60-8ebd-166eb8d1bc93",
+        "title": "不的",
+        "displayCredit": "理芽 × ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "笹川真生"
+        ],
+        [
+          "work",
+          "composer",
+          "笹川真生"
+        ],
+        [
+          "work",
+          "lyricist",
+          "笹川真生"
+        ]
+      ],
+      "url": "https://www.youtube.com/watch?v=sd6DTgsIbrs",
+      "credits": {
+        "arranger": [
+          "笹川真生"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      },
+      "sourceBatch": "B048 r002",
+      "sourceIds": [
+        "S-399"
+      ]
+    },
+    {
+      "key": "chat-b048-aJhvIQw96RI-music",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "5c887df7-99f5-4dec-b1d6-ba1a17b37261",
+        "kind": "song_variant",
+        "primaryWorkId": "2dfd1998-7afd-5e8b-b725-c077dbd9b0e1",
+        "title": "牢獄",
+        "displayCredit": "春猿火 × ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "平田義久"
+        ],
+        [
+          "work",
+          "composer",
+          "平田義久"
+        ],
+        [
+          "work",
+          "lyricist",
+          "平田義久 & Fra"
+        ]
+      ],
+      "url": "https://www.youtube.com/watch?v=aJhvIQw96RI",
+      "credits": {
+        "Rap詞": [
+          "Fra"
+        ],
+        "arranger": [
+          "平田義久"
+        ],
+        "lyricist": [
+          "平田義久"
+        ]
+      },
+      "creditScopes": {
+        "Rap詞": "work",
+        "arranger": "version",
+        "lyricist": "work"
+      },
+      "sourceBatch": "B048 r002",
+      "sourceIds": [
+        "S-401"
+      ],
+      "replaceExistingCredits": [
+        "lyricist"
+      ],
+      "metadata": {
+        "originalCredits": [
+          {
+            "role": "composer",
+            "name": "平田義久"
+          },
+          {
+            "role": "arranger",
+            "name": "平田義久"
+          },
+          {
+            "role": "lyricist",
+            "name": "平田義久"
+          },
+          {
+            "role": "Rap詞",
+            "name": "Fra"
+          }
+        ]
+      },
+      "metadataBasis": {
+        "originalCredits": [
+          {
+            "role": "lyricist",
+            "name": "平田義久 & Fra"
+          },
+          {
+            "role": "composer",
+            "name": "平田義久"
+          },
+          {
+            "role": "arranger",
+            "name": "平田義久"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-b048-_30dknX-UWE-music",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "f444568f-6f47-4e83-9bec-b710938924b4",
+        "kind": "song_variant",
+        "primaryWorkId": "15810889-4c93-5e78-95f0-4c738a04342d",
+        "title": "言霊",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.youtube.com/watch?v=_30dknX-UWE",
+      "credits": {
+        "arranger": [
+          "IORI KANZAKI"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      },
+      "sourceBatch": "B048 r002",
+      "sourceIds": [
+        "S-402"
+      ]
+    },
+    {
+      "key": "chat-b048-ar0nuMEBmfY-music",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "9591af7d-da4f-4eb1-b7d7-f03edd3e589f",
+        "kind": "song_variant",
+        "primaryWorkId": "b1a67792-0781-56af-b2e7-9f73e9ff9577",
+        "title": "共鳴",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "カンザキイオリ"
+        ],
+        [
+          "work",
+          "composer",
+          "カンザキイオリ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "カンザキイオリ"
+        ]
+      ],
+      "url": "https://www.youtube.com/watch?v=ar0nuMEBmfY",
+      "credits": {
+        "arranger": [
+          "IORI KANZAKI"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      },
+      "sourceBatch": "B048 r002",
+      "sourceIds": [
+        "S-403"
+      ]
+    },
+    {
+      "key": "chat-b050-eJUiS9YSuSM-music",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "2b26a4e8-6e2b-4973-8aa5-ee5d66e23bd0",
+        "kind": "song_variant",
+        "primaryWorkId": "62e9c9d8-db67-5666-9db6-9add020afa98",
+        "title": "未遂",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "Goat"
+        ],
+        [
+          "work",
+          "composer",
+          "Goat"
+        ],
+        [
+          "work",
+          "lyricist",
+          "Goat"
+        ]
+      ],
+      "url": "https://www.youtube.com/watch?v=eJUiS9YSuSM",
+      "credits": {
+        "arranger": [
+          "Goat"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      },
+      "sourceBatch": "B050 r001",
+      "sourceIds": [
+        "S-413"
+      ]
+    },
+    {
+      "key": "chat-b050-isRJHa-7QXE-music",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "dea5b2c0-edee-4ac6-b104-9e819bfd1f0d",
+        "kind": "song_variant",
+        "primaryWorkId": "5f0d7c18-3e07-58f0-88b0-b9b57baf73e9",
+        "title": "飛翔",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "笹川真生"
+        ],
+        [
+          "work",
+          "composer",
+          "笹川真生"
+        ],
+        [
+          "work",
+          "lyricist",
+          "笹川真生"
+        ]
+      ],
+      "url": "https://www.youtube.com/watch?v=isRJHa-7QXE",
+      "credits": {
+        "arranger": [
+          "笹川真生"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      },
+      "sourceBatch": "B050 r001",
+      "sourceIds": [
+        "S-415"
+      ]
+    },
+    {
+      "key": "chat-b049-vj7Gmv7FC-0-music",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "2a05f8bd-4353-49fe-87da-d69b1a35d2e9",
+        "kind": "song_variant",
+        "primaryWorkId": "aaf251d0-c51b-5167-8401-7214d93d8051",
+        "title": "変身",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "安宅秀紀"
+        ],
+        [
+          "work",
+          "composer",
+          "カンザキイオリ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "カンザキイオリ"
+        ]
+      ],
+      "url": "https://eizo100.jp/video/49798",
+      "credits": {
+        "arranger": [
+          "安宅秀紀"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      },
+      "sourceBatch": "B049 r001",
+      "sourceIds": [
+        "S-405"
+      ]
+    },
+    {
+      "key": "chat-b049-wGBXObhCThE-music",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "6e9916ed-656a-4250-b2a6-6bd682c96b77",
+        "kind": "song_variant",
+        "primaryWorkId": "8e16feeb-3e73-5b56-b0bb-69c14baf53d4",
+        "title": "輪廻",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "original",
+          "arranger",
+          "カンザキイオリ"
+        ],
+        [
+          "original",
+          "composer",
+          "カンザキイオリ"
+        ],
+        [
+          "original",
+          "lyricist",
+          "カンザキイオリ"
+        ],
+        [
+          "work",
+          "arranger",
+          "カンザキイオリ"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/v-w-p/976/",
+      "credits": {
+        "arranger": [
+          "カンザキイオリ"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      },
+      "sourceBatch": "B049 r001",
+      "sourceIds": [
+        "S-166"
+      ]
+    },
+    {
+      "key": "chat-b051-lAM3diipp7Y-music",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "45118e1c-d0f8-4bac-866e-fa62faf166b1",
+        "kind": "song_variant",
+        "primaryWorkId": "5ab3b234-b19b-5ddb-8ed2-4a451a308783",
+        "title": "同盟",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.youtube.com/watch?v=lAM3diipp7Y",
+      "credits": {
+        "arranger": [
+          "MEG (MEGMETAL)"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      },
+      "sourceBatch": "B051 r001",
+      "sourceIds": [
+        "S-417"
+      ]
+    },
+    {
+      "key": "chat-b051-Q97m911CsIM-music",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "728eb0b0-e880-4350-bed2-f3f834d607b4",
+        "kind": "song_variant",
+        "primaryWorkId": "9d3fb83d-e0b3-5b96-b347-75711308d94d",
+        "title": "玩具",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "カンザキイオリ"
+        ],
+        [
+          "work",
+          "composer",
+          "カンザキイオリ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "カンザキイオリ"
+        ]
+      ],
+      "url": "https://www.youtube.com/watch?v=Q97m911CsIM",
+      "credits": {
+        "arranger": [
+          "Iori Kanzaki"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      },
+      "sourceBatch": "B051 r001",
+      "sourceIds": [
+        "S-419"
+      ]
+    },
+    {
+      "key": "chat-b051-zY_ZF1UfSCk-music",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "13fbc57b-9b8f-4524-a8b7-1633e986bf6d",
+        "kind": "song_variant",
+        "primaryWorkId": "0d8f0274-e167-5ae2-b432-98e57623c360",
+        "title": "定命",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "宅見将典"
+        ],
+        [
+          "work",
+          "composer",
+          "カンザキイオリ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "カンザキイオリ"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/discography/v-w-p/2767/",
+      "credits": {
+        "arranger": [
+          "宅見将典"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      },
+      "sourceBatch": "B051 r001",
+      "sourceIds": [
+        "S-462"
+      ]
+    },
+    {
+      "key": "chat-b051-DxGTANfhBW8-music",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "81b5e1fa-6117-4406-878c-4f8ba7f23627",
+        "kind": "song_variant",
+        "primaryWorkId": "ae2bbe13-3978-541d-8abb-552222c16300",
+        "title": "祭壇",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://www.youtube.com/watch?v=DxGTANfhBW8",
+      "credits": {
+        "arranger": [
+          "Iori Kanzaki"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      },
+      "sourceBatch": "B051 r001",
+      "sourceIds": [
+        "S-421"
+      ]
+    },
+    {
+      "key": "chat-b051-mfM9N7dHNTE-music",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "8101be2c-47f4-4166-8778-a6428539521a",
+        "kind": "song_variant",
+        "primaryWorkId": "e8e33858-753f-5b07-8822-879633783522",
+        "title": "魔女(真)",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://kamitsubaki.jp/discography/v-w-p/2006/",
+      "credits": {
+        "arranger": [
+          "近藤芳樹"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      },
+      "sourceBatch": "B051 r001",
+      "sourceIds": [
+        "S-201"
+      ]
+    },
+    {
+      "key": "chat-b052-3WSrFlJ2Nsw-music",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "190ff112-91fb-4abc-a73d-2977f90fda54",
+        "kind": "song_variant",
+        "primaryWorkId": "f26abf7f-4c01-5e6b-889d-0312a2024a9a",
+        "title": "CALL",
+        "displayCredit": "春猿火×ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "大沼パセリ"
+        ],
+        [
+          "work",
+          "composer",
+          "大沼パセリ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "大沼パセリ"
+        ]
+      ],
+      "url": "https://www.youtube.com/watch?v=3WSrFlJ2Nsw",
+      "credits": {
+        "arranger": [
+          "大沼パセリ"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      },
+      "sourceBatch": "B052 r001",
+      "sourceIds": [
+        "S-426"
+      ]
+    },
+    {
+      "key": "chat-b052-6x3pXFwI21w-music",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "7a7dd78b-bf17-4b01-a33d-672f7ddce78c",
+        "kind": "song_variant",
+        "primaryWorkId": "c3dc4247-a522-5a11-8661-aa80140d07a7",
+        "title": "生存",
+        "displayCredit": "ヰ世界情緒 × 春猿火",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "安宅秀紀"
+        ],
+        [
+          "work",
+          "composer",
+          "大沼パセリ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "大沼パセリ"
+        ]
+      ],
+      "url": "https://piapro.jp/t/fbCn",
+      "credits": {
+        "arranger": [
+          "安宅秀紀"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      },
+      "sourceBatch": "B052 r001",
+      "sourceIds": [
+        "S-430"
+      ]
+    },
+    {
+      "key": "chat-b054-ZzDHtZSQBjU-music",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "9060df06-2367-4a19-822a-779986524a19",
+        "kind": "song_variant",
+        "primaryWorkId": "a35eee7d-760f-5bee-aba9-958ca58ad566",
+        "title": "誰か、海を。",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "菅野よう子"
+        ],
+        [
+          "work",
+          "composer",
+          "菅野よう子"
+        ],
+        [
+          "work",
+          "lyricist",
+          "青葉市子"
+        ]
+      ],
+      "url": "https://www.youtube.com/watch?v=ZzDHtZSQBjU",
+      "credits": {
+        "arranger": [
+          "Kevin",
+          "Sosuke Oikawa"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      },
+      "sourceBatch": "B054 r001",
+      "sourceIds": [
+        "S-453"
+      ]
+    },
+    {
+      "key": "chat-b054-LmaDRgdcwcY-music",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "b06a4bdd-57df-450f-aa26-b2f8863d6f75",
+        "kind": "song_variant",
+        "primaryWorkId": "c5215c24-2e5e-5941-9111-5c750c1f9a2d",
+        "title": "why, or why not",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "大嶋啓之"
+        ],
+        [
+          "work",
+          "composer",
+          "大嶋啓之"
+        ],
+        [
+          "work",
+          "lyricist",
+          "interface"
+        ]
+      ],
+      "url": "https://www.youtube.com/watch?v=LmaDRgdcwcY",
+      "credits": {
+        "arranger": [
+          "Kevin",
+          "Sosuke Oikawa"
+        ]
+      },
+      "creditScopes": {
+        "arranger": "version"
+      },
+      "sourceBatch": "B054 r001",
+      "sourceIds": [
+        "S-454"
+      ]
     }
   ],
   "mediaCredits": [
@@ -14300,6 +15214,4927 @@
         }
       ],
       "sourceId": "S-341"
+    },
+    {
+      "key": "chat-b046-1n7CIIzv8Wk-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "0d101860-d929-4f90-990b-153d16db70a5",
+        "kind": "song_variant",
+        "primaryWorkId": "b9dc6a58-5c53-5b1e-96f4-f9f5d7e7094a",
+        "title": "ETERNAL",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=1n7CIIzv8Wk",
+      "mediaId": "9763f741-10ae-5ed8-984d-5bb60d767cfa",
+      "mediaUrl": "https://www.youtube.com/watch?v=1n7CIIzv8Wk",
+      "credits": [
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        },
+        {
+          "role": "Director",
+          "name": "Kenji Kawasaki"
+        },
+        {
+          "role": "3DCG Artist",
+          "name": "Eiji Takada"
+        },
+        {
+          "role": "Cinematographer",
+          "name": "Hidehiko Kobayashi"
+        },
+        {
+          "role": "Camera Assistant",
+          "name": "Masaru Suzuki"
+        },
+        {
+          "role": "Title & Lyrics Design",
+          "name": "Bachi"
+        },
+        {
+          "role": "Cast",
+          "name": "Misa Kobayashi"
+        },
+        {
+          "role": "Stand-in",
+          "name": "Kokoro Uike"
+        },
+        {
+          "role": "Transport",
+          "name": "Satoshi Suzuki"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kentaro Iwaki (THINKR)"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Minako Soga (THINKR)"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Harumi Akada"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi (THINKR)"
+        },
+        {
+          "role": "Producer",
+          "name": "Yuzo Morota"
+        }
+      ],
+      "sourceId": "S-374",
+      "sourceBatch": "B046 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b046-llG2lX0_Sjg-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "c99af613-812d-4245-ae37-0f52eae925ea",
+        "kind": "song_variant",
+        "primaryWorkId": "bfe8c938-b25e-5def-93f6-455f8e2d2603",
+        "title": "ANGELIC",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=llG2lX0_Sjg",
+      "mediaId": "2c9a57f2-fd12-51b9-b005-1949ea173012",
+      "mediaUrl": "https://www.youtube.com/watch?v=llG2lX0_Sjg",
+      "credits": [
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        },
+        {
+          "role": "Director, Editor, Compositor",
+          "name": "Tomoya Eguchi（Cumuloworks, Inc.）"
+        },
+        {
+          "role": "Lead CG Artist",
+          "name": "Akito Osawa（Cumuloworks, Inc.）"
+        },
+        {
+          "role": "CG Artist",
+          "name": "Rei Kurashima（flapper3 Inc.）"
+        },
+        {
+          "role": "Character Technical, Groom Artist",
+          "name": "Lethe"
+        },
+        {
+          "role": "Character Motion Editor",
+          "name": "Go Akagi（THINKR）"
+        },
+        {
+          "role": "Assistant CG Animator",
+          "name": "Wotakichi（NIN）"
+        },
+        {
+          "role": "Rendering Manager",
+          "name": "michikachira"
+        },
+        {
+          "role": "Cinematographer",
+          "name": "Mine Kairi（MtsuMne）"
+        },
+        {
+          "role": "Assistant Cinematographer",
+          "name": "Natsuho Fujii"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kentaro Iwaki（THINKR）"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi（THINKR）"
+        },
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        },
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceId": "S-375",
+      "sourceBatch": "B046 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b046-inazxJzcq30-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "e3d9c3a1-8c3d-49e6-947b-d0e200e8b6d4",
+        "kind": "song_variant",
+        "primaryWorkId": "b966dc71-8a4c-561e-86eb-c6321ea93b61",
+        "title": "ラピスのお人形",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=inazxJzcq30",
+      "mediaId": "8d116ecc-046b-5d9a-8876-71129f731f3b",
+      "mediaUrl": "https://www.youtube.com/watch?v=inazxJzcq30",
+      "credits": [
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        },
+        {
+          "role": "監督/絵コンテ/キャラクターデザイン",
+          "name": "鮮ナヲキ"
+        },
+        {
+          "role": "原画",
+          "name": "鮮ナヲキ"
+        },
+        {
+          "role": "原画",
+          "name": "武田紀香"
+        },
+        {
+          "role": "原画",
+          "name": "湯徳遥"
+        },
+        {
+          "role": "原画",
+          "name": "ななみ弘"
+        },
+        {
+          "role": "原画",
+          "name": "矢湯世屋"
+        },
+        {
+          "role": "背景美術",
+          "name": "川村陽平"
+        },
+        {
+          "role": "背景美術",
+          "name": "浦田悠以"
+        },
+        {
+          "role": "背景美術",
+          "name": "小渕清香"
+        },
+        {
+          "role": "背景美術",
+          "name": "折木かお"
+        },
+        {
+          "role": "背景美術",
+          "name": "だきねこ"
+        },
+        {
+          "role": "背景美術",
+          "name": "にーな"
+        },
+        {
+          "role": "背景美術",
+          "name": "ふめし"
+        },
+        {
+          "role": "プロップデザイン",
+          "name": "c o n a"
+        },
+        {
+          "role": "プロップデザイン",
+          "name": "小渕清香"
+        },
+        {
+          "role": "仕上げ検査",
+          "name": "ほとけ"
+        },
+        {
+          "role": "仕上げ",
+          "name": "ほとけ"
+        },
+        {
+          "role": "仕上げ",
+          "name": "ななみ弘"
+        },
+        {
+          "role": "仕上げ",
+          "name": "矢湯世屋"
+        },
+        {
+          "role": "仕上げ",
+          "name": "ちべ"
+        },
+        {
+          "role": "仕上げ",
+          "name": "折木かお"
+        },
+        {
+          "role": "撮影/編集",
+          "name": "鮮ナヲキ"
+        },
+        {
+          "role": "ロゴデザイン",
+          "name": "小渕清香"
+        }
+      ],
+      "sourceId": "S-376",
+      "sourceBatch": "B046 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b046-ls_fmM2-inQ-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "ed6e982f-31fc-4d7a-9c7b-76896b868fdd",
+        "kind": "song_variant",
+        "primaryWorkId": "24ea10b6-6aa0-5e9c-b2b1-c9cf882d1709",
+        "title": "キミ消失セカイ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=ls_fmM2-inQ",
+      "mediaId": "c95dcaec-dcb1-5125-aab0-8d7d41a046ee",
+      "mediaUrl": "https://www.youtube.com/watch?v=ls_fmM2-inQ",
+      "credits": [
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        },
+        {
+          "role": "Director",
+          "name": "Maruichi（THINKR）"
+        },
+        {
+          "role": "Motion Edit",
+          "name": "Go akagi（THINKR）"
+        },
+        {
+          "role": "Title , Lyric Design",
+          "name": "Strobo（THINKR）"
+        },
+        {
+          "role": "Illustration",
+          "name": "Mitsubachi"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kentaro Iwaki（THINKR）"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi（THINKR）"
+        },
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        },
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceId": "S-377",
+      "sourceBatch": "B046 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b046-ovJSG_FgyHw-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "432afa05-c1f3-4421-9eda-c7241de4e5af",
+        "kind": "song_variant",
+        "primaryWorkId": "6c2ef0ac-c4b1-5f49-abc4-983b59186b23",
+        "title": "炉心融解",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=ovJSG_FgyHw",
+      "mediaId": "04e5e32a-6113-5808-9f35-7f7fb706789c",
+      "mediaUrl": "https://www.youtube.com/watch?v=ovJSG_FgyHw",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "Gozena"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-378",
+      "sourceBatch": "B046 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b046-YVjbMtRVTeQ-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "16f59e14-8c0b-4faa-b3fe-b22958959940",
+        "kind": "song_variant",
+        "primaryWorkId": "647e6c33-b289-5a6a-877b-225948570bd5",
+        "title": "あなたにはなれない",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=YVjbMtRVTeQ",
+      "mediaId": "3029006c-d28a-5fed-88da-e9f53f39e801",
+      "mediaUrl": "https://www.youtube.com/watch?v=YVjbMtRVTeQ",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "なるめ"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-379",
+      "sourceBatch": "B046 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b046-W7Ad1vARfXc-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "711c4f51-6f54-4977-b1c3-40acfc1a12db",
+        "kind": "song_variant",
+        "primaryWorkId": "4014dbdc-1da9-5e53-a358-6af61d6f92b6",
+        "title": "INTERNET YAMERO",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=W7Ad1vARfXc",
+      "mediaId": "f6f01be0-36ea-594a-8cd6-0b68b47c7e34",
+      "mediaUrl": "https://www.youtube.com/watch?v=W7Ad1vARfXc",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "なるめ"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-380",
+      "sourceBatch": "B046 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b046-THyn-jQVg-c-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "6769e2c7-f7e1-4204-94ac-643510b863ab",
+        "kind": "song_variant",
+        "primaryWorkId": "b8e2791f-5d74-5a2d-a74b-912da0dcfd94",
+        "title": "約束",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=THyn-jQVg-c",
+      "mediaId": "174a6a67-8da1-5cd2-9cc2-1235b4078fcd",
+      "mediaUrl": "https://www.youtube.com/watch?v=THyn-jQVg-c",
+      "credits": [
+        {
+          "role": "イラスト",
+          "name": "orie"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-381",
+      "sourceBatch": "B046 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b046-saayrNHWQms-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "ef5c230b-fc98-48ca-aa11-aca956a4cc25",
+        "kind": "song_variant",
+        "primaryWorkId": "e520fb29-6670-55f0-9aaf-a488c00e65df",
+        "title": "ねがい",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=saayrNHWQms",
+      "mediaId": "b40137ff-2dd1-5c1f-907e-ec2938976c49",
+      "mediaUrl": "https://www.youtube.com/watch?v=saayrNHWQms",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "ヰ世界情緒"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-382",
+      "sourceBatch": "B046 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b046-eV1hOTU9Ylo-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "e3b3ebb5-8004-4a5a-af65-dfa338dfb214",
+        "kind": "song_variant",
+        "primaryWorkId": "b7bbc0fe-8c00-4bec-8596-c542a0de5ec4",
+        "title": "呪って呪って",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=eV1hOTU9Ylo",
+      "mediaId": "b2613691-81f3-4f41-901e-e95ca3b1bab8",
+      "mediaUrl": "https://www.youtube.com/watch?v=eV1hOTU9Ylo",
+      "credits": [
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-383",
+      "sourceBatch": "B046 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b047-ftCqxjpxdc8-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "9ad985af-702d-4a46-b4d5-d00e3e28f2df",
+        "kind": "song_variant",
+        "primaryWorkId": "193ca6a9-3327-5482-875d-746a70365c79",
+        "title": "ジオラマドラマ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=ftCqxjpxdc8",
+      "mediaId": "0a29ea9e-06df-509b-988b-bde103544409",
+      "mediaUrl": "https://www.youtube.com/watch?v=ftCqxjpxdc8",
+      "credits": [
+        {
+          "role": "Guitar",
+          "name": "伊藤翔磨"
+        },
+        {
+          "role": "映像",
+          "name": "ぬヴェントス"
+        },
+        {
+          "role": "イラスト",
+          "name": "orie"
+        },
+        {
+          "role": "タイポグラフィ",
+          "name": "本忠学"
+        },
+        {
+          "role": "制作協力",
+          "name": "ヰ世界情緒"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-384",
+      "sourceBatch": "B047 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b047-LgR34fFacVw-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "2c130953-3c9c-4d02-a1e8-a8f237eb6b56",
+        "kind": "song_variant",
+        "primaryWorkId": "40aa4d65-a4a1-5928-8cdb-61f4c4ab4b6c",
+        "title": "誰もいない絵で",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=LgR34fFacVw",
+      "mediaId": "cbd399b1-23fb-5221-a256-5668d15fdbb4",
+      "mediaUrl": "https://www.youtube.com/watch?v=LgR34fFacVw",
+      "credits": [
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        },
+        {
+          "role": "映像・タイポデザイン",
+          "name": "ぬヴェントス"
+        },
+        {
+          "role": "Illustration",
+          "name": "ヰ世界情緒"
+        }
+      ],
+      "sourceId": "S-385",
+      "sourceBatch": "B047 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b047-hcqXjcO791s-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "cb31bd97-6d1f-4afc-893c-982b9161b17e",
+        "kind": "song_variant",
+        "primaryWorkId": "cb07bc61-fb0d-577f-9174-94c486d35e00",
+        "title": "ヰ世界の宝石譚",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=hcqXjcO791s",
+      "mediaId": "e485ef25-770e-5b2b-a42c-f0242aec1349",
+      "mediaUrl": "https://www.youtube.com/watch?v=hcqXjcO791s",
+      "credits": [
+        {
+          "role": "Bass",
+          "name": "二家本亮介（有形ランペイジ）"
+        },
+        {
+          "role": "映像",
+          "name": "駿"
+        },
+        {
+          "role": "タイポグラフィ",
+          "name": "本忠学"
+        },
+        {
+          "role": "Illustration",
+          "name": "ヰ世界情緒"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-386",
+      "sourceBatch": "B047 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b047-EiPZenIQZa0-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "ec467200-b1d9-4a89-9612-6ebe94228004",
+        "kind": "song_variant",
+        "primaryWorkId": "90eb3cce-a1d4-505d-9d37-586577ec1d74",
+        "title": "いろはに咲きて",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=EiPZenIQZa0",
+      "mediaId": "27f44f8b-a616-56b6-bac1-092fa8ce7111",
+      "mediaUrl": "https://www.youtube.com/watch?v=EiPZenIQZa0",
+      "credits": [
+        {
+          "role": "Guitar",
+          "name": "伊藤翔磨"
+        },
+        {
+          "role": "Bass",
+          "name": "花村智志"
+        },
+        {
+          "role": "映像",
+          "name": "ぬヴェントス"
+        },
+        {
+          "role": "タイポグラフィ",
+          "name": "本忠学"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-387",
+      "sourceBatch": "B047 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b047-RcWMQCnAafY-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "f27f9134-825c-4a0b-9dab-dc57c8e9c966",
+        "kind": "song_variant",
+        "primaryWorkId": "8e8e2788-72b4-50d5-8384-92d9b6ee4553",
+        "title": "暮れなずむ約束",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=RcWMQCnAafY",
+      "mediaId": "4f789597-96bd-5b4f-b1a5-d945faff59f3",
+      "mediaUrl": "https://www.youtube.com/watch?v=RcWMQCnAafY",
+      "credits": [
+        {
+          "role": "Guitar",
+          "name": "伊藤翔磨"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        },
+        {
+          "role": "映像",
+          "name": "八重幸"
+        },
+        {
+          "role": "ロゴ・タイポグラフィ",
+          "name": "LOTUS"
+        },
+        {
+          "role": "制作",
+          "name": "根岸秀幸（THINKR）"
+        },
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        },
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceId": "S-388",
+      "sourceBatch": "B047 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b047-9dK3lA-GEc0-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "df11fb8c-32af-4caa-879d-736c6331f8d4",
+        "kind": "song_variant",
+        "primaryWorkId": "64cf8656-1302-527e-94e1-0b31d0595354",
+        "title": "斯く美しき造花",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=9dK3lA-GEc0",
+      "mediaId": "cd091e86-b2d5-5a24-bf1a-c3dcf1832ec5",
+      "mediaUrl": "https://www.youtube.com/watch?v=9dK3lA-GEc0",
+      "credits": [
+        {
+          "role": "映像",
+          "name": "ぬヴェントス"
+        },
+        {
+          "role": "タイポグラフィ",
+          "name": "本忠学"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-389",
+      "sourceBatch": "B047 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b047-KMvUdCyIVxw-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "8d278884-8e97-4b8d-a1c6-7225863c25b9",
+        "kind": "song_variant",
+        "primaryWorkId": "acbd3faf-005c-5e7d-8c96-ee56a814a265",
+        "title": "ARCADIA",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=KMvUdCyIVxw",
+      "mediaId": "a5cd4402-b638-5f70-b9f6-a3ef56469311",
+      "mediaUrl": "https://www.youtube.com/watch?v=KMvUdCyIVxw",
+      "credits": [
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        },
+        {
+          "role": "Music Video Director",
+          "name": "Tomoya Eguchi（Cumuloworks）"
+        },
+        {
+          "role": "Lead CG Artist",
+          "name": "Akito Osawa（Shigu）"
+        },
+        {
+          "role": "Character Technical Artist",
+          "name": "Lethe"
+        },
+        {
+          "role": "Cinematographer",
+          "name": "chochi"
+        },
+        {
+          "role": "Designer",
+          "name": "Asteroid"
+        },
+        {
+          "role": "Music Video Producer",
+          "name": "Hideyuki Negishi（THINKR）"
+        },
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        },
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceId": "S-390",
+      "sourceBatch": "B047 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b047-EXicNyq5fG4-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "053c8f07-bd79-4eec-8a22-3321c79f5765",
+        "kind": "song_variant",
+        "primaryWorkId": "920dfba2-a65d-5cc9-b986-a7cfef19f697",
+        "title": "霞がついてくる",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=EXicNyq5fG4",
+      "mediaId": "3852fc1f-8b2f-5b79-974c-9e12554b6e57",
+      "mediaUrl": "https://www.youtube.com/watch?v=EXicNyq5fG4",
+      "credits": [
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        },
+        {
+          "role": "キャラクター原案・コンセプト原案",
+          "name": "はるまきごはん"
+        },
+        {
+          "role": "監督・コンテ・編集",
+          "name": "StudioXD"
+        },
+        {
+          "role": "作画",
+          "name": "ykz"
+        },
+        {
+          "role": "作画",
+          "name": "IMHEL"
+        },
+        {
+          "role": "作画",
+          "name": "StudioXD"
+        },
+        {
+          "role": "撮影補佐",
+          "name": "yama_ko"
+        },
+        {
+          "role": "デスク補佐",
+          "name": "Rabbit MACHINE"
+        }
+      ],
+      "sourceId": "S-391",
+      "sourceBatch": "B047 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b047-W4Gt1Er5q4Y-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "7f3d424f-1ae1-45b6-88b1-9abd5498c514",
+        "kind": "song_variant",
+        "primaryWorkId": "afc3bd45-9f8b-5a67-abda-f0e07ffdd24b",
+        "title": "かたちなきもの",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=W4Gt1Er5q4Y",
+      "mediaId": "7a01794b-5002-50cf-b8c4-2e93d6bb63ce",
+      "mediaUrl": "https://www.youtube.com/watch?v=W4Gt1Er5q4Y",
+      "credits": [
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        },
+        {
+          "role": "Director",
+          "name": "NNNuventus"
+        },
+        {
+          "role": "Technical Cooperation",
+          "name": "TRIBALCON."
+        },
+        {
+          "role": "Title",
+          "name": "isekaijoucho"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi (THINKR)"
+        },
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        },
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceId": "S-392",
+      "sourceBatch": "B047 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b047-lhd67CnArlI-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "0c4b689c-3fc3-4d82-8d3d-1af7490887a0",
+        "kind": "song_variant",
+        "primaryWorkId": "a355c405-a4ac-58b6-9a6a-32c46c129acd",
+        "title": "そして白に還る",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=lhd67CnArlI",
+      "mediaId": "edde7066-4d35-52ee-b4f4-2f27561f6635",
+      "mediaUrl": "https://www.youtube.com/watch?v=lhd67CnArlI",
+      "credits": [
+        {
+          "role": "Guitar",
+          "name": "伊藤翔磨"
+        },
+        {
+          "role": "Violin",
+          "name": "銘苅麻野"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        },
+        {
+          "role": "監督／脚本・演出／撮影／編集",
+          "name": "中絲悠"
+        },
+        {
+          "role": "監督補",
+          "name": "倉島伶"
+        },
+        {
+          "role": "プロップデザイン",
+          "name": "すとろぼ"
+        },
+        {
+          "role": "プロデューサー",
+          "name": "渡辺想介（THINKR）"
+        }
+      ],
+      "sourceId": "S-393",
+      "sourceBatch": "B047 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b048--x1Tyg2uvVM-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "e71238fd-48bd-4dd9-8e76-50d0b191acf6",
+        "kind": "song_variant",
+        "primaryWorkId": "c5992ad9-6d50-5abc-801d-d2232a296b15",
+        "title": "ディメンション",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=-x1Tyg2uvVM",
+      "mediaId": "c635586f-114b-5725-b6bf-694a9ab7029f",
+      "mediaUrl": "https://www.youtube.com/watch?v=-x1Tyg2uvVM",
+      "credits": [
+        {
+          "role": "ギター",
+          "name": "C'Na"
+        },
+        {
+          "role": "映像",
+          "name": "まるいち"
+        },
+        {
+          "role": "タイポグラフィ",
+          "name": "ZUMA"
+        },
+        {
+          "role": "制作",
+          "name": "根岸 秀幸（THINKR）"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-394",
+      "sourceBatch": "B048 r002",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b048-Kz424oVx9_o-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "a4ca0573-48d6-49d0-a3d2-d8b4d4352227",
+        "kind": "song_variant",
+        "primaryWorkId": "f6d7d3c1-33e9-5649-be74-f4f18f3244e0",
+        "title": "物語りのワルツ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=Kz424oVx9_o",
+      "mediaId": "b05e34f8-df6e-5f79-9729-9442daaa4d6a",
+      "mediaUrl": "https://www.youtube.com/watch?v=Kz424oVx9_o",
+      "credits": [
+        {
+          "role": "映像",
+          "name": "ぬヴェントス"
+        },
+        {
+          "role": "イラスト",
+          "name": "orie"
+        },
+        {
+          "role": "タイポグラフィ",
+          "name": "本忠学"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-395",
+      "sourceBatch": "B048 r002",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b048-i9ApQA847dM-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "75406f0c-c018-47b6-bdbe-66a856311b9e",
+        "kind": "song_variant",
+        "primaryWorkId": "93e0a7ba-9dca-5c87-bd57-af2f473d5fdc",
+        "title": "泡沫",
+        "displayCredit": "ヰ世界情緒 × 理芽",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=i9ApQA847dM",
+      "mediaId": "701d75a4-0425-58a8-a18b-51fd9b90cbef",
+      "mediaUrl": "https://www.youtube.com/watch?v=i9ApQA847dM",
+      "credits": [
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        },
+        {
+          "role": "映像制作",
+          "name": "まるいち"
+        },
+        {
+          "role": "リリックデザイン",
+          "name": "mon"
+        },
+        {
+          "role": "イラスト",
+          "name": "shirone"
+        }
+      ],
+      "sourceId": "S-396",
+      "sourceBatch": "B048 r002",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b048-lBZt_ESNC6Q-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "53255e4f-7f53-4f69-9f33-cdf631607a65",
+        "kind": "song_variant",
+        "primaryWorkId": "8543894f-5763-525d-93e3-7ec707d575ca",
+        "title": "刻印",
+        "displayCredit": "ヰ世界情緒 × 幸祜",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=lBZt_ESNC6Q",
+      "mediaId": "a7b92e7e-e686-51e6-a16e-c5eb3c8b502a",
+      "mediaUrl": "https://www.youtube.com/watch?v=lBZt_ESNC6Q",
+      "credits": [
+        {
+          "role": "ギター",
+          "name": "C'Na"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        },
+        {
+          "role": "映像制作",
+          "name": "IshiTchi"
+        },
+        {
+          "role": "リリックデザイン",
+          "name": "すとろぼ"
+        },
+        {
+          "role": "イラスト",
+          "name": "しょくむら"
+        }
+      ],
+      "sourceId": "S-397",
+      "sourceBatch": "B048 r002",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b048-HpyoJ597oUU-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "762da09b-f9f5-4425-84df-0f0dfb6bf3c3",
+        "kind": "song_variant",
+        "primaryWorkId": "795da49b-f612-53a3-93ec-3d40b7c9ff7f",
+        "title": "暗闇",
+        "displayCredit": "花譜 × ヰ世界情緒",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=HpyoJ597oUU",
+      "mediaId": "8c220dbd-4451-587a-b999-c5170221993f",
+      "mediaUrl": "https://www.youtube.com/watch?v=HpyoJ597oUU",
+      "credits": [
+        {
+          "role": "映像制作",
+          "name": "yujureal works"
+        },
+        {
+          "role": "リリックデザイン",
+          "name": "muniku"
+        },
+        {
+          "role": "イラスト",
+          "name": "灸場メロ"
+        },
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        },
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceId": "S-398",
+      "sourceBatch": "B048 r002",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b048-sd6DTgsIbrs-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "14242993-9789-4def-8c02-3dbf6ac90b67",
+        "kind": "song_variant",
+        "primaryWorkId": "1f3cc792-3e04-5d60-8ebd-166eb8d1bc93",
+        "title": "不的",
+        "displayCredit": "理芽 × ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=sd6DTgsIbrs",
+      "mediaId": "efe44809-f112-5ebb-a9ba-97e32e76a7f3",
+      "mediaUrl": "https://www.youtube.com/watch?v=sd6DTgsIbrs",
+      "credits": [
+        {
+          "role": "Violin",
+          "name": "銘苅麻野"
+        },
+        {
+          "role": "Mix",
+          "name": "池田洋 (hmc studio)"
+        },
+        {
+          "role": "Mastering",
+          "name": "木村健太郎 (kimken studio)"
+        },
+        {
+          "role": "Illust",
+          "name": "カオミン"
+        },
+        {
+          "role": "Movie",
+          "name": "koshi-kun"
+        },
+        {
+          "role": "Typo Design",
+          "name": "Air"
+        }
+      ],
+      "sourceId": "S-399",
+      "sourceBatch": "B048 r002",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b048-kE9YpkWwHIo-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "7a910060-98e7-4aaf-a926-9376356db488",
+        "kind": "song_variant",
+        "primaryWorkId": "3a2b49dc-921f-5ad3-aa09-fed3b9373444",
+        "title": "深淵",
+        "displayCredit": "ヰ世界情緒 × 花譜",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=kE9YpkWwHIo",
+      "mediaId": "aa28f164-854d-5ac5-aabc-60870d250083",
+      "mediaUrl": "https://www.youtube.com/watch?v=kE9YpkWwHIo",
+      "credits": [
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        },
+        {
+          "role": "Director / Typography",
+          "name": "ぬヴェントス"
+        },
+        {
+          "role": "CG Director",
+          "name": "あるし"
+        },
+        {
+          "role": "Illustrator",
+          "name": "SOLANI"
+        },
+        {
+          "role": "Illustrator",
+          "name": "晕欧欧"
+        },
+        {
+          "role": "Title design",
+          "name": "eins [eins.blue]"
+        },
+        {
+          "role": "Producer",
+          "name": "渡辺想介"
+        },
+        {
+          "role": "Producer",
+          "name": "史耕"
+        }
+      ],
+      "sourceId": "S-400",
+      "sourceBatch": "B048 r002",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b048-aJhvIQw96RI-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "5c887df7-99f5-4dec-b1d6-ba1a17b37261",
+        "kind": "song_variant",
+        "primaryWorkId": "2dfd1998-7afd-5e8b-b725-c077dbd9b0e1",
+        "title": "牢獄",
+        "displayCredit": "春猿火 × ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=aJhvIQw96RI",
+      "mediaId": "d123a52a-5ca9-5266-9fb4-530be628944c",
+      "mediaUrl": "https://www.youtube.com/watch?v=aJhvIQw96RI",
+      "credits": [
+        {
+          "role": "Mix",
+          "name": "神作"
+        },
+        {
+          "role": "映像制作",
+          "name": "IshiTchi"
+        },
+        {
+          "role": "リリックデザイン",
+          "name": "ZUMA"
+        },
+        {
+          "role": "イラスト",
+          "name": "BerryVerrine"
+        }
+      ],
+      "sourceId": "S-401",
+      "sourceBatch": "B048 r002",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b048-_30dknX-UWE-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "f444568f-6f47-4e83-9bec-b710938924b4",
+        "kind": "song_variant",
+        "primaryWorkId": "15810889-4c93-5e78-95f0-4c738a04342d",
+        "title": "言霊",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=_30dknX-UWE",
+      "mediaId": "0e812fb4-fe78-5222-b7a1-86381afaf2f5",
+      "mediaUrl": "https://www.youtube.com/watch?v=_30dknX-UWE",
+      "credits": [
+        {
+          "role": "Director",
+          "name": "Kenji Kawasaki（eallin）"
+        },
+        {
+          "role": "CG Artist",
+          "name": "Eiji Takada（eallin）"
+        },
+        {
+          "role": "CG Artist",
+          "name": "Wataru Kami（eallin）"
+        },
+        {
+          "role": "Cinematographer",
+          "name": "Hidehiko Kobayashi"
+        },
+        {
+          "role": "Motion Graphics Designer",
+          "name": "yujurealworks"
+        },
+        {
+          "role": "Motion Graphics Designer",
+          "name": "muen"
+        },
+        {
+          "role": "Title Design",
+          "name": "ZUMA"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi"
+        }
+      ],
+      "sourceId": "S-402",
+      "sourceBatch": "B048 r002",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b048-ar0nuMEBmfY-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "9591af7d-da4f-4eb1-b7d7-f03edd3e589f",
+        "kind": "song_variant",
+        "primaryWorkId": "b1a67792-0781-56af-b2e7-9f73e9ff9577",
+        "title": "共鳴",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=ar0nuMEBmfY",
+      "mediaId": "44eda3fc-0c92-5375-90cf-f6c2d3511c3e",
+      "mediaUrl": "https://www.youtube.com/watch?v=ar0nuMEBmfY",
+      "credits": [
+        {
+          "role": "Director",
+          "name": "Kenji Kawasaki（eallin）"
+        },
+        {
+          "role": "3DCG",
+          "name": "Eiji Takada（eallin）"
+        },
+        {
+          "role": "3DCG",
+          "name": "Yoshimi Akiyama（eallin）"
+        },
+        {
+          "role": "3DCG",
+          "name": "Tatsumi Watanabe（eallin）"
+        },
+        {
+          "role": "3DCG",
+          "name": "Q-taro（eallin）"
+        },
+        {
+          "role": "Motion Graphics Designer",
+          "name": "koshi-kun"
+        },
+        {
+          "role": "Title and Lyric Design",
+          "name": "Hazuki Tamano"
+        },
+        {
+          "role": "Choreography",
+          "name": "Asami Okamoto"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi（THINKR）"
+        },
+        {
+          "role": "Assistant Producer",
+          "name": "Mizuki Numata（THINKR）"
+        }
+      ],
+      "sourceId": "S-403",
+      "sourceBatch": "B048 r002",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b048-z47I4VOGEJk-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "d05de3e6-a82e-44d0-8cc4-95b8f96116a7",
+        "kind": "song_variant",
+        "primaryWorkId": "ad4d19c0-1b4d-5744-92ef-cab362ce1ec9",
+        "title": "電脳",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=z47I4VOGEJk",
+      "mediaId": "1021cb48-69f5-54e9-9abd-a35bb12093c4",
+      "mediaUrl": "https://www.youtube.com/watch?v=z47I4VOGEJk",
+      "credits": [
+        {
+          "role": "Guitar",
+          "name": "Shoma Ito"
+        },
+        {
+          "role": "Director",
+          "name": "Toshiyuki Yamashita(Hyperbole Inc.)"
+        },
+        {
+          "role": "MotionGraphics",
+          "name": "Jun Matsuda(TWO WAIDEE INC.)"
+        },
+        {
+          "role": "MotionGraphics",
+          "name": "Cafuu(Argument)"
+        },
+        {
+          "role": "3DCG",
+          "name": "Naoya Nishikubo"
+        },
+        {
+          "role": "Background Art",
+          "name": "Rina Mitsuzumi(Hyperbole Inc.)"
+        },
+        {
+          "role": "Compositing",
+          "name": "Hyperbole Inc."
+        },
+        {
+          "role": "Animation Cooperation",
+          "name": "G-angle"
+        },
+        {
+          "role": "Animation Cooperation",
+          "name": "WIT STUDIO"
+        },
+        {
+          "role": "Animation Cooperation",
+          "name": "S.o.K"
+        },
+        {
+          "role": "Animation Supervisor（G-angle part）",
+          "name": "Kumiko Takayanagi"
+        },
+        {
+          "role": "Key Animators（G-angle part）",
+          "name": "Taketomo Ishikawa"
+        },
+        {
+          "role": "Key Animators（G-angle part）",
+          "name": "Yoko Kutsuzawa"
+        },
+        {
+          "role": "Key Animators（G-angle part）",
+          "name": "Kumiko Takayanagi"
+        },
+        {
+          "role": "In-between Checker（G-angle part）",
+          "name": "SAFE HOUSE T"
+        },
+        {
+          "role": "In-between Animation（G-angle part）",
+          "name": "Wuxi Weida Meilai Animation Design company"
+        },
+        {
+          "role": "Color Stylists/Color Checkers（G-angle part）",
+          "name": "Ryota Katsuta"
+        },
+        {
+          "role": "Color Stylists/Color Checkers（G-angle part）",
+          "name": "Maki Yamamoto"
+        },
+        {
+          "role": "Scan＆Paint（G-angle part）",
+          "name": "Wuxi Weida Meilai Animation Design company"
+        },
+        {
+          "role": "Art Director/Background Art（G-angle part）",
+          "name": "Manabu Keita"
+        },
+        {
+          "role": "Key Animators（WIT STUDIO part）",
+          "name": "Tori Namiko"
+        },
+        {
+          "role": "Key Animators（WIT STUDIO part）",
+          "name": "Tomioka Kaito"
+        },
+        {
+          "role": "Key Animators（WIT STUDIO part）",
+          "name": "Obaru Yuka"
+        },
+        {
+          "role": "Key Animators（WIT STUDIO part）",
+          "name": "Endo Keigo"
+        },
+        {
+          "role": "Key Animators（WIT STUDIO part）",
+          "name": "Maeda Io"
+        },
+        {
+          "role": "In-between Animation（WIT STUDIO part）",
+          "name": "WIT STUDIO"
+        },
+        {
+          "role": "In-between Animation（WIT STUDIO part）",
+          "name": "Yamazoe Airi"
+        },
+        {
+          "role": "In-between Animation（WIT STUDIO part）",
+          "name": "Kobayashi Hitomi"
+        },
+        {
+          "role": "In-between Animation（WIT STUDIO part）",
+          "name": "Otsuji Hina"
+        },
+        {
+          "role": "In-between Animation（WIT STUDIO part）",
+          "name": "Irobe Miho"
+        },
+        {
+          "role": "In-between Animation（WIT STUDIO part）",
+          "name": "Nijino Nanako"
+        },
+        {
+          "role": "In-between Animation（WIT STUDIO part）",
+          "name": "Fast snail studio"
+        },
+        {
+          "role": "In-between Animation（WIT STUDIO part）",
+          "name": "Yan Shanbing"
+        },
+        {
+          "role": "In-between Animation（WIT STUDIO part）",
+          "name": "Shang Ke"
+        },
+        {
+          "role": "Scan＆Paint（WIT STUDIO part）",
+          "name": "Ito Rina"
+        },
+        {
+          "role": "Production Assistant（WIT STUDIO part）",
+          "name": "Sato Keisuke(WIT STUDIO)"
+        },
+        {
+          "role": "Production Assistant（WIT STUDIO part）",
+          "name": "Inamori Miyabi(WIT STUDIO)"
+        },
+        {
+          "role": "Production Cooperation（WIT STUDIO part）",
+          "name": "Yamanaka Kazuki(WIT STUDIO)"
+        },
+        {
+          "role": "Production Cooperation（WIT STUDIO part）",
+          "name": "Yamada Kenta(WIT STUDIO)"
+        },
+        {
+          "role": "L/O（S.o.K part）",
+          "name": "Lee Joo hyeun"
+        },
+        {
+          "role": "L/O（S.o.K part）",
+          "name": "Chae Gwang Han"
+        },
+        {
+          "role": "Animation Supervisor（S.o.K part）",
+          "name": "Chae Gwang Han"
+        },
+        {
+          "role": "Key Animators（S.o.K part）",
+          "name": "Chae Gwang Han"
+        },
+        {
+          "role": "In-between Checker（S.o.K part）",
+          "name": "Seo Young eun"
+        },
+        {
+          "role": "In-between Animation（S.o.K part）",
+          "name": "Do Eun seo"
+        },
+        {
+          "role": "In-between Animation（S.o.K part）",
+          "name": "Kim Yoo jeong"
+        },
+        {
+          "role": "In-between Animation（S.o.K part）",
+          "name": "Kim So young"
+        },
+        {
+          "role": "Color Checkers（S.o.K part）",
+          "name": "Jeon Sook ja"
+        },
+        {
+          "role": "Scan＆Paint（S.o.K part）",
+          "name": "Cha Eun jin"
+        },
+        {
+          "role": "Production Assistant（S.o.K part）",
+          "name": "Lim Sung hwan"
+        }
+      ],
+      "sourceId": "S-404",
+      "sourceBatch": "B048 r002",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b049-vj7Gmv7FC-0-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "2a05f8bd-4353-49fe-87da-d69b1a35d2e9",
+        "kind": "song_variant",
+        "primaryWorkId": "aaf251d0-c51b-5167-8401-7214d93d8051",
+        "title": "変身",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://eizo100.jp/video/49798",
+      "mediaId": "47470e21-029e-5bfe-8b36-ff2e24e3bd9c",
+      "mediaUrl": "https://www.youtube.com/watch?v=vj7Gmv7FC-0",
+      "credits": [
+        {
+          "role": "Director",
+          "name": "Kenji Kawasaki"
+        },
+        {
+          "role": "3DCG",
+          "name": "Eiji Takada"
+        },
+        {
+          "role": "3DCG",
+          "name": "Masaki Aburakawa"
+        },
+        {
+          "role": "3DCG",
+          "name": "Tatsumi Watanabe"
+        },
+        {
+          "role": "Motion Graphics Designer",
+          "name": "muen"
+        },
+        {
+          "role": "Title Design",
+          "name": "ZUMA"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi"
+        }
+      ],
+      "sourceId": "S-405",
+      "sourceBatch": "B049 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b049-wGBXObhCThE-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "6e9916ed-656a-4250-b2a6-6bd682c96b77",
+        "kind": "song_variant",
+        "primaryWorkId": "8e16feeb-3e73-5b56-b0bb-69c14baf53d4",
+        "title": "輪廻",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://eizo100.jp/video/53211",
+      "mediaId": "e00ed1d6-3c2f-56bd-a6f0-56e70327f225",
+      "mediaUrl": "https://www.youtube.com/watch?v=wGBXObhCThE",
+      "credits": [
+        {
+          "role": "Movie & Animation Studio",
+          "name": "STEREOTYPE Inc."
+        },
+        {
+          "role": "Director",
+          "name": "Yusaku Kumagai (STEREOTYPE Inc.)"
+        },
+        {
+          "role": "Animation Supervisor",
+          "name": "Yusaku Kumagai (STEREOTYPE Inc.)"
+        },
+        {
+          "role": "3D Background Designer",
+          "name": "Taisyo Miyoshi (STEREOTYPE Inc.)"
+        },
+        {
+          "role": "Composite Director",
+          "name": "Yusaku Iwami (STEREOTYPE Inc.)"
+        },
+        {
+          "role": "Motion Graphics Designer",
+          "name": "Shuji Nagai (STEREOTYPE Inc.)"
+        },
+        {
+          "role": "Lyric Designer",
+          "name": "Syota Watanabe (STEREOTYPE Inc.)"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kenichi Kodama (STEREOTYPE Inc.)"
+        },
+        {
+          "role": "Motion Capture",
+          "name": "Akane Kurosawa (Dynamo Pictures, Inc.)"
+        },
+        {
+          "role": "Production Coordinator",
+          "name": "Narumi Yokotsuka (Dynamo Pictures, Inc.)"
+        },
+        {
+          "role": "2D Animator",
+          "name": "Yusaku Kumagai (STEREOTYPE Inc.)"
+        },
+        {
+          "role": "2D Animator",
+          "name": "Akari Kojima (STEREOTYPE Inc.)"
+        },
+        {
+          "role": "2D Animator",
+          "name": "Masahiko Adachi"
+        },
+        {
+          "role": "3D Animator",
+          "name": "Taisyo Miyoshi (STEREOTYPE Inc.)"
+        },
+        {
+          "role": "3D Animator",
+          "name": "Shuji Nagai (STEREOTYPE Inc.)"
+        },
+        {
+          "role": "Motion Capture Studio",
+          "name": "Dynamo Pictures, Inc."
+        }
+      ],
+      "sourceId": "S-406",
+      "sourceBatch": "B049 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b049-F0ImgyqExvU-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "37239193-01d3-4c23-96bd-b2ddc3b05126",
+        "kind": "song_variant",
+        "primaryWorkId": "26be3d79-fab6-5343-a685-f19bba773dd0",
+        "title": "愛詩",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://kumo.productions/ja/projects/aiuta/",
+      "mediaId": "5696a134-069a-543f-a530-4280cb508c61",
+      "mediaUrl": "https://www.youtube.com/watch?v=F0ImgyqExvU",
+      "credits": [
+        {
+          "role": "Music Producer（Music）",
+          "name": "Akihiro Tomita"
+        },
+        {
+          "role": "E.Guitar（Music）",
+          "name": "Yusuke Takeda"
+        },
+        {
+          "role": "G.Guitar（Music）",
+          "name": "Kazuto Baba"
+        },
+        {
+          "role": "Strings（Music）",
+          "name": "Yu Manabe Strings"
+        },
+        {
+          "role": "All Other instruments & programming（Music）",
+          "name": "Yusuke Takeda"
+        },
+        {
+          "role": "Mixed（Music）",
+          "name": "Tokuya Yokohata"
+        },
+        {
+          "role": "Directed（Music）",
+          "name": "Yusuke Takeda"
+        },
+        {
+          "role": "Sound Produce（Music）",
+          "name": "Elements Garden"
+        },
+        {
+          "role": "Production Management（Music）",
+          "name": "Fumiya Okumura (ARIA entertainment)"
+        },
+        {
+          "role": "Producer（Music Video）",
+          "name": "Masayuki Kanmori (THINKR)"
+        },
+        {
+          "role": "Production Manager（Music Video）",
+          "name": "Takaaki Takenaka (THINKR)"
+        },
+        {
+          "role": "Production Manager（Music Video）",
+          "name": "Murasaqi (stu inc.)"
+        },
+        {
+          "role": "Director（Music Video）",
+          "name": "Akito Osawa (kumo.productions™)"
+        },
+        {
+          "role": "Environment Artist（Music Video）",
+          "name": "Yoshiki Ohta (kumo.productions™)"
+        },
+        {
+          "role": "Compositor（Music Video）",
+          "name": "Tomoya Eguchi (kumo.productions™)"
+        },
+        {
+          "role": "Artwork & Title Logo（Music Video）",
+          "name": "GRAVE"
+        },
+        {
+          "role": "Character Technical Artist（Music Video）",
+          "name": "Lethe"
+        },
+        {
+          "role": "Character Technical Artist（Music Video）",
+          "name": "GinoStudio"
+        },
+        {
+          "role": "Technical Artist（Music Video）",
+          "name": "Satoshi Okano (stu inc.)"
+        },
+        {
+          "role": "Project Coordinator（Music Video）",
+          "name": "Shuhan Li (GURI Art, Inc.)"
+        },
+        {
+          "role": "3D Animator（Music Video）",
+          "name": "Peng Wang (GURI Art, Inc.)"
+        },
+        {
+          "role": "Motion Capture Studio（Music Video）",
+          "name": "HANEDA xR STUDIO"
+        },
+        {
+          "role": "Motion Capture Operator（Music Video）",
+          "name": "Masayuki Wakai (Bandai Namco Filmworks Inc.)"
+        },
+        {
+          "role": "Motion Capture Operator（Music Video）",
+          "name": "Sakie Komoda (Bandai Namco Filmworks Inc.)"
+        },
+        {
+          "role": "Motion Capture Operator（Music Video）",
+          "name": "Miki Fukawatase (Banadi Namco Filmworks Inc.)"
+        },
+        {
+          "role": "Motion Capture Operator（Music Video）",
+          "name": "Tomoki Tajima (Bandai Namco Filmworks Inc.)"
+        }
+      ],
+      "sourceId": "S-407",
+      "sourceBatch": "B049 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b049-I3ViLE5iC54-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "804456ed-cc3b-485e-a1d2-488270f9d6f7",
+        "kind": "song_variant",
+        "primaryWorkId": "38e778f1-f037-56ee-b421-f3900328db8b",
+        "title": "再会",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://eizo100.jp/video/66874",
+      "mediaId": "496b4474-7c08-59f1-af87-c911fefd3b45",
+      "mediaUrl": "https://www.youtube.com/watch?v=I3ViLE5iC54",
+      "credits": [
+        {
+          "role": "Director/Composite",
+          "name": "Suguru Asakura"
+        },
+        {
+          "role": "Animation Director",
+          "name": "syo5"
+        },
+        {
+          "role": "Color Checker",
+          "name": "Sakurattyo"
+        },
+        {
+          "role": "Typo Design",
+          "name": "Tomotaka Iwasa"
+        },
+        {
+          "role": "Story Design",
+          "name": "Souki Tsukishima"
+        },
+        {
+          "role": "Animation Production",
+          "name": "KIKO"
+        },
+        {
+          "role": "Animation Producer",
+          "name": "SHIKO"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi"
+        },
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        },
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        },
+        {
+          "role": "Animator",
+          "name": "Otonashi Io"
+        },
+        {
+          "role": "Animator",
+          "name": "Kannosuke"
+        },
+        {
+          "role": "Animator",
+          "name": "Kureco"
+        },
+        {
+          "role": "Animator",
+          "name": "Shibito"
+        },
+        {
+          "role": "Animator",
+          "name": "Mai Sugita"
+        },
+        {
+          "role": "Animator",
+          "name": "Asuka Dokai"
+        },
+        {
+          "role": "Animator",
+          "name": "Yukina Nakane"
+        },
+        {
+          "role": "Animator",
+          "name": "Ran Naruse"
+        },
+        {
+          "role": "Animator",
+          "name": "Kitan Nomura"
+        },
+        {
+          "role": "Animator",
+          "name": "Akari Kojima"
+        },
+        {
+          "role": "Animator",
+          "name": "FASTO"
+        },
+        {
+          "role": "Animator",
+          "name": "666Ban"
+        },
+        {
+          "role": "Paint",
+          "name": "Chiami Ino"
+        },
+        {
+          "role": "Paint",
+          "name": "Saki Kurata"
+        },
+        {
+          "role": "Paint",
+          "name": "Sakurattyo"
+        },
+        {
+          "role": "Paint",
+          "name": "Ai Shiga"
+        },
+        {
+          "role": "Paint",
+          "name": "Sanami Tatibana"
+        },
+        {
+          "role": "Background",
+          "name": "J.taneda"
+        },
+        {
+          "role": "Background",
+          "name": "Yusuke Fujishiro"
+        },
+        {
+          "role": "Storyboard",
+          "name": "Suguru Asakura"
+        },
+        {
+          "role": "Storyboard",
+          "name": "Yuki Inoue"
+        },
+        {
+          "role": "Storyboard",
+          "name": "Nagi Onami"
+        },
+        {
+          "role": "Storyboard",
+          "name": "Akari Kojima"
+        }
+      ],
+      "sourceId": "S-408",
+      "sourceBatch": "B049 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b050-cbOUUU2vEPE-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "a07c7303-9233-4d32-a315-5742c01d817a",
+        "kind": "song_variant",
+        "primaryWorkId": "bd95a69a-fdb8-556f-ab18-03232518a62c",
+        "title": "機械の声",
+        "displayCredit": "V.W.P × V.I.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=cbOUUU2vEPE",
+      "mediaId": "423ff6d0-9b84-5212-8f84-12feffc43752",
+      "mediaUrl": "https://www.youtube.com/watch?v=cbOUUU2vEPE",
+      "credits": [
+        {
+          "role": "Director",
+          "name": "佐々木海斗（Hifumi,inc.）"
+        },
+        {
+          "role": "Typo  Design",
+          "name": "竹内駿"
+        },
+        {
+          "role": "Live2D animation",
+          "name": "廣井結実（Hifumi,inc.）"
+        },
+        {
+          "role": "Illust support",
+          "name": "しらま（PHASE STUDIO）"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kentaro Iwaki (THINKR)"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Minako Soga (THINKR)"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi (THINKR)"
+        },
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        },
+        {
+          "role": "Illust",
+          "name": "あすぱら"
+        },
+        {
+          "role": "Illust",
+          "name": "チェリ子"
+        },
+        {
+          "role": "Illust",
+          "name": "tonoshi"
+        },
+        {
+          "role": "Illust",
+          "name": "月見里みかげ"
+        },
+        {
+          "role": "Illust",
+          "name": "クロノイ"
+        }
+      ],
+      "sourceId": "S-409",
+      "sourceBatch": "B050 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b050-sgWAYJO0UNM-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "a07c7303-9233-4d32-a315-5742c01d817a",
+        "kind": "song_variant",
+        "primaryWorkId": "bd95a69a-fdb8-556f-ab18-03232518a62c",
+        "title": "機械の声",
+        "displayCredit": "V.W.P × V.I.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=sgWAYJO0UNM",
+      "mediaId": "9acc4966-7010-55c4-9770-8fe6b2f6b6ed",
+      "mediaUrl": "https://www.youtube.com/watch?v=sgWAYJO0UNM",
+      "credits": [
+        {
+          "role": "Keyboard / Band Master",
+          "name": "Sosuke Oikawa"
+        },
+        {
+          "role": "Guitar",
+          "name": "Shoma Ito"
+        },
+        {
+          "role": "Piano",
+          "name": "Wataru Saito"
+        },
+        {
+          "role": "Bass",
+          "name": "Takayasu Nagai"
+        },
+        {
+          "role": "Drums",
+          "name": "Taihei Kuroda"
+        },
+        {
+          "role": "1st Violin",
+          "name": "Mika Shirasawa"
+        },
+        {
+          "role": "2nd Violin",
+          "name": "Matsuri Mikuni"
+        },
+        {
+          "role": "Viola",
+          "name": "Reiichi Tateizumi"
+        },
+        {
+          "role": "Cello",
+          "name": "Shuhei Ito"
+        },
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceId": "S-410",
+      "sourceBatch": "B050 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b050-VuP30poJodA-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "e3100b5a-16b6-4fbd-90be-affa739b3b54",
+        "kind": "song_variant",
+        "primaryWorkId": "ae523f99-6cb2-5e15-9046-78650a231ac9",
+        "title": "暁光",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=VuP30poJodA",
+      "mediaId": "10e752bb-d192-5d36-94fd-e95a57ca51c5",
+      "mediaUrl": "https://www.youtube.com/watch?v=VuP30poJodA",
+      "credits": [
+        {
+          "role": "Director",
+          "name": "Maruichi（THINKR）"
+        },
+        {
+          "role": "Typo Design",
+          "name": "Hazuki Tamano"
+        },
+        {
+          "role": "Typo Motion Graphics",
+          "name": "じぇいく"
+        },
+        {
+          "role": "Character Animation",
+          "name": "Hiroyuki Nakatomi"
+        },
+        {
+          "role": "Motion Edit",
+          "name": "Go Akagi（THINKR）"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kentaro Iwaki（THINKR）"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi（THINKR）"
+        },
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        }
+      ],
+      "sourceId": "S-411",
+      "sourceBatch": "B050 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b050-HU9qlCfxml0-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "365e2542-8c2b-4584-a6e1-f0ee22bc7f9a",
+        "kind": "song_variant",
+        "primaryWorkId": "6411bc07-b8fb-5800-9719-ff1e75acc8d7",
+        "title": "真偽",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=HU9qlCfxml0",
+      "mediaId": "48920a1f-c4f8-541f-8e8d-6e013bc63b60",
+      "mediaUrl": "https://www.youtube.com/watch?v=HU9qlCfxml0",
+      "credits": [
+        {
+          "role": "Director",
+          "name": "Ehre_origine (SIKAKU Inc.)"
+        },
+        {
+          "role": "Character Technical Artist",
+          "name": "Lethe"
+        },
+        {
+          "role": "Motion Editor",
+          "name": "Ayumu Funaki (SIKAKU Inc.)"
+        },
+        {
+          "role": "Modeler",
+          "name": "HIZAOKA KYOMTARO  (SIKAKU Inc.)"
+        },
+        {
+          "role": "Supervisor",
+          "name": "Hiromitsu Kawasaki (SIKAKU Inc.)"
+        },
+        {
+          "role": "Title Design",
+          "name": "Tuduri Hiiragi"
+        },
+        {
+          "role": "Motion Capture Studio",
+          "name": "HANEDA xR STUDIO"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kentaro Iwaki (THINKR)"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi (THINKR)"
+        },
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        },
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        },
+        {
+          "role": "Motion Capture Operator",
+          "name": "Masayuki Wakai (Bandai Namco Filmworks Inc.)"
+        },
+        {
+          "role": "Motion Capture Operator",
+          "name": "Sakie Komoda (Bandai Namco Filmworks Inc.)"
+        },
+        {
+          "role": "Motion Capture Operator",
+          "name": "Miki Fukawatase (Banadi Namco Filmworks Inc.)"
+        },
+        {
+          "role": "Motion Capture Operator",
+          "name": "Tomoki Tajima (Bandai Namco Filmworks Inc.)"
+        }
+      ],
+      "sourceId": "S-412",
+      "sourceBatch": "B050 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b050-eJUiS9YSuSM-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "2b26a4e8-6e2b-4973-8aa5-ee5d66e23bd0",
+        "kind": "song_variant",
+        "primaryWorkId": "62e9c9d8-db67-5666-9db6-9add020afa98",
+        "title": "未遂",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=eJUiS9YSuSM",
+      "mediaId": "a64a4780-45d7-53eb-905c-dfc3891522c9",
+      "mediaUrl": "https://www.youtube.com/watch?v=eJUiS9YSuSM",
+      "credits": [
+        {
+          "role": "Director",
+          "name": "Ehre_origine (SIKAKU Inc.)"
+        },
+        {
+          "role": "Character Technical Artist",
+          "name": "Lethe"
+        },
+        {
+          "role": "Motion Editor",
+          "name": "Ayumu Funaki (SIKAKU Inc.)"
+        },
+        {
+          "role": "Supervisor / Motion Graphics Editor",
+          "name": "Hiromitsu Kawasaki (SIKAKU Inc.)"
+        },
+        {
+          "role": "Typo Design",
+          "name": "Strobo"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kentaro Iwaki (THINKR)"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi (THINKR)"
+        },
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        }
+      ],
+      "sourceId": "S-413",
+      "sourceBatch": "B050 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b050-VgK05Au7jUo-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "241a1092-03c7-4b6e-882c-c8e2ea042947",
+        "kind": "song_variant",
+        "primaryWorkId": "f4f40200-a117-51e0-ba3a-4e5f324e7821",
+        "title": "切札",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=VgK05Au7jUo",
+      "mediaId": "62b52509-56e2-56cb-9680-c60630122843",
+      "mediaUrl": "https://www.youtube.com/watch?v=VgK05Au7jUo",
+      "credits": [
+        {
+          "role": "Strings",
+          "name": "NATSUMI Strings"
+        },
+        {
+          "role": "Violin & Viola",
+          "name": "NATSUMI"
+        },
+        {
+          "role": "Cello",
+          "name": "山梨浩子"
+        },
+        {
+          "role": "Guitar",
+          "name": "橘井健一"
+        },
+        {
+          "role": "Piano",
+          "name": "朝比奈健人"
+        },
+        {
+          "role": "Score＆Orchestration",
+          "name": "朝比奈健人"
+        },
+        {
+          "role": "Programming",
+          "name": "朝比奈健人"
+        },
+        {
+          "role": "Mix",
+          "name": "井川 \"IKA\" 英昭"
+        },
+        {
+          "role": "Mastaring",
+          "name": "山崎翼"
+        },
+        {
+          "role": "Movie & Animation Studio",
+          "name": "STEREOTYPE Inc."
+        },
+        {
+          "role": "Director",
+          "name": "Yusaku Kumagai"
+        },
+        {
+          "role": "Composite Director",
+          "name": "Yusaku Iwami"
+        },
+        {
+          "role": "3DCG Designer",
+          "name": "Taisho Miyoshi"
+        },
+        {
+          "role": "Graphic / 2D Designer",
+          "name": "Shota Watanabe"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kenichi Kodama"
+        },
+        {
+          "role": "Title Design",
+          "name": "Tomotaka Iwasa"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kentaro Iwaki（THINKR）"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi（THINKR）"
+        },
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        },
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceId": "S-414",
+      "sourceBatch": "B050 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b050-3cJzGD9xkzg-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "b4756f01-96e8-4d73-9b25-1b79afce0848",
+        "kind": "song_variant",
+        "primaryWorkId": "3ec1386b-ee7e-545d-9615-bbf6bc820396",
+        "title": "花束",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=3cJzGD9xkzg",
+      "mediaId": "a5f4bcca-0316-522f-aa92-9da30f6fd2e9",
+      "mediaUrl": "https://www.youtube.com/watch?v=3cJzGD9xkzg",
+      "credits": [
+        {
+          "role": "Production",
+          "name": "MOOV by Composition Inc."
+        },
+        {
+          "role": "Director/Storyboard",
+          "name": "Taro Azumi"
+        },
+        {
+          "role": "Creative Director",
+          "name": "Tatsuro Ogata"
+        },
+        {
+          "role": "Project Manager",
+          "name": "MashiruP"
+        },
+        {
+          "role": "Motion Capture Studio",
+          "name": "HANEDA xR STUDIO"
+        },
+        {
+          "role": "Typo Design",
+          "name": "Tuduri Hiiragi"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kentaro Iwaki (THINKR)"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi (THINKR)"
+        },
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        },
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        },
+        {
+          "role": "3D Artist",
+          "name": "Taro Azumi"
+        },
+        {
+          "role": "3D Artist",
+          "name": "MashiruP"
+        },
+        {
+          "role": "3D Artist",
+          "name": "Yamato Ota"
+        },
+        {
+          "role": "3D Artist",
+          "name": "bbbbit"
+        },
+        {
+          "role": "3D Artist",
+          "name": "Hiroaki Kurokawa"
+        },
+        {
+          "role": "3D Artist",
+          "name": "Tokiyo Okamoto"
+        },
+        {
+          "role": "3D Artist",
+          "name": "Migiinu"
+        },
+        {
+          "role": "3D Artist",
+          "name": "Nunu Yamashiro"
+        },
+        {
+          "role": "3D Artist",
+          "name": "Tomoya Suzuki"
+        },
+        {
+          "role": "3D Artist",
+          "name": "Ishida Eight"
+        },
+        {
+          "role": "Technical Artist",
+          "name": "Kuyuri Iroha"
+        },
+        {
+          "role": "Technical Artist",
+          "name": "Kumatta"
+        },
+        {
+          "role": "Motion Editor",
+          "name": "Juna Ichihashi(Composition Inc.)"
+        },
+        {
+          "role": "Motion Editor",
+          "name": "Go Akagi (THINKR)"
+        },
+        {
+          "role": "Motion Capture Operator",
+          "name": "Wakai Masayuki (Bandai Namco Filmworks INC.)"
+        },
+        {
+          "role": "Motion Capture Operator",
+          "name": "Komoda Sakie (Bandai Namco Filmworks INC.)"
+        },
+        {
+          "role": "Motion Capture Operator",
+          "name": "Fukawatase Miki (Bandai Namco Studios Inc.)"
+        },
+        {
+          "role": "Motion Capture Operator",
+          "name": "Kawamura Kanami (ANIMA Inc.)"
+        },
+        {
+          "role": "Motion Capture Operator",
+          "name": "Go Akagi (THINKR)"
+        }
+      ],
+      "sourceId": "S-288",
+      "sourceBatch": "B050 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b050-isRJHa-7QXE-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "dea5b2c0-edee-4ac6-b104-9e819bfd1f0d",
+        "kind": "song_variant",
+        "primaryWorkId": "5f0d7c18-3e07-58f0-88b0-b9b57baf73e9",
+        "title": "飛翔",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=isRJHa-7QXE",
+      "mediaId": "d9ffca5c-14b8-520f-bebd-4d5731c0d35e",
+      "mediaUrl": "https://www.youtube.com/watch?v=isRJHa-7QXE",
+      "credits": [
+        {
+          "role": "Movie & Animation Studio",
+          "name": "STEREOTYPE Inc."
+        },
+        {
+          "role": "Director",
+          "name": "Yusaku Kumagai"
+        },
+        {
+          "role": "Composite Director",
+          "name": "Yusaku Iwami"
+        },
+        {
+          "role": "3DCG Designer",
+          "name": "Taisho Miyoshi"
+        },
+        {
+          "role": "Telop/Thumbnail Designer",
+          "name": "Shota Watanabe"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kenichi Kodama"
+        },
+        {
+          "role": "Title Design",
+          "name": "Strobo（THINKR）"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kentaro Iwaki（THINKR）"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi（THINKR）"
+        },
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        },
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceId": "S-415",
+      "sourceBatch": "B050 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b050-LXVKBPWkEK0-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "cf96b9f2-bd90-477a-b300-4a2d454db61d",
+        "kind": "song_variant",
+        "primaryWorkId": "851c6e81-0155-5bba-ba03-4441ce163eae",
+        "title": "感情",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://prtimes.jp/main/html/rd/p/000000054.000106737.html",
+      "mediaId": "27de6e2c-03c0-5dc6-a528-7923206b3e2a",
+      "mediaUrl": "https://www.youtube.com/watch?v=LXVKBPWkEK0",
+      "credits": [
+        {
+          "role": "監督",
+          "name": "玲架"
+        },
+        {
+          "role": "CG",
+          "name": "玲架"
+        },
+        {
+          "role": "タイポデザイン",
+          "name": "すとろぼ"
+        },
+        {
+          "role": "リリックモーション",
+          "name": "Nyu"
+        },
+        {
+          "role": "キャラクターアニメーション",
+          "name": "中富 浩之"
+        },
+        {
+          "role": "モーションエディット",
+          "name": "赤木 豪"
+        },
+        {
+          "role": "プロダクションマネージャー",
+          "name": "岩城 賢太郎"
+        },
+        {
+          "role": "プロデューサー",
+          "name": "根岸 秀幸"
+        },
+        {
+          "role": "エグゼクティブプロデューサー",
+          "name": "PIEDPIPER"
+        }
+      ],
+      "sourceId": "S-416",
+      "sourceBatch": "B050 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b051-lAM3diipp7Y-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "45118e1c-d0f8-4bac-866e-fa62faf166b1",
+        "kind": "song_variant",
+        "primaryWorkId": "5ab3b234-b19b-5ddb-8ed2-4a451a308783",
+        "title": "同盟",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=lAM3diipp7Y",
+      "mediaId": "ef0eae29-ee8c-5b3f-b0a0-1046ed789dbe",
+      "mediaUrl": "https://www.youtube.com/watch?v=lAM3diipp7Y",
+      "credits": [
+        {
+          "role": "Director",
+          "name": "Ehre_origine (SIKAKU Inc.)"
+        },
+        {
+          "role": "Character Technical Artist",
+          "name": "Lethe"
+        },
+        {
+          "role": "Motion Editor",
+          "name": "Ayumu Funaki (SIKAKU Inc.)"
+        },
+        {
+          "role": "Supervisor",
+          "name": "Hiromitsu Kawasaki (SIKAKU Inc.)"
+        },
+        {
+          "role": "Title Design",
+          "name": "Shun Takeuchi"
+        },
+        {
+          "role": "Motion Capture Studio",
+          "name": "HANEDA xR STUDIO"
+        },
+        {
+          "role": "Motion Capture Operator",
+          "name": "Wakai Masayuki (Bandai Namco Filmworks INC.)"
+        },
+        {
+          "role": "Motion Capture Operator",
+          "name": "Komoda Sakie (Bandai Namco Filmworks INC.)"
+        },
+        {
+          "role": "Motion Capture Operator",
+          "name": "Fukawatase Miki (Bandai Namco Studios Inc.)"
+        },
+        {
+          "role": "Motion Capture Operator",
+          "name": "Kawamura Kanami (ANIMA Inc.)"
+        },
+        {
+          "role": "Motion Capture Operator",
+          "name": "Go Akagi (THINKR)"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kentaro Iwaki（THINKR）"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi（THINKR）"
+        },
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        },
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceId": "S-417",
+      "sourceBatch": "B051 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b051-zpfMTWC0wUc-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "b3de225e-cb7f-4395-9b79-63b981a8b854",
+        "kind": "song_variant",
+        "primaryWorkId": "05f1b5bb-7da9-51b2-bdbb-6c2b0a98dd34",
+        "title": "秘密",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=zpfMTWC0wUc",
+      "mediaId": "6fd153e7-2675-5b91-a440-eccc8386c93e",
+      "mediaUrl": "https://www.youtube.com/watch?v=zpfMTWC0wUc",
+      "credits": [
+        {
+          "role": "Movie",
+          "name": "Ren Suzumoto"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kentaro Iwaki"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi"
+        },
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        },
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceId": "S-418",
+      "sourceBatch": "B051 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b051-Q97m911CsIM-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "728eb0b0-e880-4350-bed2-f3f834d607b4",
+        "kind": "song_variant",
+        "primaryWorkId": "9d3fb83d-e0b3-5b96-b347-75711308d94d",
+        "title": "玩具",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=Q97m911CsIM",
+      "mediaId": "3c9da2e8-b19f-5aee-a704-2ff649a912dd",
+      "mediaUrl": "https://www.youtube.com/watch?v=Q97m911CsIM",
+      "credits": [
+        {
+          "role": "Movie",
+          "name": "TastuyaM"
+        },
+        {
+          "role": "Typo Design",
+          "name": "すとろぼ"
+        },
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceId": "S-419",
+      "sourceBatch": "B051 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b051-zY_ZF1UfSCk-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "13fbc57b-9b8f-4524-a8b7-1633e986bf6d",
+        "kind": "song_variant",
+        "primaryWorkId": "0d8f0274-e167-5ae2-b432-98e57623c360",
+        "title": "定命",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=zY_ZF1UfSCk",
+      "mediaId": "b98cd351-adda-5886-b317-f096b11fa75a",
+      "mediaUrl": "https://www.youtube.com/watch?v=zY_ZF1UfSCk",
+      "credits": [
+        {
+          "role": "Production",
+          "name": "nim"
+        },
+        {
+          "role": "Direction, Edit, Post Effects",
+          "name": "Nate(nim)"
+        },
+        {
+          "role": "3D Design",
+          "name": "Takuan Paradise(nim)"
+        },
+        {
+          "role": "3D Design",
+          "name": "NXTERIUM(nim)"
+        },
+        {
+          "role": "3D Design",
+          "name": "Nate"
+        },
+        {
+          "role": "3D Design",
+          "name": "Sarukimu"
+        },
+        {
+          "role": "3D Compositing",
+          "name": "Takuan Paradise"
+        },
+        {
+          "role": "3D Compositing",
+          "name": "Nate"
+        },
+        {
+          "role": "3D Effects",
+          "name": "LETOGLUR"
+        },
+        {
+          "role": "Character Animation",
+          "name": "Ryota Takaishi"
+        },
+        {
+          "role": "Character Animation",
+          "name": "Hiroyuki Nakatomi"
+        },
+        {
+          "role": "Character Animation",
+          "name": "Yuki Kato"
+        },
+        {
+          "role": "Character Animation",
+          "name": "Akinori Gondou"
+        },
+        {
+          "role": "Character Setup",
+          "name": "Katsuhiro Wada"
+        },
+        {
+          "role": "Character Setup",
+          "name": "ToMaTo"
+        },
+        {
+          "role": "Character Setup",
+          "name": "Nate"
+        },
+        {
+          "role": "Character Setup",
+          "name": "Takuan Paradise"
+        },
+        {
+          "role": "Graphic Design",
+          "name": "Kaoru Miyazaki(nim)"
+        },
+        {
+          "role": "2D Motion Design",
+          "name": "Tatsuya Suga(nim)"
+        },
+        {
+          "role": "2D Motion Design",
+          "name": "Nate"
+        },
+        {
+          "role": "Script",
+          "name": "Nate"
+        },
+        {
+          "role": "Script",
+          "name": "Kaoru Miyazaki"
+        },
+        {
+          "role": "Script",
+          "name": "Iori Shiro"
+        },
+        {
+          "role": "Cinematographer",
+          "name": "Ryuichi Taniura"
+        },
+        {
+          "role": "Drone Operator",
+          "name": "Shota Nakajima"
+        },
+        {
+          "role": "Motion Capture Studio",
+          "name": "HANEDA xR STUDIO"
+        },
+        {
+          "role": "Motion Capture Operator",
+          "name": "Wakai Masayuki(Bandai Namco Filmworks INC.)"
+        },
+        {
+          "role": "Motion Capture Operator",
+          "name": "Komoda Sakie(Bandai Namco Filmworks INC.)"
+        },
+        {
+          "role": "Motion Capture Operator",
+          "name": "Fukawatase Miki(Bandai Namco Studios Inc.)"
+        },
+        {
+          "role": "Motion Capture Operator",
+          "name": "Kawamura Kanami(ANIMA Inc.)"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kentaro Iwaki"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi"
+        },
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        },
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceId": "S-420",
+      "sourceBatch": "B051 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b051-DxGTANfhBW8-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "81b5e1fa-6117-4406-878c-4f8ba7f23627",
+        "kind": "song_variant",
+        "primaryWorkId": "ae2bbe13-3978-541d-8abb-552222c16300",
+        "title": "祭壇",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=DxGTANfhBW8",
+      "mediaId": "da11a36b-700f-55b7-8111-091087785297",
+      "mediaUrl": "https://www.youtube.com/watch?v=DxGTANfhBW8",
+      "credits": [
+        {
+          "role": "Director",
+          "name": "Yu- Akai"
+        },
+        {
+          "role": "Title and lyric design",
+          "name": "tuduri hiiragi"
+        },
+        {
+          "role": "MotionEdit",
+          "name": "Go Akagi （THINKR）"
+        },
+        {
+          "role": "MotionEdit",
+          "name": "Hiroyuki Nakatomi"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kentaro Iwaki（THINKR）"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi（THINKR）"
+        },
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        },
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceId": "S-421",
+      "sourceBatch": "B051 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b051-mfM9N7dHNTE-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "8101be2c-47f4-4166-8778-a6428539521a",
+        "kind": "song_variant",
+        "primaryWorkId": "e8e33858-753f-5b07-8822-879633783522",
+        "title": "魔女(真)",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=mfM9N7dHNTE",
+      "mediaId": "4a85f1e3-c348-5961-8fc5-63759d76ef58",
+      "mediaUrl": "https://www.youtube.com/watch?v=mfM9N7dHNTE",
+      "credits": [
+        {
+          "role": "Arrangement/Piano/Score＆Orchestration/Programming",
+          "name": "Yoshiki Kondo"
+        },
+        {
+          "role": "Strings",
+          "name": "NATSUMI Strings"
+        },
+        {
+          "role": "Violin & Viola",
+          "name": "NATSUMI"
+        },
+        {
+          "role": "Cello",
+          "name": "Yui Hosoi"
+        },
+        {
+          "role": "Director",
+          "name": "Kenji Kawasaki（eallin）"
+        },
+        {
+          "role": "3DCG",
+          "name": "Eiji Takada（eallin）"
+        },
+        {
+          "role": "3DCG",
+          "name": "Yoshimi Akiyama（eallin）"
+        },
+        {
+          "role": "3DCG",
+          "name": "Q-taro（eallin）"
+        },
+        {
+          "role": "Typo Design",
+          "name": "Tomotaka Iwasa"
+        },
+        {
+          "role": "Typo Motion",
+          "name": "yujureal works"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kentaro Iwaki"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi"
+        },
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        },
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceId": "S-422",
+      "sourceBatch": "B051 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b051-1KW6rDibiZU-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "45118e1c-d0f8-4bac-866e-fa62faf166b1",
+        "kind": "song_variant",
+        "primaryWorkId": "5ab3b234-b19b-5ddb-8ed2-4a451a308783",
+        "title": "同盟",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=1KW6rDibiZU",
+      "mediaId": "6e12cd81-cad5-50b5-98ae-6bc0020522fe",
+      "mediaUrl": "https://www.youtube.com/watch?v=1KW6rDibiZU",
+      "credits": [
+        {
+          "role": "Keyboard / Band Master",
+          "name": "Sosuke Oikawa"
+        },
+        {
+          "role": "Guitar",
+          "name": "Shoma Ito"
+        },
+        {
+          "role": "Piano",
+          "name": "Wataru Saito"
+        },
+        {
+          "role": "Bass",
+          "name": "Takayasu Nagai"
+        },
+        {
+          "role": "Drums",
+          "name": "Taihei Kuroda"
+        },
+        {
+          "role": "1st Violin",
+          "name": "Mika Shirasawa"
+        },
+        {
+          "role": "2nd Violin",
+          "name": "Matsuri Mikuni"
+        },
+        {
+          "role": "Viola",
+          "name": "Reiichi Tateizumi"
+        },
+        {
+          "role": "Cello",
+          "name": "Shuhei Ito"
+        },
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceId": "S-423",
+      "sourceBatch": "B051 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b051-Z61-qBnWlEs-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "a7b1e00d-4f2d-48fe-a54d-824ce237dd0b",
+        "kind": "song_variant",
+        "primaryWorkId": "5ab3b234-b19b-5ddb-8ed2-4a451a308783",
+        "title": "同盟 (現象II(再) ver.)",
+        "displayCredit": "V.W.P with 狐子",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=Z61-qBnWlEs",
+      "mediaId": "09b83cbf-1af1-5966-988a-cde8fad2b35f",
+      "mediaUrl": "https://www.youtube.com/watch?v=Z61-qBnWlEs",
+      "credits": [
+        {
+          "role": "Keyboard / Band Master",
+          "name": "Sosuke Oikawa"
+        },
+        {
+          "role": "Guitar",
+          "name": "Shoma Ito"
+        },
+        {
+          "role": "Piano",
+          "name": "Wataru Saito"
+        },
+        {
+          "role": "Bass",
+          "name": "Takayasu Nagai"
+        },
+        {
+          "role": "Drums",
+          "name": "Taihei Kuroda"
+        },
+        {
+          "role": "Conductor",
+          "name": "Meguru Ohta"
+        },
+        {
+          "role": "Orchestra",
+          "name": "KAMITSUBAKI PHILHARMONIC ORCHESTRA"
+        },
+        {
+          "role": "Violin",
+          "name": "Moe Matsutani"
+        },
+        {
+          "role": "Violin",
+          "name": "Momo Shibata"
+        },
+        {
+          "role": "Violin",
+          "name": "Runa Shimura"
+        },
+        {
+          "role": "Violin",
+          "name": "Emi Okano"
+        },
+        {
+          "role": "Violin",
+          "name": "Sayaka Suehiro"
+        },
+        {
+          "role": "Violin",
+          "name": "Shiho Abe"
+        },
+        {
+          "role": "Violin",
+          "name": "Tatsuki Abo"
+        },
+        {
+          "role": "Violin",
+          "name": "Nami Shimoaraiso"
+        },
+        {
+          "role": "Violin",
+          "name": "Mariko Otsuki"
+        },
+        {
+          "role": "Violin",
+          "name": "Maho Tsuneto"
+        },
+        {
+          "role": "Violin",
+          "name": "Kasane Kashiwagi"
+        },
+        {
+          "role": "Violin",
+          "name": "Yuuki Funakubo"
+        },
+        {
+          "role": "Violin",
+          "name": "Asuna Takeshita"
+        },
+        {
+          "role": "Violin",
+          "name": "Nobumi Fujinaga"
+        },
+        {
+          "role": "Viola",
+          "name": "Yuzuki Takayama"
+        },
+        {
+          "role": "Viola",
+          "name": "Kasumi Okabe"
+        },
+        {
+          "role": "Viola",
+          "name": "Rinko Kawamura"
+        },
+        {
+          "role": "Viola",
+          "name": "Kaede Takahashi"
+        },
+        {
+          "role": "Cello",
+          "name": "Seiji Matsumoto"
+        },
+        {
+          "role": "Cello",
+          "name": "Kaori Mihara"
+        },
+        {
+          "role": "Cello",
+          "name": "Haruka Sato"
+        },
+        {
+          "role": "Contrabass",
+          "name": "Mayano Otsuka"
+        },
+        {
+          "role": "Contrabass",
+          "name": "Asuka Obata"
+        },
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceId": "S-424",
+      "sourceBatch": "B051 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b051-V1KwKnByZXQ-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "cb336c4d-a63e-4503-829e-36b98daa2670",
+        "kind": "song_variant",
+        "primaryWorkId": "8e16feeb-3e73-5b56-b0bb-69c14baf53d4",
+        "title": "輪廻 acoustic ver.",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=V1KwKnByZXQ",
+      "mediaId": "d35865aa-5955-5825-be78-f0121be02357",
+      "mediaUrl": "https://www.youtube.com/watch?v=V1KwKnByZXQ",
+      "credits": [
+        {
+          "role": "Director",
+          "name": "Tomotaka Wakumoto"
+        },
+        {
+          "role": "Illustration",
+          "name": "AU"
+        }
+      ],
+      "sourceId": "S-425",
+      "sourceBatch": "B051 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b052-3WSrFlJ2Nsw-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "190ff112-91fb-4abc-a73d-2977f90fda54",
+        "kind": "song_variant",
+        "primaryWorkId": "f26abf7f-4c01-5e6b-889d-0312a2024a9a",
+        "title": "CALL",
+        "displayCredit": "春猿火×ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=3WSrFlJ2Nsw",
+      "mediaId": "6c13cfc1-b3bf-540c-a91b-5ba228fbdbd9",
+      "mediaUrl": "https://www.youtube.com/watch?v=3WSrFlJ2Nsw",
+      "credits": [
+        {
+          "role": "Director",
+          "name": "Yazhirushi"
+        },
+        {
+          "role": "Title & Lyrics Design",
+          "name": "strobo"
+        },
+        {
+          "role": "Illustration",
+          "name": "一色"
+        }
+      ],
+      "sourceId": "S-426",
+      "sourceBatch": "B052 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b052-evloseZCQcc-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "3a73ddeb-0e34-452d-91b8-dfaf35ff4f55",
+        "kind": "song_variant",
+        "primaryWorkId": "58591532-4d48-514f-a7a5-82258ab3f36d",
+        "title": "new world",
+        "displayCredit": "Aiobahn feat. ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=evloseZCQcc",
+      "mediaId": "1a44b208-82c4-58a8-8a8b-2b2deea32d69",
+      "mediaUrl": "https://www.youtube.com/watch?v=evloseZCQcc",
+      "credits": [
+        {
+          "role": "produced, mixed, mastered by",
+          "name": "Aiobahn"
+        },
+        {
+          "role": "director",
+          "name": "HuMuu"
+        },
+        {
+          "role": "animation",
+          "name": "HuMuu"
+        },
+        {
+          "role": "animation",
+          "name": "のをか"
+        },
+        {
+          "role": "illustration",
+          "name": "ゔぇろ"
+        },
+        {
+          "role": "illustration",
+          "name": "ゆーきん (rururoru)"
+        },
+        {
+          "role": "illustration",
+          "name": "AA_Landar"
+        },
+        {
+          "role": "3d/edit",
+          "name": "みずみ"
+        },
+        {
+          "role": "vids",
+          "name": "rice20000"
+        },
+        {
+          "role": "vids",
+          "name": "ふっくん"
+        }
+      ],
+      "sourceId": "S-427",
+      "sourceBatch": "B052 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b052-yMM8hrAnbTc-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "545b1065-2273-43b2-9828-4e6832c36ba1",
+        "kind": "song_variant",
+        "primaryWorkId": "3264c8ed-5d57-5db4-8b4a-f832e1c21356",
+        "title": "歌姫",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.foriio.com/kirocco7/wk_AW3o7CCNAJT-N4WyYXq-uTGYagshRexfq8Ybia-TSw-h653O-A",
+      "mediaId": "c83155dd-abef-51c1-b191-a34c0c920502",
+      "mediaUrl": "https://www.youtube.com/watch?v=yMM8hrAnbTc",
+      "credits": [
+        {
+          "role": "Director",
+          "name": "Ehre_origine"
+        },
+        {
+          "role": "Character Technical Artist",
+          "name": "Lethe"
+        },
+        {
+          "role": "Motion Editor",
+          "name": "Ayumu Funaki (SIKAKU Inc.)"
+        },
+        {
+          "role": "Supervisor",
+          "name": "Hiromitsu Kawasaki (SIKAKU Inc.)"
+        },
+        {
+          "role": "Title Design",
+          "name": "Tuduri Hiiragi"
+        },
+        {
+          "role": "Motion Capture Studio",
+          "name": "HANEDA xR STUDIO"
+        },
+        {
+          "role": "Motion Capture Operator",
+          "name": "Masayuki Wakai (Bandai Namco Filmworks Inc.)"
+        },
+        {
+          "role": "Motion Capture Operator",
+          "name": "Sakie Komoda (Bandai Namco Filmworks Inc.)"
+        },
+        {
+          "role": "Motion Capture Operator",
+          "name": "Miki Fukawatase (Banadi Namco Filmworks Inc.)"
+        },
+        {
+          "role": "Motion Capture Operator",
+          "name": "Tomoki Tajima (Bandai Namco Filmworks Inc.)"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kentaro Iwaki (THINKR)"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Minako Soga (THINKR)"
+        },
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi (THINKR)"
+        },
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        },
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceId": "S-428",
+      "sourceBatch": "B052 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b052-BKaRTiVsWX0-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "9e78c5b3-c754-4ad8-9f00-99bca0c0f467",
+        "kind": "song_variant",
+        "primaryWorkId": "d3fe614a-13c2-5797-9a7c-234173b524ef",
+        "title": "セカイの箱庭",
+        "displayCredit": "廉 feat. ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=BKaRTiVsWX0",
+      "mediaId": "fdfe908a-5473-5ba9-9f1b-086e6105e519",
+      "mediaUrl": "https://www.youtube.com/watch?v=BKaRTiVsWX0",
+      "credits": [
+        {
+          "role": "絵",
+          "name": "ヒトこもる"
+        },
+        {
+          "role": "音纏",
+          "name": "友達募集P"
+        }
+      ],
+      "sourceId": "S-429",
+      "sourceBatch": "B052 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b052-6x3pXFwI21w-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "7a7dd78b-bf17-4b01-a33d-672f7ddce78c",
+        "kind": "song_variant",
+        "primaryWorkId": "c3dc4247-a522-5a11-8661-aa80140d07a7",
+        "title": "生存",
+        "displayCredit": "ヰ世界情緒 × 春猿火",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://piapro.jp/t/fbCn",
+      "mediaId": "7bac8310-d031-5fae-8818-23f3b91fc396",
+      "mediaUrl": "https://www.youtube.com/watch?v=6x3pXFwI21w",
+      "credits": [
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-430",
+      "sourceBatch": "B052 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b052-wuDZ8ewPxjA-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "5499c40f-9315-4b14-bd4f-66b79f6e1998",
+        "kind": "song_variant",
+        "primaryWorkId": "a3eaa9a7-a1d8-55c8-8801-de91822dac63",
+        "title": "電脳歌姫ユメミスティック",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=wuDZ8ewPxjA",
+      "mediaId": "7aa174a9-fd9f-553b-8d48-5e6262145242",
+      "mediaUrl": "https://www.youtube.com/watch?v=wuDZ8ewPxjA",
+      "credits": [
+        {
+          "role": "イラスト",
+          "name": "orie"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-431",
+      "sourceBatch": "B052 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b052-ScSYk12eCTk-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "3f1fe286-d04a-459f-a9af-e7772f0360d5",
+        "kind": "song_variant",
+        "primaryWorkId": "d4adeac4-fad5-5af5-9d5e-ba3723dc82f2",
+        "title": "V〈Re-birth version〉",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=ScSYk12eCTk",
+      "mediaId": "9fcffd1e-3bc7-5d5e-8bba-e202c8fd6451",
+      "mediaUrl": "https://www.youtube.com/watch?v=ScSYk12eCTk",
+      "credits": [
+        {
+          "role": "イラスト",
+          "name": "orie"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-432",
+      "sourceBatch": "B052 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b052--2iHNgLJHk8-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "01676a7e-55c8-4051-b80e-57fe6861969e",
+        "kind": "song_variant",
+        "primaryWorkId": "1d255201-cf6d-5f93-9992-3fcff4032f6d",
+        "title": "共感覚おばけ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=-2iHNgLJHk8",
+      "mediaId": "c8caa12b-be05-5b81-9ce6-ab03d4154c61",
+      "mediaUrl": "https://www.youtube.com/watch?v=-2iHNgLJHk8",
+      "credits": [
+        {
+          "role": "イラスト",
+          "name": "orie"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-433",
+      "sourceBatch": "B052 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b052-1qUYT3SLCWs-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "920b8613-d487-4ced-bce9-51dc4439c0fd",
+        "kind": "song_variant",
+        "primaryWorkId": "c6a57933-7e59-54f1-abcc-5dd11c23d8ab",
+        "title": "蜜月アン・ドゥ・トロワ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=1qUYT3SLCWs",
+      "mediaId": "f15098ec-e81c-5568-a937-0bab1ec69d9f",
+      "mediaUrl": "https://www.youtube.com/watch?v=1qUYT3SLCWs",
+      "credits": [
+        {
+          "role": "イラスト",
+          "name": "orie"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-434",
+      "sourceBatch": "B052 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b053-WeHvkBrgcpk-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "e9a33f47-7445-4b44-9387-e29f425b8d38",
+        "kind": "song_variant",
+        "primaryWorkId": "3cd7d9ae-1b0a-5deb-8fa9-87095b63f373",
+        "title": "夜顔の告白",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=WeHvkBrgcpk",
+      "mediaId": "6df69cd6-a745-5421-8984-6cacbdbc6b71",
+      "mediaUrl": "https://www.youtube.com/watch?v=WeHvkBrgcpk",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "orie"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-435",
+      "sourceBatch": "B053 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b053-2bGvBLJDxpE-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "087420eb-044d-48fa-a081-b6e51a82ddeb",
+        "kind": "song_variant",
+        "primaryWorkId": "9d67a9f1-7b09-5e28-97c7-7b82d81faa13",
+        "title": "MACARON",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=2bGvBLJDxpE",
+      "mediaId": "a269414e-67d3-5143-a0c8-4dc51bff8c60",
+      "mediaUrl": "https://www.youtube.com/watch?v=2bGvBLJDxpE",
+      "credits": [
+        {
+          "role": "イラスト",
+          "name": "orie"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-436",
+      "sourceBatch": "B053 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b053--YMutD4cY7M-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "2ee2ce5c-a696-4cac-b2c3-0b0447859e69",
+        "kind": "song_variant",
+        "primaryWorkId": "12927422-6051-5ce8-ba0b-ced44c140581",
+        "title": "レプリカ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=-YMutD4cY7M",
+      "mediaId": "230d9a42-3a70-5532-9ecb-827131f5ce1e",
+      "mediaUrl": "https://www.youtube.com/watch?v=-YMutD4cY7M",
+      "credits": [
+        {
+          "role": "イラスト",
+          "name": "orie"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-437",
+      "sourceBatch": "B053 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b053-kNhI0ryGn14-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "4bbc133a-1423-4e0f-a11c-2bde55cb8b9c",
+        "kind": "song_variant",
+        "primaryWorkId": "01e20c2e-7753-559b-9844-f154418747f0",
+        "title": "ALICE",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=kNhI0ryGn14",
+      "mediaId": "8bcc8b89-b2ee-5dc8-965d-b60a68cdced5",
+      "mediaUrl": "https://www.youtube.com/watch?v=kNhI0ryGn14",
+      "credits": [
+        {
+          "role": "イラスト",
+          "name": "orie"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-438",
+      "sourceBatch": "B053 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b053-ySASyOpUQrc-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "b37645fa-1625-4d26-aca4-24b8eab5e643",
+        "kind": "song_variant",
+        "primaryWorkId": "c0fc088a-1bd7-5df6-8c25-201d6ed7e211",
+        "title": "鳳仙花",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=ySASyOpUQrc",
+      "mediaId": "7f06ff2e-f70c-5f73-b82a-c024eb4c3d5f",
+      "mediaUrl": "https://www.youtube.com/watch?v=ySASyOpUQrc",
+      "credits": [
+        {
+          "role": "イラスト",
+          "name": "orie"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-439",
+      "sourceBatch": "B053 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b053-DEAJ1gVQxss-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "1cbb7636-ec81-4aa1-be3b-1f1e7a8832d1",
+        "kind": "song_variant",
+        "primaryWorkId": "f109ab86-8a8c-5c8b-8c10-f698233f0b25",
+        "title": "Chaining Intention",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=DEAJ1gVQxss",
+      "mediaId": "0f4a99b3-b0fd-5465-802a-fb278aa87014",
+      "mediaUrl": "https://www.youtube.com/watch?v=DEAJ1gVQxss",
+      "credits": [
+        {
+          "role": "イラスト",
+          "name": "orie"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-440",
+      "sourceBatch": "B053 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b053-5Y5FzD0di8I-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "23d94ff4-c9d3-4fff-a3ac-be473cb855f9",
+        "kind": "song_variant",
+        "primaryWorkId": "756267a9-5b49-53ca-9bf9-32dd0b941c1b",
+        "title": "垂直落下",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=5Y5FzD0di8I",
+      "mediaId": "1ea66d9c-f47d-5325-80b4-4232ab480ca5",
+      "mediaUrl": "https://www.youtube.com/watch?v=5Y5FzD0di8I",
+      "credits": [
+        {
+          "role": "イラスト",
+          "name": "orie"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-441",
+      "sourceBatch": "B053 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b053-SIsd9ON3H4c-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "8cd6392e-b49c-4ec4-97a3-6216f5d794e3",
+        "kind": "song_variant",
+        "primaryWorkId": "5bd6efa4-12ae-5e30-aabf-84d4349017ba",
+        "title": "透明な呼吸",
+        "displayCredit": "somunia×ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "92c87749-cdb6-57c0-b319-63458c19fc27"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=SIsd9ON3H4c",
+      "mediaId": "dc491409-0b7d-59f4-a4d9-9deb869cb21e",
+      "mediaUrl": "https://www.youtube.com/watch?v=SIsd9ON3H4c",
+      "credits": [
+        {
+          "role": "映像",
+          "name": "木葉はづく"
+        },
+        {
+          "role": "イラスト",
+          "name": "orie"
+        },
+        {
+          "role": "タイポグラフィ",
+          "name": "本忠学"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-442",
+      "sourceBatch": "B053 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b053-EeKxKt3sls4-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "17c3218c-95c5-46ef-8fff-b4fa33452971",
+        "kind": "song_variant",
+        "primaryWorkId": "12662704-03c1-572f-a6fd-ce136ccea0f5",
+        "title": "あいかやまいか",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=EeKxKt3sls4",
+      "mediaId": "4a00e59e-d73d-5045-b7f1-188b4323a3fb",
+      "mediaUrl": "https://www.youtube.com/watch?v=EeKxKt3sls4",
+      "credits": [
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-443",
+      "sourceBatch": "B053 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b053-JRjbdm-8KMQ-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "9e39e665-3f8c-4888-b5d4-7bec8c48a38c",
+        "kind": "song_variant",
+        "primaryWorkId": "eed91e29-6865-52f5-a7e7-b66ed28d5845",
+        "title": "ペイメント",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=JRjbdm-8KMQ",
+      "mediaId": "3b1ab8b2-be99-544c-aa40-d88b8ba16216",
+      "mediaUrl": "https://www.youtube.com/watch?v=JRjbdm-8KMQ",
+      "credits": [
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-444",
+      "sourceBatch": "B053 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b053-NPCvleLWAOM-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "29e73471-dc69-478d-817e-7808412d7956",
+        "kind": "song_variant",
+        "primaryWorkId": "e858f753-3005-51fd-960b-8a9c42ad6823",
+        "title": "Tourbillon",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=NPCvleLWAOM",
+      "mediaId": "66ba1f8b-9481-5285-8d24-649cc1d180a4",
+      "mediaUrl": "https://www.youtube.com/watch?v=NPCvleLWAOM",
+      "credits": [
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-445",
+      "sourceBatch": "B053 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b053-mm8t7XLYuCk-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "39ef0096-3385-4bab-bf83-01fd570c29e4",
+        "kind": "song_variant",
+        "primaryWorkId": "4c191e62-9092-57ce-96af-4f94f66e4070",
+        "title": "可能世界のロンド",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=mm8t7XLYuCk",
+      "mediaId": "d5aebe69-f99d-5ac2-a439-5e158f351511",
+      "mediaUrl": "https://www.youtube.com/watch?v=mm8t7XLYuCk",
+      "credits": [
+        {
+          "role": "CG制作協力",
+          "name": "ぬヴェントス"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-446",
+      "sourceBatch": "B053 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b053-1-KjM2t0nVw-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "ad3d9945-9395-4490-904d-504bc9fbdd6f",
+        "kind": "song_variant",
+        "primaryWorkId": "30eefb0e-972b-50c0-98b5-bb1ac33a1f1e",
+        "title": "カミノコトバ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=1-KjM2t0nVw",
+      "mediaId": "a103da59-838d-5ce1-858b-dc7a923c0324",
+      "mediaUrl": "https://www.youtube.com/watch?v=1-KjM2t0nVw",
+      "credits": [
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-447",
+      "sourceBatch": "B053 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b053-EiEVCVm5a8w-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "c3ff1ede-c413-4b9d-b495-e7142aaa8815",
+        "kind": "song_variant",
+        "primaryWorkId": "76466ff0-ba0c-580a-8993-0ee1a47f3e2a",
+        "title": "Dear Alice",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=EiEVCVm5a8w",
+      "mediaId": "a9477c0a-d5a1-5fb0-b5ed-555cf0c6a5ab",
+      "mediaUrl": "https://www.youtube.com/watch?v=EiEVCVm5a8w",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "ɴᴀʀᴜᴇ"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-448",
+      "sourceBatch": "B053 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b054-2hI_da7sStU-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "f99b0fbc-9ce8-4f3b-bd4c-0d73cc15f3b7",
+        "kind": "song_variant",
+        "primaryWorkId": "f159c070-b03f-54f1-808b-e8a1e06409e6",
+        "title": "flos",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=2hI_da7sStU",
+      "mediaId": "7b105924-0211-562b-9071-f714c03bd886",
+      "mediaUrl": "https://www.youtube.com/watch?v=2hI_da7sStU",
+      "credits": [
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-449",
+      "sourceBatch": "B054 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b054-cLdWfNbBMvc-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "6af4ab86-e37a-44fb-8db7-3a71ab9e0f30",
+        "kind": "song_variant",
+        "primaryWorkId": "3e8eacef-c344-50ff-85ed-3305b37100ac",
+        "title": "鳥の詩",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=cLdWfNbBMvc",
+      "mediaId": "cf207ffa-bceb-5101-a212-15959d09990a",
+      "mediaUrl": "https://www.youtube.com/watch?v=cLdWfNbBMvc",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "ヰ世界情緒"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-450",
+      "sourceBatch": "B054 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b054-1eiy6w5JuTw-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "e9a50b43-49ff-4d2b-93b2-2cb0bc2d849a",
+        "kind": "song_variant",
+        "primaryWorkId": "83788aac-8851-5c17-be75-5217d391b3c5",
+        "title": "ADAM",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=1eiy6w5JuTw",
+      "mediaId": "cce3ae70-63fb-5018-99e0-e0b1e2ae3f31",
+      "mediaUrl": "https://www.youtube.com/watch?v=1eiy6w5JuTw",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "ヰ世界情緒"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-451",
+      "sourceBatch": "B054 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b054-Po8ouRPBLlo-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "0f996775-b7af-49d8-8675-a97de9a4209a",
+        "kind": "song_variant",
+        "primaryWorkId": "de318847-03e0-58a9-8714-60e068fa5fbd",
+        "title": "君が生きてなくてよかった",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=Po8ouRPBLlo",
+      "mediaId": "bc59c68f-6725-5471-91d4-04ebd3c760a7",
+      "mediaUrl": "https://www.youtube.com/watch?v=Po8ouRPBLlo",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "MIYA*KI"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-452",
+      "sourceBatch": "B054 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b054-ZzDHtZSQBjU-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "9060df06-2367-4a19-822a-779986524a19",
+        "kind": "song_variant",
+        "primaryWorkId": "a35eee7d-760f-5bee-aba9-958ca58ad566",
+        "title": "誰か、海を。",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=ZzDHtZSQBjU",
+      "mediaId": "ffc078aa-a4be-5174-9e6d-a5a36f4f014e",
+      "mediaUrl": "https://www.youtube.com/watch?v=ZzDHtZSQBjU",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "kera"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-453",
+      "sourceBatch": "B054 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b054-LmaDRgdcwcY-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "b06a4bdd-57df-450f-aa26-b2f8863d6f75",
+        "kind": "song_variant",
+        "primaryWorkId": "c5215c24-2e5e-5941-9111-5c750c1f9a2d",
+        "title": "why, or why not",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=LmaDRgdcwcY",
+      "mediaId": "0e16ea2b-38c2-5db9-b655-c2c29bc721b7",
+      "mediaUrl": "https://www.youtube.com/watch?v=LmaDRgdcwcY",
+      "credits": [
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        },
+        {
+          "role": "Illustration",
+          "name": "ヰ世界情緒"
+        }
+      ],
+      "sourceId": "S-454",
+      "sourceBatch": "B054 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b054-lHvpJenkKfs-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "1b14da15-d4e0-4572-8b37-484ac050e6e8",
+        "kind": "song_variant",
+        "primaryWorkId": "c977bb03-bcf7-5d50-a0f2-de3f270efda0",
+        "title": "第三の心臓",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=lHvpJenkKfs",
+      "mediaId": "fdbaaf92-9eb4-5723-92a6-92d2ea18b67c",
+      "mediaUrl": "https://www.youtube.com/watch?v=lHvpJenkKfs",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "夜の羊雲"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-455",
+      "sourceBatch": "B054 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b054-dJybz-_1e3I-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "3ffae82f-8d85-4bc0-a231-8f900bb565c7",
+        "kind": "song_variant",
+        "primaryWorkId": "db0251b8-8026-537c-9387-3c2e4cd67038",
+        "title": "乙女解剖",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=dJybz-_1e3I",
+      "mediaId": "6c8fea85-4042-5108-b056-028e643ac340",
+      "mediaUrl": "https://www.youtube.com/watch?v=dJybz-_1e3I",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "適当緑"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-456",
+      "sourceBatch": "B054 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b054-kmkMfFljd-0-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "3aa217fe-717e-4328-8b13-160fe6053cfd",
+        "kind": "song_variant",
+        "primaryWorkId": "cb2a28ed-da58-54c3-959a-66732938d35b",
+        "title": "初恋日記",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=kmkMfFljd-0",
+      "mediaId": "cf45e0f0-0aab-5d4f-a481-3d4f5eea83a7",
+      "mediaUrl": "https://www.youtube.com/watch?v=kmkMfFljd-0",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "適当緑"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-457",
+      "sourceBatch": "B054 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b054-XIhZ8kdGDiw-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "a737abf3-71d9-40c5-847a-9e4b5f11ebcb",
+        "kind": "song_variant",
+        "primaryWorkId": "33e7cfd7-4e95-5d66-87bd-ce993788d456",
+        "title": "あだぽしゃ",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=XIhZ8kdGDiw",
+      "mediaId": "8845d246-ed0b-5c42-869e-e3813be69cde",
+      "mediaUrl": "https://www.youtube.com/watch?v=XIhZ8kdGDiw",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "△○□×"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-458",
+      "sourceBatch": "B054 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b054-oMwWBcGd_V8-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "f306db60-f127-440f-b7eb-ebc60edcce5b",
+        "kind": "song_variant",
+        "primaryWorkId": "c87cf495-956e-57e2-ac24-9d6860e9ef78",
+        "title": "深海少女",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=oMwWBcGd_V8",
+      "mediaId": "7120ec2c-eea2-5bdf-b39b-8feca9f8cad9",
+      "mediaUrl": "https://www.youtube.com/watch?v=oMwWBcGd_V8",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "カオミン"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-459",
+      "sourceBatch": "B054 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b054-IhU914uc8Dg-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "239b726f-d17d-497f-a594-94157f513a2b",
+        "kind": "song_variant",
+        "primaryWorkId": "05ce5aad-9594-52d4-869b-088c2910e457",
+        "title": "真生活",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=IhU914uc8Dg",
+      "mediaId": "d72c279e-4f7b-583e-a45a-96f7d29ed6ff",
+      "mediaUrl": "https://www.youtube.com/watch?v=IhU914uc8Dg",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "庭春樹"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-460",
+      "sourceBatch": "B054 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b054-KqwXH--F7tk-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "bab6e472-bd01-46ba-b717-c4aa2ada4f86",
+        "kind": "song_variant",
+        "primaryWorkId": "16181976-a6b5-55ee-973f-1631d44e2772",
+        "title": "ギャラリア",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "url": "https://www.youtube.com/watch?v=KqwXH--F7tk",
+      "mediaId": "c717b507-1b18-5c72-bdfc-c36d97b7930e",
+      "mediaUrl": "https://www.youtube.com/watch?v=KqwXH--F7tk",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "でん"
+        },
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceId": "S-461",
+      "sourceBatch": "B054 r001",
+      "scopeNote": "These names are attached only to this exact video. Audio and live-band observations do not assert recording identity or singing. Source wording is retained in the intake receipt and original report."
+    },
+    {
+      "key": "chat-b052-utahime-audio-staff",
+      "status": "active",
+      "checkedOn": "2026-11-04",
+      "entry": {
+        "entryId": "545b1065-2273-43b2-9828-4e6832c36ba1",
+        "kind": "song_variant",
+        "primaryWorkId": "3264c8ed-5d57-5db4-8b4a-f832e1c21356",
+        "title": "歌姫",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "url": "https://www.maosasagawa.jp/blogs/news/250704vwp-utahime",
+      "mediaId": "c83155dd-abef-51c1-b191-a34c0c920502",
+      "mediaUrl": "https://www.youtube.com/watch?v=yMM8hrAnbTc",
+      "credits": [
+        {
+          "role": "Bass",
+          "name": "田中雄大 (ユアネス)"
+        },
+        {
+          "role": "Mixed by",
+          "name": "池田洋 (hmc studio)"
+        },
+        {
+          "role": "Mastered by",
+          "name": "木村健太郎 (kimken studio)"
+        }
+      ],
+      "sourceId": "S-463",
+      "sourceBatch": "B052 r001",
+      "scopeNote": "Only the five-person original MV. No attribution to the fifteen-person festival performance."
     }
   ]
 }

@@ -201,13 +201,19 @@
       "name": "カンザキイオリ",
       "type": "artist",
       "origin": "database",
-      "aliases": [],
+      "aliases": [
+        "IORI KANZAKI",
+        "Iori Kanzaki"
+      ],
       "presentation": {
         "kind": "creator",
         "categories": [
           "creators"
         ]
-      }
+      },
+      "identitySources": [
+        "https://www.youtube.com/watch?v=j-6kHIqvWHo"
+      ]
     },
     {
       "id": "81a01233-230e-50a8-a309-11275c794cd0",
@@ -1766,6 +1772,19 @@
         "kind": "artist",
         "categories": [
           "artists"
+        ]
+      }
+    },
+    {
+      "id": "6cad7a31-4f7c-52a5-b42a-ae08820f9fac",
+      "name": "mayrock",
+      "type": "artist",
+      "origin": "catalog",
+      "aliases": [],
+      "presentation": {
+        "kind": "creator",
+        "categories": [
+          "creators"
         ]
       }
     }
