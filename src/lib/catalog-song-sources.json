@@ -12888,6 +12888,78 @@
       "sourceIds": [
         "S-506"
       ]
+    },
+    {
+      "key": "kotoba-title-reading-2026-11-06",
+      "status": "active",
+      "checkedOn": "2026-11-06",
+      "entry": {
+        "entryId": "a5a65ece-39ea-4eda-8ff5-a3a3d9795a74",
+        "kind": "song_variant",
+        "primaryWorkId": "b0e56aef-ab96-5119-9012-9436acaf3966",
+        "title": "言葉",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://utaten.com/lyric/sz26012307/",
+      "metadataBasis": {
+        "titleKana": "ことのは"
+      },
+      "metadata": {
+        "titleKana": "ことば"
+      },
+      "publicNotes": [
+        {
+          "text": "配信で「ことのは」と紹介された後、作者Guianoが「ことば」と訂正したとするレポートがあります。本目録では「ことば」を採用しています。",
+          "sourceUrl": "https://note.com/nice_dunlin464/n/n83bb4596964e",
+          "sourceLabel": "経緯のレポート"
+        }
+      ],
+      "evidence": {
+        "reading": "UtaTenの曲名専用欄「よみ：ことば」。公式の読み指定を直接確認した資料とは区別する。",
+        "correctionHistory": "第三者のライブ感想に記された経緯。本人・作者の該当発言の原音声と時間位置は未確認。",
+        "ownerRequest": "2026-11-06 本人が「言葉」の読みの訂正と経緯の備考掲載を指定。"
+      }
+    },
+    {
+      "key": "lolikami-title-reading-2026-11-06",
+      "status": "active",
+      "checkedOn": "2026-11-06",
+      "entry": {
+        "entryId": "73a09ef2-ae91-48d0-92c7-46be298ab381",
+        "primaryWorkId": "2002b2a2-b69e-5435-9765-2dcc9cd44bfd",
+        "title": "粛聖!! ロリ神レクイエム☆",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": [],
+        "kind": "song_variant",
+        "displayCredit": "ヰ世界情緒"
+      },
+      "creditBasis": [],
+      "url": "https://utaten.com/lyric/mi22091042/",
+      "metadataBasis": {
+        "titleKana": "しょくざいろりかみれくいえむ"
+      },
+      "metadata": {
+        "titleKana": "しゅくせいろりかみれくいえむ"
+      },
+      "evidence": {
+        "title": "しぐれうい公式MVのタイトル「粛聖!! ロリ神レクイエム☆」およびUNIVERSAL MUSIC JAPAN公式BIOGRAPHY。",
+        "titleUrls": [
+          "https://www.youtube.com/watch?v=Ci_zad39Uhw",
+          "https://www.universal-music.co.jp/shigureui/biography/"
+        ],
+        "reading": "UtaTenの曲名専用よみ欄「しゅくせい!! ろりかみれくいえむ☆」。記号と空白を除いた既存の読み形式に合わせる。"
+      }
     }
   ],
   "mediaCredits": [

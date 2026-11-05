@@ -4,6 +4,7 @@ import {songDetailFromModel,songTitleCaptionForEntry} from './song-detail-data.m
 import {creditNameKey,personKeyForCredit,entityForId,singersForEntry,billingPeopleForEntry,membershipsForEntity,personRelationsForEntity} from './catalog-people.mjs';
 import {catalogNameMatches} from './catalog-name-search.mjs';
 import {creditRoleLabel,orderedCreditRoles,songCreditRole} from './catalog-credit-labels.mjs';
+import {songDisplayTitle} from './catalog-song-title.mjs';
 export {creditNameKey} from './catalog-people.mjs';
 
 const arr=x=>Array.isArray(x)?x:[],text=x=>typeof x==='string'?x:'';
@@ -107,7 +108,7 @@ export function personDetailFromModel(model,key,{page=1,limit=24,role='all',bill
  const songs=selectedSongs.map(([entryId,entryRoles])=>{
   const entry=model.entries.get(entryId),d=entry.detail;
   const videoOnly=[...entryRoles].every(r=>r.startsWith('video:'));
-  return {entryId,href:'/songs/'+entryId+(activeRole.startsWith('video:')||videoOnly?'?tab=videos':''),title:d.title,displayCredit:songTitleCaptionForEntry(entry),roles:roleLabels(entryRoles)};
+  return {entryId,href:'/songs/'+entryId+(activeRole.startsWith('video:')||videoOnly?'?tab=videos':''),title:songDisplayTitle(d),displayCredit:songTitleCaptionForEntry(entry),roles:roleLabels(entryRoles)};
  }).sort((a,b)=>compare(text(model.entries.get(a.entryId).sortTitle)||a.title,text(model.entries.get(b.entryId).sortTitle)||b.title)||compare(a.entryId,b.entryId));
  limit=Number.isSafeInteger(limit)&&limit>0&&limit<=100?limit:24;
  const pages=Math.ceil(songs.length/limit);page=Number.isSafeInteger(page)&&page>0?Math.min(page,Math.max(pages,1)):1;

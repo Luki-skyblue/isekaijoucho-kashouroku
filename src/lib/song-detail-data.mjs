@@ -13,6 +13,8 @@ import {supplementalLivesForEntry} from './live-program-supplements.mjs';
 import {liveVocalRecordsForEntry} from './live-vocal-entries.mjs';
 import {supplementalReleasesForEntry} from './release-content-data.mjs';
 import {resolveCreatorCredit} from './creator-credit-data.mjs';
+import {correctedLegacyTargetTitle} from './catalog-title-corrections.mjs';
+import {songDisplayTitle} from './catalog-song-title.mjs';
 
 const arr=x=>Array.isArray(x)?x:[],str=x=>typeof x==='string'?x:'',object=x=>x!==null&&typeof x==='object'&&!Array.isArray(x);
 const byLegacyId=new Map(legacy.records.map(x=>[x.legacyId,x]));
@@ -89,7 +91,7 @@ function legacyRecords(entry){
  // Old labels can differ from the adopted display title. The frozen target
  // descriptor, together with the original ID, supplies the exact identity.
  return arr(entry?.legacyIds).map(id=>byLegacyId.get(id)).filter(x=>x&&arr(x.targets).some(t=>
-  t.entryId===d.entryId&&t.primaryWorkId===d.primaryWorkId&&t.title===d.title&&JSON.stringify(t.variations??[])===JSON.stringify(d.variations??[])&&
+  t.entryId===d.entryId&&t.primaryWorkId===d.primaryWorkId&&(t.title===d.title||correctedLegacyTargetTitle(t)===d.title)&&JSON.stringify(t.variations??[])===JSON.stringify(d.variations??[])&&
   Array.isArray(entry.singerIds)&&t.singerIds.length===entry.singerIds.length&&t.singerIds.every(id=>entry.singerIds.includes(id))));
 }
 const dated=value=>typeof value==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(value)&&Number.isFinite(Date.parse(value+'T00:00:00Z'))&&new Date(value+'T00:00:00Z').toISOString().slice(0,10)===value;
@@ -98,10 +100,11 @@ const dated=value=>typeof value==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(value)&&N
 function reviewedMetadataForEntry(entry,metadata,factRecords){
  const facts=registeredSongFactsForEntry(entry,factRecords);
  let result=metadata;
- for(const key of ['lyricsUrl','tieUp','firstAppearance','originalCredits']){
+ for(const key of ['titleKana','lyricsUrl','tieUp','firstAppearance','originalCredits']){
   if(['not_found','not_applicable'].includes(metadata.fieldReview?.[key]?.outcome))continue;
   const values=facts.filter(r=>Object.hasOwn(r.metadataBasis??{},key)&&Object.hasOwn(r.metadata??{},key)&&
    JSON.stringify(r.metadataBasis[key])===JSON.stringify(metadata[key])).map(r=>r.metadata[key]).filter(value=>{
+    if(key==='titleKana')return typeof value==='string'&&!!value.trim()&&value.length<=500;
     if(key==='lyricsUrl')return typeof value==='string'&&!!safeSongUrl(value);
     if(key==='tieUp')return typeof value==='string'&&!!value.trim();
     if(key==='originalCredits')return Array.isArray(value)&&value.every(c=>str(c.role).trim()&&str(c.name).trim())&&
@@ -346,9 +349,12 @@ export function buildSongDetail(entry,work={},options={}){
  const d=entry.detail,metadata=songMetadataForEntry(entry,options.factRecords,work,options),creditData=songCreditsForEntry(entry,metadata,options.factRecords),videos=songVideosForEntry(entry,work,options.sourceRecords,options.sourceExclusions,options.mediaCreditRecords),releases=songReleasesForEntry(entry,work,options.releaseRecords,options.sourceRecords,options.additionalReleases),allLives=songLivesForEntry(entry,options.eventRecords,options.additionalLives);
  const images=artworkCandidates(entry,videos,releases,allLives,options);
  const vocalCredit=vocalDisplayCreditForEntry(entry);
- return {detail:{...d,...(vocalCredit?{vocalDisplayCredit:vocalCredit}:{}),legacySongType:songTypeForEntry(entry,options.sourceRecords,options.factRecords),singers:singersForEntry(entry)},metadata,credits:creditData.rows,originalCredits:creditData.originalCredits,originalArranger:creditData.originalArranger,...(creditData.originalArrangerCredit?{originalArrangerCredit:creditData.originalArrangerCredit}:{}),
+ const notes=unique(registeredSongFactsForEntry(entry,options.factRecords)
+  .filter(record=>!Object.hasOwn(record.metadata??{},'titleKana')||record.metadata.titleKana===metadata.titleKana)
+  .flatMap(record=>arr(record.publicNotes)).filter(note=>str(note.text).trim()&&safeSongUrl(note.sourceUrl)));
+ return {detail:{...d,title:songDisplayTitle(d),...(vocalCredit?{vocalDisplayCredit:vocalCredit}:{}),legacySongType:songTypeForEntry(entry,options.sourceRecords,options.factRecords),singers:singersForEntry(entry)},metadata,credits:creditData.rows,originalCredits:creditData.originalCredits,originalArranger:creditData.originalArranger,...(creditData.originalArrangerCredit?{originalArrangerCredit:creditData.originalArrangerCredit}:{}),
   artwork:images[0]??null,artworkCandidates:images,listenUrl:videos[0]?.url??known(registeredSongFactsForEntry(entry,options.factRecords).map(r=>safeSongUrl(r.listenUrl)))??releases.find(r=>r.externalUrl)?.externalUrl??null,videos,releases,lives:allLives,
-  hasUncertainLives:allLives.some(x=>x.uncertain),comparison:entry.compare??null,firstAppearanceLink:null,firstFullLink:null,
+  hasUncertainLives:allLives.some(x=>x.uncertain),comparison:entry.compare??null,firstAppearanceLink:null,firstFullLink:null,...(notes.length?{notes}:{}),
   versionLabel:d.entryId===SIRIUS_DUET&&d.primaryWorkId===SIRIUS_WORK?'デュエット':null};
 }
 /** Reuse already entry-scoped sources. A matching date alone, a fuzzy title,
@@ -383,7 +389,10 @@ export function songDetailFromModel(model,entryId){
  const comparison=song.comparison?{...song.comparison,entries:arr(song.comparison.entries).map(row=>{
   const sibling=model.entries.get(row.entryId),sameWork=entry.detail.kind==='song_variant'&&entry.detail.primaryWorkId&&sibling?.detail.kind==='song_variant'&&sibling.detail.primaryWorkId===entry.detail.primaryWorkId;
   const metadata=sameWork?(row.entryId===entryId?song.metadata:songMetadataForEntry(sibling,undefined,model.works.get(sibling.detail.primaryWorkId))):null;
-  return {...row,firstAppearanceDate:str(metadata?.firstAppearance?.date)||null};
+  return {...row,...(sameWork?{title:songDisplayTitle(sibling.detail)}:{}),firstAppearanceDate:str(metadata?.firstAppearance?.date)||null};
  })}:null;
- return {...song,comparison,firstAppearanceLink:firstSourceLinkFromDetail(song,model),firstFullLink:firstSourceLinkFromDetail(song,model,song.metadata.firstFull??null)};
+ const relatedVariants=arr(song.detail.relatedVariants).map(row=>{
+  const sibling=model.entries.get(row.entryId);return sibling?.detail.primaryWorkId===entry.detail.primaryWorkId?{...row,title:songDisplayTitle(sibling.detail)}:row;
+ });
+ return {...song,detail:{...song.detail,relatedVariants},comparison,firstAppearanceLink:firstSourceLinkFromDetail(song,model),firstFullLink:firstSourceLinkFromDetail(song,model,song.metadata.firstFull??null)};
 }

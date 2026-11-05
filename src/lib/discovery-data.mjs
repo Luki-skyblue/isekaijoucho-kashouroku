@@ -4,6 +4,7 @@ import {songDetailFromModel,youtubeId,safeSongUrl} from './song-detail-data.mjs'
 import {isLiveRelease} from './release-detail-data.mjs';
 import {EVENT_ARTWORK_RECORDS} from './catalog-artwork-data.mjs';
 import eventSources from './discovery-event-data.json' with {type:'json'};
+import {songDisplayTitle} from './catalog-song-title.mjs';
 
 export const DISCOVERY_CATEGORIES=[
  {id:'isekai_official',label:'ヰ世界情緒公式'},
@@ -126,7 +127,7 @@ function indexFor(model,metadata){
  if(byMetadata.has(metadata))return byMetadata.get(metadata);
  const rows=[...model.entries].map(([entryId,entry])=>{
   const result=classifyDiscoveryRoutes(discoveryRoutesForEntry(model,entryId,metadata)),d=entry.detail;
-  return {entryId,title:d.title,displayCredit:str(d.displayCredit)||arr(d.singers).map(s=>str(s.name)).filter(Boolean).join('・'),category:result.category,
+  return {entryId,title:songDisplayTitle(d),displayCredit:str(d.displayCredit)||arr(d.singers).map(s=>str(s.name)).filter(Boolean).join('・'),category:result.category,
    currentFullCategory:result.currentFullCategory,sortTitle:str(entry.sortTitle)||d.title,
    sourceLabel:result.category==='other'?otherSourceLabel(result.primary):null};
  }).sort((a,b)=>compare(a.sortTitle,b.sortTitle)||compare(a.entryId,b.entryId));

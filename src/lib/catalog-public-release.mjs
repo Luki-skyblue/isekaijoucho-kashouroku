@@ -3,6 +3,7 @@ import {randomUUID,createHash} from 'node:crypto';
 import {readFileSync,statSync} from 'node:fs';
 import {validateExport,PURPOSE,PUBLIC_PURPOSE,liveCandidatesApplicable,applyLiveFilterCandidates} from './private-read-model.mjs';
 import {songMetadataForEntry,songClassificationForEntry} from './song-detail-data.mjs';
+import {correctCatalogTitleProjection} from './catalog-title-corrections.mjs';
 
 const scalar=Symbol('scalar'),url=Symbol('url'),absentUrl=Symbol('absent-url');
 const obj=(names='',children={})=>({...Object.fromEntries(names.split(' ').filter(Boolean).map(k=>[k,scalar])),...children});
@@ -128,7 +129,7 @@ export function createPublicRelease(input,{releaseId=randomUUID(),createdAt=new 
    const f=live.events.get(r.record_id)?.filterMetadata;
    if(f)p.filterMetadata=project(filterMetadata,{...f,verificationStatus:'unverified'});
   }
-  return {record_type:r.record_type,record_id:r.record_id,payload:p};
+  return {record_type:r.record_type,record_id:r.record_id,payload:correctCatalogTitleProjection(p,base)};
  });
  const counts=Object.fromEntries(['directory','entry','work','event','release'].map(k=>[k,rows.filter(r=>r.record_type===k).length]));
  rows.unshift({record_type:'manifest',record_id:'catalog-public-v1',payload:{formatVersion:1,purpose:PUBLIC_PURPOSE,

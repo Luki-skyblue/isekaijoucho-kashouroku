@@ -15,6 +15,8 @@ import {workSearchTitles,releaseTitleMatches,eventTitleMatches} from './catalog-
 import {CATALOG_SOURCE_OPTIONS} from './catalog-source-options.mjs';
 import {sourceKindsForEntry} from './catalog-source-data.mjs';
 import {creditMatchingEntries} from './person-detail-data.mjs';
+import {applyCatalogTitleCorrections} from './catalog-title-corrections.mjs';
+import {songDisplayTitle} from './catalog-song-title.mjs';
 import {validCreatorKey,validCreditRole,validFirstDate,readFirstRange} from './catalog-advanced-query.mjs';
 
 export const PURPOSE = 'PRIVATE_G0_READ_MODEL_EXPERIMENT_NOT_FOR_PUBLICATION';
@@ -193,8 +195,8 @@ export function validateExport(input,{purpose=PURPOSE}={}) {
     uniqueItems(items,'itemId','release');
     releaseItemCount += items.length; releaseData.set(id, {detail:r.pages[0],items});
   }
-  return {purpose,manifest:m,directories,entries:entryData,works:workData,events:eventData,releases:releaseData,
-    metrics:{counts:m.counts,programItemCount,releaseItemCount,relatedSourceRows}};
+  return applyCatalogTitleCorrections({purpose,manifest:m,directories,entries:entryData,works:workData,events:eventData,releases:releaseData,
+    metrics:{counts:m.counts,programItemCount,releaseItemCount,relatedSourceRows}});
 }
 
 function closed(e) {
@@ -235,7 +237,7 @@ export function queryEntries(model, filters = {}) {
     if (selectedKinds.length && !selectedKinds.some(kind=>songTypeMatchesCategory(d.kind === 'medley' ? 'medley' : songType,kind))) continue;
     const workTitles = id => workSearchTitles(model.works.get(id)?.detail);
     let rank = 0;
-    if (q && ![...workSearchTitles(d),...workTitles(d.primaryWorkId)].some(t => matches(t,q)) &&
+    if (q && ![...workSearchTitles(d),songDisplayTitle(d),...workTitles(d.primaryWorkId)].some(t => matches(t,q)) &&
         !matches(songMetadataForEntry(e,undefined,model.works.get(d.primaryWorkId)).titleKana,q) &&
         !(d.kind === 'medley' && matches('メドレー',q) && matches(q,'メドレー'))) {
       if (d.kind !== 'medley' || !d.medleySegments.some(s => [s.rawLabel,s.workTitle,...workTitles(s.workId)].some(t => matches(t,q)))) continue;
@@ -248,7 +250,7 @@ export function queryEntries(model, filters = {}) {
       if(typeof value==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(value)&&Number.isFinite(Date.parse(value+'T00:00:00Z'))&&new Date(value+'T00:00:00Z').toISOString().slice(0,10)===value)firstAppearanceDate=value;
     }
     if(ranged&&(!firstAppearanceDate||(firstFrom&&firstAppearanceDate<firstFrom)||(firstTo&&firstAppearanceDate>firstTo)))continue;
-    rows.push({entryId,title:d.title,kind:d.kind,displayCredit:songTitleCaptionForEntry(e),legacySongType:songType,
+    rows.push({entryId,title:songDisplayTitle(d),kind:d.kind,displayCredit:songTitleCaptionForEntry(e),legacySongType:songType,
       matchKind:rank ? 'component' : 'title',rank,sortTitle:e.sortTitle ?? d.title,...(chronological?{firstAppearanceDate}:{})});
   }
   rows.sort((a,b) => {

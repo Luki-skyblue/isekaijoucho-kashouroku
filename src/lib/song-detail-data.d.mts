@@ -4,6 +4,7 @@ import type {PrivateModel,PrivateWork} from './private-read-model.mjs';
 import type {SongClassification} from './catalog-song-classification.mjs';
 export type SongDetailData={
  detail:JsonObject;metadata:JsonObject;
+ notes?:Array<{text:string;sourceUrl:string;sourceLabel?:string}>;
  firstAppearanceLink:SongFirstSourceLink|null;firstFullLink:SongFirstSourceLink|null;
  credits:Array<{role:string;scope:string;names:string[];people:ResolvedCreditName[];value:string|null;review:JsonObject|null}>;
  originalArranger:string|null;originalArrangerCredit?:ResolvedCreditName;

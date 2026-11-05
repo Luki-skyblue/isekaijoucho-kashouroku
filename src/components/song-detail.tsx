@@ -43,7 +43,6 @@ export function CatalogSongDetail({song,initialTab='info',returnTo}:{song:SongDe
    <dt>初出</dt><dd><First value={m.firstAppearance} review={review.firstAppearance} link={song.firstAppearanceLink}/></dd>
    {fullVisible&&<><dt>初出（フル）</dt><dd><First value={m.firstFull} review={review.firstFull} link={song.firstFullLink}/></dd></>}
    <dt>タイアップ</dt><dd><Value value={m.tieUp} review={review.tieUp}/></dd>
-   {str(d.editorialOriginLabel)&&<><dt>バージョン名</dt><dd>{str(d.editorialOriginLabel)}</dd></>}
    {variations.length>0&&<><dt>バリエーション</dt><dd>{variations.join(' / ')}</dd></>}
   </dl>
   <div className="song-detail-credits"><dl className="song-detail-facts">{song.credits.map(c=><div className="song-detail-fact-pair" key={c.role}><dt>{creditRoleLabel(songCreditRole(d,c))}</dt><dd>{c.people.length?c.people.map((person,i)=><span key={person.name}>{i>0?'・':''}<CreditName name={person.name} personKey={person.personKey} parts={person.parts}/></span>):<Value value={c.value} review={c.review}/>}</dd></div>)}</dl></div>
@@ -51,6 +50,7 @@ export function CatalogSongDetail({song,initialTab='info',returnTo}:{song:SongDe
    {str(m.originalArtist)&&<><dt>アーティスト</dt><dd>{str(m.originalArtist)}</dd></>}{str(m.originalVocal)&&<><dt>歌唱</dt><dd>{str(m.originalVocal)}</dd></>}{originalAuthors.map(c=><div className="song-detail-fact-pair" key={c.role+'|'+c.name}><dt>{creditRoleLabel(c.role)}</dt><dd><CreditName name={c.name} personKey={c.personKey} parts={c.parts}/></dd></div>)}{song.originalArranger&&<><dt>編曲</dt><dd><CreditName name={song.originalArranger} parts={song.originalArrangerCredit?.parts}/></dd></>}
   </dl></div>}
   {safeSongUrl(m.lyricsUrl)&&<dl className="song-detail-facts song-detail-lyrics"><dt>歌詞</dt><dd><a href={safeSongUrl(m.lyricsUrl)!} target="_blank" rel="noopener noreferrer">{new URL(str(m.lyricsUrl)).hostname==='piapro.jp'?'piaproで読む':'歌詞を見る'} ↗</a></dd></dl>}
+  {!!song.notes?.length&&<div className="song-detail-supplement"><h2>備考</h2>{song.notes.map((note,i)=><p className="song-detail-note" key={i}>{note.text}{' '}<a href={safeSongUrl(note.sourceUrl)!} target="_blank" rel="noopener noreferrer">{note.sourceLabel||'出典'} ↗</a></p>)}</div>}
   {segments.length>0&&<div className="song-detail-supplement"><h2>構成曲</h2><ol>{segments.map((segment,i)=><li key={str(segment.workId)+'-'+i}>{validId(str(segment.workId))?<Link href={catalogEntryHref(str(segment.workId),returnTo)}>{str(segment.rawLabel||segment.workTitle)}</Link>:str(segment.rawLabel||segment.workTitle)}</li>)}</ol></div>}
   {medleys.length>0&&<div className="song-detail-supplement"><h2>この曲を含むメドレー</h2>{medleys.map(medley=><Link className="song-detail-version" key={str(medley.entryId)} href={catalogEntryHref(str(medley.entryId),returnTo)}>{str(medley.title)}<span aria-hidden="true">↗</span></Link>)}</div>}
  </>;

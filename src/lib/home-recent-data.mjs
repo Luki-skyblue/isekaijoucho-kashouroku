@@ -5,6 +5,7 @@ import {releaseListArtworkFromModel,releaseDisplayContextFromModel,releaseKindLa
 import {supplementalLivesForEntry} from './live-program-supplements.mjs';
 import {liveDisplayContextFromModel} from './live-detail-data.mjs';
 import billings from './catalog-release-billings.json' with {type:'json'};
+import {songDisplayTitle} from './catalog-song-title.mjs';
 
 const arr=x=>Array.isArray(x)?x:[],text=x=>typeof x==='string'?x.trim():'';
 const compare=(a,b)=>a<b?-1:a>b?1:0;
@@ -63,7 +64,7 @@ export function homeRecentFromModel(model,{today=homeToday()}={}){
  for(const entry of model.entries.values()){
   const d=entry.detail,first=songMetadataForEntry(entry,undefined,model.works.get(d.primaryWorkId)).firstAppearance,date=day(first?.date);
   if(!date||date>today)continue;
-  songs.push({entryId:d.entryId,title:d.title,date,sourceLabel:text(first?.label),
+  songs.push({entryId:d.entryId,title:songDisplayTitle(d),date,sourceLabel:text(first?.label),
    displayCredit:songTitleCaptionForEntry(entry)});
  }
  const order=debutProgramOrder(model,songs);
