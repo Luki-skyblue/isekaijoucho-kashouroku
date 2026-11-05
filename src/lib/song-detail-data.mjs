@@ -351,7 +351,7 @@ export function buildSongDetail(entry,work={},options={}){
  const vocalCredit=vocalDisplayCreditForEntry(entry);
  const notes=unique(registeredSongFactsForEntry(entry,options.factRecords)
   .filter(record=>!Object.hasOwn(record.metadata??{},'titleKana')||record.metadata.titleKana===metadata.titleKana)
-  .flatMap(record=>arr(record.publicNotes)).filter(note=>str(note.text).trim()&&safeSongUrl(note.sourceUrl)));
+  .flatMap(record=>arr(record.publicNotes)).filter(note=>str(note.text).trim()&&safeSongUrl(note.sourceUrl)).map(note=>({text:note.text})));
  return {detail:{...d,title:songDisplayTitle(d),...(vocalCredit?{vocalDisplayCredit:vocalCredit}:{}),legacySongType:songTypeForEntry(entry,options.sourceRecords,options.factRecords),singers:singersForEntry(entry)},metadata,credits:creditData.rows,originalCredits:creditData.originalCredits,originalArranger:creditData.originalArranger,...(creditData.originalArrangerCredit?{originalArrangerCredit:creditData.originalArrangerCredit}:{}),
   artwork:images[0]??null,artworkCandidates:images,listenUrl:videos[0]?.url??known(registeredSongFactsForEntry(entry,options.factRecords).map(r=>safeSongUrl(r.listenUrl)))??releases.find(r=>r.externalUrl)?.externalUrl??null,videos,releases,lives:allLives,
   hasUncertainLives:allLives.some(x=>x.uncertain),comparison:entry.compare??null,firstAppearanceLink:null,firstFullLink:null,...(notes.length?{notes}:{}),
