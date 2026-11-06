@@ -90,6 +90,16 @@ function relatedSongCounts(model,songs){
  return {songCount:keys.size,variantCount};
 }
 const relatedSongTabCounts=(model,songs)=>{const {songCount,variantCount}=relatedSongCounts(model,songs);return {count:songCount,variantCount};};
+/** Read-only projection for combined search. Keep each reviewed identity and
+ * credit scope; membership never expands a person's credited songs. */
+export function searchPeopleIndexFromModel(model){
+ return [...indexFor(model).people.values()].filter(p=>p.listed).map(p=>({
+  key:p.key,name:p.name,aliases:p.aliases,roles:[...p.roles],entryIds:[...p.songs.keys()],
+  ...relatedSongCounts(model,p.songs),kind:presentation(p)?.kind??(p.type==='group'?'group':p.key.startsWith('credit-')?'creator':'unknown'),
+  kindLabel:kindLabel(p),involvements:[...new Set([...p.roles].map(r=>r==='artist'?'billing':roleCategory(r)).filter(Boolean))],
+  groups:membershipsForEntity(p.key).filter(r=>r.memberId===p.key).map(r=>({id:r.groupId,name:entityForId(r.groupId)?.name})).filter(g=>g.name),
+ }));
+}
 export function personDetailFromModel(model,key,{page=1,limit=24,role='all',billing='all'}={}){
  if(!validPersonKey(key))return null;
  const index=indexFor(model),targets=index.aliases.get(key);

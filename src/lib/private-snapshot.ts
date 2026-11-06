@@ -16,6 +16,7 @@ import {catalogSingerChoices} from './catalog-people.mjs';
 import {discoveryFromModel} from './discovery-data.mjs';
 import discoveryChannels from './discovery-channel-data.json';
 import {creditFilterChoicesFromModel} from './person-detail-data.mjs';
+import {combinedSearchFromModel} from './combined-search-data.mjs';
 
 let cached:{file:string;sha256:string;model:PrivateModel}|null=null;
 export function privateSnapshotEnabled():boolean {return process.env.CATALOG_DATA_MODE!=='public_release'&&privateSnapshotConfig() !== null;}
@@ -54,6 +55,7 @@ async function liveContext() {
   review:{id:applicable?liveCandidates.reviewId:null,applied:applicable}};
 }
 export async function privateLiveList(filters:LiveListFilters) {return queryEvents((await liveContext()).model,filters);}
+export async function privateCombinedSearch(query:Record<string,string|string[]|undefined>){return combinedSearchFromModel((await liveContext()).model,query,discoveryChannels);}
 export async function privateLiveDisplayContext(eventId:string){return liveDisplayContextFromModel((await liveContext()).model,eventId);}
 export async function privateLiveFilterOptions() {const {model,review}=await liveContext();return {...eventFilterOptions(model),review};}
 export async function privateSnapshotRpc(name:string,params:JsonObject):Promise<JsonObject|null> {

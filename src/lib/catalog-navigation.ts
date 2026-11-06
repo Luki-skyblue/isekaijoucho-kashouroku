@@ -2,6 +2,7 @@
  * The return context is navigation state, never a database filter or redirect target.
  * Non-catalog paths, fragments, unexpected parameters and overly long inputs fail closed.
  */
+import {safeCombinedSearchReturnTo} from './combined-search-query.mjs';
 type ListPath = '/songs' | '/lives' | '/releases' | '/people';
 const RETURN_KEYS:Record<ListPath,Set<string>> = {
  '/songs':new Set(['q','page','view','singer','singerMatch','type','source','creator','creditRole','firstFrom','firstTo','sort']),
@@ -11,6 +12,7 @@ const RETURN_KEYS:Record<ListPath,Set<string>> = {
 };
 
 export function safeListReturnTo(value: unknown, path:ListPath): string | null {
+ const search=safeCombinedSearchReturnTo(value);if(search)return search;
  const live=path==='/lives';
  if (typeof value !== 'string' || value.length > (live?12000:4096) || !value.startsWith(path) || /[\u0000-\u001f]/.test(value)) return null;
  try {

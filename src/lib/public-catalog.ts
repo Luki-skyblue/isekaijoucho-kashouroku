@@ -16,9 +16,11 @@ import {catalogSingerChoices} from './catalog-people.mjs';
 import {discoveryFromModel} from './discovery-data.mjs';
 import discoveryChannels from './discovery-channel-data.json';
 import {creditFilterChoicesFromModel} from './person-detail-data.mjs';
+import {combinedSearchFromModel} from './combined-search-data.mjs';
 
 let cache:{file:string;model:PrivateModel}|null=null;
 export function publicCatalogEnabled(){return process.env.CATALOG_DATA_MODE==='public_release';}
+export function publicCombinedSearch(query:Record<string,string|string[]|undefined>){return combinedSearchFromModel(load(),query,discoveryChannels);}
 function load():PrivateModel{
  if(!publicCatalogEnabled())throw new Error('Public catalog is not enabled');
  const file=process.env.CATALOG_PUBLIC_FILE||join(process.cwd(),'catalog-release.json');

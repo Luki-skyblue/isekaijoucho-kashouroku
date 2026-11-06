@@ -50,15 +50,15 @@ export default function Guide(){
   <section id="detailed-search" className="info-section"><h2>詳細検索</h2>
    <p>歌唱者・楽曲区分・公開や収録先などで絞り込む場合は、<Link href="/search">{PAGE_LABELS.search}</Link>をご利用ください。現在は整備中で、登録情報の不足により結果に漏れがある場合があります。</p>
    <p>見つからないときは条件を減らすか、各一覧の名前検索もお試しください。</p>
-   <p><Link href="/discover">{PAGE_LABELS.discover}</Link>では、YouTube・CD・LIVEなどを入口に曲を探せます。</p>
+   <p>「公開・収録先」も検索条件の一つです。YouTube・CD・LIVEなどを、歌唱者や初出日と組み合わせられます。「すべてに一致」で絞り込み、「いずれかに一致」で候補を広げ、まとまりごとの除外もできます。入力した条件は「この条件で検索」を押すと適用されます。</p>
    {(newCatalog||liveFilters)&&<details className="info-details"><summary>絞り込み条件の説明</summary>
     {newCatalog&&<>
      <div id="singer-filters"><h3>歌唱者</h3>
       <div className="info-table-wrap"><table className="info-table"><thead><tr><th scope="col">条件</th><th scope="col">対象</th></tr></thead><tbody>
-       <tr><th scope="row">完全一致</th><td>選んだ人全員が歌い、他の歌唱者はいない</td></tr>
+       <tr><th scope="row">この組合せのみ</th><td>選んだ人全員が歌い、他の歌唱者はいない</td></tr>
        <tr><th scope="row">いずれかを含む</th><td>選んだ人のうち、1人以上が歌う</td></tr>
-       <tr><th scope="row">全員を含む</th><td>選んだ人全員が歌う。他の歌唱者がいてもよい</td></tr>
-       <tr><th scope="row">のみから構成</th><td>選んだ人だけで歌う。全員が参加していなくてもよい</td></tr>
+       <tr><th scope="row">すべて含む</th><td>選んだ人全員が歌う。他の歌唱者がいてもよい</td></tr>
+       <tr><th scope="row">この中の人だけ</th><td>選んだ人だけで歌う。全員が参加していなくてもよい</td></tr>
       </tbody></table></div>
       <p>例：ヰ世界情緒と春猿火を選ぶと、「完全一致」は2人のデュエット。「のみから構成」はそれぞれのソロも対象です。</p>
       <p>合成音声・音楽的同位体も歌唱者に含みます。歌唱者の組み合わせが調査中の記録は、「完全一致」「のみから構成」の対象にならない場合があります。</p>
