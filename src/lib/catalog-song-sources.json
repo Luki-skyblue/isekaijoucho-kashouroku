@@ -482,6 +482,1953 @@
         },
         "note": "既存の当該歌唱へのリンク。新曲/新録音/フル確認/現在の再生可能性の認定ではない。"
       }
+    },
+    {
+      "key": "chat-short-B4nh-a2q-8k",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "ed6e982f-31fc-4d7a-9c7b-76896b868fdd",
+        "kind": "song_variant",
+        "primaryWorkId": "24ea10b6-6aa0-5e9c-b2b1-c9cf882d1709",
+        "title": "キミ消失セカイ",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=B4nh-a2q-8k",
+      "title": "キミ消失セカイ (Shorts)",
+      "titleBasis": "editorial",
+      "mediaKind": "short_video",
+      "publishedOn": "2026-11-08",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://ckworks.jp/vinforadar/video/B4nh-a2q-8k"
+      ],
+      "evidence": {
+        "report": "B066",
+        "priorBatch": "B065",
+        "readExtent": "description_mirror",
+        "explicitFullUrl": "https://www.youtube.com/watch?v=ls_fmM2-inQ",
+        "audioActuallyChecked": false,
+        "note": "既報のFullとの明示的な対応を使う追加視聴リンク。新曲/新録音/フル確認を作らず、Fullの制作担当をShortへコピーしない。"
+      }
+    },
+    {
+      "key": "chat-short-Ej2Clpk1Pf8",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "36ee93d1-5886-4ed4-b089-276bd70ef54c",
+        "kind": "song_variant",
+        "primaryWorkId": "f0ed13b5-fdf3-5ce9-8f1a-876282fe71cb",
+        "title": "ヴァーミリオン",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=Ej2Clpk1Pf8",
+      "title": "ヴァーミリオン (Shorts)",
+      "titleBasis": "editorial",
+      "mediaKind": "short_video",
+      "publishedOn": "2026-11-01",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://ckworks.jp/vinforadar/video/Ej2Clpk1Pf8"
+      ],
+      "evidence": {
+        "report": "B066",
+        "priorBatch": null,
+        "readExtent": "description_mirror",
+        "explicitFullUrl": "https://www.youtube.com/watch?v=j-6tD72bOGI",
+        "audioActuallyChecked": false,
+        "note": "既報のFullとの明示的な対応を使う追加視聴リンク。新曲/新録音/フル確認を作らず、Fullの制作担当をShortへコピーしない。"
+      }
+    },
+    {
+      "key": "chat-short-0jaZWty3Rwo",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "9ad985af-702d-4a46-b4d5-d00e3e28f2df",
+        "kind": "song_variant",
+        "primaryWorkId": "193ca6a9-3327-5482-875d-746a70365c79",
+        "title": "ジオラマドラマ",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=0jaZWty3Rwo",
+      "title": "ジオラマドラマ (Shorts)",
+      "titleBasis": "editorial",
+      "mediaKind": "short_video",
+      "publishedOn": "2026-10-25",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://ckworks.jp/vinforadar/video/0jaZWty3Rwo"
+      ],
+      "evidence": {
+        "report": "B067",
+        "priorBatch": null,
+        "readExtent": "description_mirror",
+        "explicitFullUrl": "https://www.youtube.com/watch?v=ftCqxjpxdc8",
+        "audioActuallyChecked": false,
+        "note": "既報のFullとの明示的な対応を使う追加視聴リンク。新曲/新録音/フル確認を作らず、Fullの制作担当をShortへコピーしない。"
+      }
+    },
+    {
+      "key": "chat-short-TmtbuHmpUwQ",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "0c4b689c-3fc3-4d82-8d3d-1af7490887a0",
+        "kind": "song_variant",
+        "primaryWorkId": "a355c405-a4ac-58b6-9a6a-32c46c129acd",
+        "title": "そして白に還る",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=TmtbuHmpUwQ",
+      "title": "そして白に還る (Shorts)",
+      "titleBasis": "editorial",
+      "mediaKind": "short_video",
+      "publishedOn": "2026-10-18",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://ckworks.jp/vinforadar/video/TmtbuHmpUwQ"
+      ],
+      "evidence": {
+        "report": "B067",
+        "priorBatch": null,
+        "readExtent": "description_mirror",
+        "explicitFullUrl": "https://www.youtube.com/watch?v=lhd67CnArlI",
+        "audioActuallyChecked": false,
+        "note": "既報のFullとの明示的な対応を使う追加視聴リンク。新曲/新録音/フル確認を作らず、Fullの制作担当をShortへコピーしない。"
+      }
+    },
+    {
+      "key": "chat-short-cHTeOo8_X6Y",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "6769e2c7-f7e1-4204-94ac-643510b863ab",
+        "kind": "song_variant",
+        "primaryWorkId": "b8e2791f-5d74-5a2d-a74b-912da0dcfd94",
+        "title": "約束",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=cHTeOo8_X6Y",
+      "title": "約束 (Shorts)",
+      "titleBasis": "editorial",
+      "mediaKind": "short_video",
+      "publishedOn": "2026-10-31",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://ckworks.jp/vinforadar/video/cHTeOo8_X6Y"
+      ],
+      "evidence": {
+        "report": "B046",
+        "priorBatch": null,
+        "readExtent": "description_mirror",
+        "explicitFullUrl": "https://www.youtube.com/watch?v=THyn-jQVg-c",
+        "audioActuallyChecked": false,
+        "note": "既報のFullとの明示的な対応を使う追加視聴リンク。新曲/新録音/フル確認を作らず、Fullの制作担当をShortへコピーしない。"
+      }
+    },
+    {
+      "key": "chat-short-POrtgu7C_RM",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "f95216be-1833-4768-aa9b-be265c717c73",
+        "kind": "song_variant",
+        "primaryWorkId": "f661806b-5233-4426-8d72-5d69b5f22824",
+        "title": "ファタール",
+        "displayCredit": "ヰ世界情緒 × 夜乃くろむ",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "e827fa7d-2562-56c4-9984-742c9b2281f8"
+        ],
+        "variations": []
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=POrtgu7C_RM",
+      "title": "ファタール (Shorts)",
+      "titleBasis": "editorial",
+      "mediaKind": "short_video",
+      "publishedOn": "2026-10-26",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://ckworks.jp/vinforadar/video/POrtgu7C_RM"
+      ],
+      "evidence": {
+        "report": "B034",
+        "priorBatch": null,
+        "readExtent": "description_mirror",
+        "explicitFullUrl": "https://www.youtube.com/watch?v=SySRldWdFs0",
+        "audioActuallyChecked": false,
+        "note": "既報のFullとの明示的な対応を使う追加視聴リンク。新曲/新録音/フル確認を作らず、Fullの制作担当をShortへコピーしない。"
+      }
+    },
+    {
+      "key": "chat-short-MYd0bvKKmE4",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "e2035c03-dc9b-4f10-9f2f-06b956556707",
+        "kind": "song_variant",
+        "primaryWorkId": "1f45268e-fb48-4206-a6fe-c1182e0a3c7d",
+        "title": "String Theocracy",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=MYd0bvKKmE4",
+      "title": "String Theocracy (Shorts)",
+      "titleBasis": "editorial",
+      "mediaKind": "short_video",
+      "publishedOn": "2026-10-16",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://ckworks.jp/vinforadar/video/MYd0bvKKmE4"
+      ],
+      "evidence": {
+        "report": "B028",
+        "priorBatch": null,
+        "readExtent": "description_mirror",
+        "explicitFullUrl": "https://www.youtube.com/watch?v=bi5Kgp9o594",
+        "audioActuallyChecked": false,
+        "note": "既報のFullとの明示的な対応を使う追加視聴リンク。新曲/新録音/フル確認を作らず、Fullの制作担当をShortへコピーしない。"
+      }
+    },
+    {
+      "key": "chat-short-v-jdjjFJ9Ec",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "a0e2ab03-6204-40e6-9848-454a59aff6e3",
+        "kind": "song_variant",
+        "primaryWorkId": "58bc4777-25f7-5b6f-b0a9-934e6755d13c",
+        "title": "お呪い",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=v-jdjjFJ9Ec",
+      "title": "お呪い (Shorts)",
+      "titleBasis": "editorial",
+      "mediaKind": "short_video",
+      "publishedOn": "2026-10-17",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://ckworks.jp/vinforadar/video/v-jdjjFJ9Ec"
+      ],
+      "evidence": {
+        "report": "B009",
+        "priorBatch": null,
+        "readExtent": "description_mirror",
+        "explicitFullUrl": "https://www.youtube.com/watch?v=eHYv234gPso",
+        "audioActuallyChecked": false,
+        "note": "既報のFullとの明示的な対応を使う追加視聴リンク。新曲/新録音/フル確認を作らず、Fullの制作担当をShortへコピーしない。"
+      }
+    },
+    {
+      "key": "chat-art-track-mgsJ7fUQDW4",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "cb31bd97-6d1f-4afc-893c-982b9161b17e",
+        "kind": "song_variant",
+        "primaryWorkId": "cb07bc61-fb0d-577f-9174-94c486d35e00",
+        "title": "ヰ世界の宝石譚",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=mgsJ7fUQDW4",
+      "title": "ヰ世界の宝石譚",
+      "mediaKind": "art_track",
+      "publishedOn": "2023-05-10",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=mgsJ7fUQDW4"
+      ],
+      "evidence": {
+        "report": "B068 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "創生",
+        "providerAsPrinted": "Provided to YouTube by KAMITSUBAKI RECORD",
+        "artistAsPrinted": "Isekaijoucho",
+        "youtubePublishedOn": "2023-05-10",
+        "releasedOn": "2021-12-08",
+        "productMatches": [
+          {
+            "familyId": "de19530d-b318-5828-b6c8-b381e2a98a30",
+            "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+            "releaseItemId": "366fb648-c9ca-5b45-9db5-a2bb7c901b14",
+            "trackNumber": 10,
+            "rawTrackTitle": "ヰ世界の宝石譚",
+            "releaseDate": "2021-12-08"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track--3kP7NgQAzU",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "ffe9cbc0-27b8-48c2-8631-7ad4562f9a47",
+        "kind": "song_variant",
+        "primaryWorkId": "078d4b75-9ac7-5f5a-8701-a50ef78a70d0",
+        "title": "ハイドレンジア",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=-3kP7NgQAzU",
+      "title": "ハイドレンジア",
+      "mediaKind": "art_track",
+      "publishedOn": "2023-05-10",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=-3kP7NgQAzU"
+      ],
+      "evidence": {
+        "report": "B068 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "創生",
+        "providerAsPrinted": "Provided to YouTube by KAMITSUBAKI RECORD",
+        "artistAsPrinted": "Isekaijoucho",
+        "youtubePublishedOn": "2023-05-10",
+        "releasedOn": "2021-12-08",
+        "productMatches": [
+          {
+            "familyId": "de19530d-b318-5828-b6c8-b381e2a98a30",
+            "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+            "releaseItemId": "a0f9ab99-e3ca-574d-a33e-ea4d9b1f0ae2",
+            "trackNumber": 4,
+            "rawTrackTitle": "ハイドレンジア",
+            "releaseDate": "2021-12-08"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-short-w4YC1H7YXJM",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "5499c40f-9315-4b14-bd4f-66b79f6e1998",
+        "kind": "song_variant",
+        "primaryWorkId": "a3eaa9a7-a1d8-55c8-8801-de91822dac63",
+        "title": "電脳歌姫ユメミスティック",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=w4YC1H7YXJM",
+      "title": "〖歌ってみた〗電脳歌姫ユメミスティック covered by ヰ世界情緒",
+      "mediaKind": "short_video",
+      "publishedOn": "2026-10-24",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://ckworks.jp/vinforadar/video/w4YC1H7YXJM"
+      ],
+      "evidence": {
+        "report": "B068 r001",
+        "readExtent": "description_mirror",
+        "audioActuallyChecked": false,
+        "scope": "explicit_full_video_id",
+        "note": "概要欄転載の明示Fullリンクで照合。Fullの映像/MixをShortへコピーしない。",
+        "explicitFullUrl": "https://www.youtube.com/watch?v=wuDZ8ewPxjA"
+      }
+    },
+    {
+      "key": "chat-art-track-rlamAh_6rSU",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "912cf6d0-0f06-4112-9bba-0b1333895122",
+        "kind": "song_variant",
+        "primaryWorkId": "5dd5d31d-4b77-5259-b5b9-d4828d4c1098",
+        "title": "シリウスの心臓",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=rlamAh_6rSU",
+      "title": "シリウスの心臓",
+      "mediaKind": "art_track",
+      "publishedOn": "2023-05-10",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=rlamAh_6rSU"
+      ],
+      "evidence": {
+        "report": "B069 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "創生",
+        "providerAsPrinted": "Provided to YouTube by KAMITSUBAKI RECORD",
+        "artistAsPrinted": "Isekaijoucho",
+        "youtubePublishedOn": "2023-05-10",
+        "releasedOn": "2021-12-08",
+        "productMatches": [
+          {
+            "familyId": "de19530d-b318-5828-b6c8-b381e2a98a30",
+            "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+            "releaseItemId": "a5253209-7c10-5945-aedc-dabc8779e75e",
+            "trackNumber": 11,
+            "rawTrackTitle": "シリウスの心臓",
+            "releaseDate": "2021-12-08"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track-TR7QVbCBEAo",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "28e3b945-e49b-4e12-94ca-12f0a8718021",
+        "kind": "song_variant",
+        "primaryWorkId": "9101f61f-ceff-5335-a1ed-1f7d4de78d98",
+        "title": "とめどなき白情",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=TR7QVbCBEAo",
+      "title": "とめどなき白情",
+      "mediaKind": "art_track",
+      "publishedOn": "2023-05-10",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=TR7QVbCBEAo"
+      ],
+      "evidence": {
+        "report": "B069 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "創生",
+        "providerAsPrinted": "Provided to YouTube by KAMITSUBAKI RECORD",
+        "artistAsPrinted": "Isekaijoucho",
+        "youtubePublishedOn": "2023-05-10",
+        "releasedOn": "2021-12-08",
+        "productMatches": [
+          {
+            "familyId": "de19530d-b318-5828-b6c8-b381e2a98a30",
+            "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+            "releaseItemId": "1a79acd5-6afd-5701-b9d9-dd69a935c3f9",
+            "trackNumber": 12,
+            "rawTrackTitle": "とめどなき白情",
+            "releaseDate": "2021-12-08"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track-f19k0apgoWA",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "ec467200-b1d9-4a89-9612-6ebe94228004",
+        "kind": "song_variant",
+        "primaryWorkId": "90eb3cce-a1d4-505d-9d37-586577ec1d74",
+        "title": "いろはに咲きて",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=f19k0apgoWA",
+      "title": "いろはに咲きて",
+      "mediaKind": "art_track",
+      "publishedOn": "2023-05-10",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=f19k0apgoWA"
+      ],
+      "evidence": {
+        "report": "B069 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "創生",
+        "providerAsPrinted": "Provided to YouTube by KAMITSUBAKI RECORD",
+        "artistAsPrinted": "Isekaijoucho",
+        "youtubePublishedOn": "2023-05-10",
+        "releasedOn": "2021-12-08",
+        "productMatches": [
+          {
+            "familyId": "de19530d-b318-5828-b6c8-b381e2a98a30",
+            "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+            "releaseItemId": "0ef94aab-407d-57a7-a29e-8ae715203edd",
+            "trackNumber": 3,
+            "rawTrackTitle": "いろはに咲きて",
+            "releaseDate": "2021-12-08"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track-JH8P3EPjHMc",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "6fe2a3e0-77c9-4ab3-b009-106476646947",
+        "kind": "song_variant",
+        "primaryWorkId": "61cf5088-af8f-58cb-8bba-9e20c56565b0",
+        "title": "やさしいせかい",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=JH8P3EPjHMc",
+      "title": "やさしいせかい",
+      "mediaKind": "art_track",
+      "publishedOn": "2023-05-10",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=JH8P3EPjHMc"
+      ],
+      "evidence": {
+        "report": "B069 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "創生",
+        "providerAsPrinted": "Provided to YouTube by KAMITSUBAKI RECORD",
+        "artistAsPrinted": "Isekaijoucho",
+        "youtubePublishedOn": "2023-05-10",
+        "releasedOn": "2021-12-08",
+        "productMatches": [
+          {
+            "familyId": "de19530d-b318-5828-b6c8-b381e2a98a30",
+            "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+            "releaseItemId": "88897dd2-341b-563e-adc3-9fccffd2440c",
+            "trackNumber": 8,
+            "rawTrackTitle": "やさしいせかい",
+            "releaseDate": "2021-12-08"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track-FxiKa8OtAKU",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "a4ca0573-48d6-49d0-a3d2-d8b4d4352227",
+        "kind": "song_variant",
+        "primaryWorkId": "f6d7d3c1-33e9-5649-be74-f4f18f3244e0",
+        "title": "物語りのワルツ",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=FxiKa8OtAKU",
+      "title": "物語りのワルツ",
+      "mediaKind": "art_track",
+      "publishedOn": "2023-05-10",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=FxiKa8OtAKU"
+      ],
+      "evidence": {
+        "report": "B069 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "創生",
+        "providerAsPrinted": "Provided to YouTube by KAMITSUBAKI RECORD",
+        "artistAsPrinted": "Isekaijoucho",
+        "youtubePublishedOn": "2023-05-10",
+        "releasedOn": "2021-12-08",
+        "productMatches": [
+          {
+            "familyId": "de19530d-b318-5828-b6c8-b381e2a98a30",
+            "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+            "releaseItemId": "e7a10406-c578-5869-9b6b-4b8c509bd20f",
+            "trackNumber": 2,
+            "rawTrackTitle": "物語りのワルツ",
+            "releaseDate": "2021-12-08"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track-O3wDkZW5GXs",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "053c8f07-bd79-4eec-8a22-3321c79f5765",
+        "kind": "song_variant",
+        "primaryWorkId": "920dfba2-a65d-5cc9-b986-a7cfef19f697",
+        "title": "霞がついてくる",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=O3wDkZW5GXs",
+      "title": "霞がついてくる",
+      "mediaKind": "art_track",
+      "publishedOn": "2023-05-10",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=O3wDkZW5GXs"
+      ],
+      "evidence": {
+        "report": "B069 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "創生",
+        "providerAsPrinted": "Provided to YouTube by KAMITSUBAKI RECORD",
+        "artistAsPrinted": "Isekaijoucho",
+        "youtubePublishedOn": "2023-05-10",
+        "releasedOn": "2021-12-08",
+        "productMatches": [
+          {
+            "familyId": "de19530d-b318-5828-b6c8-b381e2a98a30",
+            "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+            "releaseItemId": "1ff3a3f7-2d48-5fa7-aed8-b95d5aecb1ca",
+            "trackNumber": 13,
+            "rawTrackTitle": "霞がついてくる",
+            "releaseDate": "2021-12-08"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track-5WemQCcr3_s",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "2c130953-3c9c-4d02-a1e8-a8f237eb6b56",
+        "kind": "song_variant",
+        "primaryWorkId": "40aa4d65-a4a1-5928-8cdb-61f4c4ab4b6c",
+        "title": "誰もいない絵で",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=5WemQCcr3_s",
+      "title": "誰もいない絵で",
+      "mediaKind": "art_track",
+      "publishedOn": "2023-05-10",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=5WemQCcr3_s"
+      ],
+      "evidence": {
+        "report": "B069 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "創生",
+        "providerAsPrinted": "Provided to YouTube by KAMITSUBAKI RECORD",
+        "artistAsPrinted": "Isekaijoucho",
+        "youtubePublishedOn": "2023-05-10",
+        "releasedOn": "2021-12-08",
+        "productMatches": [
+          {
+            "familyId": "de19530d-b318-5828-b6c8-b381e2a98a30",
+            "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+            "releaseItemId": "64c52ce0-e960-5691-b0a3-96f1845284e1",
+            "trackNumber": 14,
+            "rawTrackTitle": "誰もいない絵で",
+            "releaseDate": "2021-12-08"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track-JvAv5kCEphg",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "9ad985af-702d-4a46-b4d5-d00e3e28f2df",
+        "kind": "song_variant",
+        "primaryWorkId": "193ca6a9-3327-5482-875d-746a70365c79",
+        "title": "ジオラマドラマ",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=JvAv5kCEphg",
+      "title": "ジオラマドラマ",
+      "mediaKind": "art_track",
+      "publishedOn": "2023-05-10",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=JvAv5kCEphg"
+      ],
+      "evidence": {
+        "report": "B069 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "ジオラマドラマ",
+        "providerAsPrinted": "Provided to YouTube by KAMITSUBAKI RECORD",
+        "artistAsPrinted": "Isekaijoucho",
+        "youtubePublishedOn": "2023-05-10",
+        "releasedOn": "2020-12-30",
+        "productMatches": [
+          {
+            "familyId": "ce813fd8-627c-528a-a1ca-844dafefb160",
+            "editionId": "438823aa-0f66-59a5-9b39-f3c99454e876",
+            "releaseItemId": "787d47e3-5e5c-547a-a7cc-945b7709c758",
+            "trackNumber": 1,
+            "rawTrackTitle": "ジオラマドラマ",
+            "releaseDate": "2020-12-30"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track-eQVZ6ZP5FYQ",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "df11fb8c-32af-4caa-879d-736c6331f8d4",
+        "kind": "song_variant",
+        "primaryWorkId": "64cf8656-1302-527e-94e1-0b31d0595354",
+        "title": "斯く美しき造花",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=eQVZ6ZP5FYQ",
+      "title": "斯く美しき造花",
+      "mediaKind": "art_track",
+      "publishedOn": "2023-05-10",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=eQVZ6ZP5FYQ"
+      ],
+      "evidence": {
+        "report": "B069 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "創生",
+        "providerAsPrinted": "Provided to YouTube by KAMITSUBAKI RECORD",
+        "artistAsPrinted": "Isekaijoucho",
+        "youtubePublishedOn": "2023-05-10",
+        "releasedOn": "2021-12-08",
+        "productMatches": [
+          {
+            "familyId": "de19530d-b318-5828-b6c8-b381e2a98a30",
+            "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+            "releaseItemId": "cac6041f-8074-5bdc-b9a1-91346ed3dda5",
+            "trackNumber": 6,
+            "rawTrackTitle": "斯く美しき造花",
+            "releaseDate": "2021-12-08"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track-MTvdJT02YA8",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "acfcbd0b-e7b2-4878-aa12-c1d5fef9d2e4",
+        "kind": "song_variant",
+        "primaryWorkId": "058b33ac-517a-5e13-8f26-6c727ac3325e",
+        "title": "マボロシのまち",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=MTvdJT02YA8",
+      "title": "マボロシのまち",
+      "mediaKind": "art_track",
+      "publishedOn": "2023-05-10",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=MTvdJT02YA8"
+      ],
+      "evidence": {
+        "report": "B070 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "創生",
+        "providerAsPrinted": "KAMITSUBAKI RECORD",
+        "artistAsPrinted": null,
+        "youtubePublishedOn": "2023-05-10",
+        "releasedOn": "2021-12-08",
+        "productMatches": [
+          {
+            "familyId": "de19530d-b318-5828-b6c8-b381e2a98a30",
+            "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+            "releaseItemId": "05876b66-7264-5705-8102-a0be86d2001e",
+            "trackNumber": 7,
+            "rawTrackTitle": "マボロシのまち",
+            "releaseDate": "2021-12-08"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track-NzV1_HTj5IA",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "fa71fcf1-553d-4622-b304-8f8e95662b08",
+        "kind": "song_variant",
+        "primaryWorkId": "b1243ee9-1cb2-5f8c-80d3-8db588896dde",
+        "title": "ANEMONE",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=NzV1_HTj5IA",
+      "title": "ANEMONE",
+      "mediaKind": "art_track",
+      "publishedOn": "2023-05-10",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=NzV1_HTj5IA"
+      ],
+      "evidence": {
+        "report": "B070 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "創生",
+        "providerAsPrinted": "KAMITSUBAKI RECORD",
+        "artistAsPrinted": null,
+        "youtubePublishedOn": "2023-05-10",
+        "releasedOn": "2021-12-08",
+        "productMatches": [
+          {
+            "familyId": "de19530d-b318-5828-b6c8-b381e2a98a30",
+            "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+            "releaseItemId": "4c0bec7c-c0f7-502e-9c5b-de02aaa784c3",
+            "trackNumber": 9,
+            "rawTrackTitle": "ANEMONE",
+            "releaseDate": "2021-12-08"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track-ad-YSRmKOmo",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "8d278884-8e97-4b8d-a1c6-7225863c25b9",
+        "kind": "song_variant",
+        "primaryWorkId": "acbd3faf-005c-5e7d-8c96-ee56a814a265",
+        "title": "ARCADIA",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=ad-YSRmKOmo",
+      "title": "ARCADIA",
+      "mediaKind": "art_track",
+      "publishedOn": "2023-05-10",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=ad-YSRmKOmo"
+      ],
+      "evidence": {
+        "report": "B070 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "創生",
+        "providerAsPrinted": "KAMITSUBAKI RECORD",
+        "artistAsPrinted": null,
+        "youtubePublishedOn": "2023-05-10",
+        "releasedOn": "2021-12-08",
+        "productMatches": [
+          {
+            "familyId": "de19530d-b318-5828-b6c8-b381e2a98a30",
+            "editionId": "43236903-58cb-52cb-b3c6-65f2ba4371fb",
+            "releaseItemId": "4de55741-a8fd-5bc2-9875-2faf4e8d6694",
+            "trackNumber": 15,
+            "rawTrackTitle": "ARCADIA",
+            "releaseDate": "2021-12-08"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track-VteCWwWKKww",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "c0627266-535c-474f-b650-b956a6000466",
+        "kind": "song_variant",
+        "primaryWorkId": "c6f3ca5f-8ad5-542a-92ee-98ebbc0e2216",
+        "title": "ネリネの内緒事",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=VteCWwWKKww",
+      "title": "ネリネの内緒事",
+      "mediaKind": "art_track",
+      "publishedOn": "2024-03-26",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=VteCWwWKKww"
+      ],
+      "evidence": {
+        "report": "B070 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "色彩",
+        "providerAsPrinted": "PHENOMENON RECORD",
+        "artistAsPrinted": null,
+        "youtubePublishedOn": "2024-03-26",
+        "releasedOn": "2024-03-27",
+        "productMatches": [
+          {
+            "familyId": "bca6130e-c29e-5cbd-a898-cc695bcce702",
+            "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+            "releaseItemId": "fcaa9c03-6e3d-54ac-84a2-9c1cf343671a",
+            "trackNumber": 9,
+            "rawTrackTitle": "ネリネの内緒事",
+            "releaseDate": "2024-03-27"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track-8tJSgOzZrfs",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "0c4b689c-3fc3-4d82-8d3d-1af7490887a0",
+        "kind": "song_variant",
+        "primaryWorkId": "a355c405-a4ac-58b6-9a6a-32c46c129acd",
+        "title": "そして白に還る",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=8tJSgOzZrfs",
+      "title": "そして白に還る",
+      "mediaKind": "art_track",
+      "publishedOn": "2024-03-26",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=8tJSgOzZrfs"
+      ],
+      "evidence": {
+        "report": "B070 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "色彩",
+        "providerAsPrinted": "PHENOMENON RECORD",
+        "artistAsPrinted": null,
+        "youtubePublishedOn": "2024-03-26",
+        "releasedOn": "2024-03-27",
+        "productMatches": [
+          {
+            "familyId": "bca6130e-c29e-5cbd-a898-cc695bcce702",
+            "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+            "releaseItemId": "0b5996fd-6c44-5b79-91b8-5c721838a072",
+            "trackNumber": 2,
+            "rawTrackTitle": "そして白に還る",
+            "releaseDate": "2024-03-27"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track-V_GZY4QSwVY",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "1ff62e3c-7c55-4eb9-b24f-2fc7bb7f3f43",
+        "kind": "song_variant",
+        "primaryWorkId": "f7da9929-1aa4-509a-9625-6a8bbcad076c",
+        "title": "グレイスケイル",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=V_GZY4QSwVY",
+      "title": "グレイスケイル",
+      "mediaKind": "art_track",
+      "publishedOn": "2024-03-26",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=V_GZY4QSwVY"
+      ],
+      "evidence": {
+        "report": "B070 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "色彩",
+        "providerAsPrinted": "PHENOMENON RECORD",
+        "artistAsPrinted": null,
+        "youtubePublishedOn": "2024-03-26",
+        "releasedOn": "2024-03-27",
+        "productMatches": [
+          {
+            "familyId": "bca6130e-c29e-5cbd-a898-cc695bcce702",
+            "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+            "releaseItemId": "4bea6ef8-6c3e-57ef-9d69-382a9c3e2336",
+            "trackNumber": 7,
+            "rawTrackTitle": "グレイスケイル",
+            "releaseDate": "2024-03-27"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track-Y1V5jkMmrF4",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "7f3d424f-1ae1-45b6-88b1-9abd5498c514",
+        "kind": "song_variant",
+        "primaryWorkId": "afc3bd45-9f8b-5a67-abda-f0e07ffdd24b",
+        "title": "かたちなきもの",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=Y1V5jkMmrF4",
+      "title": "かたちなきもの",
+      "mediaKind": "art_track",
+      "publishedOn": "2024-03-26",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=Y1V5jkMmrF4"
+      ],
+      "evidence": {
+        "report": "B070 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "色彩",
+        "providerAsPrinted": "PHENOMENON RECORD",
+        "artistAsPrinted": null,
+        "youtubePublishedOn": "2024-03-26",
+        "releasedOn": "2024-03-27",
+        "productMatches": [
+          {
+            "familyId": "bca6130e-c29e-5cbd-a898-cc695bcce702",
+            "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+            "releaseItemId": "1db733e5-be01-5d4f-8194-75b3b9881f11",
+            "trackNumber": 13,
+            "rawTrackTitle": "かたちなきもの",
+            "releaseDate": "2024-03-27"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track-NQ_AT3C9Jr8",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "e3d9c3a1-8c3d-49e6-947b-d0e200e8b6d4",
+        "kind": "song_variant",
+        "primaryWorkId": "b966dc71-8a4c-561e-86eb-c6321ea93b61",
+        "title": "ラピスのお人形",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=NQ_AT3C9Jr8",
+      "title": "ラピスのお人形",
+      "mediaKind": "art_track",
+      "publishedOn": "2024-03-26",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=NQ_AT3C9Jr8"
+      ],
+      "evidence": {
+        "report": "B070 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "色彩",
+        "providerAsPrinted": "PHENOMENON RECORD",
+        "artistAsPrinted": null,
+        "youtubePublishedOn": "2024-03-26",
+        "releasedOn": "2024-03-27",
+        "productMatches": [
+          {
+            "familyId": "bca6130e-c29e-5cbd-a898-cc695bcce702",
+            "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+            "releaseItemId": "29d8df9e-8152-54f5-8801-5958209fa86e",
+            "trackNumber": 3,
+            "rawTrackTitle": "ラピスのお人形",
+            "releaseDate": "2024-03-27"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track-4yI-SrCddiI",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "ed6e982f-31fc-4d7a-9c7b-76896b868fdd",
+        "kind": "song_variant",
+        "primaryWorkId": "24ea10b6-6aa0-5e9c-b2b1-c9cf882d1709",
+        "title": "キミ消失セカイ",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=4yI-SrCddiI",
+      "title": "キミ消失セカイ",
+      "mediaKind": "art_track",
+      "publishedOn": "2024-03-26",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=4yI-SrCddiI"
+      ],
+      "evidence": {
+        "report": "B071 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "色彩",
+        "providerAsPrinted": "PHENOMENON RECORD",
+        "artistAsPrinted": null,
+        "youtubePublishedOn": "2024-03-26",
+        "releasedOn": "2024-03-27",
+        "productMatches": [
+          {
+            "familyId": "bca6130e-c29e-5cbd-a898-cc695bcce702",
+            "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+            "releaseItemId": "dbcedf43-64fe-5264-81a6-13fc693ae0d5",
+            "trackNumber": 6,
+            "rawTrackTitle": "キミ消失セカイ",
+            "releaseDate": "2024-03-27"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track--YHDrRMDd2k",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "6d6acdf5-10ef-4392-8118-263b1c188ae5",
+        "kind": "song_variant",
+        "primaryWorkId": "f4e9a7e2-f760-5174-8541-f40dfb2b5f96",
+        "title": "此処に棘と死を",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=-YHDrRMDd2k",
+      "title": "此処に棘と死を",
+      "mediaKind": "art_track",
+      "publishedOn": "2024-03-26",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=-YHDrRMDd2k"
+      ],
+      "evidence": {
+        "report": "B071 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "色彩",
+        "providerAsPrinted": "PHENOMENON RECORD",
+        "artistAsPrinted": null,
+        "youtubePublishedOn": "2024-03-26",
+        "releasedOn": "2024-03-27",
+        "productMatches": [
+          {
+            "familyId": "bca6130e-c29e-5cbd-a898-cc695bcce702",
+            "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+            "releaseItemId": "72396545-9147-535d-a11e-de6e37adb911",
+            "trackNumber": 8,
+            "rawTrackTitle": "此処に棘と死を",
+            "releaseDate": "2024-03-27"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track-3bZ-pUdjjIc",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "57664785-b4a1-4615-9868-38acc614320f",
+        "kind": "song_variant",
+        "primaryWorkId": "678c2d1f-b445-53e0-a852-ee8f564e7bb4",
+        "title": "描き続けた君へ",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=3bZ-pUdjjIc",
+      "title": "描き続けた君へ",
+      "mediaKind": "art_track",
+      "publishedOn": "2024-03-26",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=3bZ-pUdjjIc"
+      ],
+      "evidence": {
+        "report": "B071 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "色彩",
+        "providerAsPrinted": "PHENOMENON RECORD",
+        "artistAsPrinted": null,
+        "youtubePublishedOn": "2024-03-26",
+        "releasedOn": "2024-03-27",
+        "productMatches": [
+          {
+            "familyId": "bca6130e-c29e-5cbd-a898-cc695bcce702",
+            "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+            "releaseItemId": "f40408a4-33aa-5957-9eb8-c835c61a3a9e",
+            "trackNumber": 12,
+            "rawTrackTitle": "描き続けた君へ",
+            "releaseDate": "2024-03-27"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track-zRuaw1B0_Uc",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "e71238fd-48bd-4dd9-8e76-50d0b191acf6",
+        "kind": "song_variant",
+        "primaryWorkId": "c5992ad9-6d50-5abc-801d-d2232a296b15",
+        "title": "ディメンション",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=zRuaw1B0_Uc",
+      "title": "ディメンション",
+      "mediaKind": "art_track",
+      "publishedOn": "2024-03-26",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=zRuaw1B0_Uc"
+      ],
+      "evidence": {
+        "report": "B071 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "色彩",
+        "providerAsPrinted": "PHENOMENON RECORD",
+        "artistAsPrinted": null,
+        "youtubePublishedOn": "2024-03-26",
+        "releasedOn": "2024-03-27",
+        "productMatches": [
+          {
+            "familyId": "bca6130e-c29e-5cbd-a898-cc695bcce702",
+            "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+            "releaseItemId": "c6da7d59-34bd-5a79-94aa-593fb13165a2",
+            "trackNumber": 5,
+            "rawTrackTitle": "ディメンション",
+            "releaseDate": "2024-03-27"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track-NqdwhSUsThQ",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "f27f9134-825c-4a0b-9dab-dc57c8e9c966",
+        "kind": "song_variant",
+        "primaryWorkId": "8e8e2788-72b4-50d5-8384-92d9b6ee4553",
+        "title": "暮れなずむ約束",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=NqdwhSUsThQ",
+      "title": "暮れなずむ約束",
+      "mediaKind": "art_track",
+      "publishedOn": "2024-03-26",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=NqdwhSUsThQ"
+      ],
+      "evidence": {
+        "report": "B071 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "色彩",
+        "providerAsPrinted": "PHENOMENON RECORD",
+        "artistAsPrinted": null,
+        "youtubePublishedOn": "2024-03-26",
+        "releasedOn": "2024-03-27",
+        "productMatches": [
+          {
+            "familyId": "bca6130e-c29e-5cbd-a898-cc695bcce702",
+            "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+            "releaseItemId": "9c8fc092-1bde-5cfb-8218-6019ec57b546",
+            "trackNumber": 10,
+            "rawTrackTitle": "暮れなずむ約束",
+            "releaseDate": "2024-03-27"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track-j-6tD72bOGI",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "36ee93d1-5886-4ed4-b089-276bd70ef54c",
+        "kind": "song_variant",
+        "primaryWorkId": "f0ed13b5-fdf3-5ce9-8f1a-876282fe71cb",
+        "title": "ヴァーミリオン",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=j-6tD72bOGI",
+      "title": "ヴァーミリオン",
+      "mediaKind": "art_track",
+      "publishedOn": "2024-03-26",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=j-6tD72bOGI"
+      ],
+      "evidence": {
+        "report": "B071 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "色彩",
+        "providerAsPrinted": "PHENOMENON RECORD",
+        "artistAsPrinted": null,
+        "youtubePublishedOn": "2024-03-26",
+        "releasedOn": "2024-03-27",
+        "productMatches": [
+          {
+            "familyId": "bca6130e-c29e-5cbd-a898-cc695bcce702",
+            "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+            "releaseItemId": "a1628b16-a3e2-5417-a435-913ab1f64fab",
+            "trackNumber": 11,
+            "rawTrackTitle": "ヴァーミリオン",
+            "releaseDate": "2024-03-27"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track-SLngwSpkyvw",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "4839e979-470a-4b21-b16d-3652da7cb695",
+        "kind": "song_variant",
+        "primaryWorkId": "44be232d-ef64-5051-97b0-0e7677d02410",
+        "title": "パンドラコール",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=SLngwSpkyvw",
+      "title": "パンドラコール",
+      "mediaKind": "art_track",
+      "publishedOn": "2024-03-26",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=SLngwSpkyvw"
+      ],
+      "evidence": {
+        "report": "B072 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "色彩",
+        "providerAsPrinted": "PHENOMENON RECORD",
+        "artistAsPrinted": null,
+        "youtubePublishedOn": "2024-03-26",
+        "releasedOn": "2024-03-27",
+        "productMatches": [
+          {
+            "familyId": "bca6130e-c29e-5cbd-a898-cc695bcce702",
+            "editionId": "3919ea2f-11a7-5097-bdca-bcc6fd288703",
+            "releaseItemId": "187fbd0d-c555-5dc7-9b84-5881fcf1d6a4",
+            "trackNumber": 4,
+            "rawTrackTitle": "パンドラコール",
+            "releaseDate": "2024-03-27"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track-T-1ZloB3ejA",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "63c0bf39-655d-4cfc-a55f-065d4a6b946c",
+        "kind": "song_variant",
+        "primaryWorkId": "c6533ca1-4c72-5a3c-ba0f-3c92090215ed",
+        "title": "from Y to Y",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=T-1ZloB3ejA",
+      "title": "from Y to Y (Live)",
+      "mediaKind": "art_track",
+      "publishedOn": "2023-03-28",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=T-1ZloB3ejA"
+      ],
+      "evidence": {
+        "report": "B072 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "CANDY LIVE 2",
+        "providerAsPrinted": "KAMITSUBAKI RECORD",
+        "artistAsPrinted": null,
+        "youtubePublishedOn": "2023-03-28",
+        "releasedOn": "2023-03-29",
+        "productMatches": [
+          {
+            "familyId": "b7843f4d-41a3-55b1-841a-91f7b35f32ba",
+            "editionId": "793eb987-7ad9-588f-aa06-6f51249906c9",
+            "releaseItemId": "source:candy2-disc1:10",
+            "trackNumber": 10,
+            "rawTrackTitle": "from Y to Y",
+            "releaseDate": "2023-03-29"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track-74xMZZGomTE",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "fbc253d6-3595-4b66-8d24-9e06133d8d06",
+        "kind": "song_variant",
+        "primaryWorkId": "b42bd6c8-7b39-5104-b39b-fb732fa2bab2",
+        "title": "悪魔の踊り方",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=74xMZZGomTE",
+      "title": "悪魔の踊り方 (Live)",
+      "mediaKind": "art_track",
+      "publishedOn": "2023-03-28",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=74xMZZGomTE"
+      ],
+      "evidence": {
+        "report": "B072 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "CANDY LIVE 2",
+        "providerAsPrinted": "KAMITSUBAKI RECORD",
+        "artistAsPrinted": null,
+        "youtubePublishedOn": "2023-03-28",
+        "releasedOn": "2023-03-29",
+        "productMatches": [
+          {
+            "familyId": "b7843f4d-41a3-55b1-841a-91f7b35f32ba",
+            "editionId": "793eb987-7ad9-588f-aa06-6f51249906c9",
+            "releaseItemId": "source:candy2-disc1:4",
+            "trackNumber": 4,
+            "rawTrackTitle": "悪魔の踊り方",
+            "releaseDate": "2023-03-29"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track-JbIb0r1E6Hw",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "00c2df2b-2535-4794-a326-ac896d42157d",
+        "kind": "song_variant",
+        "primaryWorkId": "c848efca-ba82-5ecf-88a9-0e70b67b4525",
+        "title": "ラグトレイン",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=JbIb0r1E6Hw",
+      "title": "ラグトレイン (Live)",
+      "mediaKind": "art_track",
+      "publishedOn": "2023-03-28",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=JbIb0r1E6Hw"
+      ],
+      "evidence": {
+        "report": "B072 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "CANDY LIVE 2",
+        "providerAsPrinted": "KAMITSUBAKI RECORD",
+        "artistAsPrinted": null,
+        "youtubePublishedOn": "2023-03-28",
+        "releasedOn": "2023-03-29",
+        "productMatches": [
+          {
+            "familyId": "b7843f4d-41a3-55b1-841a-91f7b35f32ba",
+            "editionId": "793eb987-7ad9-588f-aa06-6f51249906c9",
+            "releaseItemId": "source:candy2-disc1:3",
+            "trackNumber": 3,
+            "rawTrackTitle": "ラグトレイン",
+            "releaseDate": "2023-03-29"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track-0qIDkB2_tvc",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "ffe1f7d4-b31e-4bf6-9811-60df2c5db2eb",
+        "kind": "song_variant",
+        "primaryWorkId": "8574032f-ca71-5676-b87b-5ffb846f4701",
+        "title": "マトリョシカ",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=0qIDkB2_tvc",
+      "title": "マトリョシカ (Live)",
+      "mediaKind": "art_track",
+      "publishedOn": "2023-03-28",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=0qIDkB2_tvc"
+      ],
+      "evidence": {
+        "report": "B072 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "CANDY LIVE 2",
+        "providerAsPrinted": "KAMITSUBAKI RECORD",
+        "artistAsPrinted": null,
+        "youtubePublishedOn": "2023-03-28",
+        "releasedOn": "2023-03-29",
+        "productMatches": [
+          {
+            "familyId": "b7843f4d-41a3-55b1-841a-91f7b35f32ba",
+            "editionId": "793eb987-7ad9-588f-aa06-6f51249906c9",
+            "releaseItemId": "source:candy2-disc1:6",
+            "trackNumber": 6,
+            "rawTrackTitle": "マトリョシカ",
+            "releaseDate": "2023-03-29"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track-VRIFSgpF7f8",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "e9a33f47-7445-4b44-9387-e29f425b8d38",
+        "kind": "song_variant",
+        "primaryWorkId": "3cd7d9ae-1b0a-5deb-8fa9-87095b63f373",
+        "title": "夜顔の告白",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=VRIFSgpF7f8",
+      "title": "夜顔の告白 (Live)",
+      "mediaKind": "art_track",
+      "publishedOn": "2023-03-28",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=VRIFSgpF7f8"
+      ],
+      "evidence": {
+        "report": "B072 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "CANDY LIVE 2",
+        "providerAsPrinted": "KAMITSUBAKI RECORD",
+        "artistAsPrinted": null,
+        "youtubePublishedOn": "2023-03-28",
+        "releasedOn": "2023-03-29",
+        "productMatches": [
+          {
+            "familyId": "b7843f4d-41a3-55b1-841a-91f7b35f32ba",
+            "editionId": "793eb987-7ad9-588f-aa06-6f51249906c9",
+            "releaseItemId": "source:candy2-disc1:1",
+            "trackNumber": 1,
+            "rawTrackTitle": "夜顔の告白",
+            "releaseDate": "2023-03-29"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track-RR0jYKSt1bc",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "9ea88a54-750a-4f0e-bb61-5b71e0d240c0",
+        "kind": "song_variant",
+        "primaryWorkId": "0ca31bde-677e-5d65-8f74-5bc9dd207703",
+        "title": "Hello,Worker",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=RR0jYKSt1bc",
+      "title": "Hello, Worker (Live)",
+      "mediaKind": "art_track",
+      "publishedOn": "2023-03-28",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=RR0jYKSt1bc"
+      ],
+      "evidence": {
+        "report": "B072 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "CANDY LIVE 2",
+        "providerAsPrinted": "KAMITSUBAKI RECORD",
+        "artistAsPrinted": null,
+        "youtubePublishedOn": "2023-03-28",
+        "releasedOn": "2023-03-29",
+        "productMatches": [
+          {
+            "familyId": "b7843f4d-41a3-55b1-841a-91f7b35f32ba",
+            "editionId": "793eb987-7ad9-588f-aa06-6f51249906c9",
+            "releaseItemId": "source:candy2-disc1:8",
+            "trackNumber": 8,
+            "rawTrackTitle": "Hello, Worker",
+            "releaseDate": "2023-03-29"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track-uxgwEMEEYbI",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "240b03a8-de8f-4ffd-9432-6a69bec09563",
+        "kind": "song_variant",
+        "primaryWorkId": "194a8ff2-dfe2-570a-b90d-3dc9b89656e3",
+        "title": "ラブカ?",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=uxgwEMEEYbI",
+      "title": "ラブカ？ (Live)",
+      "mediaKind": "art_track",
+      "publishedOn": "2023-03-28",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=uxgwEMEEYbI"
+      ],
+      "evidence": {
+        "report": "B072 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "CANDY LIVE 2",
+        "providerAsPrinted": "KAMITSUBAKI RECORD",
+        "artistAsPrinted": null,
+        "youtubePublishedOn": "2023-03-28",
+        "releasedOn": "2023-03-29",
+        "productMatches": [
+          {
+            "familyId": "b7843f4d-41a3-55b1-841a-91f7b35f32ba",
+            "editionId": "793eb987-7ad9-588f-aa06-6f51249906c9",
+            "releaseItemId": "source:candy2-disc1:5",
+            "trackNumber": 5,
+            "rawTrackTitle": "ラブカ？",
+            "releaseDate": "2023-03-29"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chat-art-track-ZgUmz4CszH4",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "0710632e-b2da-474a-a4ec-89e738a6ddb9",
+        "kind": "song_variant",
+        "primaryWorkId": "b945e6c1-c265-5787-bf17-d378827ca6cc",
+        "title": "quiz",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=ZgUmz4CszH4",
+      "title": "quiz (Live)",
+      "mediaKind": "art_track",
+      "publishedOn": "2023-03-28",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=ZgUmz4CszH4"
+      ],
+      "evidence": {
+        "report": "B072 r001",
+        "readExtent": "official_youtube_description",
+        "audioActuallyChecked": false,
+        "scope": "existing_entry_and_release_track",
+        "note": "既存歌唱の追加視聴先。アルバム名・歌唱・既存収録トラックを照合。マスター同一性、新録音、現在の再生可否、MVスタッフの担当は追加認定しない。",
+        "albumAsPrinted": "CANDY LIVE 2",
+        "providerAsPrinted": "KAMITSUBAKI RECORD",
+        "artistAsPrinted": null,
+        "youtubePublishedOn": "2023-03-28",
+        "releasedOn": "2023-03-29",
+        "productMatches": [
+          {
+            "familyId": "b7843f4d-41a3-55b1-841a-91f7b35f32ba",
+            "editionId": "793eb987-7ad9-588f-aa06-6f51249906c9",
+            "releaseItemId": "source:candy2-disc1:9",
+            "trackNumber": 9,
+            "rawTrackTitle": "quiz",
+            "releaseDate": "2023-03-29"
+          }
+        ]
+      }
     }
   ],
   "exclusions": [
@@ -13198,6 +15145,672 @@
         "kind": "service_reading",
         "directRead": true,
         "note": "UtaTen専用読み欄。本人の訂正依頼を受けて転調=てんちょうへ。曲名の正式表記、旧取込原文、初出、歌唱者は維持する。"
+      }
+    },
+    {
+      "key": "chat-r003-reading-fb6479e1-a17c-44bd-a21a-d4ad3c243d86",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "fb6479e1-a17c-44bd-a21a-d4ad3c243d86",
+        "kind": "song_variant",
+        "primaryWorkId": "0b94ee78-6ed5-540c-9124-beb8c9fa9086",
+        "title": "おどるポンポコリン",
+        "displayCredit": "V.W.P",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "creditBasis": [
+        [
+          "original",
+          "composer",
+          "織田哲郎"
+        ],
+        [
+          "original",
+          "lyricist",
+          "さくらももこ"
+        ]
+      ],
+      "url": "https://utaten.com/lyric/ja00004554/",
+      "metadataBasis": {
+        "titleKana": null
+      },
+      "metadata": {
+        "titleKana": "おどるぽんぽこりん"
+      },
+      "evidence": {
+        "report": "KSH-CHAT-READINGS-001_R003_r001",
+        "kind": "service_reading",
+        "notes": "旧参照読みは空欄。サービスによる候補で、アーティスト本人の公式指定ではない。",
+        "audioDirectlyChecked": false
+      }
+    },
+    {
+      "key": "chat-r003-reading-240a9f40-96ce-414e-81d3-509d1ddb2e03",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "240a9f40-96ce-414e-81d3-509d1ddb2e03",
+        "kind": "song_variant",
+        "primaryWorkId": "791c4b1a-4ede-5ae6-a0e1-0ede5e637c48",
+        "title": "イケナイ太陽",
+        "displayCredit": "V.W.P",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "creditBasis": [
+        [
+          "original",
+          "composer",
+          "ORANGE RANGE"
+        ],
+        [
+          "original",
+          "lyricist",
+          "ORANGE RANGE"
+        ]
+      ],
+      "url": "https://utaten.com/lyric/jb10707524/",
+      "metadataBasis": {
+        "titleKana": null
+      },
+      "metadata": {
+        "titleKana": "いけないたいよう"
+      },
+      "evidence": {
+        "report": "KSH-CHAT-READINGS-001_R003_r001",
+        "kind": "service_reading",
+        "notes": "旧参照読みは空欄。サービスによる候補で、アーティスト本人の公式指定ではない。",
+        "audioDirectlyChecked": false
+      }
+    },
+    {
+      "key": "chat-r003-reading-f95216be-1833-4768-aa9b-be265c717c73",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "f95216be-1833-4768-aa9b-be265c717c73",
+        "kind": "song_variant",
+        "primaryWorkId": "f661806b-5233-4426-8d72-5d69b5f22824",
+        "title": "ファタール",
+        "displayCredit": "ヰ世界情緒 × 夜乃くろむ",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "e827fa7d-2562-56c4-9984-742c9b2281f8"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://utaten.com/lyric/hw24052741/",
+      "metadataBasis": {
+        "titleKana": null
+      },
+      "metadata": {
+        "titleKana": "ふぁたーる"
+      },
+      "evidence": {
+        "report": "KSH-CHAT-READINGS-001_R003_r001",
+        "kind": "service_reading",
+        "notes": "旧参照読みは空欄。サービスによる候補で、アーティスト本人の公式指定ではない。",
+        "audioDirectlyChecked": false
+      }
+    },
+    {
+      "key": "chat-r003-reading-a2b4bdf6-6384-4d4b-bcaa-ce7283ba5cfd",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "a2b4bdf6-6384-4d4b-bcaa-ce7283ba5cfd",
+        "kind": "song_variant",
+        "primaryWorkId": "ead91725-9fd3-573b-92e0-bc397062eae4",
+        "title": "ないものねだり",
+        "displayCredit": "V.W.P",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "creditBasis": [
+        [
+          "original",
+          "arranger",
+          "KANA-BOON"
+        ],
+        [
+          "original",
+          "composer",
+          "谷口鮪"
+        ],
+        [
+          "original",
+          "lyricist",
+          "谷口鮪"
+        ]
+      ],
+      "url": "https://utaten.com/lyric/jb51308085/",
+      "metadataBasis": {
+        "titleKana": null
+      },
+      "metadata": {
+        "titleKana": "ないものねだり"
+      },
+      "evidence": {
+        "report": "KSH-CHAT-READINGS-001_R003_r001",
+        "kind": "service_reading",
+        "notes": "旧参照読みは空欄。サービスによる候補で、アーティスト本人の公式指定ではない。",
+        "audioDirectlyChecked": false
+      }
+    },
+    {
+      "key": "chat-r003-reading-997326f6-bc31-4e0a-bacf-c12903d598cf",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "997326f6-bc31-4e0a-bacf-c12903d598cf",
+        "kind": "song_variant",
+        "primaryWorkId": "ffafbe19-b1a9-536b-a889-06bf300ff61c",
+        "title": "ブリキノダンス",
+        "displayCredit": "V.W.P",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "creditBasis": [
+        [
+          "original",
+          "arranger",
+          "日向電工"
+        ],
+        [
+          "original",
+          "composer",
+          "日向電工"
+        ],
+        [
+          "original",
+          "lyricist",
+          "日向電工"
+        ]
+      ],
+      "url": "https://utaten.com/lyric/sa16032304/",
+      "metadataBasis": {
+        "titleKana": null
+      },
+      "metadata": {
+        "titleKana": "ぶりきのだんす"
+      },
+      "evidence": {
+        "report": "KSH-CHAT-READINGS-001_R003_r001",
+        "kind": "service_reading",
+        "notes": "旧参照読みは空欄。サービスによる候補で、アーティスト本人の公式指定ではない。",
+        "audioDirectlyChecked": false
+      }
+    },
+    {
+      "key": "chat-r003-reading-17b11743-f9f8-4b97-8c70-582d082d59d9",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "17b11743-f9f8-4b97-8c70-582d082d59d9",
+        "kind": "song_variant",
+        "primaryWorkId": "69ff1bce-0b7e-5289-a188-6b8d80ee2de8",
+        "title": "丸ノ内サディスティック",
+        "displayCredit": "V.W.P",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "creditBasis": [
+        [
+          "original",
+          "arranger",
+          "亀田誠治"
+        ],
+        [
+          "original",
+          "composer",
+          "椎名林檎"
+        ],
+        [
+          "original",
+          "lyricist",
+          "椎名林檎"
+        ]
+      ],
+      "url": "https://utaten.com/lyric/ja00008304/",
+      "metadataBasis": {
+        "titleKana": null
+      },
+      "metadata": {
+        "titleKana": "まるのうちさでぃすてぃっく"
+      },
+      "evidence": {
+        "report": "KSH-CHAT-READINGS-001_R003_r001",
+        "kind": "service_reading",
+        "notes": "旧参照読みは空欄。サービスによる候補で、アーティスト本人の公式指定ではない。",
+        "audioDirectlyChecked": false
+      }
+    },
+    {
+      "key": "chat-r003-reading-75233497-4146-476b-8fad-dbe09e9a4e2c",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "75233497-4146-476b-8fad-dbe09e9a4e2c",
+        "kind": "song_variant",
+        "primaryWorkId": "61fa26d1-287e-5a80-8936-02d26af36140",
+        "title": "ヘビーローテーション",
+        "displayCredit": "V.W.P",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "creditBasis": [
+        [
+          "original",
+          "arranger",
+          "田中ユウスケ"
+        ],
+        [
+          "original",
+          "composer",
+          "山崎燿"
+        ],
+        [
+          "original",
+          "lyricist",
+          "秋元康"
+        ],
+        [
+          "work",
+          "arranger",
+          "田中ユウスケ"
+        ],
+        [
+          "work",
+          "composer",
+          "山崎燿"
+        ],
+        [
+          "work",
+          "lyricist",
+          "秋元康"
+        ]
+      ],
+      "url": "https://utaten.com/lyric/jb81008002/",
+      "metadataBasis": {
+        "titleKana": null
+      },
+      "metadata": {
+        "titleKana": "へびーろーてーしょん"
+      },
+      "evidence": {
+        "report": "KSH-CHAT-READINGS-001_R003_r001",
+        "kind": "service_reading",
+        "notes": "旧参照読みは空欄。サービスによる候補で、アーティスト本人の公式指定ではない。",
+        "audioDirectlyChecked": false
+      }
+    },
+    {
+      "key": "chat-r003-reading-075d8974-027e-45f0-aad7-6cdd733fe9d1",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "075d8974-027e-45f0-aad7-6cdd733fe9d1",
+        "kind": "song_variant",
+        "primaryWorkId": "3bcc7900-7155-58b9-8f7c-c27fdbadc08a",
+        "title": "女々しくて",
+        "displayCredit": "V.W.P",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "creditBasis": [
+        [
+          "original",
+          "arranger",
+          "鬼龍院翔・tatsuo"
+        ],
+        [
+          "original",
+          "composer",
+          "鬼龍院翔"
+        ],
+        [
+          "original",
+          "lyricist",
+          "鬼龍院翔"
+        ]
+      ],
+      "url": "https://utaten.com/lyric/jb51101248/",
+      "metadataBasis": {
+        "titleKana": null
+      },
+      "metadata": {
+        "titleKana": "めめしくて"
+      },
+      "evidence": {
+        "report": "KSH-CHAT-READINGS-001_R003_r001",
+        "kind": "service_reading",
+        "notes": "旧参照読みは空欄。サービスによる候補で、アーティスト本人の公式指定ではない。",
+        "audioDirectlyChecked": false
+      }
+    },
+    {
+      "key": "chat-r003-reading-bf1c1adc-97c2-435e-8a88-34efd69a558c",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "bf1c1adc-97c2-435e-8a88-34efd69a558c",
+        "kind": "song_variant",
+        "primaryWorkId": "2c9ccc5a-4929-5569-8f5d-103d7c776950",
+        "title": "唱",
+        "displayCredit": "V.W.P",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "creditBasis": [
+        [
+          "original",
+          "arranger",
+          "Giga & TeddyLoid"
+        ],
+        [
+          "original",
+          "composer",
+          "Giga & TeddyLoid"
+        ],
+        [
+          "original",
+          "lyricist",
+          "TOPHAMHAT-KYO (FAKE TYPE.)"
+        ]
+      ],
+      "url": "https://utaten.com/kentei/index/221/",
+      "metadataBasis": {
+        "titleKana": null
+      },
+      "metadata": {
+        "titleKana": "しょう"
+      },
+      "evidence": {
+        "report": "KSH-CHAT-READINGS-001_R003_r001",
+        "kind": "service_editorial_reading",
+        "notes": "旧参照読みは空欄。サービスによる候補で、アーティスト本人の公式指定ではない。",
+        "audioDirectlyChecked": false
+      }
+    },
+    {
+      "key": "chat-r005-reading-9cfdba95-1f8d-4089-b8d6-81af93e6ec97",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "9cfdba95-1f8d-4089-b8d6-81af93e6ec97",
+        "kind": "song_variant",
+        "primaryWorkId": "7a230926-0895-5e42-9ccc-b97abeb7eec3",
+        "title": "I beg you",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "creditBasis": [],
+      "url": "https://utaten.com/lyric/qk19011101/",
+      "metadataBasis": {
+        "titleKana": "あいべぐゆー"
+      },
+      "metadata": {
+        "titleKana": "あいべっぐゆー"
+      },
+      "evidence": {
+        "report": "KSH-CHAT-READINGS-001_R005_r001",
+        "kind": "service_reading",
+        "observedReadingOriginal": "あいべっぐゆー",
+        "directRead": true,
+        "audioDirectlyChecked": false,
+        "notes": "Aimer原曲の専用よみ欄。促音を補う。本人の公式指定とは扱わない。"
+      }
+    },
+    {
+      "key": "chat-r006-reading-adcac7ec-b932-4a89-a0ac-dd5d3e5445aa",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "adcac7ec-b932-4a89-a0ac-dd5d3e5445aa",
+        "kind": "song_variant",
+        "primaryWorkId": "5dd5d31d-4b77-5259-b5b9-d4828d4c1098",
+        "title": "シリウスの心臓",
+        "displayCredit": "ヰ世界情緒 & 春猿火",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "傘村トータ"
+        ],
+        [
+          "work",
+          "composer",
+          "傘村トータ"
+        ],
+        [
+          "work",
+          "lyricist",
+          "傘村トータ"
+        ]
+      ],
+      "url": "https://utaten.com/lyric/mi21082311/",
+      "metadataBasis": {
+        "titleKana": null
+      },
+      "metadata": {
+        "titleKana": "しりうすのしんぞう"
+      },
+      "evidence": {
+        "report": "KSH-CHAT-READINGS-001_R006_r001",
+        "kind": "service_reading",
+        "observedReadingOriginal": "しりうすのしんぞう",
+        "directRead": true,
+        "audioDirectlyChecked": false,
+        "notes": "基本曲名の読み。旧表示では既にsoloと同じ基本題名の補完があるため、新たな表示空欄解消には数えない。後の正式入力を優先。"
+      }
+    },
+    {
+      "key": "chat-r008-reading-59645b1c-adff-46ef-9860-d10d5ace70cb",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "59645b1c-adff-46ef-9860-d10d5ace70cb",
+        "kind": "song_variant",
+        "primaryWorkId": "24ea10b6-6aa0-5e9c-b2b1-c9cf882d1709",
+        "title": "キミ消失セカイ",
+        "displayCredit": "幸祜×ヰ世界情緒×夕凪機",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "a5a70c55-101c-5a56-a279-96d6b1513950"
+        ]
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "廉"
+        ],
+        [
+          "work",
+          "composer",
+          "廉"
+        ],
+        [
+          "work",
+          "lyricist",
+          "廉"
+        ]
+      ],
+      "url": "https://utaten.com/lyric/mi23070639/",
+      "metadataBasis": {
+        "titleKana": null
+      },
+      "metadata": {
+        "titleKana": "きみしょうしつせかい"
+      },
+      "evidence": {
+        "report": "KSH-CHAT-READINGS-001_R008_r001",
+        "kind": "service_reading",
+        "observedReadingOriginal": "きみしょうしつせかい",
+        "directRead": true,
+        "audioDirectlyChecked": false,
+        "notes": "共演版も同じworkの基本曲名に限定して読みを補う。版名や歌唱の同一性を追加認定しない。"
+      }
+    },
+    {
+      "key": "chat-r008-reading-3866cc10-5984-452c-aba2-9a4fe6fa8304",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "3866cc10-5984-452c-aba2-9a4fe6fa8304",
+        "kind": "song_variant",
+        "primaryWorkId": "44be232d-ef64-5051-97b0-0e7677d02410",
+        "title": "パンドラコール",
+        "displayCredit": "花譜×ヰ世界情緒×幸祜",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c"
+        ]
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "廉"
+        ],
+        [
+          "work",
+          "composer",
+          "廉"
+        ],
+        [
+          "work",
+          "lyricist",
+          "廉"
+        ]
+      ],
+      "url": "https://utaten.com/lyric/mi22082210/",
+      "metadataBasis": {
+        "titleKana": null
+      },
+      "metadata": {
+        "titleKana": "ぱんどらこーる"
+      },
+      "evidence": {
+        "report": "KSH-CHAT-READINGS-001_R008_r001",
+        "kind": "service_reading",
+        "observedReadingOriginal": "ぱんどらこーる",
+        "directRead": true,
+        "audioDirectlyChecked": false,
+        "notes": "共演版も同じworkの基本曲名に限定して読みを補う。通常版の音源リンクを共演版へ流用しない。"
+      }
+    },
+    {
+      "key": "chat-r008-reading-3b2a9203-5927-465e-9bee-ff0cbc6d3980",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "3b2a9203-5927-465e-9bee-ff0cbc6d3980",
+        "kind": "song_variant",
+        "primaryWorkId": "cb07bc61-fb0d-577f-9174-94c486d35e00",
+        "title": "ヰ世界の宝石譚",
+        "displayCredit": "ヰ世界情緒 & 星界",
+        "variations": [],
+        "singerIds": [
+          "1867981b-c3c0-551b-9337-a8df05385348",
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "sasakure.UK"
+        ],
+        [
+          "work",
+          "composer",
+          "sasakure.UK"
+        ],
+        [
+          "work",
+          "lyricist",
+          "sasakure.UK"
+        ]
+      ],
+      "url": "https://utaten.com/lyric/mi23122642/",
+      "metadataBasis": {
+        "titleKana": null
+      },
+      "metadata": {
+        "titleKana": "いせかいのほうせきたん"
+      },
+      "evidence": {
+        "report": "KSH-CHAT-READINGS-001_R008_r001",
+        "kind": "service_reading",
+        "observedReadingOriginal": "ゐせかいのほうせきたん",
+        "directRead": true,
+        "audioDirectlyChecked": false,
+        "notes": "出典原文は「ゐせかいのほうせきたん」。題名の歴史的仮名と発音を分け、既存soloの読みと同じ現代仮名「い」で補完。出典の仮名を公式発音変更とせず、soloの既存値を変更しない。"
       }
     }
   ],
