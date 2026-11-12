@@ -368,6 +368,120 @@
       },
       "sourceBatch": "B016 N071 / B044 r001",
       "scope": "Exact Extended version only; track title used as display label; not a newly discovered video or vocal recording."
+    },
+    {
+      "key": "chat-b065-JnT_HVzERB8",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "fa71fcf1-553d-4622-b304-8f8e95662b08",
+        "kind": "song_variant",
+        "primaryWorkId": "b1243ee9-1cb2-5f8c-80d3-8db588896dde",
+        "title": "ANEMONE",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=JnT_HVzERB8",
+      "title": "ANEMONE / Anima Re:birth",
+      "titleBasis": "editorial",
+      "mediaKind": "live_video",
+      "publishedOn": "2026-11-11",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://ckworks.jp/vinforadar/video/JnT_HVzERB8"
+      ],
+      "evidence": {
+        "report": "KSH-CHAT-CONTINUOUS-001_B065_r001",
+        "readExtent": "description_mirror",
+        "officialWatchPageDirectlyReadByWork": false,
+        "audioActuallyChecked": false,
+        "scope": {
+          "eventId": "79744844-4e1f-58a3-93f8-1d8e85cbb8eb",
+          "eventDate": "2026-05-02",
+          "renditionId": "47baca3e-6e47-5b91-bcdc-c290dbc51357",
+          "releaseTrack": "2DAYS LIVE Blu-ray DAY-2 19"
+        },
+        "note": "既存の当該歌唱へのリンク。新曲/新録音/フル確認/現在の再生可能性の認定ではない。"
+      }
+    },
+    {
+      "key": "chat-b065-ggZ8JbuVRgY",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "fa71fcf1-553d-4622-b304-8f8e95662b08",
+        "kind": "song_variant",
+        "primaryWorkId": "b1243ee9-1cb2-5f8c-80d3-8db588896dde",
+        "title": "ANEMONE",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=ggZ8JbuVRgY",
+      "title": "ANEMONE / Anima Re:birth (Shorts)",
+      "titleBasis": "editorial",
+      "mediaKind": "short_video",
+      "publishedOn": "2026-11-11",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://ckworks.jp/vinforadar/video/ggZ8JbuVRgY"
+      ],
+      "evidence": {
+        "report": "KSH-CHAT-CONTINUOUS-001_B065_r001",
+        "readExtent": "description_mirror",
+        "officialWatchPageDirectlyReadByWork": false,
+        "audioActuallyChecked": false,
+        "scope": {
+          "excerptOf": "https://www.youtube.com/watch?v=JnT_HVzERB8"
+        },
+        "note": "既存の当該歌唱へのリンク。新曲/新録音/フル確認/現在の再生可能性の認定ではない。"
+      }
+    },
+    {
+      "key": "chat-b065-mh3sD3ce8wQ",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "19e78530-6558-41d2-b0af-f1616f9d03fd",
+        "kind": "song_variant",
+        "primaryWorkId": "857364f8-f861-569e-add0-492be8a62be9",
+        "title": "すきなことだけでいいです",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=mh3sD3ce8wQ",
+      "title": "すきなことだけでいいです (Shorts)",
+      "titleBasis": "editorial",
+      "mediaKind": "short_video",
+      "publishedOn": "2026-11-07",
+      "authorName": "ヰ世界情緒 -Isekaijoucho-",
+      "authorUrl": "https://www.youtube.com/@isekaijoucho",
+      "evidenceUrls": [
+        "https://ckworks.jp/vinforadar/video/mh3sD3ce8wQ"
+      ],
+      "evidence": {
+        "report": "KSH-CHAT-CONTINUOUS-001_B065_r001",
+        "readExtent": "description_mirror",
+        "officialWatchPageDirectlyReadByWork": false,
+        "audioActuallyChecked": false,
+        "scope": {
+          "descriptionFullUrl": "https://www.youtube.com/watch?v=1rv9GZiJTnQ"
+        },
+        "note": "既存の当該歌唱へのリンク。新曲/新録音/フル確認/現在の再生可能性の認定ではない。"
+      }
     }
   ],
   "exclusions": [
@@ -5556,7 +5670,7 @@
         "entryId": "4a16dd69-4669-4153-ada3-69022daa452b",
         "kind": "song_variant",
         "primaryWorkId": "98af1dd6-03cf-5a2c-8c19-1ad95e604e4a",
-        "title": "Paradisus-Paradoxm",
+        "title": "Paradisus-Paradoxum",
         "displayCredit": "ヰ世界情緒",
         "singerIds": [
           "81a01233-230e-50a8-a309-11275c794cd0"
@@ -5583,7 +5697,7 @@
         "entryId": "4a16dd69-4669-4153-ada3-69022daa452b",
         "kind": "song_variant",
         "primaryWorkId": "98af1dd6-03cf-5a2c-8c19-1ad95e604e4a",
-        "title": "Paradisus-Paradoxm",
+        "title": "Paradisus-Paradoxum",
         "displayCredit": "ヰ世界情緒",
         "singerIds": [
           "81a01233-230e-50a8-a309-11275c794cd0"
@@ -12959,6 +13073,86 @@
           "https://www.universal-music.co.jp/shigureui/biography/"
         ],
         "reading": "UtaTenの曲名専用よみ欄「しゅくせい!! ろりかみれくいえむ☆」。記号と空白を除いた既存の読み形式に合わせる。"
+      }
+    },
+    {
+      "key": "chat-r002-reading-e2035c03-dc9b-4f10-9f2f-06b956556707",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "e2035c03-dc9b-4f10-9f2f-06b956556707",
+        "kind": "song_variant",
+        "primaryWorkId": "1f45268e-fb48-4206-a6fe-c1182e0a3c7d",
+        "title": "String Theocracy",
+        "displayCredit": "ヰ世界情緒",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [],
+      "url": "https://utaten.com/lyric/mi22062126/",
+      "metadataBasis": {
+        "titleKana": null
+      },
+      "metadata": {
+        "titleKana": "すとりんぐしおくらしー"
+      },
+      "evidence": {
+        "report": "KSH-CHAT-READINGS-001_R002_r001",
+        "kind": "service_reading",
+        "workDirectlyRechecked": true,
+        "note": "UtaTen専用読み欄。公式本人の読み指定や音声確認とは区別する。既存の未入力に限る補完。"
+      }
+    },
+    {
+      "key": "chat-r002-reading-e28b9e91-0293-4027-aa96-3bbc8db44ad6",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "e28b9e91-0293-4027-aa96-3bbc8db44ad6",
+        "kind": "song_variant",
+        "primaryWorkId": "29a66546-4e60-5f91-88a6-26de53cd5d2d",
+        "title": "One Last Kiss",
+        "displayCredit": "V.W.P",
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "original",
+          "arranger",
+          "宇多田ヒカル"
+        ],
+        [
+          "original",
+          "composer",
+          "宇多田ヒカル"
+        ],
+        [
+          "original",
+          "lyricist",
+          "宇多田ヒカル"
+        ]
+      ],
+      "url": "https://utaten.com/lyric/ma21031018/",
+      "metadataBasis": {
+        "titleKana": null
+      },
+      "metadata": {
+        "titleKana": "わんらすときす"
+      },
+      "evidence": {
+        "report": "KSH-CHAT-READINGS-001_R002_r001",
+        "kind": "service_reading",
+        "workDirectlyRechecked": true,
+        "note": "UtaTen専用読み欄。公式本人の読み指定や音声確認とは区別する。既存の未入力に限る補完。"
       }
     }
   ],

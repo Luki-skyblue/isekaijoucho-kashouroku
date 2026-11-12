@@ -103,7 +103,8 @@ function reviewedMetadataForEntry(entry,metadata,factRecords){
  for(const key of ['titleKana','lyricsUrl','tieUp','firstAppearance','originalCredits']){
   if(['not_found','not_applicable'].includes(metadata.fieldReview?.[key]?.outcome))continue;
   const values=facts.filter(r=>Object.hasOwn(r.metadataBasis??{},key)&&Object.hasOwn(r.metadata??{},key)&&
-   JSON.stringify(r.metadataBasis[key])===JSON.stringify(metadata[key])).map(r=>r.metadata[key]).filter(value=>{
+   (JSON.stringify(r.metadataBasis[key])===JSON.stringify(metadata[key])||
+    key==='titleKana'&&r.metadataBasis[key]===null&&!Object.hasOwn(metadata,key))).map(r=>r.metadata[key]).filter(value=>{
     if(key==='titleKana')return typeof value==='string'&&!!value.trim()&&value.length<=500;
     if(key==='lyricsUrl')return typeof value==='string'&&!!safeSongUrl(value);
     if(key==='tieUp')return typeof value==='string'&&!!value.trim();
