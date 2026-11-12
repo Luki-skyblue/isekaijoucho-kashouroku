@@ -6,7 +6,7 @@ import {songDisplayTitle} from './catalog-song-title.mjs';
 import {discoveryRoutesForEntry} from './discovery-data.mjs';
 import {sourceKindsForRoutes} from './catalog-source-data.mjs';
 import {searchPeopleIndexFromModel,creditFilterChoicesFromModel,creditMatchingEntries} from './person-detail-data.mjs';
-import {creditRoleLabel,orderedCreditRoles} from './catalog-credit-labels.mjs';
+import {creditRoleLabel,orderedCreditRoles,creditRoleSearchTerms} from './catalog-credit-labels.mjs';
 import {queryEvents} from './private-read-model.mjs';
 import {liveDisplayContextFromModel} from './live-detail-data.mjs';
 import {releaseListFromModel} from './release-list-data.mjs';
@@ -85,15 +85,15 @@ function makeIndex(model,metadata){
     keyword:[r.title,r.displayCredit,r.kindLabel,...arr(d?.editions).flatMap(e=>[e.name,e.catalogNumber]),...arr(saved?.items).map(i=>i.rawTitle),...unique(songIds).map(songId=>songRows.get(songId)?.title),...events.map(eventId=>model.events.get(eventId)?.detail.title)].filter(Boolean)}};
  });
  const people=searchPeopleIndexFromModel(model).map(p=>{
-  for(const r of p.roles)add('roles',r,creditRoleLabel(r));add('personKinds',p.kind,personLabels[p.kind]??p.kindLabel);
+  for(const r of p.roles)add('roles',r,creditRoleLabel(r),creditRoleSearchTerms(r));add('personKinds',p.kind,personLabels[p.kind]??p.kindLabel);
   for(const g of p.groups)add('groups',g.id,g.name);
   const roles=orderedCreditRoles(p.roles).map(creditRoleLabel);
   return {id:p.key,href:'/people/'+p.key,title:p.name,subtitle:roles.length>3?roles.slice(0,2).join('・')+'・ほか':roles.join('・'),meta:`関連楽曲 ${p.songCount}`,songCount:p.songCount,imageUrl:null,imageUrls:[],
    values:{title:[p.name,...p.aliases],involvement:p.involvements,person_kind:[p.kind],role:p.roles,related_count:p.songCount,group:p.groups.map(g=>g.id),song:p.entryIds,
-    keyword:[p.name,...p.aliases,...roles,p.kindLabel,...p.groups.map(g=>g.name),...p.entryIds.map(entryId=>songRows.get(entryId)?.title)].filter(Boolean)}};
+    keyword:[p.name,...p.aliases,...roles,...p.roles.flatMap(creditRoleSearchTerms),p.kindLabel,...p.groups.map(g=>g.name),...p.entryIds.map(entryId=>songRows.get(entryId)?.title)].filter(Boolean)}};
  });
  const creators=creditFilterChoicesFromModel(model);for(const p of creators.people)add('creators',p.key,p.name,p.aliases);
- for(const r of creators.roles)add('creditRoles',r.id,r.label);
+ for(const r of creators.roles)add('creditRoles',r.id,r.label,creditRoleSearchTerms(r.id));
  for(const [key,map]of maps)choices[key]=[...map.values()].sort((a,b)=>order(a.label,b.label)||order(a.id,b.id));
  // Keep the broad source choices together, followed by channel refinements.
  choices.sources=SOURCE_SEARCH_OPTIONS;return {rows:{songs,lives,releases:releaseRows,people},choices};

@@ -6,7 +6,7 @@ import {songTypeLabel,isCoverSongType,formatSongTitleCredit} from '@/lib/catalog
 import {SongDetailTabs} from './song-detail-tabs';
 import {SongDetailArtwork} from './song-detail-artwork';
 import {CreditName,SingerNames} from './person-name';
-import {creditRoleLabel,songCreditRole} from '@/lib/catalog-credit-labels.mjs';
+import {creditRoleLabel,creditRoleSourceLabel,songCreditRole} from '@/lib/catalog-credit-labels.mjs';
 import {catalogEntryHref} from '@/lib/catalog-navigation';
 import type {CatalogSongWork} from '@/lib/catalog-song-work.mjs';
 import {songReleaseGroups} from '@/lib/song-release-groups.mjs';
@@ -58,7 +58,7 @@ export function CatalogSongDetail({song,initialTab='info',returnTo}:{song:SongDe
   <a className="song-detail-video-thumbnail" href={video.url} target="_blank" rel="noopener noreferrer" aria-label={(video.title||'動画')+'を開く'}><SongDetailArtwork url={video.imageUrl} className="song-detail-video-image"/><span className="song-detail-play" aria-hidden="true">▶</span></a>
   <div className="song-detail-video-copy"><a href={video.url} className="song-detail-video-title" target="_blank" rel="noopener noreferrer"><strong className={video.title?undefined:'song-detail-state'}>{video.title||'タイトル：'+INFO_STATES.pending}</strong></a>
    <div className="song-detail-video-meta">{songListenLabel(video.url)==='Xで見る'&&<span>X</span>}<span className={video.kind&&video.kind!=='unknown'?undefined:'song-detail-state'}>{({music_video:'MV',cover_video:'歌ってみた',cover_duet_video:'歌ってみた',live_video:'LIVE映像',short_video:'Shorts',opening_video:'OP映像',official_audio:'音源',art_track:'Art Track'} as Record<string,string>)[video.kind??'']||'種別：'+INFO_STATES.pending}</span>{video.publishedOn?<time dateTime={video.publishedOn}>投稿日 {displayDate(video.publishedOn,video.publishedOn)}</time>:<span className="song-detail-state">投稿日：{INFO_STATES.pending}</span>}</div>
-   {video.credits.length>0&&<details className="song-detail-video-credits"><summary>クレジット</summary><dl className="song-detail-facts">{video.credits.map((c,i)=><div className="song-detail-fact-pair" key={c.role+'|'+c.name+'|'+i}><dt>{creditRoleLabel(c.role)}</dt><dd><CreditName name={c.name} personKey={c.entityId} parts={c.parts}/></dd></div>)}</dl></details>}
+   {video.credits.length>0&&<details className="song-detail-video-credits"><summary>クレジット</summary><dl className="song-detail-facts">{video.credits.map((c,i)=><div className="song-detail-fact-pair" key={c.role+'|'+c.name+'|'+i}><dt>{creditRoleSourceLabel(c.role)}</dt><dd><CreditName name={c.name} personKey={c.entityId} parts={c.parts}/></dd></div>)}</dl></details>}
   </div>
  </article>)}</div>:<Empty review={review.media}/>;
  const history=<>{song.hasUncertainLives&&<p className="song-detail-note">歌唱者の組合せが未確認の公演を含みます。</p>}{song.lives.length?<div>{song.lives.map(live=><Link className="song-detail-live" key={live.eventId+'|'+live.date} href={'/lives/'+live.eventId}><SongDetailArtwork url={live.imageUrl} className="song-detail-live-art"/><span className="song-detail-live-copy">{live.date&&<time dateTime={live.date}>{displayDate(live.date,live.date)}</time>}<strong>{live.title}</strong></span><span className="song-detail-arrow" aria-hidden="true">↗</span></Link>)}</div>:<Empty review={review.history}/>}</>;

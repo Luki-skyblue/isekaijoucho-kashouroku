@@ -3,6 +3,7 @@
 import {SEARCH_TARGETS,searchTarget} from './search-navigation.mjs';
 import {CATALOG_SOURCE_OPTIONS} from './catalog-source-options.mjs';
 import {validFirstDate,validCreatorKey,validCreditRole} from './catalog-advanced-query.mjs';
+import {canonicalCreditRole} from './catalog-credit-labels.mjs';
 
 export const SEARCH_LIMITS={nodes:96,rules:64,depth:7,values:24,text:160,json:6000,url:8000};
 export const SOURCE_SEARCH_OPTIONS=[...CATALOG_SOURCE_OPTIONS,
@@ -77,11 +78,11 @@ export function validateSearchTree(input,target='songs'){
   }
   if(def.kind==='set'){
    if(!Array.isArray(node.value)||!node.value.length||node.value.length>SEARCH_LIMITS.values||node.value.some(v=>!clean(v)||!v.trim())){errors.push(`${label}を選択してください。`);return null;}
-   return {...out,value:[...new Set(node.value)]};
+   return {...out,value:[...new Set(def.id==='role'?node.value.map(canonicalCreditRole):node.value)]};
   }
   if(def.kind==='credit'){
    if(!plain(node.value)||(!node.value.person&&!node.value.role)||(node.value.person&&!validCreatorKey(node.value.person))||(node.value.role&&!validCreditRole(node.value.role))){errors.push(`${label}の担当者か担当を選択してください。`);return null;}
-   return {...out,value:{person:node.value.person??'',role:node.value.role??''}};
+   return {...out,value:{person:node.value.person??'',role:canonicalCreditRole(node.value.role??'')}};
   }
   if(!plain(node.value)){errors.push(`${label}を確認してください。`);return null;}
   const from=typeof node.value.from==='string'?node.value.from:'',to=typeof node.value.to==='string'?node.value.to:'';

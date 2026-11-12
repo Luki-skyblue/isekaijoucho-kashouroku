@@ -3,7 +3,7 @@
 import {songDetailFromModel,songTitleCaptionForEntry} from './song-detail-data.mjs';
 import {creditNameKey,personKeyForCredit,entityForId,singersForEntry,billingPeopleForEntry,membershipsForEntity,personRelationsForEntity} from './catalog-people.mjs';
 import {catalogNameMatches} from './catalog-name-search.mjs';
-import {creditRoleLabel,orderedCreditRoles,songCreditRole} from './catalog-credit-labels.mjs';
+import {creditRoleLabel,orderedCreditRoles,songCreditRole,canonicalCreditRole} from './catalog-credit-labels.mjs';
 import {songDisplayTitle} from './catalog-song-title.mjs';
 export {creditNameKey} from './catalog-people.mjs';
 
@@ -42,6 +42,7 @@ function indexFor(model){
  const people=new Map(),aliases=new Map(),billedGroups=new Map();
  function add(key,name,entryId,role,{listed=true,jointParticipants=[],jointLabel=null}={}){
   if(!key||!name)return;
+  role=canonicalCreditRole(role);
   const entity=entityForId(key);
   if(!people.has(key))people.set(key,{key,name:entity?.name??name,aliases:arr(entity?.aliases),type:entity?.type??'credit',roles:new Set(),songs:new Map(),listed:false,jointParticipants:new Map(),jointLabels:new Set()});
   const person=people.get(key);person.roles.add(role);person.listed ||=listed;
@@ -101,6 +102,7 @@ export function searchPeopleIndexFromModel(model){
  }));
 }
 export function personDetailFromModel(model,key,{page=1,limit=24,role='all',billing='all'}={}){
+ role=canonicalCreditRole(role);
  if(!validPersonKey(key))return null;
  const index=indexFor(model),targets=index.aliases.get(key);
  const person=index.people.get(key)??(targets?.size===1?index.people.get([...targets][0]):null);if(!person)return null;
@@ -139,6 +141,7 @@ export function personDetailFromModel(model,key,{page=1,limit=24,role='all',bill
 }
 
 export function personDetailHref(key,{page=1,role='all',billing='all'}={}){
+ role=canonicalCreditRole(role);
  const p=new URLSearchParams();if(billing&&billing!=='all')p.set('billing',billing);if(role&&role!=='all')p.set('role',role);if(page>1)p.set('page',String(page));return '/people/'+key+(p.size?'?'+p.toString():'');
 }
 
@@ -162,6 +165,7 @@ export function creditFilterChoicesFromModel(model){
   roles:roles.map(id=>({id,label:creditRoleLabel(id),category:roleCategory(id)}))};
 }
 export function creditMatchingEntries(model,creatorKey='',role=''){
+ role=canonicalCreditRole(role);
  if(!creatorKey&&!role)return null;
  const index=indexFor(model),targets=index.aliases.get(creatorKey);
  const person=creatorKey?(index.people.get(creatorKey)??(targets?.size===1?index.people.get([...targets][0]):null)):null;
@@ -188,6 +192,7 @@ export const PEOPLE_SORTS=Object.freeze([
 ]);
 const peopleSort=value=>PEOPLE_SORTS.some(s=>s.id===value)?value:'related_desc';
 export function peopleListFromModel(model,{category='all',kind='all',term='',role='all',page=1,limit=48,sort='related_desc',view='list'}={}){
+ role=canonicalCreditRole(role);
  ({category,kind}=directoryQuery({category,kind,role}));term=text(term).trim().slice(0,100);
  sort=peopleSort(sort);view=view==='grid'?'grid':'list';
  const people=[...indexFor(model).people.values()].filter(p=>p.listed);
