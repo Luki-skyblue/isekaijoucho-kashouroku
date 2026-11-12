@@ -13154,6 +13154,51 @@
         "workDirectlyRechecked": true,
         "note": "UtaTen専用読み欄。公式本人の読み指定や音声確認とは区別する。既存の未入力に限る補完。"
       }
+    },
+    {
+      "key": "isekai-tencho-request-reading-2026-11-12",
+      "status": "active",
+      "checkedOn": "2026-11-12",
+      "entry": {
+        "entryId": "70137705-18a0-4e73-ae2e-619a4d223c72",
+        "kind": "song_variant",
+        "primaryWorkId": "7b588446-4753-571a-a0c8-35c6f4618d70",
+        "title": "異世界転調リクヱスト",
+        "displayCredit": "ヰ世界情緒 × VALIS",
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ],
+        "variations": []
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "HIDEYA KOJIMA"
+        ],
+        [
+          "work",
+          "composer",
+          "HIDEYA KOJIMA"
+        ],
+        [
+          "work",
+          "lyricist",
+          "ぽん"
+        ]
+      ],
+      "url": "https://utaten.com/lyric/hw25011713/",
+      "metadataBasis": {
+        "titleKana": "いせかいてんせいりくゑすと"
+      },
+      "metadata": {
+        "titleKana": "いせかいてんちょうりくゑすと"
+      },
+      "evidence": {
+        "kind": "service_reading",
+        "directRead": true,
+        "note": "UtaTen専用読み欄。本人の訂正依頼を受けて転調=てんちょうへ。曲名の正式表記、旧取込原文、初出、歌唱者は維持する。"
+      }
     }
   ],
   "mediaCredits": [
