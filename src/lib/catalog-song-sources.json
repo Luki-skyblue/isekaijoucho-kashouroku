@@ -19392,9 +19392,53 @@
         {
           "role": "Motion Edit",
           "name": "Go Akagi（THINKR）"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kentaro Iwaki（THINKR）"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Minako Soga（THINKR）"
         }
       ],
-      "sourceId": "S-306"
+      "sourceId": "S-306",
+      "evidenceAdditions": [
+        {
+          "report": "B089",
+          "record": "B089-013",
+          "checkedOn": "2026-11-13",
+          "sourceScope": "media",
+          "rawText": "Production Manager：Kentaro Iwaki（THINKR）, Minako Soga（THINKR）",
+          "sources": [
+            {
+              "url": "https://www.youtube.com/watch?v=cQfaxJevAJE",
+              "kind": "official_youtube",
+              "access": "direct",
+              "checkedOn": "2026-11-13",
+              "location": "公式YouTube Artist Channel の動画説明欄（演奏・Mix / 制作スタッフ）。YouTube検索結果の専用動画表現として全文を確認。"
+            }
+          ],
+          "note": "Additional separately credited staff; preserve Kenichi Kodama and all earlier source wording."
+        },
+        {
+          "report": "B089",
+          "record": "B089-014",
+          "checkedOn": "2026-11-13",
+          "sourceScope": "media",
+          "rawText": "Production Manager：Kentaro Iwaki（THINKR）, Minako Soga（THINKR）",
+          "sources": [
+            {
+              "url": "https://www.youtube.com/watch?v=cQfaxJevAJE",
+              "kind": "official_youtube",
+              "access": "direct",
+              "checkedOn": "2026-11-13",
+              "location": "公式YouTube Artist Channel の動画説明欄（演奏・Mix / 制作スタッフ）。YouTube検索結果の専用動画表現として全文を確認。"
+            }
+          ],
+          "note": "Additional separately credited staff; preserve Kenichi Kodama and all earlier source wording."
+        }
+      ]
     },
     {
       "key": "chat-b032-C05-2beb11f5-eb4b-44cb-84b1-7e935b298d68",
@@ -28262,6 +28306,1246 @@
         "record": "B079-015",
         "sourceKind": "official_direct",
         "scope": "media"
+      }
+    },
+    {
+      "key": "chat-b087-001-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "192b2ab7-ab19-4f1a-bdbc-655c4741c7b6",
+        "kind": "song_variant",
+        "primaryWorkId": "ea811755-b5cc-5ec7-b241-b5533b89b464",
+        "title": "強気",
+        "displayCredit": "V.W.P",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "mediaId": "c9817066-22bd-5b57-969a-96337e397196",
+      "mediaUrl": "https://www.youtube.com/watch?v=kZpPtk3LQo0",
+      "url": "https://www.youtube.com/watch?v=kZpPtk3LQo0",
+      "credits": [
+        {
+          "role": "Director",
+          "name": "TatsuyaM"
+        }
+      ],
+      "sourceWording": "Director TatsuyaM",
+      "evidence": {
+        "reports": [
+          "B087"
+        ],
+        "records": [
+          "B087-001"
+        ],
+        "sourceScopes": [
+          "video"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=kZpPtk3LQo0",
+            "kind": "official",
+            "access": "direct",
+            "checkedOn": "2026-11-13",
+            "location": "V.W.P公式Artist Channelの「強気」2024-06-29 MVのYouTube Description。Lyrics/Music/Arrangement、英語紹介、Director以下の役割原文を直接取得。音声未再生"
+          }
+        ],
+        "readExtent": "source_description_text_reported_by_chat_not_independent_work_fetch",
+        "audioActuallyChecked": false,
+        "manualReview": null,
+        "note": "Credits attached to the exact published video as source context. No shared-master, sibling version, live or Short inheritance."
+      }
+    },
+    {
+      "key": "chat-b087-002-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "192b2ab7-ab19-4f1a-bdbc-655c4741c7b6",
+        "kind": "song_variant",
+        "primaryWorkId": "ea811755-b5cc-5ec7-b241-b5533b89b464",
+        "title": "強気",
+        "displayCredit": "V.W.P",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "mediaId": "c9817066-22bd-5b57-969a-96337e397196",
+      "mediaUrl": "https://www.youtube.com/watch?v=kZpPtk3LQo0",
+      "url": "https://www.youtube.com/watch?v=kZpPtk3LQo0",
+      "credits": [
+        {
+          "role": "Typo Design",
+          "name": "Hazuki Tamano"
+        }
+      ],
+      "sourceWording": "Typo Design Hazuki Tamano",
+      "evidence": {
+        "reports": [
+          "B087"
+        ],
+        "records": [
+          "B087-002"
+        ],
+        "sourceScopes": [
+          "video"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=kZpPtk3LQo0",
+            "kind": "official",
+            "access": "direct",
+            "checkedOn": "2026-11-13",
+            "location": "V.W.P公式Artist Channelの「強気」2024-06-29 MVのYouTube Description。Lyrics/Music/Arrangement、英語紹介、Director以下の役割原文を直接取得。音声未再生"
+          }
+        ],
+        "readExtent": "source_description_text_reported_by_chat_not_independent_work_fetch",
+        "audioActuallyChecked": false,
+        "manualReview": null,
+        "note": "Credits attached to the exact published video as source context. No shared-master, sibling version, live or Short inheritance."
+      }
+    },
+    {
+      "key": "chat-b087-003-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "192b2ab7-ab19-4f1a-bdbc-655c4741c7b6",
+        "kind": "song_variant",
+        "primaryWorkId": "ea811755-b5cc-5ec7-b241-b5533b89b464",
+        "title": "強気",
+        "displayCredit": "V.W.P",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "mediaId": "c9817066-22bd-5b57-969a-96337e397196",
+      "mediaUrl": "https://www.youtube.com/watch?v=kZpPtk3LQo0",
+      "url": "https://www.youtube.com/watch?v=kZpPtk3LQo0",
+      "credits": [
+        {
+          "role": "Production Manager",
+          "name": "Kentaro Iwaki (THINKR)",
+          "entityId": "f92eb239-b042-58cc-afe5-1a7df958c999"
+        }
+      ],
+      "sourceWording": "Production Manager Kentaro Iwaki (THINKR)",
+      "evidence": {
+        "reports": [
+          "B087"
+        ],
+        "records": [
+          "B087-003"
+        ],
+        "sourceScopes": [
+          "video"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=kZpPtk3LQo0",
+            "kind": "official",
+            "access": "direct",
+            "checkedOn": "2026-11-13",
+            "location": "V.W.P公式Artist Channelの「強気」2024-06-29 MVのYouTube Description。Lyrics/Music/Arrangement、英語紹介、Director以下の役割原文を直接取得。音声未再生"
+          }
+        ],
+        "readExtent": "source_description_text_reported_by_chat_not_independent_work_fetch",
+        "audioActuallyChecked": false,
+        "manualReview": null,
+        "note": "Credits attached to the exact published video as source context. No shared-master, sibling version, live or Short inheritance."
+      }
+    },
+    {
+      "key": "chat-b087-004-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "192b2ab7-ab19-4f1a-bdbc-655c4741c7b6",
+        "kind": "song_variant",
+        "primaryWorkId": "ea811755-b5cc-5ec7-b241-b5533b89b464",
+        "title": "強気",
+        "displayCredit": "V.W.P",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "mediaId": "c9817066-22bd-5b57-969a-96337e397196",
+      "mediaUrl": "https://www.youtube.com/watch?v=kZpPtk3LQo0",
+      "url": "https://www.youtube.com/watch?v=kZpPtk3LQo0",
+      "credits": [
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi (THINKR)",
+          "entityId": "082c8459-03e2-5c53-a2a3-c9d1662384c1"
+        }
+      ],
+      "sourceWording": "Producer Hideyuki Negishi (THINKR)",
+      "evidence": {
+        "reports": [
+          "B087"
+        ],
+        "records": [
+          "B087-004"
+        ],
+        "sourceScopes": [
+          "video"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=kZpPtk3LQo0",
+            "kind": "official",
+            "access": "direct",
+            "checkedOn": "2026-11-13",
+            "location": "V.W.P公式Artist Channelの「強気」2024-06-29 MVのYouTube Description。Lyrics/Music/Arrangement、英語紹介、Director以下の役割原文を直接取得。音声未再生"
+          }
+        ],
+        "readExtent": "source_description_text_reported_by_chat_not_independent_work_fetch",
+        "audioActuallyChecked": false,
+        "manualReview": null,
+        "note": "Credits attached to the exact published video as source context. No shared-master, sibling version, live or Short inheritance."
+      }
+    },
+    {
+      "key": "chat-b087-005-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "192b2ab7-ab19-4f1a-bdbc-655c4741c7b6",
+        "kind": "song_variant",
+        "primaryWorkId": "ea811755-b5cc-5ec7-b241-b5533b89b464",
+        "title": "強気",
+        "displayCredit": "V.W.P",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "mediaId": "c9817066-22bd-5b57-969a-96337e397196",
+      "mediaUrl": "https://www.youtube.com/watch?v=kZpPtk3LQo0",
+      "url": "https://www.youtube.com/watch?v=kZpPtk3LQo0",
+      "credits": [
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        }
+      ],
+      "sourceWording": "Executive Producer PIEDPIPER",
+      "evidence": {
+        "reports": [
+          "B087"
+        ],
+        "records": [
+          "B087-005"
+        ],
+        "sourceScopes": [
+          "video"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=kZpPtk3LQo0",
+            "kind": "official",
+            "access": "direct",
+            "checkedOn": "2026-11-13",
+            "location": "V.W.P公式Artist Channelの「強気」2024-06-29 MVのYouTube Description。Lyrics/Music/Arrangement、英語紹介、Director以下の役割原文を直接取得。音声未再生"
+          }
+        ],
+        "readExtent": "source_description_text_reported_by_chat_not_independent_work_fetch",
+        "audioActuallyChecked": false,
+        "manualReview": null,
+        "note": "Credits attached to the exact published video as source context. No shared-master, sibling version, live or Short inheritance."
+      }
+    },
+    {
+      "key": "chat-b089-001-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "2beb11f5-eb4b-44cb-84b1-7e935b298d68",
+        "kind": "song_variant",
+        "primaryWorkId": "93701476-9d22-5905-9081-d5d867dcb12c",
+        "title": "まぼろしの行方",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "mediaId": "2391486f-b6ad-5f6b-a8ab-795b7d316656",
+      "mediaUrl": "https://www.youtube.com/watch?v=egZZpZPaJmo",
+      "url": "https://www.youtube.com/watch?v=egZZpZPaJmo",
+      "credits": [
+        {
+          "role": "Violin&Viola",
+          "name": "岩嵜壮志（F.M.F）"
+        }
+      ],
+      "sourceWording": "Violin&Viola：岩嵜壮志（F.M.F）",
+      "evidence": {
+        "reports": [
+          "B089"
+        ],
+        "records": [
+          "B089-001"
+        ],
+        "sourceScopes": [
+          "recording_credited_on_video"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=egZZpZPaJmo",
+            "kind": "official_youtube",
+            "access": "direct",
+            "checkedOn": "2026-11-13",
+            "location": "公式YouTube Artist Channel の動画説明欄（Music Credits / 映像スタッフ）。YouTube検索結果の専用動画表現として全文を確認。"
+          }
+        ],
+        "readExtent": "source_description_text_reported_by_chat_not_independent_work_fetch",
+        "audioActuallyChecked": false,
+        "manualReview": null,
+        "note": "Credits attached to the exact published video as source context. No shared-master, sibling version, live or Short inheritance."
+      }
+    },
+    {
+      "key": "chat-b089-002-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "2beb11f5-eb4b-44cb-84b1-7e935b298d68",
+        "kind": "song_variant",
+        "primaryWorkId": "93701476-9d22-5905-9081-d5d867dcb12c",
+        "title": "まぼろしの行方",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "mediaId": "2391486f-b6ad-5f6b-a8ab-795b7d316656",
+      "mediaUrl": "https://www.youtube.com/watch?v=egZZpZPaJmo",
+      "url": "https://www.youtube.com/watch?v=egZZpZPaJmo",
+      "credits": [
+        {
+          "role": "Bass",
+          "name": "櫻井陸来"
+        }
+      ],
+      "sourceWording": "Bass：櫻井陸来",
+      "evidence": {
+        "reports": [
+          "B089"
+        ],
+        "records": [
+          "B089-002"
+        ],
+        "sourceScopes": [
+          "recording_credited_on_video"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=egZZpZPaJmo",
+            "kind": "official_youtube",
+            "access": "direct",
+            "checkedOn": "2026-11-13",
+            "location": "公式YouTube Artist Channel の動画説明欄（Music Credits / 映像スタッフ）。YouTube検索結果の専用動画表現として全文を確認。"
+          }
+        ],
+        "readExtent": "source_description_text_reported_by_chat_not_independent_work_fetch",
+        "audioActuallyChecked": false,
+        "manualReview": null,
+        "note": "Credits attached to the exact published video as source context. No shared-master, sibling version, live or Short inheritance."
+      }
+    },
+    {
+      "key": "chat-b089-003-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "2beb11f5-eb4b-44cb-84b1-7e935b298d68",
+        "kind": "song_variant",
+        "primaryWorkId": "93701476-9d22-5905-9081-d5d867dcb12c",
+        "title": "まぼろしの行方",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "mediaId": "2391486f-b6ad-5f6b-a8ab-795b7d316656",
+      "mediaUrl": "https://www.youtube.com/watch?v=egZZpZPaJmo",
+      "url": "https://www.youtube.com/watch?v=egZZpZPaJmo",
+      "credits": [
+        {
+          "role": "Mix",
+          "name": "丸山武蔵"
+        }
+      ],
+      "sourceWording": "Mix：丸山武蔵",
+      "evidence": {
+        "reports": [
+          "B089"
+        ],
+        "records": [
+          "B089-003"
+        ],
+        "sourceScopes": [
+          "recording_credited_on_video"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=egZZpZPaJmo",
+            "kind": "official_youtube",
+            "access": "direct",
+            "checkedOn": "2026-11-13",
+            "location": "公式YouTube Artist Channel の動画説明欄（Music Credits / 映像スタッフ）。YouTube検索結果の専用動画表現として全文を確認。"
+          }
+        ],
+        "readExtent": "source_description_text_reported_by_chat_not_independent_work_fetch",
+        "audioActuallyChecked": false,
+        "manualReview": null,
+        "note": "Credits attached to the exact published video as source context. No shared-master, sibling version, live or Short inheritance."
+      }
+    },
+    {
+      "key": "chat-b089-004-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "2beb11f5-eb4b-44cb-84b1-7e935b298d68",
+        "kind": "song_variant",
+        "primaryWorkId": "93701476-9d22-5905-9081-d5d867dcb12c",
+        "title": "まぼろしの行方",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "mediaId": "2391486f-b6ad-5f6b-a8ab-795b7d316656",
+      "mediaUrl": "https://www.youtube.com/watch?v=egZZpZPaJmo",
+      "url": "https://www.youtube.com/watch?v=egZZpZPaJmo",
+      "credits": [
+        {
+          "role": "3DCG Production Assistant",
+          "name": "Miu Sawada(VeAble)"
+        }
+      ],
+      "sourceWording": "3DCG Production Assistant：Miu Sawada(VeAble)",
+      "evidence": {
+        "reports": [
+          "B089"
+        ],
+        "records": [
+          "B089-004"
+        ],
+        "sourceScopes": [
+          "media"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=egZZpZPaJmo",
+            "kind": "official_youtube",
+            "access": "direct",
+            "checkedOn": "2026-11-13",
+            "location": "公式YouTube Artist Channel の動画説明欄（Music Credits / 映像スタッフ）。YouTube検索結果の専用動画表現として全文を確認。"
+          }
+        ],
+        "readExtent": "source_description_text_reported_by_chat_not_independent_work_fetch",
+        "audioActuallyChecked": false,
+        "manualReview": null,
+        "note": "Credits attached to the exact published video as source context. No shared-master, sibling version, live or Short inheritance."
+      }
+    },
+    {
+      "key": "chat-b089-005-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "2beb11f5-eb4b-44cb-84b1-7e935b298d68",
+        "kind": "song_variant",
+        "primaryWorkId": "93701476-9d22-5905-9081-d5d867dcb12c",
+        "title": "まぼろしの行方",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "mediaId": "2391486f-b6ad-5f6b-a8ab-795b7d316656",
+      "mediaUrl": "https://www.youtube.com/watch?v=egZZpZPaJmo",
+      "url": "https://www.youtube.com/watch?v=egZZpZPaJmo",
+      "credits": [
+        {
+          "role": "Production Manager",
+          "name": "Kentaro Iwaki(THINKR)",
+          "entityId": "f92eb239-b042-58cc-afe5-1a7df958c999"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Minako Soga(THINKR)"
+        }
+      ],
+      "sourceWording": "Production Manager：Kentaro Iwaki(THINKR) , Minako Soga(THINKR)",
+      "evidence": {
+        "reports": [
+          "B089"
+        ],
+        "records": [
+          "B089-005",
+          "B089-006"
+        ],
+        "sourceScopes": [
+          "media"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=egZZpZPaJmo",
+            "kind": "official_youtube",
+            "access": "direct",
+            "checkedOn": "2026-11-13",
+            "location": "公式YouTube Artist Channel の動画説明欄（Music Credits / 映像スタッフ）。YouTube検索結果の専用動画表現として全文を確認。"
+          }
+        ],
+        "readExtent": "source_description_text_reported_by_chat_not_independent_work_fetch",
+        "audioActuallyChecked": false,
+        "manualReview": null,
+        "note": "Credits attached to the exact published video as source context. No shared-master, sibling version, live or Short inheritance."
+      }
+    },
+    {
+      "key": "chat-b089-007-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "2beb11f5-eb4b-44cb-84b1-7e935b298d68",
+        "kind": "song_variant",
+        "primaryWorkId": "93701476-9d22-5905-9081-d5d867dcb12c",
+        "title": "まぼろしの行方",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "mediaId": "2391486f-b6ad-5f6b-a8ab-795b7d316656",
+      "mediaUrl": "https://www.youtube.com/watch?v=egZZpZPaJmo",
+      "url": "https://www.youtube.com/watch?v=egZZpZPaJmo",
+      "credits": [
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi(THINKR)",
+          "entityId": "082c8459-03e2-5c53-a2a3-c9d1662384c1"
+        }
+      ],
+      "sourceWording": "Producer：Hideyuki Negishi(THINKR)",
+      "evidence": {
+        "reports": [
+          "B089"
+        ],
+        "records": [
+          "B089-007"
+        ],
+        "sourceScopes": [
+          "media"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=egZZpZPaJmo",
+            "kind": "official_youtube",
+            "access": "direct",
+            "checkedOn": "2026-11-13",
+            "location": "公式YouTube Artist Channel の動画説明欄（Music Credits / 映像スタッフ）。YouTube検索結果の専用動画表現として全文を確認。"
+          }
+        ],
+        "readExtent": "source_description_text_reported_by_chat_not_independent_work_fetch",
+        "audioActuallyChecked": false,
+        "manualReview": null,
+        "note": "Credits attached to the exact published video as source context. No shared-master, sibling version, live or Short inheritance."
+      }
+    },
+    {
+      "key": "chat-b089-008-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "2beb11f5-eb4b-44cb-84b1-7e935b298d68",
+        "kind": "song_variant",
+        "primaryWorkId": "93701476-9d22-5905-9081-d5d867dcb12c",
+        "title": "まぼろしの行方",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "mediaId": "2391486f-b6ad-5f6b-a8ab-795b7d316656",
+      "mediaUrl": "https://www.youtube.com/watch?v=egZZpZPaJmo",
+      "url": "https://www.youtube.com/watch?v=egZZpZPaJmo",
+      "credits": [
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        }
+      ],
+      "sourceWording": "Executive Producer：PIEDPIPER",
+      "evidence": {
+        "reports": [
+          "B089"
+        ],
+        "records": [
+          "B089-008"
+        ],
+        "sourceScopes": [
+          "media"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=egZZpZPaJmo",
+            "kind": "official_youtube",
+            "access": "direct",
+            "checkedOn": "2026-11-13",
+            "location": "公式YouTube Artist Channel の動画説明欄（Music Credits / 映像スタッフ）。YouTube検索結果の専用動画表現として全文を確認。"
+          }
+        ],
+        "readExtent": "source_description_text_reported_by_chat_not_independent_work_fetch",
+        "audioActuallyChecked": false,
+        "manualReview": null,
+        "note": "Credits attached to the exact published video as source context. No shared-master, sibling version, live or Short inheritance."
+      }
+    },
+    {
+      "key": "chat-b089-009-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "2beb11f5-eb4b-44cb-84b1-7e935b298d68",
+        "kind": "song_variant",
+        "primaryWorkId": "93701476-9d22-5905-9081-d5d867dcb12c",
+        "title": "まぼろしの行方",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "mediaId": "2391486f-b6ad-5f6b-a8ab-795b7d316656",
+      "mediaUrl": "https://www.youtube.com/watch?v=egZZpZPaJmo",
+      "url": "https://www.youtube.com/watch?v=egZZpZPaJmo",
+      "credits": [
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceWording": "Produced by KAMITSUBAKI STUDIO",
+      "evidence": {
+        "reports": [
+          "B089"
+        ],
+        "records": [
+          "B089-009"
+        ],
+        "sourceScopes": [
+          "media"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=egZZpZPaJmo",
+            "kind": "official_youtube",
+            "access": "direct",
+            "checkedOn": "2026-11-13",
+            "location": "公式YouTube Artist Channel の動画説明欄（Music Credits / 映像スタッフ）。YouTube検索結果の専用動画表現として全文を確認。"
+          }
+        ],
+        "readExtent": "source_description_text_reported_by_chat_not_independent_work_fetch",
+        "audioActuallyChecked": false,
+        "manualReview": null,
+        "note": "Credits attached to the exact published video as source context. No shared-master, sibling version, live or Short inheritance."
+      }
+    },
+    {
+      "key": "chat-b089-010-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "9b0ebdd2-7a38-4692-ba73-af836a535858",
+        "kind": "song_variant",
+        "primaryWorkId": "6ed4a21c-cf3d-5dda-b974-018ee899e588",
+        "title": "ラケナリアの夢",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "mediaId": "b296703a-fea4-51b1-a245-7836c18f005c",
+      "mediaUrl": "https://www.youtube.com/watch?v=cQfaxJevAJE",
+      "url": "https://www.youtube.com/watch?v=cQfaxJevAJE",
+      "credits": [
+        {
+          "role": "Guitar",
+          "name": "伊藤翔磨"
+        }
+      ],
+      "sourceWording": "Guitar：伊藤翔磨",
+      "evidence": {
+        "reports": [
+          "B089"
+        ],
+        "records": [
+          "B089-010"
+        ],
+        "sourceScopes": [
+          "recording_credited_on_video"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=cQfaxJevAJE",
+            "kind": "official_youtube",
+            "access": "direct",
+            "checkedOn": "2026-11-13",
+            "location": "公式YouTube Artist Channel の動画説明欄（演奏・Mix / 制作スタッフ）。YouTube検索結果の専用動画表現として全文を確認。"
+          }
+        ],
+        "readExtent": "source_description_text_reported_by_chat_not_independent_work_fetch",
+        "audioActuallyChecked": false,
+        "manualReview": null,
+        "note": "Credits attached to the exact published video as source context. No shared-master, sibling version, live or Short inheritance."
+      }
+    },
+    {
+      "key": "chat-b089-011-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "9b0ebdd2-7a38-4692-ba73-af836a535858",
+        "kind": "song_variant",
+        "primaryWorkId": "6ed4a21c-cf3d-5dda-b974-018ee899e588",
+        "title": "ラケナリアの夢",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "mediaId": "b296703a-fea4-51b1-a245-7836c18f005c",
+      "mediaUrl": "https://www.youtube.com/watch?v=cQfaxJevAJE",
+      "url": "https://www.youtube.com/watch?v=cQfaxJevAJE",
+      "credits": [
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceWording": "Mix：＄ＫＩＹＡＫＩ＄ＫＩ",
+      "evidence": {
+        "reports": [
+          "B089"
+        ],
+        "records": [
+          "B089-011"
+        ],
+        "sourceScopes": [
+          "recording_credited_on_video"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=cQfaxJevAJE",
+            "kind": "official_youtube",
+            "access": "direct",
+            "checkedOn": "2026-11-13",
+            "location": "公式YouTube Artist Channel の動画説明欄（演奏・Mix / 制作スタッフ）。YouTube検索結果の専用動画表現として全文を確認。"
+          }
+        ],
+        "readExtent": "source_description_text_reported_by_chat_not_independent_work_fetch",
+        "audioActuallyChecked": false,
+        "manualReview": null,
+        "note": "Credits attached to the exact published video as source context. No shared-master, sibling version, live or Short inheritance."
+      }
+    },
+    {
+      "key": "chat-b089-012-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "9b0ebdd2-7a38-4692-ba73-af836a535858",
+        "kind": "song_variant",
+        "primaryWorkId": "6ed4a21c-cf3d-5dda-b974-018ee899e588",
+        "title": "ラケナリアの夢",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "mediaId": "b296703a-fea4-51b1-a245-7836c18f005c",
+      "mediaUrl": "https://www.youtube.com/watch?v=cQfaxJevAJE",
+      "url": "https://www.youtube.com/watch?v=cQfaxJevAJE",
+      "credits": [
+        {
+          "role": "3DCG Support",
+          "name": "Kouta Miyokawa（G-angle）"
+        }
+      ],
+      "sourceWording": "3DCG Support：Kouta Miyokawa（G-angle）",
+      "evidence": {
+        "reports": [
+          "B089"
+        ],
+        "records": [
+          "B089-012"
+        ],
+        "sourceScopes": [
+          "media"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=cQfaxJevAJE",
+            "kind": "official_youtube",
+            "access": "direct",
+            "checkedOn": "2026-11-13",
+            "location": "公式YouTube Artist Channel の動画説明欄（演奏・Mix / 制作スタッフ）。YouTube検索結果の専用動画表現として全文を確認。"
+          }
+        ],
+        "readExtent": "source_description_text_reported_by_chat_not_independent_work_fetch",
+        "audioActuallyChecked": false,
+        "manualReview": null,
+        "note": "Credits attached to the exact published video as source context. No shared-master, sibling version, live or Short inheritance."
+      }
+    },
+    {
+      "key": "chat-b089-015-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "9b0ebdd2-7a38-4692-ba73-af836a535858",
+        "kind": "song_variant",
+        "primaryWorkId": "6ed4a21c-cf3d-5dda-b974-018ee899e588",
+        "title": "ラケナリアの夢",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "mediaId": "b296703a-fea4-51b1-a245-7836c18f005c",
+      "mediaUrl": "https://www.youtube.com/watch?v=cQfaxJevAJE",
+      "url": "https://www.youtube.com/watch?v=cQfaxJevAJE",
+      "credits": [
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi（THINKR）",
+          "entityId": "082c8459-03e2-5c53-a2a3-c9d1662384c1"
+        }
+      ],
+      "sourceWording": "Producer：Hideyuki Negishi（THINKR）",
+      "evidence": {
+        "reports": [
+          "B089"
+        ],
+        "records": [
+          "B089-015"
+        ],
+        "sourceScopes": [
+          "media"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=cQfaxJevAJE",
+            "kind": "official_youtube",
+            "access": "direct",
+            "checkedOn": "2026-11-13",
+            "location": "公式YouTube Artist Channel の動画説明欄（演奏・Mix / 制作スタッフ）。YouTube検索結果の専用動画表現として全文を確認。"
+          }
+        ],
+        "readExtent": "source_description_text_reported_by_chat_not_independent_work_fetch",
+        "audioActuallyChecked": false,
+        "manualReview": null,
+        "note": "Credits attached to the exact published video as source context. No shared-master, sibling version, live or Short inheritance."
+      }
+    },
+    {
+      "key": "chat-b089-016-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "9b0ebdd2-7a38-4692-ba73-af836a535858",
+        "kind": "song_variant",
+        "primaryWorkId": "6ed4a21c-cf3d-5dda-b974-018ee899e588",
+        "title": "ラケナリアの夢",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "mediaId": "b296703a-fea4-51b1-a245-7836c18f005c",
+      "mediaUrl": "https://www.youtube.com/watch?v=cQfaxJevAJE",
+      "url": "https://www.youtube.com/watch?v=cQfaxJevAJE",
+      "credits": [
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        }
+      ],
+      "sourceWording": "Executive Producer：PIEDPIPER",
+      "evidence": {
+        "reports": [
+          "B089"
+        ],
+        "records": [
+          "B089-016"
+        ],
+        "sourceScopes": [
+          "media"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=cQfaxJevAJE",
+            "kind": "official_youtube",
+            "access": "direct",
+            "checkedOn": "2026-11-13",
+            "location": "公式YouTube Artist Channel の動画説明欄（演奏・Mix / 制作スタッフ）。YouTube検索結果の専用動画表現として全文を確認。"
+          }
+        ],
+        "readExtent": "source_description_text_reported_by_chat_not_independent_work_fetch",
+        "audioActuallyChecked": false,
+        "manualReview": null,
+        "note": "Credits attached to the exact published video as source context. No shared-master, sibling version, live or Short inheritance."
+      }
+    },
+    {
+      "key": "chat-b089-017-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "9b0ebdd2-7a38-4692-ba73-af836a535858",
+        "kind": "song_variant",
+        "primaryWorkId": "6ed4a21c-cf3d-5dda-b974-018ee899e588",
+        "title": "ラケナリアの夢",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "mediaId": "b296703a-fea4-51b1-a245-7836c18f005c",
+      "mediaUrl": "https://www.youtube.com/watch?v=cQfaxJevAJE",
+      "url": "https://www.youtube.com/watch?v=cQfaxJevAJE",
+      "credits": [
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceWording": "Produced by KAMITSUBAKI STUDIO",
+      "evidence": {
+        "reports": [
+          "B089"
+        ],
+        "records": [
+          "B089-017"
+        ],
+        "sourceScopes": [
+          "media"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=cQfaxJevAJE",
+            "kind": "official_youtube",
+            "access": "direct",
+            "checkedOn": "2026-11-13",
+            "location": "公式YouTube Artist Channel の動画説明欄（演奏・Mix / 制作スタッフ）。YouTube検索結果の専用動画表現として全文を確認。"
+          }
+        ],
+        "readExtent": "source_description_text_reported_by_chat_not_independent_work_fetch",
+        "audioActuallyChecked": false,
+        "manualReview": null,
+        "note": "Credits attached to the exact published video as source context. No shared-master, sibling version, live or Short inheritance."
+      }
+    },
+    {
+      "key": "chat-b090-001-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "2031ec28-eed6-4259-9cd8-795cb6d0e342",
+        "kind": "song_variant",
+        "primaryWorkId": "d11b98f1-aa7c-5ff0-a2f1-bc8d63cccb93",
+        "title": "BREATHE(Rearranged ver.)",
+        "displayCredit": "ヰ世界情緒 × 春猿火",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "mediaId": "8e70cf15-f859-53b8-9fb8-b71ae01163f3",
+      "mediaUrl": "https://www.youtube.com/watch?v=2QCSQPC829g",
+      "url": "https://www.youtube.com/watch?v=2QCSQPC829g",
+      "credits": [
+        {
+          "role": "Guitar",
+          "name": "橘井健一"
+        }
+      ],
+      "sourceWording": "Guitar：橘井健一",
+      "evidence": {
+        "reports": [
+          "B090"
+        ],
+        "records": [
+          "B090-001"
+        ],
+        "sourceScopes": [
+          "recording_credited_on_video"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=2QCSQPC829g",
+            "kind": "official_youtube",
+            "access": "direct",
+            "checkedOn": "2026-11-13",
+            "location": "公式Artist ChannelのYouTube動画説明欄。Webの公式YouTube動画結果で説明本文を直接確認。音声・映像は未再生。"
+          }
+        ],
+        "readExtent": "source_description_text_reported_by_chat_not_independent_work_fetch",
+        "audioActuallyChecked": false,
+        "manualReview": null,
+        "note": "Credits attached to the exact published video as source context. No shared-master, sibling version, live or Short inheritance."
+      }
+    },
+    {
+      "key": "chat-b090-002-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "2031ec28-eed6-4259-9cd8-795cb6d0e342",
+        "kind": "song_variant",
+        "primaryWorkId": "d11b98f1-aa7c-5ff0-a2f1-bc8d63cccb93",
+        "title": "BREATHE(Rearranged ver.)",
+        "displayCredit": "ヰ世界情緒 × 春猿火",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "mediaId": "8e70cf15-f859-53b8-9fb8-b71ae01163f3",
+      "mediaUrl": "https://www.youtube.com/watch?v=2QCSQPC829g",
+      "url": "https://www.youtube.com/watch?v=2QCSQPC829g",
+      "credits": [
+        {
+          "role": "MIX",
+          "name": "ヨコハタトクヤ"
+        }
+      ],
+      "sourceWording": "MIX：ヨコハタトクヤ",
+      "evidence": {
+        "reports": [
+          "B090"
+        ],
+        "records": [
+          "B090-002"
+        ],
+        "sourceScopes": [
+          "recording_credited_on_video"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=2QCSQPC829g",
+            "kind": "official_youtube",
+            "access": "direct",
+            "checkedOn": "2026-11-13",
+            "location": "公式Artist ChannelのYouTube動画説明欄。Webの公式YouTube動画結果で説明本文を直接確認。音声・映像は未再生。"
+          }
+        ],
+        "readExtent": "source_description_text_reported_by_chat_not_independent_work_fetch",
+        "audioActuallyChecked": false,
+        "manualReview": null,
+        "note": "Credits attached to the exact published video as source context. No shared-master, sibling version, live or Short inheritance."
+      }
+    },
+    {
+      "key": "chat-b090-003-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "2031ec28-eed6-4259-9cd8-795cb6d0e342",
+        "kind": "song_variant",
+        "primaryWorkId": "d11b98f1-aa7c-5ff0-a2f1-bc8d63cccb93",
+        "title": "BREATHE(Rearranged ver.)",
+        "displayCredit": "ヰ世界情緒 × 春猿火",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "mediaId": "8e70cf15-f859-53b8-9fb8-b71ae01163f3",
+      "mediaUrl": "https://www.youtube.com/watch?v=2QCSQPC829g",
+      "url": "https://www.youtube.com/watch?v=2QCSQPC829g",
+      "credits": [
+        {
+          "role": "Mastering",
+          "name": "吉良 武男(TEMAS)"
+        }
+      ],
+      "sourceWording": "Mastering：吉良 武男(TEMAS)",
+      "evidence": {
+        "reports": [
+          "B090"
+        ],
+        "records": [
+          "B090-003"
+        ],
+        "sourceScopes": [
+          "recording_credited_on_video"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=2QCSQPC829g",
+            "kind": "official_youtube",
+            "access": "direct",
+            "checkedOn": "2026-11-13",
+            "location": "公式Artist ChannelのYouTube動画説明欄。Webの公式YouTube動画結果で説明本文を直接確認。音声・映像は未再生。"
+          }
+        ],
+        "readExtent": "source_description_text_reported_by_chat_not_independent_work_fetch",
+        "audioActuallyChecked": false,
+        "manualReview": null,
+        "note": "Credits attached to the exact published video as source context. No shared-master, sibling version, live or Short inheritance."
+      }
+    },
+    {
+      "key": "chat-b090-004-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "be24b3d7-cc9f-4601-b7a5-da9f6e267288",
+        "kind": "song_variant",
+        "primaryWorkId": "d11b98f1-aa7c-5ff0-a2f1-bc8d63cccb93",
+        "title": "BREATHE",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "mediaId": "bd47eaae-6022-557f-a5f1-48fffccbaeed",
+      "mediaUrl": "https://www.youtube.com/watch?v=2ErDR6ku6UY",
+      "url": "https://www.youtube.com/watch?v=2ErDR6ku6UY",
+      "credits": [
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceWording": "Mix：＄ＫＩＹＡＫＩ＄ＫＩ",
+      "evidence": {
+        "reports": [
+          "B090"
+        ],
+        "records": [
+          "B090-004"
+        ],
+        "sourceScopes": [
+          "recording_credited_on_video"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=2ErDR6ku6UY",
+            "kind": "official_youtube",
+            "access": "direct",
+            "checkedOn": "2026-11-13",
+            "location": "公式Artist ChannelのYouTube動画説明欄。Webの公式YouTube動画結果で説明本文を直接確認。音声・映像は未再生。"
+          }
+        ],
+        "readExtent": "source_description_text_reported_by_chat_not_independent_work_fetch",
+        "audioActuallyChecked": false,
+        "manualReview": null,
+        "note": "Credits attached to the exact published video as source context. No shared-master, sibling version, live or Short inheritance."
+      }
+    },
+    {
+      "key": "chat-b083-001-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "ffe9cbc0-27b8-48c2-8631-7ad4562f9a47",
+        "kind": "song_variant",
+        "primaryWorkId": "078d4b75-9ac7-5f5a-8701-a50ef78a70d0",
+        "title": "ハイドレンジア",
+        "displayCredit": "ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "mediaId": "e691f406-a571-58df-aff3-3c60460984c1",
+      "mediaUrl": "https://www.youtube.com/watch?v=lqTS5eaEhbI",
+      "url": "https://piapro.jp/t/dJ5t",
+      "credits": [
+        {
+          "role": "映像",
+          "name": "木葉はづく"
+        }
+      ],
+      "sourceWording": "映像：木葉はづく",
+      "evidence": {
+        "reports": [
+          "B083"
+        ],
+        "records": [
+          "B083-001"
+        ],
+        "sourceScopes": [
+          "media"
+        ],
+        "sources": [
+          {
+            "url": "https://ckworks.jp/vinforadar/video/lqTS5eaEhbI",
+            "kind": "third_party",
+            "access": "mirror",
+            "checkedOn": "2026-11-13",
+            "location": "ブィレーダー「配信概要」内の当該MV lqTS5eaEhbI スタッフ表記"
+          },
+          {
+            "url": "https://piapro.jp/t/dJ5t",
+            "kind": "official",
+            "access": "direct",
+            "checkedOn": "2026-11-13",
+            "location": "作品「ハイドレンジア」の投稿者本人による作品説明欄「映像：木葉はづく」、オリジナルMVへのリンク"
+          }
+        ],
+        "readExtent": "source_description_text_reported_by_chat_not_independent_work_fetch",
+        "audioActuallyChecked": false,
+        "manualReview": "Creator-published piapro description explicitly links this MV and names the video duty. Not a primary confirmation of all mirrored credits.",
+        "note": "Credits attached to the exact published video as source context. No shared-master, sibling version, live or Short inheritance."
       }
     }
   ]
