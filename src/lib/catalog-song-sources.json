@@ -29547,6 +29547,800 @@
         "manualReview": "Creator-published piapro description explicitly links this MV and names the video duty. Not a primary confirmation of all mirrored credits.",
         "note": "Credits attached to the exact published video as source context. No shared-master, sibling version, live or Short inheritance."
       }
+    },
+    {
+      "key": "chat-b091-001-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "5580aab6-3c80-469d-bfef-ba4bf40c7fe4",
+        "kind": "song_variant",
+        "primaryWorkId": "71bd2577-ffa3-5c40-8f86-0b1e8f1e759c",
+        "title": "幻界",
+        "displayCredit": "V.W.P",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "mediaId": "aba910fa-e747-5346-b4ea-c6079646beaf",
+      "mediaUrl": "https://www.youtube.com/watch?v=77GH0qHEsyU",
+      "url": "https://www.youtube.com/watch?v=77GH0qHEsyU",
+      "credits": [
+        {
+          "role": "3DCG Designer",
+          "name": "Arisa Sakajiri"
+        }
+      ],
+      "sourceWording": "3DCG Designer：Arisa Sakajiri",
+      "evidence": {
+        "reports": [
+          "B091"
+        ],
+        "records": [
+          "B091-001"
+        ],
+        "originalRoles": [
+          "3DCG Designer"
+        ],
+        "sourceScopes": [
+          "media"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=77GH0qHEsyU",
+            "kind": "official",
+            "access": "search_excerpt",
+            "checkedOn": "2026-11-13",
+            "location": "公式Artist ChannelのYouTube Descriptionを検索結果の説明文表示から取得。YouTube watch本体を開くと取得制限で、公式ページ本文を直接開いての確認ではない。全文の説明表示を確認し該当担当欄を抽出、音声・動画未再生。"
+          },
+          {
+            "url": "https://typing-tube.net/movie/show/68586",
+            "kind": "third_party",
+            "access": "mirror",
+            "checkedOn": "2026-11-13",
+            "location": "第三者TypingTubeの「YouTube動画の説明」転載本文。公式ページの直接確認ではない。"
+          }
+        ],
+        "manualReview": "Official-channel description credit text supplied in search display; exact raw role/name and existing video/entry/work checked. Not a fetched watch page. Do not automatically accept arbitrary search snippets.",
+        "watchPageDirectlyRead": false,
+        "audioActuallyChecked": false,
+        "notes": "当該MVの公式動画説明文に掲載された担当原文。D180保存参照の当該video creditsに存在しない。Production Managerの二つの掲載行は区別し、既存制作担当を置換しない。"
+      }
+    },
+    {
+      "key": "chat-b091-002-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "5580aab6-3c80-469d-bfef-ba4bf40c7fe4",
+        "kind": "song_variant",
+        "primaryWorkId": "71bd2577-ffa3-5c40-8f86-0b1e8f1e759c",
+        "title": "幻界",
+        "displayCredit": "V.W.P",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "mediaId": "aba910fa-e747-5346-b4ea-c6079646beaf",
+      "mediaUrl": "https://www.youtube.com/watch?v=77GH0qHEsyU",
+      "url": "https://www.youtube.com/watch?v=77GH0qHEsyU",
+      "credits": [
+        {
+          "role": "Title Design",
+          "name": "Shota Watanabe"
+        }
+      ],
+      "sourceWording": "Title Design：Shota Watanabe",
+      "evidence": {
+        "reports": [
+          "B091"
+        ],
+        "records": [
+          "B091-002"
+        ],
+        "originalRoles": [
+          "Title Design"
+        ],
+        "sourceScopes": [
+          "media"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=77GH0qHEsyU",
+            "kind": "official",
+            "access": "search_excerpt",
+            "checkedOn": "2026-11-13",
+            "location": "公式Artist ChannelのYouTube Descriptionを検索結果の説明文表示から取得。YouTube watch本体を開くと取得制限で、公式ページ本文を直接開いての確認ではない。全文の説明表示を確認し該当担当欄を抽出、音声・動画未再生。"
+          },
+          {
+            "url": "https://typing-tube.net/movie/show/68586",
+            "kind": "third_party",
+            "access": "mirror",
+            "checkedOn": "2026-11-13",
+            "location": "第三者TypingTubeの「YouTube動画の説明」転載本文。公式ページの直接確認ではない。"
+          }
+        ],
+        "manualReview": "Official-channel description credit text supplied in search display; exact raw role/name and existing video/entry/work checked. Not a fetched watch page. Do not automatically accept arbitrary search snippets.",
+        "watchPageDirectlyRead": false,
+        "audioActuallyChecked": false,
+        "notes": "当該MVの公式動画説明文に掲載された担当原文。D180保存参照の当該video creditsに存在しない。Production Managerの二つの掲載行は区別し、既存制作担当を置換しない。"
+      }
+    },
+    {
+      "key": "chat-b091-003-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "5580aab6-3c80-469d-bfef-ba4bf40c7fe4",
+        "kind": "song_variant",
+        "primaryWorkId": "71bd2577-ffa3-5c40-8f86-0b1e8f1e759c",
+        "title": "幻界",
+        "displayCredit": "V.W.P",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "mediaId": "aba910fa-e747-5346-b4ea-c6079646beaf",
+      "mediaUrl": "https://www.youtube.com/watch?v=77GH0qHEsyU",
+      "url": "https://www.youtube.com/watch?v=77GH0qHEsyU",
+      "credits": [
+        {
+          "role": "Graphic / 2D Design",
+          "name": "Shota Watanabe"
+        }
+      ],
+      "sourceWording": "Graphic / 2D Design：Shota Watanabe",
+      "evidence": {
+        "reports": [
+          "B091"
+        ],
+        "records": [
+          "B091-003"
+        ],
+        "originalRoles": [
+          "Graphic / 2D Design"
+        ],
+        "sourceScopes": [
+          "media"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=77GH0qHEsyU",
+            "kind": "official",
+            "access": "search_excerpt",
+            "checkedOn": "2026-11-13",
+            "location": "公式Artist ChannelのYouTube Descriptionを検索結果の説明文表示から取得。YouTube watch本体を開くと取得制限で、公式ページ本文を直接開いての確認ではない。全文の説明表示を確認し該当担当欄を抽出、音声・動画未再生。"
+          },
+          {
+            "url": "https://typing-tube.net/movie/show/68586",
+            "kind": "third_party",
+            "access": "mirror",
+            "checkedOn": "2026-11-13",
+            "location": "第三者TypingTubeの「YouTube動画の説明」転載本文。公式ページの直接確認ではない。"
+          }
+        ],
+        "manualReview": "Official-channel description credit text supplied in search display; exact raw role/name and existing video/entry/work checked. Not a fetched watch page. Do not automatically accept arbitrary search snippets.",
+        "watchPageDirectlyRead": false,
+        "audioActuallyChecked": false,
+        "notes": "当該MVの公式動画説明文に掲載された担当原文。D180保存参照の当該video creditsに存在しない。Production Managerの二つの掲載行は区別し、既存制作担当を置換しない。"
+      }
+    },
+    {
+      "key": "chat-b091-004-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "5580aab6-3c80-469d-bfef-ba4bf40c7fe4",
+        "kind": "song_variant",
+        "primaryWorkId": "71bd2577-ffa3-5c40-8f86-0b1e8f1e759c",
+        "title": "幻界",
+        "displayCredit": "V.W.P",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "mediaId": "aba910fa-e747-5346-b4ea-c6079646beaf",
+      "mediaUrl": "https://www.youtube.com/watch?v=77GH0qHEsyU",
+      "url": "https://www.youtube.com/watch?v=77GH0qHEsyU",
+      "credits": [
+        {
+          "role": "Production Manager",
+          "name": "Kenichi Kodama"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Kentaro Iwaki (THINKR)",
+          "entityId": "f92eb239-b042-58cc-afe5-1a7df958c999"
+        },
+        {
+          "role": "Production Manager",
+          "name": "Minako Soga (THINKR)"
+        }
+      ],
+      "sourceWording": "Production Manager：Kenichi Kodama\nProduction Manager：Kentaro Iwaki (THINKR), Minako Soga (THINKR)",
+      "evidence": {
+        "reports": [
+          "B091"
+        ],
+        "records": [
+          "B091-004",
+          "B091-005"
+        ],
+        "originalRoles": [
+          "Production Manager"
+        ],
+        "sourceScopes": [
+          "media"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=77GH0qHEsyU",
+            "kind": "official",
+            "access": "search_excerpt",
+            "checkedOn": "2026-11-13",
+            "location": "公式Artist ChannelのYouTube Descriptionを検索結果の説明文表示から取得。YouTube watch本体を開くと取得制限で、公式ページ本文を直接開いての確認ではない。全文の説明表示を確認し該当担当欄を抽出、音声・動画未再生。"
+          },
+          {
+            "url": "https://typing-tube.net/movie/show/68586",
+            "kind": "third_party",
+            "access": "mirror",
+            "checkedOn": "2026-11-13",
+            "location": "第三者TypingTubeの「YouTube動画の説明」転載本文。公式ページの直接確認ではない。"
+          }
+        ],
+        "manualReview": "Official-channel description credit text supplied in search display; exact raw role/name and existing video/entry/work checked. Not a fetched watch page. Do not automatically accept arbitrary search snippets.",
+        "watchPageDirectlyRead": false,
+        "audioActuallyChecked": false,
+        "notes": "当該MVの公式動画説明文に掲載された担当原文。D180保存参照の当該video creditsに存在しない。Production Managerの二つの掲載行は区別し、既存制作担当を置換しない。"
+      }
+    },
+    {
+      "key": "chat-b091-006-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "5580aab6-3c80-469d-bfef-ba4bf40c7fe4",
+        "kind": "song_variant",
+        "primaryWorkId": "71bd2577-ffa3-5c40-8f86-0b1e8f1e759c",
+        "title": "幻界",
+        "displayCredit": "V.W.P",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "mediaId": "aba910fa-e747-5346-b4ea-c6079646beaf",
+      "mediaUrl": "https://www.youtube.com/watch?v=77GH0qHEsyU",
+      "url": "https://www.youtube.com/watch?v=77GH0qHEsyU",
+      "credits": [
+        {
+          "role": "Producer",
+          "name": "Hideyuki Negishi (THINKR)",
+          "entityId": "082c8459-03e2-5c53-a2a3-c9d1662384c1"
+        }
+      ],
+      "sourceWording": "Producer：Hideyuki Negishi (THINKR)",
+      "evidence": {
+        "reports": [
+          "B091"
+        ],
+        "records": [
+          "B091-006"
+        ],
+        "originalRoles": [
+          "Producer"
+        ],
+        "sourceScopes": [
+          "media"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=77GH0qHEsyU",
+            "kind": "official",
+            "access": "search_excerpt",
+            "checkedOn": "2026-11-13",
+            "location": "公式Artist ChannelのYouTube Descriptionを検索結果の説明文表示から取得。YouTube watch本体を開くと取得制限で、公式ページ本文を直接開いての確認ではない。全文の説明表示を確認し該当担当欄を抽出、音声・動画未再生。"
+          },
+          {
+            "url": "https://typing-tube.net/movie/show/68586",
+            "kind": "third_party",
+            "access": "mirror",
+            "checkedOn": "2026-11-13",
+            "location": "第三者TypingTubeの「YouTube動画の説明」転載本文。公式ページの直接確認ではない。"
+          }
+        ],
+        "manualReview": "Official-channel description credit text supplied in search display; exact raw role/name and existing video/entry/work checked. Not a fetched watch page. Do not automatically accept arbitrary search snippets.",
+        "watchPageDirectlyRead": false,
+        "audioActuallyChecked": false,
+        "notes": "当該MVの公式動画説明文に掲載された担当原文。D180保存参照の当該video creditsに存在しない。Production Managerの二つの掲載行は区別し、既存制作担当を置換しない。"
+      }
+    },
+    {
+      "key": "chat-b091-007-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "5580aab6-3c80-469d-bfef-ba4bf40c7fe4",
+        "kind": "song_variant",
+        "primaryWorkId": "71bd2577-ffa3-5c40-8f86-0b1e8f1e759c",
+        "title": "幻界",
+        "displayCredit": "V.W.P",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "mediaId": "aba910fa-e747-5346-b4ea-c6079646beaf",
+      "mediaUrl": "https://www.youtube.com/watch?v=77GH0qHEsyU",
+      "url": "https://www.youtube.com/watch?v=77GH0qHEsyU",
+      "credits": [
+        {
+          "role": "Executive Producer",
+          "name": "PIEDPIPER"
+        }
+      ],
+      "sourceWording": "Executive Producer：PIEDPIPER",
+      "evidence": {
+        "reports": [
+          "B091"
+        ],
+        "records": [
+          "B091-007"
+        ],
+        "originalRoles": [
+          "Executive Producer"
+        ],
+        "sourceScopes": [
+          "media"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=77GH0qHEsyU",
+            "kind": "official",
+            "access": "search_excerpt",
+            "checkedOn": "2026-11-13",
+            "location": "公式Artist ChannelのYouTube Descriptionを検索結果の説明文表示から取得。YouTube watch本体を開くと取得制限で、公式ページ本文を直接開いての確認ではない。全文の説明表示を確認し該当担当欄を抽出、音声・動画未再生。"
+          },
+          {
+            "url": "https://typing-tube.net/movie/show/68586",
+            "kind": "third_party",
+            "access": "mirror",
+            "checkedOn": "2026-11-13",
+            "location": "第三者TypingTubeの「YouTube動画の説明」転載本文。公式ページの直接確認ではない。"
+          }
+        ],
+        "manualReview": "Official-channel description credit text supplied in search display; exact raw role/name and existing video/entry/work checked. Not a fetched watch page. Do not automatically accept arbitrary search snippets.",
+        "watchPageDirectlyRead": false,
+        "audioActuallyChecked": false,
+        "notes": "当該MVの公式動画説明文に掲載された担当原文。D180保存参照の当該video creditsに存在しない。Production Managerの二つの掲載行は区別し、既存制作担当を置換しない。"
+      }
+    },
+    {
+      "key": "chat-b091-008-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "5580aab6-3c80-469d-bfef-ba4bf40c7fe4",
+        "kind": "song_variant",
+        "primaryWorkId": "71bd2577-ffa3-5c40-8f86-0b1e8f1e759c",
+        "title": "幻界",
+        "displayCredit": "V.W.P",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "mediaId": "aba910fa-e747-5346-b4ea-c6079646beaf",
+      "mediaUrl": "https://www.youtube.com/watch?v=77GH0qHEsyU",
+      "url": "https://www.youtube.com/watch?v=77GH0qHEsyU",
+      "credits": [
+        {
+          "role": "Produced by",
+          "name": "KAMITSUBAKI STUDIO"
+        }
+      ],
+      "sourceWording": "Produced by KAMITSUBAKI STUDIO",
+      "evidence": {
+        "reports": [
+          "B091"
+        ],
+        "records": [
+          "B091-008"
+        ],
+        "originalRoles": [
+          "Produced by"
+        ],
+        "sourceScopes": [
+          "media"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=77GH0qHEsyU",
+            "kind": "official",
+            "access": "search_excerpt",
+            "checkedOn": "2026-11-13",
+            "location": "公式Artist ChannelのYouTube Descriptionを検索結果の説明文表示から取得。YouTube watch本体を開くと取得制限で、公式ページ本文を直接開いての確認ではない。全文の説明表示を確認し該当担当欄を抽出、音声・動画未再生。"
+          },
+          {
+            "url": "https://typing-tube.net/movie/show/68586",
+            "kind": "third_party",
+            "access": "mirror",
+            "checkedOn": "2026-11-13",
+            "location": "第三者TypingTubeの「YouTube動画の説明」転載本文。公式ページの直接確認ではない。"
+          }
+        ],
+        "manualReview": "Official-channel description credit text supplied in search display; exact raw role/name and existing video/entry/work checked. Not a fetched watch page. Do not automatically accept arbitrary search snippets.",
+        "watchPageDirectlyRead": false,
+        "audioActuallyChecked": false,
+        "notes": "当該MVの公式動画説明文に掲載された担当原文。D180保存参照の当該video creditsに存在しない。Production Managerの二つの掲載行は区別し、既存制作担当を置換しない。"
+      }
+    },
+    {
+      "key": "chat-b091-010-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "f704c9bc-ec90-48be-afc6-f392b75e2f64",
+        "kind": "song_variant",
+        "primaryWorkId": "1de7888f-d8d9-5b3d-ba2f-56e6fe2d27cd",
+        "title": "LOVEぃ",
+        "displayCredit": "春猿火 × ヰ世界情緒",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "mediaId": "c501f543-bf7a-588f-9c32-8bc74f9ce2be",
+      "mediaUrl": "https://www.youtube.com/watch?v=9UOZfI-WbVM",
+      "url": "https://www.youtube.com/watch?v=9UOZfI-WbVM",
+      "credits": [
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceWording": "Mix：＄ＫＩＹＡＫＩ＄ＫＩ",
+      "evidence": {
+        "reports": [
+          "B091"
+        ],
+        "records": [
+          "B091-010"
+        ],
+        "originalRoles": [
+          "Mix"
+        ],
+        "sourceScopes": [
+          "recording_credited_on_video"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=9UOZfI-WbVM",
+            "kind": "official",
+            "access": "search_excerpt",
+            "checkedOn": "2026-11-13",
+            "location": "公式Artist ChannelのYouTube Descriptionを検索結果の説明文表示から取得。YouTube watch本体を開くと取得制限で、公式ページ本文を直接開いての確認ではない。全文の説明表示を確認し該当担当欄を抽出、音声・動画未再生。"
+          }
+        ],
+        "manualReview": "Official-channel description credit text supplied in search display; exact raw role/name and existing video/entry/work checked. Not a fetched watch page. Do not automatically accept arbitrary search snippets.",
+        "watchPageDirectlyRead": false,
+        "audioActuallyChecked": false,
+        "notes": "当該MV説明欄で掲載されたMix。D180既存MVのDirector等はそのまま、別録音・Shortへ担当を拡張しない。"
+      }
+    },
+    {
+      "key": "chat-b092-007-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "b4cecad7-134e-41a3-8831-ae100c822843",
+        "kind": "song_variant",
+        "primaryWorkId": "29565691-dad8-5370-aacf-57c190c58023",
+        "title": "ワールド・コーリング",
+        "displayCredit": "ヰ世界情緒 & 春猿火",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "mediaId": "47160f32-ea21-5bde-9da8-ad65123e09cc",
+      "mediaUrl": "https://www.youtube.com/watch?v=eBscAdAL6JE",
+      "url": "https://www.youtube.com/watch?v=eBscAdAL6JE",
+      "credits": [
+        {
+          "role": "Illustration",
+          "name": "れおえん"
+        }
+      ],
+      "sourceWording": "Illustration：れおえん",
+      "evidence": {
+        "reports": [
+          "B092"
+        ],
+        "records": [
+          "B092-007"
+        ],
+        "originalRoles": [
+          "Illustration"
+        ],
+        "sourceScopes": [
+          "media"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=eBscAdAL6JE",
+            "kind": "official",
+            "access": "search_excerpt",
+            "checkedOn": "2026-11-13",
+            "location": "公式Artist Channel動画のDescription本文をYouTube検索結果の動画表示から取得。watchページ本体を直接開いた確認とは区別。"
+          },
+          {
+            "url": "https://typing-tube.net/movie/show/36204",
+            "kind": "third_party",
+            "access": "mirror",
+            "checkedOn": "2026-11-13",
+            "location": "TypingTubeに掲載されたYouTube動画説明の転載。2役割が一致。"
+          }
+        ],
+        "manualReview": "Official-channel description credit text supplied in search display; exact raw role/name and existing video/entry/work checked. Not a fetched watch page. Do not automatically accept arbitrary search snippets.",
+        "watchPageDirectlyRead": false,
+        "audioActuallyChecked": false,
+        "notes": "既存2021-02-27のヰ世界情緒&春猿火カバー動画。個別の歌唱者も既存参照と整合するが新規変更候補としては報告しない。"
+      }
+    },
+    {
+      "key": "chat-b092-008-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "b4cecad7-134e-41a3-8831-ae100c822843",
+        "kind": "song_variant",
+        "primaryWorkId": "29565691-dad8-5370-aacf-57c190c58023",
+        "title": "ワールド・コーリング",
+        "displayCredit": "ヰ世界情緒 & 春猿火",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "mediaId": "47160f32-ea21-5bde-9da8-ad65123e09cc",
+      "mediaUrl": "https://www.youtube.com/watch?v=eBscAdAL6JE",
+      "url": "https://www.youtube.com/watch?v=eBscAdAL6JE",
+      "credits": [
+        {
+          "role": "Mix",
+          "name": "＄ＫＩＹＡＫＩ＄ＫＩ"
+        }
+      ],
+      "sourceWording": "Mix：＄ＫＩＹＡＫＩ＄ＫＩ",
+      "evidence": {
+        "reports": [
+          "B092"
+        ],
+        "records": [
+          "B092-008"
+        ],
+        "originalRoles": [
+          "Mix"
+        ],
+        "sourceScopes": [
+          "recording_credited_on_video"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=eBscAdAL6JE",
+            "kind": "official",
+            "access": "search_excerpt",
+            "checkedOn": "2026-11-13",
+            "location": "公式Artist Channel動画のDescription本文をYouTube検索結果の動画表示から取得。watchページ本体を直接開いた確認とは区別。"
+          },
+          {
+            "url": "https://typing-tube.net/movie/show/36204",
+            "kind": "third_party",
+            "access": "mirror",
+            "checkedOn": "2026-11-13",
+            "location": "TypingTubeに掲載されたYouTube動画説明の転載。2役割が一致。"
+          }
+        ],
+        "manualReview": "Official-channel description credit text supplied in search display; exact raw role/name and existing video/entry/work checked. Not a fetched watch page. Do not automatically accept arbitrary search snippets.",
+        "watchPageDirectlyRead": false,
+        "audioActuallyChecked": false,
+        "notes": "既存2021-02-27のヰ世界情緒&春猿火カバー動画。個別の歌唱者も既存参照と整合するが新規変更候補としては報告しない。"
+      }
+    },
+    {
+      "key": "chat-b093-001-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "73e3ba75-8a7e-467c-8e63-169327d72ea7",
+        "kind": "song_variant",
+        "primaryWorkId": "0182ba96-4a34-5dc1-97ee-d81e3be37aaa",
+        "title": "連れ出してトロイメライ",
+        "displayCredit": "MAISONdes feat. ヰ世界情緒, 弌誠",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "mediaId": "112e2d58-da8c-5156-8bc3-95874b852c0b",
+      "mediaUrl": "https://www.youtube.com/watch?v=b7nbwwm4xrs",
+      "url": "https://www.youtube.com/watch?v=b7nbwwm4xrs",
+      "credits": [
+        {
+          "role": "Illusutration",
+          "name": "NAKAKI PANTZ"
+        }
+      ],
+      "sourceWording": "Illusutration : NAKAKI PANTZ",
+      "evidence": {
+        "reports": [
+          "B093"
+        ],
+        "records": [
+          "B093-001"
+        ],
+        "originalRoles": [
+          "Illusutration"
+        ],
+        "sourceScopes": [
+          "media"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=b7nbwwm4xrs",
+            "kind": "official",
+            "access": "search_excerpt",
+            "checkedOn": "2026-11-13",
+            "location": "MAISONdes公式Artist ChannelのYouTube動画結果に含まれるDescription本文を検索表示で取得。検索結果の本文にはIllusutration/Movie/CIの各欄が表示。watchページの直接オープンは失敗。"
+          }
+        ],
+        "manualReview": "Official-channel description credit text supplied in search display; exact raw role/name and existing video/entry/work checked. Not a fetched watch page. Do not automatically accept arbitrary search snippets.",
+        "watchPageDirectlyRead": false,
+        "audioActuallyChecked": false,
+        "notes": "既存MAISONdes 717号室MVの動画説明に記載の担当。原文のIllusutrationという綴りを保持。説明欄の後続CI（企業アイデンティティー）担当は個別MVスタッフと断定できず対象外。"
+      }
+    },
+    {
+      "key": "chat-b093-002-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "73e3ba75-8a7e-467c-8e63-169327d72ea7",
+        "kind": "song_variant",
+        "primaryWorkId": "0182ba96-4a34-5dc1-97ee-d81e3be37aaa",
+        "title": "連れ出してトロイメライ",
+        "displayCredit": "MAISONdes feat. ヰ世界情緒, 弌誠",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "mediaId": "112e2d58-da8c-5156-8bc3-95874b852c0b",
+      "mediaUrl": "https://www.youtube.com/watch?v=b7nbwwm4xrs",
+      "url": "https://www.youtube.com/watch?v=b7nbwwm4xrs",
+      "credits": [
+        {
+          "role": "Movie - Director",
+          "name": "NUL(CASANE.)"
+        }
+      ],
+      "sourceWording": "Movie - Director : NUL(CASANE.)",
+      "evidence": {
+        "reports": [
+          "B093"
+        ],
+        "records": [
+          "B093-002"
+        ],
+        "originalRoles": [
+          "Director"
+        ],
+        "sourceScopes": [
+          "media"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=b7nbwwm4xrs",
+            "kind": "official",
+            "access": "search_excerpt",
+            "checkedOn": "2026-11-13",
+            "location": "MAISONdes公式Artist ChannelのYouTube動画結果に含まれるDescription本文を検索表示で取得。検索結果の本文にはIllusutration/Movie/CIの各欄が表示。watchページの直接オープンは失敗。"
+          }
+        ],
+        "manualReview": "Official-channel description credit text supplied in search display; exact raw role/name and existing video/entry/work checked. Not a fetched watch page. Do not automatically accept arbitrary search snippets.",
+        "watchPageDirectlyRead": false,
+        "audioActuallyChecked": false,
+        "notes": "既存MAISONdes 717号室MVの動画説明に記載の担当。原文のIllusutrationという綴りを保持。説明欄の後続CI（企業アイデンティティー）担当は個別MVスタッフと断定できず対象外。"
+      }
+    },
+    {
+      "key": "chat-b093-003-media-credit",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "73e3ba75-8a7e-467c-8e63-169327d72ea7",
+        "kind": "song_variant",
+        "primaryWorkId": "0182ba96-4a34-5dc1-97ee-d81e3be37aaa",
+        "title": "連れ出してトロイメライ",
+        "displayCredit": "MAISONdes feat. ヰ世界情緒, 弌誠",
+        "variations": [],
+        "singerIds": [
+          "81a01233-230e-50a8-a309-11275c794cd0"
+        ]
+      },
+      "mediaId": "112e2d58-da8c-5156-8bc3-95874b852c0b",
+      "mediaUrl": "https://www.youtube.com/watch?v=b7nbwwm4xrs",
+      "url": "https://www.youtube.com/watch?v=b7nbwwm4xrs",
+      "credits": [
+        {
+          "role": "Movie - Producer",
+          "name": "Ko Sato(CASANE.)"
+        }
+      ],
+      "sourceWording": "Movie - Producer : Ko Sato(CASANE.)",
+      "evidence": {
+        "reports": [
+          "B093"
+        ],
+        "records": [
+          "B093-003"
+        ],
+        "originalRoles": [
+          "Producer"
+        ],
+        "sourceScopes": [
+          "media"
+        ],
+        "sources": [
+          {
+            "url": "https://www.youtube.com/watch?v=b7nbwwm4xrs",
+            "kind": "official",
+            "access": "search_excerpt",
+            "checkedOn": "2026-11-13",
+            "location": "MAISONdes公式Artist ChannelのYouTube動画結果に含まれるDescription本文を検索表示で取得。検索結果の本文にはIllusutration/Movie/CIの各欄が表示。watchページの直接オープンは失敗。"
+          }
+        ],
+        "manualReview": "Official-channel description credit text supplied in search display; exact raw role/name and existing video/entry/work checked. Not a fetched watch page. Do not automatically accept arbitrary search snippets.",
+        "watchPageDirectlyRead": false,
+        "audioActuallyChecked": false,
+        "notes": "既存MAISONdes 717号室MVの動画説明に記載の担当。原文のIllusutrationという綴りを保持。説明欄の後続CI（企業アイデンティティー）担当は個別MVスタッフと断定できず対象外。"
+      }
     }
   ]
 }
