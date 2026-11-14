@@ -243,6 +243,28 @@
       "imageUrl": "/artwork/releases/getty-remix-ghosthvck.jpg",
       "sourceUrl": "https://getty8getty.bandcamp.com/album/ghosthvck",
       "entries": []
+    },
+    {
+      "familyId": "5adb3f93-69f8-5db8-94fd-2776cd819914",
+      "editionId": "c76c0044-1c8e-53d7-abea-5c1e4401f595",
+      "imageUrl": "https://kamitsubaki.jp/wp-content/uploads/2025/07/Tsuioku_jacket.png",
+      "sourceUrl": "https://kamitsubaki.jp/news/2025/07/09/7844/",
+      "entries": [
+        {
+          "entryId": "f78ca0d9-9ac3-4b35-bad1-cf0a01948422",
+          "primaryWorkId": "8c6506c7-289d-5a15-9bdb-213ea18698ce",
+          "title": "追憶",
+          "kind": "song_variant",
+          "singerIds": [
+            "36129afb-1fe8-5255-958e-b090e17c7905",
+            "81a01233-230e-50a8-a309-11275c794cd0",
+            "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+            "ae41fa12-3b09-52c0-bc08-1d9218492391",
+            "b8307e06-2046-5415-a1f7-0b892dd41041"
+          ],
+          "variations": []
+        }
+      ]
     }
   ],
   "events": [

@@ -18030,6 +18030,158 @@
         "audioDirectlyChecked": false,
         "officialArtistReadingVerified": false
       }
+    },
+    {
+      "key": "chat-b098-b098-001-split-lyricist",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "f78ca0d9-9ac3-4b35-bad1-cf0a01948422",
+        "kind": "song_variant",
+        "primaryWorkId": "8c6506c7-289d-5a15-9bdb-213ea18698ce",
+        "title": "追憶",
+        "displayCredit": "V.W.P",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "Itamar Lapidot, Shao Hao, Nay Shalom"
+        ],
+        [
+          "work",
+          "composer",
+          "岡嶋かな多, Shao Hao, Nay Shalom"
+        ],
+        [
+          "work",
+          "lyricist",
+          "岡嶋かな多, Shao Hao, Nay Shalom"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/news/2025/07/09/7844/",
+      "credits": {
+        "lyricist": [
+          "Kanata Okajima",
+          "Shao Hao",
+          "Nay Shalom"
+        ]
+      },
+      "creditScopes": {
+        "lyricist": "work"
+      },
+      "replaceExistingCredits": [
+        "lyricist"
+      ],
+      "evidence": {
+        "requestId": "KSH-CHAT-CONTINUOUS-001",
+        "batchId": "B098",
+        "recordId": "B098-001",
+        "scope": "work",
+        "sourceWording": "作詞・作曲：Kanata Okajima, Shao Hao, Nay Shalom",
+        "sources": [
+          {
+            "url": "https://kamitsubaki.jp/news/2025/07/09/7844/",
+            "kind": "official",
+            "access": "direct",
+            "checkedOn": "2026-11-13",
+            "location": "KAMITSUBAKI STUDIO NEWS本文の『V.W.P「追憶」楽曲情報』欄、作詞・作曲と編曲の役割別表記（2025-07-09公開記事）。"
+          }
+        ],
+        "reviewedReplacement": true,
+        "identityCheck": "Kanata Okajima and 岡嶋かな多 refer to the same credited person, confirmed on their official blog and project profile. Reuse the existing Kanata Okajima name page; do not create a new formal entity or globally merge aliases.",
+        "identitySourceUrls": [
+          "https://ameblo.jp/kanataokajima/",
+          "https://singersguild.com/artist/kanata_okajima.php"
+        ],
+        "previousNames": [
+          "岡嶋かな多, Shao Hao, Nay Shalom"
+        ]
+      }
+    },
+    {
+      "key": "chat-b098-b098-002-split-composer",
+      "status": "active",
+      "checkedOn": "2026-11-13",
+      "entry": {
+        "entryId": "f78ca0d9-9ac3-4b35-bad1-cf0a01948422",
+        "kind": "song_variant",
+        "primaryWorkId": "8c6506c7-289d-5a15-9bdb-213ea18698ce",
+        "title": "追憶",
+        "displayCredit": "V.W.P",
+        "variations": [],
+        "singerIds": [
+          "36129afb-1fe8-5255-958e-b090e17c7905",
+          "81a01233-230e-50a8-a309-11275c794cd0",
+          "9ab42d1f-671c-57c5-a5ce-b5bd4303232c",
+          "ae41fa12-3b09-52c0-bc08-1d9218492391",
+          "b8307e06-2046-5415-a1f7-0b892dd41041"
+        ]
+      },
+      "creditBasis": [
+        [
+          "work",
+          "arranger",
+          "Itamar Lapidot, Shao Hao, Nay Shalom"
+        ],
+        [
+          "work",
+          "composer",
+          "岡嶋かな多, Shao Hao, Nay Shalom"
+        ],
+        [
+          "work",
+          "lyricist",
+          "岡嶋かな多, Shao Hao, Nay Shalom"
+        ]
+      ],
+      "url": "https://kamitsubaki.jp/news/2025/07/09/7844/",
+      "credits": {
+        "composer": [
+          "Kanata Okajima",
+          "Shao Hao",
+          "Nay Shalom"
+        ]
+      },
+      "creditScopes": {
+        "composer": "work"
+      },
+      "replaceExistingCredits": [
+        "composer"
+      ],
+      "evidence": {
+        "requestId": "KSH-CHAT-CONTINUOUS-001",
+        "batchId": "B098",
+        "recordId": "B098-002",
+        "scope": "work",
+        "sourceWording": "作詞・作曲：Kanata Okajima, Shao Hao, Nay Shalom",
+        "sources": [
+          {
+            "url": "https://kamitsubaki.jp/news/2025/07/09/7844/",
+            "kind": "official",
+            "access": "direct",
+            "checkedOn": "2026-11-13",
+            "location": "KAMITSUBAKI STUDIO NEWS本文の『V.W.P「追憶」楽曲情報』欄、作詞・作曲と編曲の役割別表記（2025-07-09公開記事）。"
+          }
+        ],
+        "reviewedReplacement": true,
+        "identityCheck": "Kanata Okajima and 岡嶋かな多 refer to the same credited person, confirmed on their official blog and project profile. Reuse the existing Kanata Okajima name page; do not create a new formal entity or globally merge aliases.",
+        "identitySourceUrls": [
+          "https://ameblo.jp/kanataokajima/",
+          "https://singersguild.com/artist/kanata_okajima.php"
+        ],
+        "previousNames": [
+          "岡嶋かな多, Shao Hao, Nay Shalom"
+        ]
+      }
     }
   ],
   "mediaCredits": [
